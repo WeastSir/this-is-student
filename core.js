@@ -3,18 +3,23 @@
 // THIS IS STUDENT — CORE ENGINE v2.0 (Modular)
 // ============================================================
 
-// PASSWORD SYSTEM — Multi-User
-const USERS = {
-  'g_mattiello':  {hash:'de480576c141e173a41223a153c07d2f60c9dff53374dee497dfb829cba5dd5a', name:'G. Mattiello', role:'Master'},
-  'developer':    {hash:'8a8661da9ca4df755314684a0a4358c76cd709add082a64517350bc91e8ef755', name:'Developer', role:'Developer'},
-  'tester1':      {hash:'4a62f7749c00b70c6cc2ac2a4b60c267baeea7142f59f2cc519113d25443c2bf', name:'Tester 1', role:'Tester'},
-  'tester2':      {hash:'340a020d04229a0da371da13338a11be7296b3ecc578392adf7fb015ef202aa3', name:'Tester 2', role:'Tester'},
-  'tester3':      {hash:'2eb9855bb330d6ef4cb5ea03f0b339561a977dffd3d1659d21239e7a3a9be8b4', name:'Tester 3', role:'Tester'},
-  'tester4':      {hash:'e2cec599d2bea7abfae11c8ec515c9e53f974e0c0b08cb5978e562e069614a53', name:'Tester 4', role:'Tester'},
-  'tester5':      {hash:'684597ffa6cd9b3d59fbed842c30191032888d6081097ee1ef63279819f1ed31', name:'Tester 5', role:'Tester'}
-};
+// PASSWORD SYSTEM — Dynamic Multi-User
+// Users are loaded from users.js (plaintext there, hashed at runtime)
+let USERS = {};
 async function hashPW(user,pw){const e=new TextEncoder().encode(user+':'+pw);const h=await crypto.subtle.digest('SHA-256',e);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+
+async function buildUserDB(){
+  if(!window.TIS||!window.TIS.userList)return;
+  for(const u of window.TIS.userList){
+    const h=await hashPW(u.user, u.pw);
+    USERS[u.user]={hash:h, name:u.name, role:u.role};
+  }
+  // Clear plaintext passwords from memory
+  window.TIS.userList=[];
+}
+
 async function checkLogin(){
+  if(Object.keys(USERS).length===0) await buildUserDB();
   const user=document.getElementById('loginUser').value.toLowerCase().trim();
   const pw=document.getElementById('loginPW').value;
   if(!user||!pw){document.getElementById('loginError').style.display='block';return;}
@@ -36,7 +41,9 @@ async function checkLogin(){
     document.getElementById('loginPW').focus();
   }
 }
-function checkSavedAuth(){
+
+async function checkSavedAuth(){
+  if(Object.keys(USERS).length===0) await buildUserDB();
   const user=localStorage.getItem('tis_user');
   const hash=localStorage.getItem('tis_hash');
   const time=localStorage.getItem('tis_time');
