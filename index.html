@@ -14,7 +14,7 @@ body{font-family:var(--f);background:var(--bg);color:var(--tx);line-height:1.7;-
 body::before{content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 20% 50%,rgba(232,86,122,.04) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(102,126,234,.04) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(175,82,222,.03) 0%,transparent 50%);z-index:-1;pointer-events:none;animation:meshFloat 30s ease-in-out infinite}
 @keyframes meshFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-2%,2%)}}
 nav{position:sticky;top:0;z-index:100;background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border-bottom:1px solid var(--bd);transition:background var(--transition)}
-.nav-top{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:8px}
+.nav-top{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:56px;gap:8px}
 .nav-sub{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:42px;gap:4px;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--bd)}.nav-sub::-webkit-scrollbar{display:none}.nav-sub:empty{display:none}
 .nb{font-family:var(--se);font-size:20px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;margin-right:16px;cursor:pointer;letter-spacing:-.3px;background-size:200% 200%;animation:gradShift 4s ease infinite}
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -228,8 +228,8 @@ This Is Student · Version 0.2 Beta<br>
 <p style="font-size:16px;color:var(--tx2);margin-bottom:32px">BWS Semester 5 — Wähle ein Fach</p>
 <div style="display:flex;justify-content:center;gap:32px;margin-bottom:40px;flex-wrap:wrap">
 <div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">19</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Kurse total</div></div>
-<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--g)">3</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Verfügbar</div></div>
-<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--am)">16</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">In Arbeit</div></div>
+<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--g)">4</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Verfügbar</div></div>
+<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--am)">15</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">In Arbeit</div></div>
 </div>
 </div>
 

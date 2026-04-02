@@ -82,11 +82,11 @@ const courseHTML = `
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
 <div class="c ck" onclick="go('fa3_ueb')" style="text-align:center;padding:24px 16px">
-<div style="font-size:24px;margin-bottom:6px">✍️</div>
+<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">4</div>
 <div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div></div>
 <div class="c ck" onclick="go('fa3_mind')" style="text-align:center;padding:24px 16px">
-<div style="font-size:24px;margin-bottom:6px">🧠</div>
-<div class="ct2">Zusammenfassung</div><div class="cd">Mindmaps & Übersichten</div></div>
+<div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">2</div>
+<div class="ct2">Mindmaps</div><div class="cd">Visuelle Übersichten</div></div>
 <div class="c ck" onclick="go('fa3_kart')" style="text-align:center;padding:24px 16px">
 <div id="ltFA3Cards" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
 <div class="ct2">Karteikarten</div><div class="cd">Klicken & repetieren</div></div>
@@ -94,7 +94,7 @@ const courseHTML = `
 <div id="ltFA3Quiz" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
 <div class="ct2">Quiz</div><div class="cd">Mit Lernfortschritt</div></div>
 <div class="c ck" onclick="go('fa3_glossar')" style="text-align:center;padding:24px 16px">
-<div style="font-size:24px;margin-bottom:6px">A–Z</div>
+<div style="font-size:20px;font-weight:700;color:var(--bl);margin-bottom:6px">A–Z</div>
 <div class="ct2">Glossar</div><div class="cd">Begriffe & Formeln</div></div>
 </div>
 </div>
@@ -684,10 +684,10 @@ Jahresgewinn<br>
 
 <div id="fa3_ueb_sel">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
-<div class="c ck" onclick="fa3ShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">📊</div><div class="ct2">Siebenstufige ER</div><div class="cd">Alle 7 Stufen berechnen</div></div>
-<div class="c ck" onclick="fa3ShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">⚖️</div><div class="ct2">GoR Beurteilung</div><div class="cd">10 Fälle beurteilen</div></div>
-<div class="c ck" onclick="fa3ShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">🍷</div><div class="ct2">Warenrenditen</div><div class="cd">Bestandesänderung berechnen</div></div>
-<div class="c ck" onclick="fa3ShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">🧾</div><div class="ct2">MWST Prinzip</div><div class="cd">Allphasensteuer verstehen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px">ER</div><div class="ct2">Siebenstufige ER</div><div class="cd">Alle 7 Stufen berechnen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--bl);margin-bottom:6px">GoR</div><div class="ct2">GoR Beurteilung</div><div class="cd">10 Fälle beurteilen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--am);margin-bottom:6px">WA%</div><div class="ct2">Warenrenditen</div><div class="cd">Bestandesänderung berechnen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">8.1%</div><div class="ct2">MWST Prinzip</div><div class="cd">Allphasensteuer verstehen</div></div>
 </div>
 </div>
 
