@@ -1,9 +1,10 @@
-// ===== LERNKARTEN-SYNC v2 — Supabase Custom Flashcards =====
+// ===== LERNKARTEN-SYNC v3 — Supabase Custom Flashcards =====
 // Separates Modul für This Is Student
 // - Eigene Lernkarten erstellen (Modal), bearbeiten, löschen
 // - Supabase Sync (geräteübergreifend)
 // - "Alle Karten anzeigen" mit Suchfunktion
-// - Nutzerabhängig (tis_user)
+// - Nutzerabhängig via Supabase Auth (auth_uid)
+// - Nutzt Auth-Session-Token für REST-Calls
 // ============================================================
 
 (function () {
@@ -15,10 +16,24 @@
   const TABLE = 'custom_flashcards';
 
   // --- SUPABASE REST HELPERS ---
+  // Cached auth token (refreshed on each major operation)
+  var _authToken = null;
+
+  async function refreshAuthToken() {
+    if (typeof window.TIS_getSession === 'function') {
+      try {
+        var session = await window.TIS_getSession();
+        _authToken = session ? session.access_token : null;
+      } catch (e) { _authToken = null; }
+    }
+    return _authToken;
+  }
+
   function sbHeaders() {
+    var token = _authToken || SUPABASE_KEY;
     return {
       'apikey': SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Authorization': 'Bearer ' + token,
       'Content-Type': 'application/json',
       'Prefer': 'return=representation'
     };
@@ -67,16 +82,39 @@
 
   // --- STATE ---
   var customCards = {}; // courseId -> [ {id, question, answer, topic, ...} ]
-  var currentUser = null;
+  var currentUser = null; // auth_uid string
 
   function getUser() {
-    return localStorage.getItem('tis_user') || null;
+    // Try to get auth_uid from the Supabase Auth session (cached)
+    return currentUser || null;
+  }
+
+  async function resolveUser() {
+    if (currentUser) return currentUser;
+    await refreshAuthToken();
+    if (typeof window.TIS_getSession === 'function') {
+      try {
+        var session = await window.TIS_getSession();
+        if (session && session.user) {
+          currentUser = session.user.id; // auth_uid
+          return currentUser;
+        }
+      } catch (e) { /* ignore */ }
+    }
+    // Fallback to legacy localStorage (for migration period)
+    var legacy = localStorage.getItem('tis_user');
+    if (legacy) {
+      currentUser = legacy;
+      return currentUser;
+    }
+    return null;
   }
 
   // --- LOAD ---
   async function loadCustomCards(courseId) {
-    currentUser = getUser();
+    currentUser = await resolveUser();
     if (!currentUser) { customCards[courseId] = []; return; }
+    await refreshAuthToken();
     try {
       var rows = await sbSelect(
         'user_id=eq.' + encodeURIComponent(currentUser) +
@@ -91,8 +129,9 @@
   }
 
   async function loadAllCustomCards() {
-    currentUser = getUser();
+    currentUser = await resolveUser();
     if (!currentUser) return;
+    await refreshAuthToken();
     try {
       var rows = await sbSelect('user_id=eq.' + encodeURIComponent(currentUser) + '&order=created_at.asc');
       customCards = {};
@@ -130,7 +169,7 @@
 
   // --- ADD ---
   async function addCard(courseId, question, answer, topic) {
-    currentUser = getUser();
+    currentUser = await resolveUser();
     if (!currentUser) { alert('Bitte zuerst einloggen.'); return false; }
     if (!question.trim() || !answer.trim()) { alert('Frage und Antwort dürfen nicht leer sein.'); return false; }
     var c = window.TIS.courses[courseId];
@@ -141,6 +180,7 @@
         return false;
       }
     }
+    await refreshAuthToken();
     try {
       var rows = await sbInsert({
         user_id: currentUser,
@@ -437,8 +477,8 @@
     });
   }
 
-  function openForm(courseId) {
-    if (!getUser()) { alert('Bitte zuerst einloggen.'); return; }
+  async function openForm(courseId) {
+    if (!(await resolveUser())) { alert('Bitte zuerst einloggen.'); return; }
     ensureModal();
     document.getElementById('tis-lc-modal-title').textContent = 'Neue Lernkarte';
     document.getElementById('tis-lc-q').value = '';
@@ -540,7 +580,7 @@
 
   // --- INIT CUSTOM SECTION FOR A COURSE ---
   async function initCustomSection(courseId) {
-    if (!getUser()) return;
+    if (!(await resolveUser())) return;
     if (!customCards[courseId]) {
       await loadCustomCards(courseId);
     }
@@ -582,15 +622,17 @@
     }
 
     // Pre-load all custom cards
-    if (getUser()) {
-      loadAllCustomCards().then(function () {
-        if (window.TIS && window.TIS.courses) {
-          for (var cid in window.TIS.courses) {
-            mergeCards(cid);
+    resolveUser().then(function(uid) {
+      if (uid) {
+        loadAllCustomCards().then(function () {
+          if (window.TIS && window.TIS.courses) {
+            for (var cid in window.TIS.courses) {
+              mergeCards(cid);
+            }
           }
-        }
-      });
-    }
+        });
+      }
+    });
   });
 
   // --- PUBLIC API ---
