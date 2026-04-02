@@ -207,7 +207,12 @@ function go(id){
     if(s==='home'||s==='kurse'){
       btn.style.display=inCourse?'none':'';
     } else {
-      btn.style.display=inCourse?'':'none';
+      // Only show the active course button, hide all others
+      if(inCourse && course.config && s===course.config.id){
+        btn.style.display='';
+      } else {
+        btn.style.display='none';
+      }
     }
   });
   
