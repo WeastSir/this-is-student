@@ -466,16 +466,7 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 <div class="fd"><div class="fc" id="fc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="fcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="fca"></div></div></div></div>
 <div class="fb"><button onclick="fP()">Zurück</button><button onclick="fS()">Mischen</button><button class="bp1" onclick="fN()">Nächste</button></div>
 <div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="fcPool"></div>
-<div style="text-align:center;margin-top:8px"><button onclick="toggleCardList()" id="fcListToggle" style="font-size:12px;padding:6px 14px">Alle Karten anzeigen</button></div>
 <div id="fcList" style="display:none;margin-top:16px"></div>
-
-<div style="margin-top:24px;padding:20px 22px;background:var(--s);border:1px solid var(--bd);border-radius:var(--rd)">
-<div style="font-size:14px;font-weight:600;margin-bottom:12px">Eigene Karte hinzufügen</div>
-<div style="margin-bottom:8px"><input id="fcNewQ" type="text" placeholder="Frage..." style="width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:10px;font-family:var(--f);font-size:13px;background:var(--s2);color:var(--tx);outline:none"></div>
-<div style="margin-bottom:10px"><input id="fcNewA" type="text" placeholder="Antwort..." style="width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:10px;font-family:var(--f);font-size:13px;background:var(--s2);color:var(--tx);outline:none"></div>
-<button onclick="fAdd()" style="font-size:13px;padding:8px 20px">Hinzufügen</button>
-<span id="fcAddMsg" style="font-size:12px;color:var(--g);margin-left:10px;display:none">Karte hinzugefügt!</span>
-</div>
 </div>
 
 <div class="sec" id="quiz"><h1>Quiz</h1><p class="sub">Alle Fragen werden wiederholt bis du sie kannst</p>

@@ -1,8 +1,10 @@
-// ===== LERNKARTEN-SYNC — Supabase Custom Flashcards =====
+// ===== LERNKARTEN-SYNC v2 — Supabase Custom Flashcards =====
 // Separates Modul für This Is Student
-// Ermöglicht Nutzern eigene Lernkarten zu erstellen, die in Supabase gespeichert werden
-// und zusammen mit den vordefinierten Karten im jeweiligen Kurs erscheinen.
-// =========================================================
+// - Eigene Lernkarten erstellen (Modal), bearbeiten, löschen
+// - Supabase Sync (geräteübergreifend)
+// - "Alle Karten anzeigen" mit Suchfunktion
+// - Nutzerabhängig (tis_user)
+// ============================================================
 
 (function () {
   'use strict';
@@ -64,19 +66,19 @@
   }
 
   // --- STATE ---
-  let customCards = {}; // courseId -> [ {id, question, answer, topic, user_id, ...} ]
-  let currentUser = null;
+  var customCards = {}; // courseId -> [ {id, question, answer, topic, ...} ]
+  var currentUser = null;
 
   function getUser() {
     return localStorage.getItem('tis_user') || null;
   }
 
-  // --- LOAD CUSTOM CARDS FOR USER ---
+  // --- LOAD ---
   async function loadCustomCards(courseId) {
     currentUser = getUser();
     if (!currentUser) { customCards[courseId] = []; return; }
     try {
-      const rows = await sbSelect(
+      var rows = await sbSelect(
         'user_id=eq.' + encodeURIComponent(currentUser) +
         '&course_id=eq.' + encodeURIComponent(courseId) +
         '&order=created_at.asc'
@@ -92,67 +94,55 @@
     currentUser = getUser();
     if (!currentUser) return;
     try {
-      const rows = await sbSelect('user_id=eq.' + encodeURIComponent(currentUser) + '&order=created_at.asc');
+      var rows = await sbSelect('user_id=eq.' + encodeURIComponent(currentUser) + '&order=created_at.asc');
       customCards = {};
-      rows.forEach(r => {
+      rows.forEach(function (r) {
         if (!customCards[r.course_id]) customCards[r.course_id] = [];
         customCards[r.course_id].push(r);
       });
     } catch (e) {
-      console.warn('[LernkartenSync] Laden aller Karten fehlgeschlagen:', e);
+      console.warn('[LernkartenSync] Laden fehlgeschlagen:', e);
     }
   }
 
-  // --- MERGE CUSTOM CARDS INTO COURSE FLASHCARDS ---
-  const originalCards = {}; // courseId -> original flashcards array (shallow copy)
+  // --- MERGE CUSTOM CARDS INTO COURSE ---
+  var originalCards = {};
 
   function mergeCards(courseId) {
-    const c = window.TIS && window.TIS.courses && window.TIS.courses[courseId];
+    var c = window.TIS && window.TIS.courses && window.TIS.courses[courseId];
     if (!c) return;
-
-    // Save original cards once
     if (!originalCards[courseId]) {
       originalCards[courseId] = c.flashcards ? c.flashcards.slice() : [];
     }
-
-    const orig = originalCards[courseId];
-    const custom = customCards[courseId] || [];
-
-    // Build set of existing questions (lowercased, trimmed) for dedup
-    const existing = new Set(orig.map(card => card[0].trim().toLowerCase()));
-
-    // Build merged array: originals + non-duplicate customs
-    const merged = orig.slice();
-    custom.forEach(card => {
-      const q = card.question.trim().toLowerCase();
+    var orig = originalCards[courseId];
+    var custom = customCards[courseId] || [];
+    var existing = new Set(orig.map(function (card) { return card[0].trim().toLowerCase(); }));
+    var merged = orig.slice();
+    custom.forEach(function (card) {
+      var q = card.question.trim().toLowerCase();
       if (!existing.has(q)) {
         merged.push([card.question, card.answer]);
         existing.add(q);
       }
     });
-
-    // Replace the flashcards array so core.js sees it
     c.flashcards = merged;
   }
 
-  // --- ADD CARD ---
+  // --- ADD ---
   async function addCard(courseId, question, answer, topic) {
     currentUser = getUser();
     if (!currentUser) { alert('Bitte zuerst einloggen.'); return false; }
     if (!question.trim() || !answer.trim()) { alert('Frage und Antwort dürfen nicht leer sein.'); return false; }
-
-    // Check for duplicate in all current cards (predefined + custom)
-    const c = window.TIS.courses[courseId];
+    var c = window.TIS.courses[courseId];
     if (c && c.flashcards) {
-      const qLow = question.trim().toLowerCase();
-      if (c.flashcards.some(card => card[0].trim().toLowerCase() === qLow)) {
+      var qLow = question.trim().toLowerCase();
+      if (c.flashcards.some(function (card) { return card[0].trim().toLowerCase() === qLow; })) {
         alert('Eine Karte mit dieser Frage existiert bereits.');
         return false;
       }
     }
-
     try {
-      const rows = await sbInsert({
+      var rows = await sbInsert({
         user_id: currentUser,
         course_id: courseId,
         question: question.trim(),
@@ -170,11 +160,11 @@
     }
   }
 
-  // --- DELETE CARD ---
+  // --- DELETE ---
   async function deleteCard(courseId, cardId) {
     try {
       await sbDelete(cardId);
-      customCards[courseId] = (customCards[courseId] || []).filter(c => c.id !== cardId);
+      customCards[courseId] = (customCards[courseId] || []).filter(function (c) { return c.id !== cardId; });
       mergeCards(courseId);
       return true;
     } catch (e) {
@@ -184,17 +174,17 @@
     }
   }
 
-  // --- EDIT CARD ---
+  // --- EDIT ---
   async function editCard(courseId, cardId, question, answer, topic) {
     if (!question.trim() || !answer.trim()) { alert('Frage und Antwort dürfen nicht leer sein.'); return false; }
     try {
-      const updated = await sbUpdate(cardId, {
+      var updated = await sbUpdate(cardId, {
         question: question.trim(),
         answer: answer.trim(),
         topic: topic ? topic.trim() : null
       });
-      const list = customCards[courseId] || [];
-      const idx = list.findIndex(c => c.id === cardId);
+      var list = customCards[courseId] || [];
+      var idx = list.findIndex(function (c) { return c.id === cardId; });
       if (idx !== -1) list[idx] = updated[0];
       mergeCards(courseId);
       return true;
@@ -205,64 +195,168 @@
     }
   }
 
-  // --- UI: CARD PAGE MAPPING ---
-  const CARD_PAGE_MAP = {
+  // --- CARD PAGE MAP ---
+  var CARD_PAGE_MAP = {
     'recht2': { pageId: 'kart', prefix: 'fc' },
     'arb': { pageId: 'arb_kart', prefix: 'afc' },
     'ctrl': { pageId: 'ctrl_kart', prefix: 'cfc' }
   };
 
   function getCardPageInfo(courseId) {
-    if (CARD_PAGE_MAP[courseId]) return CARD_PAGE_MAP[courseId];
-    return { pageId: courseId + '_kart', prefix: courseId + 'fc' };
+    return CARD_PAGE_MAP[courseId] || { pageId: courseId + '_kart', prefix: courseId + 'fc' };
   }
 
   function escHtml(str) {
-    const d = document.createElement('div');
+    var d = document.createElement('div');
     d.textContent = str;
     return d.innerHTML;
   }
 
-  // --- BUILD CUSTOM UI SECTION ---
+  // ==========================================
+  // UI: "ALLE KARTEN ANZEIGEN" BUTTON + LIST
+  // ==========================================
+  function buildAllCardsButton(courseId) {
+    var pageInfo = getCardPageInfo(courseId);
+    var sec = document.getElementById(pageInfo.pageId);
+    if (!sec) return;
+    var btnId = 'tis-allcards-btn-' + courseId;
+    if (document.getElementById(btnId)) return;
+
+    // Find the pool element and insert after it
+    var poolEl = document.getElementById(pageInfo.prefix + 'Pool');
+    var anchor = poolEl || sec.querySelector('.fb');
+    if (!anchor) return;
+
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'text-align:center;margin-top:8px';
+    wrapper.innerHTML = '<button id="' + btnId + '" onclick="window._TIS_LC.toggleAllCards(\'' + courseId + '\')" style="font-size:12px;padding:6px 14px">Alle Karten anzeigen</button>';
+    anchor.parentNode.insertBefore(wrapper, anchor.nextSibling);
+
+    // Create the list container
+    var listDiv = document.createElement('div');
+    listDiv.id = 'tis-allcards-list-' + courseId;
+    listDiv.style.cssText = 'display:none;margin-top:16px';
+    wrapper.parentNode.insertBefore(listDiv, wrapper.nextSibling);
+  }
+
+  function toggleAllCards(courseId) {
+    var listEl = document.getElementById('tis-allcards-list-' + courseId);
+    var btnEl = document.getElementById('tis-allcards-btn-' + courseId);
+    if (!listEl) return;
+
+    if (listEl.style.display === 'none') {
+      renderAllCardsList(courseId);
+      listEl.style.display = 'block';
+      if (btnEl) btnEl.textContent = 'Alle Karten ausblenden';
+    } else {
+      listEl.style.display = 'none';
+      if (btnEl) btnEl.textContent = 'Alle Karten anzeigen';
+    }
+  }
+
+  function renderAllCardsList(courseId) {
+    var listEl = document.getElementById('tis-allcards-list-' + courseId);
+    if (!listEl) return;
+
+    var c = window.TIS && window.TIS.courses && window.TIS.courses[courseId];
+    if (!c || !c.flashcards || !c.flashcards.length) {
+      listEl.innerHTML = '<div style="text-align:center;padding:20px;color:var(--tx3)">Keine Karten vorhanden.</div>';
+      return;
+    }
+
+    var cards = c.flashcards;
+    var customSet = new Set();
+    (customCards[courseId] || []).forEach(function (cc) {
+      customSet.add(cc.question.trim().toLowerCase());
+    });
+
+    // Build custom card ID lookup for delete/edit
+    var customLookup = {};
+    (customCards[courseId] || []).forEach(function (cc) {
+      customLookup[cc.question.trim().toLowerCase()] = cc.id;
+    });
+
+    var h = '';
+    // Search field
+    h += '<div style="margin-bottom:14px">';
+    h += '<input type="text" id="tis-allcards-search-' + courseId + '" oninput="window._TIS_LC.filterAllCards(\'' + courseId + '\')" placeholder="Karten durchsuchen…" style="width:100%;padding:10px 16px;border:1.5px solid var(--bd);border-radius:12px;font-family:var(--f);font-size:13px;background:var(--s2);color:var(--tx);outline:none;box-sizing:border-box">';
+    h += '</div>';
+
+    h += '<div id="tis-allcards-items-' + courseId + '">';
+    cards.forEach(function (card, i) {
+      var isCustom = customSet.has(card[0].trim().toLowerCase());
+      var cardDbId = customLookup[card[0].trim().toLowerCase()] || '';
+      h += '<div class="tis-allcard-item" data-q="' + escHtml(card[0].toLowerCase()) + '" data-a="' + escHtml(card[1].toLowerCase()) + '" style="padding:14px 18px;margin-bottom:6px;background:var(--s);border:1px solid var(--bd);border-radius:var(--rd);display:flex;justify-content:space-between;align-items:flex-start;gap:12px">';
+      h += '<div style="flex:1;min-width:0">';
+      h += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:3px">';
+      h += '<span style="font-size:10px;color:var(--tx3);font-weight:600">' + (i + 1) + '</span>';
+      if (isCustom) h += '<span style="font-size:9px;padding:2px 8px;border-radius:6px;background:var(--al);color:var(--ac);font-weight:700;letter-spacing:.3px">EIGENE</span>';
+      h += '</div>';
+      h += '<div style="font-weight:600;font-size:13.5px;color:var(--tx);margin-bottom:2px">' + escHtml(card[0]) + '</div>';
+      h += '<div style="font-size:12.5px;color:var(--tx2);line-height:1.5">' + escHtml(card[1]) + '</div>';
+      h += '</div>';
+      if (isCustom && cardDbId) {
+        h += '<div style="display:flex;gap:4px;flex-shrink:0">';
+        h += '<button onclick="window._TIS_LC.openEdit(\'' + courseId + '\',\'' + cardDbId + '\')" style="padding:5px 10px;font-size:10px;border-radius:8px" title="Bearbeiten">✏️</button>';
+        h += '<button onclick="window._TIS_LC.confirmDelete(\'' + courseId + '\',\'' + cardDbId + '\')" style="padding:5px 10px;font-size:10px;border-radius:8px;color:var(--r)" title="Löschen">🗑️</button>';
+        h += '</div>';
+      }
+      h += '</div>';
+    });
+    h += '</div>';
+
+    h += '<div style="text-align:center;padding:10px;font-size:11px;color:var(--tx3)">' + cards.length + ' Karten total</div>';
+    listEl.innerHTML = h;
+  }
+
+  function filterAllCards(courseId) {
+    var input = document.getElementById('tis-allcards-search-' + courseId);
+    if (!input) return;
+    var term = input.value.trim().toLowerCase();
+    var items = document.querySelectorAll('#tis-allcards-items-' + courseId + ' .tis-allcard-item');
+    items.forEach(function (el) {
+      var q = el.getAttribute('data-q') || '';
+      var a = el.getAttribute('data-a') || '';
+      el.style.display = (!term || q.indexOf(term) !== -1 || a.indexOf(term) !== -1) ? 'flex' : 'none';
+    });
+  }
+
+  // ==========================================
+  // UI: "EIGENE KARTEN" SECTION
+  // ==========================================
   function buildCustomUI(courseId) {
-    const containerId = 'tis-custom-cards-' + courseId;
+    var containerId = 'tis-custom-cards-' + courseId;
     if (document.getElementById(containerId)) return;
 
-    const pageInfo = getCardPageInfo(courseId);
-    const sec = document.getElementById(pageInfo.pageId);
+    var pageInfo = getCardPageInfo(courseId);
+    var sec = document.getElementById(pageInfo.pageId);
     if (!sec) return;
 
-    const courseName = (window.TIS.courses[courseId] && window.TIS.courses[courseId].config)
+    var courseName = (window.TIS.courses[courseId] && window.TIS.courses[courseId].config)
       ? window.TIS.courses[courseId].config.name : courseId;
 
-    const html = `
-<div id="${containerId}" style="margin-top:36px;padding-top:28px;border-top:2px solid var(--bd)">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">
-    <div>
-      <h2 style="margin:0 0 4px;font-size:22px">Eigene Karten</h2>
-      <p style="font-size:13px;color:var(--tx2);margin:0">Erstelle deine eigenen Lernkarten für ${escHtml(courseName)}</p>
-    </div>
-    <button class="bp1" onclick="window._TIS_LC.openForm('${courseId}')" style="font-size:13px;padding:10px 20px">
-      + Neue Karte
-    </button>
-  </div>
-  <div id="${containerId}-list" style="margin-bottom:16px"></div>
-  <div id="${containerId}-empty" style="display:none;text-align:center;padding:28px;color:var(--tx3);font-size:14px;background:var(--s2);border-radius:var(--rd);border:1px dashed var(--bd)">
-    Noch keine eigenen Karten erstellt.<br>
-    <span style="font-size:12px">Klicke auf «+ Neue Karte» um loszulegen.</span>
-  </div>
-</div>`;
+    var html = '<div id="' + containerId + '" style="margin-top:36px;padding-top:28px;border-top:2px solid var(--bd)">' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">' +
+      '<div>' +
+      '<h2 style="margin:0 0 4px;font-size:22px">Eigene Karten</h2>' +
+      '<p style="font-size:13px;color:var(--tx2);margin:0">Erstelle deine eigenen Lernkarten für ' + escHtml(courseName) + '</p>' +
+      '</div>' +
+      '<button class="bp1" onclick="window._TIS_LC.openForm(\'' + courseId + '\')" style="font-size:13px;padding:10px 20px">+ Neue Karte</button>' +
+      '</div>' +
+      '<div id="' + containerId + '-list" style="margin-bottom:16px"></div>' +
+      '<div id="' + containerId + '-empty" style="display:none;text-align:center;padding:28px;color:var(--tx3);font-size:14px;background:var(--s2);border-radius:var(--rd);border:1px dashed var(--bd)">' +
+      'Noch keine eigenen Karten erstellt.<br><span style="font-size:12px">Klicke auf «+ Neue Karte» um loszulegen.</span>' +
+      '</div></div>';
     sec.insertAdjacentHTML('beforeend', html);
   }
 
-  // --- RENDER CUSTOM CARD LIST ---
   function renderCustomList(courseId) {
-    const containerId = 'tis-custom-cards-' + courseId;
-    const listEl = document.getElementById(containerId + '-list');
-    const emptyEl = document.getElementById(containerId + '-empty');
+    var containerId = 'tis-custom-cards-' + courseId;
+    var listEl = document.getElementById(containerId + '-list');
+    var emptyEl = document.getElementById(containerId + '-empty');
     if (!listEl) return;
 
-    const cards = customCards[courseId] || [];
+    var cards = customCards[courseId] || [];
     if (cards.length === 0) {
       listEl.innerHTML = '';
       if (emptyEl) emptyEl.style.display = 'block';
@@ -270,20 +364,19 @@
     }
     if (emptyEl) emptyEl.style.display = 'none';
 
-    // Group by topic
-    const grouped = {};
-    cards.forEach(c => {
-      const t = c.topic || 'Ohne Thema';
+    var grouped = {};
+    cards.forEach(function (c) {
+      var t = c.topic || 'Ohne Thema';
       if (!grouped[t]) grouped[t] = [];
       grouped[t].push(c);
     });
 
-    let h = '';
-    for (const topic in grouped) {
+    var h = '';
+    for (var topic in grouped) {
       if (Object.keys(grouped).length > 1 || topic !== 'Ohne Thema') {
         h += '<div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin:18px 0 8px;padding-left:4px">' + escHtml(topic) + '</div>';
       }
-      grouped[topic].forEach(card => {
+      grouped[topic].forEach(function (card) {
         h += '<div class="c" style="padding:16px 20px;margin-bottom:8px">' +
           '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">' +
           '<div style="flex:1;min-width:0">' +
@@ -299,12 +392,14 @@
     listEl.innerHTML = h;
   }
 
-  // --- MODAL FORM ---
-  let modalEl = null;
+  // ==========================================
+  // MODAL FORM
+  // ==========================================
+  var modalEl = null;
 
   function ensureModal() {
     if (modalEl) return;
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.id = 'tis-lc-modal';
     div.style.display = 'none';
     div.innerHTML =
@@ -333,9 +428,8 @@
     document.body.appendChild(div);
     modalEl = div;
 
-    // Focus styling
-    ['tis-lc-q', 'tis-lc-a', 'tis-lc-t'].forEach(id => {
-      const el = document.getElementById(id);
+    ['tis-lc-q', 'tis-lc-a', 'tis-lc-t'].forEach(function (id) {
+      var el = document.getElementById(id);
       if (el) {
         el.addEventListener('focus', function () { this.style.borderColor = 'rgba(232,86,122,.5)'; });
         el.addEventListener('blur', function () { this.style.borderColor = 'var(--bd)'; });
@@ -359,7 +453,7 @@
   }
 
   function openEdit(courseId, cardId) {
-    const card = (customCards[courseId] || []).find(function (c) { return c.id === cardId; });
+    var card = (customCards[courseId] || []).find(function (c) { return c.id === cardId; });
     if (!card) return;
     ensureModal();
     document.getElementById('tis-lc-modal-title').textContent = 'Karte bearbeiten';
@@ -380,17 +474,17 @@
   }
 
   async function saveForm() {
-    const courseId = document.getElementById('tis-lc-course').value;
-    const editId = document.getElementById('tis-lc-editid').value;
-    const q = document.getElementById('tis-lc-q').value;
-    const a = document.getElementById('tis-lc-a').value;
-    const t = document.getElementById('tis-lc-t').value;
+    var courseId = document.getElementById('tis-lc-course').value;
+    var editId = document.getElementById('tis-lc-editid').value;
+    var q = document.getElementById('tis-lc-q').value;
+    var a = document.getElementById('tis-lc-a').value;
+    var t = document.getElementById('tis-lc-t').value;
 
-    const btn = document.getElementById('tis-lc-save');
+    var btn = document.getElementById('tis-lc-save');
     btn.disabled = true;
     btn.textContent = 'Speichern…';
 
-    let ok;
+    var ok;
     if (editId) {
       ok = await editCard(courseId, editId, q, a, t);
     } else {
@@ -402,51 +496,56 @@
 
     if (ok) {
       closeForm();
-      renderCustomList(courseId);
-      updateCardCount(courseId);
-      // Re-init flashcards so the new card appears immediately
-      if (typeof initFlashcards === 'function') initFlashcards(courseId);
+      refreshUI(courseId);
     }
   }
 
   async function confirmDelete(courseId, cardId) {
     if (!confirm('Möchtest du diese Karte wirklich löschen?')) return;
-    const ok = await deleteCard(courseId, cardId);
+    var ok = await deleteCard(courseId, cardId);
     if (ok) {
-      renderCustomList(courseId);
-      updateCardCount(courseId);
-      if (typeof initFlashcards === 'function') initFlashcards(courseId);
+      refreshUI(courseId);
     }
+  }
+
+  // --- REFRESH ALL UI AFTER CHANGE ---
+  function refreshUI(courseId) {
+    renderCustomList(courseId);
+    updateCardCount(courseId);
+    // Re-render "Alle Karten" list if it's open
+    var listEl = document.getElementById('tis-allcards-list-' + courseId);
+    if (listEl && listEl.style.display !== 'none') {
+      renderAllCardsList(courseId);
+    }
+    // Re-init flashcards so changes appear immediately
+    if (typeof initFlashcards === 'function') initFlashcards(courseId);
   }
 
   // --- UPDATE CARD COUNTS ---
   function updateCardCount(courseId) {
-    const c = window.TIS.courses[courseId];
+    var c = window.TIS.courses[courseId];
     if (!c || !c.flashcards) return;
-    const count = c.flashcards.length;
-    const pageInfo = getCardPageInfo(courseId);
-    // Count on the flashcard page itself
-    const countEl = document.getElementById(pageInfo.prefix + 'Count');
+    var count = c.flashcards.length;
+    var pageInfo = getCardPageInfo(courseId);
+    var countEl = document.getElementById(pageInfo.prefix + 'Count');
     if (countEl) countEl.textContent = count;
-    // Pool indicator
-    const poolEl = document.getElementById(pageInfo.prefix + 'Pool');
+    var poolEl = document.getElementById(pageInfo.prefix + 'Pool');
     if (poolEl) poolEl.textContent = count + ' Karten im Stapel';
-    // Lerntools overview counts
-    const capId = courseId.charAt(0).toUpperCase() + courseId.slice(1);
+    var capId = courseId.charAt(0).toUpperCase() + courseId.slice(1);
     var ltCards = document.getElementById('lt' + capId + 'Cards');
     if (ltCards) ltCards.textContent = count;
     var ltQuiz = document.getElementById('lt' + capId + 'Quiz');
     if (ltQuiz) ltQuiz.textContent = count;
   }
 
-  // --- HOOK INTO NAVIGATION ---
+  // --- INIT CUSTOM SECTION FOR A COURSE ---
   async function initCustomSection(courseId) {
     if (!getUser()) return;
-    // Only load if not already loaded for this course
     if (!customCards[courseId]) {
       await loadCustomCards(courseId);
     }
     mergeCards(courseId);
+    buildAllCardsButton(courseId);
     buildCustomUI(courseId);
     renderCustomList(courseId);
     updateCardCount(courseId);
@@ -459,14 +558,12 @@
     }
   });
 
-  // --- INIT: Patch go() after all scripts are loaded ---
+  // --- PATCH go() ---
   window.addEventListener('load', function () {
-    // Patch go()
     if (typeof window.go === 'function') {
       var originalGo = window.go;
       window.go = function (id) {
         originalGo(id);
-        // Check known flashcard pages
         for (var courseId in CARD_PAGE_MAP) {
           if (CARD_PAGE_MAP[courseId].pageId === id) {
             initCustomSection(courseId);
@@ -474,7 +571,6 @@
           }
         }
         if (id === 'kart') { initCustomSection('recht2'); return; }
-        // Dynamic: any page ending in _kart
         if (id.endsWith('_kart') && window.TIS && window.TIS.courses) {
           var cid = id.replace('_kart', '');
           if (window.TIS.courses[cid]) {
@@ -485,7 +581,7 @@
       };
     }
 
-    // Pre-load all custom cards in the background
+    // Pre-load all custom cards
     if (getUser()) {
       loadAllCustomCards().then(function () {
         if (window.TIS && window.TIS.courses) {
@@ -504,6 +600,8 @@
     closeForm: closeForm,
     saveForm: saveForm,
     confirmDelete: confirmDelete,
+    toggleAllCards: toggleAllCards,
+    filterAllCards: filterAllCards,
     loadCustomCards: loadCustomCards,
     getCustomCards: function (courseId) { return customCards[courseId] || []; }
   };

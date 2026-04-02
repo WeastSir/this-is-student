@@ -268,16 +268,7 @@ const courseHTML = `<!-- ============= ARBEITSRECHT ============= -->
 <div class="fd"><div class="fc" id="afc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="afcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="afca"></div></div></div></div>
 <div class="fb"><button onclick="aP()">Zurück</button><button onclick="aS()">Mischen</button><button class="bp1" onclick="aN()">Nächste</button></div>
 <div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="afcPool"></div>
-<div style="text-align:center;margin-top:8px"><button onclick="aToggleList()" id="afcListToggle" style="font-size:12px;padding:6px 14px">Alle Karten anzeigen</button></div>
 <div id="afcList" style="display:none;margin-top:16px"></div>
-
-<div style="margin-top:24px;padding:20px 22px;background:var(--s);border:1px solid var(--bd);border-radius:var(--rd)">
-<div style="font-size:14px;font-weight:600;margin-bottom:12px">Eigene Karte hinzufügen</div>
-<div style="margin-bottom:8px"><input id="afcNewQ" type="text" placeholder="Frage..." style="width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:10px;font-family:var(--f);font-size:13px;background:var(--s2);color:var(--tx);outline:none"></div>
-<div style="margin-bottom:10px"><input id="afcNewA" type="text" placeholder="Antwort..." style="width:100%;padding:10px 14px;border:1px solid var(--bd);border-radius:10px;font-family:var(--f);font-size:13px;background:var(--s2);color:var(--tx);outline:none"></div>
-<button onclick="afAdd()" style="font-size:13px;padding:8px 20px">Hinzufügen</button>
-<span id="afcAddMsg" style="font-size:12px;color:var(--g);margin-left:10px;display:none">Karte hinzugefügt!</span>
-</div>
 </div>
 
 <div class="sec" id="arb_quiz"><h1>Quiz Arbeitsrecht</h1><p class="sub">Alle Fragen werden wiederholt bis du sie kannst</p>
