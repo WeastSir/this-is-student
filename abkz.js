@@ -92,6 +92,17 @@ const ABKZ={
 'Nutzschwelle':['Nutzschwelle','Break-even-Point — Gewinnschwelle','Punkt, an dem Erlöse = Totalkosten (Gewinn = 0). Mengenmässig: Fixkosten ÷ DB pro Stück. Wertmässig: Fixkosten ÷ DB-Marge%. Unterhalb = Verlust, oberhalb = Gewinn.'],
 'Cashflow':['Cashflow','Geldfluss aus Betriebstätigkeit','= Einnahmen − liquiditätswirksame Betriebskosten. Oder indirekt: Reingewinn + Abschreibungen + kalk. Zinsen. Zeigt den Liquiditätszufluss aus der Investitionstätigkeit.'],
 'Liquidationserlös':['Liquidationserlös','Netto-Mittelzufluss am Ende der Nutzungsdauer','= Verkaufserlös − Entsorgungs-/Demontagekosten. Statisch: vermindert Abschreibung, erhöht Durchschnittskapital. Dynamisch: zusätzliche Einnahme am Ende.'],
+// === FINANCIAL ACCOUNTING 3 ===
+'GoB':['GoB','Grundsätze ordnungsmässiger Buchführung','OR 957a Abs. 2: Vollständigkeit & Wahrheit, Belegnachweis, Klarheit & Nachprüfbarkeit. Regeln das Erfassen der Geschäftsfälle während der Rechnungsperiode.'],
+'GoR':['GoR','Grundsätze ordnungsmässiger Rechnungslegung','OR 958c Abs. 1: Klarheit, Vollständigkeit, Wahrheit, Wesentlichkeit, Vorsicht, Stetigkeit, Verrechnungsverbot. Bilden die Grundlage für den Geschäftsbericht.'],
+'SKHG':['SKHG','Schweizer Kontenrahmen Hotellerie & Gastronomie','Branchenspezifischer Kontenrahmen für Hotels und Restaurants. Basiert auf dem Kontenrahmen KMU, ist aber detaillierter und auf die Bedürfnisse der Branche zugeschnitten.'],
+'ESTV':['ESTV','Eidgenössische Steuerverwaltung','Bundesbehörde für Steuern. Zuständig u.a. für die Mehrwertsteuer, Verrechnungssteuer und direkte Bundessteuer.'],
+'FLL':['FLL','Forderungen aus Lieferungen und Leistungen','Aktivkonto (Konto 1100). Offene Kundenrechnungen — Geld das uns noch geschuldet wird.'],
+'VLL':['VLL','Verbindlichkeiten aus Lieferungen und Leistungen','Passivkonto (Konto 2000). Offene Lieferantenrechnungen — Geld das wir noch schulden.'],
+'ARA':['ARA','Aktive Rechnungsabgrenzung','Aktivkonto im UV. Vorausbezahlter Aufwand oder noch nicht erhaltener Ertrag. Buchung Ende Periode: ARA / Aufwandkonto.'],
+'PRA':['PRA','Passive Rechnungsabgrenzung','Passivkonto im kfr. FK. Noch nicht bezahlter Aufwand oder voraus erhaltener Ertrag. Buchung Ende Periode: Aufwandkonto / PRA.'],
+'ERP':['ERP','Enterprise Resource Planning','Softwarelösung zur ganzheitlichen Steuerung aller Unternehmensprozesse. Umfasst FiBu, Lohn, Lager, CRM etc. In der Hotellerie: Mirus hat >80% Marktanteil.'],
+'KER':['KER','Kurzfristige Erfolgsrechnung','Unterjährige Erfolgsrechnung (monatlich/quartalsweise) zur laufenden Erfolgskontrolle. Basis für Rechnungsabgrenzungen.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;

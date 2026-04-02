@@ -284,7 +284,7 @@ function renderFlashcard(courseId){
   if(fc.index>=fc.order.length)fc.index=0;
   const card=fc.cards[fc.order[fc.index]];
   // Find elements - try course-specific IDs first, then generic
-  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:['cfc','cfc'];
+  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:['cfc','cfc'];
   const qEl=document.getElementById(prefixes[0]+'q')||document.getElementById('fcq');
   const aEl=document.getElementById(prefixes[0]+'a')||document.getElementById('fca');
   const cEl=document.getElementById(prefixes[0]+'c')||document.getElementById('fc');
@@ -334,6 +334,7 @@ let quizState={};
 function getQuizPrefix(courseId){
   if(courseId==='recht2')return 'q';
   if(courseId==='arb')return 'aq';
+  if(courseId==='fa3')return 'fq';
   return 'cq';
 }
 
@@ -450,6 +451,7 @@ function resetQuiz(courseId){
 function qSt(){initQuiz('recht2');}function qNx(){nextQuizQ('recht2');}function qA(i){answerQuiz('recht2',i);}function qReset(){resetQuiz('recht2');}
 function aqSt(){initQuiz('arb');}function aqNx(){nextQuizQ('arb');}function aqA(i){answerQuiz('arb',i);}function aqReset(){resetQuiz('arb');}
 function cqSt(){initQuiz('ctrl');}function cqNx(){nextQuizQ('ctrl');}function cqA(i){answerQuiz('ctrl',i);}function cqReset(){resetQuiz('ctrl');}
+function fqSt(){initQuiz('fa3');}function fqNx(){nextQuizQ('fa3');}function fqA(i){answerQuiz('fa3',i);}function fqReset(){resetQuiz('fa3');}
 
 // KONKURS SLIDES (Recht2 specific)
 let ki=0,kB=false;
@@ -528,7 +530,7 @@ function initAbkz(){
   const regex=new RegExp('\\b('+keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','g');
   const targets=document.querySelectorAll('.tl-body, .cd, .merksatz, .hl, .hlr, .hlg, .hla, .hlbl');
   targets.forEach(el=>{
-    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar'))return;
+    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar')||el.closest('#fa3_glossar'))return;
     if(el.querySelector('.abk'))return;
     const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
     const textNodes=[];while(walker.nextNode())textNodes.push(walker.currentNode);
