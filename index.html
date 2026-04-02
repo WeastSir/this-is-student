@@ -124,6 +124,7 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 .login-footer{margin-top:28px;text-align:center;font-size:11px;color:rgba(255,255,255,.2)}
 .login-dots{display:flex;gap:6px;justify-content:center;margin-bottom:28px}
 .login-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15)}
+#accountDrop.show{display:block!important}
 .login-dot.active{background:linear-gradient(135deg,#e8567a,#c44569);box-shadow:0 0 8px rgba(232,86,122,.4)}
 </style>
 </head>
@@ -155,7 +156,29 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 <div class="nav-top">
 <div class="nb" onclick="go('home')">This Is Student</div>
 <button onclick="toggleTheme()" id="themeBtn" style="padding:5px 12px;font-size:11px;border-radius:980px;margin-right:6px;white-space:nowrap;border:1px solid var(--bd);background:var(--s2);color:var(--tx2);cursor:pointer;font-weight:500;letter-spacing:-.1px;transition:all .3s" title="Dark/Light Mode">☀️</button>
-<button onclick="logout()" style="padding:5px 12px;font-size:11px;border-radius:980px;white-space:nowrap;border:1px solid var(--bd);background:var(--s2);color:var(--tx2);cursor:pointer;font-weight:500;letter-spacing:-.1px;transition:all .3s" title="Abmelden">↪ Logout</button>
+<div id="accountMenu" style="position:relative;margin-right:6px">
+<button onclick="document.getElementById('accountDrop').classList.toggle('show')" id="accountBtn" style="padding:4px 10px;font-size:11px;border-radius:980px;white-space:nowrap;border:1px solid var(--bd);background:var(--s2);color:var(--tx2);cursor:pointer;font-weight:500;display:flex;align-items:center;gap:6px;transition:all .3s">
+<span id="accountAvatar" style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#c44569);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700">?</span>
+<span id="accountName" style="max-width:80px;overflow:hidden;text-overflow:ellipsis">Account</span>
+<span style="font-size:8px;opacity:.5">▼</span>
+</button>
+<div id="accountDrop" style="display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--s);border:1px solid var(--bd);border-radius:14px;padding:8px 0;min-width:200px;box-shadow:0 12px 40px rgba(0,0,0,.2);z-index:500;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)">
+<div id="accountInfo" style="padding:12px 16px;border-bottom:1px solid var(--bd)">
+<div id="dropName" style="font-size:13px;font-weight:600;color:var(--tx)">Benutzer</div>
+<div id="dropRole" style="font-size:11px;color:var(--tx3);margin-top:2px">Rolle</div>
+</div>
+<button onclick="go('impressum');document.getElementById('accountDrop').classList.remove('show')" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--tx2);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;transition:background .2s" onmouseover="this.style.background='var(--s2)'" onmouseout="this.style.background='none'">
+<span style="font-size:14px">ℹ️</span> Impressum
+</button>
+<button onclick="go('faq');document.getElementById('accountDrop').classList.remove('show')" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--tx2);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;transition:background .2s" onmouseover="this.style.background='var(--s2)'" onmouseout="this.style.background='none'">
+<span style="font-size:14px">❓</span> FAQ
+</button>
+<div style="border-top:1px solid var(--bd);margin:4px 0"></div>
+<button onclick="logout()" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--r);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;font-weight:600;transition:background .2s" onmouseover="this.style.background='var(--rl)'" onmouseout="this.style.background='none'">
+<span style="font-size:14px">↪</span> Abmelden
+</button>
+</div>
+</div>
 <button class="nl nl-main on" data-s="home" onclick="go('home')">Home</button>
 <button class="nl nl-main" data-s="kurse" onclick="go('kurse')">Kurse</button>
 <button class="nl nl-main" data-s="recht2" onclick="go('recht2')" style="display:none">Recht 2</button>

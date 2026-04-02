@@ -33,6 +33,7 @@ async function checkLogin(){
     localStorage.setItem('tis_user',user);
     localStorage.setItem('tis_hash',hash);
     localStorage.setItem('tis_time',Date.now());
+    updateAccountMenu(user);
     setTimeout(()=>{document.getElementById('loginScreen').classList.add('hidden');},800);
   } else {
     document.getElementById('loginError').style.display='block';
@@ -49,9 +50,28 @@ async function checkSavedAuth(){
   const time=localStorage.getItem('tis_time');
   if(user && hash && time && USERS[user] && hash===USERS[user].hash && (Date.now()-parseInt(time))<30*24*60*60*1000){
     document.getElementById('loginScreen').classList.add('hidden');
+    updateAccountMenu(user);
   }
 }
 function logout(){localStorage.removeItem('tis_user');localStorage.removeItem('tis_hash');localStorage.removeItem('tis_time');location.reload();}
+
+function updateAccountMenu(username){
+  const u=USERS[username];
+  if(!u)return;
+  const initials=u.name.split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2)||'?';
+  const av=document.getElementById('accountAvatar');if(av)av.textContent=initials;
+  const an=document.getElementById('accountName');if(an)an.textContent=u.name;
+  const dn=document.getElementById('dropName');if(dn)dn.textContent=u.name;
+  const dr=document.getElementById('dropRole');if(dr)dr.textContent=u.role;
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click',function(e){
+  const menu=document.getElementById('accountMenu');
+  const drop=document.getElementById('accountDrop');
+  if(menu&&drop&&!menu.contains(e.target)){drop.classList.remove('show');}
+});
+
 document.addEventListener('DOMContentLoaded',checkSavedAuth);
 
 // ARTICLE MODAL
