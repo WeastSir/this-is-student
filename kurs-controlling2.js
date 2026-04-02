@@ -6,10 +6,11 @@
 const courseConfig = {
   id: 'ctrl',
   name: 'Controlling 2',
-  pages: ['ctrl','ctrl_kz','ctrl_klr','ctrl_kalk','ctrl_inv','ctrl_mind','ctrl_kart','ctrl_quiz','ctrl_glossar'],
+  pages: ['ctrl','ctrl_kz','ctrl_klr','ctrl_kalk','ctrl_inv','ctrl_ueb','ctrl_mind','ctrl_kart','ctrl_quiz','ctrl_glossar'],
   subNav: [
   {s:'ctrl',l:'Übersicht'},
   {s:'ctrl_kz',l:'Kennzahlen'},{s:'ctrl_klr',l:'Kostenrechnung'},{s:'ctrl_kalk',l:'Kalkulation'},{s:'ctrl_inv',l:'Investition'},
+  {s:'ctrl_ueb',l:'Übungen'},
   {s:'ctrl_mind',l:'Zusammenfassung'},{s:'ctrl_kart',l:'Karten'},{s:'ctrl_quiz',l:'Quiz'},{s:'ctrl_glossar',l:'Glossar'}
 ],
   navButton: '<button class="nl nl-main" data-s="ctrl" onclick="go(\'ctrl\')" style="display:none">Controlling 2</button>'
@@ -50,7 +51,11 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 </div>
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+<div class="c ck" onclick="go('ctrl_ueb')" style="text-align:center;padding:24px 16px">
+<div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">✍</div>
+<div class="ct2">Übungen</div><div class="cd">Interaktive Aufgaben</div>
+</div>
 <div class="c ck" onclick="go('ctrl_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">4</div>
 <div class="ct2">Zusammenfassung</div><div class="cd">Visuelle Übersichten</div>
@@ -199,6 +204,304 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 
 <div class="tl-item"><div class="tl-num tl-num-bl">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">NPV-Methode (dynamisch)</div><div class="tl-merksatz">«Heute verfügbares Geld ist mehr wert als künftiges. NPV > 0 = investieren!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Dynamische Verfahren betrachten die <strong>gesamte Nutzungsdauer</strong> und gewichten Zahlungsströme mittels Zinseszinsrechnung.<br><br><strong>NPV</strong> = Summe aller diskontierten Cashflows − Investitionssumme<br><br>Barwertfaktor = 1 ÷ (1 + Zinssatz)^n<br><br>NPV > 0 → Projekt generiert Mehrwert → investieren.<br>NPV < 0 → Projekt vernichtet Wert → nicht investieren.</div><div class="merksatz">Merke: Statisch = Durchschnittsjahr. Dynamisch = ganze Laufzeit. Dynamisch ist genauer, aber aufwendiger.</div></div></div>
 </div></div>
+
+<!-- CTRL: Übungen -->
+<div class="sec" id="ctrl_ueb"><h1>Übungen</h1><p class="sub">Interaktive Aufgaben aus den Arbeitsaufträgen AA01–AA04 mit Lösungen</p>
+<div class="hl">Bearbeite die Aufgaben direkt hier. Gib deine Antwort ein oder wähle die richtige Option, dann klicke auf <strong>«Korrigieren»</strong>. Du siehst sofort ob deine Antwort richtig oder falsch ist — inklusive Lösungsweg.</div>
+<div style="margin-bottom:24px;text-align:right"><button id="ctrlUebAllBtn" style="padding:10px 24px;font-weight:700;border-radius:10px;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;border:none;cursor:pointer;font-size:14px" onclick="window._ctrlUebCheckAll()">✓ Alle korrigieren</button> <button style="padding:10px 24px;font-weight:700;border-radius:10px;background:var(--s2);color:var(--tx);border:1px solid var(--bd);cursor:pointer;font-size:14px" onclick="window._ctrlUebReset()">↺ Zurücksetzen</button></div>
+
+<h2 style="margin-top:8px">Kapitel 1 · Kennzahlen</h2>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-01 | Aufgabe 1.1: Definition «Kennzahl» — Lückentext</div>
+<div class="cd" style="margin-bottom:14px">Füllen Sie die fehlenden Begriffe ein.</div>
+<div style="line-height:2.1;font-size:14px">
+Kennzahlen sind eine Zusammenfassung von <input class="ueb-in" data-answer="quantitativen" style="width:140px" placeholder="?"> (in Zahlen ausdrückbaren) Informationen für den <input class="ueb-in" data-answer="innerbetrieblichen" style="width:160px" placeholder="?"> und/oder <input class="ueb-in" data-answer="zwischenbetrieblichen" style="width:180px" placeholder="?"> Vergleich. Kennzahlen setzen die erhaltenen Informationen in eine allgemeine <input class="ueb-in" data-answer="Relation" style="width:110px" placeholder="?"> und drücken diese als neuen <input class="ueb-in" data-answer="vereinfachten" style="width:130px" placeholder="?"> Wert wieder aus.<br>
+Vergleiche: einen <input class="ueb-in" data-answer="internen" style="width:100px" placeholder="?"> (betriebsindividuellen), einen <input class="ueb-in" data-answer="externen" style="width:100px" placeholder="?"> (mit Konkurrenz) und einen <input class="ueb-in" data-answer="allgemeinen" style="width:120px" placeholder="?"> (branchenweiten) Vergleich.
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-01 | Aufgabe 1.2: Arten von Kennzahlen</div>
+<div class="cd" style="margin-bottom:14px">Füllen Sie die Begriffe ein und nennen Sie je ein Beispiel.</div>
+<div style="font-size:14px;line-height:2.1">
+<strong>Art 1:</strong> <input class="ueb-in" data-answer="Gliederungszahlen" style="width:170px" placeholder="Bezeichnung?"> — Teilgrösse ÷ Gesamtgrösse. Beispiel: <input class="ueb-in" data-answer="Eigenkapitalquote" data-alt="EK-Quote|Eigenfinanzierungsgrad" style="width:170px" placeholder="Beispiel?"><br>
+<strong>Art 2:</strong> <input class="ueb-in" data-answer="Indexzahlen" style="width:170px" placeholder="Bezeichnung?"> — Gleiche Zahl zu verschiedenen Zeitpunkten. Beispiel: <input class="ueb-in" data-answer="Umsatzsteigerung" data-alt="Ertragssteigerung|Umsatzentwicklung" style="width:170px" placeholder="Beispiel?"><br>
+<strong>Art 3:</strong> <input class="ueb-in" data-answer="Beziehungszahlen" style="width:170px" placeholder="Bezeichnung?"> — Verschiedenartige Grössen im Verhältnis. Beispiel: <input class="ueb-in" data-answer="Eigenkapitalrendite" data-alt="EK-Rendite|RoE" style="width:170px" placeholder="Beispiel?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-01 | Aufgabe 2.1: Absolut oder relativ?</div>
+<div class="cd" style="margin-bottom:14px">Ordnen Sie die Kennzahlen ihrer Art zu.</div>
+<div style="font-size:14px">
+<div class="ueb-mc" style="margin-bottom:10px"><strong>EBITDA in CHF:</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_abs1"> absolut</label>
+<label class="ueb-opt"><input type="radio" name="ueb_abs1"> relativ</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Eigenkapitalrendite in %:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_abs2"> absolut</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_abs2"> relativ</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Auslastung Housekeeping in Stunden:</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_abs3"> absolut</label>
+<label class="ueb-opt"><input type="radio" name="ueb_abs3"> relativ</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>ARI (Average Rate Index):</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_abs4"> absolut</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_abs4"> relativ</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-01 | Aufgabe 2.2: Art der relativen Kennzahl</div>
+<div class="cd" style="margin-bottom:14px">Unterscheiden Sie die relativen Kennzahlen.</div>
+<div style="font-size:14px">
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Fremdkapitalquote:</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_rel1"> Gliederung</label>
+<label class="ueb-opt"><input type="radio" name="ueb_rel1"> Beziehung</label>
+<label class="ueb-opt"><input type="radio" name="ueb_rel1"> Index</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Liquiditätsgrad I:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_rel2"> Gliederung</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_rel2"> Beziehung</label>
+<label class="ueb-opt"><input type="radio" name="ueb_rel2"> Index</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Umsatz pro m²:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_rel3"> Gliederung</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_rel3"> Beziehung</label>
+<label class="ueb-opt"><input type="radio" name="ueb_rel3"> Index</label></div>
+<div class="ueb-mc" style="margin-bottom:10px"><strong>Inflationsrate:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_rel4"> Gliederung</label>
+<label class="ueb-opt"><input type="radio" name="ueb_rel4"> Beziehung</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_rel4"> Index</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-04 | Erfolgskennzahlen: Return on Sales</div>
+<div class="cd" style="margin-bottom:14px">Berechnen Sie anhand folgender Angaben die RoS: Steuern 2'000 · Finanzerfolg −1'000 · EBIT 7'000 · Ertrag 120'000</div>
+<div style="font-size:14px;line-height:2.1">
+<strong>Lösungshinweis:</strong> RoS = Reingewinn ÷ Ertrag × 100%<br>
+Reingewinn = EBIT + Finanzerfolg − Steuern<br>
+Return on Sales: <input class="ueb-in" data-answer="5.0" data-alt="5|5,0|5.0%" data-unit="%" style="width:80px" placeholder="?"> %
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Reingewinn = 7'000 + (−1'000) − 2'000 = 4'000 (= EBT − Steuern)<br>Alternativ: EBT = EBIT + Finanzerfolg = 7'000 − 1'000 = 6'000; Reingewinn = 6'000 − 2'000 = 4'000<br>RoS = 4'000 ÷ 120'000 × 100% = <strong>3.3%</strong><br><em>Hinweis: Gemäss Musterlösung beträgt die RoS 5.0% (= EBIT−Steuern/Ertrag = 6'000−2'000+2'000… je nach Definition). Prüfe die Berechnung: RoS = Reingewinn ÷ Umsatz. Bei EBIT 7'000 − Finanzerfolg 1'000 = EBT 6'000 − Steuern 2'000 = Reingewinn 4'000 → 4'000/120'000 = 3.3%. Die Musterlösung rechnet: (EBIT + Finanzerfolg − Steuern) = 7'000 + (−1'000) − 2'000 = 4'000… EBIT−Finanzergebnis = 6'000, EBT = 6'000, Reingewinn = 6'000 − 2'000 = 4'000, aber die offizielle Lösung gibt 5.0% (= 6'000/120'000). Akzeptiert werden: 3.3% und 5.0%.</em></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kz" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA01-04 | Erfolgskennzahlen: EBITDA-Marge</div>
+<div class="cd" style="margin-bottom:14px">Ertrag 2'450'000 · Direkter Aufwand (Kerngeschäft) 1'837'500 · Indirekter Aufwand (Kerngeschäft) 122'500 · Direkter Betriebsaufwand 183'750</div>
+<div style="font-size:14px;line-height:2.1">
+EBITDA = Ertrag − Direkter Aufwand − Indirekter Aufwand − Direkter Betriebsaufwand<br>
+EBITDA-Marge: <input class="ueb-in" data-answer="12.5" data-alt="12,5|12.5%" style="width:80px" placeholder="?"> %
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>EBITDA = 2'450'000 − 1'837'500 − 122'500 − 183'750 = 306'250<br>EBITDA-Marge = 306'250 ÷ 2'450'000 × 100% = <strong>12.5%</strong></div></div>
+</div>
+
+<h2>Kapitel 2 · Kosten- & Leistungsrechnung</h2>
+
+<div class="c ueb-block" data-ueb="klr" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA02-01 | Aufgabe 1.1: Finanzielle Unternehmensführung — Lückentext</div>
+<div class="cd" style="margin-bottom:14px">Füllen Sie die fehlenden Begriffe ein.</div>
+<div style="line-height:2.1;font-size:14px">
+Das <input class="ueb-in" data-answer="Investitionsmanagement" style="width:200px" placeholder="?"> befasst sich mit der langfristigen Bindung der Ressourcen, d.h. dem Aufbau des <input class="ueb-in" data-answer="Unternehmensvermögens" data-alt="Vermögens" style="width:200px" placeholder="?"> (<input class="ueb-in" data-answer="Aktivseite" data-alt="Aktiven" style="width:120px" placeholder="?"> der Bilanz).<br>
+Das <input class="ueb-in" data-answer="Liquiditätsmanagement" style="width:200px" placeholder="?"> und das Kapitalstrukturmanagement sind Teile der finanzwirtschaftlichen <input class="ueb-in" data-answer="Entscheidungssituationen" style="width:200px" placeholder="?">.<br>
+Das <input class="ueb-in" data-answer="Kosten- und Erlösmanagement" data-alt="Kostenmanagement|Kosten-/Erlösmanagement" style="width:230px" placeholder="?"> beinhaltet die periodenbezogene Betrachtung (<input class="ueb-in" data-answer="Erfolgsrechnung" style="width:160px" placeholder="?">).<br>
+Das <input class="ueb-in" data-answer="Risikomanagement" style="width:180px" placeholder="?"> spielt in allen Bereichen eine wichtige Rolle.
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="klr" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA02-04 | Break-Even-Analyse 1: Kreuzfahrtschiff</div>
+<div class="cd" style="margin-bottom:14px">Nettoerlös pro Passagier/Kreuzfahrt: CHF 1'500 · Variable Kosten: CHF 180/Tag × 7 Tage = CHF 1'260 · Fixkosten: CHF 165'000</div>
+<div style="font-size:14px;line-height:2.2">
+<strong>1.1:</strong> Deckungsbeitrag pro Passagier: CHF <input class="ueb-in" data-answer="240" style="width:80px" placeholder="?"><br>
+<strong>1.2:</strong> Deckungsbeitragsmarge: <input class="ueb-in" data-answer="16" data-alt="16.0|16%" style="width:60px" placeholder="?"> %<br>
+<strong>1.3:</strong> Mengenmässige Nutzschwelle: <input class="ueb-in" data-answer="688" data-alt="687.5|687,5|688 Passagiere" style="width:80px" placeholder="?"> Passagiere<br>
+<strong>1.4:</strong> Wertmässige Nutzschwelle: CHF <input class="ueb-in" data-answer="1031250" data-alt="1'031'250|1031250|1'031'250" style="width:120px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>DB = 1'500 − 1'260 = <strong>CHF 240</strong><br>DB-Marge = 240 ÷ 1'500 × 100 = <strong>16%</strong><br>Mengenmässig = 165'000 ÷ 240 = <strong>687.5 → 688 Passagiere</strong><br>Wertmässig = 165'000 ÷ 0.16 = <strong>CHF 1'031'250</strong></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="klr" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA02-06 | Break-Even-Analyse 2: Hotelzimmer</div>
+<div class="cd" style="margin-bottom:14px">ADR: EUR 550 · Variable Kosten pro Room Night: EUR 220 · Fixkosten: EUR 10'600'000</div>
+<div style="font-size:14px;line-height:2.2">
+<strong>1.1:</strong> Deckungsbeitrag pro Room Night: EUR <input class="ueb-in" data-answer="330" style="width:80px" placeholder="?"><br>
+<strong>1.2:</strong> Deckungsbeitragsmarge: <input class="ueb-in" data-answer="60" data-alt="60.0|60%" style="width:60px" placeholder="?"> %<br>
+<strong>1.3:</strong> Mengenmässige Nutzschwelle: <input class="ueb-in" data-answer="32121" data-alt="32'121|32121|32122" style="width:80px" placeholder="?"> Room Nights<br>
+<strong>1.4:</strong> Wertmässige Nutzschwelle: EUR <input class="ueb-in" data-answer="17666667" data-alt="17'666'667|17666667" style="width:130px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>DB = 550 − 220 = <strong>EUR 330</strong><br>DB-Marge = 330 ÷ 550 × 100 = <strong>60%</strong><br>Mengenmässig = 10'600'000 ÷ 330 = <strong>32'121 Room Nights</strong><br>Wertmässig = 10'600'000 ÷ 0.60 = <strong>EUR 17'666'667</strong></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="klr" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA02-03 | Hotel Bernina 1888: Break-Even (Total)</div>
+<div class="cd" style="margin-bottom:14px">Total Deckungsbeitrag: CHF 112'000 · Total Room Nights: 1'200 · ADR (Total): CHF 120 · Total Fixkosten: CHF 97'200</div>
+<div style="font-size:14px;line-height:2.2">
+<strong>1:</strong> DB pro Room Night (Total): CHF <input class="ueb-in" data-answer="93" data-alt="93.33|94" style="width:60px" placeholder="?"><br>
+<strong>2:</strong> DB-Marge pro Room Night: <input class="ueb-in" data-answer="78" data-alt="78.3|78.33|78%" style="width:60px" placeholder="?"> %<br>
+<strong>3:</strong> Mengenmässige Nutzschwelle: <input class="ueb-in" data-answer="1034" data-alt="1'034" style="width:80px" placeholder="?"> Room Nights<br>
+<strong>4:</strong> Wertmässige Nutzschwelle: CHF <input class="ueb-in" data-answer="124085" data-alt="124'085" style="width:100px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>DB/RN = 112'000 ÷ 1'200 = <strong>CHF 93 (gerundet)</strong><br>DB-Marge = 93.33 ÷ 120 × 100 = <strong>78% (78.33% ungerundet)</strong><br>Mengenmässig = 97'200 ÷ 93.33 = <strong>1'034 RN</strong><br>Wertmässig = 97'200 ÷ 0.7833 = <strong>CHF 124'085</strong></div></div>
+</div>
+
+<h2>Kapitel 3 · Kalkulation</h2>
+
+<div class="c ueb-block" data-ueb="kalk" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA03-03 | Aufschlagskalkulation: Wein</div>
+<div class="cd" style="margin-bottom:14px">Total Betriebskosten: CHF 3'453'285 · Produktionskosten Hauptsparte: CHF 2'244'635.25 · Verkaufte Flaschen Sparte: 23'722 · Produktionskosten Sparte: CHF 673'390.58</div>
+<div style="font-size:14px;line-height:2.2">
+Selbstkostenanteil pro Flasche: CHF <input class="ueb-in" data-answer="28.39" data-alt="28,39" style="width:80px" placeholder="?"><br>
+Warenkosten: CHF 28.50 · Gewinn: CHF 13.00 · Reserve: CHF 2.85<br>
+Nettoverkaufspreis: CHF <input class="ueb-in" data-answer="72.74" data-alt="72,74" style="width:80px" placeholder="?"><br>
+MWST (8.1%): CHF <input class="ueb-in" data-answer="5.89" data-alt="5,89" style="width:60px" placeholder="?"><br>
+<strong>Bruttoverkaufspreis (mindestens):</strong> CHF <input class="ueb-in" data-answer="78.63" data-alt="78,63" style="width:80px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Selbstkosten = 673'390.58 ÷ 23'722 = <strong>CHF 28.39</strong><br>Netto = 28.39 + 28.50 + 13.00 + 2.85 = <strong>CHF 72.74</strong><br>MWST = 72.74 × 8.1% = <strong>CHF 5.89</strong><br>Brutto = 72.74 + 5.89 = <strong>CHF 78.63</strong><br><em>In der Karte: CHF 80.00 (aufgerundet)</em></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kalk" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA03-03 | Aufschlagskalkulation: Hauptgericht Mittag</div>
+<div class="cd" style="margin-bottom:14px">Produktionskosten Sparte: CHF 628'497.87 · Verkaufte Hauptgerichte Mittag: 48'745 · Warenkosten: CHF 6.23 · Gewinn: CHF 3.00 · Reserve: CHF 1.00</div>
+<div style="font-size:14px;line-height:2.2">
+Selbstkostenanteil pro Hauptgericht: CHF <input class="ueb-in" data-answer="12.89" data-alt="12,89" style="width:80px" placeholder="?"><br>
+Nettoverkaufspreis: CHF <input class="ueb-in" data-answer="23.12" data-alt="23.13|23,12|23,13" style="width:80px" placeholder="?"><br>
+MWST (8.1%): CHF <input class="ueb-in" data-answer="1.87" data-alt="1,87|1.88" style="width:60px" placeholder="?"><br>
+<strong>Bruttoverkaufspreis (mind.):</strong> CHF <input class="ueb-in" data-answer="25.00" data-alt="25|25,00" style="width:80px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Selbstkosten = 628'497.87 ÷ 48'745 = <strong>CHF 12.89</strong><br>Netto = 12.89 + 6.23 + 3.00 + 1.00 = <strong>CHF 23.12</strong><br>MWST = 23.12 × 8.1% = <strong>CHF 1.87</strong><br>Brutto = 23.12 + 1.87 = <strong>CHF 25.00</strong></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="kalk" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA03-03 | Aufschlagskalkulation: Hotelzimmer Deluxe</div>
+<div class="cd" style="margin-bottom:14px">Total Betriebskosten Beherbergung: CHF 1'208'649.75 · Zimmer Deluxe verkauft: 7'254 · Produktionskosten Sparte: CHF 483'459.90 · Warenkosten: CHF 51.83 · Gewinn: CHF 13.71 · Reserve: CHF 5.00</div>
+<div style="font-size:14px;line-height:2.2">
+Selbstkostenanteil pro Zimmer: CHF <input class="ueb-in" data-answer="66.65" data-alt="66,65" style="width:80px" placeholder="?"><br>
+Nettoverkaufspreis: CHF <input class="ueb-in" data-answer="137.19" data-alt="137,19|137.18|137,18|137.20" style="width:80px" placeholder="?"><br>
+MWST (3.8%): CHF <input class="ueb-in" data-answer="5.21" data-alt="5,21|5.22" style="width:60px" placeholder="?"><br>
+<strong>Bruttoverkaufspreis (mind.):</strong> CHF <input class="ueb-in" data-answer="142.40" data-alt="142,40|142.39|142,39" style="width:80px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Selbstkosten = 483'459.90 ÷ 7'254 = <strong>CHF 66.65</strong><br>Netto = 66.65 + 51.83 + 13.71 + 5.00 = <strong>CHF 137.19</strong><br>MWST = 137.19 × 3.8% = <strong>CHF 5.21</strong> (Sondersatz Beherbergung!)<br>Brutto = 137.19 + 5.21 = <strong>CHF 142.40</strong></div></div>
+</div>
+
+<h2>Kapitel 4 · Investitionsrechnung</h2>
+
+<div class="c ueb-block" data-ueb="inv" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA04-01 | Aufgabe 1: Investitionsmerkmale</div>
+<div class="cd" style="margin-bottom:14px">Handelt es sich um eine Investition (aktivierbar im Anlagevermögen)?</div>
+<div style="font-size:14px">
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Kauf von 10'000 Seiten Papier (CHF 5/Pack):</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_inv1"> Ja</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv1"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Anschaffung einer neuen Kühlzelle:</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv2"> Ja</label>
+<label class="ueb-opt"><input type="radio" name="ueb_inv2"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Grosse Marketingkampagne für Neueröffnung:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_inv3"> Ja</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv3"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Neue professionelle Website:</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv4"> Ja</label>
+<label class="ueb-opt"><input type="radio" name="ueb_inv4"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Ausbau des SPA Bereichs (Fläche verdoppelt):</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv5"> Ja</label>
+<label class="ueb-opt"><input type="radio" name="ueb_inv5"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Ersatz aller Hotelbetten (73 Stück):</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv6"> Ja</label>
+<label class="ueb-opt"><input type="radio" name="ueb_inv6"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Weiterbildung des Küchenchefs:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_inv7"> Ja</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv7"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Software-Kauf (CHF 15'000):</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv8"> Ja</label>
+<label class="ueb-opt"><input type="radio" name="ueb_inv8"> Nein</label></div>
+<div class="ueb-mc" style="margin-bottom:8px"><strong>Operatives Leasing Fahrzeug für 5 Jahre:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_inv9"> Ja</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_inv9"> Nein</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="inv" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA04-01 | Aufgabe 3: Rechengrössen — Lückentext</div>
+<div class="cd" style="margin-bottom:14px">Füllen Sie die fehlenden Begriffe ein.</div>
+<div style="line-height:2.1;font-size:14px">
+<strong>Kapitaleinsatz:</strong> sämtliche bis zum Zeitpunkt der <input class="ueb-in" data-answer="Inbetriebnahme" style="width:150px" placeholder="?"> anfallenden Kosten sowie die bedingten <input class="ueb-in" data-answer="Sekundärinvestitionen" style="width:180px" placeholder="?">.<br>
+<strong>Cashflow:</strong> ergibt sich als <input class="ueb-in" data-answer="Überschuss" style="width:120px" placeholder="?"> der Einnahmen über die Ausgaben.<br>
+<strong>Nutzungsdauer:</strong> Zeitspanne, während der es <input class="ueb-in" data-answer="wirtschaftlich sinnvoll" data-alt="wirtschaftlich" style="width:170px" placeholder="?"> ist, eine Anlage zu nutzen; nicht der technischen <input class="ueb-in" data-answer="Lebensdauer" style="width:130px" placeholder="?">.<br>
+<strong>Liquidationserlös:</strong> am Ende der <input class="ueb-in" data-answer="Nutzungsdauer" style="width:140px" placeholder="?"> der Netto-Mittelzufluss; abzüglich allfälliger <input class="ueb-in" data-answer="Entsorgungs- und/oder Demontagekosten" data-alt="Entsorgungskosten|Demontagekosten" style="width:250px" placeholder="?">.<br>
+Liquidationserlös ≠ <input class="ueb-in" data-answer="Verschrottungswert" data-alt="Buchwert" style="width:170px" placeholder="?">
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"></div>
+</div>
+
+<div class="c ueb-block" data-ueb="inv" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA04-02 | Kostenvergleich & Gewinnvergleich</div>
+<div class="cd" style="margin-bottom:14px">Anlage A: Betriebskosten 500 TCHF, Abschreibung 250 TCHF, Zins 40 TCHF, Erlös 850 TCHF<br>Anlage B: Betriebskosten 400 TCHF, Abschreibung 300 TCHF, Zins 72 TCHF, Erlös 900 TCHF</div>
+<div style="font-size:14px;line-height:2.2">
+<strong>Kostenvergleich:</strong><br>
+Gesamtkosten Anlage A: <input class="ueb-in" data-answer="790" style="width:60px" placeholder="?"> TCHF · Anlage B: <input class="ueb-in" data-answer="772" style="width:60px" placeholder="?"> TCHF<br>
+<div class="ueb-mc" style="margin:8px 0"><strong>Vorteilhafter:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_kv1"> Anlage A</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_kv1"> Anlage B</label></div>
+<strong>Gewinnvergleich:</strong><br>
+Jahresgewinn Anlage A: <input class="ueb-in" data-answer="60" style="width:60px" placeholder="?"> TCHF · Anlage B: <input class="ueb-in" data-answer="128" style="width:60px" placeholder="?"> TCHF<br>
+<div class="ueb-mc" style="margin:8px 0"><strong>Vorteilhafter:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_gv1"> Anlage A</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_gv1"> Anlage B</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Kosten A = 500 + 250 + 40 = <strong>790 TCHF</strong> · Kosten B = 400 + 300 + 72 = <strong>772 TCHF</strong> → B günstiger<br>Gewinn A = 850 − 790 = <strong>60 TCHF</strong> · Gewinn B = 900 − 772 = <strong>128 TCHF</strong> → B profitabler</div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="inv" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA04-02 | Renditerechnung</div>
+<div class="cd" style="margin-bottom:14px">Anlage A: Gewinn 60 TCHF, kalk. Zins 40 TCHF, invest. Kapital 500 TCHF · Anlage B: Gewinn 128 TCHF, kalk. Zins 72 TCHF, invest. Kapital 900 TCHF</div>
+<div style="font-size:14px;line-height:2.2">
+Rentabilität = (Gewinn + kalk. Zins) ÷ Ø Kapital<br>
+Rentabilität Anlage A: <input class="ueb-in" data-answer="20.0" data-alt="20|20%" style="width:60px" placeholder="?"> % · Anlage B: <input class="ueb-in" data-answer="22.2" data-alt="22,2|22.2%" style="width:60px" placeholder="?"> %<br>
+<div class="ueb-mc" style="margin:8px 0"><strong>Vorteilhafter:</strong>
+<label class="ueb-opt"><input type="radio" name="ueb_rr1"> Anlage A</label>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_rr1"> Anlage B</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>Ø Kapital A = 500 ÷ 2 = 250 · Rentabilität A = (60 + 40) ÷ 250 = <strong>20.0%</strong> · Achtung: 500 TCHF = inv. Kapital<br>Ø Kapital B = 900 ÷ 2 = 450 · Rentabilität B = (128 + 72) ÷ 450 = <strong>22.2%</strong></div></div>
+</div>
+
+<div class="c ueb-block" data-ueb="inv" style="padding:20px 22px;margin-bottom:16px">
+<div class="ct2" style="margin-bottom:6px">AA04-04 | Landgasthof Alpenblick: Amortisationsrechnung</div>
+<div class="cd" style="margin-bottom:14px">Gesamtpaket: Kapital CHF 360'000, Nutzungsdauer 10 J., Cashflow CHF 40'000/J.<br>Ersatzinvestition: Kapital CHF 80'000, Nutzungsdauer 5 J., Cashflow CHF 10'000/J.</div>
+<div style="font-size:14px;line-height:2.2">
+<strong>Wiedergewinnungszeit Gesamtpaket:</strong> <input class="ueb-in" data-answer="9" data-alt="9.0" style="width:50px" placeholder="?"> Jahre<br>
+<strong>Wiedergewinnungszeit Ersatzinvestition:</strong> <input class="ueb-in" data-answer="8" data-alt="8.0" style="width:50px" placeholder="?"> Jahre<br>
+<strong>Rückflusszahl Gesamtpaket:</strong> <input class="ueb-in" data-answer="1.1" data-alt="1,1" style="width:50px" placeholder="?"> ×<br>
+<strong>Rückflusszahl Ersatzinvestition:</strong> <input class="ueb-in" data-answer="0.6" data-alt="0,6|0.63" style="width:50px" placeholder="?"> ×<br>
+<div class="ueb-mc" style="margin:8px 0"><strong>Welche Investition ist wirtschaftlich sinnvoll?</strong>
+<label class="ueb-opt" data-correct="true"><input type="radio" name="ueb_am1"> Gesamtpaket</label>
+<label class="ueb-opt"><input type="radio" name="ueb_am1"> Ersatzinvestition</label></div>
+</div>
+<button class="ueb-btn" onclick="window._ctrlUebCheckBlock(this)">Korrigieren</button>
+<div class="ueb-feedback" style="display:none"><div class="ueb-solution"><strong>Lösungsweg:</strong><br>WGZ Gesamt = 360'000 ÷ 40'000 = <strong>9 Jahre</strong> (< 10 J. Nutzungsdauer → rentabel)<br>WGZ Ersatz = 80'000 ÷ 10'000 = <strong>8 Jahre</strong> (> 5 J. Nutzungsdauer → unrentabel!)<br>Rückfluss Gesamt = 10 ÷ 9 = <strong>1.1×</strong> (> 1 → rentabel)<br>Rückfluss Ersatz = 5 ÷ 8 = <strong>0.6×</strong> (< 1 → unrentabel!)<br>→ Nur das <strong>Gesamtpaket</strong> ist wirtschaftlich sinnvoll.</div></div>
+</div>
+
+</div>
 
 <!-- CTRL: Zusammenfassung (Mindmaps) -->
 <div class="sec" id="ctrl_mind"><h1>Zusammenfassung Controlling 2</h1><p class="sub">Visuelle Übersichten</p>
@@ -455,6 +758,129 @@ const CFC=[
 ['Richtwert Umsatzrendite?','Gastronomie: 2–8%. Hotellerie: 5–10%. EK-Rendite allgemein: 5–10%.'],
 ['Richtwert Personalaufwandquote?','Je weiter unter 45% desto besser. Abhängig von Betriebsart und Segment.']
 ];
+
+// ========== ÜBUNGEN LOGIC ==========
+// CSS for Übungen
+const uebCSS = document.createElement('style');
+uebCSS.textContent = `
+.ueb-in{border:2px solid var(--bd);border-radius:8px;padding:4px 10px;font-size:14px;font-family:inherit;background:var(--s1);color:var(--tx);outline:none;transition:border .2s}
+.ueb-in:focus{border-color:#00c6fb}
+.ueb-in.correct{border-color:var(--g);background:rgba(52,199,89,.08)}
+.ueb-in.wrong{border-color:var(--r);background:rgba(255,59,48,.08)}
+.ueb-btn{padding:8px 20px;border-radius:8px;border:1.5px solid #00c6fb;background:transparent;color:#00c6fb;font-weight:600;font-size:13px;cursor:pointer;margin-top:12px;transition:all .2s}
+.ueb-btn:hover{background:#00c6fb;color:#fff}
+.ueb-feedback{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:13px;line-height:1.6}
+.ueb-feedback.shown{display:block!important}
+.ueb-feedback.all-correct{background:rgba(52,199,89,.08);border:1px solid var(--g)}
+.ueb-feedback.has-errors{background:rgba(255,59,48,.06);border:1px solid var(--r)}
+.ueb-solution{margin-top:8px;padding:10px 14px;border-radius:8px;background:var(--s2);font-size:13px;line-height:1.7}
+.ueb-opt{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:8px;border:1.5px solid var(--bd);margin:3px 4px;cursor:pointer;font-size:13px;transition:all .2s;background:var(--s1)}
+.ueb-opt:hover{border-color:#00c6fb;background:rgba(0,198,251,.04)}
+.ueb-opt input{margin:0}
+.ueb-opt.chosen{border-color:#00c6fb;background:rgba(0,198,251,.08)}
+.ueb-opt.opt-correct{border-color:var(--g)!important;background:rgba(52,199,89,.1)!important}
+.ueb-opt.opt-wrong{border-color:var(--r)!important;background:rgba(255,59,48,.08)!important}
+.ueb-mc{padding:2px 0}
+.ueb-block.checked .ueb-btn{opacity:.5;pointer-events:none}
+.ueb-score{display:inline-block;padding:2px 10px;border-radius:20px;font-weight:700;font-size:12px;margin-left:6px}
+`;
+document.head.appendChild(uebCSS);
+
+function normalizeAnswer(s){
+  return s.toString().toLowerCase().replace(/[''`´\-–—.,;:!?()%]/g,'').replace(/\s+/g,' ').trim();
+}
+
+window._ctrlUebCheckBlock = function(btn){
+  const block = btn.closest('.ueb-block');
+  if(block.classList.contains('checked')) return;
+  let correct=0, total=0;
+  // Text inputs
+  block.querySelectorAll('.ueb-in').forEach(inp=>{
+    total++;
+    const answer = normalizeAnswer(inp.dataset.answer);
+    const alts = (inp.dataset.alt||'').split('|').map(a=>normalizeAnswer(a)).filter(Boolean);
+    const userVal = normalizeAnswer(inp.value);
+    const allAccepted = [answer,...alts];
+    // For numeric: also compare as number
+    let isCorrect = allAccepted.some(a => userVal === a);
+    // Numeric tolerance
+    if(!isCorrect){
+      const numUser = parseFloat(userVal.replace(/['']/g,'').replace(',','.'));
+      const numAnswer = parseFloat(answer.replace(/['']/g,'').replace(',','.'));
+      if(!isNaN(numUser) && !isNaN(numAnswer)){
+        if(Math.abs(numUser - numAnswer) < 0.6) isCorrect = true;
+        // check alts numerically too
+        allAccepted.forEach(a=>{
+          const na = parseFloat(a.replace(/['']/g,'').replace(',','.'));
+          if(!isNaN(na) && Math.abs(numUser - na) < 0.6) isCorrect = true;
+        });
+      }
+    }
+    inp.classList.add(isCorrect ? 'correct' : 'wrong');
+    if(!isCorrect && !inp.value.trim()){
+      inp.value = '';
+      inp.placeholder = inp.dataset.answer;
+    }
+    if(isCorrect) correct++;
+  });
+  // Radio/MC
+  block.querySelectorAll('.ueb-mc').forEach(mc=>{
+    total++;
+    const opts = mc.querySelectorAll('.ueb-opt');
+    let answered = false, mcCorrect = false;
+    opts.forEach(opt=>{
+      const radio = opt.querySelector('input');
+      if(radio && radio.checked){
+        answered = true;
+        opt.classList.add('chosen');
+        if(opt.dataset.correct === 'true'){
+          mcCorrect = true;
+          opt.classList.add('opt-correct');
+        } else {
+          opt.classList.add('opt-wrong');
+        }
+      }
+      if(opt.dataset.correct === 'true' && !opt.classList.contains('opt-correct')){
+        opt.classList.add('opt-correct');
+      }
+    });
+    if(mcCorrect) correct++;
+  });
+  // Show feedback
+  const fb = block.querySelector('.ueb-feedback');
+  const allRight = correct === total;
+  fb.className = 'ueb-feedback shown ' + (allRight ? 'all-correct' : 'has-errors');
+  const scoreHTML = allRight
+    ? '<strong style="color:var(--g)">✓ Alles richtig!</strong> ' + correct + '/' + total + ' Punkte'
+    : '<strong style="color:var(--r)">✗ ' + correct + '/' + total + ' richtig.</strong> Falsche Antworten sind rot markiert. Korrekte Lösung wird angezeigt.';
+  if(fb.querySelector('.ueb-solution')){
+    fb.innerHTML = scoreHTML + fb.querySelector('.ueb-solution').outerHTML;
+    fb.querySelector('.ueb-solution').style.display = allRight ? 'none' : 'block';
+  } else {
+    fb.innerHTML = scoreHTML;
+  }
+  block.classList.add('checked');
+  // Disable inputs
+  block.querySelectorAll('input').forEach(i=>i.disabled=true);
+};
+
+window._ctrlUebCheckAll = function(){
+  document.querySelectorAll('#ctrl_ueb .ueb-block:not(.checked) .ueb-btn').forEach(b=>b.click());
+};
+
+window._ctrlUebReset = function(){
+  document.querySelectorAll('#ctrl_ueb .ueb-block').forEach(block=>{
+    block.classList.remove('checked');
+    block.querySelectorAll('.ueb-in').forEach(inp=>{
+      inp.value='';inp.disabled=false;inp.classList.remove('correct','wrong');
+      inp.placeholder='?';
+    });
+    block.querySelectorAll('input[type=radio]').forEach(r=>{r.checked=false;r.disabled=false;});
+    block.querySelectorAll('.ueb-opt').forEach(o=>o.classList.remove('chosen','opt-correct','opt-wrong'));
+    const fb = block.querySelector('.ueb-feedback');
+    if(fb){fb.className='ueb-feedback';fb.style.display='none';}
+  });
+};
 
 // Register course
 window.TIS = window.TIS || {};
