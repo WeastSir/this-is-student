@@ -682,47 +682,31 @@ Jahresgewinn<br>
 <!-- ===================== ÜBUNGEN ===================== -->
 <div class="sec" id="fa3_ueb"><h1>Interaktive Übungen</h1><p class="sub">Wähle eine Übung und teste dein Wissen</p>
 
-<div style="margin-bottom:16px">
-<button class="bp1" onclick="document.getElementById('fa3_ueb_sel').style.display='none';document.getElementById('fa3_ueb1').style.display='block'" style="margin:4px">Siebenstufige ER</button>
-<button class="bp1" onclick="document.getElementById('fa3_ueb_sel').style.display='none';document.getElementById('fa3_ueb2').style.display='block'" style="margin:4px">GoR Beurteilung</button>
-<button class="bp1" onclick="document.getElementById('fa3_ueb_sel').style.display='none';document.getElementById('fa3_ueb3').style.display='block'" style="margin:4px">Warenrenditen</button>
-<button class="bp1" onclick="document.getElementById('fa3_ueb_sel').style.display='none';document.getElementById('fa3_ueb4').style.display='block'" style="margin:4px">MWST Prinzip</button>
+<div id="fa3_ueb_sel">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
+<div class="c ck" onclick="fa3ShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">📊</div><div class="ct2">Siebenstufige ER</div><div class="cd">Alle 7 Stufen berechnen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">⚖️</div><div class="ct2">GoR Beurteilung</div><div class="cd">10 Fälle beurteilen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">🍷</div><div class="ct2">Warenrenditen</div><div class="cd">Bestandesänderung berechnen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:24px;margin-bottom:6px">🧾</div><div class="ct2">MWST Prinzip</div><div class="cd">Allphasensteuer verstehen</div></div>
+</div>
 </div>
 
-<div id="fa3_ueb_sel"><div class="hlbl">Wähle oben eine Übung aus.</div></div>
-
-<!-- ÜBUNG 1: Siebenstufige ER -->
+<!-- ÜBUNG 1: Siebenstufige ER (randomisiert) -->
 <div id="fa3_ueb1" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
 <h2>Siebenstufige Erfolgsrechnung</h2>
-<p class="sub">Berghotel Sonnenalp AG — Berechne alle 7 Stufen</p>
-<div class="hl">Finanzinformationen: Umsatzerlös CHF 6'800'000 · Warenaufwand CHF 2'142'000 · Dir. Personalaufwand CHF 3'209'600 · Übriger Betriebsaufwand CHF 761'600 · Mietaufwand CHF 578'000 · Abschreibungen CHF 30'000 · Zinsaufwand CHF 25'000 · Steuern CHF 10'760</div>
+<p class="sub" id="fa3_er_sub">Berechne alle 7 Stufen</p>
+<div class="hl" id="fa3_er_info"></div>
 
-<div style="margin:16px 0"><button class="bp1" onclick="fa3CheckER()">Alle korrigieren</button> <button onclick="fa3ResetER()" style="margin-left:8px">Zurücksetzen</button></div>
+<div style="margin:16px 0"><button class="bp1" onclick="fa3CheckER()">Alle korrigieren</button> <button onclick="fa3ResetER()" style="margin-left:8px">Zurücksetzen</button> <button onclick="fa3GenER()" style="margin-left:8px">Neue Zahlen</button></div>
 
-<table style="width:100%;border-collapse:collapse;font-size:13px" id="fa3_er_table">
-<tr style="background:var(--s2)"><th style="padding:8px;text-align:left;border:1px solid var(--bd)">Bezeichnung</th><th style="padding:8px;text-align:right;border:1px solid var(--bd);width:140px">CHF</th><th style="padding:8px;text-align:right;border:1px solid var(--bd);width:80px">%</th></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">Umsatzerlös</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">6'800'000</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">100.0%</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Warenaufwand</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">2'142'000</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">31.5%</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Dir. Personalaufwand</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">3'209'600</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">47.2%</td></tr>
-<tr style="background:rgba(52,199,89,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= GOI</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_goi" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_goip" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Übriger Betriebsaufwand</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">761'600</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">11.2%</td></tr>
-<tr style="background:rgba(52,199,89,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= GOP</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_gop" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_gopp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Mietaufwand</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">578'000</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">8.5%</td></tr>
-<tr style="background:rgba(0,122,255,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= EBITDA</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebitda" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebitdap" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Abschreibungen</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">30'000</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">0.4%</td></tr>
-<tr style="background:rgba(0,122,255,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= EBIT</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebit" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebitp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Zinsaufwand</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">25'000</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">0.4%</td></tr>
-<tr style="background:rgba(175,82,222,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= Betriebserfolg v. Nebeneff.</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_bvn" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_bvnp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">± a.o. Erfolg</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">0</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">0.0%</td></tr>
-<tr style="background:rgba(175,82,222,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= EBT</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebt" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ebtp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-<tr><td style="padding:8px;border:1px solid var(--bd)">− Steuern</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">10'760</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">0.2%</td></tr>
-<tr style="background:rgba(232,86,122,.08)"><td style="padding:8px;border:1px solid var(--bd)"><strong>= Unternehmensergebnis</strong></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_ue" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="padding:8px;border:1px solid var(--bd);text-align:right"><input type="text" id="fa3_er_uep" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>
-</table>
+<div id="fa3_er_tableWrap"></div>
 <div id="fa3_er_result" style="margin-top:12px"></div>
 </div>
 
 <!-- ÜBUNG 2: GoR -->
 <div id="fa3_ueb2" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
 <h2>Grundsätze ordnungsmässiger Rechnungslegung</h2>
 <p class="sub">Muster AG — Beurteile ob die GoR eingehalten wurden</p>
 
@@ -733,6 +717,7 @@ Jahresgewinn<br>
 
 <!-- ÜBUNG 3: Warenrenditen -->
 <div id="fa3_ueb3" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
 <h2>Warenaufwand & Warenrenditen</h2>
 <p class="sub">Berechne den effektiven Warenaufwand nach Bestandesänderung</p>
 <div class="hl">Gegeben: Wareneinkauf und Bestandesänderung je Sparte. Berechne den effektiven Warenaufwand und den Warenaufwand in % des Warenertrags.</div>
@@ -752,6 +737,7 @@ Jahresgewinn<br>
 
 <!-- ÜBUNG 4: MWST Prinzip -->
 <div id="fa3_ueb4" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
 <h2>Prinzip der Mehrwertsteuer</h2>
 <p class="sub">Wertschöpfungskette eines Rucksacks (MWST-Satz: 10%)</p>
 <div class="hl">Import exkl. MWST: CHF 30 · Verkauf an Händler exkl.: CHF 50 · Verkauf an Endkunde exkl.: CHF 90</div>
@@ -810,24 +796,24 @@ Jahresgewinn<br>
 
 <!-- ===================== QUIZ ===================== -->
 <div class="sec" id="fa3_quiz"><h1>Quiz</h1><p class="sub">Alle Fragen werden wiederholt bis du sie kannst</p>
-<div id="fq_Stats" style="margin-bottom:20px">
+<div id="fqStats" style="margin-bottom:20px">
 <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fq_TotR" style="color:var(--g)">0</div><div class="qsl">Total richtig</div></div>
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fq_TotW" style="color:var(--r)">0</div><div class="qsl">Total falsch</div></div>
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fq_TotP" style="color:var(--ac)">0%</div><div class="qsl">Erfolgsquote</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fqTotR" style="color:var(--g)">0</div><div class="qsl">Total richtig</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fqTotW" style="color:var(--r)">0</div><div class="qsl">Total falsch</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="fqTotP" style="color:var(--ac)">0%</div><div class="qsl">Erfolgsquote</div></div>
 </div>
 <div style="font-size:12px;color:var(--tx3);margin-bottom:6px">Lernerfolg</div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--g);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Sicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fq_BarG" style="height:100%;background:var(--g);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fq_BarGn">0</div></div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--am);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Wackelig</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fq_BarO" style="height:100%;background:var(--am);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fq_BarOn">0</div></div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--r);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Unsicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fq_BarR" style="height:100%;background:var(--r);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fq_BarRn">0</div></div>
-<div style="display:flex;gap:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--tx3);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Noch offen</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fq_BarX" style="height:100%;background:var(--tx3);border-radius:4px;transition:width .5s;width:100%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fq_BarXn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--g);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Sicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fqBarG" style="height:100%;background:var(--g);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fqBarGn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--am);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Wackelig</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fqBarO" style="height:100%;background:var(--am);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fqBarOn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--r);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Unsicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fqBarR" style="height:100%;background:var(--r);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fqBarRn">0</div></div>
+<div style="display:flex;gap:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--tx3);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Noch offen</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="fqBarX" style="height:100%;background:var(--tx3);border-radius:4px;transition:width .5s;width:100%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="fqBarXn">0</div></div>
 </div>
-<div class="pb"><div class="pf" id="fq_P"></div></div><div class="pt" id="fq_PT">Frage 1</div>
-<div id="fq_C"></div>
+<div class="pb"><div class="pf" id="fqP"></div></div><div class="pt" id="fqPT">Frage 1</div>
+<div id="fqC"></div>
 <div style="text-align:center;margin-top:14px">
-<button class="bp1" id="fq_N" onclick="fqNx()" style="display:none">Nächste Frage</button>
-<button class="bp1" id="fq_RS" onclick="fqSt()" style="display:none">Weiter üben</button>
-<button id="fq_Reset" onclick="fqReset()" style="display:none;margin-left:8px">Fortschritt zurücksetzen</button>
+<button class="bp1" id="fqN" onclick="fqNx()" style="display:none">Nächste Frage</button>
+<button class="bp1" id="fqRS" onclick="fqSt()" style="display:none">Weiter üben</button>
+<button id="fqReset" onclick="fqReset()" style="display:none;margin-left:8px">Fortschritt zurücksetzen</button>
 </div>
 </div>
 
@@ -942,6 +928,28 @@ const FA3_GOR = [
 ];
 
 // ==========================================
+// 4. OR ARTIKEL-DATENBANK
+// ==========================================
+const FA3_ART = {
+  'or957': ['Art. 957 OR — Buchführungspflicht', 'Wer verpflichtet ist, sein Unternehmen im Handelsregister einzutragen, ist zur Buchführung und Rechnungslegung verpflichtet.', 'Regelt, wer Bücher führen muss. EU und Pers.ges. unter 500k → nur Milchbüchleinrechnung.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a957'],
+  'or957a': ['Art. 957a OR — Grundsätze ordnungsmässiger Buchführung', 'Die Buchführung bildet die Grundlage der Rechnungslegung.', 'GoB: Vollständigkeit, Wahrheit, Belegnachweis, Klarheit, Nachprüfbarkeit. Keine Buchung ohne Beleg!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a957a'],
+  'or958': ['Art. 958 OR — Rechnungslegung', 'Die Rechnungslegung soll die wirtschaftliche Lage so darstellen, dass sich Dritte ein zuverlässiges Urteil bilden können.', 'Bilanz + ER + Anhang: jährlich, innert 6 Monaten, unterzeichnet vom VR-Präsident + Buchhalter.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958'],
+  'or958a': ['Art. 958a OR — Fortführungsgrundsatz (Going Concern)', 'Bei der Rechnungslegung ist von der Fortführung des Unternehmens auszugehen.', 'Bilanzposten zum Fortführungswert, nicht zum Veräusserungswert — solange Unternehmen weiterbesteht.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958a'],
+  'or958b': ['Art. 958b OR — Zeitliche und sachliche Abgrenzung', 'Aufwände und Erträge sind zeitlich und sachlich abzugrenzen.', 'Periodengerechte Erfassung. Ausnahme: ≤ 100k Nettoerlöse → Abgrenzung nicht nötig.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958b'],
+  'or958c': ['Art. 958c OR — Grundsätze ordnungsmässiger Rechnungslegung (GoR)', 'Klarheit, Vollständigkeit, Verlässlichkeit, Wesentlichkeit, Vorsicht, Stetigkeit, Verrechnungsverbot.', 'Die 7 GoR — das Herzstück der Rechnungslegung. Prüfungsklassiker!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958c'],
+  'or958d': ['Art. 958d OR — Darstellung und Währung', 'Rechnungslegung in CHF oder wesentlicher Geschäftswährung.', 'Bei Fremdwährung: zusätzlich CHF-Werte angeben. Texte in Landessprache oder Englisch.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958d'],
+  'or958f': ['Art. 958f OR — Aufbewahrungspflicht', 'Geschäftsbücher und Buchungsbelege sind 10 Jahre aufzubewahren.', '10 Jahre Aufbewahrungspflicht — schriftlich und unterzeichnet.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958f'],
+  'or959a': ['Art. 959a OR — Mindestgliederung Bilanz', 'Aktiven nach Liquidität, Passiven nach Fälligkeit.', 'UV + AV | kfr. FK + lfr. FK + EK. Verbindliche Reihenfolge.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959a'],
+  'or959b': ['Art. 959b OR — Mindestgliederung Erfolgsrechnung', 'Produktions- oder Absatzerfolgsrechnung.', 'Betriebsertrag − Betriebsaufwand ± betriebsfremder/a.o. Erfolg = Jahresergebnis.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959b'],
+  'or959c': ['Art. 959c OR — Anhang', 'Ergänzende Angaben für die Beurteilung der Vermögens-, Finanzierungs- und Ertragslage.', 'Dritter Teil der Jahresrechnung. Enthält z.B. stille Reserven, Beteiligungen, Eventualverbindlichkeiten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959c'],
+  'or960e': ['Art. 960e OR — Rückstellungen', 'Bei erwartetem Mittelabfluss aus vergangenen Ereignissen sind Rückstellungen zu bilden.', 'Rückstellungspflicht — auch wenn Betrag und Fälligkeit unsicher sind.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a960e'],
+  'or961': ['Art. 961 OR — Grössere Unternehmen', 'Zusätzlich: Geldflussrechnung + Lagebericht + mehr Angaben im Anhang.', 'Kurzformel: «2 in 2 — 20/40/250» (Bilanzsumme ≥ 20 Mio., Umsatz ≥ 40 Mio., > 250 Stellen).', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a961'],
+  'or962': ['Art. 962 OR — Anerkannte Standards', 'Börsenkotierte müssen nach anerkanntem Standard abschliessen.', 'Main Standard: IFRS/US GAAP. Domestic Standard: Swiss GAAP FER.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a962'],
+  'or671': ['Art. 671 OR — Gesetzliche Gewinnreserve', '5% des Jahresgewinns zuweisen, bis Reserve = 50% des Aktienkapitals.', 'Neues Recht ab 2023: Einstufig. Verlustvortrag zuerst verrechnen, dann 5% auf Restgewinn.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a671'],
+  'or673': ['Art. 673 OR — Freiwillige Gewinnreserven', 'GV kann zusätzliche Zuweisungen beschliessen.', 'Freiwillige Reserven als Sicherheitspuffer. Sinnvoll, aber in der Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a673'],
+};
+
+// ==========================================
 // 5. REGISTRIERUNG
 // ==========================================
 window.TIS = window.TIS || {};
@@ -950,6 +958,7 @@ window.TIS.courses.fa3 = {
   config: courseConfig,
   html: courseHTML,
   flashcards: FA3_CARDS,
+  articles: FA3_ART,
 };
 
 // ==========================================
@@ -974,37 +983,100 @@ setTimeout(function() {
   }
 }, 500);
 
-// Exercise check functions
-window.fa3CheckER = function() {
-  var sols = [
-    {id:'fa3_er_goi',v:1448400},{id:'fa3_er_goip',v:21.3},
-    {id:'fa3_er_gop',v:686800},{id:'fa3_er_gopp',v:10.1},
-    {id:'fa3_er_ebitda',v:108800},{id:'fa3_er_ebitdap',v:1.6},
-    {id:'fa3_er_ebit',v:78800},{id:'fa3_er_ebitp',v:1.2},
-    {id:'fa3_er_bvn',v:53800},{id:'fa3_er_bvnp',v:0.8},
-    {id:'fa3_er_ebt',v:53800},{id:'fa3_er_ebtp',v:0.8},
-    {id:'fa3_er_ue',v:43040},{id:'fa3_er_uep',v:0.6}
-  ];
-  var correct=0, total=sols.length;
-  sols.forEach(function(s) {
-    var el=document.getElementById(s.id);
-    if(!el) return;
-    var v=parseFloat(el.value.replace(/'/g,'').replace(/,/g,'.').replace(/%/g,'').trim());
-    var tol = s.v > 100 ? 50 : 0.15;
-    if(!isNaN(v) && Math.abs(v-s.v)<=tol) {
-      el.style.border='2px solid var(--g)'; el.style.background='rgba(52,199,89,.08)'; correct++;
-    } else {
-      el.style.border='2px solid var(--r)'; el.style.background='rgba(255,59,48,.08)';
-    }
+// Show/hide exercises
+window.fa3ShowUeb = function(n) {
+  ['fa3_ueb_sel','fa3_ueb1','fa3_ueb2','fa3_ueb3','fa3_ueb4'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.style.display='none';
   });
+  if(n===0) { document.getElementById('fa3_ueb_sel').style.display='block'; }
+  else { 
+    document.getElementById('fa3_ueb'+n).style.display='block';
+    if(n===1) fa3GenER(); // generate random numbers
+  }
+};
+
+// ---- RANDOMIZED ER EXERCISE ----
+var fa3ERData = {};
+function rnd(min,max){ return Math.round((min+Math.random()*(max-min))/100)*100; }
+
+window.fa3GenER = function() {
+  var umsatz = rnd(4000000, 9000000);
+  var waPct = 28 + Math.random()*8; // 28-36%
+  var wa = Math.round(umsatz * waPct/100 / 100)*100;
+  var paPct = 42 + Math.random()*10; // 42-52%
+  var pa = Math.round(umsatz * paPct/100 / 100)*100;
+  var ubaPct = 8 + Math.random()*6; // 8-14%
+  var uba = Math.round(umsatz * ubaPct/100 / 100)*100;
+  var mietPct = 5 + Math.random()*6; // 5-11%
+  var miet = Math.round(umsatz * mietPct/100 / 1000)*1000;
+  var abschr = rnd(20000, 80000);
+  var zins = rnd(10000, 50000);
+  var steuer = rnd(5000, 20000);
+  
+  var goi=umsatz-wa-pa, gop=goi-uba, ebitda=gop-miet, ebit=ebitda-abschr;
+  var bvn=ebit-zins, ebt=bvn, ue=ebt-steuer;
+  
+  fa3ERData = {umsatz:umsatz,wa:wa,pa:pa,uba:uba,miet:miet,abschr:abschr,zins:zins,steuer:steuer,
+    goi:goi,gop:gop,ebitda:ebitda,ebit:ebit,bvn:bvn,ebt:ebt,ue:ue};
+  
+  function fmt(n){return n.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g,"'");}
+  function pct(n){return (n/umsatz*100).toFixed(1);}
+  
+  document.getElementById('fa3_er_info').innerHTML = 'Finanzinformationen: Umsatzerlös CHF '+fmt(umsatz)+' · Warenaufwand CHF '+fmt(wa)+' · Dir. Personalaufwand CHF '+fmt(pa)+' · Übriger Betriebsaufwand CHF '+fmt(uba)+' · Mietaufwand CHF '+fmt(miet)+' · Abschreibungen CHF '+fmt(abschr)+' · Zinsaufwand CHF '+fmt(zins)+' · Steuern CHF '+fmt(steuer);
+  
+  var td='padding:8px;border:1px solid var(--bd)';
+  var h='<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  h+='<tr style="background:var(--s2)"><th style="'+td+';text-align:left">Bezeichnung</th><th style="'+td+';text-align:right;width:140px">CHF</th><th style="'+td+';text-align:right;width:80px">%</th></tr>';
+  h+='<tr><td style="'+td+'">Umsatzerlös</td><td style="'+td+';text-align:right">'+fmt(umsatz)+'</td><td style="'+td+';text-align:right">100.0%</td></tr>';
+  h+='<tr><td style="'+td+'">− Warenaufwand</td><td style="'+td+';text-align:right">'+fmt(wa)+'</td><td style="'+td+';text-align:right">'+pct(wa)+'%</td></tr>';
+  h+='<tr><td style="'+td+'">− Dir. Personalaufwand</td><td style="'+td+';text-align:right">'+fmt(pa)+'</td><td style="'+td+';text-align:right">'+pct(pa)+'%</td></tr>';
+  h+='<tr style="background:rgba(52,199,89,.08)"><td style="'+td+'"><strong>= GOI</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_goi" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_goip" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">− Übriger Betriebsaufwand</td><td style="'+td+';text-align:right">'+fmt(uba)+'</td><td style="'+td+';text-align:right">'+pct(uba)+'%</td></tr>';
+  h+='<tr style="background:rgba(52,199,89,.08)"><td style="'+td+'"><strong>= GOP</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_gop" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_gopp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">− Mietaufwand</td><td style="'+td+';text-align:right">'+fmt(miet)+'</td><td style="'+td+';text-align:right">'+pct(miet)+'%</td></tr>';
+  h+='<tr style="background:rgba(0,122,255,.08)"><td style="'+td+'"><strong>= EBITDA</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebitda" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebitdap" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">− Abschreibungen</td><td style="'+td+';text-align:right">'+fmt(abschr)+'</td><td style="'+td+';text-align:right">'+pct(abschr)+'%</td></tr>';
+  h+='<tr style="background:rgba(0,122,255,.08)"><td style="'+td+'"><strong>= EBIT</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebit" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebitp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">− Zinsaufwand</td><td style="'+td+';text-align:right">'+fmt(zins)+'</td><td style="'+td+';text-align:right">'+pct(zins)+'%</td></tr>';
+  h+='<tr style="background:rgba(175,82,222,.08)"><td style="'+td+'"><strong>= Betriebserfolg v. Nebeneff.</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_bvn" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_bvnp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">± a.o. Erfolg</td><td style="'+td+';text-align:right">0</td><td style="'+td+';text-align:right">0.0%</td></tr>';
+  h+='<tr style="background:rgba(175,82,222,.08)"><td style="'+td+'"><strong>= EBT</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebt" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ebtp" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='<tr><td style="'+td+'">− Steuern</td><td style="'+td+';text-align:right">'+fmt(steuer)+'</td><td style="'+td+';text-align:right">'+pct(steuer)+'%</td></tr>';
+  h+='<tr style="background:rgba(232,86,122,.08)"><td style="'+td+'"><strong>= Unternehmensergebnis</strong></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_ue" style="width:100px;text-align:right;padding:4px" placeholder="CHF?"></td><td style="'+td+';text-align:right"><input type="text" id="fa3_er_uep" style="width:50px;text-align:right;padding:4px" placeholder="%?"></td></tr>';
+  h+='</table>';
+  document.getElementById('fa3_er_tableWrap').innerHTML = h;
+  document.getElementById('fa3_er_result').innerHTML = '';
+};
+
+window.fa3CheckER = function() {
+  var d=fa3ERData, u=d.umsatz;
+  function pct(n){return Math.round(n/u*1000)/10;}
+  var sols=[
+    {id:'fa3_er_goi',v:d.goi},{id:'fa3_er_goip',v:pct(d.goi)},
+    {id:'fa3_er_gop',v:d.gop},{id:'fa3_er_gopp',v:pct(d.gop)},
+    {id:'fa3_er_ebitda',v:d.ebitda},{id:'fa3_er_ebitdap',v:pct(d.ebitda)},
+    {id:'fa3_er_ebit',v:d.ebit},{id:'fa3_er_ebitp',v:pct(d.ebit)},
+    {id:'fa3_er_bvn',v:d.bvn},{id:'fa3_er_bvnp',v:pct(d.bvn)},
+    {id:'fa3_er_ebt',v:d.ebt},{id:'fa3_er_ebtp',v:pct(d.ebt)},
+    {id:'fa3_er_ue',v:d.ue},{id:'fa3_er_uep',v:pct(d.ue)}
+  ];
+  var correct=0;
+  sols.forEach(function(s){
+    var el=document.getElementById(s.id);if(!el)return;
+    var v=parseFloat(el.value.replace(/'/g,'').replace(/,/g,'.').replace(/%/g,'').trim());
+    var tol=Math.abs(s.v)>100?Math.max(100,Math.abs(s.v)*0.005):0.15;
+    if(!isNaN(v)&&Math.abs(v-s.v)<=tol){el.style.border='2px solid var(--g)';el.style.background='rgba(52,199,89,.08)';correct++;}
+    else{el.style.border='2px solid var(--r)';el.style.background='rgba(255,59,48,.08)';}
+  });
+  function fmt(n){return n.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g,"'");}
   var res=document.getElementById('fa3_er_result');
-  if(res) {
-    if(correct===total) res.innerHTML='<div class="hlg">Alles richtig! ✓</div>';
-    else res.innerHTML='<div class="hlr">'+correct+' von '+(total/2)+' Werte korrekt. Lösungen: GOI 1\'448\'400 (21.3%), GOP 686\'800 (10.1%), EBITDA 108\'800 (1.6%), EBIT 78\'800 (1.2%), Betriebserfolg 53\'800 (0.8%), EBT 53\'800 (0.8%), UE 43\'040 (0.6%)</div>';
+  if(res){
+    if(correct===sols.length) res.innerHTML='<div class="hlg">Alles richtig! ✓</div>';
+    else res.innerHTML='<div class="hlr">'+Math.floor(correct/2)+' von 7 Stufen korrekt.</div><div style="margin-top:8px;font-size:12px;color:var(--tx2)">Lösungen: GOI '+fmt(d.goi)+' ('+pct(d.goi)+'%), GOP '+fmt(d.gop)+' ('+pct(d.gop)+'%), EBITDA '+fmt(d.ebitda)+' ('+pct(d.ebitda)+'%), EBIT '+fmt(d.ebit)+' ('+pct(d.ebit)+'%), Betriebserf. '+fmt(d.bvn)+' ('+pct(d.bvn)+'%), EBT '+fmt(d.ebt)+' ('+pct(d.ebt)+'%), UE '+fmt(d.ue)+' ('+pct(d.ue)+'%)</div>';
   }
 };
 window.fa3ResetER = function() {
-  ['fa3_er_goi','fa3_er_goip','fa3_er_gop','fa3_er_gopp','fa3_er_ebitda','fa3_er_ebitdap','fa3_er_ebit','fa3_er_ebitp','fa3_er_bvn','fa3_er_bvnp','fa3_er_ebt','fa3_er_ebtp','fa3_er_ue','fa3_er_uep'].forEach(function(id){var e=document.getElementById(id);if(e){e.value='';e.style.border='';e.style.background='';}});
+  document.querySelectorAll('#fa3_er_tableWrap input').forEach(function(e){e.value='';e.style.border='';e.style.background='';});
   var r=document.getElementById('fa3_er_result');if(r)r.innerHTML='';
 };
 
