@@ -14,7 +14,7 @@ body{font-family:var(--f);background:var(--bg);color:var(--tx);line-height:1.7;-
 body::before{content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 20% 50%,rgba(232,86,122,.04) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(102,126,234,.04) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(175,82,222,.03) 0%,transparent 50%);z-index:-1;pointer-events:none;animation:meshFloat 30s ease-in-out infinite}
 @keyframes meshFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-2%,2%)}}
 nav{position:sticky;top:0;z-index:100;background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border-bottom:1px solid var(--bd);transition:background var(--transition)}
-.nav-top{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:8px}
+.nav-top{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px;gap:8px;position:relative}
 .nav-sub{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:42px;gap:4px;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--bd)}.nav-sub::-webkit-scrollbar{display:none}.nav-sub:empty{display:none}
 .nb{font-family:var(--se);font-size:20px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;margin-right:16px;cursor:pointer;letter-spacing:-.3px;background-size:200% 200%;animation:gradShift 4s ease infinite}
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -154,10 +154,12 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 
 <nav>
 <div class="nav-top" style="justify-content:space-between">
-<div class="nb" onclick="go('home')">This Is Student</div>
 <div style="display:flex;align-items:center;gap:8px">
+<div class="nb" onclick="go('home')">This Is Student</div>
 <button class="nl nl-main on" data-s="home" onclick="go('home')">Home</button>
 <button class="nl nl-main" data-s="kurse" onclick="go('kurse')">Kurse</button>
+</div>
+<div id="navCourseCenter" style="display:flex;align-items:center;gap:8px;position:absolute;left:50%;transform:translateX(-50%)">
 <button class="nl nl-main" data-s="recht2" onclick="go('recht2')" style="display:none">Recht 2</button>
 <button class="nl nl-main" data-s="arb" onclick="go('arb')" style="display:none">Arbeitsrecht</button>
 <button class="nl nl-main" data-s="ctrl" onclick="go('ctrl')" style="display:none">Controlling 2</button>

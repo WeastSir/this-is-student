@@ -583,9 +583,9 @@ function loadCourseModules(){
         const c=window.TIS.courses[cid];
         if(c.html){container.insertAdjacentHTML('beforeend',c.html);}
         if(c.config&&c.config.navButton){
-          const navTop=document.querySelector('.nav-top');
-          if(navTop&&!document.querySelector('[data-s="'+c.config.id+'"]')){
-            navTop.insertAdjacentHTML('beforeend',c.config.navButton);
+          const navCenter=document.getElementById('navCourseCenter')||document.querySelector('.nav-top');
+          if(navCenter&&!document.querySelector('[data-s="'+c.config.id+'"]')){
+            navCenter.insertAdjacentHTML('beforeend',c.config.navButton);
           }
         }
       }
