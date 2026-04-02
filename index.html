@@ -125,6 +125,8 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 .login-dots{display:flex;gap:6px;justify-content:center;margin-bottom:28px}
 .login-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15)}
 #accountDrop.show{display:block!important}
+#tabLogin.active,#tabRegister.active{background:rgba(232,86,122,.2)!important;color:#fff!important}
+#tabLogin:not(.active),#tabRegister:not(.active){background:rgba(255,255,255,.04)!important;color:rgba(255,255,255,.4)!important}
 .login-dot.active{background:linear-gradient(135deg,#e8567a,#c44569);box-shadow:0 0 8px rgba(232,86,122,.4)}
 </style>
 </head>
@@ -136,7 +138,16 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 <div id="loginLogo">This Is Student</div>
 <div class="login-dots"><div class="login-dot active"></div><div class="login-dot"></div><div class="login-dot"></div></div>
 <h1>Willkommen</h1>
-<div class="login-sub">Bitte melde dich an, um auf die Lernplattform zuzugreifen.</div>
+<div class="login-sub">Melde dich an oder erstelle einen Account.</div>
+
+<!-- Tabs -->
+<div style="display:flex;gap:0;margin-bottom:24px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
+<button id="tabLogin" class="active" onclick="showLoginTab('login')" style="flex:1;padding:10px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:var(--f);transition:all .2s;background:rgba(232,86,122,.2);color:#fff">Anmelden</button>
+<button id="tabRegister" onclick="showLoginTab('register')" style="flex:1;padding:10px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:var(--f);transition:all .2s;background:rgba(255,255,255,.04);color:rgba(255,255,255,.4)">Registrieren</button>
+</div>
+
+<!-- Login Form -->
+<div id="loginFormWrap">
 <div class="login-field">
 <label>Benutzername</label>
 <input type="text" id="loginUser" placeholder="Benutzername eingeben" autocomplete="username" spellcheck="false">
@@ -146,9 +157,38 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 <input type="password" id="loginPW" placeholder="Passwort eingeben" autocomplete="current-password" onkeydown="if(event.key==='Enter')checkLogin()">
 </div>
 <button id="loginBtn" onclick="checkLogin()">Anmelden</button>
-<div id="loginError">Benutzername oder Passwort ist falsch.</div>
-<div id="loginSuccess"></div>
-<div class="login-footer">Semester 5 · Interaktive Lernplattform</div>
+<div id="loginError" style="display:none"></div>
+<div id="loginSuccess" style="display:none"></div>
+</div>
+
+<!-- Register Form -->
+<div id="regFormWrap" style="display:none">
+<div class="login-field">
+<label>Benutzername</label>
+<input type="text" id="regUser" placeholder="Mindestens 3 Zeichen" autocomplete="off" spellcheck="false">
+</div>
+<div class="login-field">
+<label>Anzeigename</label>
+<input type="text" id="regName" placeholder="Dein Name (z.B. Max Muster)" autocomplete="off">
+</div>
+<div class="login-field">
+<label>Passwort</label>
+<input type="password" id="regPW" placeholder="Mindestens 6 Zeichen" autocomplete="new-password">
+</div>
+<div class="login-field">
+<label>Passwort bestätigen</label>
+<input type="password" id="regPW2" placeholder="Passwort wiederholen" autocomplete="new-password" onkeydown="if(event.key==='Enter')document.getElementById('regBtn').click()">
+</div>
+<div class="login-field" id="regCodeField">
+<label>Invite-Code</label>
+<input type="text" id="regCode" placeholder="Code eingeben" autocomplete="off" spellcheck="false" style="text-transform:uppercase;letter-spacing:2px">
+</div>
+<button id="regBtn" onclick="doRegister()" style="width:100%;padding:15px;border-radius:14px;border:none;background:linear-gradient(135deg,#e8567a,#c44569);color:#fff;font-family:var(--f);font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(232,86,122,.25);letter-spacing:.3px">Account erstellen</button>
+<div id="regError" style="display:none;color:#ff6b6b;font-size:12.5px;margin-top:14px;padding:10px 14px;background:rgba(255,107,107,.08);border-radius:10px;border:1px solid rgba(255,107,107,.15)"></div>
+<div id="regSuccess" style="display:none;text-align:center;padding:10px 14px;background:rgba(76,209,146,.08);border-radius:10px;border:1px solid rgba(76,209,146,.15);color:#4cd192;font-size:13px;margin-top:14px"></div>
+</div>
+
+<div class="login-footer">Interaktive Lernplattform · SHL</div>
 </div>
 </div>
 
@@ -182,6 +222,9 @@ button:hover{background:var(--s2);transform:translateY(-1px);box-shadow:var(--sh
 </button>
 <button onclick="go('faq');document.getElementById('accountDrop').classList.remove('show')" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--tx2);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;transition:background .2s" onmouseover="this.style.background='var(--s2)'" onmouseout="this.style.background='none'">
 <span style="font-size:14px">❓</span> FAQ
+</button>
+<button id="adminPanelBtn" onclick="go('admin');document.getElementById('accountDrop').classList.remove('show')" style="display:none;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--ac);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;font-weight:600;transition:background .2s" onmouseover="this.style.background='var(--al)'" onmouseout="this.style.background='none'">
+<span style="font-size:14px">⚙</span> Admin Panel
 </button>
 <div style="border-top:1px solid var(--bd);margin:4px 0"></div>
 <button onclick="logout()" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 16px;border:none;background:none;color:var(--r);font-family:var(--f);font-size:12.5px;cursor:pointer;text-align:left;font-weight:600;transition:background .2s" onmouseover="this.style.background='var(--rl)'" onmouseout="this.style.background='none'">
@@ -350,6 +393,13 @@ This Is Student · Version 0.2 Beta<br>
 </div>
 </div>
 
+
+<!-- ADMIN PANEL -->
+<div class="sec" id="admin">
+<h1>Admin Panel</h1>
+<p class="sub">Benutzerverwaltung, Invite-Codes & Einstellungen</p>
+<div id="adminContent"><div style="text-align:center;padding:20px;color:var(--tx3)">Laden...</div></div>
+</div>
 
 <!-- COURSE CONTENT (loaded by modules) -->
 <div id="courseContent"></div>

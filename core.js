@@ -1,69 +1,7 @@
-// ===== THIS IS STUDENT — CORE ENGINE v2.0 =====
+// ===== THIS IS STUDENT — CORE ENGINE v3.0 =====
 // ============================================================
-// THIS IS STUDENT — CORE ENGINE v2.0 (Modular)
+// Auth is now handled by users.js (Supabase)
 // ============================================================
-
-// PASSWORD SYSTEM — Dynamic Multi-User
-// Users are loaded from users.js (plaintext there, hashed at runtime)
-let USERS = {};
-async function hashPW(user,pw){const e=new TextEncoder().encode(user+':'+pw);const h=await crypto.subtle.digest('SHA-256',e);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');}
-
-async function buildUserDB(){
-  if(!window.TIS||!window.TIS.userList)return;
-  for(const u of window.TIS.userList){
-    const h=await hashPW(u.user, u.pw);
-    USERS[u.user]={hash:h, name:u.name, role:u.role};
-  }
-  // Clear plaintext passwords from memory
-  window.TIS.userList=[];
-}
-
-async function checkLogin(){
-  if(Object.keys(USERS).length===0) await buildUserDB();
-  const user=document.getElementById('loginUser').value.toLowerCase().trim();
-  const pw=document.getElementById('loginPW').value;
-  if(!user||!pw){document.getElementById('loginError').style.display='block';return;}
-  const hash=await hashPW(user,pw);
-  const u=USERS[user];
-  if(u && hash===u.hash){
-    document.getElementById('loginError').style.display='none';
-    const sEl=document.getElementById('loginSuccess');
-    sEl.innerHTML='Willkommen, <strong>'+u.name+'</strong> ('+u.role+')';
-    sEl.style.display='block';
-    localStorage.setItem('tis_user',user);
-    localStorage.setItem('tis_hash',hash);
-    localStorage.setItem('tis_time',Date.now());
-    updateAccountMenu(user);
-    setTimeout(()=>{document.getElementById('loginScreen').classList.add('hidden');},800);
-  } else {
-    document.getElementById('loginError').style.display='block';
-    document.getElementById('loginSuccess').style.display='none';
-    document.getElementById('loginPW').value='';
-    document.getElementById('loginPW').focus();
-  }
-}
-
-async function checkSavedAuth(){
-  if(Object.keys(USERS).length===0) await buildUserDB();
-  const user=localStorage.getItem('tis_user');
-  const hash=localStorage.getItem('tis_hash');
-  const time=localStorage.getItem('tis_time');
-  if(user && hash && time && USERS[user] && hash===USERS[user].hash && (Date.now()-parseInt(time))<30*24*60*60*1000){
-    document.getElementById('loginScreen').classList.add('hidden');
-    updateAccountMenu(user);
-  }
-}
-function logout(){localStorage.removeItem('tis_user');localStorage.removeItem('tis_hash');localStorage.removeItem('tis_time');location.reload();}
-
-function updateAccountMenu(username){
-  const u=USERS[username];
-  if(!u)return;
-  const initials=u.name.split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2)||'?';
-  const av=document.getElementById('accountAvatar');if(av)av.textContent=initials;
-  const an=document.getElementById('accountName');if(an)an.textContent=u.name;
-  const dn=document.getElementById('dropName');if(dn)dn.textContent=u.name;
-  const dr=document.getElementById('dropRole');if(dr)dr.textContent=u.role;
-}
 
 // Close dropdown when clicking outside
 document.addEventListener('click',function(e){
@@ -71,8 +9,6 @@ document.addEventListener('click',function(e){
   const drop=document.getElementById('accountDrop');
   if(menu&&drop&&!menu.contains(e.target)){drop.classList.remove('show');}
 });
-
-document.addEventListener('DOMContentLoaded',checkSavedAuth);
 
 // ARTICLE MODAL
 function showArt(key){
@@ -237,6 +173,9 @@ function go(id){
   
   // Init course-specific features
   initCourseFeatures(id, course);
+  
+  // Admin panel
+  if(id==='admin' && typeof loadAdminPanel==='function') loadAdminPanel();
   
   // Scan abbreviations
   if(typeof initAbkz==='function')setTimeout(initAbkz,100);
