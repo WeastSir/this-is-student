@@ -82,7 +82,7 @@ const courseHTML = `
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
 <div class="c ck" onclick="go('fa3_ueb')" style="text-align:center;padding:24px 16px">
-<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">4</div>
+<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">5</div>
 <div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div></div>
 <div class="c ck" onclick="go('fa3_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">2</div>
@@ -888,6 +888,7 @@ Jahresgewinn<br>
 <div class="c ck" onclick="fa3ShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--bl);margin-bottom:6px">GoR</div><div class="ct2">GoR Beurteilung</div><div class="cd">10 Fälle beurteilen</div></div>
 <div class="c ck" onclick="fa3ShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--am);margin-bottom:6px">WA%</div><div class="ct2">Warenrenditen</div><div class="cd">Bestandesänderung berechnen</div></div>
 <div class="c ck" onclick="fa3ShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">8.1%</div><div class="ct2">MWST Prinzip</div><div class="cd">Allphasensteuer verstehen</div></div>
+<div class="c ck" onclick="fa3ShowUeb(5)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px">BS</div><div class="ct2">Monatsabschluss</div><div class="cd">Buchungssätze → T-Konten → Bilanz → ER</div></div>
 </div>
 </div>
 
@@ -959,6 +960,73 @@ Jahresgewinn<br>
 
 <div style="margin:12px 0"><button class="bp1" onclick="fa3CheckMWST()">Alle korrigieren</button> <button onclick="fa3ResetMWST()" style="margin-left:8px">Zurücksetzen</button></div>
 <div id="fa3_mw_result" style="margin-top:12px"></div>
+</div>
+
+<!-- ÜBUNG 5: Monatsabschluss (4 Stufen) -->
+<div id="fa3_ueb5" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Monatsabschluss — Buchungssätze, T-Konten, Bilanz & ER</h2>
+<p class="sub">Vom Geschäftsfall bis zum Abschluss — Schritt für Schritt</p>
+
+<div class="hlbl" style="margin-bottom:12px"><strong>Aufgabenstellung</strong><br>
+Als Treuhänder:in eines neu gegründeten Gastronomiebetriebs erhalten Sie den Auftrag, die Buchhaltung des ersten Monats nach Eröffnung zu führen. Erstellen Sie anhand der Geschäftsfälle die Buchungssätze, führen Sie die T-Konten, und erstellen Sie abschliessend die Bilanz und Erfolgsrechnung.<br><br>
+<strong>Vorgehen:</strong> Arbeiten Sie die 4 Stufen der Reihe nach ab. Jede Stufe hat einen eigenen Korrektur-Button. Falsche Antworten werden rot markiert — klicke «Lösung anzeigen» um die korrekte Antwort zu sehen.</div>
+
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3GenBS()">Neue Aufgabe generieren</button>
+</div>
+
+<div id="fa3_bs_scenario" class="hl" style="margin-bottom:16px"></div>
+<div id="fa3_bs_konten" style="margin-bottom:16px;font-size:12px"></div>
+
+<!-- STUFE 1: Buchungsjournal -->
+<div class="c" style="padding:16px 20px;margin-bottom:16px">
+<h3 style="margin-bottom:8px;color:var(--ac)">Stufe 1 — Buchungsjournal</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Erstellen Sie für jeden Geschäftsfall den Buchungssatz (Soll-Konto, Haben-Konto, Betrag). Verwenden Sie die Kontonummern.</p>
+<div id="fa3_bs_journal"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckBS(1)">Stufe 1 korrigieren</button>
+<button onclick="fa3ShowSol(1)" id="fa3_bs_sol1btn" style="display:none">Lösung anzeigen</button>
+</div>
+<div id="fa3_bs_res1" style="margin-top:8px"></div>
+</div>
+
+<!-- STUFE 2: T-Konten -->
+<div class="c" style="padding:16px 20px;margin-bottom:16px">
+<h3 style="margin-bottom:8px;color:var(--g)">Stufe 2 — T-Konten saldieren</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Berechnen Sie den Schlusssaldo jedes Kontos. Tipp: Übertragen Sie zuerst die Buchungssätze aus Stufe 1 in die T-Konten (auf Papier oder im Kopf).</p>
+<div id="fa3_bs_tkonten"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckBS(2)">Stufe 2 korrigieren</button>
+<button onclick="fa3ShowSol(2)" id="fa3_bs_sol2btn" style="display:none">Lösung anzeigen</button>
+</div>
+<div id="fa3_bs_res2" style="margin-top:8px"></div>
+</div>
+
+<!-- STUFE 3: Bilanz -->
+<div class="c" style="padding:16px 20px;margin-bottom:16px">
+<h3 style="margin-bottom:8px;color:var(--bl)">Stufe 3 — Bilanz per Monatsende</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Ordnen Sie die Bilanzkonten den richtigen Positionen zu und tragen Sie die Salden ein. Die Bilanz muss ausgeglichen sein (Aktiven = Passiven).</p>
+<div id="fa3_bs_bilanz"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckBS(3)">Stufe 3 korrigieren</button>
+<button onclick="fa3ShowSol(3)" id="fa3_bs_sol3btn" style="display:none">Lösung anzeigen</button>
+</div>
+<div id="fa3_bs_res3" style="margin-top:8px"></div>
+</div>
+
+<!-- STUFE 4: Erfolgsrechnung -->
+<div class="c" style="padding:16px 20px;margin-bottom:16px">
+<h3 style="margin-bottom:8px;color:var(--pr)">Stufe 4 — Erfolgsrechnung des Monats</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Tragen Sie die Aufwand- und Ertragskonten ein und berechnen Sie das Monatsergebnis (Gewinn oder Verlust).</p>
+<div id="fa3_bs_er"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckBS(4)">Stufe 4 korrigieren</button>
+<button onclick="fa3ShowSol(4)" id="fa3_bs_sol4btn" style="display:none">Lösung anzeigen</button>
+</div>
+<div id="fa3_bs_res4" style="margin-top:8px"></div>
+</div>
+
 </div>
 
 </div>
@@ -1212,13 +1280,14 @@ setTimeout(function() {
 
 // Show/hide exercises
 window.fa3ShowUeb = function(n) {
-  ['fa3_ueb_sel','fa3_ueb1','fa3_ueb2','fa3_ueb3','fa3_ueb4'].forEach(function(id){
+  ['fa3_ueb_sel','fa3_ueb1','fa3_ueb2','fa3_ueb3','fa3_ueb4','fa3_ueb5'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.style.display='none';
   });
   if(n===0) { document.getElementById('fa3_ueb_sel').style.display='block'; }
   else { 
     document.getElementById('fa3_ueb'+n).style.display='block';
-    if(n===1) fa3GenER(); // generate random numbers
+    if(n===1) fa3GenER();
+    if(n===5) fa3GenBS();
   }
 };
 
@@ -1367,6 +1436,313 @@ window.fa3CheckMWST = function() {
 window.fa3ResetMWST = function() {
   ['fa3_mw_i','fa3_mw_it','fa3_mw_v','fa3_mw_vt','fa3_mw_b','fa3_mw_bt','fa3_mw_gv','fa3_mw_gb','fa3_mw_total'].forEach(function(id){var e=document.getElementById(id);if(e){e.value='';e.style.border='';e.style.background='';}});
   var r=document.getElementById('fa3_mw_result');if(r)r.innerHTML='';
+};
+
+// ==========================================
+// ÜBUNG 5: MONATSABSCHLUSS (4 Stufen)
+// ==========================================
+var fa3BS = {}; // current exercise state
+
+// Pool of business scenario templates
+var FA3_BS_POOL = [
+  {name:'Soul Food', type:'Restaurant', month:'Januar 2025'},
+  {name:'Alpenstube', type:'Restaurant', month:'Februar 2025'},
+  {name:'Lago Blu', type:'Restaurant & Bar', month:'März 2025'},
+  {name:'Brasserie Central', type:'Restaurant', month:'April 2025'},
+  {name:'Gasthaus Hirschen', type:'Gasthaus', month:'Mai 2025'},
+];
+
+// Pool of transaction templates (will be filled with random amounts)
+// type: ak=Aktienkapital, dar=Darlehen, inv=Investition, wk=Wareneinkauf Küche, wg=Wareneinkauf Getränke,
+//       uk=Umsatz Küche, ug=Umsatz Getränke, lohn=Lohn, sv=Sozialversicherung, rep=Reparatur, mat=Material
+var FA3_GF_TEMPLATES = [
+  {id:'ak', text:'Die Eigentümer:innen zahlen das Aktienkapital von CHF {v} auf der Bank ein.', soll:'1020', haben:'2802', minV:50000, maxV:200000, step:10000},
+  {id:'dar', text:'Sie erhalten von einer Privatperson CHF {v} in Bar als langfristiges Darlehen.', soll:'1000', haben:'2406', minV:5000, maxV:30000, step:1000},
+  {id:'inv', text:'Sie verbuchen eine Rechnung für gekaufte Küchengeräte und Maschinen über CHF {v}.', soll:'1430', haben:'2000', minV:10000, maxV:60000, step:5000},
+  {id:'wk', text:'Sie verbuchen die Monatsrechnung der Lebensmittellieferungen (Küche), CHF {v}.', soll:'4201', haben:'2000', minV:2000, maxV:8000, step:500},
+  {id:'wg', text:'Sie verbuchen die Monatsrechnung der Getränkelieferungen, CHF {v}.', soll:'4101', haben:'2000', minV:1000, maxV:5000, step:500},
+  {id:'uk', text:'Monatsumsatz Küche gemäss Kassensystem: CHF {v}. Noch keine Zahlungen eingegangen.', soll:'1100', haben:'3201', minV:4000, maxV:15000, step:500},
+  {id:'ug', text:'Monatsumsatz Getränke gemäss Kassensystem: CHF {v}. Noch keine Zahlungen eingegangen.', soll:'1100', haben:'3101', minV:3000, maxV:12000, step:500},
+  {id:'lohn', text:'Personalaufwand laut Lohnprogramm: Bruttolöhne CHF {v}.', soll:'5101', haben:'2201', minV:8000, maxV:25000, step:1000},
+  {id:'sv', text:'Sozialversicherungsbeiträge (Arbeitgeberanteil) laut Lohnprogramm: CHF {v}.', soll:'5201', haben:'2202', minV:1000, maxV:4000, step:500},
+  {id:'rep', text:'Reparatur einer Maschine: CHF {v}, auf Rechnung.', soll:'6353', haben:'2000', minV:200, maxV:1500, step:50},
+  {id:'mat', text:'Betriebsmaterial (Servietten, Kerzen, etc.) geliefert: CHF {v}, auf Rechnung.', soll:'4701', haben:'2000', minV:100, maxV:600, step:50},
+];
+
+var FA3_BS_KONTEN = {
+  '1000':{name:'Kasse',typ:'A',pos:'UV'},
+  '1020':{name:'Bank',typ:'A',pos:'UV'},
+  '1100':{name:'Forderungen aus L. und L.',typ:'A',pos:'UV'},
+  '1430':{name:'Maschinen und Apparate',typ:'A',pos:'AV'},
+  '2000':{name:'Verbindlichkeiten aus L. und L.',typ:'P',pos:'kFK'},
+  '2201':{name:'Kfr. Schulden ggü. Personal',typ:'P',pos:'kFK'},
+  '2202':{name:'Kfr. Schulden ggü. Sozialvers.',typ:'P',pos:'kFK'},
+  '2406':{name:'Darlehen langfristig',typ:'P',pos:'lFK'},
+  '2802':{name:'Aktienkapital',typ:'P',pos:'EK'},
+  '3101':{name:'Keller Ertrag',typ:'E',pos:'ER'},
+  '3201':{name:'Küche Ertrag',typ:'E',pos:'ER'},
+  '4101':{name:'Keller Warenaufwand',typ:'W',pos:'MA'},
+  '4201':{name:'Küche Warenaufwand',typ:'W',pos:'MA'},
+  '4701':{name:'Betriebsmaterial Restauration',typ:'W',pos:'MA'},
+  '5101':{name:'Gehälter',typ:'W',pos:'PA'},
+  '5201':{name:'Sozialversicherungen',typ:'W',pos:'PA'},
+  '6353':{name:'Unterhalt Maschinen/Apparate',typ:'W',pos:'UBA'},
+};
+
+function fa3BSrnd(min,max,step){return Math.round((min+Math.random()*(max-min))/step)*step;}
+function fa3fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,"'");}
+
+window.fa3GenBS = function() {
+  // Pick random scenario
+  var sc = FA3_BS_POOL[Math.floor(Math.random()*FA3_BS_POOL.length)];
+  // Generate random amounts for each transaction
+  var gfs = [];
+  FA3_GF_TEMPLATES.forEach(function(t){
+    var v = fa3BSrnd(t.minV, t.maxV, t.step);
+    gfs.push({id:t.id, text:t.text.replace('{v}',fa3fmt(v)), soll:t.soll, haben:t.haben, v:v});
+  });
+  
+  // Calculate all account balances
+  var salden = {};
+  Object.keys(FA3_BS_KONTEN).forEach(function(k){salden[k]=0;});
+  gfs.forEach(function(g){
+    var sk=FA3_BS_KONTEN[g.soll], hk=FA3_BS_KONTEN[g.haben];
+    if(sk.typ==='A'||sk.typ==='W') salden[g.soll]+=g.v; else salden[g.soll]-=g.v;
+    if(hk.typ==='P'||hk.typ==='E') salden[g.haben]+=g.v; else salden[g.haben]-=g.v;
+  });
+  
+  // Calculate ER totals
+  var totalAufwand=0, totalErtrag=0;
+  Object.keys(salden).forEach(function(k){
+    var t=FA3_BS_KONTEN[k].typ;
+    if(t==='W') totalAufwand+=salden[k];
+    if(t==='E') totalErtrag+=salden[k];
+  });
+  var ergebnis = totalErtrag - totalAufwand;
+  
+  fa3BS = {sc:sc, gfs:gfs, salden:salden, totalAufwand:totalAufwand, totalErtrag:totalErtrag, ergebnis:ergebnis};
+  
+  // Reset solution buttons
+  [1,2,3,4].forEach(function(i){
+    var b=document.getElementById('fa3_bs_sol'+i+'btn');if(b)b.style.display='none';
+    var r=document.getElementById('fa3_bs_res'+i);if(r)r.innerHTML='';
+  });
+  
+  // Render scenario
+  document.getElementById('fa3_bs_scenario').innerHTML = '<strong>'+sc.type+' «'+sc.name+'»</strong> — Monatsabschluss '+sc.month+'<br>Der Betrieb wurde am 01. des Monats eröffnet. Erstellen Sie den ersten Monatsabschluss.';
+  
+  // Render available accounts
+  var kh='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div><strong>Bilanzkonten:</strong><br>';
+  Object.keys(FA3_BS_KONTEN).forEach(function(k){
+    var ki=FA3_BS_KONTEN[k];
+    if(ki.typ==='A'||ki.typ==='P') kh+='<span style="font-size:11px">'+k+' '+ki.name+'</span><br>';
+  });
+  kh+='</div><div><strong>Erfolgsrechnungskonten:</strong><br>';
+  Object.keys(FA3_BS_KONTEN).forEach(function(k){
+    var ki=FA3_BS_KONTEN[k];
+    if(ki.typ==='W'||ki.typ==='E') kh+='<span style="font-size:11px">'+k+' '+ki.name+'</span><br>';
+  });
+  kh+='</div></div>';
+  document.getElementById('fa3_bs_konten').innerHTML = kh;
+  
+  // Render STUFE 1: Buchungsjournal
+  var td='padding:6px;border:1px solid var(--bd);font-size:12px';
+  var jh='<table style="width:100%;border-collapse:collapse">';
+  jh+='<tr style="background:var(--s2)"><th style="'+td+';width:30px">Nr.</th><th style="'+td+'">Geschäftsfall</th><th style="'+td+';width:70px">Soll</th><th style="'+td+';width:70px">Haben</th><th style="'+td+';width:80px">Betrag</th></tr>';
+  gfs.forEach(function(g,i){
+    jh+='<tr><td style="'+td+';text-align:center">'+(i+1)+'</td>';
+    jh+='<td style="'+td+'">'+g.text+'</td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_bs_s'+i+'" style="width:55px;text-align:center;padding:3px" placeholder="Kto?"></td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_bs_h'+i+'" style="width:55px;text-align:center;padding:3px" placeholder="Kto?"></td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_bs_v'+i+'" style="width:65px;text-align:right;padding:3px" placeholder="CHF?"></td></tr>';
+  });
+  jh+='</table>';
+  document.getElementById('fa3_bs_journal').innerHTML = jh;
+  
+  // Render STUFE 2: T-Konten (only saldo input)
+  var usedKonten = {};
+  gfs.forEach(function(g){usedKonten[g.soll]=true;usedKonten[g.haben]=true;});
+  var th='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">';
+  Object.keys(FA3_BS_KONTEN).forEach(function(k){
+    if(!usedKonten[k]) return;
+    var ki=FA3_BS_KONTEN[k];
+    th+='<div class="c" style="padding:10px 12px"><div style="font-size:11px;font-weight:600;margin-bottom:4px;color:var(--tx2)">'+k+' '+ki.name+'</div>';
+    th+='<div style="display:flex;align-items:center;gap:6px"><span style="font-size:12px">Saldo:</span><input type="text" id="fa3_bs_tk'+k+'" style="width:70px;text-align:right;padding:3px" placeholder="CHF?"></div></div>';
+  });
+  th+='</div>';
+  document.getElementById('fa3_bs_tkonten').innerHTML = th;
+  
+  // Render STUFE 3: Bilanz
+  var bh='<table style="width:100%;border-collapse:collapse;font-size:12px">';
+  bh+='<tr style="background:var(--s2)"><th style="'+td+'" colspan="2">AKTIVEN</th><th style="'+td+'" colspan="2">PASSIVEN</th></tr>';
+  bh+='<tr><td style="'+td+'" colspan="2"><strong>Umlaufvermögen</strong></td><td style="'+td+'" colspan="2"><strong>Kfr. Fremdkapital</strong></td></tr>';
+  // UV rows
+  var uvKonten=['1000','1020','1100'], kfkKonten=['2000','2201','2202'];
+  var maxRows = Math.max(uvKonten.length, kfkKonten.length);
+  for(var ri=0;ri<maxRows;ri++){
+    bh+='<tr>';
+    if(ri<uvKonten.length&&usedKonten[uvKonten[ri]]) bh+='<td style="'+td+'">'+uvKonten[ri]+' '+FA3_BS_KONTEN[uvKonten[ri]].name+'</td><td style="'+td+'"><input type="text" id="fa3_bs_bil'+uvKonten[ri]+'" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+    else bh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+    if(ri<kfkKonten.length&&usedKonten[kfkKonten[ri]]) bh+='<td style="'+td+'">'+kfkKonten[ri]+' '+FA3_BS_KONTEN[kfkKonten[ri]].name+'</td><td style="'+td+'"><input type="text" id="fa3_bs_bil'+kfkKonten[ri]+'" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+    else bh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+    bh+='</tr>';
+  }
+  bh+='<tr><td style="'+td+'" colspan="2"><strong>Anlagevermögen</strong></td><td style="'+td+'" colspan="2"><strong>Lfr. Fremdkapital</strong></td></tr>';
+  bh+='<tr>';
+  if(usedKonten['1430']) bh+='<td style="'+td+'">1430 Maschinen</td><td style="'+td+'"><input type="text" id="fa3_bs_bil1430" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+  else bh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+  if(usedKonten['2406']) bh+='<td style="'+td+'">2406 Darlehen lfr.</td><td style="'+td+'"><input type="text" id="fa3_bs_bil2406" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+  else bh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+  bh+='</tr>';
+  bh+='<tr><td style="'+td+'" colspan="2"></td><td style="'+td+'" colspan="2"><strong>Eigenkapital</strong></td></tr>';
+  bh+='<tr><td style="'+td+'" colspan="2"></td><td style="'+td+'">2802 Aktienkapital</td><td style="'+td+'"><input type="text" id="fa3_bs_bil2802" style="width:65px;text-align:right;padding:3px" placeholder="?"></td></tr>';
+  bh+='<tr><td style="'+td+'" colspan="2"></td><td style="'+td+'">Monatsergebnis</td><td style="'+td+'"><input type="text" id="fa3_bs_bilerg" style="width:65px;text-align:right;padding:3px" placeholder="?"></td></tr>';
+  bh+='<tr style="background:var(--s2)"><td style="'+td+'"><strong>Total Aktiven</strong></td><td style="'+td+'"><input type="text" id="fa3_bs_bilTA" style="width:65px;text-align:right;padding:3px;font-weight:700" placeholder="?"></td>';
+  bh+='<td style="'+td+'"><strong>Total Passiven</strong></td><td style="'+td+'"><input type="text" id="fa3_bs_bilTP" style="width:65px;text-align:right;padding:3px;font-weight:700" placeholder="?"></td></tr>';
+  bh+='</table>';
+  document.getElementById('fa3_bs_bilanz').innerHTML = bh;
+  
+  // Render STUFE 4: Erfolgsrechnung
+  var eh='<table style="width:100%;border-collapse:collapse;font-size:12px">';
+  eh+='<tr style="background:var(--s2)"><th style="'+td+'" colspan="2">AUFWAND</th><th style="'+td+'" colspan="2">ERTRAG</th></tr>';
+  var aufwKonten=['4101','4201','4701','5101','5201','6353'];
+  var ertrKonten=['3101','3201'];
+  var erMax=Math.max(aufwKonten.length,ertrKonten.length);
+  for(var ei=0;ei<erMax;ei++){
+    eh+='<tr>';
+    if(ei<aufwKonten.length&&usedKonten[aufwKonten[ei]]) eh+='<td style="'+td+'">'+aufwKonten[ei]+' '+FA3_BS_KONTEN[aufwKonten[ei]].name+'</td><td style="'+td+'"><input type="text" id="fa3_bs_er'+aufwKonten[ei]+'" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+    else eh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+    if(ei<ertrKonten.length&&usedKonten[ertrKonten[ei]]) eh+='<td style="'+td+'">'+ertrKonten[ei]+' '+FA3_BS_KONTEN[ertrKonten[ei]].name+'</td><td style="'+td+'"><input type="text" id="fa3_bs_er'+ertrKonten[ei]+'" style="width:65px;text-align:right;padding:3px" placeholder="?"></td>';
+    else eh+='<td style="'+td+'"></td><td style="'+td+'"></td>';
+    eh+='</tr>';
+  }
+  eh+='<tr style="background:var(--s2)"><td style="'+td+'"><strong>Total Aufwand</strong></td><td style="'+td+'"><input type="text" id="fa3_bs_erTA" style="width:65px;text-align:right;padding:3px;font-weight:700" placeholder="?"></td>';
+  eh+='<td style="'+td+'"><strong>Total Ertrag</strong></td><td style="'+td+'"><input type="text" id="fa3_bs_erTE" style="width:65px;text-align:right;padding:3px;font-weight:700" placeholder="?"></td></tr>';
+  eh+='<tr><td style="'+td+'" colspan="2"><strong>Monatsergebnis (Gewinn/Verlust):</strong></td>';
+  eh+='<td style="'+td+'" colspan="2"><input type="text" id="fa3_bs_erRES" style="width:80px;text-align:right;padding:3px;font-weight:700" placeholder="CHF?"></td></tr>';
+  eh+='</table>';
+  document.getElementById('fa3_bs_er').innerHTML = eh;
+};
+
+// Helper: check single input
+function fa3BScheck(id,expected,tol){
+  var el=document.getElementById(id);if(!el)return false;
+  var v=parseFloat(el.value.replace(/'/g,'').replace(/,/g,'.').replace(/%/g,'').replace(/CHF/gi,'').trim());
+  tol=tol||Math.max(1,Math.abs(expected)*0.005);
+  if(!isNaN(v)&&Math.abs(v-expected)<=tol){el.style.border='2px solid var(--g)';el.style.background='rgba(52,199,89,.08)';return true;}
+  else{el.style.border='2px solid var(--r)';el.style.background='rgba(255,59,48,.08)';return false;}
+}
+
+window.fa3CheckBS = function(stufe) {
+  var d=fa3BS, correct=0, total=0;
+  
+  if(stufe===1) {
+    // Check Buchungsjournal
+    d.gfs.forEach(function(g,i){
+      total+=3;
+      var sEl=document.getElementById('fa3_bs_s'+i);
+      var hEl=document.getElementById('fa3_bs_h'+i);
+      if(sEl){var sv=sEl.value.trim();if(sv===g.soll){sEl.style.border='2px solid var(--g)';sEl.style.background='rgba(52,199,89,.08)';correct++;}else{sEl.style.border='2px solid var(--r)';sEl.style.background='rgba(255,59,48,.08)';}}
+      if(hEl){var hv=hEl.value.trim();if(hv===g.haben){hEl.style.border='2px solid var(--g)';hEl.style.background='rgba(52,199,89,.08)';correct++;}else{hEl.style.border='2px solid var(--r)';hEl.style.background='rgba(255,59,48,.08)';}}
+      if(fa3BScheck('fa3_bs_v'+i,g.v)) correct++;
+    });
+    var res=document.getElementById('fa3_bs_res1');
+    if(correct===total) res.innerHTML='<div class="hlg">Alle Buchungssätze korrekt! ✓</div>';
+    else{res.innerHTML='<div class="hlr">'+correct+' von '+total+' Werte korrekt.</div>';document.getElementById('fa3_bs_sol1btn').style.display='inline-block';}
+  }
+  
+  if(stufe===2) {
+    // Check T-Konten Salden
+    Object.keys(d.salden).forEach(function(k){
+      if(!document.getElementById('fa3_bs_tk'+k)) return;
+      total++;
+      if(fa3BScheck('fa3_bs_tk'+k,d.salden[k])) correct++;
+    });
+    var res=document.getElementById('fa3_bs_res2');
+    if(correct===total) res.innerHTML='<div class="hlg">Alle Salden korrekt! ✓</div>';
+    else{res.innerHTML='<div class="hlr">'+correct+' von '+total+' Salden korrekt.</div>';document.getElementById('fa3_bs_sol2btn').style.display='inline-block';}
+  }
+  
+  if(stufe===3) {
+    // Check Bilanz
+    var bilKonten=['1000','1020','1100','1430','2000','2201','2202','2406','2802'];
+    bilKonten.forEach(function(k){
+      if(!document.getElementById('fa3_bs_bil'+k)) return;
+      total++;
+      if(fa3BScheck('fa3_bs_bil'+k,d.salden[k])) correct++;
+    });
+    total+=3; // ergebnis + totals
+    if(fa3BScheck('fa3_bs_bilerg',d.ergebnis)) correct++;
+    var totalA=0,totalP=0;
+    Object.keys(d.salden).forEach(function(k){var t=FA3_BS_KONTEN[k].typ;if(t==='A')totalA+=d.salden[k];if(t==='P')totalP+=d.salden[k];});
+    totalP+=d.ergebnis; // ergebnis is part of EK
+    if(fa3BScheck('fa3_bs_bilTA',totalA)) correct++;
+    if(fa3BScheck('fa3_bs_bilTP',totalP)) correct++;
+    var res=document.getElementById('fa3_bs_res3');
+    if(correct===total) res.innerHTML='<div class="hlg">Bilanz korrekt und ausgeglichen! ✓</div>';
+    else{res.innerHTML='<div class="hlr">'+correct+' von '+total+' Werte korrekt.</div>';document.getElementById('fa3_bs_sol3btn').style.display='inline-block';}
+  }
+  
+  if(stufe===4) {
+    // Check Erfolgsrechnung
+    var aufwKonten=['4101','4201','4701','5101','5201','6353'];
+    var ertrKonten=['3101','3201'];
+    aufwKonten.concat(ertrKonten).forEach(function(k){
+      if(!document.getElementById('fa3_bs_er'+k)||d.salden[k]===0) return;
+      total++;
+      if(fa3BScheck('fa3_bs_er'+k,d.salden[k])) correct++;
+    });
+    total+=3; // totals + ergebnis
+    if(fa3BScheck('fa3_bs_erTA',d.totalAufwand)) correct++;
+    if(fa3BScheck('fa3_bs_erTE',d.totalErtrag)) correct++;
+    if(fa3BScheck('fa3_bs_erRES',d.ergebnis)) correct++;
+    var res=document.getElementById('fa3_bs_res4');
+    if(correct===total) res.innerHTML='<div class="hlg">Erfolgsrechnung korrekt! ✓</div>';
+    else{res.innerHTML='<div class="hlr">'+correct+' von '+total+' Werte korrekt.</div>';document.getElementById('fa3_bs_sol4btn').style.display='inline-block';}
+  }
+};
+
+window.fa3ShowSol = function(stufe) {
+  var d=fa3BS;
+  if(stufe===1) {
+    var sh='<div style="font-size:12px;color:var(--tx2);margin-top:8px"><strong>Lösungen Buchungsjournal:</strong><br>';
+    d.gfs.forEach(function(g,i){
+      sh+=(i+1)+'. Soll <strong>'+g.soll+'</strong> '+FA3_BS_KONTEN[g.soll].name+' / Haben <strong>'+g.haben+'</strong> '+FA3_BS_KONTEN[g.haben].name+' — CHF '+fa3fmt(g.v)+'<br>';
+    });
+    sh+='</div>';
+    document.getElementById('fa3_bs_res1').innerHTML+=sh;
+  }
+  if(stufe===2) {
+    var sh='<div style="font-size:12px;color:var(--tx2);margin-top:8px"><strong>Lösungen T-Konten Salden:</strong><br>';
+    Object.keys(d.salden).forEach(function(k){
+      if(d.salden[k]!==0) sh+=k+' '+FA3_BS_KONTEN[k].name+': <strong>CHF '+fa3fmt(d.salden[k])+'</strong><br>';
+    });
+    sh+='</div>';
+    document.getElementById('fa3_bs_res2').innerHTML+=sh;
+  }
+  if(stufe===3) {
+    var totalA=0,totalP=0;
+    Object.keys(d.salden).forEach(function(k){var t=FA3_BS_KONTEN[k].typ;if(t==='A')totalA+=d.salden[k];if(t==='P')totalP+=d.salden[k];});
+    totalP+=d.ergebnis;
+    var sh='<div style="font-size:12px;color:var(--tx2);margin-top:8px"><strong>Lösungen Bilanz:</strong><br>';
+    Object.keys(d.salden).forEach(function(k){
+      var t=FA3_BS_KONTEN[k].typ;
+      if((t==='A'||t==='P')&&d.salden[k]!==0) sh+=k+' '+FA3_BS_KONTEN[k].name+': <strong>CHF '+fa3fmt(d.salden[k])+'</strong><br>';
+    });
+    sh+='Monatsergebnis: <strong>CHF '+fa3fmt(d.ergebnis)+'</strong><br>';
+    sh+='Total Aktiven: <strong>CHF '+fa3fmt(totalA)+'</strong> · Total Passiven: <strong>CHF '+fa3fmt(totalP)+'</strong></div>';
+    document.getElementById('fa3_bs_res3').innerHTML+=sh;
+  }
+  if(stufe===4) {
+    var sh='<div style="font-size:12px;color:var(--tx2);margin-top:8px"><strong>Lösungen Erfolgsrechnung:</strong><br>';
+    Object.keys(d.salden).forEach(function(k){
+      var t=FA3_BS_KONTEN[k].typ;
+      if((t==='W'||t==='E')&&d.salden[k]!==0) sh+=k+' '+FA3_BS_KONTEN[k].name+': <strong>CHF '+fa3fmt(d.salden[k])+'</strong><br>';
+    });
+    sh+='Total Aufwand: <strong>CHF '+fa3fmt(d.totalAufwand)+'</strong> · Total Ertrag: <strong>CHF '+fa3fmt(d.totalErtrag)+'</strong><br>';
+    sh+='Monatsergebnis: <strong>CHF '+fa3fmt(d.ergebnis)+'</strong> '+(d.ergebnis>=0?'(Gewinn)':'(Verlust)')+'</div>';
+    document.getElementById('fa3_bs_res4').innerHTML+=sh;
+  }
 };
 
 })();
