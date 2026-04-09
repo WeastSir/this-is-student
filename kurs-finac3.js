@@ -8,7 +8,7 @@ const courseConfig = {
   name: 'Financial Accounting 3',
   pages: [
     'fa3', 'fa3_kap1', 'fa3_kap2', 'fa3_kap3', 'fa3_kap4', 'fa3_kap5', 'fa3_kap6', 'fa3_kap7', 'fa3_kap8',
-    'fa3_ueb', 'fa3_mind', 'fa3_kart', 'fa3_quiz', 'fa3_glossar'
+    'fa3_kplan', 'fa3_ueb', 'fa3_mind', 'fa3_kart', 'fa3_quiz', 'fa3_glossar'
   ],
   subNav: [
     {s:'fa3', l:'Übersicht'},
@@ -20,6 +20,7 @@ const courseConfig = {
     {s:'fa3_kap6', l:'6 MWST'},
     {s:'fa3_kap7', l:'7 Abschlüsse'},
     {s:'fa3_kap8', l:'8 Gewinnverwendung'},
+    {s:'fa3_kplan', l:'Kontenplan SHL'},
     {s:'fa3_ueb', l:'Übungen'},
     {s:'fa3_mind', l:'Zusammenfassung'},
     {s:'fa3_kart', l:'Karten'},
@@ -82,7 +83,7 @@ const courseHTML = `
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
 <div class="c ck" onclick="go('fa3_ueb')" style="text-align:center;padding:24px 16px">
-<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">5</div>
+<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">6</div>
 <div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div></div>
 <div class="c ck" onclick="go('fa3_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">2</div>
@@ -889,6 +890,7 @@ Jahresgewinn<br>
 <div class="c ck" onclick="fa3ShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--am);margin-bottom:6px">WA%</div><div class="ct2">Warenrenditen</div><div class="cd">Bestandesänderung berechnen</div></div>
 <div class="c ck" onclick="fa3ShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">8.1%</div><div class="ct2">MWST Prinzip</div><div class="cd">Allphasensteuer verstehen</div></div>
 <div class="c ck" onclick="fa3ShowUeb(5)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px">BS</div><div class="ct2">Monatsabschluss</div><div class="cd">Buchungssätze → T-Konten → Bilanz → ER</div></div>
+<div class="c ck" onclick="fa3ShowUeb(6)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--am);margin-bottom:6px">LV</div><div class="ct2">Lohnverbuchung</div><div class="cd">Grundprinzip & Hauptbuchkonten</div></div>
 </div>
 </div>
 
@@ -1044,6 +1046,179 @@ Jahresgewinn<br>
 
 </div>
 
+<!-- ÜBUNG 6: Lohnverbuchung (wie PDF-Übungen) -->
+<div id="fa3_ueb6" style="display:none">
+<button onclick="fa3ShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Lohnverbuchung — Grundprinzip & Hauptbuchkonten</h2>
+<p class="sub">Löhne über das Lohndurchlaufkonto verbuchen</p>
+
+<div id="fa3_lv_aufgabe" class="hlbl" style="margin-bottom:12px"></div>
+<div id="fa3_lv_konten" style="margin-bottom:12px"></div>
+<div id="fa3_lv_info" class="hl" style="margin-bottom:16px"></div>
+
+<div style="margin:12px 0"><button class="bp1" onclick="fa3GenLV()">Neue Aufgabe generieren</button></div>
+
+<!-- Teil 1: Buchungssätze -->
+<div class="c" style="padding:16px 20px;margin-bottom:20px">
+<h3 style="margin-bottom:4px;color:var(--ac)">1. Buchungssätze erstellen</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Verbuchen Sie die Geschäftsfälle über das Lohndurchlaufkonto.</p>
+<div id="fa3_lv_journal"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckLV(1)">Korrigieren</button>
+<button onclick="fa3ShowLVSol(1)" id="fa3_lv_sol1btn" style="display:none">Lösung anzeigen</button>
+<button onclick="fa3ResetLV(1)" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="fa3_lv_res1" style="margin-top:8px"></div>
+</div>
+
+<!-- Teil 2: Hauptbuchkonten -->
+<div class="c" style="padding:16px 20px;margin-bottom:20px">
+<h3 style="margin-bottom:4px;color:var(--g)">2. Hauptbuchkonten führen</h3>
+<p style="font-size:13px;color:var(--tx2);margin-bottom:12px">Tragen Sie die Buchungen in die Hauptbuchkonten ein und berechnen Sie die Salden.</p>
+<div id="fa3_lv_hbk"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckLV(2)">Korrigieren</button>
+<button onclick="fa3ShowLVSol(2)" id="fa3_lv_sol2btn" style="display:none">Lösung anzeigen</button>
+<button onclick="fa3ResetLV(2)" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="fa3_lv_res2" style="margin-top:8px"></div>
+</div>
+
+<!-- Teil 3: Verständnisfragen -->
+<div class="c" style="padding:16px 20px;margin-bottom:20px">
+<h3 style="margin-bottom:4px;color:var(--pr)">3. Verständnisfragen</h3>
+<div id="fa3_lv_fragen"></div>
+<div style="margin:12px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="fa3CheckLV(3)">Korrigieren</button>
+<button onclick="fa3ShowLVSol(3)" id="fa3_lv_sol3btn" style="display:none">Lösung anzeigen</button>
+</div>
+<div id="fa3_lv_res3" style="margin-top:8px"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== KONTENPLAN SHL ===================== -->
+<div class="sec" id="fa3_kplan"><h1>Kontenplan SHL</h1><p class="sub">Schweizer Kontenrahmen für die Hotellerie und Gastronomie (SKHG)</p>
+<div class="hl">Der Kontenplan ist die Grundlage jeder Buchhaltung. Hier findest du alle relevanten Konten des SHL-Kontenplans, gegliedert nach Kontenklassen mit Erklärungen.</div>
+
+<div style="display:flex;gap:8px;margin:12px 0 4px">
+<button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button>
+<button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button>
+</div>
+<div class="tl">
+
+<div class="tl-item"><div class="tl-num tl-num-b">1</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 1 — Aktiven</div>
+<div class="tl-merksatz">«Vermögen des Unternehmens — von flüssig bis fest»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>Umlaufvermögen (10–13)</strong> — innerhalb 1 Jahr verfügbar<br><strong>Anlagevermögen (14–18)</strong> — langfristig genutzt</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">100 Flüssige Mittel</div><div class="cd">10000 Kasse · 10010 Stockgelder · 10020 Durchlaufkonto Tageseinnahmen · 10100 Postkonto · 10200 Banken aktiv<br><em>→ Das sofort verfügbare Geld</em></div></div>
+<div class="c cbl"><div class="ct2">105 Kurzfristige Geldanlagen</div><div class="cd">10510 Wertschriften, leicht realisierbar<br><em>→ Schnell zu Geld machbare Anlagen</em></div></div>
+<div class="c ca"><div class="ct2">110/114 Forderungen</div><div class="cd">11000 Forderungen aus L. und L. · 11060 Delkredere (Wertberichtigung)<br>11400 Kfr. Forderungen Personal (Lohnvorschüsse)<br>11410 AHV-Ausgleichskasse Aktiv · 11420 PK/BVG Aktiv<br>11460 Vorsteuer Waren · 11470 Vorsteuer Investitionen<br><em>→ Geld das uns jemand schuldet (Debitoren, Vorsteuer, Vorschüsse)</em></div></div>
+<div class="c ca"><div class="ct2">120 Warenvorräte</div><div class="cd">12000 Warenvorräte Sammelkonto · 12010 Vorräte Keller · 12020 Vorräte Küche<br>12050 Vorräte Betriebsmaterial · 12090 Wertberichtigung Vorräte<br><em>→ Lager: Getränke, Lebensmittel, Material</em></div></div>
+<div class="c ca"><div class="ct2">130 Aktive Rechnungsabgrenzung</div><div class="cd">13000 ARA · 13020 ARA für KER<br><em>→ Vorausbezahlte Aufwände / noch nicht erhaltene Erträge</em></div></div>
+<div class="c cg"><div class="ct2">140 Sachanlagen</div><div class="cd">14000 Immobilien · 14100 Installationen · 14200 Mobilien<br>14300 Maschinen/Apparate · 14350 EDV-Anlagen · 14400 Kleininventar · 14500 Fahrzeuge<br><em>→ Langfristige Güter die genutzt und abgeschrieben werden</em></div></div>
+<div class="c cg"><div class="ct2">150–180 Finanz-/Immaterielles AV</div><div class="cd">15000 Beteiligungen · 15020 Darlehen aktiv lfr. · 17000 Immaterielle Anlagen · 17030 Goodwill<br><em>→ Nicht-physisches Vermögen, langfristige Forderungen</em></div></div>
+</div>
+<div class="merksatz">Merke: Aktivkonten nehmen im Soll zu. Je flüssiger das Konto, desto weiter oben in der Bilanz.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">2</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 2 — Passiven</div>
+<div class="tl-merksatz">«Woher kommt das Geld? Schulden und Eigenkapital»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>Kurzfristiges FK (20–23)</strong> — innerhalb 1 Jahr fällig<br><strong>Langfristiges FK (24–26)</strong> — nach 1 Jahr fällig<br><strong>Eigenkapital (28)</strong> — gehört den Eigentümern</div>
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">200 Verbindlichkeiten aus L. und L.</div><div class="cd">20000 VLL Sammelkonto (Kreditoren)<br><em>→ Was wir Lieferanten schulden</em></div></div>
+<div class="c cr"><div class="ct2">220 Übrige kfr. Verbindlichkeiten</div><div class="cd">22010 Lohndurchlaufkonto · 22020 AHV-Ausgleichskasse (KK SozVers)<br>22030 Pensionskasse · 22040 Quellensteuer · 22055 L-GAV<br>22060 Direkte Steuern · 22061 Verrechnungssteuer · 22070 Anzahlungen Kunden<br>22080 MWST auf Umsatz<br><em>→ Personal, Sozialversicherungen, Steuern, MWST</em></div></div>
+<div class="c cr"><div class="ct2">230 Passive Rechnungsabgrenzung</div><div class="cd">23000 PRA · 23700 Zeitguthaben Mitarbeitende<br><em>→ Noch zu bezahlende Aufwände / voraus erhaltene Erträge</em></div></div>
+<div class="c cm"><div class="ct2">240–260 Langfristiges FK</div><div class="cd">24000 Hypotheken · 24060 Darlehen passiv lfr. · 24030 Leasing lfr.<br>26000 Rückstellungen · 26030/26040 Rückstellungen Personal<br><em>→ Langfristige Schulden und Rückstellungen</em></div></div>
+<div class="c cp"><div class="ct2">280 Eigenkapital</div><div class="cd">28000 EK Einzelfirma · 28020 Aktienkapital · 28050 Stammkapital GmbH<br>28100 Gesetzliche Kapitalreserve · 28160 Gesetzliche Gewinnreserve<br>28170 Freiwillige Gewinnreserve · 28200 Gewinn-/Verlustvortrag · 28280 Unternehmensergebnis<br><em>→ Das Kapital der Eigentümer</em></div></div>
+</div>
+<div class="merksatz">Merke: Passivkonten nehmen im Haben zu. Die Passivseite zeigt die Finanzierung: Wessen Geld steckt im Unternehmen?</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">3</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 3 — Betriebsertrag</div>
+<div class="tl-merksatz">«Was verdienen wir? Umsätze aus Restaurant, Küche, Beherbergung»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cg"><div class="ct2">30 Ertrag Restauration</div><div class="cd">31010 Keller Ertrag (Getränke) · 32010 Küche Ertrag (Food)<br><em>→ Umsatz aus dem Restaurant (F&B Revenue)</em></div></div>
+<div class="c cg"><div class="ct2">34 Ertrag Beherbergung</div><div class="cd">34000 Beherbergung Ertrag (Zimmerumsatz)<br><em>→ Revenue from Rooms</em></div></div>
+<div class="c cg"><div class="ct2">35 Ertrag Nebenleistungen</div><div class="cd">35013 Diverser Hotelertrag · 35071 Personalverpflegung Ertrag<br>35081 Übrige Dienstleistungen · 35101 Wellness · 35111 Seminar/Bankett<br>35301 Personalunterkunft Ertrag<br><em>→ Alles ausser F&B und Zimmer</em></div></div>
+</div>
+<div class="merksatz">Merke: Ertragskonten nehmen im Haben zu. Die Klasse 3 bildet die erste Zeile der Erfolgsrechnung: den Nettoerlös.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">4</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 4 — Direkter Betriebsaufwand</div>
+<div class="tl-merksatz">«Was kostet die Ware? Einkauf, Personal direkt, Material → GOI»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">40 Direkter Warenaufwand</div><div class="cd">41010 Keller Warenaufwand · 42010 Küche Warenaufwand<br>45071 Personalverpflegung Warenaufwand<br><em>→ Was die verkaufte Ware im Einkauf kostet</em></div></div>
+<div class="c cr"><div class="ct2">46 Direkter Personalaufwand</div><div class="cd">46110 Gehälter Restauration · 46120 Sozialleistungen Restauration<br>46410 Gehälter Beherbergung · 46531 Gehälter Nebenleistungen<br><em>→ Personal das direkt an der Leistung arbeitet (Service, Küche, Rezeption)</em></div></div>
+<div class="c cr"><div class="ct2">47–49 Direkter Betriebsaufwand</div><div class="cd">47010 Betriebsmaterial Restauration · 48000 Beherbergung dir. Aufwand<br>49052 Fahrzeugaufwand · 49055 Privatanteil Fahrzeug<br><em>→ Material und Aufwand direkt für die Leistungserstellung</em></div></div>
+</div>
+<div class="merksatz">Merke: Ertrag (KK 3) minus direkter Aufwand (KK 4) = GOI (Gross Operating Income). Das ist die Kennzahl für Bereichsleiter!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">5</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 5 — Personalaufwand (Verwaltung)</div>
+<div class="tl-merksatz">«Gehälter + Soziallasten + Übriges — der grösste Kostenblock»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cp"><div class="ct2">510 Gehälter</div><div class="cd">51010 Gehälter Sammelkonto<br><em>→ Bruttolöhne der Verwaltung/übergreifend (nicht direkt zugeordnet)</em></div></div>
+<div class="c cp"><div class="ct2">520 Sozialaufwand</div><div class="cd">52010 Soziallasten Sammelkonto<br>52020 AHV/FAK/ALV · 52030 Pensionsversicherungen<br>52040 Unfall-/Krankenvers. · 52050 Übrige Soziallasten<br><em>→ Nur Arbeitgeberanteile! Ca. 13–14% auf Bruttolöhne</em></div></div>
+<div class="c cp"><div class="ct2">530 Übriger Personalaufwand</div><div class="cd">53010 Übriger PA Sammelkonto<br><em>→ Schulung, Berufskleider, Stelleninserate, Spesen, Personalanlässe</em></div></div>
+<div class="c cm"><div class="ct2">590 Umlagen</div><div class="cd">59010 Umlagen Gehälter · 59020 Umlagen Sozialleistungen<br><em>→ Verteilung auf Kostenstellen (nur in BeBu relevant)</em></div></div>
+</div>
+<div class="merksatz">Merke: KK 5 plus KK 46 (dir. PA aus KK 4) = Gesamtpersonalaufwand. Im Gastgewerbe ca. 51% vom Umsatz!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">6</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 6 — Übriger Betriebsaufwand</div>
+<div class="tl-merksatz">«Verwaltung, Marketing, Unterhalt, Energie, Miete → GOP bis EBITDA»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">61 Verwaltung</div><div class="cd">61110 Gehälter Verwaltung · 61530 Verwaltungsaufwand · 61550 Kreditkartenorg.<br><em>→ Büro, Beratung, Organe</em></div></div>
+<div class="c cbl"><div class="ct2">62 Marketing</div><div class="cd">62500 Werbung/Verkaufsförderung · 62540 Repräsentation/PR<br><em>→ Alles was Gäste bringt</em></div></div>
+<div class="c cbl"><div class="ct2">63 Unterhalt</div><div class="cd">63500 Unterhalt Immobilien · 63510 Installationen · 63532 Maschinen/Apparate · 63550 Fahrzeuge<br><em>→ Reparaturen und Instandhaltung</em></div></div>
+<div class="c cbl"><div class="ct2">64–66 Energie, Übriges, Liegenschaft</div><div class="cd">64020 Elektrizität · 64030 Wasser · 64040 Heizung · 65010 Debitorenverluste<br>66000 Sachversicherung · 66050 Liegenschaftsaufwand<br><em>→ GOP minus KK 6 = EBITDA (ohne Miete/Abschreibungen)</em></div></div>
+<div class="c cbl"><div class="ct2">67–69 Miete, Management, Abschreibungen</div><div class="cd">67010 Mietzinsaufwand · 68000 Managementhonorare<br>69200–69310 Abschreibungen (Immobilien bis Goodwill)<br><em>→ EBITDA minus Miete = EBITDA · minus Abschreibungen = EBIT</em></div></div>
+</div>
+<div class="merksatz">Merke: GOI − KK 5/6 (ohne Miete/Abschr.) = GOP. GOP − Miete/Mgmt = EBITDA. EBITDA − Abschreibungen = EBIT.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">7</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Klasse 7 — Finanzerfolg, a.o. Erfolg & Steuern</div>
+<div class="tl-merksatz">«Zinsen, betriebsfremdes, ausserordentliches → zum Unternehmensergebnis»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cg"><div class="ct2">70 Finanzerfolg</div><div class="cd">71050 Zinsertrag · 72050 Zinsaufwand<br><em>→ EBIT ± Finanzerfolg = Betriebserfolg vor Nebeneffekten</em></div></div>
+<div class="c cg"><div class="ct2">75–78 Betriebsfremd & a.o.</div><div class="cd">75010 Betriebsfremder Ertrag · 76010 Betriebsfremder Aufwand<br>77010 A.o. Ertrag · 78010 A.o. Aufwand<br><em>→ Was nicht zum normalen Betrieb gehört (z.B. Härtefallgelder)</em></div></div>
+<div class="c cg"><div class="ct2">79 Steuern</div><div class="cd">79000 Ertragssteuern<br><em>→ EBT minus Steuern = Unternehmensergebnis (Reingewinn/-verlust)</em></div></div>
+</div>
+<div class="merksatz">Merke: Die Klasse 7 enthält alles was «neben dem Betrieb» anfällt. EBT − Steuern = das finale Unternehmensergebnis.</div>
+</div></div>
+
+</div>
 </div>
 
 <!-- ===================== ZUSAMMENFASSUNG / MINDMAPS ===================== -->
@@ -1295,7 +1470,7 @@ setTimeout(function() {
 
 // Show/hide exercises
 window.fa3ShowUeb = function(n) {
-  ['fa3_ueb_sel','fa3_ueb1','fa3_ueb2','fa3_ueb3','fa3_ueb4','fa3_ueb5'].forEach(function(id){
+  ['fa3_ueb_sel','fa3_ueb1','fa3_ueb2','fa3_ueb3','fa3_ueb4','fa3_ueb5','fa3_ueb6'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.style.display='none';
   });
   if(n===0) { document.getElementById('fa3_ueb_sel').style.display='block'; }
@@ -1303,6 +1478,7 @@ window.fa3ShowUeb = function(n) {
     document.getElementById('fa3_ueb'+n).style.display='block';
     if(n===1) fa3GenER();
     if(n===5) fa3GenBS();
+    if(n===6) fa3GenLV();
   }
 };
 
@@ -1827,6 +2003,249 @@ window.fa3ResetBS=function(stufe){
   if(wrap)wrap.querySelectorAll('input').forEach(function(e){e.value='';e.style.border='';e.style.background='';});
   var b=document.getElementById('fa3_bs_sol'+stufe+'btn');if(b)b.style.display='none';
   var r=document.getElementById('fa3_bs_res'+stufe);if(r)r.innerHTML='';
+};
+
+// ==========================================
+// ÜBUNG 6: LOHNVERBUCHUNG (wie PDF-Übungen)
+// ==========================================
+var fa3LV={};
+
+var FA3_LV_POOL=[
+  {type:'basic',title:'Grundprinzip der Lohnverbuchung',
+   konten:['10200 Bank','22010 Lohndurchlaufkonto','22020 KK Sozialversicherung','51010 Gehälter Sammelkonto','52010 Soziallasten Sammelkonto'],
+   bankAB:{min:80,max:300,step:10},lohnM:{min:50,max:200,step:10},anPct:0.10,agPct:0.12,
+   extra:[],
+   fragen:[
+     {q:'Was bedeutet ein Saldo auf dem Lohndurchlaufkonto nach Verbuchung der Bankzahlung?',a:'Ein Saldo von 0 bedeutet, dass alle Lohnbestandteile korrekt verbucht wurden. Ein Saldo ≠ 0 weist auf einen Buchungsfehler hin.'},
+     {q:'Weshalb werden nur die Arbeitgeber-Beiträge als Sozialversicherungsaufwand (52010) gebucht?',a:'Die AN-Beiträge sind bereits im Bruttolohn enthalten — sie werden nur vom Lohn abgezogen und an die Sozialversicherungen weitergeleitet. Es entsteht kein zusätzlicher Aufwand. Die AG-Beiträge hingegen sind eine zusätzliche Belastung für das Unternehmen.'},
+     {q:'Weshalb erfolgt das Inkasso der AN-Beiträge über den Arbeitgeber?',a:'Aus Effizienzgründen: Der Arbeitgeber zieht die AN-Beiträge direkt vom Lohn ab und überweist sie zusammen mit den AG-Beiträgen an die Ausgleichskasse. So muss die AHV nicht jeden einzelnen Arbeitnehmer kontaktieren.'},
+   ]},
+  {type:'quartal',title:'Lohnverbuchung mit Vorauszahlung SV',
+   konten:['10200 Bank','22010 Lohndurchlaufkonto','22020 KK Sozialversicherung','51010 Gehälter Sammelkonto','52010 Soziallasten Sammelkonto'],
+   bankAB:{min:200,max:500,step:10},lohnM:{min:100,max:300,step:10},anPct:0.10,agPct:0.12,
+   extra:['vorauszahlung'],vorazPct:0.18,
+   fragen:[
+     {q:'Was bedeutet der Saldo auf dem Konto KK Sozialversicherungen nach allen Buchungen?',a:'Der Saldo zeigt die Differenz zwischen den geschuldeten Beiträgen (AN+AG) und der bereits geleisteten Vorauszahlung. Ein Haben-Saldo = wir schulden noch Geld. Ein Soll-Saldo = wir haben zu viel vorausbezahlt (Guthaben).'},
+     {q:'Weshalb werden nur die AG-Beiträge als Sozialversicherungsaufwand gebucht?',a:'Die AN-Beiträge sind Teil des Bruttolohns und werden nur umgeleitet (22010→22020). Sie belasten die Erfolgsrechnung nicht zusätzlich. Die AG-Beiträge sind ein echter zusätzlicher Aufwand des Unternehmens (52010→22020).'},
+   ]},
+  {type:'erweitert',title:'Erweiterte Lohnabrechnung',
+   konten:['10200 Bank','11400 Lohnvorschüsse','22010 Lohndurchlaufkonto','22020 KK Sozialversicherung','45070 WA Personalverpflegung','49055 Privatanteil Fahrzeug','51010 Gehälter Sammelkonto','52010 Soziallasten Sammelkonto','53010 Übriger Personalaufwand'],
+   bankAB:{min:200,max:500,step:10},lohnM:{min:60,max:120,step:5},anPct:0.142,agPct:0.167,
+   extra:['privat','kizu','verpfl','spesen','vorschuss'],
+   privatV:{min:150,max:250,step:10},kizuV:{min:200,max:350,step:50},verpflV:{min:250,max:500,step:10},spesenV:{min:100,max:300,step:10},vorschussV:{min:500,max:2000,step:100},
+   fragen:[
+     {q:'Warum erhöht der Privatanteil Geschäftswagen den Bruttolohn?',a:'Der Privatanteil ist ein geldwerter Vorteil (Naturallohn) und muss auf dem Lohnausweis deklariert werden. Er ist AHV-pflichtig, wird aber beim Nettolohn wieder abgezogen, da kein Geld fliesst.'},
+     {q:'Warum sind Kinderzulagen nicht AHV-pflichtig?',a:'Kinderzulagen werden von der Familienausgleichskasse (FAK) finanziert und über den Arbeitgeber ausbezahlt. Sie sind kein Lohnbestandteil im engeren Sinn und daher nicht AHV-pflichtig. Deshalb Basis AN-Beiträge = Bruttolohn minus KIZU.'},
+     {q:'Über welches Konto wird der Verpflegungsabzug verbucht?',a:'45070 Warenaufwand Personalverpflegung (Haben). Der Abzug reduziert den Warenaufwand, weil das Personal auf Kosten des Betriebs isst — der Betrieb bekommt quasi einen Teil zurück.'},
+   ]},
+];
+
+// Name pool for employees
+var FA3_LV_NAMES=['Anna Müller','Marco Rossi','Lena Fischer','Thomas Weber','Sara Brunetti','Jan Kowalski','Elena Popov','David Schmid','Julia Meier','Fabio Costa'];
+
+window.fa3GenLV=function(){
+  var tpl=FA3_LV_POOL[Math.floor(Math.random()*FA3_LV_POOL.length)];
+  var name=FA3_LV_NAMES[Math.floor(Math.random()*FA3_LV_NAMES.length)];
+  var bankAB=fa3r(tpl.bankAB.min,tpl.bankAB.max,tpl.bankAB.step);
+  var lohnBrutto=fa3r(tpl.lohnM.min,tpl.lohnM.max,tpl.lohnM.step);
+
+  // Build buchungen and info
+  var buchungen=[];
+  var infoLines=[];
+  var privat=0,kizu=0,verpfl=0,spesen=0,vorschuss=0,voraz=0;
+  var anBasis=lohnBrutto;
+
+  if(tpl.extra.indexOf('vorauszahlung')>=0){
+    voraz=Math.round(lohnBrutto*tpl.vorazPct/10)*10;
+    buchungen.push({label:'Vorauszahlung Sozialversicherung',soll:'22020',haben:'10200',v:voraz});
+    infoLines.push('Vorauszahlung an die Sozialversicherungen: CHF '+fa3f(voraz));
+  }
+  if(tpl.extra.indexOf('privat')>=0){
+    privat=fa3r(tpl.privatV.min,tpl.privatV.max,tpl.privatV.step);
+    infoLines.push('Privatanteil Geschäftsauto: CHF '+fa3f(privat));
+    anBasis=lohnBrutto+privat;
+  }
+  if(tpl.extra.indexOf('kizu')>=0){
+    kizu=fa3r(tpl.kizuV.min,tpl.kizuV.max,tpl.kizuV.step);
+    infoLines.push('Kinderzulagen: CHF '+fa3f(kizu)+' (nicht AHV-pflichtig)');
+    // anBasis bleibt ohne kizu
+  }
+
+  var anBeitr=Math.round(anBasis*tpl.anPct);
+  var agBeitr=Math.round(anBasis*tpl.agPct);
+
+  if(tpl.extra.indexOf('verpfl')>=0){verpfl=fa3r(tpl.verpflV.min,tpl.verpflV.max,tpl.verpflV.step);infoLines.push('Verpflegungsabzug: CHF '+fa3f(verpfl));}
+  if(tpl.extra.indexOf('spesen')>=0){spesen=fa3r(tpl.spesenV.min,tpl.spesenV.max,tpl.spesenV.step);infoLines.push('Spesenentschädigung (effektiv): CHF '+fa3f(spesen));}
+  if(tpl.extra.indexOf('vorschuss')>=0){vorschuss=fa3r(tpl.vorschussV.min,tpl.vorschussV.max,tpl.vorschussV.step);infoLines.push('Lohnvorschuss (bereits ausbezahlt): CHF '+fa3f(vorschuss));}
+
+  // Buchungen aufbauen
+  buchungen.push({label:'Monatslohn Brutto',soll:'51010',haben:'22010',v:lohnBrutto});
+  if(privat>0)buchungen.push({label:'Privatanteil Geschäftsauto',soll:'51010',haben:'49055',v:privat});
+  if(kizu>0)buchungen.push({label:'Kinderzulagen',soll:'22020',haben:'22010',v:kizu});
+  buchungen.push({label:'Arbeitnehmer-Beiträge',soll:'22010',haben:'22020',v:anBeitr});
+  buchungen.push({label:'Arbeitgeber-Beiträge',soll:'52010',haben:'22020',v:agBeitr});
+  if(verpfl>0)buchungen.push({label:'Verpflegungsabzug',soll:'22010',haben:'45070',v:verpfl});
+  if(spesen>0)buchungen.push({label:'Spesenentschädigung',soll:'53010',haben:'22010',v:spesen});
+  if(vorschuss>0)buchungen.push({label:'Lohnvorschuss verrechnen',soll:'22010',haben:'11400',v:vorschuss});
+
+  // Calc netto/restzahlung via Durchlaufkonto
+  var dlHaben=lohnBrutto+(kizu>0?kizu:0)+(spesen>0?spesen:0);
+  var dlSoll=anBeitr+(verpfl>0?verpfl:0)+(vorschuss>0?vorschuss:0);
+  var restzahl=dlHaben-dlSoll;
+  buchungen.push({label:'Lohnzahlung',soll:'22010',haben:'10200',v:restzahl});
+
+  // Calc Hauptbuchkonten salden
+  var hbk={'10200':bankAB,'22010':0,'22020':0,'51010':0,'52010':0};
+  if(tpl.extra.indexOf('vorschuss')>=0)hbk['11400']=vorschuss;
+  if(tpl.extra.indexOf('verpfl')>=0)hbk['45070']=0;
+  if(tpl.extra.indexOf('privat')>=0)hbk['49055']=0;
+  if(tpl.extra.indexOf('spesen')>=0)hbk['53010']=0;
+  // Process buchungen
+  var hbkBuch={};Object.keys(hbk).forEach(function(k){hbkBuch[k]=[];});
+  buchungen.forEach(function(b){
+    if(!hbkBuch[b.soll])hbkBuch[b.soll]=[];
+    if(!hbkBuch[b.haben])hbkBuch[b.haben]=[];
+    hbkBuch[b.soll].push({side:'s',v:b.v,label:b.label});
+    hbkBuch[b.haben].push({side:'h',v:b.v,label:b.label});
+  });
+  // Calc final salden (simplified: A/W increase on S, P/E increase on H)
+  var kTyp={'10200':'A','11400':'A','22010':'P','22020':'P','45070':'W','49055':'W','51010':'W','52010':'W','53010':'W'};
+  var hbkSal={};
+  Object.keys(hbk).forEach(function(k){
+    var ab=hbk[k],sSum=0,hSum=0;
+    if(hbkBuch[k])hbkBuch[k].forEach(function(e){if(e.side==='s')sSum+=e.v;else hSum+=e.v;});
+    var t=kTyp[k];
+    if(t==='A'||t==='W')hbkSal[k]=ab+sSum-hSum;
+    else hbkSal[k]=ab+hSum-sSum; // P/E
+  });
+
+  fa3LV={tpl:tpl,name:name,bankAB:bankAB,lohnBrutto:lohnBrutto,privat:privat,kizu:kizu,anBeitr:anBeitr,agBeitr:agBeitr,verpfl:verpfl,spesen:spesen,vorschuss:vorschuss,voraz:voraz,restzahl:restzahl,buchungen:buchungen,hbk:hbk,hbkBuch:hbkBuch,hbkSal:hbkSal};
+
+  [1,2,3].forEach(function(i){var b=document.getElementById('fa3_lv_sol'+i+'btn');if(b)b.style.display='none';var r=document.getElementById('fa3_lv_res'+i);if(r)r.innerHTML='';});
+
+  // RENDER Aufgabestellung
+  document.getElementById('fa3_lv_aufgabe').innerHTML='<strong>'+tpl.title+'</strong><br>Verwenden Sie für Buchungen die nachstehenden Konten. Die Mehrwertsteuer wird vernachlässigt.';
+
+  var kh='<div style="font-size:12px;margin-bottom:8px"><table style="border-collapse:collapse"><tr style="background:var(--s2)"><th style="padding:4px 10px;border:1px solid var(--bd)">Kontonummer</th><th style="padding:4px 10px;border:1px solid var(--bd)">Kontobezeichnung</th></tr>';
+  tpl.konten.forEach(function(k){var p=k.split(' ');kh+='<tr><td style="padding:4px 10px;border:1px solid var(--bd)">'+p[0]+'</td><td style="padding:4px 10px;border:1px solid var(--bd)">'+p.slice(1).join(' ')+'</td></tr>';});
+  kh+='</table></div>';
+  document.getElementById('fa3_lv_konten').innerHTML=kh;
+
+  var ih='Es liegen folgende Informationen vor (Mitarbeiter:in <strong>'+name+'</strong>):<br>';
+  ih+='Monatslohn brutto: <strong>CHF '+fa3f(lohnBrutto)+'</strong><br>';
+  infoLines.forEach(function(l){ih+=l+'<br>';});
+  ih+='Arbeitnehmer-Beiträge: <strong>CHF '+fa3f(anBeitr)+'</strong> · Arbeitgeber-Beiträge: <strong>CHF '+fa3f(agBeitr)+'</strong>';
+  document.getElementById('fa3_lv_info').innerHTML=ih;
+
+  // RENDER Journal (komplett leer)
+  var td='padding:5px;border:1px solid var(--bd);font-size:12px;vertical-align:top';
+  var jh='<table style="width:100%;border-collapse:collapse"><tr style="background:var(--s2)"><th style="'+td+'">Buchungstext</th><th style="'+td+';width:65px">Soll</th><th style="'+td+';width:65px">Haben</th><th style="'+td+';width:80px">Betrag</th></tr>';
+  for(var ji=0;ji<buchungen.length+2;ji++){
+    jh+='<tr><td style="'+td+'"><input type="text" id="fa3_lvjt'+ji+'" style="width:100%;padding:3px;font-size:11px;box-sizing:border-box" placeholder=""></td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_lvjs'+ji+'" style="width:50px;text-align:center;padding:3px;font-size:11px" placeholder=""></td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_lvjh'+ji+'" style="width:50px;text-align:center;padding:3px;font-size:11px" placeholder=""></td>';
+    jh+='<td style="'+td+'"><input type="text" id="fa3_lvjv'+ji+'" style="width:65px;text-align:right;padding:3px;font-size:11px" placeholder=""></td></tr>';
+  }
+  jh+='</table>';
+  document.getElementById('fa3_lv_journal').innerHTML=jh;
+
+  // RENDER Hauptbuchkonten (Tabelle wie PDF: Zeilen für jeden Buchungsfall)
+  var ktoOrder=Object.keys(hbk);
+  var maxRows=buchungen.length+2; // AB + buchungen + Salden
+  var hh='<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:11px;width:100%"><tr style="background:var(--s2)">';
+  hh+='<th style="'+td+';width:140px"></th>';
+  ktoOrder.forEach(function(k){hh+='<th style="'+td+';text-align:center;min-width:65px">'+k+'</th>';});
+  hh+='</tr>';
+  // Anfangsbestände row
+  hh+='<tr><td style="'+td+';font-weight:600">Anfangsbestände</td>';
+  ktoOrder.forEach(function(k){
+    if(hbk[k]!==0)hh+='<td style="'+td+';text-align:right">'+fa3f(hbk[k])+'</td>';
+    else hh+='<td style="'+td+';text-align:right;color:var(--tx3)">0</td>';
+  });
+  hh+='</tr>';
+  // Buchungszeilen (leer)
+  for(var bi=0;bi<buchungen.length+1;bi++){
+    hh+='<tr><td style="'+td+'"><input type="text" id="fa3_lvhn'+bi+'" style="width:100%;padding:2px;font-size:10px;box-sizing:border-box" placeholder=""></td>';
+    ktoOrder.forEach(function(k,ki){
+      hh+='<td style="'+td+'"><input type="text" id="fa3_lvhv'+bi+'_'+ki+'" style="width:50px;text-align:right;padding:2px;font-size:10px" placeholder=""></td>';
+    });
+    hh+='</tr>';
+  }
+  // Salden row
+  hh+='<tr style="background:var(--s2)"><td style="'+td+';font-weight:700">Salden</td>';
+  ktoOrder.forEach(function(k,ki){
+    hh+='<td style="'+td+'"><input type="text" id="fa3_lvhsal'+ki+'" style="width:50px;text-align:right;padding:2px;font-size:11px;font-weight:700" placeholder=""></td>';
+  });
+  hh+='</tr></table></div>';
+  document.getElementById('fa3_lv_hbk').innerHTML=hh;
+
+  // RENDER Verständnisfragen
+  var fh='';
+  tpl.fragen.forEach(function(f,i){
+    fh+='<div style="margin-bottom:12px"><p style="font-size:13px;margin-bottom:6px"><strong>'+(i+1)+'.</strong> '+f.q+'</p>';
+    fh+='<textarea id="fa3_lvf'+i+'" style="width:100%;min-height:60px;padding:8px;font-size:12px;border:1px solid var(--bd);border-radius:6px;box-sizing:border-box;resize:vertical" placeholder="Ihre Antwort…"></textarea></div>';
+  });
+  document.getElementById('fa3_lv_fragen').innerHTML=fh;
+};
+
+window.fa3CheckLV=function(teil){
+  var d=fa3LV,c=0,t=0;
+  if(teil===1){
+    d.buchungen.forEach(function(b,i){
+      t+=2;
+      var s=document.getElementById('fa3_lvjs'+i),h=document.getElementById('fa3_lvjh'+i);
+      if(s){if(s.value.trim()===b.soll){s.style.border='2px solid var(--g)';s.style.background='rgba(52,199,89,.08)';c++;}else{s.style.border='2px solid var(--r)';s.style.background='rgba(255,59,48,.08)';}}
+      if(h){if(h.value.trim()===b.haben){h.style.border='2px solid var(--g)';h.style.background='rgba(52,199,89,.08)';c++;}else{h.style.border='2px solid var(--r)';h.style.background='rgba(255,59,48,.08)';}}
+      t++;if(fa3chk('fa3_lvjv'+i,b.v)===1)c++;
+    });
+    var r=document.getElementById('fa3_lv_res1');
+    if(c===t)r.innerHTML='<div class="hlg">Alle Buchungssätze korrekt! ✓</div>';
+    else{r.innerHTML='<div class="hlr">'+c+' von '+t+' Felder korrekt.</div>';document.getElementById('fa3_lv_sol1btn').style.display='inline-block';}
+  }
+  if(teil===2){
+    var ktoOrder=Object.keys(d.hbk);
+    ktoOrder.forEach(function(k,ki){
+      t++;if(fa3chk('fa3_lvhsal'+ki,d.hbkSal[k])===1)c++;
+    });
+    var r=document.getElementById('fa3_lv_res2');
+    if(c===t)r.innerHTML='<div class="hlg">Alle Salden korrekt! ✓</div>';
+    else{r.innerHTML='<div class="hlr">'+c+' von '+t+' Salden korrekt.</div>';document.getElementById('fa3_lv_sol2btn').style.display='inline-block';}
+  }
+  if(teil===3){
+    document.getElementById('fa3_lv_sol3btn').style.display='inline-block';
+    document.getElementById('fa3_lv_res3').innerHTML='<div class="hla">Vergleiche deine Antworten mit der Lösung.</div>';
+  }
+};
+
+window.fa3ShowLVSol=function(teil){
+  var d=fa3LV;
+  if(teil===1){
+    var s='<div style="font-size:12px;color:var(--tx2);margin-top:8px;padding:10px;background:var(--s2);border-radius:6px"><strong>Lösung Buchungssätze:</strong><br>';
+    d.buchungen.forEach(function(b){s+=b.label+': <strong>'+b.soll+' / '+b.haben+' CHF '+fa3f(b.v)+'</strong><br>';});
+    s+='</div>';document.getElementById('fa3_lv_res1').innerHTML+=s;
+  }
+  if(teil===2){
+    var ktoOrder=Object.keys(d.hbk);
+    var s='<div style="font-size:12px;color:var(--tx2);margin-top:8px;padding:10px;background:var(--s2);border-radius:6px"><strong>Lösung Salden:</strong><br>';
+    ktoOrder.forEach(function(k){s+=k+': <strong>CHF '+fa3f(d.hbkSal[k])+'</strong><br>';});
+    s+='Lohndurchlaufkonto Saldo: <strong>'+fa3f(d.hbkSal['22010'])+'</strong> '+(d.hbkSal['22010']===0?'✓ (ausgeglichen)':'⚠ Fehler!')+'</div>';
+    document.getElementById('fa3_lv_res2').innerHTML+=s;
+  }
+  if(teil===3){
+    var s='<div style="font-size:12px;color:var(--tx2);margin-top:8px;padding:10px;background:var(--s2);border-radius:6px"><strong>Musterantworten:</strong><br>';
+    d.tpl.fragen.forEach(function(f,i){s+='<strong>'+(i+1)+'.</strong> '+f.a+'<br><br>';});
+    s+='</div>';document.getElementById('fa3_lv_res3').innerHTML+=s;
+  }
+};
+
+window.fa3ResetLV=function(teil){
+  var wrap;
+  if(teil===1)wrap=document.getElementById('fa3_lv_journal');
+  if(teil===2)wrap=document.getElementById('fa3_lv_hbk');
+  if(wrap)wrap.querySelectorAll('input').forEach(function(e){e.value='';e.style.border='';e.style.background='';});
+  if(teil===3)document.querySelectorAll('[id^="fa3_lvf"]').forEach(function(e){e.value='';});
+  var b=document.getElementById('fa3_lv_sol'+teil+'btn');if(b)b.style.display='none';
+  var r=document.getElementById('fa3_lv_res'+teil);if(r)r.innerHTML='';
 };
 
 })();
