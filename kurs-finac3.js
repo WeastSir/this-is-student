@@ -86,7 +86,7 @@ const courseHTML = `
 <div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div></div>
 <div class="c ck" onclick="go('fa3_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">2</div>
-<div class="ct2">Mindmaps</div><div class="cd">Visuelle Übersichten</div></div>
+<div class="ct2">Zusammenfassungen</div><div class="cd">Visuelle Übersichten</div></div>
 <div class="c ck" onclick="go('fa3_kart')" style="text-align:center;padding:24px 16px">
 <div id="ltFA3Cards" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
 <div class="ct2">Karteikarten</div><div class="cd">Klicken & repetieren</div></div>
@@ -389,9 +389,9 @@ const courseHTML = `
 </div>
 
 <!-- ===================== KAPITEL 4: WARENAUFWAND ===================== -->
-<div class="sec" id="fa3_kap4"><h1>Warenaufwand & Renditen</h1><p class="sub">Bestandesänderung, Inventar & Branchenvergleich</p>
-<div class="hl">Der Warenaufwand ergibt sich nicht nur aus dem Einkauf — die Bestandesänderung des Inventars muss berücksichtigt werden.</div>
-<div class="hlbl"><strong>Lernziele:</strong><br>• Einfluss der Bestandesänderung auf den Warenaufwand verstehen<br>• Warenaufwand je Sparte berechnen und mit Branchenkennzahlen vergleichen</div>
+<div class="sec" id="fa3_kap4"><h1>Warenaufwand & Renditen</h1><p class="sub">Bestandesänderung, Inventar, Warenrendite & Branchenvergleich</p>
+<div class="hl">Der Warenaufwand ergibt sich nicht nur aus dem Einkauf — die Bestandesänderung des Inventars muss berücksichtigt werden. Die Warenrendite zeigt, wie viel vom Verkaufspreis nach Abzug der Warenkosten übrig bleibt.</div>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Einfluss der Bestandesänderung auf den Warenaufwand verstehen und berechnen<br>• Warenaufwand je Sparte berechnen und mit Branchenkennzahlen vergleichen<br>• Warenrendite und Warenaufwand in % korrekt berechnen und interpretieren<br>• Fehlerhafte Aussagen zum Warenaufwand erkennen (z.B. «Lieferung = Aufwand»)</div>
 
 <div style="display:flex;gap:8px;margin:12px 0 4px">
 <button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button>
@@ -400,46 +400,98 @@ const courseHTML = `
 <div class="tl">
 
 <div class="tl-item"><div class="tl-num tl-num-b">1</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Warenvorrat als Bilanzkonto</div>
+<div class="tl-merksatz">«Warenvorrat = Bilanz (Konto 12000, Umlaufvermögen) — nicht Aufwand!»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Der Warenvorrat ist ein <strong>Aktivkonto</strong> auf der Bilanz (Konto 12000, Umlaufvermögen). Wenn Ware eingekauft wird, wandert sie zuerst ins Lager. Erst wenn die Ware <strong>verbraucht oder verkauft</strong> wird, entsteht Aufwand in der Erfolgsrechnung.</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">Einkauf auf Kredit</div><div class="cd"><strong>Soll:</strong> Warenaufwand (KK 4)<br><strong>Haben:</strong> Kreditoren (KK 20)<br>→ Aufwand und Schulden steigen</div></div>
+<div class="c cg"><div class="ct2">Bezahlung Lieferant</div><div class="cd"><strong>Soll:</strong> Kreditoren (KK 20)<br><strong>Haben:</strong> Bank (KK 10)<br>→ Schulden und Geld sinken</div></div>
+</div>
+<div class="merksatz">Merke: Eine grosse Warenlieferung Ende Monat erhöht nur den Lagerbestand (Bilanz), NICHT den Warenaufwand. Aufwand entsteht erst beim Verbrauch!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">2</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
 <div><div class="tl-title">Formel Warenaufwand</div>
 <div class="tl-merksatz">«Warenaufwand = Wareneinkauf ± Bestandesänderung»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
 <div class="tl-body"><strong>Warenaufwand = Wareneinkauf + Bestandesabnahme − Bestandeszunahme</strong><br><br>
+Alternativ: <strong>Anfangsbestand + Einkäufe (netto) − Schlussbestand (Inventur) = Warenaufwand</strong><br><br>
 <strong>Bestandesabnahme</strong> = Lager wurde abgebaut → Aufwand steigt (wir haben mehr verbraucht als eingekauft)<br>
 <strong>Bestandeszunahme</strong> = Lager wurde aufgebaut → Aufwand sinkt (wir haben mehr eingekauft als verbraucht)</div>
 <div class="tl-sub">
-<div class="c cr"><div class="ct2">Buchung Bestandesabnahme</div><div class="cd">Warenaufwand / Warenbestand<br>(Aufwand nimmt zu, Bestand nimmt ab)</div></div>
-<div class="c cg"><div class="ct2">Buchung Bestandeszunahme</div><div class="cd">Warenbestand / Warenaufwand<br>(Bestand nimmt zu, Aufwand nimmt ab)</div></div>
+<div class="c cr"><div class="ct2">Buchung Bestandesabnahme</div><div class="cd"><strong>Soll:</strong> Warenaufwand<br><strong>Haben:</strong> Warenbestand<br>(Aufwand ↑, Bestand ↓)</div></div>
+<div class="c cg"><div class="ct2">Buchung Bestandeszunahme</div><div class="cd"><strong>Soll:</strong> Warenbestand<br><strong>Haben:</strong> Warenaufwand<br>(Bestand ↑, Aufwand ↓)</div></div>
 </div>
-<div class="merksatz">Merke: Bestandesabnahme erhöht den Warenaufwand, Bestandeszunahme reduziert ihn.</div>
+<div class="merksatz">Merke: Bestandesabnahme erhöht den Warenaufwand, Bestandeszunahme reduziert ihn. Das Inventar (Zählung) am Periodenende ist entscheidend!</div>
 </div></div>
 
-<div class="tl-item"><div class="tl-num tl-num-g">2</div>
+<div class="tl-item"><div class="tl-num tl-num-a">3</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Warenrendite berechnen</div>
+<div class="tl-merksatz">«Warenrendite = Bruttoergebnis / Warenertrag × 100»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Schritt für Schritt:</strong><br>
+1. <strong>Warenertrag</strong> bestimmen (= Verkaufsumsatz netto, ohne MWST)<br>
+2. <strong>Warenaufwand</strong> bestimmen (= Einkaufskosten netto ± Bestandesänderung)<br>
+3. <strong>Bruttoergebnis</strong> = Warenertrag − Warenaufwand<br>
+4. <strong>Warenrendite</strong> = Bruttoergebnis / Warenertrag × 100<br><br>
+<strong>Gegenprobe:</strong> Warenaufwand in % = Warenaufwand / Warenertrag × 100<br>
+→ Warenrendite + Warenaufwand in % = immer 100%
+</div>
+<div class="tl-sub">
+<div class="c cg"><div class="ct2">Zahlenbeispiel</div><div class="cd">Warenertrag: CHF 160'000 (100%)<br>Warenaufwand: CHF 40'000 (25%)<br><strong>Bruttoergebnis: CHF 120'000 (75%)</strong><br>Warenrendite = 120'000 / 160'000 × 100 = <strong>75%</strong></div></div>
+<div class="c ca"><div class="ct2">Praxis-Beispiel</div><div class="cd">Flasche Wein: Einkauf CHF 10, Verkauf CHF 40<br>Bruttoergebnis = 30<br>Warenrendite = 30/40 × 100 = <strong>75%</strong><br>Warenaufwand in % = 10/40 × 100 = <strong>25%</strong></div></div>
+</div>
+<div class="merksatz">Merke: Je höher die Warenrendite, desto mehr bleibt für Personal, Miete und Gewinn übrig. Getränke haben typischerweise eine höhere Rendite als Küche.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">4</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
 <div><div class="tl-title">Warenrenditen & Branchenkennzahlen</div>
 <div class="tl-merksatz">«Warenaufwand in % des Warenertrags = die wichtigste Sparten-Kennzahl»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
-<div class="tl-body"><strong>Warenkosten-% = Warenaufwand / Warenertrag × 100</strong><br><br>Branchenkennzahlen (Richtwerte Gastrosuisse):</div>
+<div class="tl-body"><strong>Warenkosten-% = Warenaufwand / Warenertrag × 100</strong><br><br>Branchenkennzahlen (Richtwerte Gastrosuisse/Gastroconsult):<br>Im Gastgewerbe machen Warenkosten (inkl. direkte Dienstleistungen) ca. <strong>27.1%</strong> des Umsatzes aus.</div>
 <div class="tl-sub">
-<div class="c ca"><div class="ct2">Wein</div><div class="cd">Richtwert: ca. 40.3%</div></div>
-<div class="c cbl"><div class="ct2">Bier</div><div class="cd">Richtwert: ca. 31.5%</div></div>
-<div class="c cp"><div class="ct2">Spirituosen</div><div class="cd">Richtwert: ca. 20.3%</div></div>
-<div class="c cg"><div class="ct2">Mineral</div><div class="cd">Richtwert: ca. 21.7%</div></div>
-<div class="c cm"><div class="ct2">Kaffee</div><div class="cd">Richtwert: ca. 7.7%</div></div>
-<div class="c cr"><div class="ct2">Küche</div><div class="cd">Richtwert: ca. 30.9%</div></div>
+<div class="c ca"><div class="ct2">Wein</div><div class="cd">Richtwert: ca. <strong>40.3%</strong><br>Höchster Warenaufwand der Getränke</div></div>
+<div class="c cbl"><div class="ct2">Bier</div><div class="cd">Richtwert: ca. <strong>31.5%</strong></div></div>
+<div class="c cp"><div class="ct2">Spirituosen</div><div class="cd">Richtwert: ca. <strong>20.3%</strong><br>Gute Marge</div></div>
+<div class="c cg"><div class="ct2">Mineral</div><div class="cd">Richtwert: ca. <strong>21.7%</strong></div></div>
+<div class="c cm"><div class="ct2">Kaffee</div><div class="cd">Richtwert: ca. <strong>7.7%</strong><br>Höchste Warenrendite!</div></div>
+<div class="c cr"><div class="ct2">Küche</div><div class="cd">Richtwert: ca. <strong>30.9%</strong></div></div>
 </div>
-<div class="merksatz">Merke: Liegt dein Warenaufwand über dem Branchenwert, verbrauchst du zu viel — liegt er darunter, bist du effizient (oder die Qualität leidet).</div>
+<div class="merksatz">Merke: Liegt dein Warenaufwand über dem Branchenwert, verbrauchst du zu viel — liegt er darunter, bist du effizient (oder die Qualität leidet). Kaffee hat mit ~7.7% den tiefsten Warenaufwand = höchste Rendite!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">5</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Häufiger Fehler: Lieferung ≠ Aufwand</div>
+<div class="tl-merksatz">«Eine grosse Lieferung Ende Monat erhöht den Lagerbestand, nicht den Aufwand!»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Ein typischer Fehler in der Praxis: Ein Mitarbeiter sagt «Der Warenaufwand ist so hoch, weil wir am 30.03. noch eine grosse Lieferung erhalten haben.»<br><br>
+<strong>Das ist falsch!</strong> Eine Warenlieferung erhöht zunächst nur den <strong>Lagerbestand</strong> (Bilanz). Der Warenaufwand wird erst durch den tatsächlichen <strong>Verbrauch</strong> oder Verkauf der Ware beeinflusst.<br><br>
+<strong>Korrekter Zusammenhang:</strong><br>
+• Lieferung erhalten → Lagerbestand ↑ (Bilanz)<br>
+• Ware verbraucht/verkauft → Warenaufwand ↑ (Erfolgsrechnung)<br>
+• Am Periodenende: Inventur → Bestandesänderung → korrekter Warenaufwand</div>
+<div class="merksatz">Merke: Einkauf ≠ Aufwand! Erst die Bestandesänderung (Inventur) zeigt den wahren Warenaufwand der Periode.</div>
 </div></div>
 
 </div>
 </div>
 
 <!-- ===================== KAPITEL 5: PERSONAL ===================== -->
-<div class="sec" id="fa3_kap5"><h1>Personalaufwand</h1><p class="sub">Dreisäulenprinzip, Lohnverbuchung & Sozialversicherungen</p>
-<div class="hl">Die Lohnzahlung ist nicht gleich der Personalaufwand — Sozialversicherungsbeiträge des Arbeitgebers kommen noch dazu.</div>
-<div class="hlbl"><strong>Lernziele:</strong><br>• Buchungstatsachen der Lohnverbuchung kennen und erklären<br>• Löhne inkl. Sozialabgaben, Rückstellungen und übrige Aufwände verbuchen</div>
+<div class="sec" id="fa3_kap5"><h1>Personalaufwand</h1><p class="sub">Dreisäulenprinzip, Lohnverbuchung, Sozialversicherungen & Buchungsbeispiele</p>
+<div class="hl">Die Lohnzahlung ist nicht gleich der Personalaufwand — Sozialversicherungsbeiträge des Arbeitgebers kommen noch dazu. Personalkosten machen im Gastgewerbe ca. <strong>51.1%</strong> des Umsatzes aus — der grösste Kostenfaktor!</div>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Grundprinzip der Lohnverbuchung über das Lohndurchlaufkonto erklären<br>• Lohnabrechnungen mit allen Bestandteilen (Privatanteil FZ, Kinderzulagen, Verpflegungsabzug, Spesen, Vorschuss) verbuchen<br>• Sozialversicherungsbeiträge (AN- und AG-Anteil) kennen und korrekt zuordnen<br>• Abrechnung der Sozialversicherungsbeiträge mit der Ausgleichskasse verstehen<br>• Kontenklasse 5 (510, 520, 530) und die relevanten Bilanzkonten erklären</div>
 
 <div style="display:flex;gap:8px;margin:12px 0 4px">
 <button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button>
@@ -449,53 +501,201 @@ const courseHTML = `
 
 <div class="tl-item"><div class="tl-num tl-num-b">1</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Bedeutung des Personalaufwands</div>
+<div class="tl-merksatz">«Personalkosten = ca. 51% des Umsatzes im Gastgewerbe — der grösste Kostenblock!»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Laut Branchenspiegel 2025 der GastroSuisse / Gastroconsult sind die Kostenfaktoren:<br><br>
+<strong>Kostenfaktoren Gastgewerbe (2023):</strong></div>
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">Personalkosten: 51.1%</div><div class="cd">Inkl. Unternehmerlohn von 7.7%<br>→ Grösster Kostenblock!<br>«Personaleinsatz muss mit Tageszeitenumsätzen korrelieren»</div></div>
+<div class="c ca"><div class="ct2">Warenkosten: 27.1%</div><div class="cd">Inkl. direkte Dienstleistungen</div></div>
+<div class="c cbl"><div class="ct2">Übriger Betriebsaufwand: 25.7%</div><div class="cd">Miete, Energie, Versicherungen, Unterhalt etc.</div></div>
+<div class="c cm"><div class="ct2">Finanzierung/Abschr./Steuern: 3.4%</div><div class="cd">Inkl. Eigenkapitalverzinsung von 0.6%</div></div>
+</div>
+<div class="merksatz">Merke: Nur professionell geführten Betrieben mit optimaler Kostenstruktur gelingt es, positive Geschäftsergebnisse zu erzielen — die Personalkosten sind dabei im Zentrum!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">2</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
 <div><div class="tl-title">Dreisäulenprinzip</div>
 <div class="tl-merksatz">«1. Säule = Existenz, 2. Säule = Lebensstandard, 3. Säule = Ergänzung»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
 <div class="tl-sub">
-<div class="c ca"><div class="ct2">1. Säule — Staatliche Vorsorge</div><div class="cd"><strong>Ziel: Existenzsicherung</strong><br>AHV (Alters- und Hinterlassenenversicherung)<br>IV (Invalidenversicherung)<br>EO (Erwerbsersatzordnung)</div></div>
-<div class="c cg"><div class="ct2">2. Säule — Berufliche Vorsorge</div><div class="cd"><strong>Ziel: Sicherung gewohnte Lebenshaltung</strong><br>BVG (Pensionskasse)<br>UVG: Berufsunfall (BU) + Nichtberufsunfall (NBU)</div></div>
-<div class="c cbl"><div class="ct2">3. Säule — Private Vorsorge</div><div class="cd"><strong>Ziel: Individuelle Ergänzung</strong><br>3a: Mit Steuervorteil<br>3b: Ohne Steuervorteil</div></div>
+<div class="c ca"><div class="ct2">1. Säule — Staatliche Vorsorge</div><div class="cd"><strong>Ziel: Existenzsicherung</strong><br>AHV (Alters- und Hinterlassenenversicherung)<br>IV (Invalidenversicherung)<br>EO (Erwerbsersatzordnung)<br>+ Ergänzungsleistungen (EL)</div></div>
+<div class="c cg"><div class="ct2">2. Säule — Berufliche Vorsorge</div><div class="cd"><strong>Ziel: Sicherung gewohnte Lebenshaltung</strong><br>BVG (Pensionskasse) — obligatorisch<br>UVG: Berufsunfall (BU) + Nichtberufsunfall (NBU)<br>+ überobligatorische Vorsorge</div></div>
+<div class="c cbl"><div class="ct2">3. Säule — Private Vorsorge</div><div class="cd"><strong>Ziel: Individuelle Ergänzung</strong><br>3a: Gebundene Vorsorge (mit Steuervorteil)<br>3b: Freie Vorsorge (ohne Steuervorteil)</div></div>
 </div>
-<div class="merksatz">Merke: Die 3 Säulen schützen bei Alter, Invalidität, Tod, Unfall, Krankheit, Militärdienst und Mutterschaft.</div>
-</div></div>
-
-<div class="tl-item"><div class="tl-num tl-num-g">2</div>
-<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
-<div><div class="tl-title">Lohnkomponenten & Kontenklasse 5</div>
-<div class="tl-merksatz">«Bruttolohn − AN-Beiträge = Nettolohn + AG-Beiträge = Gesamtpersonalaufwand»</div></div>
-<div class="tl-arrow">&#9654;</div></div>
-<div class="tl-detail">
-<div class="tl-body"><strong>Bruttolohn</strong> = im Arbeitsvertrag vereinbarter Lohn<br><strong>Nettolohn</strong> = Bruttolohn − Arbeitnehmerbeiträge (wird ausbezahlt)<br><strong>Gesamtpersonalaufwand</strong> = Bruttolohn + AG-Beiträge + übriger Personalaufwand</div>
-<div class="tl-sub">
-<div class="c ca"><div class="ct2">KG 510 — Lohnaufwand</div><div class="cd">Nettolohn + AN-Beiträge = zeigt den <strong>Bruttolohn</strong></div></div>
-<div class="c cg"><div class="ct2">KG 520 — Sozialversicherungsaufwand</div><div class="cd">Arbeitgeberbeiträge (inkl. Verwaltungskosten)</div></div>
-<div class="c cbl"><div class="ct2">KG 530 — Übriger Personalaufwand</div><div class="cd">Stelleninserate, Personalanlässe, Weiterbildung, Spesen, Geschenke</div></div>
-</div>
-<div class="merksatz">Merke: AG-Beiträge separat auf Konto 520, damit auf Konto 510 die Bruttolohnsumme steht — wichtig für Prämienberechnungen!</div>
+<div class="merksatz">Merke: Die 3 Säulen schützen bei Alter, Invalidität, Tod, Unfall, Krankheit, Militärdienst und Mutterschaft. Nur 1. und 2. Säule sind für die Lohnverbuchung relevant!</div>
 </div></div>
 
 <div class="tl-item"><div class="tl-num tl-num-a">3</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
-<div><div class="tl-title">Standardbuchungen Personal</div>
-<div class="tl-merksatz">«Bruttolohn, AN-Beiträge, AG-Beiträge, Akonto, Lohnvorschuss»</div></div>
+<div><div class="tl-title">Lohnkomponenten & Kontenklasse 5</div>
+<div class="tl-merksatz">«Bruttolohn − AN-Beiträge = Nettolohn · AG-Beiträge = zusätzlicher Aufwand»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>Bruttolohn</strong> = im Arbeitsvertrag vereinbarter Lohn (inkl. Gehaltsnebenleistungen wie Privatanteil FZ, Verpflegung/Unterkunft)<br><strong>Nettolohn</strong> = Bruttolohn − Arbeitnehmerbeiträge (wird ausbezahlt)<br><strong>Gesamtpersonalaufwand</strong> = Bruttolohn + AG-Beiträge + übriger Personalaufwand<br><br>
+<strong>Was gehört zum Bruttolohn?</strong> (Lohnausweis)<br>
+1. Lohn (Monatslohn, Stundenlohn)<br>
+2. Gehaltsnebenleistungen (Verpflegung/Unterkunft, Privatanteil Geschäftswagen)<br>
+3. Unregelmässige Leistungen, Gratifikationen<br>
+4–7. Kapitalleistungen, VR-Entschädigungen etc.<br>
+8. = <strong>Bruttolohn</strong></div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">510 — Gehälter</div><div class="cd">Bruttolöhne, 13. Monatslohn, Erfolgsbeteiligung<br>→ Zeigt die <strong>Bruttolohnsumme</strong></div></div>
+<div class="c cg"><div class="ct2">520 — Sozialaufwand (AG-Anteil)</div><div class="cd">AHV/IV/EO/FAK/ALV (AG-Anteil)<br>Pensionskasse BVG (AG-Anteil)<br>Unfallversicherung BU<br>Krankentaggeldversicherung KTG (AG-Anteil)<br>→ Ca. <strong>13–14% auf Bruttolöhne</strong></div></div>
+<div class="c cbl"><div class="ct2">530 — Übriger Personalaufwand</div><div class="cd">Personalbeschaffung (Stelleninserate)<br>Personalschulung / Weiterbildung<br>Berufskleider<br>Spesen (effektiv)</div></div>
+</div>
+<div class="merksatz">Merke: AG-Beiträge separat auf Konto 520, damit auf Konto 510 die Bruttolohnsumme steht — wichtig für Prämienberechnungen!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">4</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Sozialversicherungsbeiträge im Detail</div>
+<div class="tl-merksatz">«AN-Beiträge = kein Aufwand (Umbuchung), AG-Beiträge = echter Aufwand (Konto 52010)»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Versicherung</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">AN-Anteil</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">AG-Anteil</th><th style="padding:6px;border:1px solid var(--bd)">Bemerkung</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>AHV/IV/EO</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">5.30%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">5.30%</td><td style="padding:6px;border:1px solid var(--bd)">Paritätisch (je 50/50)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>FAK</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">0.00%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.50%</td><td style="padding:6px;border:1px solid var(--bd)">Variiert, nur AG</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>ALV</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.10%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.10%</td><td style="padding:6px;border:1px solid var(--bd)">Paritätisch</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>BU</strong> (Berufsunfall)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">0.00%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">0.80%</td><td style="padding:6px;border:1px solid var(--bd)">Variiert, nur AG</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>NBU</strong> (Nichtberufsunfall)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.30%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">0.00%</td><td style="padding:6px;border:1px solid var(--bd)">Variiert, nur AN</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>KTG</strong> (Krankentaggeld)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.00%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1.00%</td><td style="padding:6px;border:1px solid var(--bd)">Pflicht gem. L-GAV</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>PK</strong> (Pensionskasse)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">7.00%</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">7.00%</td><td style="padding:6px;border:1px solid var(--bd)">Fix gem. L-GAV, Koordinationsabzug beachten</td></tr>
+<tr style="background:var(--s2)"><td style="padding:6px;border:1px solid var(--bd)"><strong>Total</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>15.70%</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>16.70%</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>= Sozialversicherungsaufwand AG</strong></td></tr>
+</table>
+</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">AN-Beiträge (15.70%)</div><div class="cd"><strong>Kein Aufwand</strong> für die Firma!<br>Nur Umbuchung: 22010 Durchlauf → 22020 KK Sozialversicherungen<br>Werden dem AN vom Bruttolohn abgezogen</div></div>
+<div class="c cr"><div class="ct2">AG-Beiträge (16.70%)</div><div class="cd"><strong>Echter Aufwand!</strong> Konto 52010 Soziallasten<br>Buchung: 52010 / 22020 KK Sozialversicherungen<br>Für Budgetierung: ca. <strong>13–14%</strong> auf Bruttolöhne</div></div>
+</div>
+<div class="merksatz">Merke: AN-Beiträge sind im Bruttolohn enthalten und werden bei Lohnauszahlung abgezogen — kein Sozialversicherungsaufwand! Nur AG-Beiträge belasten die Erfolgsrechnung über Konto 52010.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">5</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Bilanz- und Erfolgsrechnungskonten Personal</div>
+<div class="tl-merksatz">«Lohndurchlaufkonto = Hilfskonto, KK Sozialversicherungen = kurzfristige Schuld»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>Konten zur Verarbeitung des Personalaufwands:</strong></div>
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">Erfolgsrechnung (Aufwand)</div><div class="cd"><strong>51010</strong> Gehälter Sammelkonto<br><strong>52010</strong> Soziallasten Sammelkonto<br><strong>53010</strong> Übriger Personalaufwand Sammelkonto</div></div>
+<div class="c cg"><div class="ct2">Bilanz (Aktiven)</div><div class="cd"><strong>11400</strong> Kfr. Forderungen Personal (Lohnvorschüsse)</div></div>
+<div class="c cbl"><div class="ct2">Bilanz (Passiven)</div><div class="cd"><strong>22010</strong> Kfr. Schulden Personal — Lohndurchlaufkonto (Abrechnungskonto)<br><strong>22020</strong> KK Sozialversicherungen (kurzfristige Schuld an AHV-Kasse etc.)</div></div>
+</div>
+<div class="merksatz">Merke: Das Lohndurchlaufkonto (22010) ist ein Hilfskonto — nach vollständiger Verbuchung inkl. Lohnzahlung muss sein Saldo immer 0 sein!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">6</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Lohndurchlaufkonto — Grundprinzip</div>
+<div class="tl-merksatz">«Alle Lohnbestandteile sammeln, nach Lohnzahlung = Saldo 0»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>22010 Lohndurchlaufkonto</strong> = Hilfskonto zur Verarbeitung der Löhne.<br>Wird verwendet, da Lohnaufbereitung und Lohnauszahlung zeitlich unabhängig voneinander erfolgen.<br><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd);width:50%">Soll (Beträge zulasten MA)</th><th style="padding:6px;border:1px solid var(--bd);width:50%">Haben (Beträge zugunsten MA)</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AN-Beiträge an Sozialversicherungen</td><td style="padding:6px;border:1px solid var(--bd)">Löhne (Bruttolohn)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Verpflegungsabzug</td><td style="padding:6px;border:1px solid var(--bd)">Kinderzulagen</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss (Verrechnung)</td><td style="padding:6px;border:1px solid var(--bd)">Spesen effektiv</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>Lohnzahlung (Bank)</strong></td><td style="padding:6px;border:1px solid var(--bd)"></td></tr>
+</table>
+→ Nach Verbuchung der Lohnzahlung: <strong>Saldo = 0</strong></div>
+<div class="merksatz">Merke: Haben = was der MA bekommt (Bruttolohn, Zulagen, Spesen). Soll = was dem MA abgezogen wird (AN-Beiträge, Verpflegung, Vorschuss) + die Bankzahlung.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">7</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Buchungsbeispiel 1 — Einfache Lohnverbuchung</div>
+<div class="tl-merksatz">«Bruttolohn 7'000, AN 1'000, AG 1'300 → Nettolohn 6'000»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body"><strong>Gegeben:</strong> Bruttolohn CHF 7'000 · AN-Beiträge CHF 1'000 · AG-Beiträge CHF 1'300<br>→ Nettolohn = 7'000 − 1'000 = CHF 6'000<br><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Lohnart</th><th style="padding:6px;border:1px solid var(--bd)">Soll</th><th style="padding:6px;border:1px solid var(--bd)">Haben</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">Betrag</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Bruttolohn</td><td style="padding:6px;border:1px solid var(--bd)">51010 Gehälter</td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>7'000</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AN-Beiträge</td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>1'000</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AG-Beiträge</td><td style="padding:6px;border:1px solid var(--bd)">52010 Soziallasten</td><td style="padding:6px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>1'300</strong></td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>Lohnzahlung</strong></td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;border:1px solid var(--bd)">10200 Bank</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>6'000</strong></td></tr>
+</table>
+<strong>Ergebnis:</strong> Lohndurchlauf = 0 ✓ · KK SozVers = 2'300 (Schuld) · Aufwand ER = 7'000 + 1'300 = CHF 8'300</div>
+<div class="merksatz">Merke: Nur CHF 8'300 belasten die Erfolgsrechnung (7'000 Gehälter + 1'300 AG-Beiträge). Die AN-Beiträge sind kein zusätzlicher Aufwand — sie werden nur vom Lohn umgeleitet!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">8</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Buchungsbeispiel 2 — Erweiterte Lohnabrechnung (Franziska Frisch)</div>
+<div class="tl-merksatz">«Privatanteil FZ, Kinderzulagen, Verpflegung, Spesen, Vorschuss»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Lohnabrechnung Franziska Frisch:</strong><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr><td style="padding:4px;border:1px solid var(--bd)">Monatslohn</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">6'000</td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">+ Privatanteil Geschäftsauto</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">200</td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">+ Kinderzulagen</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">250</td></tr>
+<tr style="background:var(--s2)"><td style="padding:4px;border:1px solid var(--bd)"><strong>= Bruttolohn</strong></td><td style="padding:4px;text-align:right;border:1px solid var(--bd)"><strong>6'450</strong></td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">− AN-Beiträge (Basis 6'200)</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">−880</td></tr>
+<tr style="background:var(--s2)"><td style="padding:4px;border:1px solid var(--bd)"><strong>= Nettolohn</strong></td><td style="padding:4px;text-align:right;border:1px solid var(--bd)"><strong>5'570</strong></td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">− Privatanteil Geschäftsauto</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">−200</td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">− Verpflegungsabzug</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">−396</td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">+ Spesenentschädigung</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">+190</td></tr>
+<tr style="background:var(--s2)"><td style="padding:4px;border:1px solid var(--bd)"><strong>= Auszahlungstotal</strong></td><td style="padding:4px;text-align:right;border:1px solid var(--bd)"><strong>5'164</strong></td></tr>
+<tr><td style="padding:4px;border:1px solid var(--bd)">− Lohnvorschuss</td><td style="padding:4px;text-align:right;border:1px solid var(--bd)">−1'000</td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:4px;border:1px solid var(--bd)"><strong>= Restzahlung (Bank)</strong></td><td style="padding:4px;text-align:right;border:1px solid var(--bd)"><strong>4'164</strong></td></tr>
+</table>
+<br><strong>Buchungssätze:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:5px;border:1px solid var(--bd)">Lohnart</th><th style="padding:5px;border:1px solid var(--bd)">Soll</th><th style="padding:5px;border:1px solid var(--bd)">Haben</th><th style="padding:5px;text-align:right;border:1px solid var(--bd)">CHF</th></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Monatslohn</td><td style="padding:5px;border:1px solid var(--bd)">51010 Gehälter</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">6'000</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Privatanteil FZ</td><td style="padding:5px;border:1px solid var(--bd)">51010 Gehälter</td><td style="padding:5px;border:1px solid var(--bd)">49055 Privatant. FZ</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">200</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Kinderzulagen</td><td style="padding:5px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">250</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">AN-Beiträge</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">880</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Verpflegungsabzug</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;border:1px solid var(--bd)">45070 WA Personalverpfl.</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">396</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Spesen effektiv</td><td style="padding:5px;border:1px solid var(--bd)">53010 Übr. PA</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">190</td></tr>
+<tr><td style="padding:5px;border:1px solid var(--bd)">Lohnvorschuss</td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;border:1px solid var(--bd)">11400 Vorschüsse</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)">1'000</td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:5px;border:1px solid var(--bd)"><strong>Lohnzahlung</strong></td><td style="padding:5px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:5px;border:1px solid var(--bd)">10200 Bank</td><td style="padding:5px;text-align:right;border:1px solid var(--bd)"><strong>4'164</strong></td></tr>
+</table>
+</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">Privatanteil Geschäftsauto</div><div class="cd">Erhöht den Bruttolohn (AHV-pflichtig!), wird aber wieder abgezogen → kein Geldfluss, nur steuerlich relevant</div></div>
+<div class="c cg"><div class="ct2">Kinderzulagen (KIZU)</div><div class="cd"><strong>Nicht AHV-pflichtig!</strong> Werden von der Ausgleichskasse finanziert → Buchung über 22020 KK SozVers<br>Basis AN-Beiträge = 6'450 − 250 = CHF 6'200</div></div>
+<div class="c ca"><div class="ct2">Verpflegungsabzug</div><div class="cd">Gegenkonto: <strong>45070 Warenaufwand Personalverpflegung</strong><br>Reduziert den Warenaufwand (Personal isst auf Kosten des Betriebs)</div></div>
+<div class="c cm"><div class="ct2">Lohnvorschuss</div><div class="cd">Wurde Mitte Monat bereits per Bank überwiesen → Forderung (11400)<br>Wird bei Lohnabrechnung verrechnet</div></div>
+</div>
+<div class="merksatz">Merke: Lohndurchlaufkonto prüfen! Haben: 6'000 + 250 + 190 = 6'440. Soll: 880 + 396 + 1'000 + 4'164 = 6'440. → Saldo = 0 ✓</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">9</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Standardbuchungen Personal (Übersicht)</div>
+<div class="tl-merksatz">«Bruttolohn, AN-Beiträge, AG-Beiträge, Akonto, Lohnvorschuss, EO»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
 <div class="tl-body">
 <table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
 <tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Vorgang</th><th style="padding:6px;border:1px solid var(--bd)">Soll</th><th style="padding:6px;border:1px solid var(--bd)">Haben</th></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">Bruttolohn</td><td style="padding:6px;border:1px solid var(--bd)">Lohnaufwand</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">AN-Beiträge (Abzug)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">Kinder-/Familienzulagen</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">AG-Beiträge</td><td style="padding:6px;border:1px solid var(--bd)">Sozialvers.aufwand</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">Akonto-Rechnung SV</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen</td><td style="padding:6px;border:1px solid var(--bd)">Verb. aus LL</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">Zahlung Akonto SV</td><td style="padding:6px;border:1px solid var(--bd)">Verb. aus LL</td><td style="padding:6px;border:1px solid var(--bd)">Bank</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">EO-Entschädigung</td><td style="padding:6px;border:1px solid var(--bd)">Bank</td><td style="padding:6px;border:1px solid var(--bd)">Lohnaufwand</td></tr>
-<tr><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss</td><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss (Aktiv)</td><td style="padding:6px;border:1px solid var(--bd)">Bank</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Bruttolohn</td><td style="padding:6px;border:1px solid var(--bd)">Lohnaufwand (51010)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AN-Beiträge (Abzug)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen (22020)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Kinder-/Familienzulagen</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen (22020)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AG-Beiträge</td><td style="padding:6px;border:1px solid var(--bd)">Sozialvers.aufwand (52010)</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen (22020)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Verpflegungsabzug</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td><td style="padding:6px;border:1px solid var(--bd)">WA Personalverpflegung (45070)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Spesen effektiv</td><td style="padding:6px;border:1px solid var(--bd)">Übr. Personalaufwand (53010)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss (Auszahlung)</td><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss Aktiv (11400)</td><td style="padding:6px;border:1px solid var(--bd)">Bank (10200)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss (Verrechnung)</td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td><td style="padding:6px;border:1px solid var(--bd)">Lohnvorschuss Aktiv (11400)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Akonto-Rechnung SV</td><td style="padding:6px;border:1px solid var(--bd)">Verb. Sozialversicherungen (22020)</td><td style="padding:6px;border:1px solid var(--bd)">Verb. aus LL</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Zahlung Akonto SV</td><td style="padding:6px;border:1px solid var(--bd)">Verb. aus LL</td><td style="padding:6px;border:1px solid var(--bd)">Bank (10200)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">EO-Entschädigung</td><td style="padding:6px;border:1px solid var(--bd)">Bank (10200)</td><td style="padding:6px;border:1px solid var(--bd)">Lohnaufwand (51010)</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"><strong>Lohnzahlung</strong></td><td style="padding:6px;border:1px solid var(--bd)">Lohndurchlaufkonto (22010)</td><td style="padding:6px;border:1px solid var(--bd)">Bank (10200)</td></tr>
 </table>
 </div>
-<div class="merksatz">Merke: Spesen sind nicht sozialversicherungspflichtig — sie werden über «Übriger Personalaufwand» gebucht.</div>
+<div class="merksatz">Merke: Spesen sind nicht sozialversicherungspflichtig — sie werden über «Übriger Personalaufwand» (53010) gebucht, nicht über Gehälter!</div>
 </div></div>
 
 </div>
@@ -843,6 +1043,12 @@ Jahresgewinn<br>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">PRA</strong> <span style="color:var(--tx2)">— Passive Rechnungsabgrenzung</span></div>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">REVPAR</strong> <span style="color:var(--tx2)">— Revenue per Available Room</span></div>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">ERP</strong> <span style="color:var(--tx2)">— Enterprise Resource Planning</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">FAK</strong> <span style="color:var(--tx2)">— Familienausgleichskasse (Kinderzulagen)</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">ALV</strong> <span style="color:var(--tx2)">— Arbeitslosenversicherung</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">KTG</strong> <span style="color:var(--tx2)">— Krankentaggeldversicherung (Pflicht gem. L-GAV)</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">L-GAV</strong> <span style="color:var(--tx2)">— Landes-Gesamtarbeitsvertrag Gastgewerbe</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">BU/NBU</strong> <span style="color:var(--tx2)">— Berufsunfall / Nichtberufsunfall</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">KIZU</strong> <span style="color:var(--tx2)">— Kinderzulagen (nicht AHV-pflichtig)</span></div>
 </div>
 
 <h2 style="margin-top:24px">Wichtige Formeln</h2>
@@ -855,6 +1061,11 @@ Jahresgewinn<br>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Gesetzl. Reserve</strong> <span style="color:var(--tx2)">= 5% vom Jahresgewinn, max. 50% AK</span></div>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Bruttodividende</strong> <span style="color:var(--tx2)">= 65% Netto + 35% Verrechnungssteuer</span></div>
 <div class="c" style="padding:12px 16px"><strong style="color:var(--g)">MWST-Schuld</strong> <span style="color:var(--tx2)">= Umsatzsteuer − Vorsteuer</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Warenrendite</strong> <span style="color:var(--tx2)">= Bruttoergebnis / Warenertrag × 100</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Warenaufwand in %</strong> <span style="color:var(--tx2)">= Warenaufwand / Warenertrag × 100 (+ Warenrendite = 100%)</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Nettolohn</strong> <span style="color:var(--tx2)">= Bruttolohn − AN-Beiträge Sozialversicherungen</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--g)">Personalaufwand total</strong> <span style="color:var(--tx2)">= Bruttolohn + AG-Beiträge (~13-14%) + Übriger PA</span></div>
+<div class="c" style="padding:12px 16px"><strong style="color:var(--g)">AG-Beiträge Budget</strong> <span style="color:var(--tx2)">= ca. 13–14% auf Bruttolöhne (Konto 52010)</span></div>
 </div>
 
 <h2 style="margin-top:24px">MWST-Steuersätze</h2>
@@ -907,6 +1118,22 @@ const FA3_CARDS = [
   ['Was darf beim Verrechnungsverbot NICHT verrechnet werden?', 'Warenertrag mit Warenaufwand, Immobilienertrag mit -aufwand, aktive mit passiven RA. ERLAUBT: Forderungen mit Delkredere, Sachanlagen mit kum. Abschreibungen.'],
   ['Was ist ein Kontierungsstempel?', 'Stempel auf dem Beleg mit Eingangsdatum, Buchungsanweisung (Soll-/Haben-Konto, Betrag), Belegnummer und Visum.'],
   ['Was ist der Anhang einer Jahresrechnung?', 'Dritter Bestandteil neben Bilanz und ER. Ergänzt und erläutert (z.B. verpfändete Aktiven, Nettoauflösung stiller Reserven, Beteiligungen).'],
+  ['Was ist das Lohndurchlaufkonto (22010)?', 'Hilfskonto zur Verarbeitung der Löhne. Sammelt alle Lohnbestandteile. Muss nach Verbuchung der Lohnzahlung den Saldo 0 haben.'],
+  ['Wie wird der Bruttolohn verbucht?', 'Soll: 51010 Gehälter Sammelkonto / Haben: 22010 Lohndurchlaufkonto. Der Bruttolohn belastet die ER als Aufwand.'],
+  ['Wie werden AN-Beiträge verbucht?', 'Soll: 22010 Lohndurchlaufkonto / Haben: 22020 KK Sozialversicherungen. Kein Aufwand für die Firma — nur Umbuchung!'],
+  ['Wie werden AG-Beiträge verbucht?', 'Soll: 52010 Soziallasten / Haben: 22020 KK Sozialversicherungen. Echter Aufwand! Ca. 13–14% auf Bruttolöhne.'],
+  ['Was ist der Unterschied AN-Beiträge vs. AG-Beiträge?', 'AN-Beiträge: Im Bruttolohn enthalten, werden abgezogen = kein zusätzlicher Aufwand. AG-Beiträge: Zusätzlich zum Bruttolohn = echter Sozialversicherungsaufwand auf Konto 52010.'],
+  ['Wie hoch sind die AHV/IV/EO-Beiträge?', 'Je 5.30% für AN und AG (paritätisch). Total: 10.60% auf dem Bruttolohn.'],
+  ['Was sind Kinderzulagen (KIZU) und wie werden sie verbucht?', 'KIZU sind nicht AHV-pflichtig! Buchung: Soll 22020 KK Sozialversicherungen / Haben 22010 Durchlauf. Sie reduzieren die Schuld an die Ausgleichskasse.'],
+  ['Wie wird der Privatanteil Geschäftswagen verbucht?', 'Erhöht den Bruttolohn (AHV-pflichtig!), wird aber vom Nettolohn wieder abgezogen. Buchung: 51010 Gehälter / 49055 Privatanteil FZ-Aufwand. Kein Geldfluss.'],
+  ['Wie wird der Verpflegungsabzug verbucht?', 'Soll: 22010 Lohndurchlaufkonto / Haben: 45070 Warenaufwand Personalverpflegung. Reduziert den Warenaufwand.'],
+  ['Wie werden effektive Spesen verbucht?', 'Soll: 53010 Übriger Personalaufwand / Haben: 22010 Lohndurchlaufkonto. Spesen sind nicht sozialversicherungspflichtig!'],
+  ['Was ist die Warenrendite? Formel?', 'Warenrendite = Bruttoergebnis / Warenertrag × 100. Oder: (Warenertrag − Warenaufwand) / Warenertrag × 100. Zusammen mit Warenaufwand in % = immer 100%.'],
+  ['Warum ist «grosse Lieferung = hoher Aufwand» falsch?', 'Eine Warenlieferung erhöht nur den Lagerbestand (Bilanz), nicht den Aufwand. Aufwand entsteht erst durch den tatsächlichen Verbrauch/Verkauf der Ware.'],
+  ['Welche Sparte hat die höchste Warenrendite?', 'Kaffee mit ca. 7.7% Warenaufwand = ca. 92.3% Warenrendite. Am tiefsten ist Wein mit ca. 40.3% Warenaufwand.'],
+  ['Wie hoch sind die Personalkosten im Gastgewerbe?', 'Ca. 51.1% des Umsatzes (inkl. Unternehmerlohn von 7.7%) — der grösste Kostenfaktor laut Gastroconsult/GastroSuisse 2023.'],
+  ['Was sind die 3 Kontengruppen des Personalaufwands?', '510 Gehälter (Bruttolöhne), 520 Sozialaufwand (AG-Beiträge, ca. 13–14%), 530 Übriger Personalaufwand (Schulung, Berufskleider, Spesen).'],
+  ['Wie hoch ist der PK-Beitrag gem. L-GAV?', 'Je 7.00% für AN und AG (fix gem. L-GAV). Koordinationsabzug beachten!'],
 ];
 
 // ==========================================
