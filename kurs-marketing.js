@@ -251,12 +251,85 @@ Stundenansätze CH: Account Manager 140–190, Art Director 160–200, Texter 14
 <div class="tl-merksatz">«Je genauer die Segmente, desto gezielter die Ansprache»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
-<div class="tl-body">Marktsegmentierung = Gesamtmarkt in <strong>homogene Kaufgruppen</strong> aufteilen. Kriterien:<br>
-<span class="b ba">Demografisch</span> Alter, Geschlecht, Einkommen, Beruf, Nationalität<br>
-<span class="b bb">Geografisch</span> Nation, Region, Stadt/Land, Sprache<br>
-<span class="b bgreen">Psychografisch</span> Lebensstil, Werte, Temperament, Kontaktfähigkeit<br>
-<span class="b br">Verhaltensbezogen</span> Kaufmotive, Markentreue, Medienkonsum, Urlaubsgestaltung</div>
-<div class="hlg"><strong>🏨 Zielgruppe Alpenstern:</strong><br>Demo: Paare, 30–55 J., mittleres–hohes Einkommen · Geo: Deutschschweiz, Süddeutschland (≤4h) · Psycho: Naturverbunden, authentisch > luxuriös · Verhalten: 2–3x/Jahr Kurzurlaub, informiert sich via Instagram + Blogs</div>
+<div class="tl-body">Marktsegmentierung = Gesamtmarkt in <strong>homogene Kaufgruppen</strong> (Segmente) aufteilen. Je homogener eine Gruppe, desto leichter fallen Ziele, Massnahmen und Mittel. Erst durch Zielgruppen-Marketing resultiert eine <strong>effiziente und zielorientierte Marktbearbeitung</strong>.<br><br>
+
+Wir ermitteln die Segmentierungskriterien, beurteilen die Marktattraktivität, erarbeiten Positionierungskriterien und bauen einen zielgruppenorientierten Marketing-Mix auf.</div>
+
+<h2 style="margin-top:16px;font-size:16px">Segmentierungskriterien</h2>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Demografische Kriterien</div><div class="cd">• Geschlecht (m/w/d)<br>• Altersgruppe<br>• Haushaltsgrösse<br>• Ausbildung / Berufsgruppe / Einkommen / Kaufkraft<br>• Nationalität<br>• Soziale Schicht (Unter-, Mittel-, Oberschicht)<br>• Religion</div></div>
+<div class="c cg"><div class="ct2">Geografische Kriterien</div><div class="cd">• Gebiet: Nation, Region, Gemeinde, Kanton<br>• Bevölkerungsdichte: städtisch/urban vs. ländlich<br>• Klimazonen: nördlich, südlich<br>• Ortsgrösse<br>• Sprache: deutsch, französisch, italienisch</div></div>
+<div class="c cbl"><div class="ct2">Psychografische Kriterien</div><div class="cd">• Lebensstil: konventionell vs. aufgeschlossen<br>• Selbständigkeit vs. Unselbständigkeit<br>• Kontaktfähigkeit: Einzelgänger vs. gesellig<br>• Zielerreichung: ehrgeizig vs. gleichgültig<br>• Temperament: impulsiv vs. ruhig<br>• Wertehaltung: konservativ vs. modern</div></div>
+<div class="c cp"><div class="ct2">Verhaltensbezogene Kriterien</div><div class="cd">• Art der Freizeitgestaltung<br>• Ess- und Trinkgewohnheiten<br>• Urlaubsgestaltung<br>• Medienkonsumation (TV, Print, Social Media)<br>• Kaufanlass: regelmässig, besonder, zufällig<br>• Kaufmotive: Qualität, Preis, Bequemlichkeit, Prestige<br>• Produktbindung: keine, mittel, stark<br>• Markentreue<br>• Informationsquelle: Inserate, Social Media, persönliche Kontakte</div></div>
+</div>
+
+<h2 style="margin-top:20px;font-size:16px">Zielgruppe vs. Persona</h2>
+<div class="tl-body">Eine <strong>Zielgruppe</strong> beschreibt ein Segment mit gemeinsamen Merkmalen (z.B. «Frauen, 40–50, Zentralschweiz, sportlich»). Eine <strong>Persona</strong> ist eine fiktive Einzelperson mit Namen und konkretem Profil — sie macht die Zielgruppe greifbar und hilft, Marketingmassnahmen persönlicher und gezielter zu gestalten.</div>
+
+<div class="tl-sub">
+<div class="c ca" style="padding:16px"><div class="ct2">🎯 Zielgruppe — Beispiel: Yoga-Retreat</div><div class="cd">
+• <strong>Alter:</strong> 40–50 Jahre<br>
+• <strong>Geschlecht:</strong> weiblich<br>
+• <strong>Wohnort:</strong> Zentralschweiz<br>
+• <strong>Sprache:</strong> Deutsch<br>
+• <strong>Familienstand:</strong> ledig, in einer Partnerschaft<br>
+• <strong>Beruf:</strong> arbeitet im sozialen Umfeld<br>
+• <strong>Einkommen:</strong> TCHF 80–100<br>
+• <strong>Interessen:</strong> Meditation, Yoga, Pilates, Wandern<br>
+• <strong>Mediennutzung:</strong> Zeitung, Fachmagazine, sporadisch Facebook/Instagram<br>
+• <strong>Kommunikation:</strong> primär Telefon, auch E-Mail oder WhatsApp<br>
+• <strong>Kaufmotive:</strong> persönliche Überzeugung, erkennt Mehrwert<br>
+• <strong>Werte:</strong> Ehrlichkeit, Echtheit, Quality Time mit Gleichgesinnten<br>
+• <strong>Kaufmotivation:</strong> persönliche Empfehlung, Verbindung zu Yoga-Lehrer:in<br>
+• <strong>Mobilität:</strong> primär öV, teils CarSharing</div></div>
+
+<div class="c cg" style="padding:16px"><div class="ct2">👤 Persona — Beispiel: Silvia Muster</div><div class="cd">
+<strong>Silvia Muster, 42 Jahre</strong><br>
+• <strong>Wohnort:</strong> Luzern, Buchrain<br>
+• <strong>Familienstand:</strong> ledig, keine Kinder<br>
+• <strong>Beruf:</strong> Ergotherapeutin im Spital St. Anna<br>
+• <strong>Einkommen:</strong> TCHF 92 bei 90%-Pensum<br>
+• <strong>Interessen:</strong> Vinyasa Yoga, Walking<br>
+• <strong>Mediennutzung:</strong> liest Luzerner Zeitung via Tablet, unregelmässig FitForLife, passiv auf Instagram<br>
+• <strong>Kommunikation:</strong> privat WhatsApp + telefoniert gerne, geschäftlich persönlich + E-Mail<br>
+• <strong>Kaufmotive:</strong> möchte sich stets verbessern<br>
+• <strong>Werte:</strong> Qualität in der Dienstleistung, Wertigkeit im Allgemeinen<br>
+• <strong>Kaufmotivation:</strong> vertraut auf Empfehlungen ihres Heim-Yogastudios<br>
+• <strong>Mobilität:</strong> nutzt täglich ihr Fahrrad<br><br>
+→ <strong>Die Persona macht die abstrakte Zielgruppe lebendig und hilft, z.B. den richtigen Kommunikationskanal zu wählen (für Silvia: Empfehlung via Yogastudio, WhatsApp, lokale Zeitung — NICHT TikTok!)</strong></div></div>
+</div>
+
+<h2 style="margin-top:20px;font-size:16px">🏨 Zielgruppe & Persona: Hotel Alpenstern</h2>
+<div class="tl-sub">
+<div class="c cbl" style="padding:16px"><div class="ct2">🎯 Zielgruppe «Alpine Wellness Weekend»</div><div class="cd">
+• <strong>Alter:</strong> 30–55 Jahre<br>
+• <strong>Geschlecht:</strong> Paare (m/w)<br>
+• <strong>Wohnort:</strong> Deutschschweiz, Süddeutschland, Westösterreich (Anreise ≤ 4h)<br>
+• <strong>Einkommen:</strong> mittleres bis hohes Haushaltseinkommen (> CHF 8'000/Mt.)<br>
+• <strong>Beruf:</strong> überwiegend akademisch, Kaderpositionen<br>
+• <strong>Interessen:</strong> Natur, Wandern, Wellness, regionale Küche, Fotografie<br>
+• <strong>Mediennutzung:</strong> Instagram (aktiv), Reiseblogs, Google-Bewertungen, Wandermagazine<br>
+• <strong>Kommunikation:</strong> E-Mail, WhatsApp, Instagram DMs<br>
+• <strong>Kaufmotive:</strong> Qualität, Authentizität, Erholung, Nachhaltigkeit<br>
+• <strong>Werte:</strong> naturverbunden, qualitätsbewusst, authentisch > luxuriös<br>
+• <strong>Kaufmotivation:</strong> Instagram-Inspiration, Online-Bewertungen, persönliche Empfehlungen<br>
+• <strong>Mobilität:</strong> eigenes Auto oder Bahn (Interlaken = gut erreichbar per Zug)</div></div>
+
+<div class="c cp" style="padding:16px"><div class="ct2">👤 Persona: Anna & Marco Keller</div><div class="cd">
+<strong>Anna Keller, 38, & Marco Keller, 41</strong><br>
+• <strong>Wohnort:</strong> Zürich-Wiedikon<br>
+• <strong>Berufe:</strong> Anna: UX-Designerin (80%), Marco: Projektleiter Bau (100%)<br>
+• <strong>Haushaltseinkommen:</strong> ca. CHF 14'000/Mt.<br>
+• <strong>Familienstand:</strong> verheiratet, keine Kinder<br>
+• <strong>Interessen:</strong> Anna: Yoga + Fotografie, Marco: Mountainbike + Kochen<br>
+• <strong>Mediennutzung:</strong> Anna aktiv auf Instagram, Marco liest NZZ digital<br>
+• <strong>Urlaubsverhalten:</strong> 2–3 Kurztrips pro Jahr (Fr–So), 1× längere Reise (Skandinavien, Japan)<br>
+• <strong>Kaufmotiv:</strong> Suchen bewusst «Anti-Massentourismus» — persönlich, ruhig, authentisch<br>
+• <strong>So finden sie das Hotel:</strong> Anna sieht Instagram-Reel → recherchiert auf Google → liest Bewertungen → bucht direkt auf Website weil «Book Direct = gratis Apéro»<br><br>
+→ <strong>Diese Persona zeigt genau, welche AIDA-Stufen über welche Kanäle funktionieren!</strong></div></div>
+</div>
+
+<div class="merksatz">Merke: Die Zielgruppe definiert WEN wir ansprechen. Die Persona macht daraus eine greifbare Person, mit der wir die Customer Journey und den Kommunikationsmix viel gezielter planen können.</div>
 </div></div>
 
 </div>
@@ -784,6 +857,11 @@ const MKT_CARDS = [
   ['Was ist ein Franchise?', 'Kooperationsform mit höchster Bindungsintensität. Franchise-Nehmer übernimmt Betriebskonzept, muss es nach Spielregeln des Gebers betreiben. Bsp: McDonalds, Starbucks.'],
   ['Was bedeutet DSGVO/revDSG für das Marketing?', 'Permission-Marketing: Gäste müssen einwilligen, Tracking-Cookies nur mit Opt-in, Newsletter nur mit Double-Opt-in, Recht auf Löschung. Sauberer Datenschutz = Qualitätsmerkmal!'],
   ['Was ist Storytelling im Marketing?', 'Geschichten bleiben länger im Kopf als Fakten. Spannungsbogen: packender Einstieg → Orientierung/Fakten → Konflikt/Wende → Höhepunkt → Fazit/Ausblick.'],
+  ['Was ist der Unterschied zwischen Zielgruppe und Persona?', 'Zielgruppe = Segment mit gemeinsamen Merkmalen (z.B. Frauen, 40–50, sportlich). Persona = fiktive Einzelperson mit Namen und konkretem Profil — macht die Zielgruppe greifbar für gezieltere Massnahmen.'],
+  ['Welche Kriterien gehören zur demografischen Segmentierung?', 'Geschlecht, Altersgruppe, Haushaltsgrösse, Ausbildung/Berufsgruppe, Einkommen/Kaufkraft, Nationalität, soziale Schicht, Religion.'],
+  ['Welche Kriterien gehören zur psychografischen Segmentierung?', 'Lebensstil (konventionell/aufgeschlossen), Selbständigkeit, Kontaktfähigkeit (Einzelgänger/gesellig), Temperament (impulsiv/ruhig), Wertehaltung (konservativ/modern), Zielerreichung (ehrgeizig/gleichgültig).'],
+  ['Was gehört zu den verhaltensbezogenen Segmentierungskriterien?', 'Freizeitgestaltung, Ess-/Trinkgewohnheiten, Urlaubsgestaltung, Medienkonsumation, Kaufanlass (regelmässig/besonders), Kaufmotive (Qualität/Preis/Prestige), Markentreue, Informationsquellen.'],
+  ['Warum ist eine Persona nützlich für das Marketing?', 'Sie macht die abstrakte Zielgruppe lebendig und hilft, den richtigen Kommunikationskanal, die passende Tonalität und die richtige Botschaft zu wählen. Man kann die Customer Journey konkret durchspielen.'],
 ];
 
 // ==========================================
