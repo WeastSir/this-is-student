@@ -98,10 +98,11 @@
   // Landing Page
   var homeHTML = '<div class="sec on" id="home">';
   homeHTML += '<div style="text-align:center;padding:80px 0 40px;min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center">';
-  homeHTML += '<h1 style="font-size:56px;letter-spacing:-1.5px;margin-bottom:12px;line-height:1.05"><span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">This Is Student</span></h1>';
+  homeHTML += '<div style="margin-bottom:28px"><svg width="100" height="100" viewBox="0 0 200 200" fill="none"><polygon points="100,10 178,40 178,160 100,190 22,160 22,40" stroke="var(--ac)" stroke-width="2.5" fill="none"/><circle cx="100" cy="100" r="65" stroke="var(--ac2,#D4654A)" stroke-width="2" fill="none" opacity="0.6"/><text x="100" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="var(--ac)">T</text></svg></div>';
+  homeHTML += '<h1 style="font-size:56px;letter-spacing:-1.5px;margin-bottom:12px;line-height:1.05"><span style="color:var(--ac)">This Is Student</span></h1>';
   homeHTML += '<p style="font-size:20px;color:var(--tx2);margin-bottom:8px;letter-spacing:-.2px;max-width:460px">Die interaktive Lernplattform für dein Studium.</p>';
   homeHTML += '<p style="font-size:15px;color:var(--tx3);margin-bottom:48px">Visuell · Interaktiv · Prüfungsbereit</p>';
-  homeHTML += '<button class="bp1" onclick="go(\'kurse\')" style="font-size:16px;padding:14px 40px;border-radius:980px;font-weight:600;letter-spacing:-.2px;box-shadow:0 4px 16px rgba(232,86,122,.3)">Zu den Kursen →</button>';
+  homeHTML += '<button class="bp1" onclick="go(\'kurse\')" style="font-size:16px;padding:14px 40px;border-radius:980px;font-weight:600;letter-spacing:-.2px">Zu den Kursen →</button>';
   homeHTML += '</div>';
   // Footer
   homeHTML += '<div style="text-align:center;padding:40px 0 20px;border-top:1px solid var(--bd);margin-top:40px">';
@@ -123,7 +124,7 @@
   kurseHTML += '<h1 style="font-size:42px;letter-spacing:-.8px">Deine Kurse</h1>';
   kurseHTML += '<p style="font-size:16px;color:var(--tx2);margin-bottom:32px">BWS Semester 5 — Wähle ein Fach</p>';
   kurseHTML += '<div style="display:flex;justify-content:center;gap:32px;margin-bottom:40px;flex-wrap:wrap">';
-  kurseHTML += '<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">' + KURSE_LISTE.length + '</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Kurse total</div></div>';
+  kurseHTML += '<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--ac)">' + KURSE_LISTE.length + '</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Kurse total</div></div>';
   kurseHTML += '<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--g)">' + live.length + '</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">Verfügbar</div></div>';
   kurseHTML += '<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--am)">' + arbeit.length + '</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">In Arbeit</div></div>';
   kurseHTML += '</div></div>';
