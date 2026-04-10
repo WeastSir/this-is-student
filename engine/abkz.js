@@ -136,6 +136,13 @@ const ABKZ={
 'Marketing-Mix':['Marketing-Mix','Kombination der Marketinginstrumente','Die optimale Kombination aller Marketinginstrumente zur Zielerreichung. Klassisch: 4 Ps (Product, Price, Place, Promotion). Erweitert für Dienstleistungen: 7 Ps (+ People, Process, Physical Evidence). Alle Ps müssen aufeinander abgestimmt sein (integriertes Marketing).'],
 'Marktsegmentierung':['Marktsegmentierung','Aufteilung des Gesamtmarktes in Zielgruppen','Gesamtmarkt in homogene Kaufgruppen aufteilen. Kriterien: demografisch (Alter, Einkommen), geografisch (Region), psychografisch (Lebensstil, Werte), verhaltensbezogen (Kaufmotive, Markentreue). Je genauer die Segmente, desto gezielter die Ansprache.'],
 'Positionierung':['Positionierung','Strategische Markenabgrenzung','Oberziel der Kommunikation: Wie hebt sich die Marke in den Köpfen der Kund:innen von der Konkurrenz ab? Anforderungen: relevant, konzentriert, klar abgegrenzt, zukunftsorientiert, flexibel, operationalisierbar. Darstellung: Positionierungskreuz.'],
+// === HRM 2 ===
+'HRM':['HRM','Human Resources Management','Strategische Personalfunktion: umfasst Planung, Gewinnung, Betreuung, Honorierung, Entwicklung und Trennung. HR-Leitung sollte Mitglied der Geschäftsleitung sein.'],
+'BGM':['BGM','Betriebliches Gesundheitsmanagement','Zentraler Punkt in der modernen Personalarbeit. Open-Door-Politik und geschulte Führungskräfte sind essenziell — gerade in der Hotellerie mit Fachkräftemangel.'],
+'MbO':['MbO','Management by Objectives','Führen durch Zielvereinbarungen. Vorgesetzte und MA vereinbaren gemeinsam messbare Ziele. Wird in der Personalentwicklung und bei Qualifikationsgesprächen eingesetzt.'],
+'PeNeKo':['PeNeKo','Personalnebenkosten','Indirekte Personalkosten: freiwillige Sozialbeiträge, Entgeltfortzahlung, Urlaubsgeld, Weihnachtsgeld, Aus- und Weiterbildungskosten. Kommen zu den direkten Personalkosten hinzu.'],
+'Assessment-Center':['Assessment-Center','Praxissimulationsverfahren zur Personalauswahl','Kombination von Tests, Interviews und Gruppenarbeiten zur umfassenden Beurteilung von Kandidaten. Sehr gründlich aber kostspielig. Zählt zu den T-Daten.'],
+'STAR':['STAR','Situation, Task, Action, Result','Verhaltensorientierte Interviewmethode aus den USA. Kandidaten schildern eine konkrete Situation, die Aufgabe, ihr Handeln und das Ergebnis. Variante des Verhaltensdreiecks.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;
