@@ -228,7 +228,7 @@ function renderFlashcard(courseId){
   if(fc.index>=fc.order.length)fc.index=0;
   const card=fc.cards[fc.order[fc.index]];
   // Find elements - try course-specific IDs first, then generic
-  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:courseId==='marketing'?['mfc','mfc']:['cfc','cfc'];
+  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:courseId==='marketing'?['mfc','mfc']:courseId==='rm'?['rmfc','rmfc']:['cfc','cfc'];
   const qEl=document.getElementById(prefixes[0]+'q')||document.getElementById('fcq');
   const aEl=document.getElementById(prefixes[0]+'a')||document.getElementById('fca');
   const cEl=document.getElementById(prefixes[0]+'c')||document.getElementById('fc');
