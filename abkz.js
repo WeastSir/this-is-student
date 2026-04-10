@@ -136,6 +136,28 @@ const ABKZ={
 'Marketing-Mix':['Marketing-Mix','Kombination der Marketinginstrumente','Die optimale Kombination aller Marketinginstrumente zur Zielerreichung. Klassisch: 4 Ps (Product, Price, Place, Promotion). Erweitert für Dienstleistungen: 7 Ps (+ People, Process, Physical Evidence). Alle Ps müssen aufeinander abgestimmt sein (integriertes Marketing).'],
 'Marktsegmentierung':['Marktsegmentierung','Aufteilung des Gesamtmarktes in Zielgruppen','Gesamtmarkt in homogene Kaufgruppen aufteilen. Kriterien: demografisch (Alter, Einkommen), geografisch (Region), psychografisch (Lebensstil, Werte), verhaltensbezogen (Kaufmotive, Markentreue). Je genauer die Segmente, desto gezielter die Ansprache.'],
 'Positionierung':['Positionierung','Strategische Markenabgrenzung','Oberziel der Kommunikation: Wie hebt sich die Marke in den Köpfen der Kund:innen von der Konkurrenz ab? Anforderungen: relevant, konzentriert, klar abgegrenzt, zukunftsorientiert, flexibel, operationalisierbar. Darstellung: Positionierungskreuz.'],
+// Revenue Management
+'ADR':['ADR','Average Daily Rate','Durchschnittlicher Zimmerpreis pro verkauftem Zimmer. Formel: Rooms Revenue / Sold Room Nights.'],
+'RevPAR':['RevPAR','Revenue per Available Room','Umsatz pro verfügbarem Zimmer. Formel: Revenue / Available Rooms = ADR × Occ%. Wichtigste interne Kennzahl im Hotel-RM.'],
+'OTB':['OTB','On the Books','Aktueller Vorbuchungsstand für ein bestimmtes Datum oder eine Periode in der Zukunft. Wird aus dem PMS ausgelesen.'],
+'CompSet':['CompSet','Competitive Set','Gruppe von mind. 4 vergleichbaren Hotels, mit deren Performance sich ein Hotel im Benchmarking vergleicht.'],
+'RGI':['RGI','Revenue Generated Index','Wichtigste Benchmarking-Kennzahl: RevPAR Hotel / RevPAR Market × 100. Über 100 = besser als Markt.'],
+'MPI':['MPI','Market Penetration Index','Occ% Hotel / Occ% Market × 100. Zeigt ob ein Hotel voller oder leerer als der Markt ist.'],
+'ARI':['ARI','Average Rate Index','ADR Hotel / ADR Market × 100. Zeigt ob ein Hotel teurer oder günstiger als der Markt verkauft.'],
+'FMS':['FMS','Fair Market Share','Zimmer Hotel / Zimmer Market × 100. Kapazitätsanteil am Markt nach Zimmergrösse.'],
+'AMS':['AMS','Actual Market Share','Sold RN Hotel / Sold RN Market × 100. Tatsächlicher Nachfrageanteil in Roomnights.'],
+'RMS':['RMS','Revenue Market Share','Revenue Hotel / Revenue Market × 100. Umsatzanteil am Gesamtmarkt.'],
+'RevPASH':['RevPASH','Revenue Per Available Seat Hour','F&B-Kennzahl: Restaurant-Umsatz / (Sitzplätze × Öffnungsstunden). Nach Sheryl Kimes.'],
+'RevPASQM':['RevPASQM','Revenue Per Available Square Meter','Veranstaltungsumsatz / verfügbare m². Präziseste Kennzahl im Function Space RM.'],
+'RevPATI':['RevPATI','Revenue Per Available Time-based Inventory Unit','Basis-Ansatz für Performance-Messung aller Profit Center eines Hotels.'],
+'MICE':['MICE','Meetings, Incentives, Conventions, Exhibitions','Segment der Geschäftsgruppen in der Hotellerie. Wichtig wegen Zusatzumsatz (F&B, Technik, Saalmiete).'],
+'MinLOS':['MinLOS','Minimum Length of Stay','Restriktion im RM: Mindestaufenthalt. Kann auf «stay through» oder «date of arrival» gesetzt werden.'],
+'CTA':['CTA','Closed to Arrival','Restriktion im RM: An diesem Datum darf keine Anreise stattfinden.'],
+'CTD':['CTD','Closed to Departure','Restriktion im RM: An diesem Datum darf keine Abreise stattfinden.'],
+'PLC':['PLC','Product Life Cycle','Produktlebenszyklus: Introduction → Growth → Maturity → Decline.'],
+'BAR':['BAR','Best Available Rate','Tagesaktueller, frei verfügbarer Zimmerpreis. Wird im Revenue Management täglich je nach Forecast angepasst.'],
+'RFP':['RFP','Request for Proposal','Angebotsanfrage, typisch für Gruppen- und Veranstaltungsgeschäft in der Hotellerie.'],
+'STR':['STR','Smith Travel Research','Globaler Anbieter von Benchmarking-Daten für die Hotelindustrie. Liefert CompSet-Reports.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;
