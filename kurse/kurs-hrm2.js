@@ -5,7 +5,7 @@
 const courseConfig = {
   id: 'hrm2',
   name: 'HRM 2',
-  pages: ['hrm2','hrm2_kap1','hrm2_kap2','hrm2_kap3','hrm2_kap4','hrm2_kap5','hrm2_kap6','hrm2_ueb','hrm2_kart','hrm2_quiz','hrm2_glossar'],
+  pages: ['hrm2','hrm2_kap1','hrm2_kap2','hrm2_kap3','hrm2_kap4','hrm2_kap5','hrm2_kap6','hrm2_dossier','hrm2_ueb','hrm2_kart','hrm2_quiz','hrm2_glossar'],
   subNav: [
     {s:'hrm2',l:'Übersicht'},
     {s:'hrm2_kap1',l:'Einführung HRM'},
@@ -14,6 +14,7 @@ const courseConfig = {
     {s:'hrm2_kap4',l:'Onboarding'},
     {s:'hrm2_kap5',l:'Personalplanung'},
     {s:'hrm2_kap6',l:'Austritt'},
+    {s:'hrm2_dossier',l:'Dossier-Analyse'},
     {s:'hrm2_ueb',l:'Übungen'},
     {s:'hrm2_kart',l:'Karten'},
     {s:'hrm2_quiz',l:'Quiz'},
@@ -64,7 +65,11 @@ const courseHTML = `
 </div>
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+<div class="c ck" onclick="go('hrm2_dossier')" style="text-align:center;padding:24px 16px">
+<div style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">📋</div>
+<div class="ct2">Dossier-Analyse</div><div class="cd">Schritt für Schritt</div>
+</div>
 <div class="c ck" onclick="go('hrm2_ueb')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">4</div>
 <div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div>
@@ -206,6 +211,206 @@ const courseHTML = `
 <div class="tl-item"><div class="tl-num tl-num-a">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Aufbau Arbeitszeugnis &amp; Referenzen</div><div class="tl-merksatz">«8 Bausteine — Baustein 6 (Leistung &amp; Verhalten) ist der wichtigste!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body"><strong>8 Bausteine des Arbeitszeugnisses:</strong><br>1. Überschrift<br>2. Unternehmung<br>3. Personalien<br>4. Funktion<br>5. Aufgaben/Fachwissen<br>6. <strong>Leistung &amp; Verhalten ⭐</strong> (= Wichtigster Teil!)<br>7. Austrittsgrund<br>8. Schluss/Datum/Unterschrift<br><br><strong>Referenzen einholen:</strong> Sachlich bleiben, konkrete Fragen, Diskretion zusichern, am Schluss Empfehlung erfragen.<br><strong>Referenzen erteilen:</strong> Ehrliche Auskünfte (Stärken UND Schwächen), nur sachbezogen, Privatsphäre respektieren.<br><br><strong>WICHTIG:</strong> Nie direkt telefonisch Auskunft geben — immer Rückruf vereinbaren!</div></div></div>
 
 </div></div>
+
+<!-- ===================== DOSSIER-ANALYSE ===================== -->
+<div class="sec" id="hrm2_dossier"><h1>Bewerbungsdossier analysieren</h1><p class="sub">Schritt für Schritt durch ein komplettes Dossier — Lea Brunner (25)</p>
+
+<div class="c" style="border-color:rgba(88,166,255,.2);padding:20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+<div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--pr));display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;flex-shrink:0">LB</div>
+<div><div style="font-size:17px;font-weight:700">Lea Brunner, 25 Jahre</div><div style="font-size:13px;color:var(--tx2)">Bewirbt sich als <strong style="color:var(--ac)">Réceptionistin</strong> im Hotel & Spa Lenkerhof ★★★★★, Lenk</div><div style="font-size:12px;color:var(--tx3)">Schweizerin · Hotel-Kommunikationsfachfrau EFZ · 4 Jahre Berufserfahrung</div></div>
+</div>
+
+<div style="display:flex;gap:4px;margin:16px 0;flex-wrap:wrap" id="hrm2DosNav">
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600;background:var(--ac);color:#fff;border-color:var(--ac)" onclick="hrm2DosStep(0)">Übersicht</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(1)">1. Begleitschreiben</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(2)">2. Lebenslauf</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(3)">3. Diplome</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(4)">4. Zeugnis Lehre</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(5)">5. Zwischenzeugnis</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(6)">6. Vergleich</div>
+<div class="c ck" style="padding:6px 14px;font-size:12px;font-weight:600" onclick="hrm2DosStep(7)">7. Entscheid</div>
+</div>
+
+<!-- Step 0: Übersicht -->
+<div id="hrm2Dos0">
+<h2 style="font-family:var(--se);font-size:20px;margin:20px 0 10px">Wie analysiert man ein Bewerbungsdossier?</h2>
+<p style="color:var(--tx2);margin-bottom:16px">Ein vollständiges Dossier besteht aus mehreren Dokumenten. Jedes gibt andere Informationen preis — zusammen ergeben sie ein Gesamtbild.</p>
+<div style="display:grid;gap:10px;margin:12px 0">
+<div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:rgba(88,166,255,.1);color:var(--ac);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</div><div><strong>Begleitschreiben</strong><div style="font-size:13px;color:var(--tx2)">Warum diese Stelle? Individuell oder Standard? Verbindung zum Unternehmen?</div></div></div>
+<div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:rgba(63,185,80,.1);color:var(--g);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">2</div><div><strong>Lebenslauf</strong><div style="font-size:13px;color:var(--tx2)">Chronologischer Werdegang. Lücken? Häufige Wechsel? Aufstieg erkennbar?</div></div></div>
+<div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:rgba(210,153,34,.1);color:var(--am);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">3</div><div><strong>Diplome & Zertifikate</strong><div style="font-size:13px;color:var(--tx2)">Formale Qualifikationen. Stimmen CV-Angaben mit Belegen überein?</div></div></div>
+<div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:rgba(188,140,255,.1);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">4</div><div><strong>Arbeitszeugnisse</strong><div style="font-size:13px;color:var(--tx2)">Das Herzstück. Wer unterschreibt? Zeugniscodes? Vollzeugnis oder nur Bestätigung?</div></div></div>
+<div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:rgba(248,81,73,.1);color:var(--r);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">5</div><div><strong>Gesamtbeurteilung</strong><div style="font-size:13px;color:var(--tx2)">Abgleich mit Anforderungsprofil: A-, B- oder C-Kandidat:in?</div></div></div>
+</div>
+<div style="background:var(--aml);border:1px solid rgba(210,153,34,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--am);margin:16px 0">Klicke oben auf die einzelnen Schritte, um das Dossier von <strong>Lea Brunner</strong> durchzugehen.</div>
+</div>
+
+<!-- Step 1: Begleitschreiben -->
+<div id="hrm2Dos1" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 1 — Das Begleitschreiben</h2>
+<div style="background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:24px;margin:12px 0;font-size:13px;color:var(--tx2);line-height:1.9">
+<strong>Lea Brunner</strong><br>Seestrasse 12, 3600 Thun<br>076 445 23 18 · lea.brunner@outlook.com<br><br>
+<div style="text-align:right;color:var(--tx3)">Hotel & Spa Lenkerhof<br>z.Hd. Frau Andrea Lüthi, HR-Leiterin<br>Badstrasse 20, 3775 Lenk im Simmental<br><br>Thun, 12. Januar 2026</div><br>
+<strong style="font-size:14px">Bewerbung als Réceptionistin</strong><br><br>
+Sehr geehrte Frau Lüthi<br><br>
+Auf der Karriereseite des Lenkerhofs bin ich auf die ausgeschriebene Stelle als Réceptionistin gestossen. Der Lenkerhof ist für mich nicht irgendein Hotel — ich bin im Simmental aufgewachsen und kenne Ihr Haus seit meiner Kindheit. Die Verbindung aus Luxushotellerie und authentischer Berner Oberländer Gastfreundschaft fasziniert mich.<br><br>
+Nach meiner Lehre als Hotel-Kommunikationsfachfrau im Hotel Bellevue Palace in Bern und drei Jahren an der Réception des Victoria-Jungfrau in Interlaken bringe ich solide 5-Sterne-Erfahrung mit. In Interlaken war ich zuletzt als Senior Réceptionistin für das Training neuer Mitarbeitender und die VIP-Betreuung verantwortlich.<br><br>
+Was mich besonders am Lenkerhof reizt: Ihr ganzheitliches Konzept, bei dem Spa und Gastronomie nicht getrennt vom Hotelbetrieb gedacht werden, sondern als Gesamterlebnis. Genau diese Philosophie möchte ich an der Réception verkörpern und weitertragen.<br><br>
+Ich spreche fliessend Deutsch, Englisch und Französisch und verfüge über fundierte Kenntnisse in Opera PMS. Auch zeitlich bin ich flexibel — Schichtarbeit und Wochenenddienste sind für mich selbstverständlich.<br><br>
+Über eine Einladung zum persönlichen Gespräch würde ich mich sehr freuen.<br><br>
+Freundliche Grüsse<br><br>Lea Brunner<br><br><em style="color:var(--tx3)">Beilagen: Lebenslauf, Arbeitszeugnisse, Kopien Diplome und Zertifikate</em>
+</div>
+<div style="font-family:var(--se);font-size:15px;margin:18px 0 8px;color:var(--ac)">Worauf achten?</div>
+<div class="c" style="font-size:13px;color:var(--tx2);padding:14px 18px;line-height:1.8">
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Individuell?</strong> Ja — Bezug zum Lenkerhof, persönliche Verbindung (Simmental). Kein Standardbrief.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Schlüsselbegriffe?</strong> 5★-Erfahrung, VIP-Betreuung, Opera PMS, Schichtbereitschaft — alles relevant.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Motivation klar?</strong> Ja — Rückkehr ins Simmental, Begeisterung fürs Konzept, Karriereschritt.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Form & Sprache?</strong> Korrekte Anrede (Name HR-Leiterin), saubere Struktur, keine Fehler.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Rote Flaggen?</strong> Keine erkennbar.
+</div>
+</div>
+
+<!-- Step 2: Lebenslauf -->
+<div id="hrm2Dos2" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 2 — Der Lebenslauf</h2>
+<div style="background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:24px;margin:12px 0;font-size:13px;color:var(--tx2);line-height:1.9">
+<div style="text-align:center;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--bd)"><strong style="font-size:18px;color:var(--tx)">Lebenslauf</strong></div>
+<strong style="font-size:16px;color:var(--tx)">Lea Brunner</strong><br>Seestrasse 12, 3600 Thun · 076 445 23 18 · lea.brunner@outlook.com<br>Schweizerin · 08.03.2001 · Ledig<br>Hobbys: Yoga, Wandern, Fotografie, Kochen, Reisen<br><br>
+<strong style="color:var(--tx)">Berufserfahrung</strong><br><br>
+<div style="display:flex;gap:12px;margin-bottom:12px"><div style="min-width:120px;color:var(--tx3);font-size:12px">Jan 2023 – heute</div><div><strong style="color:var(--tx)">Victoria-Jungfrau Grand Hotel & Spa, Interlaken ★★★★★</strong><br>Senior Réceptionistin<br><span style="font-size:12px;color:var(--tx3)">Seit Okt 2024: zusätzlich Einarbeitung neuer MA + VIP-Betreuung</span></div></div>
+<div style="display:flex;gap:12px;margin-bottom:12px"><div style="min-width:120px;color:var(--tx3);font-size:12px">Aug 2019 – Dez 2022</div><div><strong style="color:var(--tx)">Hotel Bellevue Palace, Bern ★★★★★</strong><br>Lehrling Hotel-Kommunikationsfachfrau (2019–2022)<br>Réceptionistin (Okt–Dez 2022, nach Lehrabschluss)</div></div>
+<div style="display:flex;gap:12px;margin-bottom:12px"><div style="min-width:120px;color:var(--tx3);font-size:12px">Jul – Aug 2018</div><div><strong style="color:var(--tx)">Restaurant Alpenblick, Lenk</strong><br>Ferienjob Service (Sommersaison)</div></div>
+<strong style="color:var(--tx)">Ausbildung</strong><br>
+• Hotel-Kommunikationsfachfrau EFZ, Hotel Bellevue Palace Bern, Profil E — Abschluss 2022 (Note 5.2)<br>
+• Sekundarschule, Oberstufenzentrum Zweisimmen — 2015–2019<br><br>
+<strong style="color:var(--tx)">Weiterbildung & Zertifikate</strong><br>
+• Cambridge Advanced Certificate (C1) — 2023<br>• DELF B2 Französisch — 2022<br>• Opera PMS Anwender-Zertifikat — 2023<br>• Erste-Hilfe BLS-AED — 2024<br><br>
+<strong style="color:var(--tx)">IT</strong><br>• Opera PMS V5 (3 Jahre) · Protel (Grundkenntnisse) · MS Office · Canva<br><br>
+<strong style="color:var(--tx)">Sprachen</strong><br>• Deutsch: Muttersprache · Englisch: C1 · Französisch: B2 · Spanisch: A2<br><br>
+<strong style="color:var(--tx)">Referenzen</strong><br>• Herr Thomas Gerber, FOM, Victoria-Jungfrau Interlaken<br>• Frau Kathrin Moser, Ausbildungsverantwortliche, Bellevue Palace Bern
+</div>
+<div style="font-family:var(--se);font-size:15px;margin:18px 0 8px;color:var(--ac)">Worauf achten?</div>
+<div class="c" style="font-size:13px;color:var(--tx2);padding:14px 18px;line-height:1.8">
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Lücken?</strong> Keine — nahtlos von Lehre (Dez 2022) zu Victoria-Jungfrau (Jan 2023).<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Karriereverlauf?</strong> Aufsteigend: Lehrling → Réceptionistin → Senior mit Zusatzverantwortung.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Konsistenz?</strong> CV bestätigt alle Angaben aus dem Motivationsschreiben.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Auffälligkeiten?</strong> Nur 3 Monate nach Lehrabschluss im Bellevue geblieben — warum? Im Zeugnis prüfen.
+</div>
+</div>
+
+<!-- Step 3: Diplome -->
+<div id="hrm2Dos3" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 3 — Diplome & Zertifikate</h2>
+<div style="background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:24px;margin:12px 0;font-size:13px;color:var(--tx2);line-height:1.9">
+<div style="text-align:center;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--bd)"><strong style="font-size:15px;color:var(--tx)">EIDGENÖSSISCHES FÄHIGKEITSZEUGNIS</strong><br>Hotel-Kommunikationsfachfrau EFZ</div>
+Frau <strong style="color:var(--tx)">Lea Brunner</strong>, geboren am 08.03.2001, von Lenk im Simmental BE, hat die Abschlussprüfung der beruflichen Grundbildung als Hotel-Kommunikationsfachfrau bestanden.<br><br>
+Erfahrungsnote Betrieb: <strong style="color:var(--tx)">5.3</strong> · Erfahrungsnote Schule: <strong style="color:var(--tx)">5.1</strong> · Prüfung praktisch: <strong style="color:var(--tx)">5.5</strong> · Prüfung schriftlich: <strong style="color:var(--tx)">5.0</strong> · <strong style="color:var(--g)">Gesamtnote: 5.2</strong><br>
+Schwerpunkt: Hotelempfang & Administration · Profil E (erweitert) · Berufsfachschule: Wirtschaftsschule Bern<br><br><em style="color:var(--tx3)">Bern, 10. Juli 2022 — SBFI</em>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0">
+<div style="background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:18px;font-size:13px;color:var(--tx2);line-height:1.8">
+<strong style="color:var(--tx)">Cambridge Advanced (C1)</strong><br>Grade: B (Score: 186)<br>Reading: 188 · Writing: 180 · Listening: 192 · Speaking: 184<br><em style="color:var(--tx3)">November 2023</em>
+</div>
+<div style="background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:18px;font-size:13px;color:var(--tx2);line-height:1.8">
+<strong style="color:var(--tx)">DELF B2 Französisch</strong><br>Note globale: 72/100<br>CO: 18/25 · CE: 19/25 · PO: 17/25 · PE: 18/25<br><em style="color:var(--tx3)">Juni 2022, Alliance Française Berne</em>
+</div>
+</div>
+<div class="c" style="font-size:13px;color:var(--tx2);padding:14px 18px;line-height:1.8">
+<strong style="color:var(--tx);display:inline-block;min-width:150px">EFZ bestätigt?</strong> Ja — Note 5.2, Profil E. Überdurchschnittlich.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Sprachzertifikate?</strong> Beide vorhanden und aktuell. C1 Englisch, B2 Französisch.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Konsistenz?</strong> Alle Angaben stimmen mit CV überein.
+</div>
+</div>
+
+<!-- Step 4: Arbeitszeugnis Lehre -->
+<div id="hrm2Dos4" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 4 — Arbeitszeugnis Lehrbetrieb</h2>
+<div style="background:var(--s);border:1px solid var(--bd);border-radius:14px;padding:24px;margin:12px 0;font-size:13px;color:var(--tx2);line-height:1.9">
+<div style="text-align:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)"><div style="font-size:11px;color:var(--tx3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">Hotel Bellevue Palace · Bern</div><strong style="font-size:16px;color:var(--tx)">ARBEITSZEUGNIS</strong><br><br>Frau Lea Brunner, geboren am 08.03.2001, von Lenk im Simmental BE,<br>war vom 01.08.2019 bis 31.12.2022 in unserem Haus tätig.</div>
+Frau Brunner absolvierte vom 1. August 2019 bis 9. Juli 2022 ihre berufliche Grundbildung als Hotel-Kommunikationsfachfrau EFZ in unserem Betrieb. Während der Lehrzeit durchlief sie folgende Abteilungen:<br><br>
+• Réception & Front Office (12 Monate)<br>• Réservation & Revenue Support (6 Monate)<br>• Back Office & Administration (6 Monate)<br>• Housekeeping & Guest Relations (4 Monate)<br>• Concierge & Telefon (4 Monate)<br><br>
+Nach dem erfolgreichen Abschluss ihrer Lehre mit der Gesamtnote 5.2 wurde Frau Brunner ab Oktober 2022 als Réceptionistin in unser Front-Office-Team übernommen. In dieser Funktion war sie verantwortlich für:<br><br>
+• Empfang und Betreuung unserer nationalen und internationalen Gäste<br>• Check-in und Check-out inkl. Abrechnung<br>• Telefonzentrale und E-Mail-Korrespondenz<br>• Reservationsbearbeitung im Protel-System<br>• Unterstützung bei der VIP-Betreuung und bei Bankettanlässen<br><br>
+Frau Brunner hat während ihrer Lehrzeit eine bemerkenswerte Entwicklung durchlaufen. Sie zeigte von Beginn an grosses Interesse und eine hohe Lernbereitschaft. Ihre Abschlussprüfung bestand sie mit einer ausgezeichneten Note, was unsere Einschätzung ihrer Fähigkeiten bestätigte.<br><br>
+In ihrer anschliessenden Tätigkeit als Réceptionistin hat Frau Brunner die ihr übertragenen Aufgaben stets zu unserer vollen Zufriedenheit erfüllt. Sie arbeitete speditiv, zuverlässig und zeigte auch in anspruchsvollen Situationen eine ruhige und professionelle Haltung.<br><br>
+Im Umgang mit Vorgesetzten, Mitarbeitenden und Gästen war Frau Brunner stets freundlich, zuvorkommend und korrekt. Sie war im Team beliebt und trug aktiv zu einem positiven Arbeitsklima bei.<br><br>
+Frau Brunner verlässt unser Haus auf eigenen Wunsch, um sich beruflich weiterzuentwickeln. Wir bedauern ihren Abgang und danken ihr für ihren engagierten Einsatz während mehr als drei Jahren. Für ihre berufliche und persönliche Zukunft wünschen wir ihr alles Gute.<br><br>
+<em style="color:var(--tx3)">Bern, 31. Dezember 2022<br>Kathrin Moser, Ausbildungsverantwortliche · Philippe Hugentobler, Direktor</em>
+</div>
+<div style="font-family:var(--se);font-size:15px;margin:18px 0 8px;color:var(--ac)">Analyse</div>
+<div class="c" style="font-size:13px;color:var(--tx2);padding:14px 18px;line-height:1.8">
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Leistung?</strong> «Stets zu unserer vollen Zufriedenheit» = Gut (nicht «vollsten» = sehr gut).<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Verhalten?</strong> «Stets freundlich, zuvorkommend und korrekt» + «im Team beliebt» = gutes bis sehr gutes Verhalten.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Schlussformel?</strong> «Auf eigenen Wunsch» + «Wir bedauern» (ohne «sehr» oder «ausserordentlich»).<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Unterschrift?</strong> Ausbildungsverantwortliche + Direktor — korrekt.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Frage fürs Interview?</strong> Warum nur 3 Monate nach Lehrabschluss gewechselt?
+</div>
+</div>
+
+<!-- Step 5: Zwischenzeugnis -->
+<div id="hrm2Dos5" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 5 — Zwischenzeugnis Victoria-Jungfrau</h2>
+<div style="background:var(--s);border:1px solid var(--bd);border-radius:14px;padding:24px;margin:12px 0;font-size:13px;color:var(--tx2);line-height:1.9">
+<div style="text-align:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)"><div style="font-size:11px;color:var(--tx3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">Victoria-Jungfrau Grand Hotel & Spa · Interlaken</div><strong style="font-size:16px;color:var(--tx)">ZWISCHENZEUGNIS</strong><br><br>Frau Lea Brunner, geboren am 08.03.2001, von Lenk im Simmental BE,<br>ist seit dem 01.01.2023 als <strong style="color:var(--tx)">Réceptionistin / Senior Réceptionistin</strong> tätig.</div>
+Frau Brunner wurde per 1. Januar 2023 als Réceptionistin aufgenommen. Aufgrund ihrer hervorragenden Leistungen und ihres Engagements wurde sie per 1. Oktober 2024 zur Senior Réceptionistin befördert.<br><br>
+Ihr aktuelles Aufgabengebiet umfasst:<br><br>
+• Eigenständige Durchführung aller Front-Office-Prozesse<br>• VIP-Gästebetreuung und persönliche Betreuung von Stammgästen<br>• Bearbeitung von Gästewünschen, Reklamationen und Sonderwünschen<br>• Upselling und Revenue-orientierte Zimmerzuweisung<br>• Einarbeitung und Coaching neuer Mitarbeitender und Praktikant:innen<br>• Bedienung und Administration von Opera PMS V5<br>• Nacht-Audit (Stellvertretung) und Monatsabschlüsse<br>• Enge Zusammenarbeit mit Concierge, Housekeeping, Spa und F&B<br><br>
+Frau Brunner erfüllt sämtliche ihr übertragenen Aufgaben stets zu unserer vollsten Zufriedenheit. Sie zeichnet sich durch ein ausgezeichnetes Fachwissen aus, das sie auch in komplexen Situationen souverän und lösungsorientiert einsetzt. Ihr Upselling-Erfolg liegt konstant über dem Teamdurchschnitt.<br><br>
+Besonders hervorzuheben ist Frau Brunners Fähigkeit, neue Mitarbeitende professionell einzuarbeiten. Sie vermittelt Wissen geduldig und strukturiert und wird von den Lernenden und Praktikant:innen als Mentorin sehr geschätzt.<br><br>
+Im Umgang mit Vorgesetzten, Mitarbeitenden und Gästen ist Frau Brunner stets zuvorkommend, freundlich und korrekt. Ihre ruhige, herzliche und professionelle Art wird von unserer anspruchsvollen internationalen Kundschaft besonders geschätzt. Im Team ist sie eine verlässliche und beliebte Kollegin.<br><br>
+Frau Brunner wird dieses Zwischenzeugnis auf ihren Wunsch hin ausgestellt, da sie sich beruflich verändern möchte. Wir würden Frau Brunner sehr ungern verlieren und unterstützen sie gleichwohl in ihrem Vorhaben. Für ihre weitere berufliche und persönliche Zukunft wünschen wir ihr von Herzen alles Gute und viel Erfolg.<br><br>
+<em style="color:var(--tx3)">Interlaken, 6. Januar 2026<br>Thomas Gerber, Front Office Manager · Christian Oesch, General Manager</em>
+</div>
+<div style="font-family:var(--se);font-size:15px;margin:18px 0 8px;color:var(--ac)">Analyse</div>
+<div class="c" style="font-size:13px;color:var(--tx2);padding:14px 18px;line-height:1.8">
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Leistung?</strong> «Stets zu unserer vollsten Zufriedenheit» = Sehr gut. Steigerung zum Lehrzeugnis!<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Verhalten?</strong> «Stets zuvorkommend, freundlich und korrekt» + «ruhig, herzlich, professionell» = Sehr gut.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Beförderung?</strong> Zur Senior Réceptionistin nach 21 Monaten — zeigt Leistungsentwicklung.<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Schlussformel?</strong> «Sehr ungern verlieren» = starkes Bedauern. Positiver als nur «bedauern».<br>
+<strong style="color:var(--tx);display:inline-block;min-width:150px">Unterschrift?</strong> FOM + GM = höchste Ebene. Zeigt Wertschätzung.
+</div>
+</div>
+
+<!-- Step 6: Vergleich -->
+<div id="hrm2Dos6" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 6 — Zeugnisse vergleichen</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0">
+<div class="c" style="border-color:rgba(88,166,255,.3);padding:18px">
+<div style="font-size:11px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Bellevue Palace (Lehre)</div>
+<div style="font-size:13px;color:var(--tx2);line-height:1.8"><strong style="color:var(--tx)">Leistung:</strong> «vollen Zufriedenheit»<br><strong style="color:var(--tx)">Verhalten:</strong> «freundlich, zuvorkommend, korrekt»<br><strong style="color:var(--tx)">Abgang:</strong> «bedauern»<br><strong style="color:var(--tx)">Dauer:</strong> 3 Jahre 5 Monate<br><strong style="color:var(--tx)">Note:</strong> Gut</div>
+</div>
+<div class="c" style="border-color:rgba(63,185,80,.3);padding:18px">
+<div style="font-size:11px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Victoria-Jungfrau (aktuell)</div>
+<div style="font-size:13px;color:var(--tx2);line-height:1.8"><strong style="color:var(--tx)">Leistung:</strong> «vollsten Zufriedenheit»<br><strong style="color:var(--tx)">Verhalten:</strong> «zuvorkommend, freundlich, korrekt»<br><strong style="color:var(--tx)">Abgang:</strong> «sehr ungern verlieren»<br><strong style="color:var(--tx)">Dauer:</strong> 3+ Jahre (laufend)<br><strong style="color:var(--tx)">Note:</strong> Sehr gut</div>
+</div>
+</div>
+<div style="background:var(--gl);border:1px solid rgba(63,185,80,.3);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--g);margin:12px 0"><strong>Positive Entwicklung:</strong> Von «gut» zu «sehr gut». Beförderung. Zusatzverantwortung. «Sehr ungern verlieren» vs. «bedauern» — deutliche Steigerung.</div>
+<div style="background:rgba(88,166,255,.06);border:1px solid rgba(88,166,255,.2);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--ac);margin:12px 0"><strong>Konsistenz:</strong> Motivationsschreiben, CV, Diplome und Zeugnisse erzählen die gleiche Geschichte — solides Fundament, kontinuierliche Weiterentwicklung. Keine Widersprüche.</div>
+</div>
+
+<!-- Step 7: Entscheid -->
+<div id="hrm2Dos7" style="display:none">
+<h2 style="font-family:var(--se);font-size:18px;margin:16px 0 10px">Schritt 7 — Gesamtbeurteilung & Entscheid</h2>
+<div class="c" style="padding:20px;overflow-x:auto">
+<div style="font-size:11px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Anforderungsprofil: Réceptionistin ★★★★★ Lenkerhof</div>
+<table style="font-size:12px;width:100%">
+<tr style="background:var(--s2)"><th style="padding:8px 10px;border:1px solid var(--bd)">Kriterium</th><th style="padding:8px 10px;border:1px solid var(--bd);width:50px;text-align:center">Typ</th><th style="padding:8px 10px;border:1px solid var(--bd);width:30px;text-align:center">?</th><th style="padding:8px 10px;border:1px solid var(--bd)">Beleg im Dossier</th></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Hotel-KV oder equiv.</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--rl);color:var(--r)">Muss</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">EFZ Hotel-Kommunikationsfachfrau, Note 5.2</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Deutsch Muttersprache</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--rl);color:var(--r)">Muss</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">Schweizerin aus dem Simmental</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Englisch C1</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--rl);color:var(--r)">Muss</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">Cambridge Advanced C1, Zertifikat vorliegend</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Französisch B2</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--aml);color:var(--am)">Soll</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">DELF B2, Zertifikat vorliegend</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Réception mind. 2 Jahre 5★</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--rl);color:var(--r)">Muss</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">3+ Jahre Victoria-Jungfrau 5★</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Opera PMS</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--rl);color:var(--r)">Muss</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">Opera V5, 3 Jahre + Zertifikat</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">VIP-Betreuung</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--aml);color:var(--am)">Soll</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">Zwischenzeugnis: VIP + Stammgäste</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Spa-/Wellness-Affinität</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--pl);color:var(--pr)">Kann</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--am)">~</td><td style="padding:8px 10px;border:1px solid var(--bd)">Yoga als Hobby, keine direkte Spa-Erfahrung</td></tr>
+<tr><td style="padding:8px 10px;border:1px solid var(--bd)">Lokale Vernetzung</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center"><span class="badge" style="background:var(--pl);color:var(--pr)">Kann</span></td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:center;color:var(--g)">✓</td><td style="padding:8px 10px;border:1px solid var(--bd)">Aufgewachsen im Simmental, Ferienjob Lenk</td></tr>
+</table>
+</div>
+<div style="background:var(--gl);border:1px solid rgba(63,185,80,.3);border-radius:10px;padding:16px 20px;font-size:14px;color:var(--g);margin:16px 0"><strong>Entscheid: A-Kandidatin — Einladen!</strong><br><br><span style="font-size:13px">Alle Muss-Kriterien erfüllt. Soll-Kriterien ebenfalls. Positive Leistungsentwicklung. Beförderung und Zusatzverantwortung zeigen Potenzial. Lokale Verbundenheit ist Bonus.</span></div>
+<div style="background:var(--aml);border:1px solid rgba(210,153,34,.3);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--am);margin:12px 0"><strong>Nächste Schritte:</strong><br>1. Einladung zum Vorstellungsgespräch (innert 5 Arbeitstagen)<br>2. Im Interview klären: Warum Wechsel nach 3 Monaten Bellevue? Spa-Affinität? Langfristige Ziele?<br>3. Referenzgespräch mit Thomas Gerber (FOM Victoria-Jungfrau) vorbereiten</div>
+</div>
+
+</div>
 
 <!-- ===================== ÜBUNGEN ===================== -->
 <div class="sec" id="hrm2_ueb"><h1>Interaktive Übungen</h1><p class="sub">Wähle eine Übung und teste dein Wissen</p>
@@ -369,6 +574,13 @@ const courseHTML = `
 // ==========================================
 // ÜBUNGEN — JAVASCRIPT LOGIK
 // ==========================================
+
+// Dossier-Analyse Navigation
+window.hrm2DosStep = function(n) {
+  for(var i=0;i<8;i++){var p=document.getElementById('hrm2Dos'+i);if(p)p.style.display=i===n?'block':'none'}
+  var nav=document.getElementById('hrm2DosNav');
+  if(nav){var btns=nav.children;for(var i=0;i<btns.length;i++){btns[i].style.background=i===n?'var(--ac)':'var(--s)';btns[i].style.color=i===n?'#fff':'var(--tx3)';btns[i].style.borderColor=i===n?'var(--ac)':'var(--bd)'}}
+};
 
 // Navigation
 window.hrm2ShowUeb = function(n) {
