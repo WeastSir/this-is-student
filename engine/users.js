@@ -676,7 +676,12 @@
       h += '<div id="adminCodeList">';
       if (codes && codes.length > 0) {
         codes.forEach(function(c) {
-          var status = c.used_by ? '<span style="color:var(--r)">Verwendet</span>' : (c.active ? '<span style="color:var(--g)">Aktiv</span>' : '<span style="color:var(--tx3)">Deaktiviert</span>');
+          var usedByName = '';
+          if (c.used_by && users) {
+            var u = users.find(function(user) { return user.auth_uid === c.used_by; });
+            if (u) usedByName = u.display_name;
+          }
+          var status = c.used_by ? '<span style="color:var(--r)">Verwendet</span>' + (usedByName ? '<br><span style="font-size:11px;color:var(--tx2)">von <strong>' + usedByName + '</strong></span>' : '') : (c.active ? '<span style="color:var(--g)">Aktiv</span>' : '<span style="color:var(--tx3)">Deaktiviert</span>');
           h += '<div class="c" style="padding:12px 16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center">';
           h += '<div><strong style="font-family:monospace;font-size:16px;letter-spacing:2px;color:var(--ac)">' + c.code + '</strong>';
           h += '<br><span style="font-size:11px;color:var(--tx3)">' + new Date(c.created_at).toLocaleDateString('de-CH') + '</span></div>';
