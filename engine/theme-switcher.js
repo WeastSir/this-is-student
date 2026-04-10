@@ -8,7 +8,7 @@
 
   // CSS file references
   const THEMES = {
-    original: 'style.css',
+    original: 'style-original.css',
     v2: 'style-v2.css'
   };
 
