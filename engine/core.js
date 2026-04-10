@@ -227,19 +227,30 @@ function renderFlashcard(courseId){
   if(!fc.cards.length)return;
   if(fc.index>=fc.order.length)fc.index=0;
   const card=fc.cards[fc.order[fc.index]];
-  // Find elements - try course-specific IDs first, then generic
-  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:courseId==='marketing'?['mfc','mfc']:courseId==='rm'?['rmfc','rmfc']:['cfc','cfc'];
-  const qEl=document.getElementById(prefixes[0]+'q')||document.getElementById('fcq');
-  const aEl=document.getElementById(prefixes[0]+'a')||document.getElementById('fca');
-  const cEl=document.getElementById(prefixes[0]+'c')||document.getElementById('fc');
-  const ccEl=document.getElementById(prefixes[0]+'c'+'c');
-  const poolEl=document.getElementById(prefixes[0]+'Pool');
+  // Auto-detect prefix from DOM: find the card section and look for elements
+  const p=getFlashPrefix(courseId);
+  const qEl=document.getElementById(p+'q')||document.getElementById('fcq');
+  const aEl=document.getElementById(p+'a')||document.getElementById('fca');
+  const cEl=document.getElementById(p+'c')||document.getElementById('fc');
+  const ccEl=document.getElementById(p+'c'+'c');
+  const poolEl=document.getElementById(p+'Pool');
   
   if(qEl)qEl.textContent=card[0];
   if(aEl)aEl.textContent=card[1];
   if(cEl)cEl.classList.remove('fl');
   if(ccEl)ccEl.textContent='Karte '+(fc.index+1)+' von '+fc.cards.length;
   if(poolEl)poolEl.textContent=fc.cards.length+' Karten im Stapel';
+}
+
+// Auto-detect flashcard prefix for any course
+function getFlashPrefix(courseId){
+  // Known prefixes
+  var map={'recht2':'fc','arb':'afc','ctrl':'cfc','fa3':'fa3_fc','rm':'rmfc','marketing':'mfc'};
+  if(map[courseId])return map[courseId];
+  // Auto-detect: try courseId + 'fc', then courseId + '_fc'
+  if(document.getElementById(courseId+'fcq'))return courseId+'fc';
+  if(document.getElementById(courseId+'_fcq'))return courseId+'_fc';
+  return courseId+'fc';
 }
 
 // Generic flashcard navigation (called from HTML onclick)
@@ -275,14 +286,70 @@ function buildQuizFromCards(cards){
 }
 
 let quizState={};
+
+// Auto-detect quiz prefix for any course
 function getQuizPrefix(courseId){
-  if(courseId==='recht2')return 'q';
-  if(courseId==='arb')return 'aq';
-  if(courseId==='fa3')return 'fq';
-  if(courseId==='marketing')return 'mkq_';
-  if(courseId==='rm')return 'rmq';
-  return 'cq';
+  var map={'recht2':'q','arb':'aq','ctrl':'cq','fa3':'fq','rm':'rmq','marketing':'mkq_'};
+  if(map[courseId])return map[courseId];
+  // Auto-detect: try courseId + 'q_', then courseId + 'q'
+  if(document.getElementById(courseId+'q_C'))return courseId+'q_';
+  if(document.getElementById(courseId+'qC'))return courseId+'q';
+  return courseId+'q';
 }
+
+// ===== SUPABASE QUIZ SYNC =====
+var _quizSyncTimer={};
+function saveQuizToSupabase(courseId){
+  // Debounce: save 1s after last change
+  clearTimeout(_quizSyncTimer[courseId]);
+  _quizSyncTimer[courseId]=setTimeout(function(){_doSaveQuiz(courseId);},1000);
+}
+async function _doSaveQuiz(courseId){
+  try{
+    var user=window.TIS_currentUser?window.TIS_currentUser():null;
+    if(!user||!user.auth_uid)return;
+    var session=window.TIS_getSession?await window.TIS_getSession():null;
+    if(!session)return;
+    var qs=quizState[courseId];if(!qs)return;
+    var payload={auth_uid:user.auth_uid,course_id:courseId,quiz_state:JSON.stringify({status:qs.status,round:qs.round,totR:qs.totR,totW:qs.totW}),updated_at:new Date().toISOString()};
+    var url='https://wgfuxttruwsvfhxsgybz.supabase.co/rest/v1/tis_quiz_progress?auth_uid=eq.'+user.auth_uid+'&course_id=eq.'+courseId;
+    var key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndnZnV4dHRydXdzdmZoeHNneWJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzEzNzgsImV4cCI6MjA5MDcwNzM3OH0.Cf4sNB3arHbCar7nujsQs1-770Jz0QC_dWi4R8E1d5A';
+    // Try PATCH first (update existing)
+    var res=await fetch(url,{method:'PATCH',headers:{'apikey':key,'Authorization':'Bearer '+session.access_token,'Content-Type':'application/json','Prefer':'return=representation'},body:JSON.stringify({quiz_state:payload.quiz_state,updated_at:payload.updated_at})});
+    var data=await res.json();
+    // If no row was updated, INSERT
+    if(!data||data.length===0){
+      await fetch('https://wgfuxttruwsvfhxsgybz.supabase.co/rest/v1/tis_quiz_progress',{method:'POST',headers:{'apikey':key,'Authorization':'Bearer '+session.access_token,'Content-Type':'application/json','Prefer':'return=representation'},body:JSON.stringify(payload)});
+    }
+  }catch(e){console.warn('[TIS Quiz] Save failed:',e);}
+}
+
+async function loadAllQuizProgress(){
+  try{
+    var user=window.TIS_currentUser?window.TIS_currentUser():null;
+    if(!user||!user.auth_uid)return;
+    var session=window.TIS_getSession?await window.TIS_getSession():null;
+    if(!session)return;
+    var key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndnZnV4dHRydXdzdmZoeHNneWJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzEzNzgsImV4cCI6MjA5MDcwNzM3OH0.Cf4sNB3arHbCar7nujsQs1-770Jz0QC_dWi4R8E1d5A';
+    var res=await fetch('https://wgfuxttruwsvfhxsgybz.supabase.co/rest/v1/tis_quiz_progress?auth_uid=eq.'+user.auth_uid+'&select=*',{headers:{'apikey':key,'Authorization':'Bearer '+session.access_token}});
+    var rows=await res.json();
+    if(rows&&rows.length){
+      rows.forEach(function(row){
+        try{
+          var s=typeof row.quiz_state==='string'?JSON.parse(row.quiz_state):row.quiz_state;
+          if(s&&s.status)quizState[row.course_id]=s;
+        }catch(e){}
+      });
+    }
+  }catch(e){console.warn('[TIS Quiz] Load failed:',e);}
+}
+
+// Load quiz progress after login
+var _quizLoadCheck=setInterval(function(){
+  var user=window.TIS_currentUser?window.TIS_currentUser():null;
+  if(user){clearInterval(_quizLoadCheck);loadAllQuizProgress();}
+},500);
+setTimeout(function(){clearInterval(_quizLoadCheck);},60000);
 
 function initQuiz(courseId){
   const c=window.TIS.courses[courseId];
@@ -370,6 +437,7 @@ function answerQuiz(courseId,i){
   const eEl=document.getElementById(p+'E');if(eEl)eEl.style.display='block';
   const nEl=document.getElementById(p+'N');if(nEl)nEl.style.display='inline-block';
   updateQuizStats(courseId);
+  saveQuizToSupabase(courseId);
 }
 
 function nextQuizQ(courseId){quizState[courseId].qIndex++;renderQuizQuestion(courseId);}
@@ -390,16 +458,37 @@ function endQuiz(courseId){
 function resetQuiz(courseId){
   const c=window.TIS.courses[courseId];
   quizState[courseId]={status:new Array(c.flashcards.length).fill(0),round:0,totR:0,totW:0};
+  saveQuizToSupabase(courseId);
   initQuiz(courseId);
 }
 
-// Legacy quiz function aliases
+// Legacy quiz function aliases (backward compat)
 function qSt(){initQuiz('recht2');}function qNx(){nextQuizQ('recht2');}function qA(i){answerQuiz('recht2',i);}function qReset(){resetQuiz('recht2');}
 function aqSt(){initQuiz('arb');}function aqNx(){nextQuizQ('arb');}function aqA(i){answerQuiz('arb',i);}function aqReset(){resetQuiz('arb');}
 function cqSt(){initQuiz('ctrl');}function cqNx(){nextQuizQ('ctrl');}function cqA(i){answerQuiz('ctrl',i);}function cqReset(){resetQuiz('ctrl');}
 function fqSt(){initQuiz('fa3');}function fqNx(){nextQuizQ('fa3');}function fqA(i){answerQuiz('fa3',i);}function fqReset(){resetQuiz('fa3');}
 function mkqSt(){initQuiz('marketing');}function mkqNx(){nextQuizQ('marketing');}function mkqA(i){answerQuiz('marketing',i);}function mkqReset(){resetQuiz('marketing');}
 function rmqSt(){initQuiz('rm');}function rmqNx(){nextQuizQ('rm');}function rmqA(i){answerQuiz('rm',i);}function rmqReset(){resetQuiz('rm');}
+
+// AUTO-ALIAS: For any future course, auto-create global functions when course is registered
+// This runs after all scripts load and creates aliases for any course that doesn't have them yet
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    if(!window.TIS||!window.TIS.courses)return;
+    for(var cid in window.TIS.courses){
+      var p=getQuizPrefix(cid);
+      // Create quiz aliases if they don't exist: {prefix}St, {prefix}Nx, {prefix}A, {prefix}Reset
+      if(typeof window[p+'St']!=='function'){
+        (function(id){
+          window[p+'St']=function(){initQuiz(id);};
+          window[p+'Nx']=function(){nextQuizQ(id);};
+          window[p+'A']=function(i){answerQuiz(id,i);};
+          window[p+'Reset']=function(){resetQuiz(id);};
+        })(cid);
+      }
+    }
+  },200);
+});
 
 // KONKURS SLIDES (Recht2 specific)
 let ki=0,kB=false;
