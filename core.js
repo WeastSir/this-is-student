@@ -228,7 +228,7 @@ function renderFlashcard(courseId){
   if(fc.index>=fc.order.length)fc.index=0;
   const card=fc.cards[fc.order[fc.index]];
   // Find elements - try course-specific IDs first, then generic
-  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:courseId==='marketing'?['mfc','mfc']:['cfc','cfc'];
+  const prefixes=courseId==='recht2'?['fc','fc']:courseId==='arb'?['afc','afc']:courseId==='fa3'?['fa3_fc','fa3_fc']:courseId==='marketing'?['mfc','mfc']:courseId==='rm'?['rmfc','rmfc']:['cfc','cfc'];
   const qEl=document.getElementById(prefixes[0]+'q')||document.getElementById('fcq');
   const aEl=document.getElementById(prefixes[0]+'a')||document.getElementById('fca');
   const cEl=document.getElementById(prefixes[0]+'c')||document.getElementById('fc');
@@ -280,6 +280,7 @@ function getQuizPrefix(courseId){
   if(courseId==='arb')return 'aq';
   if(courseId==='fa3')return 'fq';
   if(courseId==='marketing')return 'mkq';
+  if(courseId==='rm')return 'rmq';
   return 'cq';
 }
 
@@ -398,6 +399,7 @@ function aqSt(){initQuiz('arb');}function aqNx(){nextQuizQ('arb');}function aqA(
 function cqSt(){initQuiz('ctrl');}function cqNx(){nextQuizQ('ctrl');}function cqA(i){answerQuiz('ctrl',i);}function cqReset(){resetQuiz('ctrl');}
 function fqSt(){initQuiz('fa3');}function fqNx(){nextQuizQ('fa3');}function fqA(i){answerQuiz('fa3',i);}function fqReset(){resetQuiz('fa3');}
 function mkqSt(){initQuiz('marketing');}function mkqNx(){nextQuizQ('marketing');}function mkqA(i){answerQuiz('marketing',i);}function mkqReset(){resetQuiz('marketing');}
+function rmqSt(){initQuiz('rm');}function rmqNx(){nextQuizQ('rm');}function rmqA(i){answerQuiz('rm',i);}function rmqReset(){resetQuiz('rm');}
 
 // KONKURS SLIDES (Recht2 specific)
 let ki=0,kB=false;
@@ -476,7 +478,7 @@ function initAbkz(){
   const regex=new RegExp('\\b('+keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','g');
   const targets=document.querySelectorAll('.tl-body, .cd, .merksatz, .hl, .hlr, .hlg, .hla, .hlbl');
   targets.forEach(el=>{
-    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar')||el.closest('#fa3_glossar')||el.closest('#marketing_glossar'))return;
+    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar')||el.closest('#fa3_glossar')||el.closest('#marketing_glossar')||el.closest('#rm_glossar'))return;
     if(el.querySelector('.abk'))return;
     const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
     const textNodes=[];while(walker.nextNode())textNodes.push(walker.currentNode);
