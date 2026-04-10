@@ -137,24 +137,33 @@
   kurseHTML += '<div style="text-align:center"><div style="font-size:36px;font-weight:700;letter-spacing:-1px;color:var(--am)">' + arbeit.length + '</div><div style="font-size:12px;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase;font-weight:600">In Arbeit</div></div>';
   kurseHTML += '</div></div>';
 
-  // Kurs-Cards (verfügbar)
-  kurseHTML += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0 0 48px">';
+  // Kurs-Cards (verfügbar) — Apple-clean v2
+  kurseHTML += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:0 0 48px">';
   live.forEach(function(k) {
-    var f1 = k.farbe[0], f2 = k.farbe[1];
-    kurseHTML += '<div class="ck" onclick="go(\'' + k.id + '\')" style="position:relative;border-radius:24px;padding:3px;background:linear-gradient(135deg,' + f1 + ',' + f2 + ',' + f1 + ');cursor:pointer;transition:all .3s;box-shadow:0 4px 24px rgba(0,0,0,.08)">';
-    kurseHTML += '<div style="background:var(--s);border-radius:22px;padding:32px;height:100%;position:relative;overflow:hidden">';
-    kurseHTML += '<div style="position:absolute;top:0;right:0;width:120px;height:120px;background:linear-gradient(135deg,rgba(0,0,0,.03),transparent);border-radius:0 22px 0 100%"></div>';
-    kurseHTML += '<div style="position:relative;z-index:1">';
-    kurseHTML += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px"><span style="display:inline-block;padding:4px 12px;border-radius:980px;background:var(--gl);color:var(--g);font-size:10.5px;font-weight:700;letter-spacing:.5px">VERFÜGBAR</span></div>';
-    kurseHTML += '<div style="font-family:var(--se);font-size:24px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px">' + esc(k.name) + '</div>';
-    kurseHTML += '<div style="font-size:14px;color:var(--tx2);line-height:1.6;margin-bottom:16px">' + esc(k.beschreibung) + '</div>';
-    kurseHTML += '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">';
-    k.details.forEach(function(d) { kurseHTML += '<span style="font-size:12px;color:var(--tx3)">' + esc(d) + '</span>'; });
+    kurseHTML += '<div class="c ck" onclick="go(\'' + k.id + '\')" style="border-radius:var(--rd2);padding:28px;position:relative;overflow:hidden">';
+    kurseHTML += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px"><span style="display:inline-block;padding:3px 10px;border-radius:980px;background:var(--gl);color:var(--g);font-size:10px;font-weight:700;letter-spacing:.5px">VERFÜGBAR</span></div>';
+    kurseHTML += '<div style="font-family:var(--se);font-size:20px;font-weight:400;margin-bottom:6px;letter-spacing:-.2px">' + esc(k.name) + '</div>';
+    kurseHTML += '<div style="font-size:13px;color:var(--tx2);line-height:1.6;margin-bottom:14px">' + esc(k.beschreibung) + '</div>';
+    kurseHTML += '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">';
+    k.details.forEach(function(d) { kurseHTML += '<span style="font-size:11px;color:var(--tx3)">' + esc(d) + '</span>'; });
     kurseHTML += '</div>';
-    kurseHTML += '<div style="font-size:12px;color:var(--tx3)">Dozent: ' + esc(k.dozent) + '</div>';
-    kurseHTML += '<div style="margin-top:16px"><span style="font-size:13px;color:var(--ac);font-weight:600">Kurs öffnen →</span></div>';
-    kurseHTML += '</div></div></div>';
+    kurseHTML += '<div style="font-size:11px;color:var(--tx3);margin-bottom:14px">Dozent: ' + esc(k.dozent) + '</div>';
+    kurseHTML += '<div><span style="font-size:13px;color:var(--ac);font-weight:600">Kurs öffnen →</span></div>';
+    kurseHTML += '</div>';
   });
+
+  // Downloads Card (gleicher Stil)
+  kurseHTML += '<div class="c ck" onclick="go(\'downloads\')" style="border-radius:var(--rd2);padding:28px;position:relative;overflow:hidden">';
+  kurseHTML += '<div style="margin-bottom:14px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--tx3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>';
+  kurseHTML += '<div style="font-family:var(--se);font-size:20px;font-weight:400;margin-bottom:6px;letter-spacing:-.2px">Zusammenfassungen</div>';
+  kurseHTML += '<div style="font-size:13px;color:var(--tx2);line-height:1.6;margin-bottom:14px">PDFs zum Download</div>';
+  kurseHTML += '<div style="display:flex;gap:12px;margin-bottom:14px">';
+  kurseHTML += '<span style="font-size:11px;color:var(--tx3)">Alle Fächer</span>';
+  kurseHTML += '<span style="font-size:11px;color:var(--tx3)">Offline nutzbar</span>';
+  kurseHTML += '</div>';
+  kurseHTML += '<div><span style="font-size:13px;color:var(--ac);font-weight:600">Öffnen →</span></div>';
+  kurseHTML += '</div>';
+
   kurseHTML += '</div>';
 
   // In Arbeit
