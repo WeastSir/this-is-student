@@ -239,7 +239,8 @@
   var CARD_PAGE_MAP = {
     'recht2': { pageId: 'kart', prefix: 'fc' },
     'arb': { pageId: 'arb_kart', prefix: 'afc' },
-    'ctrl': { pageId: 'ctrl_kart', prefix: 'cfc' }
+    'ctrl': { pageId: 'ctrl_kart', prefix: 'cfc' },
+    'marketing': { pageId: 'marketing_kart', prefix: 'mkt_fc' }
   };
 
   function getCardPageInfo(courseId) {

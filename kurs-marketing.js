@@ -91,10 +91,10 @@ const courseHTML = `
 <div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">4</div>
 <div class="ct2">Zusammenfassungen</div><div class="cd">Visuelle Übersichten</div></div>
 <div class="c ck" onclick="go('marketing_kart')" style="text-align:center;padding:24px 16px">
-<div id="ltMKTCards" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
+<div id="ltMarketingCards" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
 <div class="ct2">Karteikarten</div><div class="cd">Klicken & repetieren</div></div>
 <div class="c ck" onclick="go('marketing_quiz')" style="text-align:center;padding:24px 16px">
-<div id="ltMKTQuiz" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
+<div id="ltMarketingQuiz" style="font-size:24px;font-weight:700;color:var(--ac);margin-bottom:6px">0</div>
 <div class="ct2">Quiz</div><div class="cd">Mit Lernfortschritt</div></div>
 <div class="c ck" onclick="go('marketing_glossar')" style="text-align:center;padding:24px 16px">
 <div style="font-size:20px;font-weight:700;color:var(--bl);margin-bottom:6px">A–Z</div>
