@@ -147,6 +147,22 @@
     kurseHTML += '<div style="margin-top:16px"><span style="font-size:13px;color:var(--ac);font-weight:600">Kurs öffnen →</span></div>';
     kurseHTML += '</div></div></div>';
   });
+  // Downloads Card (gleicher Stil wie Kurs-Cards)
+  kurseHTML += '<div class="ck" onclick="go(\'downloads\')" style="position:relative;border-radius:24px;padding:3px;background:linear-gradient(135deg,#8e8e93,#636366,#8e8e93);cursor:pointer;transition:all .3s;box-shadow:0 4px 24px rgba(0,0,0,.08)">';
+  kurseHTML += '<div style="background:var(--s);border-radius:22px;padding:32px;height:100%;position:relative;overflow:hidden">';
+  kurseHTML += '<div style="position:absolute;top:0;right:0;width:120px;height:120px;background:linear-gradient(135deg,rgba(0,0,0,.03),transparent);border-radius:0 22px 0 100%"></div>';
+  kurseHTML += '<div style="position:relative;z-index:1">';
+  kurseHTML += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px"><span style="display:inline-block;padding:4px 12px;border-radius:980px;background:var(--al);color:var(--ac);font-size:10.5px;font-weight:700;letter-spacing:.5px">PDF</span></div>';
+  kurseHTML += '<div style="font-family:var(--se);font-size:24px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px">Zusammenfassungen</div>';
+  kurseHTML += '<div style="font-size:14px;color:var(--tx2);line-height:1.6;margin-bottom:16px">PDF-Zusammenfassungen zum Download für alle Fächer</div>';
+  kurseHTML += '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">';
+  kurseHTML += '<span style="font-size:12px;color:var(--tx3)">Alle Kurse</span>';
+  kurseHTML += '<span style="font-size:12px;color:var(--tx3)">PDF-Format</span>';
+  kurseHTML += '<span style="font-size:12px;color:var(--tx3)">Offline nutzbar</span>';
+  kurseHTML += '</div>';
+  kurseHTML += '<div style="margin-top:16px"><span style="font-size:13px;color:var(--ac);font-weight:600">Downloads öffnen →</span></div>';
+  kurseHTML += '</div></div></div>';
+
   kurseHTML += '</div>';
 
   // In Arbeit
