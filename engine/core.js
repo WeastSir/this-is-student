@@ -137,9 +137,20 @@ function go(id){
   const course=getCourseForPage(id);
   const inCourse=!!course;
   
+  // Apple-style "← Kurse" back button
+  var backBtn=document.getElementById('backToKurse');
+  if(!backBtn){
+    backBtn=document.createElement('button');
+    backBtn.id='backToKurse';
+    backBtn.textContent='← Kurse';
+    backBtn.onclick=function(){go('kurse');};
+    backBtn.style.cssText='display:none;padding:4px 12px;font-size:13px;border-radius:980px;border:none;background:none;color:var(--ac);cursor:pointer;font-weight:600;letter-spacing:-.2px;white-space:nowrap;font-family:var(--f)';
+    var nb=document.querySelector('.nb');
+    if(nb)nb.parentNode.insertBefore(backBtn,nb.nextSibling);
+  }
+  backBtn.style.display=inCourse?'inline-block':'none';
+
   // Show/hide nav buttons
-  const backBtn=document.getElementById('backToKurse');
-  if(backBtn)backBtn.style.display=inCourse?'':'none';
   document.querySelectorAll('.nl-main[data-s]').forEach(btn=>{
     const s=btn.getAttribute('data-s');
     if(s==='home'||s==='kurse'){
