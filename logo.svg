@@ -1,0 +1,5 @@
+<svg width="512" height="512" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<polygon points="100,10 178,40 178,160 100,190 22,160 22,40" stroke="#4A7A9B" stroke-width="2.5" fill="none"/>
+<circle cx="100" cy="100" r="65" stroke="#D4654A" stroke-width="2" fill="none" opacity="0.6"/>
+<text x="100" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#4A7A9B">T</text>
+</svg>
