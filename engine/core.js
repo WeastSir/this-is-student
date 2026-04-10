@@ -279,7 +279,8 @@ function getQuizPrefix(courseId){
   if(courseId==='recht2')return 'q';
   if(courseId==='arb')return 'aq';
   if(courseId==='fa3')return 'fq';
-  if(courseId==='marketing')return 'mkq';
+  if(courseId==='marketing')return 'mkq_';
+  if(courseId==='rm')return 'rmq';
   return 'cq';
 }
 
@@ -398,6 +399,7 @@ function aqSt(){initQuiz('arb');}function aqNx(){nextQuizQ('arb');}function aqA(
 function cqSt(){initQuiz('ctrl');}function cqNx(){nextQuizQ('ctrl');}function cqA(i){answerQuiz('ctrl',i);}function cqReset(){resetQuiz('ctrl');}
 function fqSt(){initQuiz('fa3');}function fqNx(){nextQuizQ('fa3');}function fqA(i){answerQuiz('fa3',i);}function fqReset(){resetQuiz('fa3');}
 function mkqSt(){initQuiz('marketing');}function mkqNx(){nextQuizQ('marketing');}function mkqA(i){answerQuiz('marketing',i);}function mkqReset(){resetQuiz('marketing');}
+function rmqSt(){initQuiz('rm');}function rmqNx(){nextQuizQ('rm');}function rmqA(i){answerQuiz('rm',i);}function rmqReset(){resetQuiz('rm');}
 
 // KONKURS SLIDES (Recht2 specific)
 let ki=0,kB=false;
