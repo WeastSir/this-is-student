@@ -279,6 +279,7 @@ function getQuizPrefix(courseId){
   if(courseId==='recht2')return 'q';
   if(courseId==='arb')return 'aq';
   if(courseId==='fa3')return 'fq';
+  if(courseId==='marketing')return 'mkq';
   return 'cq';
 }
 
@@ -396,6 +397,7 @@ function qSt(){initQuiz('recht2');}function qNx(){nextQuizQ('recht2');}function 
 function aqSt(){initQuiz('arb');}function aqNx(){nextQuizQ('arb');}function aqA(i){answerQuiz('arb',i);}function aqReset(){resetQuiz('arb');}
 function cqSt(){initQuiz('ctrl');}function cqNx(){nextQuizQ('ctrl');}function cqA(i){answerQuiz('ctrl',i);}function cqReset(){resetQuiz('ctrl');}
 function fqSt(){initQuiz('fa3');}function fqNx(){nextQuizQ('fa3');}function fqA(i){answerQuiz('fa3',i);}function fqReset(){resetQuiz('fa3');}
+function mkqSt(){initQuiz('marketing');}function mkqNx(){nextQuizQ('marketing');}function mkqA(i){answerQuiz('marketing',i);}function mkqReset(){resetQuiz('marketing');}
 
 // KONKURS SLIDES (Recht2 specific)
 let ki=0,kB=false;
