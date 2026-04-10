@@ -636,12 +636,12 @@ Kennzahlen: <span class="b ba">Zustell-Rate</span> · <span class="b bb">Bounce-
 </div>
 
 <!-- ===================== KARTEIKARTEN ===================== -->
-<div class="sec" id="marketing_kart"><h1>Karteikarten</h1><p class="sub"><span id="mkt_fcCount">0</span> Karten — klicke zum Umdrehen</p>
-<div class="fcc" id="mkt_fcc"></div>
-<div class="fd"><div class="fc" id="mkt_fc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="mkt_fcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="mkt_fca"></div></div></div></div>
+<div class="sec" id="marketing_kart"><h1>Karteikarten</h1><p class="sub"><span id="mfcCount">0</span> Karten — klicke zum Umdrehen</p>
+<div class="fcc" id="mfcc"></div>
+<div class="fd"><div class="fc" id="mfc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="mfcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="mfca"></div></div></div></div>
 <div class="fb"><button onclick="fcPrev()">Zurück</button><button onclick="fcShuffle()">Mischen</button><button class="bp1" onclick="fcNext()">Nächste</button></div>
-<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="mkt_fcPool"></div>
-<div id="mkt_fcList" style="display:none;margin-top:16px"></div>
+<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="mfcPool"></div>
+<div id="mfcList" style="display:none;margin-top:16px"></div>
 </div>
 
 <!-- ===================== QUIZ ===================== -->
