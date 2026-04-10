@@ -138,6 +138,8 @@ function go(id){
   const inCourse=!!course;
   
   // Show/hide nav buttons
+  const backBtn=document.getElementById('backToKurse');
+  if(backBtn)backBtn.style.display=inCourse?'':'none';
   document.querySelectorAll('.nl-main[data-s]').forEach(btn=>{
     const s=btn.getAttribute('data-s');
     if(s==='home'||s==='kurse'){
