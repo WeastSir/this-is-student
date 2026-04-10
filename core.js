@@ -476,7 +476,7 @@ function initAbkz(){
   const regex=new RegExp('\\b('+keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','g');
   const targets=document.querySelectorAll('.tl-body, .cd, .merksatz, .hl, .hlr, .hlg, .hla, .hlbl');
   targets.forEach(el=>{
-    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar')||el.closest('#fa3_glossar'))return;
+    if(el.closest('#glossar')||el.closest('#arb_glossar')||el.closest('#ctrl_glossar')||el.closest('#fa3_glossar')||el.closest('#marketing_glossar'))return;
     if(el.querySelector('.abk'))return;
     const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
     const textNodes=[];while(walker.nextNode())textNodes.push(walker.currentNode);

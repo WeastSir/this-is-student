@@ -9,7 +9,7 @@ const courseConfig = {
   pages: [
     'marketing', 'marketing_kap1', 'marketing_kap2', 'marketing_kap3', 'marketing_kap4',
     'marketing_kap5', 'marketing_kap6', 'marketing_kap7', 'marketing_kap8',
-    'marketing_mind', 'marketing_kart', 'marketing_quiz', 'marketing_glossar'
+    'marketing_ueb', 'marketing_mind', 'marketing_kart', 'marketing_quiz', 'marketing_glossar'
   ],
   subNav: [
     {s:'marketing', l:'Übersicht'},
@@ -21,6 +21,7 @@ const courseConfig = {
     {s:'marketing_kap6', l:'6 Place'},
     {s:'marketing_kap7', l:'7 Promotion'},
     {s:'marketing_kap8', l:'8 Online'},
+    {s:'marketing_ueb', l:'Übungen'},
     {s:'marketing_mind', l:'Zusammenfassung'},
     {s:'marketing_kart', l:'Karten'},
     {s:'marketing_quiz', l:'Quiz'},
@@ -83,6 +84,9 @@ const courseHTML = `
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
+<div class="c ck" onclick="go('marketing_ueb')" style="text-align:center;padding:24px 16px">
+<div style="font-size:20px;font-weight:700;color:var(--am);margin-bottom:6px">3</div>
+<div class="ct2">Übungen</div><div class="cd">Interaktiv mit Korrektur</div></div>
 <div class="c ck" onclick="go('marketing_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:20px;font-weight:700;color:var(--pr);margin-bottom:6px">4</div>
 <div class="ct2">Zusammenfassungen</div><div class="cd">Visuelle Übersichten</div></div>
@@ -543,6 +547,49 @@ Kennzahlen: <span class="b ba">Zustell-Rate</span> · <span class="b bb">Bounce-
 </div>
 
 
+<!-- ===================== ÜBUNGEN ===================== -->
+<div class="sec" id="marketing_ueb"><h1>Interaktive Übungen</h1><p class="sub">Wähle eine Übung und teste dein Wissen</p>
+
+<div id="mkt_ueb_sel">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
+<div class="c ck" onclick="mktShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">A–Z</div><div class="ct2">Fachbegriffe zuordnen</div><div class="cd">20 Begriffe — Definition wählen</div></div>
+<div class="c ck" onclick="mktShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px">SWOT</div><div class="ct2">SWOT einordnen</div><div class="cd">Aussagen richtig zuordnen</div></div>
+<div class="c ck" onclick="mktShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px">MIX</div><div class="ct2">Marketing-Mix zuordnen</div><div class="cd">Massnahmen den Ps zuordnen</div></div>
+</div>
+</div>
+
+<!-- ÜBUNG 1: Fachbegriffe -->
+<div id="mkt_ueb1" style="display:none">
+<button onclick="mktShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Fachbegriffe zuordnen</h2>
+<p class="sub">Wähle die richtige Definition für jeden Begriff</p>
+<div id="mkt_begriffe_q"></div>
+<div style="margin:16px 0"><button class="bp1" onclick="mktCheckBegriffe()">Alle korrigieren</button> <button onclick="mktResetBegriffe()" style="margin-left:8px">Zurücksetzen</button> <button onclick="mktGenBegriffe()" style="margin-left:8px">Neue Begriffe</button></div>
+<div id="mkt_begriffe_result" style="margin-top:12px"></div>
+</div>
+
+<!-- ÜBUNG 2: SWOT einordnen -->
+<div id="mkt_ueb2" style="display:none">
+<button onclick="mktShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>SWOT-Analyse — Richtig einordnen</h2>
+<p class="sub">Hotel Alpenstern — Ordne jede Aussage der richtigen SWOT-Kategorie zu</p>
+<div id="mkt_swot_q"></div>
+<div style="margin:16px 0"><button class="bp1" onclick="mktCheckSwot()">Alle korrigieren</button> <button onclick="mktResetSwot()" style="margin-left:8px">Zurücksetzen</button></div>
+<div id="mkt_swot_result" style="margin-top:12px"></div>
+</div>
+
+<!-- ÜBUNG 3: Marketing-Mix zuordnen -->
+<div id="mkt_ueb3" style="display:none">
+<button onclick="mktShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Marketing-Mix — Massnahmen zuordnen</h2>
+<p class="sub">Ordne jede Massnahme dem richtigen P zu</p>
+<div id="mkt_mix_q"></div>
+<div style="margin:16px 0"><button class="bp1" onclick="mktCheckMix()">Alle korrigieren</button> <button onclick="mktResetMix()" style="margin-left:8px">Zurücksetzen</button></div>
+<div id="mkt_mix_result" style="margin-top:12px"></div>
+</div>
+
+</div>
+
 <!-- ===================== ZUSAMMENFASSUNG / MINDMAPS ===================== -->
 <div class="sec" id="marketing_mind"><h1>Zusammenfassung</h1><p class="sub">Visuelle Übersichten</p>
 
@@ -749,5 +796,275 @@ window.TIS.courses.marketing = {
   html: courseHTML,
   flashcards: MKT_CARDS,
 };
+
+// ==========================================
+// 5. ÜBUNGS-DATEN
+// ==========================================
+
+// Fachbegriffe-Pool: [Begriff, richtige Definition]
+const MKT_BEGRIFFE = [
+  ['CRM','Systematischer Aufbau und Pflege von Kundenbeziehungen'],
+  ['PMS','Operatives System für den täglichen Hotelbetrieb (Check-in, Zimmer, Rechnungen)'],
+  ['USP','Einzigartiges Alleinstellungsmerkmal gegenüber Wettbewerbern'],
+  ['UCP','Einzigartigkeit durch kommunikative Alleinstellung'],
+  ['CXM','Gezielte Gestaltung aller Kontaktpunkte für positives Markenerlebnis'],
+  ['Corporate Design','Visuelles Erscheinungsbild: Logo, Farben, Schriften, Bildsprache'],
+  ['Corporate Communication','Einheitliche Kommunikation mit internen und externen Anspruchsgruppen'],
+  ['Corporate Behaviour','Umsetzung der Unternehmensgrundsätze in konkretes Verhalten'],
+  ['SWOT-Analyse','Kombination aus interner Analyse (S/W) und externer Analyse (O/T)'],
+  ['AIDA-Modell','Wirkungsstufen: Attention → Interest → Desire → Action'],
+  ['Marketing-Mix','Optimale Kombination der Marketinginstrumente (4 Ps)'],
+  ['Marktsegmentierung','Aufteilung des Gesamtmarktes in homogene Kaufgruppen'],
+  ['Positionierung','Wie sich die Marke in den Köpfen der Kund:innen von der Konkurrenz abhebt'],
+  ['Preiselastizität','Wie stark die Nachfrage auf Preisänderungen reagiert'],
+  ['Preisbündelung','Mehrere Leistungen als Paket zu einem Vorteilspreis verkaufen'],
+  ['Decoy-Effekt','Köder-Option, die eine andere Option attraktiver macht'],
+  ['Anker-Effekt','Erster wahrgenommener Preis beeinflusst alle Folgebewertungen'],
+  ['Conversion Rate','Prozentsatz der Website-Besucher, die eine gewünschte Aktion ausführen'],
+  ['Double-Opt-in','Zweistufige Newsletter-Anmeldung mit Bestätigungs-E-Mail'],
+  ['Omnichannel','Alle Kanäle vernetzt mit einheitlichem, reibungslosem Erlebnis'],
+  ['SEO','Organische Suchmaschinenoptimierung (unbezahlt, nie abgeschlossen)'],
+  ['SEA','Bezahlte Suchmaschinenwerbung (z.B. Google Ads, CPC-Modell)'],
+  ['OTA','Online-Reisebüro wie Booking.com oder Expedia (indirekte Distribution)'],
+  ['Franchise','Betriebskonzept nach Spielregeln des Gebers übernehmen und betreiben'],
+  ['Integrierte Kommunikation','Systematische Abstimmung aller Massnahmen auf 5 Ebenen'],
+  ['Kernprodukt','Grundlegender Nutzen — das, was der Gast eigentlich kauft'],
+  ['Erweitertes Produkt','Zusätzliche emotionale Mehrwerte über die Standardleistung hinaus'],
+  ['Physical Evidence','Greifbare Elemente, die ein Konzept widerspiegeln und festigen'],
+  ['Yield Management','Dynamische Preisgestaltung basierend auf Nachfrage und Auslastung'],
+  ['Consumer Benefit','Hauptnutzen für die Kundschaft — wie profitiert der Gast?'],
+  ['Reason Why','Beweisführung für das Versprechen der Hauptbotschaft'],
+  ['Storytelling','Emotionale Geschichten erzählen, die länger im Kopf bleiben als Fakten'],
+  ['Marktforschung','Systematische Gewinnung und Verarbeitung von Marktinformationen'],
+  ['Primärmarktforschung','Eigens konzipierte Erhebung für eine bestimmte Problemstellung'],
+  ['Sekundärmarktforschung','Nutzung bereits vorhandener Informationen (Desk Research)'],
+  ['Break-even-Point','Punkt, wo Erlöse genau die Gesamtkosten decken (Nullergebnis)'],
+  ['Verkaufsförderung','Kurzfristige, zeitlich begrenzte Anreize zur Absatzsteigerung'],
+  ['Direct Marketing','Gezielte Einzelansprache für direkten Kontakt und Dialog'],
+  ['Marketing-Automation','Automatisierte aber persönlich wirkende Marketingprozesse'],
+  ['Briefing','Präzise Projektbeschreibung als Grundlage für Agentur-Zusammenarbeit'],
+];
+
+// SWOT-Übung: [Aussage, richtige Kategorie: S/W/O/T]
+const MKT_SWOT = [
+  ['Das Hotel hat einen einzigartigen Panoramablick auf Eiger, Mönch und Jungfrau','S'],
+  ['Die Website ist nicht mobiloptimiert — 72% Absprungrate auf Smartphones','W'],
+  ['Der Trend zu naturnahem Tourismus wächst laut Schweiz Tourismus um 18%','O'],
+  ['Der starke Schweizer Franken macht die Schweiz für EU-Touristen teurer','T'],
+  ['Das Hotel wird seit 3 Generationen inhabergeführt — persönlich und flexibel','S'],
+  ['Es fehlt ein professionelles CRM-System — Gästedaten nur in Excel','W'],
+  ['Die Jungfrau Region investiert in neue Wanderwege und Infrastruktur','O'],
+  ['Fachkräftemangel in der Hotellerie — gutes Personal schwer zu finden','T'],
+  ['35% der Gäste sind Stammgäste — stabile Einnahmebasis','S'],
+  ['Der Spa-Bereich ist klein und veraltet','W'],
+  ['Günstige digitale Tools für CRM und Marketing-Automation werden verfügbar','O'],
+  ['Airbnb-Wachstum in der Region — alternative Unterkünfte nehmen zu','T'],
+  ['Die regionale Bio-Küche mit lokalen Produzenten passt zum Nachhaltigkeitstrend','S'],
+  ['Nur 25% Direktbuchungen — hohe Abhängigkeit von OTAs mit 15–25% Kommission','W'],
+  ['Der Workation-Trend eröffnet eine neue potenzielle Zielgruppe','O'],
+  ['Steigende Energiekosten belasten die Marge besonders bei älteren Gebäuden','T'],
+];
+
+// Mix-Übung: [Massnahme, richtiges P: product/price/place/promotion]
+const MKT_MIX = [
+  ['Neues «Alpine Wellness Weekend» Package entwickeln','product'],
+  ['CHF 580 pro Paar als Mittelpreis festlegen','price'],
+  ['Direktbuchungsanteil über eigene Website steigern','place'],
+  ['Instagram-Kampagne mit Micro-Influencern starten','promotion'],
+  ['Bio-Frühstück mit lokalen Alpkäse-Produzenten anbieten','product'],
+  ['Frühbucher-Rabatt von 15% einführen','price'],
+  ['Hotel auf Booking.com mit 30% Kontingent listen','place'],
+  ['Medienmitteilung über neuen Spa-Bereich versenden','promotion'],
+  ['Handgeschriebene Willkommenskarte auf dem Zimmer platzieren','product'],
+  ['«3 Nächte bleiben, 2 bezahlen» Aktion in der Nebensaison','price'],
+  ['Partnerschaft mit Schweiz Tourismus für internationale Märkte','place'],
+  ['Monatlichen E-Newsletter an 2000 Abonnenten versenden','promotion'],
+  ['Kräutersauna und Panorama-Ruheraum im Spa renovieren','product'],
+  ['Suite für CHF 450 als Anker-Preis auf der Website zuerst zeigen','price'],
+  ['Reisebüros in Süddeutschland als Vertriebspartner gewinnen','place'],
+  ['Full Moon Dinner auf der Panoramaterrasse als Event organisieren','promotion'],
+  ['Follow-up-E-Mail mit Fotos 3 Tage nach Abreise senden','product'],
+  ['Gebrochene Preise verwenden: CHF 189 statt 190','price'],
+  ['«Book direct = gratis Willkommens-Apéro» auf der Website bewerben','place'],
+  ['Google Ads Kampagne für «Hotel Interlaken Bergblick» schalten','promotion'],
+];
+
+// ==========================================
+// 6. ÜBUNGS-FUNKTIONEN
+// ==========================================
+setTimeout(function() {
+
+  // --- ÜBUNG 1: Fachbegriffe ---
+  window.mktGenBegriffe = function() {
+    var pool = MKT_BEGRIFFE.slice().sort(function(){return Math.random()-.5;}).slice(0,12);
+    window._mktBegriffeActive = pool;
+    var allDefs = MKT_BEGRIFFE.map(function(b){return b[1];}).sort(function(){return Math.random()-.5;});
+    var h = '';
+    pool.forEach(function(b, i) {
+      var opts = [b[1]];
+      var others = allDefs.filter(function(d){return d!==b[1];}).sort(function(){return Math.random()-.5;}).slice(0,3);
+      opts = opts.concat(others).sort(function(){return Math.random()-.5;});
+      h += '<div class="c" style="padding:14px 16px;margin-bottom:8px" id="mkt_bg_'+i+'">';
+      h += '<p style="margin-bottom:8px"><strong>'+(i+1)+'. '+b[0]+'</strong></p>';
+      h += '<div style="display:flex;flex-direction:column;gap:4px">';
+      opts.forEach(function(o, j) {
+        h += '<label style="cursor:pointer;font-size:13px;padding:6px 10px;border-radius:8px;border:1px solid var(--bd);display:block;transition:all .2s" onmouseover="this.style.borderColor=\'var(--ac)\'" onmouseout="this.style.borderColor=\'var(--bd)\'">';
+        h += '<input type="radio" name="mkt_bg_'+i+'" value="'+j+'" data-def="'+o.replace(/"/g,'&quot;')+'"> '+o+'</label>';
+      });
+      h += '</div>';
+      h += '<div id="mkt_bg_fb_'+i+'" style="margin-top:6px;display:none"></div>';
+      h += '</div>';
+    });
+    var el = document.getElementById('mkt_begriffe_q');
+    if(el) el.innerHTML = h;
+    var r = document.getElementById('mkt_begriffe_result');
+    if(r) r.innerHTML = '';
+  };
+
+  window.mktCheckBegriffe = function() {
+    var pool = window._mktBegriffeActive;
+    if(!pool) return;
+    var correct = 0;
+    pool.forEach(function(b, i) {
+      var sel = document.querySelector('input[name="mkt_bg_'+i+'"]:checked');
+      var fb = document.getElementById('mkt_bg_fb_'+i);
+      var card = document.getElementById('mkt_bg_'+i);
+      if(!fb || !card) return;
+      fb.style.display = 'block';
+      if(sel && sel.dataset.def === b[1]) {
+        card.style.borderLeft = '3px solid var(--g)';
+        fb.innerHTML = '<div style="color:var(--g);font-size:12px">✓ Richtig!</div>';
+        correct++;
+      } else {
+        card.style.borderLeft = '3px solid var(--r)';
+        fb.innerHTML = '<div style="color:var(--r);font-size:12px">✗ Falsch</div><div style="font-size:12px;color:var(--tx2);margin-top:2px">Richtig: '+b[1]+'</div>';
+      }
+    });
+    var r = document.getElementById('mkt_begriffe_result');
+    if(r) r.innerHTML = '<div class="'+(correct===pool.length?'hlg':'hla')+'">'+correct+' von '+pool.length+' richtig</div>';
+  };
+
+  window.mktResetBegriffe = function() {
+    mktGenBegriffe();
+  };
+
+  // --- ÜBUNG 2: SWOT einordnen ---
+  function buildSwot() {
+    var pool = MKT_SWOT.slice().sort(function(){return Math.random()-.5;});
+    window._mktSwotActive = pool;
+    var h = '';
+    pool.forEach(function(q, i) {
+      h += '<div class="c" style="padding:14px 16px;margin-bottom:8px" id="mkt_sw_'+i+'">';
+      h += '<p style="margin-bottom:8px"><strong>'+(i+1)+'.</strong> '+q[0]+'</p>';
+      h += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_sw_'+i+'" value="S"> Stärke (intern)</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_sw_'+i+'" value="W"> Schwäche (intern)</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_sw_'+i+'" value="O"> Chance (extern)</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_sw_'+i+'" value="T"> Gefahr (extern)</label>';
+      h += '</div>';
+      h += '<div id="mkt_sw_fb_'+i+'" style="margin-top:6px;display:none"></div>';
+      h += '</div>';
+    });
+    var el = document.getElementById('mkt_swot_q');
+    if(el) el.innerHTML = h;
+  }
+  buildSwot();
+
+  window.mktCheckSwot = function() {
+    var pool = window._mktSwotActive;
+    if(!pool) return;
+    var correct = 0;
+    var labels = {S:'Stärke (intern)',W:'Schwäche (intern)',O:'Chance (extern)',T:'Gefahr (extern)'};
+    pool.forEach(function(q, i) {
+      var sel = document.querySelector('input[name="mkt_sw_'+i+'"]:checked');
+      var fb = document.getElementById('mkt_sw_fb_'+i);
+      var card = document.getElementById('mkt_sw_'+i);
+      if(!fb || !card) return;
+      fb.style.display = 'block';
+      if(sel && sel.value === q[1]) {
+        card.style.borderLeft = '3px solid var(--g)';
+        fb.innerHTML = '<div style="color:var(--g);font-size:12px">✓ Richtig — '+labels[q[1]]+'</div>';
+        correct++;
+      } else {
+        card.style.borderLeft = '3px solid var(--r)';
+        fb.innerHTML = '<div style="color:var(--r);font-size:12px">✗ Falsch</div><div style="font-size:12px;color:var(--tx2);margin-top:2px">Richtig: <strong>'+labels[q[1]]+'</strong></div>';
+      }
+    });
+    var r = document.getElementById('mkt_swot_result');
+    if(r) r.innerHTML = '<div class="'+(correct===pool.length?'hlg':'hla')+'">'+correct+' von '+pool.length+' richtig</div>';
+  };
+
+  window.mktResetSwot = function() {
+    buildSwot();
+    var r = document.getElementById('mkt_swot_result');
+    if(r) r.innerHTML = '';
+  };
+
+  // --- ÜBUNG 3: Marketing-Mix zuordnen ---
+  function buildMix() {
+    var pool = MKT_MIX.slice().sort(function(){return Math.random()-.5;}).slice(0,12);
+    window._mktMixActive = pool;
+    var h = '';
+    pool.forEach(function(q, i) {
+      h += '<div class="c" style="padding:14px 16px;margin-bottom:8px" id="mkt_mx_'+i+'">';
+      h += '<p style="margin-bottom:8px"><strong>'+(i+1)+'.</strong> '+q[0]+'</p>';
+      h += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_mx_'+i+'" value="product"> Product</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_mx_'+i+'" value="price"> Price</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_mx_'+i+'" value="place"> Place</label>';
+      h += '<label style="cursor:pointer;font-size:13px"><input type="radio" name="mkt_mx_'+i+'" value="promotion"> Promotion</label>';
+      h += '</div>';
+      h += '<div id="mkt_mx_fb_'+i+'" style="margin-top:6px;display:none"></div>';
+      h += '</div>';
+    });
+    var el = document.getElementById('mkt_mix_q');
+    if(el) el.innerHTML = h;
+  }
+  buildMix();
+
+  window.mktCheckMix = function() {
+    var pool = window._mktMixActive;
+    if(!pool) return;
+    var correct = 0;
+    var labels = {product:'Product',price:'Price',place:'Place',promotion:'Promotion'};
+    pool.forEach(function(q, i) {
+      var sel = document.querySelector('input[name="mkt_mx_'+i+'"]:checked');
+      var fb = document.getElementById('mkt_mx_fb_'+i);
+      var card = document.getElementById('mkt_mx_'+i);
+      if(!fb || !card) return;
+      fb.style.display = 'block';
+      if(sel && sel.value === q[1]) {
+        card.style.borderLeft = '3px solid var(--g)';
+        fb.innerHTML = '<div style="color:var(--g);font-size:12px">✓ Richtig — P '+labels[q[1]]+'</div>';
+        correct++;
+      } else {
+        card.style.borderLeft = '3px solid var(--r)';
+        fb.innerHTML = '<div style="color:var(--r);font-size:12px">✗ Falsch</div><div style="font-size:12px;color:var(--tx2);margin-top:2px">Richtig: <strong>P '+labels[q[1]]+'</strong></div>';
+      }
+    });
+    var r = document.getElementById('mkt_mix_result');
+    if(r) r.innerHTML = '<div class="'+(correct===pool.length?'hlg':'hla')+'">'+correct+' von '+pool.length+' richtig</div>';
+  };
+
+  window.mktResetMix = function() {
+    buildMix();
+    var r = document.getElementById('mkt_mix_result');
+    if(r) r.innerHTML = '';
+  };
+
+  // --- Navigation ---
+  window.mktShowUeb = function(n) {
+    ['mkt_ueb_sel','mkt_ueb1','mkt_ueb2','mkt_ueb3'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if(el) el.style.display = 'none';
+    });
+    if(n === 0) { document.getElementById('mkt_ueb_sel').style.display = 'block'; }
+    else {
+      document.getElementById('mkt_ueb'+n).style.display = 'block';
+      if(n === 1) mktGenBegriffe();
+    }
+  };
+
+}, 600);
 
 })();
