@@ -1744,24 +1744,24 @@ const FA3_GOR = [
 // 4. OR ARTIKEL-DATENBANK
 // ==========================================
 const FA3_ART = {
-  'or957': ['Art. 957 OR — Buchführungspflicht', 'Wer verpflichtet ist, sein Unternehmen im Handelsregister einzutragen, ist zur Buchführung und Rechnungslegung verpflichtet.', 'Regelt, wer Bücher führen muss. EU und Pers.ges. unter 500k → nur Milchbüchleinrechnung.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a957'],
-  'or957a': ['Art. 957a OR — Grundsätze ordnungsmässiger Buchführung', 'Die Buchführung bildet die Grundlage der Rechnungslegung.', 'GoB: Vollständigkeit, Wahrheit, Belegnachweis, Klarheit, Nachprüfbarkeit. Keine Buchung ohne Beleg!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a957a'],
-  'or958': ['Art. 958 OR — Rechnungslegung', 'Die Rechnungslegung soll die wirtschaftliche Lage so darstellen, dass sich Dritte ein zuverlässiges Urteil bilden können.', 'Bilanz + ER + Anhang: jährlich, innert 6 Monaten, unterzeichnet vom VR-Präsident + Buchhalter.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958'],
-  'or958a': ['Art. 958a OR — Fortführungsgrundsatz (Going Concern)', 'Bei der Rechnungslegung ist von der Fortführung des Unternehmens auszugehen.', 'Bilanzposten zum Fortführungswert, nicht zum Veräusserungswert — solange Unternehmen weiterbesteht.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958a'],
-  'or958b': ['Art. 958b OR — Zeitliche und sachliche Abgrenzung', 'Aufwände und Erträge sind zeitlich und sachlich abzugrenzen.', 'Periodengerechte Erfassung. Ausnahme: ≤ 100k Nettoerlöse → Abgrenzung nicht nötig.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958b'],
-  'or958c': ['Art. 958c OR — Grundsätze ordnungsmässiger Rechnungslegung (GoR)', 'Klarheit, Vollständigkeit, Verlässlichkeit, Wesentlichkeit, Vorsicht, Stetigkeit, Verrechnungsverbot.', 'Die 7 GoR — das Herzstück der Rechnungslegung. Prüfungsklassiker!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958c'],
-  'or958d': ['Art. 958d OR — Darstellung und Währung', 'Rechnungslegung in CHF oder wesentlicher Geschäftswährung.', 'Bei Fremdwährung: zusätzlich CHF-Werte angeben. Texte in Landessprache oder Englisch.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958d'],
-  'or958f': ['Art. 958f OR — Aufbewahrungspflicht', 'Geschäftsbücher und Buchungsbelege sind 10 Jahre aufzubewahren.', '10 Jahre Aufbewahrungspflicht — schriftlich und unterzeichnet.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a958f'],
-  'or959a': ['Art. 959a OR — Mindestgliederung Bilanz', 'Aktiven nach Liquidität, Passiven nach Fälligkeit.', 'UV + AV | kfr. FK + lfr. FK + EK. Verbindliche Reihenfolge.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959a'],
-  'or959b': ['Art. 959b OR — Mindestgliederung Erfolgsrechnung', 'Produktions- oder Absatzerfolgsrechnung.', 'Betriebsertrag − Betriebsaufwand ± betriebsfremder/a.o. Erfolg = Jahresergebnis.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959b'],
-  'or959c': ['Art. 959c OR — Anhang', 'Ergänzende Angaben für die Beurteilung der Vermögens-, Finanzierungs- und Ertragslage.', 'Dritter Teil der Jahresrechnung. Enthält z.B. stille Reserven, Beteiligungen, Eventualverbindlichkeiten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959c'],
-  'or960': ['Art. 960 OR — Bewertung', 'Aktiven werden höchstens zum Anschaffungswert oder Herstellungswert bilanziert. Vorbehalten bleiben abweichende Vorschriften.', 'Vorsichtsprinzip bei der Bewertung. Warendrittel (Abs. 2): Vorräte dürfen zu einem Drittel unter Anschaffungswert bilanziert werden → stille Reserven.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a960'],
-  'or960e': ['Art. 960e OR — Rückstellungen', 'Bei erwartetem Mittelabfluss aus vergangenen Ereignissen sind Rückstellungen zu bilden.', 'Rückstellungspflicht — auch wenn Betrag und Fälligkeit unsicher sind.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a960e'],
-  'or961': ['Art. 961 OR — Grössere Unternehmen', 'Zusätzlich: Geldflussrechnung + Lagebericht + mehr Angaben im Anhang.', 'Kurzformel: «2 in 2 — 20/40/250» (Bilanzsumme ≥ 20 Mio., Umsatz ≥ 40 Mio., > 250 Stellen).', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a961'],
-  'or962': ['Art. 962 OR — Anerkannte Standards', 'Börsenkotierte müssen nach anerkanntem Standard abschliessen.', 'Main Standard: IFRS/US GAAP. Domestic Standard: Swiss GAAP FER.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a962'],
-  'or671': ['Art. 671 OR — Gesetzliche Gewinnreserve', '5% des Jahresgewinns zuweisen, bis Reserve = 50% des Aktienkapitals.', 'Neues Recht ab 2023: Einstufig. Verlustvortrag zuerst verrechnen, dann 5% auf Restgewinn.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a671'],
-  'or672': ['Art. 672 OR — Aufwertungsreserve', 'Aufwertungsreserve bei Aufwertung von Grundstücken oder Beteiligungen.', 'Aufwertungsreserve entsteht, wenn Aktiven über den Anschaffungswert hinaus bilanziert werden — in Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a672'],
-  'or673': ['Art. 673 OR — Freiwillige Gewinnreserven', 'GV kann zusätzliche Zuweisungen beschliessen.', 'Freiwillige Reserven als Sicherheitspuffer. Sinnvoll, aber in der Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a673'],
+  'or957': ['Art. 957 OR — Buchführungspflicht', 'Wer verpflichtet ist, sein Unternehmen im Handelsregister einzutragen, ist zur Buchführung und Rechnungslegung verpflichtet.', 'Regelt, wer Bücher führen muss. EU und Pers.ges. unter 500k → nur Milchbüchleinrechnung.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_957'],
+  'or957a': ['Art. 957a OR — Grundsätze ordnungsmässiger Buchführung', 'Die Buchführung bildet die Grundlage der Rechnungslegung.', 'GoB: Vollständigkeit, Wahrheit, Belegnachweis, Klarheit, Nachprüfbarkeit. Keine Buchung ohne Beleg!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_957_a'],
+  'or958': ['Art. 958 OR — Rechnungslegung', 'Die Rechnungslegung soll die wirtschaftliche Lage so darstellen, dass sich Dritte ein zuverlässiges Urteil bilden können.', 'Bilanz + ER + Anhang: jährlich, innert 6 Monaten, unterzeichnet vom VR-Präsident + Buchhalter.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958'],
+  'or958a': ['Art. 958a OR — Fortführungsgrundsatz (Going Concern)', 'Bei der Rechnungslegung ist von der Fortführung des Unternehmens auszugehen.', 'Bilanzposten zum Fortführungswert, nicht zum Veräusserungswert — solange Unternehmen weiterbesteht.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_a'],
+  'or958b': ['Art. 958b OR — Zeitliche und sachliche Abgrenzung', 'Aufwände und Erträge sind zeitlich und sachlich abzugrenzen.', 'Periodengerechte Erfassung. Ausnahme: ≤ 100k Nettoerlöse → Abgrenzung nicht nötig.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_b'],
+  'or958c': ['Art. 958c OR — Grundsätze ordnungsmässiger Rechnungslegung (GoR)', 'Klarheit, Vollständigkeit, Verlässlichkeit, Wesentlichkeit, Vorsicht, Stetigkeit, Verrechnungsverbot.', 'Die 7 GoR — das Herzstück der Rechnungslegung. Prüfungsklassiker!', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_c'],
+  'or958d': ['Art. 958d OR — Darstellung und Währung', 'Rechnungslegung in CHF oder wesentlicher Geschäftswährung.', 'Bei Fremdwährung: zusätzlich CHF-Werte angeben. Texte in Landessprache oder Englisch.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_d'],
+  'or958f': ['Art. 958f OR — Aufbewahrungspflicht', 'Geschäftsbücher und Buchungsbelege sind 10 Jahre aufzubewahren.', '10 Jahre Aufbewahrungspflicht — schriftlich und unterzeichnet.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_f'],
+  'or959a': ['Art. 959a OR — Mindestgliederung Bilanz', 'Aktiven nach Liquidität, Passiven nach Fälligkeit.', 'UV + AV | kfr. FK + lfr. FK + EK. Verbindliche Reihenfolge.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_959_a'],
+  'or959b': ['Art. 959b OR — Mindestgliederung Erfolgsrechnung', 'Produktions- oder Absatzerfolgsrechnung.', 'Betriebsertrag − Betriebsaufwand ± betriebsfremder/a.o. Erfolg = Jahresergebnis.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_959_b'],
+  'or959c': ['Art. 959c OR — Anhang', 'Ergänzende Angaben für die Beurteilung der Vermögens-, Finanzierungs- und Ertragslage.', 'Dritter Teil der Jahresrechnung. Enthält z.B. stille Reserven, Beteiligungen, Eventualverbindlichkeiten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_959_c'],
+  'or960': ['Art. 960 OR — Bewertung', 'Aktiven werden höchstens zum Anschaffungswert oder Herstellungswert bilanziert. Vorbehalten bleiben abweichende Vorschriften.', 'Vorsichtsprinzip bei der Bewertung. Warendrittel (Abs. 2): Vorräte dürfen zu einem Drittel unter Anschaffungswert bilanziert werden → stille Reserven.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_960'],
+  'or960e': ['Art. 960e OR — Rückstellungen', 'Bei erwartetem Mittelabfluss aus vergangenen Ereignissen sind Rückstellungen zu bilden.', 'Rückstellungspflicht — auch wenn Betrag und Fälligkeit unsicher sind.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_960_e'],
+  'or961': ['Art. 961 OR — Grössere Unternehmen', 'Zusätzlich: Geldflussrechnung + Lagebericht + mehr Angaben im Anhang.', 'Kurzformel: «2 in 2 — 20/40/250» (Bilanzsumme ≥ 20 Mio., Umsatz ≥ 40 Mio., > 250 Stellen).', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_961'],
+  'or962': ['Art. 962 OR — Anerkannte Standards', 'Börsenkotierte müssen nach anerkanntem Standard abschliessen.', 'Main Standard: IFRS/US GAAP. Domestic Standard: Swiss GAAP FER.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_962'],
+  'or671': ['Art. 671 OR — Gesetzliche Gewinnreserve', '5% des Jahresgewinns zuweisen, bis Reserve = 50% des Aktienkapitals.', 'Neues Recht ab 2023: Einstufig. Verlustvortrag zuerst verrechnen, dann 5% auf Restgewinn.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_671'],
+  'or672': ['Art. 672 OR — Aufwertungsreserve', 'Aufwertungsreserve bei Aufwertung von Grundstücken oder Beteiligungen.', 'Aufwertungsreserve entsteht, wenn Aktiven über den Anschaffungswert hinaus bilanziert werden — in Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_672'],
+  'or673': ['Art. 673 OR — Freiwillige Gewinnreserven', 'GV kann zusätzliche Zuweisungen beschliessen.', 'Freiwillige Reserven als Sicherheitspuffer. Sinnvoll, aber in der Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_673'],
 };
 
 // ==========================================
@@ -1775,6 +1775,32 @@ window.TIS.courses.fa3 = {
   flashcards: FA3_CARDS,
   articles: FA3_ART,
 };
+
+// ==========================================
+// 5b. FA3 ARTICLE CLICK HANDLER (eigener Handler für OR-Artikel)
+// ==========================================
+document.addEventListener('click', function(e) {
+  var el = e.target.closest('.b');
+  if (!el) return;
+  var txt = el.textContent.trim();
+  // Match "Art. 957a Abs. 2 OR" etc.
+  var m = txt.match(/Art(?:ikel)?\.?\s*(\d+[a-z]?)\s*(?:Abs\.?\s*\d+)?\s*OR/);
+  if (!m) return;
+  var key = 'or' + m[1];
+  var a = FA3_ART[key];
+  if (!a) return;
+  e.preventDefault();
+  e.stopPropagation();
+  e.stopImmediatePropagation();
+  var modal = document.getElementById('artModal');
+  if (!modal) return;
+  document.getElementById('artTitle').textContent = a[0];
+  document.getElementById('artRef').innerHTML = '<a href="' + (a[3] || '#') + '" target="_blank" rel="noopener">Quelle öffnen →</a>';
+  document.getElementById('artText').textContent = a[1];
+  document.getElementById('artExplain').innerHTML = '<strong>Einfach erklärt:</strong> ' + a[2];
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}, true); // useCapture = true → runs BEFORE core.js handler
 
 // ==========================================
 // 6. ÜBUNGS-FUNKTIONEN (nach DOM-Injection)
