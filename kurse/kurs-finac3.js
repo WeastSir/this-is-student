@@ -194,6 +194,45 @@ const courseHTML = `
 <div class="merksatz">Merke: In der Praxis gilt oft ein Schwellenwert von CHF 1'000 — darunter wird als Aufwand gebucht, auch wenn es langfristig nutzbar ist.</div>
 </div></div>
 
+<div class="tl-item"><div class="tl-num tl-num-b">6</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Inventar vs. Inventur</div>
+<div class="tl-merksatz">«Inventur = Zählen, Inventar = Verzeichnis»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Inventur</div><div class="cd">Die <strong>Tätigkeit</strong> des Zählens, Messens und Bewertens aller Vermögenswerte und Schulden.<br>→ Das «Machen»</div></div>
+<div class="c cg"><div class="ct2">Inventar</div><div class="cd">Das <strong>Verzeichnis</strong> (Ergebnis) der Vermögenswerte und Schulden mit Wertangaben per Stichtag.<br>→ Das «Dokument»</div></div>
+<div class="c cbl"><div class="ct2">Kontierungsstempel</div><div class="cd">Auf jedem Beleg wird per Stempel vermerkt, in welche Konten gebucht wird — Soll-Konto, Haben-Konto, Betrag, Visum.</div></div>
+</div>
+<div class="merksatz">Merke: Grundsatz «Keine Buchung ohne Beleg!» — Jeder Geschäftsfall braucht ein Dokument (Papier oder elektronisch).</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">7</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Fallbeispiel Alpengold — Bilanz & Buchungssätze</div>
+<div class="tl-merksatz">«Konkretes Beispiel: Bilanz per 31.12.20x1 und typische Buchungssätze»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Bilanz per 31.12.20x1 (vereinfacht):</strong><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Aktiven</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">CHF</th><th style="padding:6px;border:1px solid var(--bd)">Passiven</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">CHF</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Kasse</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">5'000</td><td style="padding:6px;border:1px solid var(--bd)">VLL</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">22'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Bank</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">120'000</td><td style="padding:6px;border:1px solid var(--bd)">Kurzfr. FK</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">15'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">FLL</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">35'000</td><td style="padding:6px;border:1px solid var(--bd)">Hypothek</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">280'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Vorräte</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">18'000</td><td style="padding:6px;border:1px solid var(--bd)">Stammkapital</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">200'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Sachanlagen</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">450'000</td><td style="padding:6px;border:1px solid var(--bd)">Gewinnvortrag</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">111'000</td></tr>
+<tr style="background:var(--s2)"><td style="padding:6px;border:1px solid var(--bd)"><strong>Total</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>628'000</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>Total</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>628'000</strong></td></tr>
+</table>
+<strong>Typische Buchungssätze:</strong><br>
+1. Kaffeemaschine CHF 4'500 auf Rechnung: <strong>Maschinen / VLL</strong> (nicht erfolgswirksam)<br>
+2. Einkauf Lebensmittel bar CHF 350: <strong>Warenaufwand Küche / Kasse</strong> (erfolgswirksam ↓)<br>
+3. Restaurant-Umsatz Kreditkarte CHF 2'800: <strong>Ford. Kreditkarten / Warenertrag Küche</strong> (erfolgswirksam ↑)
+</div>
+<div class="merksatz">Merke: Prüfe bei jedem Buchungssatz: Bilanzkonto/Bilanzkonto = nicht erfolgswirksam, Bilanzkonto/Erfolgskonto = erfolgswirksam!</div>
+</div></div>
+
 </div>
 </div>
 
@@ -223,6 +262,19 @@ const courseHTML = `
 <div class="merksatz">Merke: Die FiBu ist die Pflicht, die BeBu die Kür — aber beide zusammen ergeben erst das vollständige Bild.</div>
 </div></div>
 
+<div class="tl-item"><div class="tl-num tl-num-p">1b</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Buchführung vs. Rechnungslegung</div>
+<div class="tl-merksatz">«Buchführung = laufendes Erfassen, Rechnungslegung = Bericht am Jahresende»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Buchführung</div><div class="cd">= das <strong>Erfassen</strong> von Geschäftsfällen <strong>während</strong> der Rechnungsperiode.<br>Instrumente: Kontenplan, Journal, Hauptbuch<br>Ziel: Einheitliche Grundsätze und Prüfbarkeit</div></div>
+<div class="c cg"><div class="ct2">Rechnungslegung</div><div class="cd">= das <strong>Erstellen</strong> des Geschäftsberichts <strong>am Ende</strong> der Periode.<br>Bilanz, ER, evtl. Geldflussrechnung, Anhang, Lagebericht<br>Ziel: Aussagekraft und Vergleichbarkeit sichern</div></div>
+</div>
+<div class="merksatz">Merke: Buchführung = der Weg (laufend), Rechnungslegung = das Ergebnis (per Stichtag).</div>
+</div></div>
+
 <div class="tl-item"><div class="tl-num tl-num-g">2</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
 <div><div class="tl-title">Rechnungslegungsstandards</div>
@@ -250,10 +302,10 @@ const courseHTML = `
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
 <div class="tl-sub">
-<div class="c cbl"><div class="ct2">Kleinstunternehmen</div><div class="cd">EU & Pers.gesellschaften < CHF 500'000 Umsatz<br>→ Einnahmen-/Ausgabenrechnung genügt<br><span class="b bb">OR 957 Abs. 2</span></div></div>
-<div class="c cg"><div class="ct2">KMU</div><div class="cd">EU/Pers.ges. ≥ 500k oder jur. Personen (AG, GmbH)<br>→ Doppelte Buchhaltung + Bilanz + ER + Anhang<br><span class="b bb">OR 957 Abs. 1</span></div></div>
-<div class="c ca"><div class="ct2">Grössere Gesellschaften</div><div class="cd">Kurzformel: <strong>«2 in 2 — 20/40/250»</strong><br>2 der 3 Kriterien in 2 aufeinanderfolgenden Jahren:<br>• Bilanzsumme ≥ 20 Mio.<br>• Umsatz ≥ 40 Mio.<br>• > 250 Vollzeitstellen<br>→ zusätzlich Geldflussrechnung + Lagebericht<br><span class="b bb">OR 961</span></div></div>
-<div class="c cr"><div class="ct2">Börsenkotiert</div><div class="cd">→ Abschluss nach IFRS oder US GAAP (Main Standard)<br>→ Swiss GAAP FER für Domestic Standard<br><span class="b bb">OR 962</span></div></div>
+<div class="c cbl"><div class="ct2">Kleinstunternehmen</div><div class="cd">EU & Pers.gesellschaften < CHF 500'000 Umsatz<br>→ Einnahmen-/Ausgabenrechnung genügt<br><span class="b bb">Art. 957 Abs. 2 OR</span></div></div>
+<div class="c cg"><div class="ct2">KMU</div><div class="cd">EU/Pers.ges. ≥ 500k oder jur. Personen (AG, GmbH)<br>→ Doppelte Buchhaltung + Bilanz + ER + Anhang<br><span class="b bb">Art. 957 Abs. 1 OR</span></div></div>
+<div class="c ca"><div class="ct2">Grössere Gesellschaften</div><div class="cd">Kurzformel: <strong>«2 in 2 — 20/40/250»</strong><br>2 der 3 Kriterien in 2 aufeinanderfolgenden Jahren:<br>• Bilanzsumme ≥ 20 Mio.<br>• Umsatz ≥ 40 Mio.<br>• > 250 Vollzeitstellen<br>→ zusätzlich Geldflussrechnung + Lagebericht<br><span class="b bb">Art. 961 OR</span></div></div>
+<div class="c cr"><div class="ct2">Börsenkotiert</div><div class="cd">→ Abschluss nach IFRS oder US GAAP (Main Standard)<br>→ Swiss GAAP FER für Domestic Standard<br><span class="b bb">Art. 962 OR</span></div></div>
 </div>
 <div class="merksatz">Merke: Die Formel «2 in 2 — 20/40/250» ist prüfungsrelevant für grössere Gesellschaften!</div>
 </div></div>
@@ -264,7 +316,7 @@ const courseHTML = `
 <div class="tl-merksatz">«Vollständig, wahr, mit Beleg, klar und nachprüfbar»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
-<div class="tl-body">Die GoB (<span class="b bb">OR 957a Abs. 2</span>) regeln das Erfassen der Geschäftsfälle während der Periode:</div>
+<div class="tl-body">Die GoB (<span class="b bb">Art. 957a Abs. 2 OR</span>) regeln das Erfassen der Geschäftsfälle während der Periode:</div>
 <div class="tl-sub">
 <div class="c cg"><div class="ct2">Vollständigkeit & Wahrheit</div><div class="cd">Alle Geschäftsfälle müssen chronologisch, lückenlos und wahrheitsgetreu im Journal erfasst werden.</div></div>
 <div class="c ca"><div class="ct2">Belegnachweis</div><div class="cd"><strong>Keine Buchung ohne Beleg!</strong> Jede Buchung muss durch einen Papierbeleg oder elektronischen Datenträger belegt sein.</div></div>
@@ -279,7 +331,7 @@ const courseHTML = `
 <div class="tl-merksatz">«Klar, vollständig, wahr, wesentlich, vorsichtig, stetig, nicht verrechnet»</div></div>
 <div class="tl-arrow">&#9654;</div></div>
 <div class="tl-detail">
-<div class="tl-body">Die GoR (<span class="b bb">OR 958c Abs. 1</span>) bilden die Grundlage für den Geschäftsbericht:</div>
+<div class="tl-body">Die GoR (<span class="b bb">Art. 958c Abs. 1 OR</span>) bilden die Grundlage für den Geschäftsbericht:</div>
 <div class="tl-sub">
 <div class="c cbl"><div class="ct2">Klarheit / Verständlichkeit</div><div class="cd">Übersichtliche Gliederung, eindeutige Bezeichnungen, keine Zusammenfassung unterschiedlicher Posten.</div></div>
 <div class="c cg"><div class="ct2">Vollständigkeit</div><div class="cd">Alle wesentlichen Aktiven, Passiven, Aufwände und Erträge müssen enthalten sein. Vorjahreszahlen angeben.</div></div>
@@ -304,6 +356,65 @@ const courseHTML = `
 <div class="c cg"><div class="ct2">Kontentiefe</div><div class="cd">1-stellig: Kontenklasse (z.B. 1)<br>2-stellig: Kontenhauptgruppe (z.B. 10)<br>3-stellig: Kontengruppe (z.B. 100)<br>4-/5-stellig: Konto (z.B. 1000 Kasse)</div></div>
 </div>
 <div class="merksatz">Merke: Der Kontenrahmen ist wie ein Menü im Restaurant — der Kontenplan ist deine persönliche Bestellung.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">7</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Going Concern & Abgrenzungen</div>
+<div class="tl-merksatz">«Fortführungsannahme: Mind. 12 Monate Weiterführung»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Going Concern (<span class="b bb">Art. 958a OR</span>)</div><div class="cd">Bilanzierung zum <strong>Fortführungswert</strong>, nicht zum Veräusserungswert.<br>Annahme: Unternehmen wird mind. 12 Monate weitergeführt.<br>Ausnahme: Bei geplanter Liquidation/Verkauf → Veräusserungswert.</div></div>
+<div class="c cg"><div class="ct2">Zeitliche Abgrenzung</div><div class="cd">Aufwände/Erträge <strong>periodengerecht</strong> erfassen (<span class="b bb">Art. 958b OR</span>).<br>Beispiel: Versicherung Aug.–Jul. → im Abschluss per 31.12. anteilig abgrenzen (7/12 Folgejahr).</div></div>
+<div class="c cbl"><div class="ct2">Sachliche Abgrenzung</div><div class="cd">Beispiel: 2'000 Stück verkauft, nur 1'800 eingekauft → Lagerabnahme von 200 Stück buchen, um Aufwand korrekt darzustellen.</div></div>
+</div>
+<div class="merksatz">Merke: Going Concern = Normalfall. Nur wenn Liquidation bevorsteht, darf zum Veräusserungswert bilanziert werden.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">8</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Anhang & Mindestgliederung</div>
+<div class="tl-merksatz">«Der Anhang ergänzt Bilanz und ER — der dritte Teil der Jahresrechnung»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Der <strong>Anhang</strong> (<span class="b bb">Art. 959c OR</span>) enthält Informationen, die nicht direkt aus Bilanz/ER hervorgehen:</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">Anhang-Inhalte</div><div class="cd">• Aufschlüsselungen (z.B. bei Verstoss gegen Verrechnungsverbot)<br>• Betrag der Nettoauflösung stiller Reserven (wenn wesentlich)<br>• Beteiligungen mit Kapital-/Stimmenanteil<br>• Verpfändete Aktiven<br>• Eventualverbindlichkeiten (z.B. Bürgschaften)<br>• Erläuterungen zu a.o. Positionen<br>• Wesentliche Ereignisse nach Bilanzstichtag</div></div>
+<div class="c cg"><div class="ct2">Mindestgliederung (<span class="b bb">Art. 959a OR</span> / <span class="b bb">Art. 959b OR</span>)</div><div class="cd"><strong>Bilanz:</strong> Aktiven nach abnehmender Liquidität, Passiven nach Fälligkeit.<br><strong>ER:</strong> Als Produktions- oder Absatzerfolgsrechnung darstellbar.<br>Die Reihenfolge der Positionen ist <strong>verbindlich</strong>.</div></div>
+</div>
+<div class="merksatz">Merke: Die Jahresrechnung besteht aus 3 Teilen: Bilanz + Erfolgsrechnung + Anhang. Grössere Unternehmen erstellen zusätzlich Geldflussrechnung + Lagebericht.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">9</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Stille Reserven — OR vs. Standards</div>
+<div class="tl-merksatz">«OR erlaubt stille Reserven, Swiss GAAP FER / IFRS verbieten sie»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Stille Reserven entstehen, wenn Vermögenswerte <strong>unter dem wahren Wert</strong> bilanziert werden (z.B. Warendrittel gem. <span class="b bb">Art. 960 Abs. 2 OR</span>).<br><br>
+<strong>Beispiel Alpengold — Warenlager:</strong><br>
+Inventarwert: CHF 18'000. Warendrittel: CHF 6'000 Abschreibung → Bilanzwert CHF 12'000.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Gem. OR (Vorsichtsprinzip)</div><div class="cd">Stille Reserven sind <strong>zulässig</strong>.<br>Gewinn sinkt um CHF 6'000<br>Steuerlast sinkt (bei 14%: CHF 840 Ersparnis)<br>→ Vorsicht geht vor Wahrheit!</div></div>
+<div class="c cg"><div class="ct2">Gem. Swiss GAAP FER (True and fair view)</div><div class="cd">Stille Reserven sind <strong>nicht zulässig</strong>.<br>Warenlager bleibt bei CHF 18'000<br>Gewinn um CHF 6'000 höher<br>→ Wahrheit geht vor Vorsicht!</div></div>
+</div>
+<div class="merksatz">Merke: Gleicher Betrieb, verschiedene Standards = verschiedene Zahlen! «Wahrheit» ist in der Buchhaltung relativ — je nach Standard. Vorsicht: Nie auf CHF 0 abschreiben → Pro-memoria-Franken (CHF 1).</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">10</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Buchhaltungssysteme & Software</div>
+<div class="tl-merksatz">«Das System ersetzt nie das Fachwissen — Garbage in, garbage out!»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Ein Buchhaltungsprogramm umfasst: <strong>Hauptbuch + Journal + Kreditorenbuch + Debitorenbuch</strong> + optional Lohn, Lager, Anlagen.</div>
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">Mirus ★</div><div class="cd">Marktführer in Gastro/Hotellerie mit <strong>>80% Marktanteil</strong>.<br>SKHG-Kontenrahmen integriert, automatische MWST-Verbuchung, 7-stufige ER auf Knopfdruck.</div></div>
+<div class="c cbl"><div class="ct2">Weitere Schweizer Software</div><div class="cd">Banana (einfach, günstig), Bexio (Cloud, KMU), Abacus (umfangreich), SAP (Grossbetriebe), Infoniqa (Mittelstand)</div></div>
+<div class="c cg"><div class="ct2">ERP-Systeme</div><div class="cd">Integrieren alle Unternehmensbereiche (Kapital, Personal, Material, IT).<br>Sinnvoll erst ab gewisser Betriebsgrösse.<br>Voraussetzung: Strategie und Prozesse müssen definiert sein.</div></div>
+</div>
+<div class="merksatz">Merke: Auch das beste System kann kein Fachwissen ersetzen — die korrekte Kontierung, Interpretation und strategische Entscheidungen brauchen immer einen Menschen!</div>
 </div></div>
 
 </div>
@@ -384,6 +495,48 @@ const courseHTML = `
 <div class="c cg"><div class="ct2">GOP (Gross Operating Profit)</div><div class="cd">= Brutto-Betriebsgewinn vor anlagebedingten Kosten<br>Zeigt <strong>operative Leistungsfähigkeit</strong> des gesamten Betriebs<br>Richtwert: ca. 15.9% (4* Ferien)<br>Ideal als Vergleichswert zwischen Betrieben</div></div>
 </div>
 <div class="merksatz">Merke: GOI = «Was bringt meine Abteilung?», GOP = «Was bringt der ganze Betrieb operativ?»</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">5</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Wem nützt welche Kennzahl?</div>
+<div class="tl-merksatz">«GOI → Abteilungsleiter, GOP → Hoteldirektor, EBITDA → Eigentümer/Investoren»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">GOI → Abteilungsleiter</div><div class="cd">Küchenchef, F&B Manager<br>→ Erfolgsabhängiger Bonus auf <strong>Abteilungsebene</strong><br>Verantwortlich für Warenaufwand und direktes Personal</div></div>
+<div class="c cg"><div class="ct2">GOP → Hoteldirektor / Betriebsleiter</div><div class="cd">→ Operativer <strong>Gesamterfolg</strong><br>Verantwortlich für alle betrieblichen Aufwände<br>Zeigt Leistungsfähigkeit vor Anlagekosten</div></div>
+<div class="c cbl"><div class="ct2">EBITDA → VR / Eigentümer / Investoren</div><div class="cd">→ Vergleich zwischen Betrieben und Jahren<br><strong>Unabhängig</strong> von Finanzierungsstruktur und Steuern<br>Beste Kennzahl für Benchmarking</div></div>
+</div>
+<div class="merksatz">Merke: Je höher die Führungsebene, desto weiter unten in der 7-stufigen ER liegt die relevante Kennzahl.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">6</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Fallbeispiel Alpengold — 7-stufige ER (Q3)</div>
+<div class="tl-merksatz">«Nettoerlös CHF 480'000 → Unternehmenserfolg CHF 23'200 (4.8%)»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Stufe</th><th style="padding:6px;border:1px solid var(--bd)">Bezeichnung</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">CHF</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">%</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">Nettoerlös</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">480'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">100%</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Warenaufwand</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−138'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Direkter Personal</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−156'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>1</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>GOI</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>186'000</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>38.8%</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Personal Verw. / übriger Aufwand</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−77'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>2</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>GOP</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>109'000</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>22.7%</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Miete/Liegenschaft</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−52'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(0,122,255,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>3</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>EBITDA</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>57'000</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>11.9%</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Abschreibungen</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−18'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(0,122,255,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>4</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>EBIT</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>39'000</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>8.1%</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Finanzerfolg</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−12'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(175,82,222,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>5–6</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>EBT</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>27'000</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>5.6%</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)"></td><td style="padding:6px;border:1px solid var(--bd)">− Steuern</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−3'800</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"></td></tr>
+<tr style="background:rgba(232,86,122,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>7</strong></td><td style="padding:6px;border:1px solid var(--bd)"><strong>Unternehmenserfolg</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>23'200</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>4.8%</strong></td></tr>
+</table>
+</div>
+<div class="merksatz">Merke: Alle Prozentwerte beziehen sich auf den Nettoerlös. Die EBITDA-Marge von 11.9% zeigt die operative Ertragskraft des Alpengold.</div>
 </div></div>
 
 </div>
@@ -699,6 +852,42 @@ Alternativ: <strong>Anfangsbestand + Einkäufe (netto) − Schlussbestand (Inven
 <div class="merksatz">Merke: Spesen sind nicht sozialversicherungspflichtig — sie werden über «Übriger Personalaufwand» (53010) gebucht, nicht über Gehälter!</div>
 </div></div>
 
+<div class="tl-item"><div class="tl-num tl-num-p">10</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Abrechnung mit Versicherungen — Ablauf</div>
+<div class="tl-merksatz">«Akonto-Rechnungen → Jahresende → Schlussabrechnung»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Die Sozialversicherungsbeiträge werden nicht sofort an die Versicherungen bezahlt, sondern über das Konto 22020 gesammelt und periodisch abgerechnet:</div>
+<div class="tl-sub">
+<div class="c cbl"><div class="ct2">1. Jahresbeginn</div><div class="cd">Lohnsumme des Vorjahrs an Versicherung melden.<br>→ Basis für Akonto-Rechnungen</div></div>
+<div class="c cg"><div class="ct2">2. Laufend (z.B. quartalsweise)</div><div class="cd">Akonto-Rechnungen bezahlen:<br>Buchung: <strong>22020 KK SozVers / 20000 VLL</strong><br>Zahlung: <strong>20000 VLL / 10200 Bank</strong></div></div>
+<div class="c ca"><div class="ct2">3. Jahresende</div><div class="cd">Definitive Lohnsumme melden.<br>Schlussabrechnung: Differenz ausgleichen (Nachzahlung oder Rückerstattung).</div></div>
+</div>
+<div class="merksatz">Merke: Das Konto 22020 sammelt AN- und AG-Beiträge. Es wird durch Akonto-Zahlungen reduziert. Ende Jahr: Abstimmung mit der Schlussabrechnung der Ausgleichskasse.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">11</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Fallbeispiel Alpengold — Lohn Maria Gut (September)</div>
+<div class="tl-merksatz">«Bruttolohn CHF 5'200, AN 12.5%, AG 15%»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Lohnart</th><th style="padding:6px;border:1px solid var(--bd)">Soll</th><th style="padding:6px;border:1px solid var(--bd)">Haben</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">CHF</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Bruttolohn</td><td style="padding:6px;border:1px solid var(--bd)">51010 Gehälter</td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">5'200</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AN-Beiträge (ca. 12.5%)</td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">650</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Kinderzulagen</td><td style="padding:6px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">200</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">AG-Beiträge (ca. 15%)</td><td style="padding:6px;border:1px solid var(--bd)">52010 Soziallasten</td><td style="padding:6px;border:1px solid var(--bd)">22020 KK SozVers</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">780</td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>Lohnzahlung</strong></td><td style="padding:6px;border:1px solid var(--bd)">22010 Durchlauf</td><td style="padding:6px;border:1px solid var(--bd)">10200 Bank</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>4'750</strong></td></tr>
+</table>
+Nettolohn Auszahlung: 5'200 − 650 + 200 = <strong>CHF 4'750</strong><br>
+Gesamter Personalaufwand: 5'200 + 780 = <strong>CHF 5'980</strong>
+</div>
+<div class="merksatz">Merke: Bruttolohn ≠ Personalaufwand! Der gesamte Personalaufwand = Bruttolohn + AG-Beiträge + übriger Personalaufwand. In der Gastro machen AG-Beiträge ca. 15–18% des Bruttolohns aus!</div>
+</div></div>
+
 </div>
 </div>
 
@@ -743,6 +932,20 @@ Alternativ: <strong>Anfangsbestand + Einkäufe (netto) − Schlussbestand (Inven
 <div class="merksatz">Merke: Steuerpflichtig ab CHF 100'000 Jahresumsatz (Vereine: CHF 250'000). Der Sondersatz 3.8% ist eine Hotellerie-Besonderheit!</div>
 </div></div>
 
+<div class="tl-item"><div class="tl-num tl-num-p">2b</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Gastronomie vs. Detailhandel — Steuersätze</div>
+<div class="tl-merksatz">«Restaurant = 8.1%, Take-Away = 2.6%, Alkohol = immer 8.1%»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">Restaurant: 8.1%</div><div class="cd">Essen im Restaurant = <strong>Normalsatz</strong><br>Gilt auch für Essen auf der Terrasse oder am Tisch<br>Alle alkoholischen Getränke immer 8.1%</div></div>
+<div class="c cg"><div class="ct2">Take-Away: 2.6%</div><div class="cd">Essen zum Mitnehmen = <strong>Reduzierter Satz</strong><br>Nur Nahrungsmittel (nicht Alkohol!)<br>Gilt auch für Lieferservices</div></div>
+<div class="c cbl"><div class="ct2">Beherbergung: 3.8%</div><div class="cd">Übernachtung inkl. Frühstück = <strong>Sondersatz</strong><br>Restaurant-Essen im Hotel = trotzdem 8.1%!</div></div>
+</div>
+<div class="merksatz">Merke: Diese Unterscheidung ist gerade in der Hotellerie entscheidend — auf einer einzigen Rechnung können 3 verschiedene Steuersätze vorkommen (Übernachtung, Restaurant, Minibar)!</div>
+</div></div>
+
 <div class="tl-item"><div class="tl-num tl-num-a">3</div>
 <div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
 <div><div class="tl-title">MWST-Konten & Nettomethode</div>
@@ -776,6 +979,55 @@ III. Nicht-Entgelte (Vorsteuerkürzung)<br><br>
 <div class="merksatz">Merke: Bei verspäteter Zahlung wird ein Verzugszins fällig. Steuerhinterziehung: Busse bis zum 5-fachen der hinterzogenen Steuer!</div>
 </div></div>
 
+<div class="tl-item"><div class="tl-num tl-num-p">5</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Buchungs- und Abrechnungsmethoden</div>
+<div class="tl-merksatz">«Nettomethode (empfohlen) vs. Bruttomethode · Effektiv vs. Saldosteuersatz»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c cg"><div class="ct2">Nettomethode (empfohlen)</div><div class="cd">2 Buchungen pro Geschäftsfall:<br>1. Nettobetrag auf Erfolgs-/Bilanzkonto<br>2. MWST separat auf Vorsteuer-/Umsatzsteuerkonto<br>→ Von der <strong>ESTV empfohlen</strong></div></div>
+<div class="c cbl"><div class="ct2">Bruttomethode (selten)</div><div class="cd">1 Buchung inkl. MWST. MWST wird erst bei Quartalsabrechnung ausgebucht.<br>Kaum Praxisbedeutung (Ausnahme: Saldosteuersatzmethode).</div></div>
+<div class="c ca"><div class="ct2">Effektive Methode</div><div class="cd">Vorsteuer kann <strong>zurückgefordert</strong> werden.<br>Wechsel zur Saldosteuersatzmethode frühestens nach 3 Jahren.</div></div>
+<div class="c cm"><div class="ct2">Saldosteuersatzmethode</div><div class="cd"><strong>Keine</strong> Vorsteuerrückforderung. Vereinfachtes Verfahren.<br>In Gastro/Hotellerie kaum sinnvoll (hohe Vorsteuer auf Waren).</div></div>
+</div>
+<div class="merksatz">Merke: Abrechnungsarten: Nach vereinbartem Entgelt (Zeitpunkt Rechnungsstellung, Regelfall) oder nach vereinnahmtem Entgelt (Zeitpunkt Zahlung, auf Antrag).</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">6</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">MWST-konforme Belege</div>
+<div class="tl-merksatz">«6 Pflichtangaben — ohne konforme Rechnung kein Vorsteuerabzug!»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Damit ein Beleg zum <strong>Vorsteuerabzug</strong> berechtigt, muss er enthalten:</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Pflichtangaben Rechnung</div><div class="cd">1. Name, Ort und UID-Nr. mit Zusatz «MWST» des Leistenden<br>2. Name und Ort des Leistungsempfängers<br>3. Datum oder Zeitraum der Leistung<br>4. Art, Gegenstand und Umfang der Leistung<br>5. Entgelt für die Leistung<br>6. Steuersatz und Steuerbetrag (oder «inkl. X% MWST»)</div></div>
+<div class="c cbl"><div class="ct2">Ausnahme Kassenzettel</div><div class="cd">Bis <strong>CHF 400</strong>: Kein Kundenname nötig.<br>Alle anderen Angaben müssen trotzdem vorhanden sein.</div></div>
+</div>
+<div class="merksatz">Merke: Steuerhinterziehung = Bussen bis zum 5-fachen der hinterzogenen Steuer! Fehlende Anmeldung = bis CHF 100'000 Busse. Die ESTV versteht keinen Spass!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">7</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Fallbeispiel Alpengold — Allphasensteuer</div>
+<div class="tl-merksatz">«Vorsteuerabzug: Endpreis wird nur einmal besteuert»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Wertschöpfungskette Wein:</strong><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Stufe</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">Netto</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">MWST 8.1%</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">Brutto</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">An ESTV</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Weinlieferant → Grosshändler</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">500</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">40.50</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">540.50</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">40.50</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Grosshändler → Alpengold</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">900</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">72.90</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">972.90</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">32.40</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Alpengold → Gast</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">2'000</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">162.00</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">2'162.00</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">89.10</td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)" colspan="4"><strong>ESTV erhält total</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>162.00</strong></td></tr>
+</table>
+162.00 = 8.1% von CHF 2'000 → Dank Vorsteuerabzug wird der Endpreis <strong>nur einmal</strong> besteuert!
+</div>
+<div class="merksatz">Merke: Jedes Unternehmen in der Kette liefert nur die Differenz (Umsatzsteuer − Vorsteuer) ab. Die Gesamtbelastung trifft den Endverbraucher.</div>
+</div></div>
+
 </div>
 </div>
 
@@ -802,6 +1054,43 @@ III. Nicht-Entgelte (Vorsteuerkürzung)<br><br>
 <div class="c ca"><div class="ct2">Jahresabschluss</div><div class="cd">Wie Quartal + Bewertung aller Bilanzkonten, Bestandesnachweis, Anhang, Unternehmensergebnis, definitive SV-Abrechnung</div></div>
 </div>
 <div class="merksatz">Merke: Monat = GOP, Quartal = EBITDA + MWST, Jahr = alles inkl. Bewertung und Anhang.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">1b</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Tagesabschluss & Durchlaufkonto Tagesumsatz</div>
+<div class="tl-merksatz">«Tagesumsatz nach Sparten erfassen, Zahlungswege zuordnen — DLK = 0»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Beispiel Alpengold — Tagesumsatz 12. Oktober:</strong><br><br>
+Umsatz nach Sparten: Keller CHF 1'800, Küche CHF 3'200 = Total CHF 5'000<br>
+Zahlungswege: Bar CHF 1'500, Kreditkarten CHF 2'800, auf Rechnung CHF 700<br><br>
+<strong>Buchungen:</strong><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr style="background:var(--s2)"><th style="padding:6px;border:1px solid var(--bd)">Buchung</th><th style="padding:6px;border:1px solid var(--bd)">Soll</th><th style="padding:6px;border:1px solid var(--bd)">Haben</th><th style="padding:6px;text-align:right;border:1px solid var(--bd)">CHF</th></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Ertrag Keller</td><td style="padding:6px;border:1px solid var(--bd)">DLK</td><td style="padding:6px;border:1px solid var(--bd)">Ertrag Keller</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1'800</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Ertrag Küche</td><td style="padding:6px;border:1px solid var(--bd)">DLK</td><td style="padding:6px;border:1px solid var(--bd)">Ertrag Küche</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">3'200</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Barzahlung</td><td style="padding:6px;border:1px solid var(--bd)">Kasse</td><td style="padding:6px;border:1px solid var(--bd)">DLK</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">1'500</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Kreditkarten</td><td style="padding:6px;border:1px solid var(--bd)">Ford. Kreditkarten</td><td style="padding:6px;border:1px solid var(--bd)">DLK</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">2'800</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Auf Rechnung</td><td style="padding:6px;border:1px solid var(--bd)">FLL</td><td style="padding:6px;border:1px solid var(--bd)">DLK</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">700</td></tr>
+</table>
+DLK Saldo: Haben 5'000, Soll 5'000 = <strong>0 ✓</strong>
+</div>
+<div class="merksatz">Merke: Das Durchlaufkonto (DLK) ist ein Hilfskonto — es muss beim Abschluss immer einen Saldo von Null ergeben!</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">1c</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">ARA vs. PRA vs. Rückstellung — Abgrenzung</div>
+<div class="tl-merksatz">«ARA/PRA = sicher & bestimmbar, Rückstellung = unsicher»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">ARA / PRA</div><div class="cd"><strong>Entstehung:</strong> sicher<br><strong>Betrag:</strong> i.d.R. bestimmbar<br>→ Periodengerechte Abgrenzung<br>Gegenkonto ist <strong>immer ein Erfolgskonto</strong>!</div></div>
+<div class="c cr"><div class="ct2">Rückstellung</div><div class="cd"><strong>Entstehung:</strong> oft unsicher<br><strong>Betrag/Fälligkeit:</strong> nicht sicher bestimmbar<br>→ Vorsorgeprinzip (<span class="b bb">Art. 960e OR</span>)<br>Passivkonto, kurz- oder langfristiges FK</div></div>
+</div>
+<div class="merksatz">Merke: Die ARA steht in den Aktiven (Umlaufvermögen), die PRA und Rückstellungen stehen in den Passiven (Fremdkapital).</div>
 </div></div>
 
 <div class="tl-item"><div class="tl-num tl-num-g">2</div>
@@ -862,7 +1151,7 @@ III. Nicht-Entgelte (Vorsteuerkürzung)<br><br>
 <div class="tl-detail">
 <div class="tl-body">
 <strong>Schrittweise Berechnung:</strong><br>
-1. <strong>Gesetzliche Reserve:</strong> 5% des Jahresgewinns (minus allfälligen Verlustvortrag), bis Reserve = 50% des Aktien-/Stammkapitals (<span class="b bb">Art. 671/672 OR</span>)<br>
+1. <strong>Gesetzliche Reserve:</strong> 5% des Jahresgewinns (minus allfälligen Verlustvortrag), bis Reserve = 50% des Aktien-/Stammkapitals (<span class="b bb">Art. 671 OR</span> / <span class="b bb">Art. 672 OR</span>)<br>
 2. <strong>Freiwillige Reserve:</strong> Optional, gemäss <span class="b bb">Art. 673 OR</span><br>
 3. <strong>Dividende:</strong> Bruttodividende = 65% Nettodividende + 35% Verrechnungssteuer<br>
 4. <strong>Gewinnvortrag:</strong> Rest wird ins nächste Jahr vorgetragen<br><br>
@@ -875,6 +1164,45 @@ Jahresgewinn<br>
 = Vortrag ins nächste Geschäftsjahr
 </div>
 <div class="merksatz">Merke: Verlustvortrag wird zuerst verrechnet — Reserve nur auf dem Restgewinn! Sind Reserven bereits ≥ 50% AK → keine Zuweisung nötig.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">2</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Dividende & Verrechnungssteuer</div>
+<div class="tl-merksatz">«Bruttodividende = 65% Nettodividende + 35% Verrechnungssteuer»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">Bei der Dividendenausschüttung wird die <strong>Verrechnungssteuer (VST)</strong> von 35% einbehalten und an den Bund abgeliefert. Der Aktionär/Gesellschafter erhält nur 65%.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Nettodividende (65%)</div><div class="cd">Wird dem Gesellschafter <strong>ausbezahlt</strong>.<br>Buchung: Gewinnvortrag / Bank</div></div>
+<div class="c cr"><div class="ct2">Verrechnungssteuer (35%)</div><div class="cd">Wird an den <strong>Bund abgeliefert</strong>.<br>Buchung: Gewinnvortrag / Verb. VST<br>Zahlung: Verb. VST / Bank</div></div>
+</div>
+<div class="merksatz">Merke: Die VST kann der Empfänger bei der Steuererklärung zurückfordern — sie dient als Sicherung gegen Steuerhinterziehung.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">3</div>
+<div class="tl-head" onclick="this.parentElement.classList.toggle('open')">
+<div><div class="tl-title">Fallbeispiel Alpengold — Gewinnverwendung 20x1</div>
+<div class="tl-merksatz">«Bilanzgewinn CHF 60'000, Reserven + Dividende + Vortrag»</div></div>
+<div class="tl-arrow">&#9654;</div></div>
+<div class="tl-detail">
+<div class="tl-body">
+<strong>Ausgangslage:</strong><br>
+Stammkapital: CHF 200'000 · Ges. Reserven bisher: CHF 40'000 (50% = 100'000, also noch Luft)<br>
+Jahresgewinn: CHF 52'000 · Gewinnvortrag: CHF 8'000<br><br>
+<strong>Berechnung:</strong><br>
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin:8px 0">
+<tr><td style="padding:6px;border:1px solid var(--bd)">Bilanzgewinn</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">52'000 + 8'000 = <strong>60'000</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">− Ges. Reserve (5% × 52'000)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−2'600</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">= Verfügbar für GV</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>57'400</strong></td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">Beschluss: Bruttodividende</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">−40'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">→ davon Nettodividende (65%)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">26'000</td></tr>
+<tr><td style="padding:6px;border:1px solid var(--bd)">→ davon VST (35%)</td><td style="padding:6px;text-align:right;border:1px solid var(--bd)">14'000</td></tr>
+<tr style="background:rgba(52,199,89,.06)"><td style="padding:6px;border:1px solid var(--bd)"><strong>Gewinnvortrag neu</strong></td><td style="padding:6px;text-align:right;border:1px solid var(--bd)"><strong>17'400</strong></td></tr>
+</table>
+<strong>Aufteilung Dividende:</strong> Anna Berger (60%): CHF 24'000 brutto / Marco Roth (40%): CHF 16'000 brutto
+</div>
+<div class="merksatz">Merke: Die 5% Reserve wird nur auf den Jahresgewinn (nicht Bilanzgewinn!) berechnet — und nur bis die Reserven 50% des Stammkapitals erreichen.</div>
 </div></div>
 
 </div>
@@ -1427,10 +1755,12 @@ const FA3_ART = {
   'or959a': ['Art. 959a OR — Mindestgliederung Bilanz', 'Aktiven nach Liquidität, Passiven nach Fälligkeit.', 'UV + AV | kfr. FK + lfr. FK + EK. Verbindliche Reihenfolge.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959a'],
   'or959b': ['Art. 959b OR — Mindestgliederung Erfolgsrechnung', 'Produktions- oder Absatzerfolgsrechnung.', 'Betriebsertrag − Betriebsaufwand ± betriebsfremder/a.o. Erfolg = Jahresergebnis.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959b'],
   'or959c': ['Art. 959c OR — Anhang', 'Ergänzende Angaben für die Beurteilung der Vermögens-, Finanzierungs- und Ertragslage.', 'Dritter Teil der Jahresrechnung. Enthält z.B. stille Reserven, Beteiligungen, Eventualverbindlichkeiten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a959c'],
+  'or960': ['Art. 960 OR — Bewertung', 'Aktiven werden höchstens zum Anschaffungswert oder Herstellungswert bilanziert. Vorbehalten bleiben abweichende Vorschriften.', 'Vorsichtsprinzip bei der Bewertung. Warendrittel (Abs. 2): Vorräte dürfen zu einem Drittel unter Anschaffungswert bilanziert werden → stille Reserven.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a960'],
   'or960e': ['Art. 960e OR — Rückstellungen', 'Bei erwartetem Mittelabfluss aus vergangenen Ereignissen sind Rückstellungen zu bilden.', 'Rückstellungspflicht — auch wenn Betrag und Fälligkeit unsicher sind.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a960e'],
   'or961': ['Art. 961 OR — Grössere Unternehmen', 'Zusätzlich: Geldflussrechnung + Lagebericht + mehr Angaben im Anhang.', 'Kurzformel: «2 in 2 — 20/40/250» (Bilanzsumme ≥ 20 Mio., Umsatz ≥ 40 Mio., > 250 Stellen).', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a961'],
   'or962': ['Art. 962 OR — Anerkannte Standards', 'Börsenkotierte müssen nach anerkanntem Standard abschliessen.', 'Main Standard: IFRS/US GAAP. Domestic Standard: Swiss GAAP FER.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a962'],
   'or671': ['Art. 671 OR — Gesetzliche Gewinnreserve', '5% des Jahresgewinns zuweisen, bis Reserve = 50% des Aktienkapitals.', 'Neues Recht ab 2023: Einstufig. Verlustvortrag zuerst verrechnen, dann 5% auf Restgewinn.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a671'],
+  'or672': ['Art. 672 OR — Aufwertungsreserve', 'Aufwertungsreserve bei Aufwertung von Grundstücken oder Beteiligungen.', 'Aufwertungsreserve entsteht, wenn Aktiven über den Anschaffungswert hinaus bilanziert werden — in Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a672'],
   'or673': ['Art. 673 OR — Freiwillige Gewinnreserven', 'GV kann zusätzliche Zuweisungen beschliessen.', 'Freiwillige Reserven als Sicherheitspuffer. Sinnvoll, aber in der Praxis selten.', 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#a673'],
 };
 
