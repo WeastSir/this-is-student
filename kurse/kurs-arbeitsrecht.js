@@ -6,15 +6,15 @@
 const courseConfig = {
   id: 'arb',
   name: 'Arbeitsrecht',
-  pages: ['arb','arb_quellen','arb_vertrag','arb_zeit','arb_pflichtAG','arb_pflichtAN','arb_kuend','arb_mutter','arb_lohn','arb_jugend','arb_rechnen','arb_lgav','arb_mind','arb_kart','arb_quiz','arb_glossar'],
+  pages: ['arb','arb_quellen','arb_vertrag','arb_zeit','arb_pflichtAG','arb_pflichtAN','arb_kuend','arb_mutter','arb_lohn','arb_jugend','arb_rechnen','arb_mind','arb_lgav','arb_kart','arb_quiz','arb_glossar'],
   subNav: [
   {s:'arb',l:'Übersicht'},
   {s:'arb_quellen',l:'Quellen'},{s:'arb_vertrag',l:'Vertrag'},{s:'arb_zeit',l:'Arbeitszeit'},
   {s:'arb_pflichtAG',l:'AG-Pflichten'},{s:'arb_pflichtAN',l:'AN-Pflichten'},{s:'arb_kuend',l:'Kündigung'},
   {s:'arb_mutter',l:'Mutterschutz'},{s:'arb_lohn',l:'Lohn & Fortzahlung'},
   {s:'arb_jugend',l:'Jugendliche'},{s:'arb_rechnen',l:'Zeitrechnen'},
-  {s:'arb_lgav',l:'L-GAV Aufbau'},
-  {s:'arb_mind',l:'Zusammenfassung'},{s:'arb_kart',l:'Karten'},{s:'arb_quiz',l:'Quiz'},{s:'arb_glossar',l:'Glossar'}
+  {s:'arb_mind',l:'Zusammenfassung'},{s:'arb_lgav',l:'L-GAV Aufbau'},
+  {s:'arb_kart',l:'Karten'},{s:'arb_quiz',l:'Quiz'},{s:'arb_glossar',l:'Glossar'}
 ],
   navButton: '<button class="nl nl-main" data-s="arb" onclick="go(\'arb\')" style="display:none">Arbeitsrecht</button>'
 };
@@ -78,10 +78,14 @@ const courseHTML = `<!-- ============= ARBEITSRECHT ============= -->
 </div>
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
 <div class="c ck" onclick="go('arb_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#007AFF,#AF52DE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">3</div>
 <div class="ct2">Zusammenfassung</div><div class="cd">Visuelle Übersichten</div>
+</div>
+<div class="c ck" onclick="go('arb_lgav')" style="text-align:center;padding:24px 16px">
+<div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#34C759,#007AFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">38</div>
+<div class="ct2">L-GAV Aufbau</div><div class="cd">Alle Artikel &amp; Erklärungen</div>
 </div>
 <div class="c ck" onclick="go('arb_kart')" style="text-align:center;padding:24px 16px">
 <div id="ltArbCards" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#007AFF,#AF52DE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">50</div>
@@ -218,6 +222,54 @@ const courseHTML = `<!-- ============= ARBEITSRECHT ============= -->
 
 
 <!-- L-GAV AUFBAU -->
+<div class="sec" id="arb_mind"><h1>Zusammenfassung Arbeitsrecht</h1><p class="sub">Visuelle Übersichten</p>
+<h2>Rechtsquellen — Drei Säulen</h2>
+<div class="mm"><div class="mm-center"><div class="mm-hub" style="border-color:var(--ac);color:var(--ac);background:var(--al)">Arbeitsrecht</div></div>
+<div class="mm-branches">
+<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Öffentlich</h3><ul style="color:var(--ac)"><li>ArG (Höchstarbeitszeit, Schutz)</li><li>BBG (Berufsbildung)</li><li>Sozialversicherungen</li><li><strong>Staat kontrolliert aktiv</strong></li><li>Zwingend</li></ul></div>
+<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">OR (Privatrecht)</h3><ul style="color:var(--am)"><li>Art. 319ff. OR</li><li>Absolut zwingend (Art. 361)</li><li>Relativ zwingend (Art. 362)</li><li>Dispositiv (Lückenfüller)</li><li><strong>Nur auf Klage!</strong></li></ul></div>
+<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">GAV / L-GAV</h3><ul style="color:var(--g)"><li>Sozialpartner</li><li>Mindestbedingungen</li><li>Allgemeinverbindlich</li><li>Friedenspflicht</li><li><strong>Gilt für ALLE</strong></li></ul></div>
+</div></div>
+<h2>Überstunden vs. Überzeit</h2>
+<div class="mm"><div class="mm-branches">
+<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Überstunden (42–50h)</h3><ul style="color:var(--am)"><li>Über vertragliche AZ</li><li>100% bei Erfassung</li><li>125% nach letzter Lohnzahlung</li><li>Verzicht ab CHF 6'750 + schriftlich</li><li>Kompensation = AG entscheidet</li></ul></div>
+<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Überzeit (ab 50h)</h3><ul style="color:var(--r)"><li>Über Höchstarbeitszeit ArG</li><li><strong>Zwingend 125%</strong></li><li>Kompensation nur mit AN-Einverständnis</li><li>Nicht wegbedingbar!</li><li>Klausel im Vertrag empfohlen</li></ul></div>
+</div></div>
+<h2>Betriebstypen im Gastgewerbe</h2>
+<div class="mm"><div class="mm-center"><div class="mm-hub" style="border-color:var(--bl,#007AFF);color:var(--bl,#007AFF);background:var(--bll,rgba(0,122,255,.08))">Betriebstypen L-GAV</div></div>
+<div class="mm-branches">
+<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Jahresbetrieb</h3><ul style="color:var(--ac)"><li><strong>42h/Woche</strong></li><li>Einsatzplan: 2 Wo für 2 Wo</li><li>Ruhetage: 4 Wo Kompensation</li><li>Ganzjährig geöffnet</li></ul></div>
+<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Saisonbetrieb</h3><ul style="color:var(--am)"><li><strong>43,5h/Woche</strong></li><li>Einsatzplan: 1 Wo für 1 Wo</li><li>Ruhetage: 12 Wo Kompensation</li><li>Nicht kündbar während Saison</li><li>Zulassung bei Kontrollstelle</li></ul></div>
+<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">Kleinbetrieb</h3><ul style="color:var(--g)"><li><strong>45h/Woche</strong></li><li>Max. 4 MA (400 Stellenprozent)</li><li>+ max. 3 Aushilfen/Jahr</li><li>Pensum < CHF 2500/Jahr</li></ul></div>
+</div></div>
+
+<h2>Anstellungsformen</h2>
+<div class="mm"><div class="mm-branches">
+<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Vollzeit (Monatslohn)</h3><ul style="color:var(--ac)"><li>100% Pensum</li><li>Ferien, Feiertage, 13. ML inkl.</li><li>Überstunden: 100%/125%</li><li>= günstigste Variante für AG</li></ul></div>
+<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Teilzeit (Stundenlohn)</h3><ul style="color:var(--am)"><li>Gleiche Rechte wie Vollzeit!</li><li>+10,65% Ferien</li><li>+2,27% Feiertage</li><li>+8,33% 13. ML</li><li>= teurer als Überstunden</li></ul></div>
+<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">Aushilfe (Rahmenvertrag)</h3><ul style="color:var(--g)"><li>Kein Mindest-Pensum</li><li>Jeder Einsatz = separates AV</li><li>AN darf ablehnen</li><li>Schriftlicher Rahmenvertrag</li></ul></div>
+</div></div>
+
+<h2>Vertragsabgrenzung</h2>
+<div class="mm"><div class="mm-branches">
+<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Arbeitsvertrag (OR 319)</h3><ul style="color:var(--ac)"><li>Persönliche Arbeitsleistung</li><li>Subordination (weisungsgebunden)</li><li>Entgeltlich (Lohn)</li><li>Dauerschuldverhältnis</li></ul></div>
+<div class="mm-branch" style="background:var(--pl);border:1.5px solid var(--pr)"><h3 style="color:var(--pr)">Werkvertrag (OR 363)</h3><ul style="color:var(--pr)"><li>Werk (Erfolg) geschuldet</li><li>Selbständig, unabhängig</li><li>Entgeltlich</li><li>Ziel- oder Dauerschuldverhältnis</li></ul></div>
+<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Auftrag (OR 394)</h3><ul style="color:var(--r)"><li>Sorgfältiges Tätigwerden</li><li>Auch unentgeltlich möglich</li><li>Wirtschaftlich unabhängig</li><li>Instruktionen, kein Gehorsam</li></ul></div>
+</div></div>
+
+<h2>Lohnfortzahlung — Krankheit vs. Unfall</h2>
+<div class="mm"><div class="mm-branches">
+<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Krankheit</h3><ul style="color:var(--am)"><li>Aufschubzeit: AG zahlt 88%</li><li>Max. 60 Tage Aufschub</li><li>Dann TGV: 720 Tage, 80%</li><li>Prämie hälftig AG/AN</li><li>Arztzeugnis ab 4. Tag</li></ul></div>
+<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Unfall</h3><ul style="color:var(--r)"><li>Unfalltag: AG 100%</li><li>Tag 1+2: AG 88%</li><li>Ab Tag 3: UVG 80%</li><li>BU + Kinder: AG → 100%</li><li>NBU: nur ab 8h/Woche</li></ul></div>
+</div></div>
+
+<h2>Kündigungsfristen &amp; Sperrfristen</h2>
+<div class="mm"><div class="mm-branches">
+<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Kündigungsfristen (L-GAV)</h3><ul style="color:var(--ac)"><li><strong>Probezeit:</strong> 3 Tage, beliebiger Tag</li><li><strong>Bis 5. DJ:</strong> 1 Monat, Ende Monat</li><li><strong>Ab 6. DJ:</strong> 2 Monate, Ende Monat</li><li>Formfrei, empfangsbedürftig</li><li>Saisonvertrag: nicht kündbar!</li></ul></div>
+<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Sperrfristen (Art. 336c OR)</h3><ul style="color:var(--r)"><li><strong>Krankheit 1. DJ:</strong> 30 Tage</li><li><strong>Krankheit 2.–5. DJ:</strong> 90 Tage</li><li><strong>Krankheit ab 6. DJ:</strong> 180 Tage</li><li><strong>Schwangerschaft:</strong> ganze Zeit + 16 Wo</li><li><strong>Militär >11T:</strong> 4 Wo vor + nach</li><li>Während Sperrfrist = nichtig</li><li>Vor Sperrfrist = Frist ruht</li></ul></div>
+</div></div>
+</div>
+
 <div class="sec" id="arb_lgav">
 <h1>L-GAV — Aufbau &amp; Inhalt</h1>
 <p class="sub">Landes-Gesamtarbeitsvertrag des Gastgewerbes · 7 Abschnitte · 38 Artikel + Anhang</p>
@@ -376,54 +428,6 @@ Kontrollstelle und Aufsichtskommission an DSG gebunden.<br>
 <div class="hl" style="margin-top:24px"><strong>Stundenlohn-Zuschläge (alle 3 zusammen!):</strong> Ferienzuschlag <strong>+10,65%</strong> · Feiertagszuschlag <strong>+2,27%</strong> · 13. Monatslohn <strong>+8,33%</strong><br><br><strong>Quelle:</strong> <a href="https://l-gav.ch/vertrag-aktuell" target="_blank" style="color:var(--bl)">l-gav.ch/vertrag-aktuell</a> — Alle Artikel mit offiziellem Kommentar</div>
 </div>
 
-
-<div class="sec" id="arb_mind"><h1>Zusammenfassung Arbeitsrecht</h1><p class="sub">Visuelle Übersichten</p>
-<h2>Rechtsquellen — Drei Säulen</h2>
-<div class="mm"><div class="mm-center"><div class="mm-hub" style="border-color:var(--ac);color:var(--ac);background:var(--al)">Arbeitsrecht</div></div>
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Öffentlich</h3><ul style="color:var(--ac)"><li>ArG (Höchstarbeitszeit, Schutz)</li><li>BBG (Berufsbildung)</li><li>Sozialversicherungen</li><li><strong>Staat kontrolliert aktiv</strong></li><li>Zwingend</li></ul></div>
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">OR (Privatrecht)</h3><ul style="color:var(--am)"><li>Art. 319ff. OR</li><li>Absolut zwingend (Art. 361)</li><li>Relativ zwingend (Art. 362)</li><li>Dispositiv (Lückenfüller)</li><li><strong>Nur auf Klage!</strong></li></ul></div>
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">GAV / L-GAV</h3><ul style="color:var(--g)"><li>Sozialpartner</li><li>Mindestbedingungen</li><li>Allgemeinverbindlich</li><li>Friedenspflicht</li><li><strong>Gilt für ALLE</strong></li></ul></div>
-</div></div>
-<h2>Überstunden vs. Überzeit</h2>
-<div class="mm"><div class="mm-branches">
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Überstunden (42–50h)</h3><ul style="color:var(--am)"><li>Über vertragliche AZ</li><li>100% bei Erfassung</li><li>125% nach letzter Lohnzahlung</li><li>Verzicht ab CHF 6'750 + schriftlich</li><li>Kompensation = AG entscheidet</li></ul></div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Überzeit (ab 50h)</h3><ul style="color:var(--r)"><li>Über Höchstarbeitszeit ArG</li><li><strong>Zwingend 125%</strong></li><li>Kompensation nur mit AN-Einverständnis</li><li>Nicht wegbedingbar!</li><li>Klausel im Vertrag empfohlen</li></ul></div>
-</div></div>
-<h2>Betriebstypen im Gastgewerbe</h2>
-<div class="mm"><div class="mm-center"><div class="mm-hub" style="border-color:var(--bl,#007AFF);color:var(--bl,#007AFF);background:var(--bll,rgba(0,122,255,.08))">Betriebstypen L-GAV</div></div>
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Jahresbetrieb</h3><ul style="color:var(--ac)"><li><strong>42h/Woche</strong></li><li>Einsatzplan: 2 Wo für 2 Wo</li><li>Ruhetage: 4 Wo Kompensation</li><li>Ganzjährig geöffnet</li></ul></div>
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Saisonbetrieb</h3><ul style="color:var(--am)"><li><strong>43,5h/Woche</strong></li><li>Einsatzplan: 1 Wo für 1 Wo</li><li>Ruhetage: 12 Wo Kompensation</li><li>Nicht kündbar während Saison</li><li>Zulassung bei Kontrollstelle</li></ul></div>
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">Kleinbetrieb</h3><ul style="color:var(--g)"><li><strong>45h/Woche</strong></li><li>Max. 4 MA (400 Stellenprozent)</li><li>+ max. 3 Aushilfen/Jahr</li><li>Pensum < CHF 2500/Jahr</li></ul></div>
-</div></div>
-
-<h2>Anstellungsformen</h2>
-<div class="mm"><div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Vollzeit (Monatslohn)</h3><ul style="color:var(--ac)"><li>100% Pensum</li><li>Ferien, Feiertage, 13. ML inkl.</li><li>Überstunden: 100%/125%</li><li>= günstigste Variante für AG</li></ul></div>
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Teilzeit (Stundenlohn)</h3><ul style="color:var(--am)"><li>Gleiche Rechte wie Vollzeit!</li><li>+10,65% Ferien</li><li>+2,27% Feiertage</li><li>+8,33% 13. ML</li><li>= teurer als Überstunden</li></ul></div>
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)"><h3 style="color:var(--g)">Aushilfe (Rahmenvertrag)</h3><ul style="color:var(--g)"><li>Kein Mindest-Pensum</li><li>Jeder Einsatz = separates AV</li><li>AN darf ablehnen</li><li>Schriftlicher Rahmenvertrag</li></ul></div>
-</div></div>
-
-<h2>Vertragsabgrenzung</h2>
-<div class="mm"><div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Arbeitsvertrag (OR 319)</h3><ul style="color:var(--ac)"><li>Persönliche Arbeitsleistung</li><li>Subordination (weisungsgebunden)</li><li>Entgeltlich (Lohn)</li><li>Dauerschuldverhältnis</li></ul></div>
-<div class="mm-branch" style="background:var(--pl);border:1.5px solid var(--pr)"><h3 style="color:var(--pr)">Werkvertrag (OR 363)</h3><ul style="color:var(--pr)"><li>Werk (Erfolg) geschuldet</li><li>Selbständig, unabhängig</li><li>Entgeltlich</li><li>Ziel- oder Dauerschuldverhältnis</li></ul></div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Auftrag (OR 394)</h3><ul style="color:var(--r)"><li>Sorgfältiges Tätigwerden</li><li>Auch unentgeltlich möglich</li><li>Wirtschaftlich unabhängig</li><li>Instruktionen, kein Gehorsam</li></ul></div>
-</div></div>
-
-<h2>Lohnfortzahlung — Krankheit vs. Unfall</h2>
-<div class="mm"><div class="mm-branches">
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)"><h3 style="color:var(--am)">Krankheit</h3><ul style="color:var(--am)"><li>Aufschubzeit: AG zahlt 88%</li><li>Max. 60 Tage Aufschub</li><li>Dann TGV: 720 Tage, 80%</li><li>Prämie hälftig AG/AN</li><li>Arztzeugnis ab 4. Tag</li></ul></div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Unfall</h3><ul style="color:var(--r)"><li>Unfalltag: AG 100%</li><li>Tag 1+2: AG 88%</li><li>Ab Tag 3: UVG 80%</li><li>BU + Kinder: AG → 100%</li><li>NBU: nur ab 8h/Woche</li></ul></div>
-</div></div>
-
-<h2>Kündigungsfristen &amp; Sperrfristen</h2>
-<div class="mm"><div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)"><h3 style="color:var(--ac)">Kündigungsfristen (L-GAV)</h3><ul style="color:var(--ac)"><li><strong>Probezeit:</strong> 3 Tage, beliebiger Tag</li><li><strong>Bis 5. DJ:</strong> 1 Monat, Ende Monat</li><li><strong>Ab 6. DJ:</strong> 2 Monate, Ende Monat</li><li>Formfrei, empfangsbedürftig</li><li>Saisonvertrag: nicht kündbar!</li></ul></div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)"><h3 style="color:var(--r)">Sperrfristen (Art. 336c OR)</h3><ul style="color:var(--r)"><li><strong>Krankheit 1. DJ:</strong> 30 Tage</li><li><strong>Krankheit 2.–5. DJ:</strong> 90 Tage</li><li><strong>Krankheit ab 6. DJ:</strong> 180 Tage</li><li><strong>Schwangerschaft:</strong> ganze Zeit + 16 Wo</li><li><strong>Militär >11T:</strong> 4 Wo vor + nach</li><li>Während Sperrfrist = nichtig</li><li>Vor Sperrfrist = Frist ruht</li></ul></div>
-</div></div>
-</div>
 
 <div class="sec" id="arb_kart"><h1>Karteikarten Arbeitsrecht</h1><p class="sub"><span id="afcCount">50</span> Karten — klicke zum Umdrehen</p>
 <div class="fcc" id="afcc"></div>
