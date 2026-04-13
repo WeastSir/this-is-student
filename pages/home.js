@@ -76,6 +76,14 @@
       details: ['6 Kapitel', '59 Karten', 'Quiz & Glossar'],
       farbe: ['#b838e8', '#e84f38'],
       status: 'live'
+    {
+      id: 'sales',
+      name: 'Sales',
+      beschreibung: 'Verkaufsgespräche · Einwände · FAB · Planung · ABC-Analyse',
+      dozent: 'Christian Gottstein',
+      details: ['3 Kapitel', '50 Karten', 'Quiz & Glossar'],
+      farbe: ['#38b6e8', '#b838e8'],
+      status: 'live'
     },
 
     // Kurse in Arbeit (status: 'arbeit')
@@ -89,7 +97,6 @@
     { name: 'Medien', status: 'arbeit' },
     { name: 'Präsentationstechnik', status: 'arbeit' },
     { name: 'Qualitätsmanagement', status: 'arbeit' },
-    { name: 'Sales', status: 'arbeit' },
     { name: 'Sozialversicherungen', status: 'arbeit' },
     { name: 'Sustainability', status: 'arbeit' }
   ];
