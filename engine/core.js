@@ -646,6 +646,13 @@ function loadCourseModules(){
     }
   }
   setTimeout(initAbkz,500);
+  // Ensure only the active section is visible after injection
+  var active=document.querySelector('.sec.on');
+  if(active){
+    document.querySelectorAll('.sec').forEach(function(s){if(s!==active)s.classList.remove('on');});
+  } else {
+    go('home');
+  }
 }
 
 // Load courses after all scripts have loaded
