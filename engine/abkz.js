@@ -133,17 +133,6 @@ const ABKZ={
 'Preisbündelung':['Preisbündelung','Produkte als Paket verkaufen','Mehrere Leistungen als Paket zu einem Vorteilspreis. Reine Bündelung (nur als Paket) oder gemischte Bündelung (auch einzeln erhältlich). Ziel: Auslastung optimieren, wenig genutzte Leistungen fördern, Kundschaft ans «One Stop Shopping» binden.'],
 'Decoy-Effekt':['Decoy-Effekt','Köder-Effekt in der Preispsychologie','Eine dritte Option wird eingeführt, die eine der anderen attraktiver macht. Beispiel: Standard CHF 189, Komfort CHF 259, Deluxe CHF 289 → Komfort ist der «Köder» → meiste wählen Deluxe, weil nur CHF 30 mehr.'],
 'Anker-Effekt':['Anker-Effekt','Psychologische Preisverankerung','Der zuerst wahrgenommene Preis «verankert» sich im Kopf und beeinflusst die Beurteilung aller folgenden Preise. Taktik: Zuerst die teure Suite zeigen, dann das Standardzimmer → wirkt im Vergleich günstig.'],
-// Sales
-'RFP':['RFP','Request for Proposal','Elektronische Ausschreibung, mit der Unternehmen Hotelverträge verhandeln. Grosse Firmen nutzen Tools wie Lanyon oder Nexus. Fristen sind strikt einzuhalten.'],
-'TMC':['TMC','Travel Management Company','Spezialisiertes Reisebüro fuer Firmenreisen (z.B. Amex GBT, BCD Travel, CWT). Wickelt den gesamten Reiseeinkauf ab.'],
-'SMERF':['SMERF','Social, Military, Educational, Religious, Fraternal','Kategorisierung von Freizeitreisegruppen. Werden oft als Serien eingekauft.'],
-'FAB':['FAB','Feature-Advantage-Benefit','Nutzenargumentations-Technik: Merkmal (sachliche Eigenschaft) -> Vorteil (allgemeiner Nutzen) -> Nutzen (individueller Kundennutzen).'],
-'ASP':['ASP','Ansprechperson','Die richtige Kontaktperson auf Kundenseite. Bei Kaltakquise der erste Schritt.'],
-'LRA':['LRA','Last Room Availability','Garantie im Firmenvertrag, dass auch das letzte Zimmer zum vereinbarten Firmenpreis buchbar ist.'],
-'RN':['RN','Room Night','Logiernacht. Eine Zimmerbelegung fuer eine Nacht. Zentrale Messgrösse im Hotelverkauf.'],
-'Fam-Trip':['Fam-Trip','Familiarisation Trip','Kostenlose Studienreise fuer Reisebuero-Mitarbeitende, um das Angebot einer Destination kennenzulernen.'],
-'Implant':['Implant','Firmeneigenes Reisebuero','Reisebuero auf dem Firmengelaende, exklusiv fuer ein Unternehmen taetig.'],
-'Allotment':['Allotment','Zimmerkontingent','Festes Zimmerkontingent, das ein Hotel einem Tour Operator reserviert. Rueckgabefristen beachten!'],
 'Marketing-Mix':['Marketing-Mix','Kombination der Marketinginstrumente','Die optimale Kombination aller Marketinginstrumente zur Zielerreichung. Klassisch: 4 Ps (Product, Price, Place, Promotion). Erweitert für Dienstleistungen: 7 Ps (+ People, Process, Physical Evidence). Alle Ps müssen aufeinander abgestimmt sein (integriertes Marketing).'],
 'Marktsegmentierung':['Marktsegmentierung','Aufteilung des Gesamtmarktes in Zielgruppen','Gesamtmarkt in homogene Kaufgruppen aufteilen. Kriterien: demografisch (Alter, Einkommen), geografisch (Region), psychografisch (Lebensstil, Werte), verhaltensbezogen (Kaufmotive, Markentreue). Je genauer die Segmente, desto gezielter die Ansprache.'],
 'Positionierung':['Positionierung','Strategische Markenabgrenzung','Oberziel der Kommunikation: Wie hebt sich die Marke in den Köpfen der Kund:innen von der Konkurrenz ab? Anforderungen: relevant, konzentriert, klar abgegrenzt, zukunftsorientiert, flexibel, operationalisierbar. Darstellung: Positionierungskreuz.'],
@@ -154,6 +143,14 @@ const ABKZ={
 'PeNeKo':['PeNeKo','Personalnebenkosten','Indirekte Personalkosten: freiwillige Sozialbeiträge, Entgeltfortzahlung, Urlaubsgeld, Weihnachtsgeld, Aus- und Weiterbildungskosten. Kommen zu den direkten Personalkosten hinzu.'],
 'Assessment-Center':['Assessment-Center','Praxissimulationsverfahren zur Personalauswahl','Kombination von Tests, Interviews und Gruppenarbeiten zur umfassenden Beurteilung von Kandidaten. Sehr gründlich aber kostspielig. Zählt zu den T-Daten.'],
 'STAR':['STAR','Situation, Task, Action, Result','Verhaltensorientierte Interviewmethode aus den USA. Kandidaten schildern eine konkrete Situation, die Aufgabe, ihr Handeln und das Ergebnis. Variante des Verhaltensdreiecks.'],
+// === SALES ===
+'RFP':['RFP','Request for Proposal','Elektronische Ausschreibung für Hotelverträge. Grosse Unternehmen nutzen Tools wie Lanyon oder Nexus. Beginnt oft Mitte des Kalenderjahres für das Folgejahr. Exakte Einhaltung nötig — Abweichungen = Vertragsverlust.'],
+'TMC':['TMC','Travel Management Company','Spezialisiertes Firmenreisebüro, das Geschäftsreisen organisiert. Beispiele: Amex GBT, BCD Travel, CWT. Wird oft von Grossunternehmen beauftragt.'],
+'LRA':['LRA','Last Room Availability','Garantie, dass das letzte verfügbare Zimmer zum vereinbarten Firmenpreis (Corporate Rate) verkauft wird. Wichtige Vertragsklausel bei Corporate-Ratenverhandlungen.'],
+'FAB':['FAB','Feature – Advantage – Benefit','Nutzenargumentation im Verkauf: Merkmal (sachliche Produkteigenschaft) → Vorteil (allgemeiner Nutzen) → Nutzen (individueller Kundennutzen). Immer nur eine Kette pro Argumentation. Zentral: «Es wird nie das Produkt gekauft — es wird immer der Nutzen erworben.»'],
+'SMERF':['SMERF','Social, Military, Education, Religious, Fraternal','Bezeichnung für Freizeitreisegruppen. Werden vom Veranstalter oft als Serie eingekauft. Gleiche Prozesse wie Paketreisen für Individuelle.'],
+'Robinsonliste':['Robinsonliste','Sperrliste gegen unerwünschte Werbung','Privatpersonen auf der Robinsonliste dürfen nicht mit Telemarketing kontaktiert werden. Im aktiven Telefonverkauf unbedingt prüfen!'],
+'Kinesik':['Kinesik','Wissenschaft der Körpersprache','Nichtsprachlicher (nonverbaler) Teil der Kommunikation. Kann schwer «lügen», da viele Aspekte unbewusst ablaufen. Umfasst Gestik, Mimik, Körperhaltung, Blickkontakt, räumliches Verhalten.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;
