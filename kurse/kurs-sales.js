@@ -22,7 +22,7 @@ const courseConfig = {
 
 const courseHTML = `
 <!-- ÜBERSICHT -->
-<div class="sec on" id="sales">
+<div class="sec" id="sales">
 <div style="border-radius:24px;padding:36px 32px;margin-bottom:32px;background:linear-gradient(135deg,rgba(56,182,232,.06),rgba(184,56,232,.04));border:1px solid var(--bd);position:relative;overflow:hidden"><div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,rgba(56,182,232,.1),rgba(184,56,232,.08))"></div><div style="position:relative;z-index:1"><div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:8px">Semester 5 · Betriebswirtschaft</div><h1 style="font-size:32px;margin-bottom:8px">Sales</h1><p style="font-size:15px;color:var(--tx2)">Dozent: Christian Gottstein · SHL Schweizerische Hotelfachschule Luzern</p></div></div>
 <div class="hl">Durchgängiges Fallbeispiel: <strong>Hotel &amp; Restaurant «Bellevue»</strong> — 4-Sterne-Superior in Luzern, 120 Zimmer, 2 Restaurants, Wellness, 5 Tagungsräume. Familie Meier, 3. Generation. Sales-Team: <strong>Lisa Meier</strong> (DOS), <strong>Marc Brunner</strong> (Corporate &amp; MICE), <strong>Sophie Keller</strong> (Leisure &amp; Events).</div>
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Theorie · 3 Kapitel</div>
