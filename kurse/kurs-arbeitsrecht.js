@@ -6,13 +6,14 @@
 const courseConfig = {
   id: 'arb',
   name: 'Arbeitsrecht',
-  pages: ['arb','arb_quellen','arb_vertrag','arb_zeit','arb_pflichtAG','arb_pflichtAN','arb_kuend','arb_mutter','arb_lohn','arb_jugend','arb_rechnen','arb_mind','arb_kart','arb_quiz','arb_glossar'],
+  pages: ['arb','arb_quellen','arb_vertrag','arb_zeit','arb_pflichtAG','arb_pflichtAN','arb_kuend','arb_mutter','arb_lohn','arb_jugend','arb_rechnen','arb_lgav','arb_mind','arb_kart','arb_quiz','arb_glossar'],
   subNav: [
   {s:'arb',l:'Übersicht'},
   {s:'arb_quellen',l:'Quellen'},{s:'arb_vertrag',l:'Vertrag'},{s:'arb_zeit',l:'Arbeitszeit'},
   {s:'arb_pflichtAG',l:'AG-Pflichten'},{s:'arb_pflichtAN',l:'AN-Pflichten'},{s:'arb_kuend',l:'Kündigung'},
   {s:'arb_mutter',l:'Mutterschutz'},{s:'arb_lohn',l:'Lohn & Fortzahlung'},
   {s:'arb_jugend',l:'Jugendliche'},{s:'arb_rechnen',l:'Zeitrechnen'},
+  {s:'arb_lgav',l:'L-GAV Aufbau'},
   {s:'arb_mind',l:'Zusammenfassung'},{s:'arb_kart',l:'Karten'},{s:'arb_quiz',l:'Quiz'},{s:'arb_glossar',l:'Glossar'}
 ],
   navButton: '<button class="nl nl-main" data-s="arb" onclick="go(\'arb\')" style="display:none">Arbeitsrecht</button>'
@@ -214,6 +215,167 @@ const courseHTML = `<!-- ============= ARBEITSRECHT ============= -->
 <div class="tl-item"><div class="tl-num tl-num-b">8</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Zusammenfassung — alle Formeln</div><div class="tl-merksatz">«Die wichtigsten Formeln auf einen Blick.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c ca" style="text-align:center"><div class="ct2">Stundenlohn</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">Monatslohn ÷ 182</div></div><div class="c cm" style="text-align:center"><div class="ct2">Sollzeit / Monat</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">KT ÷ 7 × 42</div></div><div class="c cg" style="text-align:center"><div class="ct2">Pro Kalendertag</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">42 ÷ 7 = 6h</div></div><div class="c cp" style="text-align:center"><div class="ct2">Ferien pro Tag</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">Lohn × 1/30</div></div><div class="c cr" style="text-align:center"><div class="ct2">Ruhetag / Feiertag</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">Lohn × 1/22</div></div><div class="c cm" style="text-align:center"><div class="ct2">Feiertag in Stunden</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">42 ÷ 5 = 8,4h</div></div><div class="c ca" style="text-align:center"><div class="ct2">Ferienanspruch</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">Tage ÷ 365 × 35</div></div><div class="c cg" style="text-align:center"><div class="ct2">Ruhetage-Anspruch</div><div class="cd" style="font-size:16px;font-weight:700;margin-top:4px">KT ÷ 7 × 2</div></div></div></div></div>
 </div>
 </div>
+
+
+<!-- L-GAV AUFBAU -->
+<div class="sec" id="arb_lgav">
+<h1>L-GAV — Aufbau &amp; Inhalt</h1>
+<p class="sub">Landes-Gesamtarbeitsvertrag des Gastgewerbes · 7 Abschnitte · 38 Artikel + Anhang</p>
+<div class="hl"><strong>Was ist der L-GAV?</strong> Allgemeinverbindlicher Gesamtarbeitsvertrag für die gesamte Schweizer Gastro- und Hotelbranche. Abgeschlossen zwischen <strong>Hotel&amp;Gastro Union, Unia, Syna</strong> (AN) und <strong>GastroSuisse, HotellerieSuisse, SCA</strong> (AG). Seit 1998 vom Bundesrat für allgemeinverbindlich erklärt → gilt faktisch als Gesetz für alle Betriebe.<br><br><strong>Wo finde ich was?</strong> Probezeit → Art. 5 · Kündigung → Art. 6 · Lohn → Art. 8–10 · 13. ML → Art. 12 · Arbeitszeit → Art. 15 · Ruhetage → Art. 16 · Ferien → Art. 17 · Krankheit → Art. 22 · Schwangerschaft → Art. 23–24 · Haftung → Art. 31</div>
+<div style="display:flex;gap:8px;margin:18px 0"><button style="font-size:11px;padding:6px 14px;border-radius:980px;border:1px solid var(--bd);background:var(--s)" onclick="document.querySelectorAll('#arb_lgav .tl-item').forEach(i=>i.classList.add('open'))">Alles aufklappen</button><button style="font-size:11px;padding:6px 14px;border-radius:980px;border:1px solid var(--bd);background:var(--s)" onclick="document.querySelectorAll('#arb_lgav .tl-item').forEach(i=>i.classList.remove('open'))">Alles schliessen</button></div>
+<div class="tl">
+
+<div class="tl-item"><div class="tl-num tl-num-bl">I</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">I — Anwendbarkeit und Vertragsdauer (Art. 1–3)</div><div class="tl-merksatz">Für wen gilt der L-GAV? Ausnahmen, Inkrafttreten</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 1 — Geltungsbereich <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Gilt unmittelbar für alle Betriebe, die gastgewerbliche Leistungen anbieten sowie deren Arbeitnehmer (Teilzeitarbeitnehmer sowie Aushilfen inbegriffen). Als gastgewerbliche Betriebe gelten alle Betriebe, die gegen Entgelt Personen beherbergen oder Speisen oder Getränke zum Genuss an Ort und Stelle abgeben. Gastgewerblichen Betrieben gleichgestellt sind Betriebe, die fertig zubereitete Speisen ausliefern. Gewinnorientierung ist nicht vorausgesetzt.<br><b style="font-style:normal">Ziff. 2:</b> Dieser Vertrag gilt für die ganze Schweiz.</div>
+<strong>Beherbergung:</strong> Hotels, Gasthöfe, Pensionen, Hostels, Jugendherbergen, Campingplätze, Berghütten, Agrotourismus.<br><strong>Gastronomie:</strong> Restaurants, Cafés, Bars, Clubs, Kantinen, Take-Aways, Food Trucks, Catering, Theaterbars, Stände an Events.<br><strong>Mischbetriebe:</strong> L-GAV gilt für den gastgewerblichen Teil (z.B. Restaurant in Altersheim).<br><strong>Teilzeit:</strong> Gleiche Rechte wie Vollzeit, proportional zum Pensum.<br><a href="https://l-gav.ch/vertrag-aktuell/i-anwendbarkeit-und-vertragsdauer/art-1-geltungsbereich" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 1 auf l-gav.ch</a><br><br>
+<h3>Art. 2 — Nichtanwendbarkeit <span class="b bgreen">AVE</span></h3>
+<strong>Nicht unterstellt:</strong> Familienmitglieder des AG · Personen mit <strong>höherer leitender Tätigkeit</strong> (Art. 9 ArGV 1) — Stellenbezeichnung allein reicht nicht! · Betriebsleiter, Direktoren, Geranten · Lernende (separate Lehrlingsvereinbarung) · Restaurationsbetriebe in Spitälern/Heimen (nicht öffentlich zugänglich + mind. gleichwertige Bedingungen)<br><a href="https://l-gav.ch/vertrag-aktuell/i-anwendbarkeit-und-vertragsdauer/art-2-nichtanwendbarkeit" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 2 auf l-gav.ch</a><br><br>
+<h3>Art. 3 — Inkrafttreten und Dauer</h3>
+In Kraft seit <strong>1. Oktober 1998</strong>. Kündigung mit 6-monatiger Frist per eingeschriebenem Brief. Aktuelle Fassung: Stand 1.1.2017. Letzte AVE-Wiederinkraftsetzung: 1.3.2026.<br><a href="https://l-gav.ch/vertrag-aktuell/i-anwendbarkeit-und-vertragsdauer/art-3-inkrafttreten-und-dauer" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 3 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">II</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">II — Beginn und Beendigung des Vertragsverhältnisses (Art. 4–7)</div><div class="tl-merksatz">Anstellung, Probezeit, Kündigung, Kündigungsschutz während Ferien</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 4 — Anstellung <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Die Anstellung erfolgt aufgrund eines Einzelarbeitsvertrages. Es wird empfohlen, den Arbeitsvertrag vor Stellenantritt schriftlich auszufertigen. Der Mitarbeiter kann jederzeit die schriftliche Ausfertigung des Arbeitsvertrages verlangen.<br><b style="font-style:normal">Ziff. 2:</b> Schriftform ist Gültigkeitserfordernis bei: Art. 5 Ziff. 1+2 (Probezeit), Art. 6 Ziff. 3 (befristete Verträge), Art. 14 Ziff. 1 (Lohnauszahlung), Art. 15 Ziff. 7 (Überstundenentschädigung), Art. 29 Ziff. 1 (Unterkunft).<br><b style="font-style:normal">Ziff. 3:</b> Für Saisonarbeitsverträge ist der Anfang der Stellenantritt. Das Ende ist möglichst mit Datum festzulegen.</div>
+<div class="merksatz">Formfreiheit (Art. 320 OR) — aber: Abweichungen vom L-GAV brauchen zwingend Schriftform! Ohne schriftliche Vereinbarung gelten die L-GAV-Standards.</div>
+<a href="https://l-gav.ch/vertrag-aktuell/ii-beginn-und-beendigung-des-vertragsverhaeltnisses/art-4-anstellung" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 4 auf l-gav.ch</a><br><br>
+<h3>Art. 5 — Probezeit <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Die Probezeit beträgt 14 Tage. Schriftlich kann eine andere Dauer vereinbart werden. Eine Verlängerung ist jedoch höchstens bis zu 3 Monaten zulässig.<br><b style="font-style:normal">Ziff. 2:</b> Während der Probezeit kann das Arbeitsverhältnis mit einer Frist von 3 Tagen auf Ende eines beliebigen Tages gekündigt werden.</div>
+<strong>14 Kalendertage</strong> Standard · Max. <strong>3 Monate</strong> schriftlich · Kündigung <strong>3 Tage</strong> auf beliebigen Wochentag · Verlängerung bei Krankheit/Unfall, <strong>nicht</strong> bei Ruhetagen · Sperrfristen erst <strong>nach</strong> Probezeit<br>
+<div class="merksatz">Kündigung ist empfangsbedürftig — nicht der Poststempel zählt, sondern wann die Kündigung beim Empfänger ankommt!</div>
+<a href="https://l-gav.ch/vertrag-aktuell/ii-beginn-und-beendigung-des-vertragsverhaeltnisses/art-5-probezeit" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 5 auf l-gav.ch</a><br><br>
+<h3>Art. 6 — Kündigung <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Das Arbeitsverhältnis kann im ersten bis zum fünften Arbeitsjahr mit einer Kündigungsfrist von einem Monat, ab dem sechsten Arbeitsjahr mit einer Frist von zwei Monaten, je auf Ende des Monats, gekündigt werden.<br><b style="font-style:normal">Ziff. 2:</b> Die Kündigung muss spätestens am letzten Tag vor Beginn der Kündigungsfrist dem Vertragspartner zur Kenntnis gebracht werden.<br><b style="font-style:normal">Ziff. 3:</b> Die Kündbarkeit befristeter Verträge muss schriftlich vereinbart werden. Andernfalls gelten sie als unkündbar.</div>
+• 1.–5. DJ: <strong>1 Monat</strong> auf Ende Monat · Ab 6. DJ: <strong>2 Monate</strong> · Empfangsbedürftig · Befristete Verträge ohne schriftliche Kündbarkeit = <strong>unkündbar</strong><br>
+<a href="https://l-gav.ch/vertrag-aktuell/ii-beginn-und-beendigung-des-vertragsverhaeltnisses/art-6-kuendigung" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 6 auf l-gav.ch</a><br><br>
+<h3>Art. 7 — Kündigungsschutz während der vertraglichen Ferien <span class="b bgreen">AVE</span></h3>
+Kündigung während <strong>vertraglichen Ferien</strong> ist <strong>nichtig</strong>. AG muss nach Ende der Ferien erneut kündigen.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/ii-beginn-und-beendigung-des-vertragsverhaeltnisses/art-7-kuendigungsschutz-waehrend-der-vertraglichen-ferien" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 7 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">III</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">III — Lohn (Art. 8–14)</div><div class="tl-merksatz">Bruttolohn, Lohnsystem, Mindestlöhne, Praktikanten, 13. ML, Abzüge, Auszahlung</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 8 — Bruttolohn <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic">Entlöhnungsgrundlage = AHV-Bruttolohn. Umfasst alle Umsatzanteile, Leistungsprämien, 13. ML. Nicht bezogene Ruhe-/Feiertage: 1/22 des Bruttolohnes.</div>
+<strong>Stundenlohn:</strong> Monatslohn ÷ <strong>182h</strong> (bei 42h). Formel: 52 ÷ 12 = 4,33 × 42 = 182h. <strong>Teillohn:</strong> Monatslohn ÷ 30 × Tage.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-8-bruttolohn" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 8 auf l-gav.ch</a><br><br>
+<h3>Art. 9 — Lohnsystem <span class="b bgreen">AVE</span></h3>
+Jedes Lohnsystem zulässig (Fest/Umsatz/Kombi). Mindestlohn darf <strong>nie unterschritten</strong> werden. <strong>Trinkgeld darf nie als Lohn vergolten werden</strong> — gehört dem AN!<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-9-lohnsystem" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 9 auf l-gav.ch</a><br><br>
+<h3>Art. 10 — Mindestlöhne <span class="b bgreen">AVE</span></h3>
+<strong>4 Stufen:</strong> I (ungelernt) · II (EBA/Einführung Service) · III a–d (EFZ, nach Verantwortung) · IV (BP/HFP). Entscheidend = tatsächliche Funktion, <strong>nicht Stellenbezeichnung</strong>! Kürzung: –10% erste 6 Mt., –20% unter 17 J., nicht kumulierbar.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-10-mindestloehne" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 10 auf l-gav.ch</a><br><br>
+<h3>Art. 11 — Mindestlohn für Praktikanten <span class="b bgreen">AVE</span></h3>
+Studierende anerkannter Fachschulen. Schulbeiträge dürfen <strong>nicht</strong> mit Lohn verrechnet werden.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-11-mindestlohn-fuer-praktikanten" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 11 auf l-gav.ch</a><br><br>
+<h3>Art. 12 — 13. Monatslohn <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic">Anspruch ab Beginn (wenn Probezeit bestanden). Entfällt bei Auflösung während Probezeit. Für unvollständiges Jahr anteilsmässig. Basis = Ø Bruttolohn. Auszahlung spätestens mit Dezemberlohn oder bei Austritt.</div>
+Bei Stundenlohn: <strong>+8,33%</strong>. Pro rata bei Austritt.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-12-13-monatslohn" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 12 auf l-gav.ch</a><br><br>
+<h3>Art. 13 — Lohnabzüge <span class="b bgreen">AVE</span></h3>
+Zwingend: AHV/IV/EO, ALV, NBU, BVG (AN-Anteil). Bildungs-/Vollzugskostenbeitrag (Art. 35). Weitere nur schriftlich.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-13-lohnabzuege" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 13 auf l-gav.ch</a><br><br>
+<h3>Art. 14 — Lohnauszahlung <span class="b bgreen">AVE</span></h3>
+Spätestens am letzten Tag des Monats. Bei Umsatzlohn: Akonto mind. <strong>80%</strong> bis 27., Rest bis 6. des Folgemonats. Monatliche <strong>Lohnabrechnung</strong> Pflicht.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iii-lohn/art-14-lohnauszahlung" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 14 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">IV</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">IV — Arbeitszeit und Freizeit (Art. 15–21)</div><div class="tl-merksatz">Arbeitszeit/Überstunden, Ruhetage, Ferien, Feiertage, Bildungsurlaub, Arbeitsfreie Tage, Arbeitsplan</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 15 — Arbeitszeit / Überstunden <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Wöchentliche Arbeitszeit höchstens: 42h (Jahresbetrieb) · 43,5h (Saisonbetrieb) · 45h (Kleinbetrieb ≤4 MA).<br><b style="font-style:normal">Ziff. 2:</b> Essenszeit ist nicht Arbeitszeit (mind. 30 Min.). Muss sich MA zur Verfügung halten → gilt als AZ.<br><b style="font-style:normal">Ziff. 4:</b> Überstunden sind innert nützlicher Frist durch Freizeit zu kompensieren oder zu bezahlen.<br><b style="font-style:normal">Ziff. 5:</b> Überstunden zu 100% wenn: AZ gemäss Art. 21 erfasst + Saldo monatlich kommuniziert + Auszahlung mit letzter Lohnzahlung. Über 200h zwingend mit Folgemonat auszahlen.<br><b style="font-style:normal">Ziff. 6:</b> Zwingend 125% wenn eine der 3 Voraussetzungen von Ziff. 5 nicht erfüllt.<br><b style="font-style:normal">Ziff. 7:</b> Ab Bruttolohn ≥ CHF 6750.– (ohne 13. ML) kann ÜSt-Entschädigung schriftlich frei vereinbart werden.<br><b style="font-style:normal">Ziff. 8:</b> Lohnabrechnungen mind. 10 Jahre aufbewahren.</div>
+<div class="merksatz">Überstunden vs. Überzeit: Überstunden = über vertragliche AZ (z.B. über 42h) → 100% oder 125%. Überzeit = über gesetzliche 50h (ArG) → IMMER zwingend 125%!</div>
+Max. Zeitspanne Arbeitstag: <strong>14h</strong>. Nachtruhe: <strong>11h</strong>, 1×/Wo auf 8h reduzierbar. Sollarbeitszeit: Kalendertage ÷ 7 × AZ.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-15-arbeitszeit-/-ueberstunden" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 15 auf l-gav.ch</a><br><br>
+<h3>Art. 16 — Ruhetage <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> 2 Ruhetage pro Woche, mind. 1 ganzer. <b style="font-style:normal">Ziff. 2:</b> Ganzer Ruhetag = mind. 2 aufeinanderfolgende Kalendertage (6–20 Uhr frei). <b style="font-style:normal">Ziff. 3:</b> Halber Ruhetag = ab 12 Uhr frei oder bis 14:30, max. 5h Arbeit. <b style="font-style:normal">Ziff. 4:</b> Nicht bezogene Ruhetage: 1/22 Bruttolohn — zusätzlich zur ÜSt-Entschädigung!</div>
+<strong>Ganzer:</strong> 35h frei · <strong>Halber:</strong> 17h frei · Kompensation: Jahresbetrieb 4 Wo, Saison 12 Wo.<br>
+<div class="merksatz">Ruhetags-Entschädigung kommt ZUSÄTZLICH zur Überstundenentschädigung — nicht stattdessen!</div>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-16-ruhetage" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 16 auf l-gav.ch</a><br><br>
+<h3>Art. 17 — Ferien <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> 5 Wochen = 35 Kalendertage. Mind. 2 Wochen zusammenhängend. <b style="font-style:normal">Ziff. 2:</b> Nicht bezogene Ferientage: 1/30 Bruttolohn. <b style="font-style:normal">Ziff. 3:</b> Stundenlohn-Zuschlag: 10,65%.</div>
+<strong>2,92 Tage/Monat.</strong> Ferienkürzung: Verschuldet ab 1. vollem Mt. je 1/12 · Unverschuldet ab 2. Mt. · Schwangerschaft ab 3. Mt.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-17-ferien" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 17 auf l-gav.ch</a><br><br>
+<h3>Art. 18 — Feiertage <span class="b bgreen">AVE</span></h3>
+<strong>6 bezahlte Feiertage/Jahr</strong> = 0,5/Monat. Wert: 8,4h (42÷5). Nicht bezogen: <strong>1/22 Bruttolohn</strong>. Stundenlohn: <strong>+2,27%</strong>.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-18-feiertage" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 18 auf l-gav.ch</a><br><br>
+<h3>Art. 19 — Bildungsurlaub <span class="b bgreen">AVE</span></h3>
+Anspruch auf bezahlten Bildungsurlaub bei bewilligter Weiterbildung. Finanziert über Bildungsbeiträge (Art. 35).<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-19-bildungsurlaub" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 19 auf l-gav.ch</a><br><br>
+<h3>Art. 20 — Bezahlte arbeitsfreie Tage <span class="b bgreen">AVE</span></h3>
+Eigene Hochzeit: <strong>3 Tage</strong> · Geburt Kind: <strong>1 Tag</strong> · Tod Ehegatte/Kind/Eltern: <strong>3 Tage</strong> · Tod Geschwister/Schwiegereltern: <strong>1 Tag</strong> · Rekrutierung: effektive Dauer · Umzug: <strong>1 Tag</strong>.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-20-bezahlte-arbeitsfreie-tage" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 20 auf l-gav.ch</a><br><br>
+<h3>Art. 21 — Arbeitsplan / Arbeitszeiterfassung / Arbeitszeitkontrolle <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Ziff. 1:</b> Jahresbetrieb: 2 Wochen im Voraus für 2 Wochen. Saisonbetrieb: 1 Woche für 1 Woche. MA beizuziehen.<br><b style="font-style:normal">Ziff. 2:</b> AG erfasst Arbeitszeit. AN kontrolliert und signiert monatlich.</div>
+<div class="merksatz">Ohne korrekte Zeiterfassung gemäss Art. 21 → alle Überstunden zwingend zu 125% statt 100%! Korrekte Erfassung spart dem AG bares Geld.</div>
+<a href="https://l-gav.ch/vertrag-aktuell/iv-arbeitszeit-und-freizeit/art-21-arbeitsplan-/-arbeitszeiterfassung-/-arbeitszeitkontrolle" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 21 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-p">V</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">V — Lohnersatz und Sozialversicherungen (Art. 22–28)</div><div class="tl-merksatz">Krankheit, Krankengeld, Schwangerschaft/Mutterschaft, Unfall, Arztzeugnis, BVG, Militär</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 22 — Lohn bei Verhinderung des Mitarbeiters <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic">Lohnfortzahlung bei unverschuldeter Verhinderung. Ohne Taggeldversicherung: Berner Skala. Wartefrist: AG zahlt erste 2 Tage 88%.</div>
+Hat AG <strong>keine genügende Versicherung</strong> → muss er Leistungen <strong>selbst</strong> erbringen!<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-22-lohn-bei-verhinderung-des-mitarbeiters" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 22 auf l-gav.ch</a><br><br>
+<h3>Art. 23 — Krankengeldversicherung / Schwangerschaft <span class="b bgreen">AVE</span></h3>
+<div style="background:var(--s2);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--tx2);line-height:1.75;margin:8px 0;border-left:3px solid var(--bl);font-style:italic"><b style="font-style:normal">Pflicht für AG:</b> Krankentaggeldversicherung abschliessen! 720 Tage innert 900. 80% Bruttolohn. Prämie hälftig. Wartefrist max. 2 Tage. Vorbehalte max. 5 Jahre.</div>
+Gilt sinngemäss auch für <strong>Schwangerschaft</strong>.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-23-krankengeldversicherung-/-schwangerschaft" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 23 auf l-gav.ch</a><br><br>
+<h3>Art. 24 — Schwangerschaft / Mutterschaft <span class="b bgreen">AVE</span></h3>
+<strong>14 Wochen = 98 Tage</strong> Mutterschaftsurlaub. <strong>80%</strong> über EO. Kündigungsschutz: Schwangerschaft + <strong>16 Wochen</strong> nach Geburt. Stillzeit = Arbeitszeit.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-24-schwangerschaft-/-mutterschaft" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 24 auf l-gav.ch</a><br><br>
+<h3>Art. 25 — Unfallversicherung <span class="b bgreen">AVE</span></h3>
+Obligatorisch (UVG). BU-Prämie = <strong>AG</strong>. NBU = <strong>AN</strong> (ab 8h/Wo). Erste 2 Tage: AG <strong>88%</strong>. Ab 3. Tag: Versicherung <strong>80%</strong>.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-25-unfallversicherung" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 25 auf l-gav.ch</a><br><br>
+<h3>Art. 26 — Arztzeugnis <span class="b bgreen">AVE</span></h3>
+Innert <strong>Wochenfrist</strong> nach Ausstellung zustellen. AG kann <strong>Vertrauensarzt</strong> anordnen.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-26-arztzeugnis" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 26 auf l-gav.ch</a><br><br>
+<h3>Art. 27 — Berufliche Vorsorge <span class="b bgreen">AVE</span></h3>
+Bis 24 J.: <strong>1%</strong> (nur Risiko). Ab 25 J.: <strong>14%</strong> koord. Lohn. AG kann max. Hälfte dem AN abziehen.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-27-berufliche-vorsorge" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 27 auf l-gav.ch</a><br><br>
+<h3>Art. 28 — Militär- und Zivildienst, Zivilschutz <span class="b bgreen">AVE</span></h3>
+Lohnfortzahlung über <strong>EO</strong>. Art. 22, 24, 25 gelten sinngemäss.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/v-lohnersatz-und-sozialversicherungen/art-28-militaer-und-zivildienst-zivilschutz" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 28 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-r">VI</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">VI — Allgemeine Bestimmungen (Art. 29–33)</div><div class="tl-merksatz">Unterkunft/Verpflegung, Berufskleider, Haftung, Anrechenbarkeit, Abweichungen</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 29 — Unterkunft und Verpflegung <span class="b bgreen">AVE</span></h3>
+Naturallohnabzüge gemäss AHV-Ansätzen (Frühstück CHF 3.50, Mittag/Abend CHF 10.–, Unterkunft CHF 11.50/Tag). Schriftliche Vereinbarung nötig.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vi-allgemeine-bestimmungen/art-29-unterkunft-und-verpflegung" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 29 auf l-gav.ch</a><br><br>
+<h3>Art. 30 — Berufswäsche, Berufskleider, Berufswerkzeuge <span class="b bgreen">AVE</span></h3>
+AG stellt <strong>kostenlos</strong> zur Verfügung + Reinigung. AN behandelt sorgfältig, gibt bei Austritt zurück.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vi-allgemeine-bestimmungen/art-30-berufswaesche-berufskleider-berufswerkzeuge" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 30 auf l-gav.ch</a><br><br>
+<h3>Art. 31 — Verhalten und Haftung des Mitarbeiters <span class="b bgreen">AVE</span></h3>
+Haftung nur bei <strong>bekanntem Verursacher</strong>. <strong>Kollektive Haftung unmöglich!</strong> Betriebsrisiko = AG-Sache. Geschirr kaputt = Berufsrisiko.<br>
+<div class="merksatz">Ganze Teams für Kassenverluste haftbar machen ist verboten (Ziff. 2 Abs. 3). Nur wer nachweislich den Schaden verursacht hat, kann haftbar gemacht werden.</div>
+<a href="https://l-gav.ch/vertrag-aktuell/vi-allgemeine-bestimmungen/art-31-verhalten-und-haftung-des-mitarbeiters" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 31 auf l-gav.ch</a><br><br>
+<h3>Art. 32 — Anrechenbarkeit von Arbeitsperioden <span class="b bgreen">AVE</span></h3>
+Frühere Perioden beim <strong>gleichen AG</strong> anrechenbar für: Kündigungsfristen, Lohnfortzahlung, Sperrfristen. Unterbruch < 1 Jahr.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vi-allgemeine-bestimmungen/art-32-anrechenbarkeit-von-arbeitsperioden" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 32 auf l-gav.ch</a><br><br>
+<h3>Art. 33 — Abweichende Vereinbarungen <span class="b bgreen">AVE</span></h3>
+Abweichungen nur <strong>zugunsten AN</strong>. Schlechtere Bedingungen = <strong>nichtig</strong>. «Per Saldo aller Ansprüche» = rechtlich nicht verbindlich (Art. 341 OR).<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vi-allgemeine-bestimmungen/art-33-abweichende-vereinbarungen" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 33 auf l-gav.ch</a>
+</div></div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-x">VII</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">VII — Formelle Bestimmungen (Art. 34–38)</div><div class="tl-merksatz">Vertragsanpassung, Vollzug, AVE, Friedenspflicht, Datenschutz</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">
+<h3>Art. 34 — Vertragsanpassung</h3>
+Anpassung durch Vertragsparteien gemeinsam. Änderungen dem Bundesrat zur AVE vorlegen.<br><br>
+<h3>Art. 35 — Vertragsvollzug <span class="b bgreen">AVE</span></h3>
+<strong>Aufsichtskommission:</strong> Paritätisch (AG + AN), oberstes Organ. <strong>Kontrollstelle:</strong> Prüft Einhaltung, Betriebskontrollen, Konventionalstrafen + Nachzahlungen. <strong>Bildungs-/Vollzugskostenbeiträge:</strong> AG und AN zahlen je monatlich.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vii-formelle-bestimmungen/art-35-vertragsvollzug" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 35 auf l-gav.ch</a><br><br>
+<h3>Art. 36 — Allgemeinverbindlicherklärung</h3>
+Antrag beim <strong>Bundesrat</strong> → L-GAV gilt für <strong>alle</strong> Betriebe, auch Nichtmitglieder.<br><br>
+<h3>Art. 37 — Schlussbestimmungen</h3>
+<div class="merksatz">Ziff. 2 — Friedenspflicht: Kein Streik während Vertragsdauer! AG bekommt Planungssicherheit, AN bekommt Mindestschutz. Zentrales Element des GAV-Systems.</div>
+<a href="https://l-gav.ch/vertrag-aktuell/vii-formelle-bestimmungen/art-37-schlussbestimmungen" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 37 auf l-gav.ch</a><br><br>
+<h3>Art. 38 — Datenschutz</h3>
+Kontrollstelle und Aufsichtskommission an DSG gebunden.<br>
+<a href="https://l-gav.ch/vertrag-aktuell/vii-formelle-bestimmungen/art-37-schlussbestimmungen-1" target="_blank" style="color:var(--bl);font-size:12px">→ Art. 38 auf l-gav.ch</a>
+</div></div></div>
+
+</div>
+
+<div class="hl" style="margin-top:24px"><strong>Stundenlohn-Zuschläge (alle 3 zusammen!):</strong> Ferienzuschlag <strong>+10,65%</strong> · Feiertagszuschlag <strong>+2,27%</strong> · 13. Monatslohn <strong>+8,33%</strong><br><br><strong>Quelle:</strong> <a href="https://l-gav.ch/vertrag-aktuell" target="_blank" style="color:var(--bl)">l-gav.ch/vertrag-aktuell</a> — Alle Artikel mit offiziellem Kommentar</div>
+</div>
+
 
 <div class="sec" id="arb_mind"><h1>Zusammenfassung Arbeitsrecht</h1><p class="sub">Visuelle Übersichten</p>
 <h2>Rechtsquellen — Drei Säulen</h2>
