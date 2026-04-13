@@ -76,6 +76,7 @@
       details: ['6 Kapitel', '59 Karten', 'Quiz & Glossar'],
       farbe: ['#b838e8', '#e84f38'],
       status: 'live'
+    },
     {
       id: 'sales',
       name: 'Sales',
