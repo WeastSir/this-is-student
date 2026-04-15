@@ -5,15 +5,13 @@
 // Course config
 const courseConfig = {
   id: 'recht2',
-  name: 'Recht 2 — SchKG & Gesellschaftsrecht',
-  pages: ['grund','einl','ablauf','pfand','pvw','konk','sich','gesr','hr','gmbh','ag','rechtsg','ueb','mind','kart','quiz','glossar','recht2'],
+  name: 'Recht 2 — SchKG',
+  pages: ['grund','einl','ablauf','pfand','pvw','konk','sich','schkg_ueb','mind','kart','quiz','glossar','recht2'],
   subNav: [
   {s:'recht2',l:'Übersicht'},
   {s:'grund',l:'Grundlagen'},{s:'einl',l:'Einleitung'},{s:'ablauf',l:'Ablauf'},{s:'pfand',l:'Pfändung'},
   {s:'pvw',l:'Pfandverwertung'},{s:'konk',l:'Konkurs'},{s:'sich',l:'Sicherung'},
-  {s:'gesr',l:'Gesellschaftsrecht'},{s:'hr',l:'HR & Firma'},{s:'gmbh',l:'GmbH'},{s:'ag',l:'AG'},{s:'rechtsg',l:'Rechtsgemeinsch.'},
-  {s:'ueb',l:'Übungen'},
-  {s:'mind',l:'Zusammenfassung'},{s:'kart',l:'Karten'},{s:'quiz',l:'Quiz'},{s:'glossar',l:'Glossar'}
+  {s:'schkg_ueb',l:'Übungen'},{s:'mind',l:'Zusammenfassung'},{s:'kart',l:'Karten'},{s:'quiz',l:'Quiz'},{s:'glossar',l:'Glossar'}
 ],
   navButton: '<button class="nl nl-main" data-s="recht2" onclick="go(\'recht2\')" style="display:none">Recht 2</button>'
 };
@@ -25,12 +23,12 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,rgba(232,86,122,.1),rgba(175,82,222,.08))"></div>
 <div style="position:relative;z-index:1">
 <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:8px">Recht 2</div>
-<h1 style="font-size:32px;letter-spacing:-.6px;margin-bottom:8px">Schuldbetreibung &amp; Konkurs · Gesellschaftsrecht</h1>
-<p style="font-size:15px;color:var(--tx2);margin-bottom:0">Dozent: Olivier Dollé · SchKG + Gesellschaftsformen komplett</p>
+<h1 style="font-size:32px;letter-spacing:-.6px;margin-bottom:8px">Schuldbetreibung &amp; Konkurs</h1>
+<p style="font-size:15px;color:var(--tx2);margin-bottom:0">Dozent: Olivier Dollé · SchKG komplett</p>
 </div>
 </div>
 
-<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">SchKG · 7 Kapitel</div>
+<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Theorie · 7 Kapitel</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:36px">
 <div class="c ck" onclick="go('grund')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
 <div style="width:32px;height:32px;border-radius:10px;background:var(--al);color:var(--ac);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</div>
@@ -62,50 +60,22 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div>
 </div>
 
-<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin:28px 0 14px">Gesellschaftsrecht · 5 Kapitel</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:36px">
-<div class="c ck" onclick="go('gesr')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">8</div>
-<div><div class="ct2">Einführung &amp; Übersicht</div><div class="cd">Gesellschaftsformen, jur. Person, Organe</div></div>
-</div>
-<div class="c ck" onclick="go('hr')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">9</div>
-<div><div class="ct2">Handelsregister &amp; Firma</div><div class="cd">HR-Eintrag, Firma, Revisionspflicht</div></div>
-</div>
-<div class="c ck" onclick="go('rechtsg')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--aml);color:var(--am);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">10</div>
-<div><div class="ct2">Einzelunternehmung &amp; Rechtsgemeinschaften</div><div class="cd">eG, KlG, KmG, Einzelfirma</div></div>
-</div>
-<div class="c ck" onclick="go('gmbh')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--pl);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">11</div>
-<div><div class="ct2">GmbH</div><div class="cd">Gründung, Organe, Haftung, Übertragung</div></div>
-</div>
-<div class="c ck" onclick="go('ag')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--rl);color:var(--r);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">12</div>
-<div><div class="ct2">Aktiengesellschaft</div><div class="cd">Aktien, VR, GV, Kapitalschutz</div></div>
-</div>
-</div>
-
-<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Übungen</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:36px">
-<div class="c ck" onclick="go('ueb')" style="padding:20px 22px;display:flex;gap:14px;align-items:flex-start">
-<div style="width:32px;height:32px;border-radius:10px;background:var(--s2);color:var(--tx2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">✍</div>
-<div><div class="ct2">Prüfungsübungen</div><div class="cd">Aufgaben zu SchKG &amp; Gesellschaftsrecht</div></div>
-</div>
-</div>
-
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px">
+<div class="c ck" onclick="go('schkg_ueb')" style="text-align:center;padding:24px 16px">
+<div style="font-size:20px;margin-bottom:6px">✍</div>
+<div class="ct2">Übungen</div><div class="cd">Mit Antwort-Toggle</div>
+</div>
 <div class="c ck" onclick="go('mind')" style="text-align:center;padding:24px 16px">
-<div style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">11</div>
+<div style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">6</div>
 <div class="ct2">Zusammenfassung</div><div class="cd">Visuelle Übersichten</div>
 </div>
 <div class="c ck" onclick="go('kart')" style="text-align:center;padding:24px 16px">
-<div id="ltSchkgCards" style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">83</div>
+<div id="ltSchkgCards" style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">50</div>
 <div class="ct2">Karteikarten</div><div class="cd">Klicken &amp; repetieren</div>
 </div>
 <div class="c ck" onclick="go('quiz')" style="text-align:center;padding:24px 16px">
-<div id="ltSchkgQuiz" style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">83</div>
+<div id="ltSchkgQuiz" style="font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">50</div>
 <div class="ct2">Quiz</div><div class="cd">Mit Lernfortschritt</div>
 </div>
 <div class="c ck" onclick="go('glossar')" style="text-align:center;padding:24px 16px">
@@ -116,6 +86,7 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div>
 
 <div class="sec" id="grund"><h1>Grundlagen &amp; Organisation</h1><p class="sub">Zweck, Betreibungsarten, Betreibungsort, Fristen, Schonzeiten</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können Zweck und Funktionsweise des SchKG erläutern<br>• Sie können die verschiedenen Betreibungsarten und deren Zuordnung erklären<br>• Sie können Betreibungsort, Fristen und Schonzeiten korrekt anwenden</div>
 <div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 <div class="tl">
 <div class="tl-item"><div class="tl-num tl-num-b">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Zweck des SchKG</div><div class="tl-merksatz">«Recht haben ist nicht Recht bekommen — dafür braucht es das SchKG.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body"><strong>Recht haben ≠ Recht durchsetzen.</strong> Das SchKG dient der zwangsweisen Eintreibung von <strong>Geldforderungen</strong> mithilfe des Staates (Betreibungsorgane + Gerichte). Für nicht-monetäre Ansprüche gilt die ZPO. Vollstreckung nur gegen Vermögen, nie gegen die Person. Bundesgesetz seit 1889, ganze Schweiz einheitlich.</div><div class="merksatz">Merke: Das SchKG greift nur bei Geld. Alles andere läuft über die Zivilprozessordnung.</div></div></div>
@@ -128,6 +99,7 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div></div>
 
 <div class="sec" id="einl"><h1>Einleitungsverfahren</h1><p class="sub">Die 4 Schritte — gleich bei allen drei Betreibungsarten</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können die 4 Schritte des Einleitungsverfahrens in der richtigen Reihenfolge aufzählen<br>• Sie können den Unterschied zwischen Rechtsvorschlag und Beschwerde erklären<br>• Sie können die Rechtsöffnung (provisorisch und definitiv) korrekt zuordnen</div>
 <div class="hl">Klärt ab, ob der Schuldner tatsächlich Geld schuldet. Betreibungsamt prüft <strong>nicht</strong> die Forderung.</div>
 <div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 <div class="tl">
@@ -147,6 +119,7 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div>
 
 <div class="sec" id="pfand"><h1>Betreibung auf Pfändung</h1><p class="sub">Spezialexekution — Artikel 89ff. SchKG</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können den Ablauf der Pfändungsbetreibung Schritt für Schritt erklären<br>• Sie können die Pfändungsreihenfolge und die Kompetenzstücke benennen<br>• Sie können den Unterschied zwischen Pfändung und Konkurs erläutern</div>
 <div class="hl"><strong>Für wen?</strong> Nicht im HR eingetragene Schuldner. Auch bei Unterhaltsbeiträgen <span class="b bb">Artikel 43</span>.</div>
 <div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 <div class="tl">
@@ -169,6 +142,7 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div></div>
 
 <div class="sec" id="pvw"><h1>Betreibung auf Pfandverwertung</h1><p class="sub">Artikel 151ff. SchKG</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können erklären, wann eine Pfandverwertung stattfindet<br>• Sie können den Ablauf der Pfandverwertungsbetreibung aufzeigen<br>• Sie können die Rolle des Pfands im Betreibungsverfahren erläutern</div>
 <div class="hl"><strong>Keine Pfändung</strong> nötig — Pfand wird direkt verwertet. Gläubiger darf nie eigenmächtig verwerten!</div>
 <div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 <div class="tl">
@@ -179,10 +153,12 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div></div>
 
 <div class="sec" id="konk"><h1>Betreibung auf Konkurs</h1><p class="sub">Generalexekution — gesamtes Vermögen</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können den Konkursablauf (Konkurseröffnung bis Schluss) erklären<br>• Sie können die drei Konkursklassen und deren Rangfolge aufzählen<br>• Sie können den Unterschied zwischen ordentlichem und summarischem Konkurs benennen</div>
 <div class="sp" id="ksp"></div><div id="kst"></div>
 <div class="sn"><button id="kpv" onclick="kG(-1)">Zurück</button><button class="bp1" id="knx" onclick="kG(1)">Weiter</button></div></div>
 
 <div class="sec" id="sich"><h1>Sicherungsmittel</h1><p class="sub">Artikel 163ff. StGB = strafbar!</p>
+<div class="hlbl"><strong>Lernziele:</strong><br>• Sie können die verschiedenen Sicherungsmittel (Arrest, Retentionsrecht, Paulianische Anfechtung) erklären<br>• Sie können die strafrechtlichen Konsequenzen von Vermögensverschleierung benennen</div>
 <div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 <div class="tl">
 <div class="tl-item"><div class="tl-num tl-num-r">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Arrest <span class="b br">Artikel 271ff.</span></div><div class="tl-merksatz">«Der Arrest kommt überfallartig — sogar nachts und am Wochenende.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Beschlagnahme <strong>vor</strong> dem Vollstreckungsverfahren. Auch nachts/Wochenende. Kein «Sucharrest»!</div><div class="tl-sub"><div class="c cr"><div class="ct2">Arrestgründe (einer genügt)</div><div class="cd">1. Kein Wohnsitz · 2. Flucht · 3. Ausländerarrest · 4. Durchreise · 5. Verlustschein · 6. Definitiver Rechtsöffnungstitel</div></div></div><div class="tl-highlight">Innert <span class="b br">10 Tagen</span> Betreibung einleiten <span class="b br">Artikel 279</span>!</div><div class="merksatz">Merke: Arrest = Pfändung vorwegnehmen. Aber 10 Tage zum Betreiben — sonst verfällt er!</div></div></div>
@@ -190,81 +166,20 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 <div class="tl-item"><div class="tl-num tl-num-p">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Anfechtungsklagen <span class="b bp">Artikel 285ff.</span></div><div class="tl-merksatz">«Geschenke vor dem Konkurs? Bis 5 Jahre zurückholbar.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Voraussetzung: Verlustschein nötig.</div><div class="tl-sub"><div class="c ca"><div class="ct2">Schenkung <span class="b bb">Artikel 286</span></div><div class="cd"><span class="b bb">1 Jahr</span> zurück.</div></div><div class="c cm"><div class="ct2">Überschuldung <span class="b ba">Artikel 287</span></div><div class="cd"><span class="b ba">1 Jahr</span> zurück.</div></div><div class="c cr"><div class="ct2">Delikt <span class="b br">Artikel 288</span></div><div class="cd"><span class="b br">5 Jahre</span> zurück!</div></div></div><div class="merksatz">Merke: 1 Jahr bei Schenkungen — aber ganze 5 Jahre bei Absicht!</div></div></div>
 </div></div>
 
-<!-- ============ GESELLSCHAFTSRECHT EINFÜHRUNG ============ -->
-<div class="sec" id="gesr"><h1>Gesellschaftsrecht — Einführung</h1><p class="sub">Gesellschaftsformen, juristische Person, Organe</p>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
+<div class="sec" id="schkg_ueb"><h1>Übungen zum SchKG</h1><p class="sub">Klicke auf eine Aufgabe um die Lösung aufzuklappen</p>
+<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle Lösungen zeigen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle verbergen</button></div>
 <div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-g">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Was ist eine Gesellschaft?</div><div class="tl-merksatz">«Vertragsmässige Verbindung + gemeinsamer Zweck + gemeinsame Mittel.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Drei Merkmale: <strong>Vereinigung von Personen</strong> (natürliche oder juristische), <strong>gemeinsamer Zweck</strong>, <strong>Gesellschaftsvertrag</strong> (nicht immer schriftlich nötig).</div><div class="merksatz">Merke: Schon ein Handschlag kann eine Gesellschaft begründen!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-g">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechtsgemeinschaft vs. Körperschaft</div><div class="tl-merksatz">«Rechtsgemeinschaft = haften mit Privatvermögen. Körperschaft = nur Gesellschaftsvermögen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c ca"><div class="ct2">Rechtsgemeinschaften (keine jur. Personen)</div><div class="cd">Einfache Gesellschaft, KlG, KmG. Vermögen = Gesamteigentum. Haftung: solidarisch (subsidiär). Grundlage: Vertrag (formfrei). Sitz: Tätigkeitsschwerpunkt.</div></div><div class="c cg"><div class="ct2">Körperschaften (jur. Personen)</div><div class="cd">AG, GmbH, Genossenschaft, Verein, Kommandit-AG. Vermögen = Alleineigentum der Gesellschaft. Haftung: ausschliesslich Gesellschaft. Grundlage: Statuten (schriftlich). Sitz: frei wählbar.</div></div></div><div class="merksatz">Merke: Körperschaft = eigene Persönlichkeit, eigenes Vermögen, eigene Haftung.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Die juristische Person <span class="b bb">Art. 53 ZGB</span></div><div class="tl-merksatz">«Eine künstliche Person — sie kann klagen, kaufen und haften, aber nicht heiraten.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Künstlich geschaffene «Person». Rechtsfähig, handlungsfähig, partei-/betreibungs-/prozessfähig. Kann Verträge schliessen, Vermögen besitzen, klagen. Aber: kann nicht heiraten (wohl fusionieren), nicht erben.</div><div class="merksatz">Merke: Die jur. Person ist fast wie eine natürliche — nur ohne Hochzeit und Erbrecht.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Organe <span class="b bb">Art. 55 ZGB</span></div><div class="tl-merksatz">«Organe geben der jur. Person ihren Willen — auch faktische Organe zählen!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Organe geben dem <strong>Willen</strong> der jur. Person Ausdruck. Sie verpflichten die jur. Person. Als Organ gilt, wer <strong>effektiv und entscheidend</strong> an der Willensbildung teilhat. Beispiele: VR, GV, Vorstand, Revisionsstelle, aber auch Direktoren mit Entscheidungsbefugnissen (= <strong>faktische Organe</strong>).</div><div class="merksatz">Merke: Wer tatsächlich entscheidet, ist Organ — egal wie sein Titel lautet.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-a">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Übersicht der Gesellschaftsformen</div><div class="tl-merksatz">«eG = Auffangform. AG/GmbH = Kapitalgesellschaften. KlG/KmG = Personengesellschaften.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cr"><div class="ct2">Personengesellschaften</div><div class="cd">Einfache Gesellschaft · Kollektivgesellschaft (KlG) · Kommanditgesellschaft (KmG)</div></div><div class="c ca"><div class="ct2">Kapitalgesellschaften / Körperschaften</div><div class="cd">AG · GmbH · Genossenschaft · Verein · Kommandit-AG</div></div></div><div class="merksatz">Merke: Personengesellschaften = persönliche Haftung. Kapitalgesellschaften = Kapital haftet.</div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Betreibungsart bestimmen</div><div class="tl-merksatz">a) Schreinerei A. Meier (HR). b) Privatperson B. Müller. c) Forderung gesichert durch Grundpfand. d) Hotel Alpenblick GmbH (HR).</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Konkurs</strong> — im HR eingetragen.<br>b) <strong>Pfändung</strong> — Privatperson, nicht im HR.<br>c) <strong>Pfandverwertung</strong> — bestehendes Grundpfand.<br>d) <strong>Konkurs</strong> — GmbH immer im HR.</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Betreibungsort bestimmen</div><div class="tl-merksatz">a) Hans wohnt in Luzern, Büro in Zug. b) Hotel Alpenblick GmbH: Sitz Luzern, Filiale Zürich. c) Grundpfand auf Haus in Bern, Schuldner wohnt in Basel.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Luzern</strong> — Wohnsitz, nicht Arbeitsort.<br>b) <strong>Luzern</strong> — Hauptsitz. Nie an Filiale.<br>c) <strong>Bern</strong> — bei Grundpfand: Ort des Grundstücks.</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fristen berechnen</div><div class="tl-merksatz">Zahlungsbefehl zugestellt am Mittwoch, 5. März. Bis wann muss Rechtsvorschlag erhoben werden?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">Fristbeginn: <strong>6. März</strong> (Tag nach Zustellung). Frist: 10 Tage. Fristende: <strong>15. März</strong> (Samstag → verschoben auf <strong>Montag, 17. März</strong>). Poststempel am 17. März genügt.</div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechtsvorschlag vs. Beschwerde</div><div class="tl-merksatz">a) Schuldner bestreitet die Forderung. b) Schuldner wurde am falschen Ort betrieben. c) Betreibungsbeamter hat Fehler gemacht.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Rechtsvorschlag</strong> — bestreitet die Forderung, innert 10 Tagen, kein Grund nötig.<br>b) <strong>Beschwerde</strong> — falscher Betreibungsort = Verfahrensfehler, nicht Rechtsvorschlag!<br>c) <strong>Beschwerde</strong> — gegen Handlungen des Betreibungsamts.</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechtsöffnung</div><div class="tl-merksatz">a) Gerichtsurteil liegt vor. b) Schuldschein (unterschrieben). c) Mündliche Abmachung.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Definitive Rechtsöffnung</strong> — rechtskräftiges Urteil = definitiver Titel.<br>b) <strong>Provisorische Rechtsöffnung</strong> — Schuldanerkennung = provisorischer Titel.<br>c) <strong>Weder noch</strong> — kein Titel. Gläubiger muss normales Verfahren (Anerkennungsklage) einleiten.</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Pfändung — Reihenfolge</div><div class="tl-merksatz">Was wird zuerst gepfändet? Sortieren Sie: Lohn, Auto, Bankkonto, Schmuck, Wohnungseinrichtung.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösung (Pfändungsreihenfolge)</div><div class="cd"><strong>1.</strong> Bargeld / Bankkonto (bewegliches Vermögen, leicht verwertbar)<br><strong>2.</strong> Auto / Schmuck (bewegliches Vermögen)<br><strong>3.</strong> Lohnpfändung (Einkommen, nur über Existenzminimum)<br><br><strong>Nicht pfändbar (Kompetenzstücke):</strong> Wohnungseinrichtung (soweit zum Leben nötig), persönliche Gegenstände, Werkzeuge für Beruf.</div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Konkursklassen — Wer bekommt zuerst?</div><div class="tl-merksatz">Ordnen Sie: Bankkredit, Lohn der Angestellten, Miete, AHV-Beiträge, Lieferantenrechnung.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cr"><div class="ct2">Lösung — Rangfolge</div><div class="cd"><strong>1. Klasse:</strong> Lohn der Angestellten (6 Monate), AHV-Beiträge<br><strong>2. Klasse:</strong> Miete (letzte 6 Monate)<br><strong>3. Klasse:</strong> Bankkredit, Lieferantenrechnung (alle übrigen)<br><br>Zuerst alle 1. Klasse befriedigen, dann 2. Klasse, dann 3. Klasse. Innerhalb einer Klasse: anteilmässig.</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">8</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Hotel Alpenblick — Lieferant zahlt nicht</div><div class="tl-merksatz">Das Hotel hat einem Weinhändler CHF 8'000 geliefert. Rechnung seit 60 Tagen offen. Was tun?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösung</div><div class="cd"><strong>Schritt 1:</strong> Betreibungsbegehren beim Betreibungsamt am Wohnsitz/Sitz des Weinhändlers einreichen.<br><strong>Schritt 2:</strong> Zahlungsbefehl wird zugestellt. Weinhändler hat 10 Tage für Rechtsvorschlag.<br><strong>Schritt 3a:</strong> Kein Rechtsvorschlag → Fortsetzungsbegehren (frühestens 20 Tage, spätestens 1 Jahr).<br><strong>Schritt 3b:</strong> Mit Rechtsvorschlag → provisorische Rechtsöffnung mit der Rechnung als Schuldanerkennung beantragen.<br><strong>Betreibungsart:</strong> Wenn Weinhändler im HR → Konkurs. Wenn nicht im HR → Pfändung.</div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">9</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Schonzeiten — Was gilt?</div><div class="tl-merksatz">a) Betreibungshandlung an einem Samstag um 10 Uhr? b) Betreibungsbegehren während Sommerferien (20. Juli)? c) Schuldner im Militärdienst?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Zulässig!</strong> Samstag ist KEIN Ruhetag im SchKG (nur So + Feiertage).<br>b) <strong>Betreibungsferien</strong> (15.–31. Juli). Fristen stehen still, aber Betreibungsbegehren kann eingereicht werden.<br>c) <strong>Rechtsstillstand</strong> — Betreibung ruht während Militärdienst. Ausnahme: Unterhaltsbeiträge!</div></div></div></div></div>
+<div class="tl-item"><div class="tl-num tl-num-a">10</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Sicherungsmittel zuordnen</div><div class="tl-merksatz">a) Schuldner will in die Ferien fliehen. b) Mieter zahlt seit 3 Monaten nicht. c) Schuldner verschenkt Auto an Bruder.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Lösung</div><div class="cd">a) <strong>Arrest</strong> — Sicherung wenn Gefahr, dass Schuldner sich ins Ausland absetzt.<br>b) <strong>Retentionsrecht</strong> — Vermieter darf bewegliche Sachen des Mieters zurückbehalten (für Mietzins).<br>c) <strong>Paulianische Anfechtung</strong> — Schenkung innerhalb des letzten Jahres → Rückforderung möglich.</div></div></div></div></div>
 </div></div>
-
-<!-- ============ HANDELSREGISTER & FIRMA ============ -->
-<div class="sec" id="hr"><h1>Handelsregister &amp; Firma</h1><p class="sub">HR-Eintrag, Firmenrecht, Revisionspflicht</p>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
-<div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-g">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Das Handelsregister <span class="b bgreen">Art. 927ff. OR</span></div><div class="tl-merksatz">«Öffentlich, kostenlos einsehbar — jedermann, ohne Interesse.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Vom Kanton geführtes <strong>öffentliches Register</strong>. Gibt Auskunft über Haftung, Vertretung, Firma, Zweck, Sitz. Steht jedermann offen <span class="b bgreen">Art. 930 OR</span>. Kostenlos auf <strong>www.zefix.ch</strong>. Veröffentlichung im SHAB.</div><div class="merksatz">Merke: Zefix = gratis schauen. SHAB = offizielle Publikation.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Eintragungspflicht vs. -berechtigung</div><div class="tl-merksatz">«AG/GmbH: Pflicht + konstitutiv. KlG/KmG: Pflicht + deklaratorisch. eG: gar nicht!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cr"><div class="ct2">Eintragungspflichtig</div><div class="cd">Einzelunternehmen &gt; CHF 100'000 Umsatz · AG, GmbH, Genossenschaft (<strong>konstitutiv!</strong>) · KlG, KmG (deklaratorisch) · Stiftungen</div></div><div class="c cg"><div class="ct2">Eintragungsberechtigt</div><div class="cd">Verein (auch ohne wirtsch. Zweck) · Kaufm. Unternehmen &lt; CHF 100'000</div></div><div class="c"><div class="ct2">Nicht eintragungsfähig</div><div class="cd">Die <strong>einfache Gesellschaft</strong> — weder Pflicht noch Recht!</div></div></div><div class="merksatz">Merke: Die eG kommt nie ins HR. AG/GmbH existieren erst durch den HR-Eintrag!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Wirkung: Deklaratorisch vs. Konstitutiv</div><div class="tl-merksatz">«Deklaratorisch = beurkundend. Konstitutiv = rechtserzeugend.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c"><div class="ct2">Deklaratorisch</div><div class="cd">Nur beurkundend. Gesellschaft besteht schon vorher (KlG, KmG).</div></div><div class="c ca"><div class="ct2">Konstitutiv</div><div class="cd">Rechtserzeugend — Gesellschaft entsteht <strong>erst durch HR-Eintrag</strong> als jur. Person (AG, GmbH, Genossenschaft).</div></div></div><div class="tl-highlight"><strong>Folgen des HR-Eintrags:</strong> Buchführungspflicht (OR 957), Betreibung auf Konkurs (Art. 39 SchKG), erhöhter Firmenschutz (Art. 956 OR).</div><div class="merksatz">Merke: HR-Eintrag = Buchführung + Konkurs + Firmenschutz.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-a">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Publizitätswirkung</div><div class="tl-merksatz">«Eingetragen = alle müssen es wissen. Nicht eingetragen = Unkenntnis entschuldigt.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cg"><div class="ct2">Positive Publizität</div><div class="cd">Was eingetragen ist, müssen Dritte kennen (unwiderlegbare Vermutung).</div></div><div class="c cr"><div class="ct2">Negative Publizität</div><div class="cd">Was nicht eingetragen ist, müssen Dritte nicht kennen (Unkenntnis entschuldbar, ausser bösgläubig).</div></div></div><div class="merksatz">Merke: Steht es im HR, gibt es keine Ausrede.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-p">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Die Firma = der Name <span class="b bp">Art. 944ff. OR</span></div><div class="tl-merksatz">«Firma ist juristisch nur der Name — nicht das Unternehmen!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Zwei Grundsätze:</div><div class="tl-sub"><div class="c"><div class="ct2">Firmenwahrheit &amp; -klarheit <span class="b bp">Art. 944 OR</span></div><div class="cd">Inhalt muss den Tatsachen entsprechen. Keine Täuschung.</div></div><div class="c"><div class="ct2">Ausschliesslichkeit <span class="b bp">Art. 946 OR</span></div><div class="cd">Firmen müssen unterscheidbar sein. AG/GmbH/Genossenschaft mit Fantasienamen: nur 1× in der ganzen Schweiz!</div></div></div><div class="tl-highlight">Tipp: Vor Gründung auf <strong>www.zefix.ch</strong> und <strong>www.switch.ch</strong> prüfen!</div><div class="merksatz">Merke: Fantasiename bei AG/GmbH = einmalig in der ganzen Schweiz.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Revisionspflicht <span class="b br">Art. 727ff. OR</span></div><div class="tl-merksatz">«Gross = ordentliche Revision. Klein = eingeschränkt. Mini = Opting-out.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c cr"><div class="ct2">Ordentliche Revision</div><div class="cd">Börsenkotiert ODER 2 von 3 in 2 Jahren: Bilanzsumme &gt; CHF 20 Mio., Umsatz &gt; CHF 40 Mio., &gt; 250 Vollzeitstellen.</div></div><div class="c cm"><div class="ct2">Eingeschränkte Revision <span class="b ba">Art. 727a OR</span></div><div class="cd">&gt; 10 Vollzeitstellen.</div></div><div class="c cg"><div class="ct2">Opting-out (Verzicht)</div><div class="cd">≤ 10 Vollzeitstellen: Verzicht möglich. In der Praxis sehr häufig.</div></div></div><div class="merksatz">Merke: ≤ 10 MA = Opting-out erlaubt. Das nutzen fast alle KMU.</div></div></div>
-</div></div>
-
-<!-- ============ RECHTSGEMEINSCHAFTEN & EINZELUNTERNEHMUNG ============ -->
-<div class="sec" id="rechtsg"><h1>Einzelunternehmung &amp; Rechtsgemeinschaften</h1><p class="sub">Einzelfirma, einfache Gesellschaft, KlG, KmG</p>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
-<div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-a">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Einzelunternehmung</div><div class="tl-merksatz">«Eine Person, volles Risiko, kein Gründungsakt — die einfachste Form.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Natürliche Person führt ein kaufmännisches Gewerbe. Kapital + Leitung in einer Hand. Gesamter Gewinn ODER Verlust. <strong>Unbeschränkte Haftung</strong> mit Privatvermögen. Kein Gründungsakt nötig. HR-Eintrag ab CHF 100'000 Umsatz. Firma = Familienname.</div><div class="tl-highlight"><strong>Betreibung:</strong> Einzelfirma kann NICHT betrieben werden! Betreibung gegen Inhaber persönlich am Wohnort.</div><div class="merksatz">Merke: Die Einzelfirma gibt es rechtlich nicht — nur den Inhaber. Häufigste Form der Selbstständigkeit.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Einfache Gesellschaft <span class="b bb">Art. 530ff. OR</span></div><div class="tl-merksatz">«Die Auffangform — man muss sich nicht mal bewusst sein, eine zu bilden!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Zusammenschluss für gemeinsamen Zweck, <strong>ohne kaufmännisches Unternehmen</strong>. Die Auffangform — liegt immer vor, wenn nichts anderes gewählt. Vertrag formfrei, sogar durch Verhalten möglich.</div><div class="tl-sub"><div class="c cr"><div class="ct2">Haftung</div><div class="cd"><strong>Primär, unbeschränkt, solidarisch</strong> mit dem ganzen Vermögen.</div></div><div class="c"><div class="ct2">Praxisbeispiele</div><div class="cd">ARGE (Bau), Konkubinat, fortgesetzte Erbengemeinschaft, WG.</div></div></div><div class="tl-highlight">Nicht im HR eintragbar! Keine juristische Person.</div><div class="merksatz">Merke: Wer gemeinsam etwas macht ohne eine Form zu wählen → automatisch eG → volle Haftung!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Kollektivgesellschaft — KlG <span class="b br">Art. 552ff. OR</span></div><div class="tl-merksatz">«Zwei Personen, gemeinsame Firma, unbeschränkte Haftung — aufpassen!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Mind. 2 <strong>natürliche</strong> Personen, kaufmännisches Gewerbe unter gemeinsamer Firma. Keine juristischen Personen als Gesellschafter.</div><div class="tl-sub"><div class="c cr"><div class="ct2">Haftung <span class="b br">Art. 568 OR</span></div><div class="cd">Persönlich, solidarisch, unbeschränkt — aber <strong>subsidiär</strong>: Zuerst muss die Gesellschaft erfolglos betrieben werden. Haftung bis 5 Jahre nach Auflösung.</div></div><div class="c"><div class="ct2">Firma</div><div class="cd">Alle Namen ODER 1 Name + «&amp; Co». Neugründung: Fantasiename + «KlG».</div></div></div><div class="tl-highlight"><strong>Vorsicht:</strong> Man kann unwissentlich eine KolG bilden! Gemeinsam Restaurant führen ohne Formwahl → automatisch KolG → unbeschränkte Haftung!</div><div class="merksatz">Merke: KolG = nur natürliche Personen. Gesellschaft nicht steuerpflichtig, aber Gesellschafter direkt.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-p">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Kommanditgesellschaft — KmG <span class="b bp">Art. 594ff. OR</span></div><div class="tl-merksatz">«Komplementär haftet voll, Kommanditär nur bis zur eingetragenen Summe.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Wie KolG, aber mit zwei Arten:</div><div class="tl-sub"><div class="c cr"><div class="ct2">Komplementär:in</div><div class="cd">Mind. 1 natürliche Person. <strong>Haftet voll</strong>, persönlich, unbeschränkt. Führt die Geschäfte.</div></div><div class="c cg"><div class="ct2">Kommanditär:in</div><div class="cd">Natürliche oder juristische Person. Haftet nur bis zur <strong>Kommanditsumme</strong> (im HR eingetragen!). Darf nicht geschäftsführen.</div></div></div><div class="tl-highlight">Firma: Fantasiename + «KmG» zwingend.</div><div class="merksatz">Merke: KmG = einer führt und haftet voll, der andere investiert und haftet begrenzt.</div></div></div>
-</div></div>
-
-<!-- ============ GmbH ============ -->
-<div class="sec" id="gmbh"><h1>Die GmbH</h1><p class="sub">OR 772ff. — Die «kleine AG»</p>
-<div class="hl"><strong>Stammkapital min. CHF 20'000.–</strong>, aufgeteilt in Stammanteile. Muss zu <strong>100% liberiert</strong> sein.</div>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
-<div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-g">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Merkmale der GmbH</div><div class="tl-merksatz">«Mischform: Kapital + Person. Alle im HR eingetragen, Treuepflicht gilt.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c ca"><div class="ct2">Kapitalbezogen</div><div class="cd">Stammeinlagen, Stimmrecht nach Nennwert, Mitgliedschaft übertragbar.</div></div><div class="c cp"><div class="ct2">Personenbezogen</div><div class="cd">Treuepflicht, Konkurrenzverbot, Gesellschafter = meist Geschäftsführer, alle im HR eingetragen, Aus-/Ausschluss möglich.</div></div></div><div class="merksatz">Merke: Die GmbH ist transparenter als die AG — alle Gesellschafter stehen im HR.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-g">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Gründung</div><div class="tl-merksatz">«Mind. 1 Person → öffentlich beurkunden → 100% einzahlen → HR-Eintrag.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Mind. 1 Person (nat. oder jur.) → Gesellschaftsvertrag (öff. beurkundet) → Statuten festlegen → Stammkapital <strong>100% einzahlen</strong> → Organe wählen → HR-Eintrag (<strong>konstitutiv!</strong>).</div><div class="tl-highlight"><strong>Statuten müssen enthalten:</strong> Firma + Sitz, Zweck, Stammkapitalhöhe + Anzahl/Nennwert Stammanteile, Form der Bekanntmachungen.</div><div class="merksatz">Merke: 100% Liberierung — keine Teilzahlung wie bei der AG!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Organe</div><div class="tl-merksatz">«Alle Gesellschafter führen — ausser man regelt es anders in den Statuten.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c"><div class="ct2">Gesellschafterversammlung</div><div class="cd">Oberstes Organ. Statuten, Geschäftsführer, Revisionsstelle, Jahresrechnung.</div></div><div class="c"><div class="ct2">Geschäftsführung <span class="b bb">Art. 809ff. OR</span></div><div class="cd">Alle Gesellschafter grundsätzlich berechtigt + verpflichtet. Kann auf Dritte übertragen werden. Mind. 1 Person mit Wohnsitz in CH.</div></div><div class="c"><div class="ct2">Revisionsstelle <span class="b bb">Art. 818 OR</span></div><div class="cd">Gesetzlich vorgeschrieben. Verzicht (Opting-out) bei &lt; 10 Vollzeitstellen.</div></div></div><div class="merksatz">Merke: Bei der GmbH sind alle Gesellschafter automatisch auch Geschäftsführer — bei der AG nicht!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Haftung &amp; Übertragung</div><div class="tl-merksatz">«Nur das Gesellschaftsvermögen haftet — aber Nachschusspflicht möglich!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body"><strong>Haftung:</strong> Nur Gesellschaftsvermögen <span class="b br">Art. 794 OR</span>. Statuten können Nachschusspflicht vorsehen (nicht empfohlen). <strong>Übertragung:</strong> Schriftlicher Vertrag <span class="b br">Art. 785 OR</span>. Zustimmung der Gesellschafterversammlung nötig. <strong>Firma:</strong> Freie Wahl + zwingend «GmbH». <strong>Steuer:</strong> Doppelbesteuerung (Gesellschaft: Gewinn, Gesellschafter: Einkommen).</div><div class="merksatz">Merke: Stammanteile übertragen braucht Vertrag + Gesellschafterzustimmung — nicht so frei wie Aktien.</div></div></div>
-</div></div>
-
-<!-- ============ AG ============ -->
-<div class="sec" id="ag"><h1>Die Aktiengesellschaft</h1><p class="sub">OR 620ff. — Reine Kapitalhaftung</p>
-<div class="hl"><strong>Aktienkapital min. CHF 100'000.–</strong>. Mindestliberierung CHF 50'000.–. HR-Eintrag = konstitutiv.</div>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
-<div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-b">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Die Aktie</div><div class="tl-merksatz">«Wertpapier. Inhaberaktien sind abgeschafft — nur noch Namenaktien.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Ein <strong>Wertpapier</strong>. Nennwert &gt; CHF 0 (seit 01.01.2023). <strong>Inhaberaktien abgeschafft</strong> (Geldwäscherei).</div><div class="tl-sub"><div class="c ca"><div class="ct2">Namenaktie (frei übertragbar)</div><div class="cd">Name im Aktienbuch. Übertragung: Indossament + Eintrag. AG kann nicht verhindern.</div></div><div class="c cm"><div class="ct2">Vinkulierte Namenaktie</div><div class="cd">Übertragung nur mit VR-Einwilligung. Börsenkotiert: nur mengenmässig. Nicht-börsenkotiert: persönliche Bedingungen.</div></div><div class="c"><div class="ct2">Stimmrechtsaktie</div><div class="cd">Tieferer Nennwert (min. 1/10), gleiche Stimmkraft. Müssen voll liberierte Namenaktien sein.</div></div><div class="c"><div class="ct2">Partizipationsschein (PS)</div><div class="cd">Aktie ohne Stimmrecht. Max. das Doppelte des AK.</div></div></div><div class="merksatz">Merke: Stimmrechtsaktien = Kontrolle trotz Minderheitsbeteiligung.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-a">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechte &amp; Pflichten der Aktionäre</div><div class="tl-merksatz">«Viele Rechte, nur eine Pflicht: Einzahlung der Aktien.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c ca"><div class="ct2">Vermögensrechte</div><div class="cd">Dividende · Liquidationserlös · Bezugsrechte bei Kapitalerhöhung</div></div><div class="c ca"><div class="ct2">Mitwirkungsrechte</div><div class="cd">GV-Teilnahme + Stimmrecht · Einberufung + Traktandierung · Antragsrecht</div></div><div class="c ca"><div class="ct2">Schutzrechte</div><div class="cd">Information/Kontrolle · Sonderprüfung · Anfechtung von GV-Beschlüssen · Verantwortlichkeitsklage</div></div></div><div class="tl-highlight"><strong>Einzige Pflicht:</strong> Einzahlung der übernommenen Aktien <span class="b ba">Art. 680 OR</span>.</div><div class="merksatz">Merke: Aktionär = Bezahlen und mitreden. Sonst keine Pflichten!</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Die drei Organe der AG</div><div class="tl-merksatz">«GV entscheidet, VR führt, Revisionsstelle kontrolliert.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c"><div class="ct2">Generalversammlung <span class="b br">Art. 698ff. OR</span></div><div class="cd">Oberstes Organ. Alle Aktionäre. Jährlich mind. 1×. Statuten, Wahl VR/RS, Jahresrechnung, Gewinnverteilung, Décharge.</div></div><div class="c"><div class="ct2">Verwaltungsrat <span class="b br">Art. 707ff. OR</span></div><div class="cd">Mind. 1 Mitglied. Kompetenzvermutung. Kann Geschäftsleitung einsetzen. Behält Oberaufsicht. Sorgfalts-/Treuepflicht <span class="b br">Art. 717 OR</span>!</div></div><div class="c"><div class="ct2">Revisionsstelle <span class="b br">Art. 727ff. OR</span></div><div class="cd">Unabhängig. Prüft Buchführung + Jahresrechnung. Meldepflicht bei Verstössen/Überschuldung.</div></div></div><div class="merksatz">Merke: VR hat immer die Oberaufsicht — auch wenn er eine GL einsetzt.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Kapitalschutz</div><div class="tl-merksatz">«Das AK ist der Sicherungsfonds für Gläubiger — nicht antasten!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-body">Mindestkapital CHF 100'000 · Verbot der Einlagenrückgewähr <span class="b br">Art. 680 Abs. 2</span> · Ausschüttungsverbot aus AK + gesetzlichen Reserven · Reservenbildung (5% bis 20% AK) · Keine Aktienausgabe unter Nennwert.</div><div class="tl-sub"><div class="c cr"><div class="ct2">Kapitalverlust <span class="b br">Art. 725 Abs. 1 OR</span></div><div class="cd">Hälfte AK + Reserven nicht gedeckt → VR muss GV einberufen + Sanierung.</div></div><div class="c cr"><div class="ct2">Überschuldung <span class="b br">Art. 725a OR</span></div><div class="cd">Forderungen &gt; Aktiven → Gericht benachrichtigen → Konkurs.</div></div></div><div class="tl-highlight"><strong>Verantwortlichkeitsklage:</strong> Keine absolute Sicherheit! Bei unsorgfältigem Management haftet der VR persönlich.</div><div class="merksatz">Merke: Kapitalverlust = Sanierung. Überschuldung = Gericht → Konkurs.</div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-g">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">AG vs. GmbH — Vergleich</div><div class="tl-merksatz">«GmbH = kleiner, persönlicher. AG = grösser, anonymer, teurer.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="tl-sub"><div class="c ca"><div class="ct2">Vorteile AG</div><div class="cd">Leichtere Kapitalbeschaffung · Anonymere Beteiligung · Aktien frei übertragbar</div></div><div class="c cr"><div class="ct2">Nachteile AG vs. GmbH</div><div class="cd">Mindestkapital CHF 100'000 (vs. 20'000) · Mehr Formvorschriften · Höhere Gründungskosten · Doppelbesteuerung (bei beiden)</div></div></div><div class="merksatz">Merke: Für KMU reicht die GmbH. AG lohnt sich bei grösserem Kapitalbedarf.</div></div></div>
-</div></div>
-
-<!-- ============ ÜBUNGEN ============ -->
-<div class="sec" id="ueb"><h1>Prüfungsübungen</h1><p class="sub">Aufgaben zum SchKG und Gesellschaftsrecht</p>
-<h2>SchKG-Übungen</h2>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 1 — Betreibungsort</div><div class="cd">a) Carlo (Bern) hat Forderung gegen Franz (Winterthur) → Betreibung in <strong>Winterthur</strong> (Wohnsitz Schuldner).<br>b) Peter (München) hat grundpfandgesicherte Forderung gegen Fridolin (Rapperswil), Grundstück in Luzern → Betreibung in <strong>Luzern</strong> (Ort des Grundpfands).</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 2 — Wohnsitzwechsel</div><div class="cd">Dora zieht von Chur nach Zürich. Fortsetzungsbegehren in <strong>Zürich</strong> (neuer Wohnsitz). Der Betreibungsort folgt dem Schuldner.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 3 — Zahlungsbefehl</div><div class="cd">a) Kein Wohnsitz in CH? → <strong>Beschwerde</strong> bei Aufsichtsbehörde (nicht Rechtsvorschlag!).<br>b) Forderung unklar? → <strong>Beschwerde</strong> wegen formellem Mangel.<br>c) Forderung nicht fällig? → <strong>Rechtsvorschlag</strong> erheben.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 4 — Rechtsöffnung</div><div class="cd">a) Mietvertrag = Schuldanerkennung → <strong>Provisorische Rechtsöffnung</strong> <span class="b bb">Art. 82</span>.<br>b) Scheidungsurteil = vollstreckbarer Titel → <strong>Definitive Rechtsöffnung</strong> <span class="b bb">Art. 80</span>.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 7 — Betreibungsarten</div><div class="cd">a) Gesangsverein: nicht im HR → <strong>Pfändung</strong>.<br>b) Stiftung: im HR → <strong>Konkurs</strong>.<br>c) Einfache Gesellschaft: nicht eintragbar → <strong>Pfändung</strong> gegen jeden Gesellschafter.<br>d) Steuern gegen AG: im HR → <strong>Konkurs</strong>.<br>e) Grundpfandgesichertes Darlehen → <strong>Pfandverwertung</strong>.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 9 — Privatkonkurs</div><div class="cd">Enzo: 7 Betreibungen, tiefes Einkommen. Empfehlung: <strong>Privatkonkurs</strong> (Art. 191). Danach kann er mehr als das Existenzminimum verdienen und sich eine neue Existenz aufbauen.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--ac)">Aufgabe 16 — Kollokationsplan</div><div class="cd">Reinerlös CHF 12'000. Ex-Frau (Alimente 6 Mt.) = <strong>1. Klasse</strong>, erhält CHF 6'000 (nur 6 Monate vor Konkurs, = 6 × CHF 1'000). Autoleasing + Sparbank = 3. Klasse, teilen sich den Rest <strong>anteilsmässig</strong>. Autoleasing: 3'600/15'000 × 6'000 = CHF 1'440. Sparbank: 11'400/15'000 × 6'000 = CHF 4'560.</div></div>
-
-<h2>Gesellschaftsrecht-Übungen</h2>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 1 — Wohngemeinschaft</div><div class="cd">Ivo + Zeno teilen Wohnkosten = gemeinsamer Zweck → <strong>einfache Gesellschaft</strong>. Geschäftsführung: <strong>gemeinsam</strong> (einstimmig). Vertretung: grundsätzlich alle. Haftung: <strong>primär, solidarisch, unbeschränkt</strong>.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 3 — AG-Gründung Logos AG</div><div class="cd">AG entsteht erst durch <strong>HR-Eintrag</strong> (konstitutiv). Also am <strong>22. Juni</strong>. Nicht bei Gründungsversammlung, Urkunde oder SHAB-Publikation.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 4 — GmbH-Stimmrecht</div><div class="cd">Gesellschafterversammlung: Stimmrecht nach <strong>Nennwert</strong>. Ingo: 12'000/20'000 = <strong>60%</strong>. Aldo: 8'000/20'000 = <strong>40%</strong>. Geschäftsführung: Beide sind Geschäftsführer, jeder hat <strong>1 Stimme</strong> (Kopfprinzip).</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 9 — KolG «Pastaland»</div><div class="cd">GmbH als neuer Gesellschafter? <strong>Nein!</strong> Eine KolG darf nur natürliche Personen als Gesellschafter haben <span class="b bb">Art. 552 OR</span>. → Umwandlung in KmG (GmbH als Kommanditär) wäre möglich.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 10 — HR-Eintrag vergessen</div><div class="cd">KolG ohne HR-Eintrag: Die Gesellschaft besteht trotzdem (deklaratorisch). <strong>Aber:</strong> Kein erhöhter Firmenschutz. Keine Buchführungspflicht (formal). Im Rechtsverkehr weniger Vertrauen.</div></div>
-<div class="c" style="margin-bottom:12px"><div class="ct2" style="color:var(--g)">Fall 14 — AG-Aussagen</div><div class="cd">a) <strong>Richtig</strong> — AG kann auch für nicht-wirtschaftliche Zwecke gegründet werden.<br>b) <strong>Richtig</strong> — jede Statutenänderung braucht öff. Beurkundung.<br>c) <strong>Richtig</strong> — Verzugszinsen bei Nicht-Einzahlung.<br>d) <strong>Falsch</strong> — Haftung beschränkt auf <strong>Gesellschaftsvermögen</strong>, nicht Aktienkapital.<br>e) <strong>Falsch</strong> — Nennwert nur &gt; 0 (seit 2023).<br>f) <strong>Falsch</strong> — Direktor = Aufgabe <strong>VR</strong>, nicht GV.<br>g) <strong>Falsch</strong> — bei nicht-börsenkotierten: persönliche Gründe möglich. Bei börsenkotierten: nur mengenmässig.<br>h) <strong>Falsch</strong> — kein Austrittsrecht. Aktien verkaufen = einziger Weg.</div></div>
-</div>
 
 <div class="sec" id="mind"><h1>Zusammenfassung</h1><p class="sub">Visuelle Übersichten — zum schnellen Repetieren</p>
 
@@ -568,169 +483,9 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 </div>
 </div>
 
-<!-- MINDMAP: Gesellschaftsformen -->
-<h2>Gesellschaftsformen — Übersicht</h2>
-<div class="mm">
-<div class="mm-center"><div class="mm-hub" style="border-color:var(--g);color:var(--g);background:var(--gl)">Gesellschaftsrecht</div></div>
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)">
-<h3 style="color:var(--r)">Personengesellschaften</h3>
-<ul style="color:var(--r)">
-<li><strong>Einfache Gesellschaft:</strong> Auffangform, formfrei, volle Haftung, nicht im HR</li>
-<li><strong>KlG:</strong> Kaufm. Gewerbe, nur nat. Personen, solidarisch + subsidiär</li>
-<li><strong>KmG:</strong> Komplementär haftet voll, Kommanditär bis Summe</li>
-<li>Alle: <strong>unbeschränkte</strong> Haftung (mind. 1 Person)</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)">
-<h3 style="color:var(--g)">Kapitalgesellschaften</h3>
-<ul style="color:var(--g)">
-<li><strong>GmbH:</strong> CHF 20'000, 100% liberiert, Stammanteile, alle im HR</li>
-<li><strong>AG:</strong> CHF 100'000, mind. 50'000 liberiert, Aktien, anonym</li>
-<li>Beide: HR-Eintrag <strong>konstitutiv</strong>, Doppelbesteuerung</li>
-<li>Beide: Haftung auf <strong>Gesellschaftsvermögen</strong> beschränkt</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)">
-<h3 style="color:var(--am)">Einzelunternehmung</h3>
-<ul style="color:var(--am)">
-<li>1 natürliche Person</li>
-<li>Kein Gründungsakt</li>
-<li>HR ab CHF 100'000 Umsatz</li>
-<li><strong>Unbeschränkte Haftung</strong> mit Privatvermögen</li>
-<li>Firma = Familienname</li>
-<li>Betreibung gegen <strong>Inhaber persönlich</strong></li>
-</ul>
-</div>
-</div>
 </div>
 
-<!-- MINDMAP: AG vs. GmbH -->
-<h2>AG vs. GmbH — Vergleich</h2>
-<div class="mm">
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac);flex:1">
-<h3 style="color:var(--ac)">GmbH (OR 772ff.)</h3>
-<ul style="color:var(--ac)">
-<li>Stammkapital <strong>CHF 20'000</strong></li>
-<li><strong>100%</strong> liberiert</li>
-<li>Stammanteile (Nennwert &gt; 0)</li>
-<li>Alle Gesellschafter im HR</li>
-<li>Treuepflicht + Konkurrenzverbot</li>
-<li>Übertragung: schriftlicher Vertrag + Zustimmung</li>
-<li>Gesellschafter = Geschäftsführer (Standard)</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r);flex:1">
-<h3 style="color:var(--r)">AG (OR 620ff.)</h3>
-<ul style="color:var(--r)">
-<li>Aktienkapital <strong>CHF 100'000</strong></li>
-<li>Mind. <strong>CHF 50'000</strong> liberiert</li>
-<li>Aktien (Nennwert &gt; 0)</li>
-<li>Aktionäre <strong>nicht</strong> im HR</li>
-<li>Keine Treuepflicht (nur VR)</li>
-<li>Namenaktien: frei übertragbar (oder vinkuliert)</li>
-<li>Aktionär ≠ VR (Trennung Eigentum/Führung)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="hl" style="margin-top:10px"><strong>Gemeinsamkeiten:</strong> Jur. Person · Konstitutiver HR-Eintrag · Doppelbesteuerung · Mind. 1 Person zur Gründung · Revisionspflicht (Opting-out möglich)</div>
-
-<!-- MINDMAP: Handelsregister -->
-<h2>Handelsregister — Wirkungen</h2>
-<div class="mm">
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)">
-<h3 style="color:var(--g)">Eintragungspflicht</h3>
-<ul style="color:var(--g)">
-<li>Einzelunternehmen &gt; CHF 100'000</li>
-<li>AG, GmbH, Genossenschaft (<strong>konstitutiv</strong>)</li>
-<li>KlG, KmG (<strong>deklaratorisch</strong>)</li>
-<li>Stiftungen</li>
-</ul>
-<div class="c cr" style="margin-top:8px;padding:8px 12px"><div class="cd" style="font-size:12px"><strong>Nie eintragbar:</strong> Einfache Gesellschaft!</div></div>
-</div>
-<div class="mm-branch" style="background:var(--pl);border:1.5px solid var(--pr)">
-<h3 style="color:var(--pr)">Folgen des HR-Eintrags</h3>
-<ul style="color:var(--pr)">
-<li><strong>Buchführungspflicht</strong> <span class="b bp">OR 957</span></li>
-<li><strong>Betreibung auf Konkurs</strong> <span class="b bp">Art. 39 SchKG</span></li>
-<li><strong>Erhöhter Firmenschutz</strong> <span class="b bp">Art. 956 OR</span></li>
-<li><strong>Positive Publizität:</strong> Eingetragen = alle müssen kennen</li>
-<li><strong>Negative Publizität:</strong> Nicht eingetragen = Unkenntnis entschuldigt</li>
-</ul>
-</div>
-</div>
-</div>
-
-<!-- MINDMAP: Organe AG -->
-<h2>Organe der AG</h2>
-<div class="mm">
-<div class="mm-center"><div class="mm-hub" style="border-color:var(--r);color:var(--r);background:var(--rl)">AG-Organe</div></div>
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--al);border:1.5px solid var(--ac)">
-<h3 style="color:var(--ac)">Generalversammlung</h3>
-<ul style="color:var(--ac)">
-<li><strong>Oberstes</strong> Organ</li>
-<li>Statuten, Wahl VR + RS</li>
-<li>Jahresrechnung, Gewinnverteilung</li>
-<li>Décharge (Entlastung VR)</li>
-<li>Jährlich mind. 1×</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)">
-<h3 style="color:var(--r)">Verwaltungsrat</h3>
-<ul style="color:var(--r)">
-<li><strong>Geschäftsführendes</strong> Organ</li>
-<li>Mind. 1 Mitglied</li>
-<li>Kompetenzvermutung</li>
-<li>Kann GL einsetzen</li>
-<li>Behält immer <strong>Oberaufsicht</strong></li>
-<li>Sorgfalts-/Treuepflicht</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--gl);border:1.5px solid var(--g)">
-<h3 style="color:var(--g)">Revisionsstelle</h3>
-<ul style="color:var(--g)">
-<li><strong>Kontroll</strong>funktion</li>
-<li>Unabhängig</li>
-<li>Prüft Buchführung + JR</li>
-<li>Meldepflicht bei Überschuldung</li>
-<li>Opting-out bei ≤ 10 MA</li>
-</ul>
-</div>
-</div>
-</div>
-
-<!-- MINDMAP: Kapitalschutz -->
-<h2>Kapitalschutz der AG</h2>
-<div class="mm">
-<div class="mm-branches">
-<div class="mm-branch" style="background:var(--rl);border:1.5px solid var(--r)">
-<h3 style="color:var(--r)">Schutzmechanismen</h3>
-<ul style="color:var(--r)">
-<li>Mindestkapital CHF 100'000</li>
-<li>Verbot Einlagenrückgewähr</li>
-<li>Ausschüttungsverbot AK + ges. Reserven</li>
-<li>Reservenbildung: 5% Gewinn bis 20% AK</li>
-<li>Keine Aktienausgabe unter Nennwert</li>
-</ul>
-</div>
-<div class="mm-branch" style="background:var(--aml);border:1.5px solid var(--am)">
-<h3 style="color:var(--am)">Finanzielle Schieflage</h3>
-<ul style="color:var(--am)">
-<li><strong>Kapitalverlust</strong> <span class="b ba">Art. 725</span>: Hälfte AK + Reserven nicht gedeckt → VR beruft GV ein</li>
-<li><strong>Überschuldung</strong> <span class="b ba">Art. 725a</span>: Schulden &gt; Aktiven → Gericht → Konkurs</li>
-<li><strong>Verantwortlichkeitsklage:</strong> VR haftet persönlich bei Fahrlässigkeit!</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="sec" id="kart"><h1>Karteikarten</h1><p class="sub"><span id="fcCount">80</span> Karten — klicke zum Umdrehen</p>
+<div class="sec" id="kart"><h1>Karteikarten</h1><p class="sub"><span id="fcCount">50</span> Karten — klicke zum Umdrehen</p>
 <div class="fcc" id="fcc"></div>
 
 <div class="fd"><div class="fc" id="fc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="fcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="fca"></div></div></div></div>
@@ -807,37 +562,6 @@ const courseHTML = `<!-- RECHT 2 HOME -->
 <div class="c" style="padding:14px 18px"><strong>Retentionsrecht</strong><br><span class="cd">Recht des Vermieters von Geschäftsräumen, bewegliche Gegenstände des Mieters als Sicherheit zurückzuhalten.</span></div>
 <div class="c" style="padding:14px 18px"><strong>Spezialexekution</strong><br><span class="cd">= Pfändung. Nur so viel Vermögen wird verwertet wie nötig. Nur beteiligte Gläubiger profitieren.</span></div>
 <div class="c" style="padding:14px 18px"><strong>Zahlungsbefehl</strong><br><span class="cd">Amtliches Dokument, das den Schuldner auffordert, innert 20 Tagen zu zahlen oder innert 10 Tagen Rechtsvorschlag zu erheben.</span></div>
-</div>
-
-<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin:32px 0 14px">Abkürzungen — Gesellschaftsrecht</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin-bottom:32px">
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">KlG</strong> <span style="color:var(--tx2)">— Kollektivgesellschaft</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">KmG</strong> <span style="color:var(--tx2)">— Kommanditgesellschaft</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">eG</strong> <span style="color:var(--tx2)">— Einfache Gesellschaft</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">VR</strong> <span style="color:var(--tx2)">— Verwaltungsrat</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">GV</strong> <span style="color:var(--tx2)">— Generalversammlung</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">AK</strong> <span style="color:var(--tx2)">— Aktienkapital</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">PS</strong> <span style="color:var(--tx2)">— Partizipationsschein</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">SHAB</strong> <span style="color:var(--tx2)">— Schweizerisches Handelsamtsblatt</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">RS</strong> <span style="color:var(--tx2)">— Revisionsstelle</span></div>
-<div class="c" style="padding:12px 16px"><strong style="color:var(--ac)">GL</strong> <span style="color:var(--tx2)">— Geschäftsleitung</span></div>
-</div>
-
-<div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Fachbegriffe — Gesellschaftsrecht</div>
-<div style="display:grid;grid-template-columns:1fr;gap:8px">
-<div class="c" style="padding:14px 18px"><strong>Aktie</strong><br><span class="cd">Wertpapier, das einen Anteil am Aktienkapital einer AG verkörpert. Seit 2023 Nennwert > CHF 0. Inhaberaktien sind abgeschafft.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Deklaratorisch</strong><br><span class="cd">Nur beurkundende Wirkung des HR-Eintrags — die Gesellschaft besteht schon vorher (z.B. KlG, KmG).</span></div>
-<div class="c" style="padding:14px 18px"><strong>Décharge</strong><br><span class="cd">Entlastung des Verwaltungsrats durch die GV. Befreit von Haftungsansprüchen für das abgelaufene Geschäftsjahr.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Doppelbesteuerung</strong><br><span class="cd">Gesellschaft zahlt Gewinnsteuer, Gesellschafter/Aktionäre zahlen Einkommenssteuer auf Dividenden. Betrifft AG und GmbH.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Faktisches Organ</strong><br><span class="cd">Person, die tatsächlich entscheidend an der Willensbildung einer jur. Person teilhat, ohne formell als Organ bestellt zu sein.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Juristische Person</strong><br><span class="cd">Künstlich geschaffenes Rechtssubjekt mit eigener Rechtspersönlichkeit. Kann klagen, verklagt werden, Verträge schliessen, Vermögen besitzen.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Kommanditär</strong><br><span class="cd">Gesellschafter einer KmG, der nur bis zur im HR eingetragenen Kommanditsumme haftet und nicht geschäftsführen darf.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Komplementär</strong><br><span class="cd">Vollhaftender Gesellschafter einer KmG. Muss natürliche Person sein. Führt die Geschäfte.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Konstitutiv</strong><br><span class="cd">Rechtserzeugend — die Gesellschaft entsteht erst durch den HR-Eintrag als juristische Person (AG, GmbH, Genossenschaft).</span></div>
-<div class="c" style="padding:14px 18px"><strong>Opting-out</strong><br><span class="cd">Verzicht auf die Revisionsstelle bei Unternehmen mit ≤ 10 Vollzeitstellen. In der Praxis sehr häufig bei KMU.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Stammanteil</strong><br><span class="cd">Anteil am Stammkapital einer GmbH. Übertragung nur durch schriftlichen Vertrag + Zustimmung der Gesellschafterversammlung.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Stimmrechtsaktie</strong><br><span class="cd">Aktie mit tieferem Nennwert (min. 1/10) aber gleicher Stimmkraft. Ermöglicht Kontrolle trotz Minderheitsbeteiligung.</span></div>
-<div class="c" style="padding:14px 18px"><strong>Vinkulierung</strong><br><span class="cd">Beschränkung der Übertragbarkeit von Namenaktien. VR kann Übertragung ablehnen (bei nicht-börsenkotierten: persönliche Gründe).</span></div>
 </div>
 </div>
 
@@ -965,45 +689,7 @@ const FC=[
 // === ZUSATZ (48-50) ===
 ['Prüft das Betreibungsamt die Forderung?','Nein! Nur formelle Gültigkeit. Jeder kann erst mal jeden betreiben.'],
 ['Beschwerde gegen Betreibungshandlung?','Innert 10 Tagen bei der Aufsichtsbehörde (Art. 17).'],
-['Betreibungsregister — Sichtbarkeit?','5 Jahre, auch nach Bezahlung (Art. 8a). Glaubhaftes Interesse nötig.'],
-// === GESELLSCHAFTSRECHT — GRUNDLAGEN (51-55) ===
-['Was ist eine Gesellschaft (3 Merkmale)?','1. Vereinigung von Personen, 2. Gemeinsamer Zweck, 3. Gesellschaftsvertrag (Art. 530 OR).'],
-['Rechtsgemeinschaft vs. Körperschaft — Haftung?','Rechtsgemeinschaft: solidarische Haftung der Gesellschafter. Körperschaft: nur Gesellschaftsvermögen haftet.'],
-['Was ist eine juristische Person?','Künstliches Rechtssubjekt. Rechtsfähig, handlungsfähig, kann klagen. Aber: kann nicht heiraten/erben (Art. 53 ZGB).'],
-['Was sind Organe einer jur. Person?','Geben dem Willen Ausdruck. Formelle (VR, GV) + faktische (jeder der tatsächlich entscheidet) (Art. 55 ZGB).'],
-['Personengesellschaften aufzählen?','Einfache Gesellschaft, Kollektivgesellschaft (KlG), Kommanditgesellschaft (KmG). Alle: keine jur. Personen.'],
-// === HANDELSREGISTER (56-62) ===
-['Was ist das Handelsregister?','Öffentliches kantonales Register. Jedermann einsehbar ohne Interesse. Zefix.ch = gratis (Art. 930 OR).'],
-['Konstitutiv vs. deklaratorisch?','Konstitutiv: Gesellschaft entsteht erst durch Eintrag (AG, GmbH). Deklaratorisch: nur beurkundend (KlG, KmG).'],
-['Einfache Gesellschaft und HR?','Nicht eintragungsfähig! Weder Pflicht noch Recht.'],
-['Folgen eines HR-Eintrags (3)?','1. Buchführungspflicht (OR 957), 2. Betreibung auf Konkurs (Art. 39), 3. Erhöhter Firmenschutz (Art. 956).'],
-['Positive Publizität?','Eingetragen = alle müssen es kennen. Unwiderlegbare Vermutung.'],
-['Negative Publizität?','Nicht eingetragen = Dritte müssen es nicht kennen (Unkenntnis entschuldbar).'],
-['Firmenwahrheit — was bedeutet das?','Firma muss den Tatsachen entsprechen, keine Täuschung. Fantasienamen bei AG/GmbH nur 1× in der ganzen CH (Art. 944 OR).'],
-// === EINZELUNTERNEHMUNG & RECHTSGEMEINSCHAFTEN (63-70) ===
-['Einzelunternehmung — Haftung?','Unbeschränkt mit dem Privatvermögen. HR-Eintrag ab CHF 100\'000 Umsatz.'],
-['Einzelfirma betreiben — wie?','Einzelfirma kann NICHT betrieben werden! Betreibung gegen Inhaber persönlich am Wohnort.'],
-['Einfache Gesellschaft — Auffangform?','Liegt immer vor, wenn keine andere Form gewählt. Vertrag formfrei, sogar durch Verhalten. Volle Haftung (Art. 530ff. OR).'],
-['KlG — wer darf Gesellschafter sein?','Nur natürliche Personen! Keine jur. Personen (Art. 552 OR).'],
-['KlG — Haftung der Gesellschafter?','Persönlich, solidarisch, unbeschränkt — aber subsidiär: zuerst muss die Gesellschaft betrieben werden. 5 Jahre nach Auflösung (Art. 568 OR).'],
-['KmG — Komplementär vs. Kommanditär?','Komplementär: volle Haftung, führt Geschäfte. Kommanditär: haftet nur bis Kommanditsumme (im HR), keine Geschäftsführung.'],
-['Kann man unwissentlich eine KolG bilden?','Ja! Gemeinsam ein Geschäft führen ohne Formwahl → automatisch KolG → unbeschränkte Haftung!'],
-['Wann ist eine eG keine KolG?','Wenn kein kaufmännisches Unternehmen betrieben wird (z.B. WG, ARGE, Erbengemeinschaft).'],
-// === GmbH (71-76) ===
-['GmbH — Stammkapital?','Min. CHF 20\'000, muss zu 100% liberiert sein. Stammanteile mit Nennwert > CHF 0 (OR 773).'],
-['GmbH — alle Gesellschafter im HR?','Ja! Und alle sind grundsätzlich Geschäftsführer (personenbezogen). Anders als bei der AG.'],
-['GmbH — Übertragung Stammanteile?','Schriftlicher Vertrag + Zustimmung Gesellschafterversammlung nötig (Art. 785 OR).'],
-['GmbH — Haftung?','Nur Gesellschaftsvermögen (Art. 794 OR). Nachschusspflicht nur wenn in Statuten vorgesehen.'],
-['GmbH — Gründung (Schritte)?','Mind. 1 Person → öff. Beurkundung → Statuten → 100% einzahlen → Organe wählen → HR-Eintrag (konstitutiv).'],
-['GmbH — Organe (3)?','Gesellschafterversammlung (oberstes), Geschäftsführung (alle Gesellschafter), Revisionsstelle (Opting-out bei ≤ 10 MA).'],
-// === AG (77-83) ===
-['AG — Aktienkapital?','Min. CHF 100\'000. Mindestliberierung CHF 50\'000. Nennwert > CHF 0 (seit 2023). HR = konstitutiv.'],
-['AG — Inhaberaktien?','Abgeschafft! (Geldwäscherei). Nur noch Namenaktien (frei oder vinkuliert).'],
-['AG — Stimmrechtsaktien?','Tieferer Nennwert (min. 1/10), gleiche Stimmkraft. Müssen voll liberierte Namenaktien sein.'],
-['AG — Einzige Pflicht des Aktionärs?','Einzahlung der übernommenen Aktien (Art. 680 OR). Sonst keine Pflichten.'],
-['AG — Kapitalverlust vs. Überschuldung?','Kapitalverlust: Hälfte AK nicht gedeckt → GV + Sanierung. Überschuldung: Schulden > Aktiven → Gericht → Konkurs.'],
-['AG vs. GmbH — Hauptunterschiede?','AG: CHF 100k, anonym, Aktien frei. GmbH: CHF 20k, alle im HR, Treuepflicht, 100% liberiert.'],
-['Opting-out Revisionsstelle?','Verzicht bei ≤ 10 Vollzeitstellen. Gilt für AG, GmbH, Genossenschaft. In der Praxis sehr häufig.']
+['Betreibungsregister — Sichtbarkeit?','5 Jahre, auch nach Bezahlung (Art. 8a). Glaubhaftes Interesse nötig.']
 ];
 
 // Konkurs Slides
