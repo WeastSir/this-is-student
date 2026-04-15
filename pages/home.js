@@ -17,10 +17,19 @@
     {
       id: 'recht2',
       name: 'Recht 2 — SchKG',
-      beschreibung: 'Schuldbetreibung & Konkurs · Gesellschaftsrecht',
+      beschreibung: 'Schuldbetreibung & Konkurs · Pfändung · Konkursverfahren',
       dozent: 'Olivier Dollé',
       details: ['10 Module', '40+ Artikel', 'Quiz & Karten'],
-      farbe: ['var(--ac)', 'var(--pr)'],  // Gradient-Farben
+      farbe: ['var(--ac)', 'var(--pr)'],
+      status: 'live'
+    },
+    {
+      id: 'gesr',
+      name: 'Gesellschaftsrecht',
+      beschreibung: 'AG · GmbH · KlG · KmG · Handelsregister · Kapitalschutz',
+      dozent: 'Olivier Dollé',
+      details: ['7 Kapitel', '33 Karten', 'Quiz & Glossar'],
+      farbe: ['var(--g)', 'var(--bl)'],
       status: 'live'
     },
     {
