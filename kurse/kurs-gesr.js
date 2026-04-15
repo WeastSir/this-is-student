@@ -116,19 +116,84 @@ const courseHTML=`
 </div></div>
 
 <!-- ÜBUNGEN -->
-<div class="sec" id="gesr_ueb"><h1>Prüfungsübungen</h1><p class="sub">Klicke auf eine Aufgabe — Lösung wird aufgeklappt</p>
-<div style="display:flex;gap:8px;margin:12px 0 4px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
-<div class="tl">
-<div class="tl-item"><div class="tl-num tl-num-g">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 1 — Wohngemeinschaft</div><div class="tl-merksatz">Ivo + Zeno gründen WG. Rechtsform? Geschäftsführung? Haftung?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösung</div><div class="cd"><strong>Rechtsform:</strong> Einfache Gesellschaft (gemeinsamer Zweck, kein kaufm. Unternehmen).<br><strong>Geschäftsführung:</strong> Gemeinsam, einstimmig.<br><strong>Vertretung:</strong> Grundsätzlich alle gemeinsam.<br><strong>Haftung:</strong> Primär, solidarisch, unbeschränkt.</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 2 — Überschuldete KmG</div><div class="tl-merksatz">3 Komplementäre, 1 Kommanditär (CHF 30'000 offen). Schulden CHF 120'000. Meier zahlungsunfähig.</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cr"><div class="ct2">Lösung</div><div class="cd"><strong>a)</strong> Betreibung gegen Gesellschaft + jeden Komplementär (subsidiär). Kommanditär max. CHF 30'000.<br><strong>b)</strong> Subsidiär — erst nach erfolgloser Betreibung der Gesellschaft.<br><strong>c)</strong> Zahlungsfähige Komplementäre tragen Meiers Anteil (Solidarhaftung).</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 3 — AG-Gründung Logos AG</div><div class="tl-merksatz">GV 20.5., Urkunde 25.5., HR-Eingang 27.5., HR-Eintrag 22.6., SHAB 20.8. Wann entstanden?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c ca"><div class="ct2">Lösung</div><div class="cd">Am <strong>22. Juni</strong> (HR-Eintrag = konstitutiv). Nicht bei GV, Urkunde oder SHAB.</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-a">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 4 — GmbH-Stimmrecht</div><div class="tl-merksatz">Stammkapital 20'000. Ingo: 12'000, Aldo: 8'000. Beide GF. Stimmen?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cm"><div class="ct2">Lösung</div><div class="cd"><strong>Gesellschafterversammlung:</strong> Nach Nennwert → Ingo 60%, Aldo 40%.<br><strong>Geschäftsführung:</strong> Je <strong>1 Stimme</strong> (Kopfprinzip).</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-g">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 6 — Einfache Gesellschaft prüfen</div><div class="tl-merksatz">a) Drei gründen AG → eG? b) Kino gemeinsam → eG? c) Erbengemeinschaft → eG?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösung</div><div class="cd"><strong>a)</strong> Ja, eG im Gründungsstadium (bis HR-Eintrag).<br><strong>b)</strong> Nein → <strong>KolG!</strong> Kaufm. Gewerbe → automatisch KolG.<br><strong>c)</strong> Ja, eG (fortgesetzte Erbengemeinschaft).</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-p">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 9 — KolG «Pastaland»</div><div class="tl-merksatz">GmbH als neuer KolG-Gesellschafter möglich?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cr"><div class="ct2">Lösung</div><div class="cd"><strong>Nein!</strong> KolG nur natürliche Personen <span class="b bbl">Art. 552 OR</span>. Alternative: Umwandlung in KmG (GmbH als Kommanditär).</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-b">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 10 — HR-Eintrag vergessen</div><div class="tl-merksatz">KolG gegründet, HR-Eintrag vergessen. Konsequenzen?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cm"><div class="ct2">Lösung</div><div class="cd">KolG besteht trotzdem (<strong>deklaratorisch</strong>). Aber: kein erhöhter Firmenschutz, keine formale Buchführungspflicht, weniger Vertrauen.</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-r">8</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 12 — Freizeitpark AG</div><div class="tl-merksatz">Stimmrechtsaktien 50% liberiert. Namenaktien 20% liberiert. Mangel?</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cr"><div class="ct2">Lösung</div><div class="cd">Ja! Stimmrechtsaktien müssen <strong>voll liberiert</strong> sein. Ausserdem: Gesamtliberierung unter Minimum CHF 50'000.</div></div></div></div>
-<div class="tl-item"><div class="tl-num tl-num-a">9</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Fall 14 — AG-Aussagen (R/F)</div><div class="tl-merksatz">8 Aussagen beurteilen</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail"><div class="c cg"><div class="ct2">Lösungen</div><div class="cd">a) Nicht-wirtsch. Zweck möglich → <strong>R</strong><br>b) Statutenänderung öff. beurkundet → <strong>R</strong><br>c) Verzugszinsen bei Nicht-Einzahlung → <strong>R</strong><br>d) Haftung auf AK beschränkt → <strong>F</strong> (auf Gesellschafts<em>vermögen</em>)<br>e) Nennwert nie unter 10 → <strong>F</strong> (nur &gt; 0 seit 2023)<br>f) Direktor = GV-Aufgabe → <strong>F</strong> (VR!)<br>g) Vinkuliert: ohne Grund ablehnen → <strong>F</strong> (Gründe nötig)<br>h) Austritt mit 6 Mt. Frist → <strong>F</strong> (kein Austrittsrecht, Aktien verkaufen)</div></div></div></div>
+<div class="sec" id="gesr_ueb"><h1>Interaktive Übungen</h1><p class="sub">Wähle eine Übung und teste dein Wissen</p>
+
+<div id="gesr_ueb_sel">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
+<div class="c ck" onclick="gesrShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px">📋</div><div class="ct2">Fallbeispiele</div><div class="cd">15 Fälle aus dem Kompendium</div></div>
+<div class="c ck" onclick="gesrShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--bl);margin-bottom:6px">🔀</div><div class="ct2">Zuordnung</div><div class="cd">Rechtsform &amp; Betreibungsart</div></div>
+<div class="c ck" onclick="gesrShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">✓✗</div><div class="ct2">Richtig / Falsch</div><div class="cd">Aussagen beurteilen</div></div>
+<div class="c ck" onclick="gesrShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px">§</div><div class="ct2">Artikel zuordnen</div><div class="cd">Welcher Gesetzesartikel?</div></div>
+<div class="c ck" onclick="gesrShowUeb(5)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--am);margin-bottom:6px">🎯</div><div class="ct2">Multiple Choice</div><div class="cd">Wissen testen</div></div>
 </div></div>
+
+<!-- ÜBUNG 1: Fallbeispiele -->
+<div id="gesr_ueb1" style="display:none">
+<button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Fallbeispiele</h2><p class="sub">Lies den Fall, schreibe deine Antwort, dann prüfe die Lösung</p>
+<div id="gesr_fall_wrap"></div>
+<div style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="gesrShowFallSol()">Lösung anzeigen</button>
+<button onclick="gesrNextFall()">Nächster Fall →</button>
+<button onclick="gesrResetFall()" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="gesr_fall_sol" style="display:none;margin-top:12px"></div>
+<div style="text-align:center;margin-top:12px;font-size:11px;color:var(--tx3)" id="gesr_fall_count"></div>
+</div>
+
+<!-- ÜBUNG 2: Zuordnung -->
+<div id="gesr_ueb2" style="display:none">
+<button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Zuordnung — Rechtsform bestimmen</h2><p class="sub">Wähle für jeden Fall die richtige Rechtsform</p>
+<div id="gesr_zuord_wrap"></div>
+<div style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="gesrCheckZuord()">Korrigieren</button>
+<button onclick="gesrNextZuord()">Neue Aufgaben</button>
+<button onclick="gesrResetZuord()" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="gesr_zuord_res" style="margin-top:8px"></div>
+</div>
+
+<!-- ÜBUNG 3: Richtig/Falsch -->
+<div id="gesr_ueb3" style="display:none">
+<button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Richtig oder Falsch?</h2><p class="sub">Beurteile die Aussagen</p>
+<div id="gesr_rf_wrap"></div>
+<div style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="gesrCheckRF()">Korrigieren</button>
+<button onclick="gesrNextRF()">Neue Aussagen</button>
+<button onclick="gesrResetRF()" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="gesr_rf_res" style="margin-top:8px"></div>
+</div>
+
+<!-- ÜBUNG 4: Artikel zuordnen -->
+<div id="gesr_ueb4" style="display:none">
+<button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Gesetzesartikel zuordnen</h2><p class="sub">Welcher Artikel passt zum Sachverhalt?</p>
+<div id="gesr_art_wrap"></div>
+<div style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="gesrCheckArt()">Korrigieren</button>
+<button onclick="gesrNextArt()">Neue Aufgaben</button>
+<button onclick="gesrResetArt()" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="gesr_art_res" style="margin-top:8px"></div>
+</div>
+
+<!-- ÜBUNG 5: Multiple Choice -->
+<div id="gesr_ueb5" style="display:none">
+<button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Multiple Choice</h2><p class="sub">Wähle die richtige(n) Antwort(en)</p>
+<div id="gesr_mc_wrap"></div>
+<div style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="gesrCheckMC()">Korrigieren</button>
+<button onclick="gesrNextMC()">Nächste Frage</button>
+<button onclick="gesrResetMC()" style="font-size:12px">Zurücksetzen</button>
+</div>
+<div id="gesr_mc_res" style="margin-top:8px"></div>
+</div>
+
+</div>
 
 <!-- ZUSAMMENFASSUNG -->
 <div class="sec" id="gesr_mind"><h1>Zusammenfassung</h1><p class="sub">Visuelle Übersichten</p>
@@ -280,4 +345,223 @@ const ART={
 
 window.TIS=window.TIS||{};window.TIS.courses=window.TIS.courses||{};
 window.TIS.courses.gesr={config:courseConfig,html:courseHTML,articles:ART,flashcards:FC};
+
+// ==========================================
+// INTERAKTIVE ÜBUNGEN — Gesellschaftsrecht
+// ==========================================
+
+// --- NAVIGATION ---
+window.gesrShowUeb=function(n){
+['gesr_ueb_sel','gesr_ueb1','gesr_ueb2','gesr_ueb3','gesr_ueb4','gesr_ueb5'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.display='none';});
+if(n===0){document.getElementById('gesr_ueb_sel').style.display='block';}
+else{var e=document.getElementById('gesr_ueb'+n);if(e)e.style.display='block';
+if(n===1)gesrGenFall();if(n===2)gesrGenZuord();if(n===3)gesrGenRF();if(n===4)gesrGenArt();if(n===5)gesrGenMC();}
+};
+
+// --- DATEN: FALLBEISPIELE (aus Kompendium + erweitert) ---
+var GESR_FAELLE=[
+{t:'Fall 1 — Wohngemeinschaft',q:'Ivo und Zeno gründen eine Wohngemeinschaft mit dem Zweck, die Wohnkosten während des Studiums möglichst klein zu halten. Ist die Rechtsform der einfachen Gesellschaft zulässig? Wer führt die Geschäfte? Wer vertritt die Gemeinschaft nach aussen? Wer haftet für die Schulden?',a:'<strong>Rechtsform:</strong> Einfache Gesellschaft — gemeinsamer Zweck (Kosten teilen), kein kaufm. Unternehmen, formfrei.<br><strong>Geschäftsführung:</strong> Gemeinsam, einstimmig (Art. 535 OR).<br><strong>Vertretung:</strong> Grundsätzlich alle gemeinsam.<br><strong>Haftung:</strong> Primär, solidarisch, unbeschränkt (Art. 544 OR).'},
+{t:'Fall 2 — Überschuldete KmG',q:'Die KmG «Meier, Müller & CIE» ist überschuldet. Nach dem Gesellschaftsvertrag haftet jeder der drei vollhaftenden Gesellschafter:innen für einen Drittel der Verbindlichkeiten. Von der Kommanditsumme des Kommanditärs sind CHF 30\'000 noch nicht eingezahlt. Ungedeckte Schulden: CHF 120\'000. Meier ist zahlungsunfähig.<br><br>a) Gegen wen richtet sich eine Betreibung?<br>b) Ab wann können die Gesellschafter haftbar gemacht werden?<br>c) Bei wem können die ungedeckten Schulden geltend gemacht werden?',a:'<strong>a)</strong> Zuerst gegen die KmG selbst. Subsidiär gegen die <strong>3 Komplementäre</strong> (solidarisch, unbeschränkt). Kommanditär: max. CHF 30\'000.<br><strong>b)</strong> Erst nach <strong>erfolgloser Betreibung</strong> der Gesellschaft (subsidiäre Haftung).<br><strong>c)</strong> Solidarhaftung: zahlungsfähige Komplementäre (Müller + 3.) tragen Meiers Anteil mit.'},
+{t:'Fall 3 — Logos AG',q:'Die Logos AG wird gegründet. Die Gründungsversammlung findet am 20. Mai 2017 statt, dabei werden die Organe bestimmt. Die öffentliche Urkunde wird vom Notar am 25. Mai 2017 ausgefertigt und mit der Anmeldung dem Handelsregisteramt zugesandt. Am 27. Mai 2017 kommt die Anmeldung an und am 22. Juni 2017 wird die Gesellschaft im HR eingetragen. Im SHAB vom 20. August 2017 wird die Gründung veröffentlicht.<br><br>Wann ist die Gesellschaft entstanden?',a:'Am <strong>22. Juni 2017</strong> — dem Tag des <strong>HR-Eintrags</strong>. Bei der AG ist der Eintrag <strong>konstitutiv</strong> = rechtserzeugend. Nicht die GV (20.5.), nicht die Urkunde (25.5.), nicht die SHAB-Publikation (20.8.).'},
+{t:'Fall 4 — Ballon GmbH',q:'Aldo und Ingo gründen die «Ballon GmbH» mit einem Stammkapital von CHF 20\'000. Ingo hat einen Stammanteil von CHF 12\'000, Aldo einen solchen von CHF 8\'000. Beide sind Geschäftsführer.<br><br>Wie viele Stimmen hat jeder in der Gesellschafterversammlung und in der Geschäftsführung?',a:'<strong>Gesellschafterversammlung:</strong> Nach Nennwert → Ingo: 12\'000/20\'000 = <strong>60%</strong>, Aldo: 8\'000/20\'000 = <strong>40%</strong>.<br><strong>Geschäftsführung:</strong> Kopfprinzip → jeder hat <strong>1 Stimme</strong>. Ingo und Aldo sind gleichberechtigt.'},
+{t:'Fall 5 — Felicitas als Kommanditärin?',q:'Felicitas möchte ihrer Freundin Angelika beim Aufbau eines Geschäftes mit CHF 50\'000 helfen. Dabei ist sich Felicitas nicht im Klaren, ob sie den Betrag als Darlehen gewähren oder sich mit einer Kommanditeinlage beteiligen soll. Beraten Sie Felicitas.',a:'<strong>Darlehen:</strong> Feste Rückzahlung + Zins. Kein Mitspracherecht. Kein Risiko am Geschäftserfolg. Felicitas ist Gläubigerin.<br><strong>Kommanditeinlage:</strong> Haftung bis CHF 50\'000 (Kommanditsumme im HR). Kein Mitspracherecht bei der Geschäftsführung. Aber: Gewinnbeteiligung möglich.<br><strong>Empfehlung:</strong> Darlehen = sicherer (Rückzahlung garantiert). KmG-Beteiligung = mehr Risiko, aber Gewinnchance.'},
+{t:'Fall 6 — Einfache Gesellschaft prüfen',q:'Prüfen Sie in den folgenden Fällen, ob eine einfache Gesellschaft besteht:<br><br>a) <em>Gründung einer AG:</em> Anton, Bruno und Christian gründen eine AG. Sie haben das Geld aufgebracht, die Statuten festgelegt, eine konstituierende GV durchgeführt und die Organe bestellt.<br><br>b) <em>Kino Paradiso:</em> Coni und Michel betreiben gemeinsam ein Kino. Coni liefert das Geld, Michel führt den Betrieb. Sie treten als «Kino Paradiso» auf und spielen mit dem Gedanken, ein zweites Kino zu eröffnen.<br><br>c) <em>Erbengemeinschaft:</em> ZGB 602 I und II: Beerben mehrere Erben den Erblasser, so besteht unter ihnen eine Gemeinschaft aller Rechte und Pflichten der Erbschaft.',a:'<strong>a)</strong> <strong>Ja, eG</strong> — im Gründungsstadium (vor HR-Eintrag). Danach: AG. Die Vorgründungsgesellschaft ist eine eG.<br><strong>b)</strong> <strong>Nein → KolG!</strong> Kaufmännisches Gewerbe + gemeinsame Firma → automatisch Kollektivgesellschaft (nicht eG).<br><strong>c)</strong> <strong>Ja, eG</strong> — eine fortgesetzte Erbengemeinschaft ist eine klassische einfache Gesellschaft.'},
+{t:'Fall 7 — Konkubinat',q:'Astrid und Roland sind seit vier Jahren ein Paar. Sie ziehen in eine gemeinsame Wohnung. Astrid bringt ihre Einrichtung mit. Roland übernimmt einen grösseren Anteil am Mietzins.<br><br>Teil 1: Besteht eine einfache Gesellschaft?<br>Teil 2: Astrid und Roland beschliessen, keine gemeinsame Kasse zu führen, Kosten strikt hälftig aufzuteilen und den Mietvertrag je für sich abzuschliessen. Ändert sich etwas?',a:'<strong>Teil 1: Ja, eG</strong> — gemeinsamer Zweck (zusammenleben), gemeinsame Mittel (geteilte Kosten). Die Anteile sind ungleich, was nichts ändert.<br><strong>Teil 2: Wahrscheinlich nein</strong> — wenn alles strikt getrennt ist (keine gemeinsame Kasse, separate Mietverträge), fehlt die «gemeinsame Kräfte und Mittel»-Voraussetzung.'},
+{t:'Fall 8 — Komitee für Burma',q:'Die einfache Gesellschaft «Komitee für Burma» wollte in Zug eine Demonstration durchführen. Der Zuger Stadtrat und auf Beschwerde hin der Zuger Regierungsrat lehnten das Gesuch jedoch ab. Das Komitee möchte eine Beschwerde wegen Verletzung der Meinungsäusserungs- und Versammlungsfreiheit führen.<br><br>Wie kann das Komitee vorgehen?',a:'<strong>Problem:</strong> Die eG hat <strong>keine eigene Rechtspersönlichkeit</strong> — sie kann nicht selbst klagen!<br><strong>Lösung:</strong> Die einzelnen <strong>Gesellschafter persönlich</strong> müssen die Beschwerde einreichen (z.B. als Privatpersonen). Alternativ: Gründung eines <strong>Vereins</strong> (der hat Rechtspersönlichkeit und kann klagen).'},
+{t:'Fall 9 — Pastaland KolG',q:'Das Gebrüderpaar Meier führt einen italienischen Spezialitätenladen namens «Pastaland Meier und Co.». Gesellschaftsform: kaufmännische KolG. Das Ehepaar Müller, deren GmbH die Ladenlokalität vermietet, unterbreitet den Meiers folgendes Angebot: Die GmbH wird als neuer Gesellschafter in die KolG aufgenommen. Als Beitrag wird in Zukunft keine Miete mehr geschuldet.<br><br>Durften die Meiers die GmbH aufnehmen?',a:'<strong>Nein!</strong> Eine KolG darf nur <strong>natürliche Personen</strong> als Gesellschafter haben (Art. 552 OR). Eine GmbH ist eine juristische Person.<br><br><strong>Alternativen:</strong><br>1. Umwandlung in <strong>KmG</strong> (GmbH als Kommanditär)<br>2. Umwandlung in <strong>GmbH oder AG</strong> (alle Rechtsformen als Gesellschafter möglich)'},
+{t:'Fall 10 — HR-Eintrag vergessen',q:'Anton, Bruno und Christian wollen ein Hotel eröffnen. Sie gründen eine KolG. Da die drei so beschäftigt sind — Material kaufen, Personal anwerben — vergessen sie, die KolG im Handelsregister einzutragen.<br><br>Hat dies Konsequenzen?',a:'Die KolG <strong>besteht trotzdem</strong> — der HR-Eintrag ist bei der KolG <strong>deklaratorisch</strong> (nur beurkundend), nicht konstitutiv.<br><br><strong>Aber Nachteile:</strong><br>• Kein erhöhter <strong>Firmenschutz</strong> (Art. 956 OR)<br>• Keine formelle <strong>Buchführungspflicht</strong><br>• Weniger <strong>Vertrauen</strong> im Geschäftsverkehr<br>• Mögliche <strong>Busse</strong> wegen Verletzung der Eintragungspflicht'},
+{t:'Fall 11 — KolG Gewinn',q:'Die KolG König & Partner besteht seit drei Jahren. Nach grossen Verlusten wird dieses Jahr zum ersten Mal ein kleiner Gewinn erzielt. Gesellschafter König macht geltend:<br>1. Da die Gesellschaft endlich Gewinn erzielt habe, habe er ein Anrecht auf Entgelt für die Tätigkeiten seit Gründung.<br>2. Er verlangt die Auszahlung der Gewinnanteile an die Gesellschafter.',a:'<strong>1. Kein Anrecht auf Entgelt:</strong> Gesellschafter einer KolG haben keinen Lohnanspruch — sie sind keine Arbeitnehmer. Ihre «Entlöhnung» erfolgt über den <strong>Gewinnanteil</strong>.<br><strong>2. Gewinnauszahlung:</strong> Grundsätzlich hat jeder Gesellschafter Anspruch auf seinen <strong>Gewinnanteil</strong> (Art. 558 OR). Ohne andere Vereinbarung: zu gleichen Teilen. Aber: zuerst müssen die Verluste der Vorjahre gedeckt werden!'},
+{t:'Fall 12 — Freizeitpark AG',q:'Die Gemeinde Lyss gründet mit der Fun GmbH und der KolG Zeller & Co. eine AG zur Errichtung eines Freizeitparks. AK CHF 100\'000. Die Gemeinde erhält 100 Stimmrechtsaktien zu CHF 500 (50% liberiert), die Fun GmbH und Zeller & Co. erhalten je 25 normale Namenaktien zu CHF 1\'000 (20% liberiert).<br><br>Leidet die AG an einem Mangel?',a:'<strong>Ja, mehrere Mängel:</strong><br>1. <strong>Stimmrechtsaktien müssen voll liberiert sein</strong> — hier nur 50%!<br>2. <strong>Mindestliberierung CHF 50\'000</strong> — Stimmrechtsaktien: 100 × 500 × 50% = 25\'000. Namenaktien: 50 × 1\'000 × 20% = 10\'000. Total: CHF 35\'000 — <strong>unter dem Minimum!</strong><br>3. Stimmrechtsaktien-Nennwert (500) muss mindestens 1/10 des normalen Nennwerts (1\'000) sein → 500 > 100 ✓ (das ist OK)'},
+{t:'Fall 13 — Backwarentech AG',q:'Die Backwarentech AG, Zug, ist international tätig. Jahresumsatz CHF 1.35 Mrd. AK CHF 100 Mio., eingeteilt in 1\'000\'000 Namenaktien zu CHF 20 und 800\'000 Namenaktien zu CHF 100. Die CHF-100-Aktien werden an der Börse gehandelt, die CHF-20-Aktien sind vinkuliert. Jede Aktie hat 1 Stimme an der GV.<br><br>a) Ist «AG» im Firmennamen zwingend?<br>b) Warum kennt der VR alle Inhaber der Namenaktien?<br>c) Wie heissen die Aktien zu CHF 20 und welcher Zweck?<br>d) Voraussetzungen für solche Aktien?<br>e) Vinkulierung: Kann der VR ohne Gründe ablehnen?',a:'<strong>a)</strong> Ja, der Zusatz «AG» ist <strong>zwingend vorgeschrieben</strong> (Art. 950 OR).<br><strong>b)</strong> Weil Namenaktien im <strong>Aktienbuch</strong> eingetragen sind — der VR führt dieses Buch und kennt daher alle Aktionäre.<br><strong>c)</strong> <strong>Stimmrechtsaktien</strong> — tieferer Nennwert, gleiche Stimmkraft. Zweck: Kontrolle trotz Minderheitsbeteiligung (Gemeinde behält Kontrolle).<br><strong>d)</strong> Müssen <strong>voll liberierte Namenaktien</strong> sein. Nennwert mind. 1/10 des höchsten Nennwerts.<br><strong>e)</strong> <strong>Nein!</strong> Bei nicht-börsenkotierten: persönliche Gründe nötig. Bei börsenkotierten: nur mengenmässige Beschränkung.'},
+{t:'Fall 14 — AG-Aussagen beurteilen',q:'Beurteilen Sie folgende Aussagen zur AG (Richtig/Falsch):<br><br>a) Die AG kann auch für andere als wirtschaftliche Zwecke gegründet werden.<br>b) Jeder Beschluss der GV oder des VR über die Änderung der Statuten muss öffentlich beurkundet werden.<br>c) Ein Aktionär, der den Ausgabebetrag seiner Aktien nicht rechtzeitig einzahlt, ist zur Leistung von Verzugszinsen verpflichtet.<br>d) Bei einer AG ist die Haftung beschränkt auf das Aktienkapital.<br>e) Der Nennwert von Aktien darf nie unter zehn Franken herabgesetzt werden.<br>f) Die Wahl eines Direktors ist Aufgabe der GV.<br>g) Bei vinkulierten Namenaktien kann der VR unerwünschte Aktionäre ohne Angabe von Gründen ablehnen.<br>h) Der Austritt aus einer AG ist unter Einhaltung einer sechsmonatigen Kündigungsfrist möglich.',a:'a) <strong>Richtig</strong> — Art. 620 OR schliesst ideelle Zwecke nicht aus.<br>b) <strong>Richtig</strong> — öffentliche Beurkundung bei Statutenänderungen zwingend.<br>c) <strong>Richtig</strong> — Art. 681 OR: Verzugszinsen geschuldet.<br>d) <strong>Falsch</strong> — auf das <strong>Gesellschaftsvermögen</strong> (nicht nur AK!).<br>e) <strong>Falsch</strong> — seit 2023 nur > CHF 0.<br>f) <strong>Falsch</strong> — Direktor wird vom <strong>VR</strong> bestimmt, nicht der GV.<br>g) <strong>Falsch</strong> — Gründe sind nötig (bei nicht-börsenkotierten: persönliche Gründe).<br>h) <strong>Falsch</strong> — kein Austrittsrecht. Einziger Weg: Aktien verkaufen.'}
+];
+var gesrFallIdx=0;
+
+window.gesrGenFall=function(){
+var f=GESR_FAELLE[gesrFallIdx];
+var w=document.getElementById('gesr_fall_wrap');if(!w)return;
+w.innerHTML='<div class="c" style="padding:20px 24px"><h3 style="color:var(--g);margin-bottom:8px">'+f.t+'</h3><div class="cd" style="line-height:1.8">'+f.q+'</div><div style="margin-top:12px"><textarea id="gesr_fall_answer" style="width:100%;min-height:100px;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--s2);color:var(--tx);font-family:var(--f);font-size:13px;resize:vertical" placeholder="Schreibe deine Antwort hier..."></textarea></div></div>';
+document.getElementById('gesr_fall_sol').style.display='none';
+document.getElementById('gesr_fall_sol').innerHTML='';
+document.getElementById('gesr_fall_count').textContent='Fall '+(gesrFallIdx+1)+' von '+GESR_FAELLE.length;
+};
+window.gesrShowFallSol=function(){
+var f=GESR_FAELLE[gesrFallIdx];var s=document.getElementById('gesr_fall_sol');
+s.style.display='block';s.innerHTML='<div class="c cg" style="padding:16px 20px"><div class="ct2">Lösung</div><div class="cd" style="line-height:1.8">'+f.a+'</div></div>';
+};
+window.gesrNextFall=function(){gesrFallIdx=(gesrFallIdx+1)%GESR_FAELLE.length;gesrGenFall();};
+window.gesrResetFall=function(){var t=document.getElementById('gesr_fall_answer');if(t)t.value='';document.getElementById('gesr_fall_sol').style.display='none';};
+
+// --- DATEN: ZUORDNUNG ---
+var GESR_ZUORD=[
+{q:'Zwei Studenten teilen eine WG',a:'eG',e:'Gemeinsamer Zweck, kein kaufm. UN → einfache Gesellschaft'},
+{q:'Drei Personen betreiben ein Restaurant unter gemeinsamer Firma',a:'KlG',e:'Kaufm. Gewerbe + nur nat. Personen → Kollektivgesellschaft'},
+{q:'Investor haftet nur bis CHF 50\'000, Partner führt Geschäft',a:'KmG',e:'Kommanditär begrenzt, Komplementär voll → Kommanditgesellschaft'},
+{q:'Boutique-Hotel, 2 Gesellschafter, Stammkapital CHF 20\'000, beide im HR',a:'GmbH',e:'Stammkapital 20k, alle im HR, personenbezogen'},
+{q:'Börsenkotiertes Unternehmen, Aktien frei handelbar',a:'AG',e:'Aktienkapital, Aktien an Börse, anonyme Beteiligung'},
+{q:'Freiberuflicher Berater, alleine tätig, HR-Eintrag ab 100k Umsatz',a:'Einzelunternehmung',e:'1 Person, kein Gründungsakt, volle Haftung'},
+{q:'Bauarbeitsgemeinschaft (ARGE) für ein Projekt',a:'eG',e:'Temporär, gemeinsamer Zweck, kein kaufm. UN'},
+{q:'Gemeinnütziger Sportclub',a:'Verein',e:'Ideeller Zweck, Körperschaft'},
+{q:'Hotel mit CHF 100\'000 AK, VR, GV, Revisionsstelle',a:'AG',e:'AK 100k, drei Organe → Aktiengesellschaft'},
+{q:'Zwei Schwestern, Restaurant, Stammkapital CHF 20\'000, Treuepflicht',a:'GmbH',e:'Stammkapital, Treuepflicht, personenbezogen'},
+{q:'Fortgesetzte Erbengemeinschaft verwaltet gemeinsames Haus',a:'eG',e:'Klassische einfache Gesellschaft'},
+{q:'Schreinerei eines einzelnen Meisters, CHF 200\'000 Umsatz',a:'Einzelunternehmung',e:'1 Person, HR-pflichtig ab 100k'},
+{q:'Firma «Müller & Co.» — nur natürliche Personen, Handelsgewerbe',a:'KlG',e:'Kaufmännisch + natürliche Personen = KolG'},
+{q:'Genossenschaft zur Förderung der Mitgliederinteressen',a:'Genossenschaft',e:'Förderungszweck, variable Mitgliederzahl'}
+];
+var gesrZuordSet=[];
+
+window.gesrGenZuord=function(){
+var pool=GESR_ZUORD.slice();for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+gesrZuordSet=pool.slice(0,6);
+var opts=['eG','KlG','KmG','GmbH','AG','Einzelunternehmung','Verein','Genossenschaft'];
+var h='';gesrZuordSet.forEach(function(z,i){
+h+='<div class="c" id="gesr_z_'+i+'" style="padding:14px 18px;margin-bottom:8px"><div class="cd" style="margin-bottom:8px">'+z.q+'</div>';
+h+='<select id="gesr_zs_'+i+'" style="padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--s2);color:var(--tx);font-family:var(--f);font-size:13px"><option value="">— Wählen —</option>';
+opts.forEach(function(o){h+='<option value="'+o+'">'+o+'</option>';});
+h+='</select><div id="gesr_zfb_'+i+'" style="display:none;margin-top:6px;font-size:12px"></div></div>';
+});
+document.getElementById('gesr_zuord_wrap').innerHTML=h;
+document.getElementById('gesr_zuord_res').innerHTML='';
+};
+window.gesrCheckZuord=function(){
+var c=0;gesrZuordSet.forEach(function(z,i){
+var sel=document.getElementById('gesr_zs_'+i);var fb=document.getElementById('gesr_zfb_'+i);var card=document.getElementById('gesr_z_'+i);
+if(!sel||!fb||!card)return;fb.style.display='block';
+if(sel.value===z.a){card.style.borderLeft='3px solid var(--g)';fb.innerHTML='<span style="color:var(--g)">✓ Richtig!</span> '+z.e;c++;}
+else{card.style.borderLeft='3px solid var(--r)';fb.innerHTML='<span style="color:var(--r)">✗ Falsch.</span> Richtig: <strong>'+z.a+'</strong> — '+z.e;}
+});
+document.getElementById('gesr_zuord_res').innerHTML='<div class="'+(c===gesrZuordSet.length?'hlg':'hla')+'">'+c+' von '+gesrZuordSet.length+' richtig</div>';
+};
+window.gesrNextZuord=function(){gesrGenZuord();};
+window.gesrResetZuord=function(){gesrZuordSet.forEach(function(z,i){var s=document.getElementById('gesr_zs_'+i);if(s)s.value='';var f=document.getElementById('gesr_zfb_'+i);if(f){f.style.display='none';f.innerHTML='';}var c=document.getElementById('gesr_z_'+i);if(c)c.style.borderLeft='';});document.getElementById('gesr_zuord_res').innerHTML='';};
+
+// --- DATEN: RICHTIG/FALSCH ---
+var GESR_RF=[
+{q:'Die einfache Gesellschaft kann ins Handelsregister eingetragen werden.',a:false,e:'Die eG ist NICHT eintragungsfähig — weder Pflicht noch Recht.'},
+{q:'Bei der KolG haften die Gesellschafter nur subsidiär.',a:true,e:'Subsidiär = zuerst muss die Gesellschaft erfolglos betrieben werden. Dann persönlich, solidarisch, unbeschränkt.'},
+{q:'Eine GmbH braucht mindestens CHF 100\'000 Stammkapital.',a:false,e:'GmbH: CHF 20\'000. AG: CHF 100\'000.'},
+{q:'Der VR einer AG hat immer die Oberaufsicht, auch wenn er eine GL einsetzt.',a:true,e:'Art. 716a OR: unentziehbare Aufgaben des VR, inkl. Oberaufsicht.'},
+{q:'Inhaberaktien sind in der Schweiz noch zulässig.',a:false,e:'Inhaberaktien wurden abgeschafft (Geldwäscherei-Bekämpfung). Nur noch Namenaktien.'},
+{q:'Bei der GmbH sind alle Gesellschafter im HR eingetragen.',a:true,e:'Personenbezogenes Merkmal der GmbH — transparenter als die AG.'},
+{q:'Die Haftung einer AG ist beschränkt auf das Aktienkapital.',a:false,e:'Auf das GESELLSCHAFTSVERMÖGEN (= alles was die AG besitzt, nicht nur das AK).'},
+{q:'Eine KolG kann nur aus natürlichen Personen bestehen.',a:true,e:'Art. 552 OR: ausschliesslich natürliche Personen.'},
+{q:'Bei Opting-out verzichtet man auf die Revisionsstelle bei ≤ 10 Vollzeitstellen.',a:true,e:'In der Praxis sehr häufig bei KMU.'},
+{q:'Der Nennwert einer Aktie muss mindestens CHF 10 betragen.',a:false,e:'Seit 01.01.2023: Nennwert muss nur > CHF 0 sein.'},
+{q:'Die einzige Pflicht eines Aktionärs ist die Einzahlung der übernommenen Aktien.',a:true,e:'Art. 680 OR. Keine Nachschusspflicht, keine Treuepflicht (anders als GmbH).'},
+{q:'Ein Verein darf ein kaufmännisches Unternehmen betreiben.',a:false,e:'Nur bei nicht-wirtschaftlichem Hauptzweck. Der Zweck muss ideell sein.'},
+{q:'Die Stimmrechtsaktie hat einen tieferen Nennwert aber die gleiche Stimmkraft.',a:true,e:'Min. 1/10 des höchsten Nennwerts. Ermöglicht Kontrolle trotz Minderheit.'},
+{q:'Bei Überschuldung einer AG muss der VR das Gericht benachrichtigen.',a:true,e:'Art. 725a OR: Forderungen > Aktiven → Gericht → Konkurs.'},
+{q:'Stammanteile einer GmbH sind frei übertragbar wie Aktien.',a:false,e:'Schriftlicher Vertrag + Zustimmung der GV nötig (Art. 785 OR).'},
+{q:'Der Austritt aus einer AG ist mit 6-monatiger Frist möglich.',a:false,e:'Kein Austrittsrecht bei der AG. Einziger Weg: Aktien verkaufen.'},
+{q:'Die GV ist das oberste Organ der AG.',a:true,e:'Art. 698 OR. Sie wählt VR und RS, genehmigt Jahresrechnung.'},
+{q:'Positive Publizität bedeutet: Was im HR steht, müssen alle kennen.',a:true,e:'Unwiderlegbare Vermutung. Keine Ausrede möglich.'},
+{q:'Eine Einzelfirma kann betrieben werden.',a:false,e:'Nein! Betreibung gegen den Inhaber PERSÖNLICH am Wohnort.'},
+{q:'Die GmbH hat eine Doppelbesteuerung.',a:true,e:'Gesellschaft: Gewinnsteuer. Gesellschafter: Einkommenssteuer auf Dividenden.'}
+];
+var gesrRFSet=[];
+
+window.gesrGenRF=function(){
+var pool=GESR_RF.slice();for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+gesrRFSet=pool.slice(0,8);
+var h='';gesrRFSet.forEach(function(q,i){
+h+='<div class="c" id="gesr_rf_'+i+'" style="padding:14px 18px;margin-bottom:8px"><div class="cd" style="margin-bottom:8px">'+q.q+'</div>';
+h+='<label style="margin-right:16px;cursor:pointer"><input type="radio" name="gesr_rf_'+i+'" value="true"> Richtig</label>';
+h+='<label style="cursor:pointer"><input type="radio" name="gesr_rf_'+i+'" value="false"> Falsch</label>';
+h+='<div id="gesr_rffb_'+i+'" style="display:none;margin-top:6px;font-size:12px"></div></div>';
+});
+document.getElementById('gesr_rf_wrap').innerHTML=h;
+document.getElementById('gesr_rf_res').innerHTML='';
+};
+window.gesrCheckRF=function(){
+var c=0;gesrRFSet.forEach(function(q,i){
+var sel=document.querySelector('input[name="gesr_rf_'+i+'"]:checked');
+var fb=document.getElementById('gesr_rffb_'+i);var card=document.getElementById('gesr_rf_'+i);
+if(!fb||!card)return;fb.style.display='block';
+if(sel&&sel.value===String(q.a)){card.style.borderLeft='3px solid var(--g)';fb.innerHTML='<span style="color:var(--g)">✓ Richtig!</span> '+q.e;c++;}
+else{card.style.borderLeft='3px solid var(--r)';fb.innerHTML='<span style="color:var(--r)">✗ Falsch.</span> '+(q.a?'Richtig':'Falsch')+' — '+q.e;}
+});
+document.getElementById('gesr_rf_res').innerHTML='<div class="'+(c===gesrRFSet.length?'hlg':'hla')+'">'+c+' von '+gesrRFSet.length+' richtig</div>';
+};
+window.gesrNextRF=function(){gesrGenRF();};
+window.gesrResetRF=function(){gesrRFSet.forEach(function(q,i){document.querySelectorAll('input[name="gesr_rf_'+i+'"]').forEach(function(r){r.checked=false;});var f=document.getElementById('gesr_rffb_'+i);if(f){f.style.display='none';}var c=document.getElementById('gesr_rf_'+i);if(c)c.style.borderLeft='';});document.getElementById('gesr_rf_res').innerHTML='';};
+
+// --- DATEN: ARTIKEL ZUORDNEN ---
+var GESR_ARTQ=[
+{q:'Juristische Personen sind aller Rechte und Pflichten fähig...',a:'Art. 53 ZGB',opts:['Art. 53 ZGB','Art. 55 ZGB','Art. 530 OR','Art. 620 OR']},
+{q:'Die Organe geben der juristischen Person ihren Willen.',a:'Art. 55 ZGB',opts:['Art. 53 ZGB','Art. 55 ZGB','Art. 717 OR','Art. 698 OR']},
+{q:'Vertragsmässige Verbindung für gemeinsamen Zweck = Gesellschaft.',a:'Art. 530 OR',opts:['Art. 530 OR','Art. 552 OR','Art. 594 OR','Art. 620 OR']},
+{q:'Nur natürliche Personen, kaufmännisches Gewerbe, gemeinsame Firma.',a:'Art. 552 OR',opts:['Art. 530 OR','Art. 552 OR','Art. 594 OR','Art. 772 OR']},
+{q:'Solidarische Haftung mit ganzem Vermögen (KolG).',a:'Art. 568 OR',opts:['Art. 544 OR','Art. 568 OR','Art. 680 OR','Art. 794 OR']},
+{q:'Aktiengesellschaft: eigene Firma, Aktienkapital, nur Gesellschaftsvermögen haftet.',a:'Art. 620 OR',opts:['Art. 552 OR','Art. 620 OR','Art. 772 OR','Art. 930 OR']},
+{q:'Einzige Pflicht des Aktionärs: Einzahlung.',a:'Art. 680 OR',opts:['Art. 620 OR','Art. 680 OR','Art. 717 OR','Art. 725 OR']},
+{q:'VR muss Aufgaben mit aller Sorgfalt erfüllen.',a:'Art. 717 OR',opts:['Art. 698 OR','Art. 707 OR','Art. 717 OR','Art. 727 OR']},
+{q:'Hälfte des AK nicht gedeckt → VR beruft GV ein.',a:'Art. 725 OR',opts:['Art. 717 OR','Art. 725 OR','Art. 680 OR','Art. 794 OR']},
+{q:'GmbH: personenbezogene Kapitalgesellschaft.',a:'Art. 772 OR',opts:['Art. 620 OR','Art. 772 OR','Art. 794 OR','Art. 552 OR']},
+{q:'Für GmbH-Verbindlichkeiten haftet nur das Gesellschaftsvermögen.',a:'Art. 794 OR',opts:['Art. 680 OR','Art. 772 OR','Art. 794 OR','Art. 568 OR']},
+{q:'Das Handelsregister steht jedermann zur Einsicht offen.',a:'Art. 930 OR',opts:['Art. 930 OR','Art. 944 OR','Art. 956 OR','Art. 727 OR']}
+];
+var gesrArtSet=[];
+
+window.gesrGenArt=function(){
+var pool=GESR_ARTQ.slice();for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+gesrArtSet=pool.slice(0,5);
+var h='';gesrArtSet.forEach(function(q,i){
+var opts=q.opts.slice();for(var k=opts.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=opts[k];opts[k]=opts[j];opts[j]=t;}
+h+='<div class="c" id="gesr_aq_'+i+'" style="padding:14px 18px;margin-bottom:8px"><div class="cd" style="margin-bottom:8px;font-style:italic">«'+q.q+'»</div>';
+h+='<select id="gesr_as_'+i+'" style="padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--s2);color:var(--tx);font-family:var(--f);font-size:13px"><option value="">— Artikel wählen —</option>';
+opts.forEach(function(o){h+='<option value="'+o+'">'+o+'</option>';});
+h+='</select><div id="gesr_afb_'+i+'" style="display:none;margin-top:6px;font-size:12px"></div></div>';
+});
+document.getElementById('gesr_art_wrap').innerHTML=h;
+document.getElementById('gesr_art_res').innerHTML='';
+};
+window.gesrCheckArt=function(){
+var c=0;gesrArtSet.forEach(function(q,i){
+var sel=document.getElementById('gesr_as_'+i);var fb=document.getElementById('gesr_afb_'+i);var card=document.getElementById('gesr_aq_'+i);
+if(!sel||!fb||!card)return;fb.style.display='block';
+if(sel.value===q.a){card.style.borderLeft='3px solid var(--g)';fb.innerHTML='<span style="color:var(--g)">✓ Richtig!</span>';c++;}
+else{card.style.borderLeft='3px solid var(--r)';fb.innerHTML='<span style="color:var(--r)">✗ Falsch.</span> Richtig: <strong>'+q.a+'</strong>';}
+});
+document.getElementById('gesr_art_res').innerHTML='<div class="'+(c===gesrArtSet.length?'hlg':'hla')+'">'+c+' von '+gesrArtSet.length+' richtig</div>';
+};
+window.gesrNextArt=function(){gesrGenArt();};
+window.gesrResetArt=function(){gesrArtSet.forEach(function(q,i){var s=document.getElementById('gesr_as_'+i);if(s)s.value='';var f=document.getElementById('gesr_afb_'+i);if(f){f.style.display='none';}var c=document.getElementById('gesr_aq_'+i);if(c)c.style.borderLeft='';});document.getElementById('gesr_art_res').innerHTML='';};
+
+// --- DATEN: MULTIPLE CHOICE ---
+var GESR_MC=[
+{q:'Welche Gesellschaftsform darf KEIN kaufmännisches Unternehmen betreiben?',opts:['KolG','Einfache Gesellschaft','GmbH','AG'],a:1,e:'Die eG darf nie ein kaufm. UN betreiben — sonst wird sie automatisch KolG.'},
+{q:'Was passiert, wenn die Hälfte des Aktienkapitals einer AG nicht mehr gedeckt ist?',opts:['Sofortige Auflösung','VR beruft GV ein + Sanierung','Konkurs wird eröffnet','Nichts — kein Handlungsbedarf'],a:1,e:'Art. 725 OR: Kapitalverlust → VR muss GV einberufen und Sanierungsmassnahmen vorschlagen.'},
+{q:'Wie viele Personen braucht es mindestens zur Gründung einer GmbH?',opts:['2','3','1','5'],a:2,e:'Seit der Revision braucht es mind. 1 Person (nat. oder jur.).'},
+{q:'Welches Organ der AG hat die Kompetenzvermutung?',opts:['Generalversammlung','Revisionsstelle','Verwaltungsrat','Geschäftsleitung'],a:2,e:'Im Zweifel ist der VR zuständig — er hat die Kompetenzvermutung.'},
+{q:'Was bedeutet «konstitutiver» HR-Eintrag?',opts:['Nur beurkundend','Rechtserzeugend — Gesellschaft entsteht erst dadurch','Freiwillig','Rückwirkend'],a:1,e:'Konstitutiv = AG/GmbH existieren erst ab HR-Eintrag.'},
+{q:'Wie hoch muss das Stammkapital einer GmbH mindestens sein?',opts:['CHF 100\'000','CHF 50\'000','CHF 20\'000','CHF 10\'000'],a:2,e:'CHF 20\'000, muss zu 100% liberiert sein.'},
+{q:'Wer kann Gesellschafter einer KolG sein?',opts:['Nur natürliche Personen','Nur juristische Personen','Natürliche und juristische Personen','Nur Schweizer Staatsbürger'],a:0,e:'Art. 552 OR: ausschliesslich natürliche Personen.'},
+{q:'Was ist die Folge eines HR-Eintrags? (Alle zutreffenden)',opts:['Buchführungspflicht','Betreibung auf Konkurs','Firmenschutz','Alle genannten'],a:3,e:'HR-Eintrag = Buchführung (OR 957) + Konkurs (Art. 39 SchKG) + Firmenschutz (Art. 956 OR).'},
+{q:'Welche Aktienart wurde in der Schweiz abgeschafft?',opts:['Namenaktie','Inhaberaktie','Stimmrechtsaktie','Partizipationsschein'],a:1,e:'Inhaberaktien abgeschafft (Geldwäscherei-Bekämpfung, bis 30.04.2021 umzuwandeln).'},
+{q:'Was ist die Mindestliberierung bei der AG?',opts:['CHF 20\'000','CHF 50\'000','CHF 100\'000','100% des AK'],a:1,e:'Mind. CHF 50\'000 müssen bei Gründung einbezahlt sein (bei AK von CHF 100\'000).'},
+{q:'Wer haftet bei der KmG unbeschränkt?',opts:['Kommanditär','Komplementär','Beide','Keiner'],a:1,e:'Komplementär: volle Haftung. Kommanditär: nur bis Kommanditsumme.'},
+{q:'Was braucht es für die Übertragung von GmbH-Stammanteilen?',opts:['Nur mündliche Absprache','Schriftlicher Vertrag + GV-Zustimmung','Nur GV-Beschluss','Notarielle Beurkundung'],a:1,e:'Art. 785 OR: schriftlicher Vertrag + Zustimmung der Gesellschafterversammlung.'}
+];
+var gesrMCIdx=0;
+
+window.gesrGenMC=function(){
+var q=GESR_MC[gesrMCIdx];var w=document.getElementById('gesr_mc_wrap');if(!w)return;
+var h='<div class="c" style="padding:20px 24px"><div class="ct2" style="margin-bottom:12px">'+q.q+'</div>';
+q.opts.forEach(function(o,i){
+h+='<label style="display:block;padding:10px 14px;margin:4px 0;border-radius:10px;border:1px solid var(--bd);cursor:pointer;transition:all .2s" onmouseover="this.style.background=\'var(--s2)\'" onmouseout="this.style.background=\'\'"><input type="radio" name="gesr_mc" value="'+i+'" style="margin-right:8px"> '+o+'</label>';
+});
+h+='</div>';
+w.innerHTML=h;
+document.getElementById('gesr_mc_res').innerHTML='';
+};
+window.gesrCheckMC=function(){
+var q=GESR_MC[gesrMCIdx];var sel=document.querySelector('input[name="gesr_mc"]:checked');
+var res=document.getElementById('gesr_mc_res');if(!sel){res.innerHTML='<div class="hla">Bitte wähle eine Antwort.</div>';return;}
+if(parseInt(sel.value)===q.a){res.innerHTML='<div class="hlg">✓ Richtig! '+q.e+'</div>';}
+else{res.innerHTML='<div class="hlr">✗ Falsch. Richtig: <strong>'+q.opts[q.a]+'</strong><br>'+q.e+'</div>';}
+};
+window.gesrNextMC=function(){gesrMCIdx=(gesrMCIdx+1)%GESR_MC.length;gesrGenMC();};
+window.gesrResetMC=function(){document.querySelectorAll('input[name="gesr_mc"]').forEach(function(r){r.checked=false;});document.getElementById('gesr_mc_res').innerHTML='';};
+
 })();
