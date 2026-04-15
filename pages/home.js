@@ -17,19 +17,10 @@
     {
       id: 'recht2',
       name: 'Recht 2 — SchKG',
-      beschreibung: 'Schuldbetreibung & Konkurs · Pfändung · Konkursverfahren',
+      beschreibung: 'Schuldbetreibung & Konkurs · Gesellschaftsrecht',
       dozent: 'Olivier Dollé',
       details: ['10 Module', '40+ Artikel', 'Quiz & Karten'],
-      farbe: ['var(--ac)', 'var(--pr)'],
-      status: 'live'
-    },
-    {
-      id: 'gesr',
-      name: 'Gesellschaftsrecht',
-      beschreibung: 'AG · GmbH · KlG · KmG · Handelsregister · Kapitalschutz',
-      dozent: 'Olivier Dollé',
-      details: ['7 Kapitel', '33 Karten', 'Quiz & Glossar'],
-      farbe: ['var(--g)', 'var(--bl)'],
+      farbe: ['var(--ac)', 'var(--pr)'],  // Gradient-Farben
       status: 'live'
     },
     {
@@ -98,17 +89,8 @@
 
     // Kurse in Arbeit (status: 'arbeit')
     { name: 'Betriebsorganisation', status: 'arbeit' },
-    { name: 'Business English', status: 'arbeit' },
-    { name: 'Digitale Kompetenzen', status: 'arbeit' },
     { name: 'Food & Beverage Mgmt', status: 'arbeit' },
-    { name: 'Führung & Leadership', status: 'arbeit' },
-    { name: 'ID Loop', status: 'arbeit' },
-    { name: 'Innovation & Digitalisierung', status: 'arbeit' },
-    { name: 'Medien', status: 'arbeit' },
-    { name: 'Präsentationstechnik', status: 'arbeit' },
-    { name: 'Qualitätsmanagement', status: 'arbeit' },
-    { name: 'Sozialversicherungen', status: 'arbeit' },
-    { name: 'Sustainability', status: 'arbeit' }
+    { name: 'Führung & Leadership', status: 'arbeit' }
   ];
 
   // ==========================================
