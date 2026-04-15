@@ -151,6 +151,18 @@ const ABKZ={
 'SMERF':['SMERF','Social, Military, Education, Religious, Fraternal','Bezeichnung für Freizeitreisegruppen. Werden vom Veranstalter oft als Serie eingekauft. Gleiche Prozesse wie Paketreisen für Individuelle.'],
 'Robinsonliste':['Robinsonliste','Sperrliste gegen unerwünschte Werbung','Privatpersonen auf der Robinsonliste dürfen nicht mit Telemarketing kontaktiert werden. Im aktiven Telefonverkauf unbedingt prüfen!'],
 'Kinesik':['Kinesik','Wissenschaft der Körpersprache','Nichtsprachlicher (nonverbaler) Teil der Kommunikation. Kann schwer «lügen», da viele Aspekte unbewusst ablaufen. Umfasst Gestik, Mimik, Körperhaltung, Blickkontakt, räumliches Verhalten.'],
+// === GESELLSCHAFTSRECHT ===
+'KlG':['KlG','Kollektivgesellschaft','Mind. 2 natürliche Personen mit kaufm. Gewerbe unter gemeinsamer Firma. Haftung: persönlich, solidarisch, unbeschränkt, subsidiär (Art. 552ff. OR).'],
+'KmG':['KmG','Kommanditgesellschaft','Wie KlG, aber mit zwei Gesellschaftertypen: Komplementär (volle Haftung) + Kommanditär (begrenzte Haftung bis zur Kommanditsumme). Firma: Fantasiename + «KmG» (Art. 594ff. OR).'],
+'eG':['eG','Einfache Gesellschaft','Auffangform im Gesellschaftsrecht. Formfrei, sogar durch Verhalten. Kein kaufm. Unternehmen. Haftung: primär, solidarisch, unbeschränkt. Nicht im HR eintragbar (Art. 530ff. OR).'],
+'VR':['VR','Verwaltungsrat','Geschäftsführendes Organ der AG. Mind. 1 Mitglied. Kompetenzvermutung. Sorgfalts- und Treuepflicht (Art. 717 OR). Kann GL einsetzen, behält immer Oberaufsicht.'],
+'GV':['GV','Generalversammlung','Oberstes Organ der AG. Alle Aktionäre. Jährlich mind. 1×. Wählt VR und RS, genehmigt Jahresrechnung, erteilt Décharge.'],
+'AK':['AK','Aktienkapital','Grundkapital einer AG. Mindestens CHF 100\'000.–, mindestens CHF 50\'000 zu liberieren. Aufgeteilt in Aktien mit Nennwert > CHF 0 (seit 2023).'],
+'SHAB':['SHAB','Schweizerisches Handelsamtsblatt','Offizielles Publikationsorgan für Handelsregister-Einträge. Online unter www.shab.ch.'],
+'Décharge':['Décharge','Entlastung des Verwaltungsrats','Beschluss der GV, der den VR von Haftungsansprüchen für das abgelaufene Geschäftsjahr befreit. Betrifft nur bekannte Sachverhalte.'],
+'Vinkulierung':['Vinkulierung','Übertragungsbeschränkung bei Namenaktien','VR kann Übertragung ablehnen. Börsenkotiert: nur mengenmässig. Nicht-börsenkotiert: persönliche Gründe möglich.'],
+'Opting-out':['Opting-out','Verzicht auf Revisionsstelle','Möglich bei ≤ 10 Vollzeitstellen. In der Praxis sehr häufig bei KMU. Gilt für AG, GmbH, Genossenschaft.'],
+'ZGB':['ZGB','Zivilgesetzbuch','Schweizerisches Zivilgesetzbuch. Enthält Personenrecht (jur. Person Art. 53ff.), Familienrecht, Erbrecht, Sachenrecht.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;
