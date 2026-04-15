@@ -120,7 +120,7 @@ const courseHTML=`
 
 <div id="gesr_ueb_sel">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
-<div class="c ck" onclick="gesrShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px">📋</div><div class="ct2">Fallbeispiele</div><div class="cd">15 Fälle aus dem Kompendium</div></div>
+<div class="c ck" onclick="gesrShowUeb(1)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--g);margin-bottom:6px">📋</div><div class="ct2">Fallbeispiele</div><div class="cd">Fälle mit Toggle-Lösung</div></div>
 <div class="c ck" onclick="gesrShowUeb(2)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--bl);margin-bottom:6px">🔀</div><div class="ct2">Zuordnung</div><div class="cd">Rechtsform &amp; Betreibungsart</div></div>
 <div class="c ck" onclick="gesrShowUeb(3)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--ac);margin-bottom:6px">✓✗</div><div class="ct2">Richtig / Falsch</div><div class="cd">Aussagen beurteilen</div></div>
 <div class="c ck" onclick="gesrShowUeb(4)" style="text-align:center;padding:24px 16px"><div style="font-size:18px;font-weight:700;color:var(--pr);margin-bottom:6px">§</div><div class="ct2">Artikel zuordnen</div><div class="cd">Welcher Gesetzesartikel?</div></div>
@@ -138,10 +138,8 @@ const courseHTML=`
 <button onclick="gesrResetFall()" style="font-size:12px">Zurücksetzen</button>
 </div>
 <div id="gesr_fall_sol" style="display:none;margin-top:12px"></div>
-<div style="text-align:center;margin-top:12px;font-size:11px;color:var(--tx3)" id="gesr_fall_count"></div>
 </div>
 
-<!-- ÜBUNG 2: Zuordnung -->
 <div id="gesr_ueb2" style="display:none">
 <button onclick="gesrShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
 <h2>Zuordnung — Rechtsform bestimmen</h2><p class="sub">Wähle für jeden Fall die richtige Rechtsform</p>
@@ -383,7 +381,6 @@ var w=document.getElementById('gesr_fall_wrap');if(!w)return;
 w.innerHTML='<div class="c" style="padding:20px 24px"><h3 style="color:var(--g);margin-bottom:8px">'+f.t+'</h3><div class="cd" style="line-height:1.8">'+f.q+'</div><div style="margin-top:12px"><textarea id="gesr_fall_answer" style="width:100%;min-height:100px;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--s2);color:var(--tx);font-family:var(--f);font-size:13px;resize:vertical" placeholder="Schreibe deine Antwort hier..."></textarea></div></div>';
 document.getElementById('gesr_fall_sol').style.display='none';
 document.getElementById('gesr_fall_sol').innerHTML='';
-document.getElementById('gesr_fall_count').textContent='Fall '+(gesrFallIdx+1)+' von '+GESR_FAELLE.length;
 };
 window.gesrShowFallSol=function(){
 var f=GESR_FAELLE[gesrFallIdx];var s=document.getElementById('gesr_fall_sol');
