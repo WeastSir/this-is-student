@@ -164,31 +164,31 @@ const courseHTML=`
 </div>
 
 <!-- KARTEN -->
-<div class="sec" id="gesr_kart"><h1>Karteikarten</h1><p class="sub"><span id="fcCount">33</span> Karten — klicke zum Umdrehen</p>
-<div class="fcc" id="fcc"></div>
-<div class="fd"><div class="fc" id="fc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="fcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="fca"></div></div></div></div>
-<div class="fb"><button onclick="fP()">Zurück</button><button onclick="fS()">Mischen</button><button class="bp1" onclick="fN()">Nächste</button></div>
-<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="fcPool"></div>
-<div id="fcList" style="display:none;margin-top:16px"></div></div>
+<div class="sec" id="gesr_kart"><h1>Karteikarten</h1><p class="sub"><span id="gesrfcCount">33</span> Karten — klicke zum Umdrehen</p>
+<div class="fcc" id="gesrfcc"></div>
+<div class="fd"><div class="fc" id="gesrfc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="gesrfcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="gesrfca"></div></div></div></div>
+<div class="fb"><button onclick="fcPrev()">Zurück</button><button onclick="fcShuffle()">Mischen</button><button class="bp1" onclick="fcNext()">Nächste</button></div>
+<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="gesrfcPool"></div>
+<div id="gesrfcList" style="display:none;margin-top:16px"></div></div>
 
 <!-- QUIZ -->
 <div class="sec" id="gesr_quiz"><h1>Quiz</h1><p class="sub">Alle Fragen werden wiederholt bis du sie kannst</p>
-<div id="qStats" style="margin-bottom:20px">
+<div id="gesrqStats" style="margin-bottom:20px">
 <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="qTotR" style="color:var(--g)">0</div><div class="qsl">Total richtig</div></div>
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="qTotW" style="color:var(--r)">0</div><div class="qsl">Total falsch</div></div>
-<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="qTotP" style="color:var(--ac)">0%</div><div class="qsl">Erfolgsquote</div></div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="gesrqTotR" style="color:var(--g)">0</div><div class="qsl">Total richtig</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="gesrqTotW" style="color:var(--r)">0</div><div class="qsl">Total falsch</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="gesrqTotP" style="color:var(--ac)">0%</div><div class="qsl">Erfolgsquote</div></div></div>
 <div style="font-size:12px;color:var(--tx3);margin-bottom:6px">Lernerfolg</div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--g);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Sicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="barG" style="height:100%;background:var(--g);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="barGn">0</div></div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--am);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Wackelig</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="barO" style="height:100%;background:var(--am);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="barOn">0</div></div>
-<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--r);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Unsicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="barR" style="height:100%;background:var(--r);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="barRn">0</div></div>
-<div style="display:flex;gap:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--tx3);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Offen</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="barX" style="height:100%;background:var(--tx3);border-radius:4px;transition:width .5s;width:100%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="barXn">0</div></div></div>
-<div class="pb"><div class="pf" id="qP"></div></div><div class="pt" id="qPT">Frage 1</div>
-<div id="qC"></div>
-<div style="text-align:center;margin-top:14px"><button class="bp1" id="qN" onclick="qNx()" style="display:none">Nächste Frage</button><button class="bp1" id="qRS" onclick="qSt()" style="display:none">Weiter üben</button><button id="qReset" onclick="qReset()" style="display:none;margin-left:8px">Fortschritt zurücksetzen</button></div>
-<div style="text-align:center;margin-top:12px;font-size:11px;color:var(--tx3)" id="qPoolSize"></div>
-<div style="text-align:center;margin-top:8px"><button onclick="togglePoolView()" id="poolToggle" style="font-size:12px;padding:6px 14px">Alle Fragen anzeigen</button></div>
-<div id="qPoolList" style="display:none;margin-top:16px"></div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--g);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Sicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="gesrqBarG" style="height:100%;background:var(--g);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="gesrqBarGn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--am);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Wackelig</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="gesrqBarO" style="height:100%;background:var(--am);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="gesrqBarOn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--r);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Unsicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="gesrqBarR" style="height:100%;background:var(--r);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="gesrqBarRn">0</div></div>
+<div style="display:flex;gap:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--tx3);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Offen</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="gesrqBarX" style="height:100%;background:var(--tx3);border-radius:4px;transition:width .5s;width:100%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="gesrqBarXn">0</div></div></div>
+<div class="pb"><div class="pf" id="gesrqP"></div></div><div class="pt" id="gesrqPT">Frage 1</div>
+<div id="gesrqC"></div>
+<div style="text-align:center;margin-top:14px"><button class="bp1" id="gesrqN" onclick="gesrqNx()" style="display:none">Nächste Frage</button><button class="bp1" id="gesrqRS" onclick="gesrqSt()" style="display:none">Weiter üben</button><button id="gesrqReset" onclick="gesrqReset()" style="display:none;margin-left:8px">Fortschritt zurücksetzen</button></div>
+<div style="text-align:center;margin-top:12px;font-size:11px;color:var(--tx3)" id="gesrqPoolSize"></div>
+<div style="text-align:center;margin-top:8px"><button onclick="gesrqTogglePool()" id="gesrqPoolToggle" style="font-size:12px;padding:6px 14px">Alle Fragen anzeigen</button></div>
+<div id="gesrqPoolList" style="display:none;margin-top:16px"></div></div>
 
 <!-- GLOSSAR -->
 <div class="sec" id="gesr_glossar"><h1>Glossar</h1><p class="sub">Begriffe &amp; Abkürzungen</p>
