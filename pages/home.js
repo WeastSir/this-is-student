@@ -86,11 +86,19 @@
       farbe: ['#38b6e8', '#b838e8'],
       status: 'live'
     },
+    {
+      id: 'fl',
+      name: 'Führung & Leadership',
+      beschreibung: 'St. Galler · GRID · MbO · Maslow · Glasl · Topend · 7 Führungskiller',
+      dozent: 'Marc Aeberhard',
+      details: ['11 Kapitel', '77 Karten', 'Quiz & Glossar'],
+      farbe: ['#8b2c5a', '#e89a38'],
+      status: 'live'
+    },
 
     // Kurse in Arbeit (status: 'arbeit')
     { name: 'Betriebsorganisation', status: 'arbeit' },
-    { name: 'Food & Beverage Mgmt', status: 'arbeit' },
-    { name: 'Führung & Leadership', status: 'arbeit' }
+    { name: 'Food & Beverage Mgmt', status: 'arbeit' }
   ];
 
   // ==========================================
