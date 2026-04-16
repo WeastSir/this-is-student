@@ -103,7 +103,7 @@
 <div id="newPWSuccess" style="display:none;text-align:center;padding:10px 14px;background:rgba(76,209,146,.08);border-radius:10px;border:1px solid rgba(76,209,146,.15);color:#4cd192;font-size:13px;margin-top:14px"></div>
 </div>
 
-<div class="login-footer">Interaktive Lernplattform · SHL</div>
+<div class="login-footer">This Is Student</div>
 </div>
 </div>
 `;
