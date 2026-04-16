@@ -76,7 +76,7 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 </div>
 
 <!-- CTRL: Kennzahlen -->
-<!-- CTRL: Kennzahlen (aus PDF-Zusammenfassung 1:1) -->
+<!-- CTRL: Kennzahlen (PDF-Zusammenfassung als Timeline) -->
 <div class="sec" id="ctrl_kz"><h1>01 · Kennzahlen</h1><p class="sub">KPI, Erfolgskennzahlen, Finanzierung, Liquidität, Working Capital, Balanced Scorecard</p>
 
 <div class="hlbl"><strong>LERNZIELE K01</strong><br>
@@ -86,244 +86,240 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 ✓ Die verschiedenen Arten von Kennzahlen auswendig aufzählen und sinngemäss beschreiben<br>
 ✓ Die Balanced Scorecard mit eigenen Worten beschreiben, Perspektiven aufzählen und eine einfache Scorecard selbstständig aufzeichnen</div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.1 Was ist eine Kennzahl?</h2>
-<p>Eine <strong style="color:#e8a838">Kennzahl</strong> ist eine Zusammenfassung von quantitativen (in Zahlen ausdrückbaren) Informationen für den innerbetrieblichen und/oder zwischenbetrieblichen Vergleich. Kennzahlen setzen erhaltene Informationen in eine allgemeine Relation — etwa ins Verhältnis zum Ganzen — und drücken diese Relation als neuen, vereinfachten Wert aus (z.B. in Prozenten).</p>
-<p>Einfach gesagt: Kennzahlen verdichten eine Flut von Rohdaten aus dem Rechnungswesen zu wenigen, aussagekräftigen Zahlen, die Führungsentscheidungen ermöglichen. Ohne Kennzahlen ist <strong style="color:#00c6fb">Führen mit Fakten</strong> unmöglich — man tappt im Dunkeln.</p>
+<div class="hl" style="text-align:center;font-style:italic;font-size:14px;margin-top:14px">«Was man nicht messen kann, kann man nicht lenken.» — <strong>Peter Drucker</strong>, Ökonom (1909–2005)</div>
 
-<h2 style="color:#00c6fb;margin-top:24px">1.2 Aufgaben von Kennzahlen</h2>
-<p>Führen mit Kennzahlen heisst, die Ergebnisse des Tagesgeschäfts zu messen, daraus Entscheidungen abzuleiten und so den Weiterbestand des Unternehmens zu sichern. Konkret:</p>
-<ul style="margin-left:22px;line-height:1.9">
-<li><strong style="color:#e8a838">Operationalisierung der Strategie</strong>: Über Steuerungsgrössen (Key Performance Indicators — KPI) werden abstrakte strategische Ziele messbar gemacht.</li>
-<li><strong style="color:#e8a838">Entscheidungshilfe</strong> für interne Empfänger (Geschäftsleitung, Verwaltungsrat, Abteilungsleitung) — sie richten den Fokus auf das Wesentliche.</li>
-<li><strong style="color:#e8a838">Kommunikation nach aussen</strong>: Für Ratingagenturen, Banken, Investoren und den Kapitalmarkt sind Kennzahlen die Sprache, in der Unternehmen bewertet werden.</li>
-</ul>
+<div style="display:flex;gap:8px;margin:16px 0 6px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
+<div class="tl">
+
+<div class="tl-item"><div class="tl-num tl-num-b">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Was ist eine Kennzahl?</div><div class="tl-merksatz">«Kennzahlen verdichten Rohdaten zu Führungsentscheidungen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Eine <strong>Kennzahl</strong> ist eine Zusammenfassung von quantitativen (in Zahlen ausdrückbaren) Informationen für den innerbetrieblichen und/oder zwischenbetrieblichen Vergleich. Kennzahlen setzen erhaltene Informationen in eine allgemeine Relation — etwa ins Verhältnis zum Ganzen — und drücken diese Relation als neuen, vereinfachten Wert aus (z.B. in Prozenten).<br><br>
+Einfach gesagt: Kennzahlen verdichten eine Flut von Rohdaten aus dem Rechnungswesen zu wenigen, aussagekräftigen Zahlen, die Führungsentscheidungen ermöglichen. Ohne Kennzahlen ist <strong>Führen mit Fakten</strong> unmöglich — man tappt im Dunkeln.</div>
+<div class="merksatz">Merke: Ohne Kennzahlen keine Führung. Sie ersetzen Bauchgefühl durch Faktenbasis.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Aufgaben von Kennzahlen</div><div class="tl-merksatz">«Strategie messbar machen, Fokus geben, nach aussen kommunizieren.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Führen mit Kennzahlen heisst, die Ergebnisse des Tagesgeschäfts zu messen, daraus Entscheidungen abzuleiten und so den Weiterbestand des Unternehmens zu sichern.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Operationalisierung der Strategie</div><div class="cd">Über Steuerungsgrössen (Key Performance Indicators — KPI) werden abstrakte strategische Ziele messbar gemacht.</div></div>
+<div class="c cm"><div class="ct2">Entscheidungshilfe</div><div class="cd">Für interne Empfänger (Geschäftsleitung, Verwaltungsrat, Abteilungsleitung) — sie richten den Fokus auf das Wesentliche.</div></div>
+<div class="c cp"><div class="ct2">Kommunikation nach aussen</div><div class="cd">Für Ratingagenturen, Banken, Investoren und den Kapitalmarkt sind Kennzahlen die Sprache, in der Unternehmen bewertet werden.</div></div>
+</div>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
 <strong style="color:#34c759">🏨 FALLBEISPIEL HOTEL BELLAVISTA</strong><br>
 Claudia Bellavista steht am Montagmorgen vor ihrem Dashboard. Statt 12 Millionen Franken Umsatz und 800 Einzelbuchungen liest sie drei Zahlen: <strong>OCC 78 %</strong>, <strong>ADR CHF 245</strong>, <strong>RevPAR CHF 191</strong>. Drei Zahlen — und sie weiss sofort: Die Auslastung stimmt, aber der Durchschnittspreis ist im Vergleich zum Vormonat um 8 % gefallen. Handlungsbedarf!
 </div>
+<div class="merksatz">Merke: Drei Zahlen können ein ganzes Hotel steuern — wenn sie die richtigen sind.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.3 Arten von Kennzahlen</h2>
-<p>Kennzahlen werden grundsätzlich in <strong style="color:#e8a838">absolute</strong> und <strong style="color:#ff3b30">relative</strong> Kennzahlen unterschieden:</p>
+<div class="tl-item"><div class="tl-num tl-num-a">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Arten von Kennzahlen</div><div class="tl-merksatz">«Absolut = Grösse. Relativ = Verhältnis. Relativ hat mehr Aussagekraft.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body"><strong>Absolute Kennzahlen</strong> geben Auskunft über die Grösse (z.B. Umsatz in CHF). <strong>Relative Kennzahlen</strong> (Verhältniszahlen) haben höhere Aussagekraft.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Gliederungszahlen</div><div class="cd">Teilgrösse ÷ Gesamtgrösse. Bsp: Eigenkapitalquote = EK ÷ GK.</div></div>
+<div class="c cg"><div class="ct2">Beziehungszahlen</div><div class="cd">Verschiedenartige Grössen ins Verhältnis. Bsp: EK-Rendite = Gewinn ÷ EK. Ursache-Wirkungs-Beziehung.</div></div>
+<div class="c cm"><div class="ct2">Indexzahlen</div><div class="cd">Gleiche Zahl zu verschiedenen Zeitpunkten. Bsp: Umsatz 2024 ÷ Umsatz 2023. Perioden müssen gleich lang sein!</div></div>
+</div>
+<div class="hl" style="margin-top:12px;font-style:italic">Merke: Zähler und Nenner müssen zeitlich, sachlich und wertmässig äquivalent sein.</div>
+</div></div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0">
-<div class="c ca" style="padding:16px 20px"><div style="font-size:22px;margin-bottom:6px">💰</div><div class="ct2">Absolute Kennzahlen</div><div class="cd">Geben Auskunft über die Grösse eines Unternehmens. <strong>Beispiel:</strong> Umsatz CHF 4'000'000, Jahresgewinn CHF 50'000, Anzahl Zimmer 80.</div></div>
-<div class="c cg" style="padding:16px 20px"><div style="font-size:22px;margin-bottom:6px">📊</div><div class="ct2">Relative Kennzahlen</div><div class="cd">Verhältniszahlen mit höherer Aussagekraft. Sie bereiten die Ausgangsdaten weiter auf. <strong>Beispiel:</strong> Umsatzrendite 1,25 %.</div></div>
+<div class="tl-item"><div class="tl-num tl-num-g">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Erfolgskennzahlen — «Wie profitabel sind wir?»</div><div class="tl-merksatz">«Earnings-before-Ziffern: Management isoliert von Finanzierung und Steuern.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Erfolgskennzahlen drücken aus, welchen betriebswirtschaftlichen Erfolg ein Unternehmen in einer Periode erwirtschaftet hat. Sie isolieren einzelne Ergebnisebenen, damit die <strong>Managementleistung</strong> unabhängig von Finanzierungs- und Steuereffekten sichtbar wird. Man nennt diese isolierten Grössen <strong>«Earnings-before-Ziffern»</strong>.</div>
+
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Die Earnings-before-Kaskade</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin:10px 0">
+<div style="background:rgba(52,199,89,0.15);border:2px solid #34c759;padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:700;font-size:13px">Total Betriebsertrag</div>
+<div style="color:#e8a838;font-size:18px">↓</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:600;font-size:13px">− Operative Aufwände → GOI / GOP</div>
+<div style="color:#e8a838;font-size:18px">↓</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:600;font-size:13px"><strong>EBITDA</strong> — operatives Tagesgeschäft</div>
+<div style="color:#e8a838;font-size:18px">↓</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:600;font-size:13px">− Abschreibungen → <strong>EBIT</strong></div>
+<div style="color:#e8a838;font-size:18px">↓</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:600;font-size:13px">− Finanzaufwand → <strong>EBT</strong></div>
+<div style="color:#e8a838;font-size:18px">↓</div>
+<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:8px 16px;border-radius:8px;min-width:260px;text-align:center;font-weight:700;font-size:13px">− Steuern → <strong>Jahresergebnis</strong></div>
 </div>
 
-<p>Relative Kennzahlen teilen sich in drei Unterarten auf:</p>
-
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Gliederungszahlen</div><div class="cd">Eine Teilgrösse wird ins Verhältnis zur Gesamtgrösse gesetzt.<br><br><strong>Bsp:</strong> Eigenkapitalquote = Eigenkapital / Bilanzsumme × 100 = 20 %</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Beziehungszahlen</div><div class="cd">Relationen zwischen verschiedenartigen Grössen — versuchen Ursache-Wirkungs-Beziehungen herzustellen.<br><br><strong>Bsp:</strong> Eigenkapitalrendite = Gewinn / EK × 100 = 5 %</div></div>
-<div class="c cp" style="padding:14px 16px"><div class="ct2">Indexzahlen</div><div class="cd">Eine absolute Kennzahl wird zur gleichen Zahl eines früheren Zeitpunkts ins Verhältnis gesetzt.<br><br><strong>Bsp:</strong> Swiss Market Index, Big Mac Index</div></div>
-</div>
-
-<h2 style="color:#00c6fb;margin-top:28px">1.4 Erfolgskennzahlen — «Wie profitabel sind wir?»</h2>
-<p>Erfolgskennzahlen drücken aus, welchen betriebswirtschaftlichen Erfolg ein Unternehmen in einer Periode erwirtschaftet hat. Sie gehen über das reine Jahresergebnis hinaus und isolieren einzelne Ergebnisebenen, damit die <strong style="color:#00c6fb">Managementleistung</strong> unabhängig von Finanzierungs- und Steuereffekten sichtbar wird. Man nennt diese isolierten Grössen «Earnings-before-Ziffern».</p>
-
-<h3 style="margin-top:18px;color:#e8a838">Die Earnings-before-Kaskade</h3>
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin:16px 0">
-<div style="background:rgba(52,199,89,0.15);border:2px solid #34c759;padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:700">Total Betriebsertrag</div>
-<div style="color:#e8a838;font-size:20px">↓</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:600">− Operative Aufwände → <strong>GOI / GOP</strong></div>
-<div style="color:#e8a838;font-size:20px">↓</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:600"><strong>EBITDA</strong> — operatives Tagesgeschäft</div>
-<div style="color:#e8a838;font-size:20px">↓</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:600">− Abschreibungen → <strong>EBIT</strong> (finanzierungsunabhängig)</div>
-<div style="color:#e8a838;font-size:20px">↓</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:600">− Finanzaufwand → <strong>EBT</strong></div>
-<div style="color:#e8a838;font-size:20px">↓</div>
-<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:10px 20px;border-radius:10px;min-width:320px;text-align:center;font-weight:700">− Steuern → <strong>Jahresergebnis</strong></div>
-</div>
-
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:10px;border:1px solid var(--bd)">Formel</td><td style="padding:10px;border:1px solid var(--bd)">Richtwert</td></tr></thead>
+<div style="overflow-x:auto;margin:12px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:8px;border:1px solid var(--bd)">Formel</td><td style="padding:8px;border:1px solid var(--bd)">Richtwert</td></tr></thead>
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Eigenkapitalrendite (RoE)</td><td style="padding:8px 10px;border:1px solid var(--bd)">Reingewinn / Eigenkapital × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#34c759;font-weight:600">5–10 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Gesamtkapitalrendite (RoA)</td><td style="padding:8px 10px;border:1px solid var(--bd)">Reingewinn / Gesamtkapital × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd)">branchenabhängig</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Umsatzrendite (RoS)</td><td style="padding:8px 10px;border:1px solid var(--bd)">Reingewinn / Betriebsertrag × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#34c759;font-weight:600">Gastro 2–8 %, Hotel 5–10 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">EBITDA-Marge</td><td style="padding:8px 10px;border:1px solid var(--bd)">EBITDA / Betriebsertrag × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd)">branchenabhängig</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">RoE (Eigenkapitalrendite)</td><td style="padding:6px 8px;border:1px solid var(--bd)">Reingewinn / EK × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#34c759;font-weight:600">5–10 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">RoA (Gesamtkapitalrendite)</td><td style="padding:6px 8px;border:1px solid var(--bd)">Reingewinn / GK × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd)">branchenabh.</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">RoS (Umsatzrendite)</td><td style="padding:6px 8px;border:1px solid var(--bd)">Reingewinn / Betriebsertrag × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#34c759;font-weight:600">Gastro 2–8 %, Hotel 5–10 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">EBITDA-Marge</td><td style="padding:6px 8px;border:1px solid var(--bd)">EBITDA / Betriebsertrag × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd)">branchenabh.</td></tr>
 </tbody></table></div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
 <strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — RoS</strong><br>
 Betriebsertrag 2024: CHF 12'000'000. Jahresgewinn: CHF 960'000. <strong>Umsatzrendite = 960'000 / 12'000'000 × 100 = 8 %.</strong> Innerhalb des Richtwerts für Hotellerie (5–10 %), aber noch Luft nach oben. Claudia nimmt sich für 2025 eine RoS von 9 % als strategisches Ziel.
 </div>
+<div class="merksatz">Merke: EBITDA ist das reine Tagesgeschäft. Der Reingewinn zeigt, was nach allen Kosten übrig bleibt.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.5 Finanzierungskennzahlen — «Wie stabil stehen wir da?»</h2>
-<p>Finanzierungskennzahlen analysieren die Passivseite der Bilanz: Wie ist das Unternehmen finanziert? Wie hoch ist die Abhängigkeit von Fremdkapital? Gibt es eine goldene Bilanzregel-Struktur (langfristiges Vermögen mit langfristigem Kapital finanziert)?</p>
+<div class="tl-item"><div class="tl-num tl-num-b">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Finanzierungskennzahlen — «Wie stabil stehen wir da?»</div><div class="tl-merksatz">«Goldene Bilanzregel: langfristiges Vermögen mit langfristigem Kapital.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Finanzierungskennzahlen analysieren die <strong>Passivseite der Bilanz</strong>: Wie ist das Unternehmen finanziert? Wie hoch ist die Abhängigkeit von Fremdkapital? Gibt es eine goldene Bilanzregel-Struktur (langfristiges Vermögen mit langfristigem Kapital finanziert)?</div>
 
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:10px;border:1px solid var(--bd)">Formel</td><td style="padding:10px;border:1px solid var(--bd)">Richtwert</td></tr></thead>
+<div style="overflow-x:auto;margin:12px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:8px;border:1px solid var(--bd)">Formel</td><td style="padding:8px;border:1px solid var(--bd)">Richtwert</td></tr></thead>
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Eigenkapitalquote</td><td style="padding:8px 10px;border:1px solid var(--bd)">EK / Gesamtkapital × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#34c759;font-weight:600">20–30 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Fremdkapitalquote</td><td style="padding:8px 10px;border:1px solid var(--bd)">FK / Gesamtkapital × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#ff3b30;font-weight:600">70–80 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Verschuldungsgrad statisch</td><td style="padding:8px 10px;border:1px solid var(--bd)">FK / EK × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#ff3b30;font-weight:600">≤ 200 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Verschuldungsgrad dynamisch</td><td style="padding:8px 10px;border:1px solid var(--bd)">Effektivverschuldung / Cashflow × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#ff9500;font-weight:600">100–300 %</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Anlagedeckungsgrad II</td><td style="padding:8px 10px;border:1px solid var(--bd)">(EK + langfr. FK) / Anlagevermögen × 100 %</td><td style="padding:8px 10px;border:1px solid var(--bd);color:#34c759;font-weight:600">100 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Eigenkapitalquote</td><td style="padding:6px 8px;border:1px solid var(--bd)">EK / GK × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#34c759;font-weight:600">20–30 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Fremdkapitalquote</td><td style="padding:6px 8px;border:1px solid var(--bd)">FK / GK × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#ff3b30;font-weight:600">70–80 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Verschuldungsgrad statisch</td><td style="padding:6px 8px;border:1px solid var(--bd)">FK / EK × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#ff3b30;font-weight:600">≤ 200 %</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Verschuldungsgrad dynamisch</td><td style="padding:6px 8px;border:1px solid var(--bd)">Effektivverschuldung / Cashflow × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#ff9500;font-weight:600">100–300 % (1–3 J.)</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Anlagedeckungsgrad II</td><td style="padding:6px 8px;border:1px solid var(--bd)">(EK + langfr. FK) / AV × 100 %</td><td style="padding:6px 8px;border:1px solid var(--bd);color:#34c759;font-weight:600">100 %</td></tr>
 </tbody></table></div>
 
-<p>Der <strong style="color:#e8a838">Anlagedeckungsgrad II</strong> ist besonders wichtig: Ist er unter 100 %, wird das Anlagevermögen teilweise kurzfristig finanziert — ein Warnsignal. Kurzfristige Gläubiger könnten Rückzahlungen fordern, bevor die langfristigen Anlagen (Gebäude, Einrichtung) Erträge erwirtschaftet haben.</p>
+<div class="hl">Der <strong style="color:#e8a838">Anlagedeckungsgrad II</strong> ist besonders wichtig: Ist er unter 100 %, wird das Anlagevermögen teilweise kurzfristig finanziert — ein Warnsignal. Kurzfristige Gläubiger könnten Rückzahlungen fordern, bevor die langfristigen Anlagen Erträge erwirtschaftet haben.</div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
 <strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA</strong><br>
 Das Hotel Bellavista hat eine Bilanzsumme von CHF 28 Mio., EK von CHF 7 Mio., langfristiges FK von CHF 19 Mio. und Anlagevermögen von CHF 25 Mio. <strong>Eigenkapitalquote = 25 %</strong> (solid), <strong>Anlagedeckungsgrad II = (7+19)/25 × 100 = 104 %</strong> — die goldene Bilanzregel ist knapp erfüllt.
 </div>
+<div class="merksatz">Merke: Goldene Bilanzregel = langfristiges Kapital ≥ Anlagevermögen. Unter 100 % wird's riskant.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.6 Liquiditätskennzahlen — «Können wir unsere Rechnungen bezahlen?»</h2>
-<p>Liquidität bezeichnet zum einen die Eigenschaft von Vermögensgegenständen, in Zahlungsmittel umgewandelt zu werden (in der Regel durch Verkauf), und zum anderen die Fähigkeit einer Person oder eines Unternehmens, Zahlungsverpflichtungen <strong style="color:#ff3b30">pünktlich</strong> nachzukommen. Die Erhaltung der Liquidität ist überlebenswichtig: <strong style="color:#ff3b30">Illiquidität führt zur Insolvenz</strong>.</p>
+<div class="tl-item"><div class="tl-num tl-num-r">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Liquiditätskennzahlen — «Können wir unsere Rechnungen bezahlen?»</div><div class="tl-merksatz">«Illiquidität führt zur Insolvenz — überlebenswichtig!»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Liquidität bezeichnet zum einen die Eigenschaft von Vermögensgegenständen, in Zahlungsmittel umgewandelt zu werden (in der Regel durch Verkauf), und zum anderen die Fähigkeit einer Person oder eines Unternehmens, Zahlungsverpflichtungen <strong style="color:#ff3b30">pünktlich</strong> nachzukommen. Die Erhaltung der Liquidität ist überlebenswichtig: <strong style="color:#ff3b30">Illiquidität führt zur Insolvenz</strong>.</div>
 
-<div class="hlr"><strong>⚠ RECHTLICHER HINWEIS</strong><br>
-Droht eine Zahlungsunfähigkeit (<strong>Art. 725 OR ff.</strong>), muss der Verwaltungsrat Massnahmen zur Sicherstellung ergreifen. Bei Überschuldung ohne Aussicht auf Gesundung ist der Verwaltungsrat gesetzlich verpflichtet, das Gericht zu benachrichtigen — was <strong>de facto zum Konkurs</strong> führt.</div>
+<div class="hlr" style="margin-top:12px"><strong>⚠ RECHTLICHER HINWEIS</strong><br>Droht eine Zahlungsunfähigkeit (<span class="b bb">Art. 725 OR ff.</span>), muss der Verwaltungsrat Massnahmen zur Sicherstellung ergreifen. Bei Überschuldung ohne Aussicht auf Gesundung ist der Verwaltungsrat gesetzlich verpflichtet, das Gericht zu benachrichtigen — was <strong>de facto zum Konkurs</strong> führt.</div>
 
-<p>Es werden drei Liquiditätsgrade unterschieden, die sich nach dem betrachteten Zeitraum differenzieren:</p>
-
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c cr" style="padding:14px 16px"><div class="ct2">1. Grad — Cash Ratio</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 12px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838">Flüssige Mittel / kurzfr. FK × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal">Richtwert: 10–35 %</span></div>
-<div class="cd">Können die Barmittel die kurzfristigen Verbindlichkeiten decken?</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">2. Grad — Quick Ratio</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 12px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838">(Flüssige Mittel + Ford. LuL) / kurzfr. FK × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal">Richtwert: min. 100 %</span></div>
-<div class="cd">Inkl. ausstehende Kundenforderungen — sind diese bei Fälligkeit gedeckt?</div></div>
-<div class="c ca" style="padding:14px 16px"><div class="ct2">3. Grad — Current Ratio</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 12px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838">Umlaufvermögen / kurzfr. FK × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal">Richtwert: 150–200 %</span></div>
-<div class="cd">«Banker's Rule» / «Two-to-One-Rule»: das gesamte Umlaufvermögen im Verhältnis zu kurzfristigen Verbindlichkeiten.</div></div>
+<div class="tl-body" style="margin-top:12px">Es werden drei Liquiditätsgrade unterschieden:</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">1. Grad — Cash Ratio</div><div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">Flüssige Mittel / kurzfr. FK × 100 %<br><span style="color:var(--tx2);font-style:normal;font-size:11px">Richtwert: 10–35 %</span></div><div class="cd">Können die Barmittel die kurzfristigen Verbindlichkeiten decken?</div></div>
+<div class="c cm"><div class="ct2">2. Grad — Quick Ratio</div><div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">(Flüss. Mittel + Ford. LuL) / kurzfr. FK × 100 %<br><span style="color:var(--tx2);font-style:normal;font-size:11px">Richtwert: min. 100 %</span></div><div class="cd">Inkl. ausstehende Kundenforderungen — sind diese bei Fälligkeit gedeckt?</div></div>
+<div class="c cg"><div class="ct2">3. Grad — Current Ratio</div><div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">UV / kurzfr. FK × 100 %<br><span style="color:var(--tx2);font-style:normal;font-size:11px">Richtwert: 150–200 %</span></div><div class="cd">«Banker's Rule» / «Two-to-One-Rule».</div></div>
 </div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
 <strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — LIQUIDITÄTSGRAD 2</strong><br>
-Flüssige Mittel CHF 420'000, Forderungen aus Lieferung und Leistung CHF 180'000, kurzfristiges Fremdkapital CHF 560'000. <strong>Quick Ratio = (420+180)/560 × 100 = 107 %.</strong> Die Forderungen plus Barmittel decken die kurzfristigen Verbindlichkeiten — knapp, aber okay.
+Flüssige Mittel CHF 420'000, Forderungen aus Lieferung und Leistung CHF 180'000, kurzfristiges Fremdkapital CHF 560'000. <strong>Quick Ratio = (420+180)/560 × 100 = 107 %.</strong> Knapp, aber okay.
+</div>
+<div class="merksatz">Merke: Ein profitables Unternehmen kann an Illiquidität sterben. Liquidität schlägt Rentabilität — kurzfristig.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Working Capital — «Wo ist das Geld parkiert?»</div><div class="tl-merksatz">«Nettoumlaufvermögen — Puffer zwischen UV und kurzfr. Schulden.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Als <strong>Working Capital</strong> (Nettoumlaufvermögen) bezeichnet man die Differenz zwischen Umlaufvermögen und kurzfristigen Verbindlichkeiten. Ein positives Working Capital ist ein Indikator für finanzielle Stabilität: Ein Teil des kurzfristigen Vermögens wird langfristig finanziert.</div>
+
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 14px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Working Capital = Umlaufvermögen − kurzfr. Fremdkapital<br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Sollte positiv, aber nicht übermässig hoch sein</span></div>
+
+<div class="tl-body">In der Hotellerie ist das Geld typischerweise an drei Orten parkiert:</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Offene Gästerechnungen</div><div class="cd">Inhouse-Rechnungen, Event-Nachrechnungen, Corporate-Kunden mit Zahlungsziel.</div></div>
+<div class="c cm"><div class="ct2">Warenlager</div><div class="cd">F&B-Vorräte, Weinkeller, Amenities, Reinigungsmaterial.</div></div>
+<div class="c cr"><div class="ct2">Unbezahlte Lieferantenrechnungen</div><div class="cd">Offene Kreditoren — erhöhen die kurzfristigen Verbindlichkeiten.</div></div>
 </div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.7 Working Capital — «Wo ist das Geld parkiert?»</h2>
-<p>Als <strong style="color:#e8a838">Working Capital</strong> (Nettoumlaufvermögen) bezeichnet man die Differenz zwischen Umlaufvermögen und kurzfristigen Verbindlichkeiten. Ein positives Working Capital ist ein Indikator für finanzielle Stabilität: Ein Teil des kurzfristigen Vermögens wird langfristig finanziert.</p>
-
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-Working Capital = Umlaufvermögen − kurzfr. Fremdkapital<br>
-<span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Sollte positiv, aber nicht übermässig hoch sein — sonst überhöhte Kapitalbindung</span>
-</div>
-
-<p>In der Hotellerie ist das Geld typischerweise an drei Orten parkiert:</p>
-
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Offene Gästerechnungen</div><div class="cd">Inhouse-Rechnungen, Event-Nachrechnungen, Corporate-Kunden mit Zahlungsziel.</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Warenlager</div><div class="cd">F&B-Vorräte, Weinkeller, Amenities, Reinigungsmaterial.</div></div>
-<div class="c cr" style="padding:14px 16px"><div class="ct2">Unbezahlte Lieferantenrechnungen</div><div class="cd">Offene Kreditoren — erhöhen die kurzfristigen Verbindlichkeiten.</div></div>
-</div>
-
-<h3 style="color:#e8a838;margin-top:18px">Die drei Fristen und der Cash Conversion Cycle</h3>
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:10px;border:1px solid var(--bd)">Bedeutung</td><td style="padding:10px;border:1px solid var(--bd)">Formel (× 360)</td></tr></thead>
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Die drei Fristen und der Cash Conversion Cycle</div>
+<div style="overflow-x:auto;margin:10px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:8px;border:1px solid var(--bd)">Bedeutung</td><td style="padding:8px;border:1px solid var(--bd)">Formel (× 360)</td></tr></thead>
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">DSO <em style="font-weight:400;color:var(--tx2)">Days Sales Outstanding</em></td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Debitorenfrist — wie lange warte ich auf mein Geld?</td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Forderungen LuL / Betriebsertrag × 360</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">DIO <em style="font-weight:400;color:var(--tx2)">Days Inventory Outstanding</em></td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Lagerdauer — wie lange bleibt Ware liegen?</td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Warenbestand / Wareneinsatz × 360</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">DPO <em style="font-weight:400;color:var(--tx2)">Days Payable Outstanding</em></td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Kreditorenfrist — wie lange zahle ich nicht?</td><td style="padding:8px 10px;border:1px solid var(--bd)">Ø Verbindlichkeiten / Wareneinsatz × 360</td></tr>
-<tr style="background:rgba(0,198,251,0.08)"><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">CCC <em style="font-weight:400;color:var(--tx2)">Cash Conversion Cycle</em></td><td style="padding:8px 10px;border:1px solid var(--bd)"><strong>Kapitalbindungsdauer — wie viele Tage bis Franken vom Konto wieder drauf?</strong></td><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">DIO + DSO − DPO <em style="color:var(--tx2);font-weight:400">(Richtwert: 10–30 Tage)</em></td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">DSO</td><td style="padding:6px 8px;border:1px solid var(--bd)">Debitorenfrist — wie lange warte ich auf mein Geld?</td><td style="padding:6px 8px;border:1px solid var(--bd)">Ø Ford. LuL / Betriebsertrag × 360</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">DIO</td><td style="padding:6px 8px;border:1px solid var(--bd)">Lagerdauer — wie lange bleibt Ware liegen?</td><td style="padding:6px 8px;border:1px solid var(--bd)">Ø Warenbestand / Wareneinsatz × 360</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">DPO</td><td style="padding:6px 8px;border:1px solid var(--bd)">Kreditorenfrist — wie lange zahle ich nicht?</td><td style="padding:6px 8px;border:1px solid var(--bd)">Ø Verbindl. / Wareneinsatz × 360</td></tr>
+<tr style="background:rgba(0,198,251,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">CCC</td><td style="padding:6px 8px;border:1px solid var(--bd)"><strong>Kapitalbindungsdauer</strong></td><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">DIO + DSO − DPO (10–30 T.)</td></tr>
 </tbody></table></div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
 <strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — CCC</strong><br>
-Lagerdauer F&B = 12 Tage (DIO), Debitorenfrist Corporate = 28 Tage (DSO), Kreditorenfrist Lieferanten = 21 Tage (DPO). <strong>CCC = 12 + 28 − 21 = 19 Tage.</strong> Im Richtwertbereich. Claudia verhandelt mit dem Grosslieferanten ein verlängertes Zahlungsziel auf 30 Tage → CCC sinkt auf 10 Tage → 9 Tage weniger Kapitalbindung = Liquiditätsgewinn!
+Lagerdauer F&B = 12 Tage (DIO), Debitorenfrist Corporate = 28 Tage (DSO), Kreditorenfrist Lieferanten = 21 Tage (DPO). <strong>CCC = 12 + 28 − 21 = 19 Tage.</strong> Im Richtwertbereich. Claudia verhandelt ein längeres Zahlungsziel auf 30 Tage → CCC sinkt auf 10 Tage = Liquiditätsgewinn!
 </div>
-
-<h2 style="color:#00c6fb;margin-top:28px">1.8 Exkurs: Liquiditätsplanung</h2>
-<p>Die Liquiditätsplanung ist die strategische Verwaltung der flüssigen Mittel eines Unternehmens anhand eines Liquiditätsplans, der alle Ein- und Auszahlungen umfasst. Eine seriöse Planung hilft vor allem in Krisenzeiten, handlungsfähig zu bleiben und Engpässe frühzeitig zu erkennen.</p>
-
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">
-Liquide Mittel Periodenbeginn + Einzahlungen − Auszahlungen = Liquide Mittel Periodenende
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c cg" style="padding:14px 16px"><div class="ct2">✓ Nutzen</div><div class="cd">
-• Sicherstellung Zahlungsfähigkeit, Vermeidung von Engpässen<br>
-• Planungssicherheit und effiziente Verwaltung flüssiger Mittel<br>
-• Früherkennung und Bewältigung finanzieller Risiken
+<div class="merksatz">Merke: Je tiefer der CCC, desto weniger Kapital ist gebunden. Verhandle mit Lieferanten!</div>
 </div></div>
-<div class="c cr" style="padding:14px 16px"><div class="ct2">⚠ Herausforderungen</div><div class="cd">
-• Unvorhersehbare Ausgaben (Defekte, Notreparaturen)<br>
-• Schwankende Einnahmen (Saisonalität, Absagen)
+
+<div class="tl-item"><div class="tl-num tl-num-p">8</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Exkurs: Liquiditätsplanung</div><div class="tl-merksatz">«Rollierend planen — monatlich neu auf Basis der Ist-Werte.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die Liquiditätsplanung ist die strategische Verwaltung der flüssigen Mittel eines Unternehmens anhand eines Liquiditätsplans, der alle Ein- und Auszahlungen umfasst. Eine seriöse Planung hilft vor allem in Krisenzeiten, handlungsfähig zu bleiben und Engpässe frühzeitig zu erkennen.</div>
+
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 14px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:13px">Liquide Mittel Periodenbeginn + Einzahlungen − Auszahlungen = Liquide Mittel Periodenende</div>
+
+<div class="tl-sub">
+<div class="c cg"><div class="ct2">✓ Nutzen</div><div class="cd">• Sicherstellung Zahlungsfähigkeit<br>• Planungssicherheit<br>• Früherkennung finanzieller Risiken</div></div>
+<div class="c cr"><div class="ct2">⚠ Herausforderungen</div><div class="cd">• Unvorhersehbare Ausgaben (Defekte, Notreparaturen)<br>• Schwankende Einnahmen (Saisonalität, Absagen)</div></div>
+</div>
+
+<div class="tl-body" style="margin-top:10px"><strong style="color:#e8a838">Vorgehen:</strong> Rollierende Planung — laufende Anpassung auf Basis aktueller Ist-Werte zur Verbesserung der Prognosegenauigkeit. Zeitrahmen üblicherweise auf Wochen- oder Monatsbasis.</div>
+<div class="merksatz">Merke: Wer nicht plant, plant den Engpass. Rollierend ist Pflicht.</div>
 </div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">9</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Branchenspezifische Kennzahlen (Hotellerie & Gastronomie)</div><div class="tl-merksatz">«RevPAR ist DIE Hotel-Kennzahl — sie verbindet OCC und ADR.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Jede Branche hat ihre Eigenheiten, die sich in spezifischen KPIs ausdrücken lassen. Typische Branchenwerte sind <strong style="color:#e8a838">Benchmarks</strong> — Werte des Durchschnitts der jeweils besten Unternehmen einer Branche. Quellen: KATAG · Gastrosuisse · Hotelleriesuisse · Schweiz Tourismus · BfS.</div>
+
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">RevPAR</div><div class="cd"><em>Revenue per Available Room</em> — Umsatz pro verfügbarem Zimmer. DIE wichtigste Hotelkennzahl.<br><strong style="color:#e8a838">Rooms Revenue / (Zimmer × Tage)</strong></div></div>
+<div class="c ca"><div class="ct2">ADR</div><div class="cd"><em>Average Daily Rate</em> — Preis der verkauften Zimmer, nicht der verfügbaren.<br><strong style="color:#e8a838">Rooms Revenue / Room Nights</strong></div></div>
+<div class="c cg"><div class="ct2">OCC</div><div class="cd"><em>Occupancy Rate</em> — Belegungsrate. <strong>100 % ist nicht immer optimal!</strong><br><strong style="color:#e8a838">Verkaufte / Total × 100 %</strong></div></div>
+<div class="c cm"><div class="ct2">RevPASH</div><div class="cd"><em>Revenue Per Available Seat Hour</em> — Umsatz pro Sitzstunde.<br><strong style="color:#e8a838">F&B Rev. / (Sitze × Öffnungsstd.)</strong></div></div>
+<div class="c cp"><div class="ct2">RevPSQM</div><div class="cd">Umsatz pro m² Veranstaltungsfläche (MICE).<br><strong style="color:#e8a838">Verans.ertrag / Fläche</strong></div></div>
+<div class="c cp"><div class="ct2">RevPOLH</div><div class="cd">Umsatz pro Arbeitsstunde (Wellness).<br><strong style="color:#e8a838">Wellness-Ertrag / Arbeitsstd.</strong></div></div>
 </div>
 
-<p><strong style="color:#e8a838">Vorgehen:</strong> Rollierende Planung — laufende Anpassung auf Basis aktueller Ist-Werte zur Verbesserung der Prognosegenauigkeit. Zeitrahmen üblicherweise auf Wochen- oder Monatsbasis.</p>
-
-<h2 style="color:#00c6fb;margin-top:28px">1.9 Branchenspezifische Kennzahlen (Hotellerie & Gastronomie)</h2>
-<p>Jede Branche hat ihre Eigenheiten, die sich in spezifischen KPIs ausdrücken lassen. Typische Branchenwerte sind <strong style="color:#e8a838">Benchmarks</strong> — Werte des Durchschnitts der jeweils besten Unternehmen einer Branche. Quellen für die Gastgewerbebranche: KATAG · Gastrosuisse · Hotelleriesuisse · Schweiz Tourismus · BfS.</p>
-
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">RevPAR</div><div class="cd"><em>Revenue per Available Room</em> — Umsatz pro verfügbarem Zimmer. DIE wichtigste Hotelkennzahl. Verbindet OCC und ADR.<br><br><strong style="color:#e8a838">Rooms Revenue / (Zimmerzahl × Betriebstage)</strong></div></div>
-<div class="c ca" style="padding:14px 16px"><div class="ct2">ADR</div><div class="cd"><em>Average Daily Rate</em> — Durchschnittsrate. Preis der verkauften Zimmer, nicht der verfügbaren.<br><br><strong style="color:#e8a838">Rooms Revenue / Room Nights</strong></div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">OCC</div><div class="cd"><em>Occupancy Rate</em> — Belegungsrate. Wie voll ist das Haus? <strong>ACHTUNG:</strong> 100 % ist nicht immer optimal!<br><br><strong style="color:#e8a838">Verkaufte Einheiten / Total Einheiten × 100 %</strong></div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">RevPASH</div><div class="cd"><em>Revenue Per Available Seat Hour</em> — Gastronomie-Kennzahl. Umsatz pro Sitzstunde.<br><br><strong style="color:#e8a838">F&B Revenue / (Sitzplätze × Öffnungsstd.)</strong></div></div>
-<div class="c cp" style="padding:14px 16px"><div class="ct2">RevPSQM</div><div class="cd"><em>Revenue per available SQM</em> — Umsatz pro m² Veranstaltungsfläche. Für MICE-/Bankettbetriebe.<br><br><strong style="color:#e8a838">Veranstaltungsertrag / Verfügbare Fläche</strong></div></div>
-<div class="c cp" style="padding:14px 16px"><div class="ct2">RevPOLH</div><div class="cd"><em>Revenue per Operative Labour Hour</em> — z.B. im Wellness. Umsatz pro Arbeitsstunde.<br><br><strong style="color:#e8a838">Wellness-Ertrag / Geleistete Arbeitsstd.</strong></div></div>
-</div>
-
-<div class="c cr" style="padding:14px 18px;margin:14px 0">
+<div class="c cr" style="padding:12px 16px;margin-top:10px">
 <div class="ct2">Personalaufwandquote</div>
 <div class="cd">Wichtigste Aufwandsposition im Gastgewerbe. Kann pro Profitcenter (Rooms, F&B, Wellness) berechnet werden.</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px 12px;border-radius:8px;margin-top:10px;text-align:center;font-style:italic;color:#e8a838">Total Personalaufwand / Total Ertrag × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal">Richtwert: weit unter 45 % = gut</span></div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:6px 10px;border-radius:6px;margin-top:8px;text-align:center;font-style:italic;color:#e8a838;font-size:12px">Total Personalaufwand / Total Ertrag × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal">Richtwert: weit unter 45 % = gut</span></div>
 </div>
 
-<div class="hlr"><strong>⚠ HÄUFIGER FEHLER</strong><br>
-Eine hohe Belegungsrate (OCC) ist <strong>KEIN</strong> Indikator für Rentabilität! Wenn aus der Beherbergung ein negativer GOP resultiert, werden die Zimmer unter Selbstkosten verkauft. <strong>100 % OCC zu Dumpingpreisen ist unternehmerischer Unsinn.</strong></div>
+<div class="hlr" style="margin-top:12px"><strong>⚠ HÄUFIGER FEHLER</strong><br>Eine hohe Belegungsrate (OCC) ist <strong>KEIN</strong> Indikator für Rentabilität! Wenn aus der Beherbergung ein negativer GOP resultiert, werden die Zimmer unter Selbstkosten verkauft. <strong>100 % OCC zu Dumpingpreisen ist unternehmerischer Unsinn.</strong></div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — HOTELKENNZAHLEN JANUAR 2024</strong><br>
-80 Zimmer × 31 Tage = 2'480 verfügbare Zimmernächte. Verkauft wurden 1'736 Room Nights (<strong>OCC 70 %</strong>). Rooms Revenue CHF 425'320. <strong>ADR = 425'320 / 1'736 = CHF 245. RevPAR = 425'320 / 2'480 = CHF 171.50.</strong> Januar ist Nebensaison — RevPAR im Sommer steigt auf CHF 260.
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — JANUAR 2024</strong><br>
+80 Zimmer × 31 Tage = 2'480 verfügbare Zimmernächte. Verkauft: 1'736 Room Nights (<strong>OCC 70 %</strong>). Rooms Revenue CHF 425'320. <strong>ADR = 425'320 / 1'736 = CHF 245. RevPAR = 425'320 / 2'480 = CHF 171.50.</strong> Januar ist Nebensaison — RevPAR im Sommer CHF 260.
+</div>
+<div class="merksatz">Merke: RevPAR = OCC × ADR. Wenn beide gleichzeitig steigen, ist das der Jackpot.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-x">10</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Herausforderungen — Checkliste gegen den Zahlendschungel</div><div class="tl-merksatz">«Sechs Fragen, die jede Kennzahl beantworten muss.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die Kunst im Umgang mit Kennzahlen bedingt ein umfassendes Verständnis über deren Bedeutung, Herleitung und Interpretation. Diese Checkliste hilft, die Orientierung zu behalten:</div>
+<div class="hl" style="margin-top:12px">
+<strong>1.</strong> Was misst die Kennzahl? Welches Ziel verfolgt sie?<br>
+<strong>2.</strong> Zusammenhänge erkennen: Wie wurde die Kennzahl genau berechnet?<br>
+<strong>3.</strong> Gibt es Vergleichswerte? (Benchmarks? Interne Ziele? Vorjahreswerte?)<br>
+<strong>4.</strong> Eigene Meinung bilden: Was sagt die Kennzahl für mich aus?<br>
+<strong>5.</strong> Was sind die Konsequenzen? (Genug? Zu wenig? Zu viel?)<br>
+<strong>6.</strong> Welche Massnahmen sind erforderlich?
+</div>
+<div class="merksatz">Merke: Eine Zahl allein sagt nichts — sie braucht Benchmark, Vorjahreswert oder Zielvorgabe.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">11</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Balanced Scorecard (Kaplan & Norton)</div><div class="tl-merksatz">«What you measure is what you get — Strategie in Kennzahlen übersetzen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Balanced Scorecard</strong> wurde 1992 von Robert S. Kaplan (Harvard Business School) und David P. Norton entwickelt. Sie ergänzt die rein finanzielle Sichtweise um weitere, für die Unternehmensführung wichtige Perspektiven. Die BSC ist ein Instrument des <strong style="color:#00c6fb">strategischen Controllings</strong>, das Strategie in Kennzahlen übersetzt und so kommunizierbar macht.<br><br>Prägend war die Erkenntnis: Rein finanzielle Kennzahlen waren in der Industrieära ausreichend, in der heutigen Wissensgesellschaft mit kürzeren Produktlebenszyklen und internationaler Konkurrenz braucht es mehr.</div>
+
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Die vier Perspektiven</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">💰 Finanzielle Perspektive</div><div class="cd">Die einzige rein monetäre Perspektive (Jahresergebnis, Umsatzrendite). Finales Ziel für alle anderen.<br><em>«Wie sollen wir gegenüber Eigentümern auftreten, um finanziellen Erfolg zu haben?»</em></div></div>
+<div class="c cg"><div class="ct2">👥 Kundenperspektive</div><div class="cd">Marktanteile, Gästezufriedenheit, Gästetreue. Frühwarnsystem — Probleme werden sichtbar, bevor sie in Umsätzen durchschlagen.<br><em>«Wie sollen wir gegenüber Kunden auftreten, um unsere Vision zu verwirklichen?»</em></div></div>
+<div class="c cm"><div class="ct2">⚙ Interne Prozessperspektive</div><div class="cd">Time-to-Market, Kapazitätsauslastung, Ausschussquoten, Produktivität.<br><em>«In welchen Geschäftsprozessen müssen wir die Besten sein?»</em></div></div>
+<div class="c cp"><div class="ct2">🌱 Lern- und Entwicklungsperspektive</div><div class="cd">Weiterbildung, F&E, Investitionen in IT.<br><em>«Wie können wir Veränderungs- und Wachstumspotenziale fördern?»</em></div></div>
 </div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.10 Herausforderungen — Checkliste gegen den Zahlendschungel</h2>
-<p>Die Kunst im Umgang mit Kennzahlen bedingt ein umfassendes Verständnis über deren Bedeutung, Herleitung und Interpretation. Diese Checkliste hilft, die Orientierung zu behalten:</p>
-<div class="hl">
-1. Was misst die Kennzahl? Welches Ziel verfolgt sie?<br>
-2. Zusammenhänge erkennen: Wie wurde die Kennzahl genau berechnet?<br>
-3. Gibt es Vergleichswerte? (Benchmarks? Interne Ziele? Vorjahreswerte?)<br>
-4. Eigene Meinung bilden: Was sagt die Kennzahl für mich aus?<br>
-5. Was sind die Konsequenzen? (Genug? Zu wenig? Zu viel?)<br>
-6. Welche Massnahmen sind erforderlich?
+<div class="tl-body" style="margin-top:12px"><strong style="color:#e8a838">Wichtig:</strong> Alle Kennzahlen müssen durch <strong style="color:#00c6fb">Ursache-Wirkungs-Ketten</strong> verbunden sein. Schema Hotellerie: Fachwissen → Prozessqualität → Top-Angebot → Kundentreue → Umsatzrentabilität. Pro Perspektive ca. <strong>5 Kennzahlen</strong>. Eine fünfte Perspektive <strong>«Nachhaltigkeit»</strong> wird heute oft ergänzt.</div>
+
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — BSC (Auszug)</strong><br>
+<strong>Finanziell:</strong> Ziel «ADR +15 %», KPI «Average Daily Rate», Massnahme «Upselling-Schulung». <strong>Kunde:</strong> Ziel «min. 70 % Returning Guests», KPI «Wiederholungsrate», Massnahme «Loyalty-Programm». <strong>Prozess:</strong> Ziel «Zimmerreinigung max. 30 min», KPI «Reinigungsdauer», Massnahme «neue Checkliste». <strong>Lernen:</strong> Ziel «Fluktuation −20 %», KPI «Austritte/Jahr», Massnahme «4-Tage-Woche».
 </div>
+<div class="merksatz">Merke: BSC = Strategie + Ursache-Wirkungs-Kette. Fachwissen → Prozessqualität → Kundentreue → Rentabilität.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">1.11 Balanced Scorecard (Kaplan & Norton)</h2>
-<p>Die <strong style="color:#e8a838">Balanced Scorecard</strong> wurde 1992 von Robert S. Kaplan (Harvard Business School) und David P. Norton entwickelt. Sie ergänzt die rein finanzielle Sichtweise um weitere, für die Unternehmensführung wichtige Perspektiven. Die Balanced Scorecard ist ein Instrument des <strong style="color:#00c6fb">strategischen Controllings</strong>, das Strategie in Kennzahlen übersetzt und so kommunizierbar macht. Motto: <em>«What you measure is what you get.»</em></p>
-<p>Prägend war die Erkenntnis: Rein finanzielle Kennzahlen waren in der Industrieära ausreichend, in der heutigen Wissensgesellschaft mit kürzeren Produktlebenszyklen und internationaler Konkurrenz braucht es mehr.</p>
-
-<h3 style="color:#e8a838;margin-top:18px">Die vier Perspektiven</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">💰</div><div class="ct2">Finanzielle Perspektive</div><div class="cd">Die einzige rein monetäre Perspektive (z.B. Jahresergebnis, Umsatzrendite). Sie stellt das finale Ziel für alle anderen Perspektiven dar.<br><br><em>«Wie sollen wir gegenüber Eigentümern auftreten, um finanziellen Erfolg zu haben?»</em></div></div>
-<div class="c cg" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">👥</div><div class="ct2">Kundenperspektive</div><div class="cd">Betrachtung vom Markt aus: Marktanteile, Gästezufriedenheit, Gästetreue. Frühwarnsystem — Probleme werden sichtbar, bevor sie in Umsätzen durchschlagen.<br><br><em>«Wie sollen wir gegenüber Kunden auftreten, um unsere Vision zu verwirklichen?»</em></div></div>
-<div class="c cm" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">⚙</div><div class="ct2">Interne Prozessperspektive</div><div class="cd">Alle internen Prozesse zur Erreichung der finanziellen und kundschaftsbezogenen Ziele: Time-to-Market, Kapazitätsauslastung, Ausschussquoten, Produktivität.<br><br><em>«In welchen Geschäftsprozessen müssen wir die Besten sein?»</em></div></div>
-<div class="c cp" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">🌱</div><div class="ct2">Lern- und Entwicklungsperspektive</div><div class="cd">Potenziale für die Zukunft: Weiterbildung der Mitarbeitenden, Forschung und Entwicklung, Investitionen in Informationstechnologie.<br><br><em>«Wie können wir Veränderungs- und Wachstumspotenziale fördern?»</em></div></div>
+<div class="tl-item"><div class="tl-num tl-num-b">12</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Spiralthema: Informationssysteme im Controlling</div><div class="tl-merksatz">«Dashboard, Reporting, Revenue Management — ohne IT kein Controlling.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Ein Informationssystem erfasst Informationen, speichert sie in Datenbanken, verarbeitet sie und stellt sie für Auswertungen zur Verfügung. In der Hotellerie spielen sie eine entscheidende Rolle bei Effizienz und Gästeservice.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Echtzeit-Analysen</div><div class="cd">Dashboards mit aktuellen Kennzahlen wie OCC %, ADR, RevPAR.</div></div>
+<div class="c cg"><div class="ct2">Abweichungsanalysen & Kostenkontrollen</div><div class="cd">Überwachung Lagerbestände, Stunden-/Ferien-/Überzeitsaldi.</div></div>
+<div class="c cm"><div class="ct2">Revenue Management</div><div class="cd">Optimierung der Preisgestaltung basierend auf Nachfrageprognosen.</div></div>
+<div class="c cp"><div class="ct2">Finanzplanung</div><div class="cd">Budgets, Forecasts, Liquiditäts- und Investitionspläne.</div></div>
+<div class="c cr"><div class="ct2">Zielerreichung & Erfolgsmessung</div><div class="cd">Performance-Steuerung anhand Balanced Scorecard.</div></div>
 </div>
+<div class="merksatz">Merke: Ohne IT-System keine Echtzeit-Steuerung — und damit keine wettbewerbsfähige Hotellerie.</div>
+</div></div>
 
-<p><strong style="color:#e8a838">Wichtig:</strong> Alle Kennzahlen müssen durch <strong style="color:#00c6fb">Ursache-Wirkungs-Ketten</strong> verbunden sein und zum finanziellen Erfolg beitragen. Typisches Schema in der Hotellerie: Fachwissen der Mitarbeitenden → Prozessqualität → Top-Angebot → Kundentreue → Umsatzrentabilität.</p>
-<p>Pro Perspektive sollten <strong>ca. 5 Kennzahlen</strong> verwendet werden (Begrenzung gegen Überinformation). Die vier Perspektiven sind nicht zwingend — eine fünfte Perspektive <strong style="color:#e8a838">«Nachhaltigkeit»</strong> wird heute oft ergänzt.</p>
-
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — BALANCED SCORECARD (AUSZUG)</strong><br>
-<strong>Finanziell:</strong> Ziel «ADR +15 %», KPI «Average Daily Rate», Massnahme «Upselling-Schulung». <strong>Kunde:</strong> Ziel «min. 70 % Returning Guests», KPI «Wiederholungsrate», Massnahme «Loyalty-Programm». <strong>Prozess:</strong> Ziel «Zimmerreinigung max. 30 min», KPI «Reinigungsdauer pro Zimmer», Massnahme «neue Checkliste». <strong>Lernen & Entwickeln:</strong> Ziel «Fluktuation −20 %», KPI «Austritte/Jahr», Massnahme «4-Tage-Woche einführen».
 </div>
-
-<h2 style="color:#00c6fb;margin-top:28px">1.12 Spiralthema: Informationssysteme im Controlling</h2>
-<p>Ein Informationssystem erfasst Informationen, speichert sie in Datenbanken, verarbeitet sie und stellt sie für Auswertungen zur Verfügung. Daraus werden mit unterschiedlichen Methoden Berichte erstellt (Reporting). In der Hotellerie spielen sie eine entscheidende Rolle bei Effizienz und Gästeservice.</p>
-
-<h3 style="color:#e8a838;margin-top:14px">Einsatz im Controlling</h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Echtzeit-Analysen</div><div class="cd">Dashboards mit aktuellen Kennzahlen wie OCC %, ADR, RevPAR.</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Abweichungsanalysen & Kostenkontrollen</div><div class="cd">Überwachung Lagerbestände, Stunden-/Ferien-/Überzeitsaldi.</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Revenue Management</div><div class="cd">Optimierung der Preisgestaltung basierend auf Nachfrageprognosen.</div></div>
-<div class="c cp" style="padding:14px 16px"><div class="ct2">Finanzplanung</div><div class="cd">Budgets, Forecasts, Liquiditäts- und Investitionspläne.</div></div>
-<div class="c cr" style="padding:14px 16px"><div class="ct2">Zielerreichung & Erfolgsmessung</div><div class="cd">Performance-Steuerung anhand Balanced Scorecard.</div></div>
-</div>
-
 </div>
 
 
-<!-- CTRL: Kosten- und Leistungsrechnung (aus PDF-Zusammenfassung 1:1) -->
+<!-- CTRL: Kosten- und Leistungsrechnung (PDF 1:1 als Timeline) -->
 <div class="sec" id="ctrl_klr"><h1>02 · Kosten- und Leistungsrechnung</h1><p class="sub">FIBU vs. BEBU · Voll- und Teilkostenrechnung · Deckungsbeitrag · Break-Even</p>
 
 <div class="hlbl"><strong>LERNZIELE K02</strong><br>
@@ -335,226 +331,214 @@ Eine hohe Belegungsrate (OCC) ist <strong>KEIN</strong> Indikator für Rentabili
 ✓ Deckungsbeitrag und DDR-Wert berechnen und interpretieren<br>
 ✓ Break-Even-Analyse durchführen (mengen- und wertmässige Nutzschwelle)</div>
 
-<h2 style="color:#00c6fb;margin-top:28px">2.1 Von der FIBU zur BEBU</h2>
-<p>Das Rechnungswesen ist ein Informationssystem mit zwei Flügeln:</p>
+<div style="display:flex;gap:8px;margin:16px 0 6px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0">
-<div class="c cbl" style="padding:16px 20px"><div class="ct2">Finanzbuchhaltung (FIBU)</div><div class="cd"><strong style="color:#e8a838">Externe Sicht:</strong> Jahresabschluss, Lagebericht (OR), Halbjahresabschluss, Umweltbericht, ESG-Bericht. Adressaten: Fiskus, Bank, Aktionäre.</div></div>
-<div class="c cg" style="padding:16px 20px"><div class="ct2">Betriebsbuchhaltung (BEBU)</div><div class="cd"><strong style="color:#34c759">Interne Sicht:</strong> Budget, Betriebsstatistik, Investitionsrechnung, Kostenrechnung, Nutzschwellenanalyse. Adressaten: Geschäftsleitung, Abteilungsleiter.</div></div>
+<div class="tl">
+
+<div class="tl-item"><div class="tl-num tl-num-b">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Von der FIBU zur BEBU</div><div class="tl-merksatz">«Aufwand wird Kosten, Ertrag wird Erlös — innen statt aussen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Das Rechnungswesen ist ein Informationssystem mit zwei Flügeln:</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Finanzbuchhaltung (FIBU)</div><div class="cd"><strong style="color:#e8a838">Externe Sicht:</strong> Jahresabschluss, Lagebericht (OR), Halbjahresabschluss, Umweltbericht, ESG-Bericht. Adressaten: Fiskus, Bank, Aktionäre.</div></div>
+<div class="c cg"><div class="ct2">Betriebsbuchhaltung (BEBU)</div><div class="cd"><strong style="color:#34c759">Interne Sicht:</strong> Budget, Betriebsstatistik, Investitionsrechnung, Kostenrechnung, Nutzschwellenanalyse. Adressaten: Geschäftsleitung, Abteilungsleiter.</div></div>
+</div>
+<div class="tl-body" style="margin-top:10px">Aus den <strong style="color:#e8a838">Aufwänden</strong> der Erfolgsrechnung werden <strong style="color:#e8a838">Kosten</strong>, aus den <strong style="color:#e8a838">Erträgen</strong> werden <strong style="color:#e8a838">Erlöse</strong>. Die betriebliche Objektivität wird durch <strong style="color:#00c6fb">Abgrenzungen</strong> (stille Reserven auflösen) und <strong style="color:#00c6fb">kalkulatorische Kosten</strong> (z.B. Eigenkapitalzins) hergestellt.</div>
+<div class="merksatz">Merke: FIBU ist für die Aussenwelt. BEBU für die Steuerung im Haus.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-a">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Ziele und Aufgaben der Kostenrechnung</div><div class="tl-merksatz">«WAS · WO · WOFÜR — die drei Kern-Fragen der Kostenrechnung.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">📔 Betriebsabrechnung</div><div class="cd">Kosten und Erlöse werden den Kostenträgern (Produkten) zugeordnet → Erfolg pro Produkt wird ermittelt.</div></div>
+<div class="c cg"><div class="ct2">🔍 Analyse</div><div class="cd">Untersuchung der Prozesse und Ergebnisse der Leistungserstellung — Auswertung zuhanden der Führung.</div></div>
+<div class="c cm"><div class="ct2">💲 Kalkulation</div><div class="cd">Berechnungsgrundlagen zur Preisgestaltung und Vorratsbewertung werden aufbereitet.</div></div>
 </div>
 
-<p>Aus den <strong style="color:#e8a838">Aufwänden</strong> der Erfolgsrechnung werden <strong style="color:#e8a838">Kosten</strong>, aus den <strong style="color:#e8a838">Erträgen</strong> werden <strong style="color:#e8a838">Erlöse</strong>. Die betriebliche Objektivität wird durch <strong style="color:#00c6fb">Abgrenzungen</strong> (stille Reserven auflösen) und <strong style="color:#00c6fb">kalkulatorische Kosten</strong> (z.B. Eigenkapitalzins) hergestellt.</p>
-
-<h2 style="color:#00c6fb;margin-top:28px">2.2 Ziele und Aufgaben der Kostenrechnung</h2>
-
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">📔</div><div class="ct2">Betriebsabrechnung</div><div class="cd">Kosten und Erlöse werden den Kostenträgern (Produkten) zugeordnet → Erfolg pro Produkt wird ermittelt.</div></div>
-<div class="c cg" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">🔍</div><div class="ct2">Analyse</div><div class="cd">Untersuchung der Prozesse und Ergebnisse der Leistungserstellung — Auswertung zuhanden der Führung.</div></div>
-<div class="c cm" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">💲</div><div class="ct2">Kalkulation</div><div class="cd">Berechnungsgrundlagen zur Preisgestaltung und Vorratsbewertung werden aufbereitet.</div></div>
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Die drei Kern-Fragen</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0;flex-wrap:wrap">
+<div style="background:var(--s2);border:2px solid #00c6fb;padding:12px 16px;border-radius:8px;text-align:center;min-width:160px"><div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WAS?</div><div style="font-weight:700;margin:3px 0">Kostenarten</div><div style="font-size:11px;color:var(--tx2)">Welche Kosten sind angefallen?</div></div>
+<div style="color:#e8a838;font-size:20px;font-weight:700">→</div>
+<div style="background:var(--s2);border:2px solid #00c6fb;padding:12px 16px;border-radius:8px;text-align:center;min-width:160px"><div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WO?</div><div style="font-weight:700;margin:3px 0">Kostenstellen</div><div style="font-size:11px;color:var(--tx2)">Wo sind sie angefallen?</div></div>
+<div style="color:#e8a838;font-size:20px;font-weight:700">→</div>
+<div style="background:var(--s2);border:2px solid #00c6fb;padding:12px 16px;border-radius:8px;text-align:center;min-width:160px"><div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WOFÜR?</div><div style="font-weight:700;margin:3px 0">Kostenträger</div><div style="font-size:11px;color:var(--tx2)">Welches Produkt trägt sie?</div></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Die drei Kern-Fragen</h3>
-<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0;flex-wrap:wrap">
-<div style="background:var(--s2);border:2px solid #00c6fb;padding:14px 18px;border-radius:10px;text-align:center;min-width:180px">
-<div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WAS?</div>
-<div style="font-weight:700;margin:4px 0">Kostenarten</div>
-<div style="font-size:12px;color:var(--tx2)">Welche Kosten sind angefallen?</div>
-</div>
-<div style="color:#e8a838;font-size:22px;font-weight:700">→</div>
-<div style="background:var(--s2);border:2px solid #00c6fb;padding:14px 18px;border-radius:10px;text-align:center;min-width:180px">
-<div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WO?</div>
-<div style="font-weight:700;margin:4px 0">Kostenstellen</div>
-<div style="font-size:12px;color:var(--tx2)">Wo sind sie angefallen?</div>
-</div>
-<div style="color:#e8a838;font-size:22px;font-weight:700">→</div>
-<div style="background:var(--s2);border:2px solid #00c6fb;padding:14px 18px;border-radius:10px;text-align:center;min-width:180px">
-<div style="font-size:11px;letter-spacing:2px;color:#00c6fb;font-weight:700">WOFÜR?</div>
-<div style="font-weight:700;margin:4px 0">Kostenträger</div>
-<div style="font-size:12px;color:var(--tx2)">Welches Produkt trägt sie?</div>
-</div>
-</div>
-
-<div class="hl"><strong>BEISPIEL</strong><br>
+<div class="hl" style="margin-top:10px"><strong>BEISPIEL</strong><br>
 <strong style="color:#e8a838">Kostenarten:</strong> Wareneinkäufe, Werbekosten, Zinsen.<br>
 <strong style="color:#e8a838">Kostenstellen:</strong> Rooms Division, F&B, Wellness, Administration.<br>
 <strong style="color:#e8a838">Kostenträger:</strong> Doppelzimmer Deluxe, HP-Package, Tagesteller.</div>
+<div class="merksatz">Merke: Erst WAS, dann WO, dann WOFÜR. In dieser Reihenfolge wird verrechnet.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">2.3 Grundbegriffe der Kostenrechnung</h2>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Einzelkosten (= direkte Kosten)</div><div class="cd">Stehen in festem Zusammenhang mit einem Produkt und können den Kostenträgern direkt zugeordnet werden.<br><br><strong>Bsp:</strong> Wareneinkauf von Lebensmitteln für ein konkretes Menü.</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Gemeinkosten (= indirekte Kosten)</div><div class="cd">Können nicht unmittelbar einem Produkt zugeordnet werden. Sie fallen betriebsübergreifend an und werden über Kostenstellen mit Umlageschlüsseln verteilt.<br><br><strong>Bsp:</strong> Versicherungsrechnung für das Hotel, Gehälter der Marketingabteilung.</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Variable Kosten</div><div class="cd">Sind von der Beschäftigungshöhe abhängig (Absatzmenge als Kostentreiber).<br>• Beschaffung Lebensmittel & Getränke<br>• Beschaffung Hygieneartikel<br>• Gehälter temporäres Personal<br>• Provisionen für Absatzmittler</div></div>
-<div class="c cr" style="padding:14px 16px"><div class="ct2">Fixe Kosten</div><div class="cd">Sind von der Beschäftigungshöhe unabhängig — fallen als Kostenblock an.<br>• Miete für die Immobilie<br>• Gehälter des festen Personals<br>• Versicherungsprämien, Lizenzen<br>• Unterhalt von Einrichtungen & Geräten</div></div>
+<div class="tl-item"><div class="tl-num tl-num-b">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Grundbegriffe der Kostenrechnung</div><div class="tl-merksatz">«Einzel vs. Gemein, variabel vs. fix — die vier Kosten-Achsen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Einzelkosten (= direkte Kosten)</div><div class="cd">Stehen in festem Zusammenhang mit einem Produkt und können den Kostenträgern direkt zugeordnet werden.<br><strong>Bsp:</strong> Wareneinkauf von Lebensmitteln für ein konkretes Menü.</div></div>
+<div class="c cm"><div class="ct2">Gemeinkosten (= indirekte Kosten)</div><div class="cd">Können nicht unmittelbar einem Produkt zugeordnet werden. Verteilung über Kostenstellen mit Umlageschlüsseln.<br><strong>Bsp:</strong> Versicherung Hotel, Marketing-Gehälter.</div></div>
+<div class="c cg"><div class="ct2">Variable Kosten</div><div class="cd">Von der Beschäftigungshöhe abhängig.<br>• Beschaffung Lebensmittel & Getränke<br>• Hygieneartikel<br>• Temporäres Personal<br>• Provisionen</div></div>
+<div class="c cr"><div class="ct2">Fixe Kosten</div><div class="cd">Unabhängig von der Beschäftigungshöhe — als Kostenblock.<br>• Miete<br>• Gehälter festes Personal<br>• Versicherungen, Lizenzen<br>• Unterhalt</div></div>
 </div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-Lineare Kostenfunktion: K(x) = K<sub>var</sub> × x + K<sub>fix</sub><br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Totalkosten = (Variable Kosten × verkaufte Menge) + Fixe Kosten</span>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 14px;border-radius:8px;margin-top:12px;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Lineare Kostenfunktion: K(x) = K<sub>var</sub> × x + K<sub>fix</sub><br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Totalkosten = (Variable Kosten × verkaufte Menge) + Fixe Kosten</span></div>
+
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Hauptkostenstellen vs. Hilfskostenstellen</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Hauptkostenstellen</div><div class="cd">Werden <strong>direkt</strong> auf die Kostenträger verrechnet.</div></div>
+<div class="c cp"><div class="ct2">Hilfskostenstellen</div><div class="cd">Werden zuerst auf Hauptkostenstellen verteilt und damit nur <strong>mittelbar</strong> auf Kostenträger.<br><em>Bsp: Personalabteilung (Shared Service) einer Hotelgruppe.</em></div></div>
+</div>
+<div class="merksatz">Merke: Fix = Block. Variabel = Menge. Einzel = direkt. Gemein = indirekt.</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-g">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Vollkostenrechnung</div><div class="tl-merksatz">«Alle Kosten werden auf Produkte verteilt — fix und variabel.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Bei der <strong style="color:#e8a838">Vollkostenrechnung</strong> werden sämtliche Kosten (fixe und variable) auf die einzelnen Kostenträger umgelegt → Ermittlung des Erfolgs pro Produkt.</div>
+
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Systematik der Vollkostenrechnung</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap">
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Kostenarten</strong><br><em style="color:var(--tx2);font-size:10px">WAS?</em></div>
+<div style="color:#e8a838;font-weight:700">→</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Kostenstellen</strong><br><em style="color:var(--tx2);font-size:10px">WO?</em></div>
+<div style="color:#e8a838;font-weight:700">→</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Umlage</strong><br><em style="color:var(--tx2);font-size:10px">Schlüssel</em></div>
+<div style="color:#e8a838;font-weight:700">→</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Kostenträger</strong><br><em style="color:var(--tx2);font-size:10px">WOFÜR?</em></div>
+<div style="color:#e8a838;font-weight:700">→</div>
+<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Herstellk.<br>Selbstk.<br>Erfolg</strong></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Hauptkostenstellen vs. Hilfskostenstellen</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Hauptkostenstellen</div><div class="cd">Werden <strong>direkt</strong> auf die Kostenträger verrechnet.</div></div>
-<div class="c cp" style="padding:14px 16px"><div class="ct2">Hilfskostenstellen</div><div class="cd">Werden zuerst auf Hauptkostenstellen verteilt und damit nur <strong>mittelbar</strong> auf Kostenträger. <em>Bsp: Personalabteilung (Shared Service) einer Hotelgruppe.</em></div></div>
-</div>
-
-<h2 style="color:#00c6fb;margin-top:28px">2.4 Vollkostenrechnung</h2>
-<p>Bei der <strong style="color:#e8a838">Vollkostenrechnung</strong> werden sämtliche Kosten (fixe und variable) auf die einzelnen Kostenträger umgelegt → Ermittlung des Erfolgs pro Produkt.</p>
-
-<h3 style="color:#e8a838;margin-top:14px">Systematik der Vollkostenrechnung</h3>
-<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0;flex-wrap:wrap">
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Kostenarten</strong><br><em style="color:var(--tx2);font-size:11px">WAS?</em></div>
-<div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Kostenstellen</strong><br><em style="color:var(--tx2);font-size:11px">WO?</em></div>
-<div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Umlage</strong><br><em style="color:var(--tx2);font-size:11px">Schlüssel</em></div>
-<div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Kostenträger</strong><br><em style="color:var(--tx2);font-size:11px">WOFÜR?</em></div>
-<div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Herstellkosten<br>Selbstkosten<br>Erfolg</strong></div>
-</div>
-
-<h3 style="color:#e8a838;margin-top:14px">Checkliste: Vorgehen Vollkostenrechnung</h3>
-<ol style="margin-left:24px;line-height:1.9">
-<li>Sachliche Abgrenzungen in der Kostenartenrechnung (KOA) vornehmen — betriebliche Objektivität durch Auflösung stiller Reserven und kalkulatorische Kosten</li>
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Checkliste: Vorgehen</div>
+<ol style="margin-left:20px;line-height:1.8;font-size:13px">
+<li>Sachliche Abgrenzungen in der Kostenartenrechnung (KOA)</li>
 <li>Einzelkosten auf Kostenträger direkt übertragen</li>
-<li>Gemeinkosten anhand Schlüssel indirekt auf Kostenstellen umlegen</li>
-<li>Herstellkosten pro Kostenträger berechnen, dann Verwaltung umlegen</li>
-<li>Selbstkosten pro Kostenträger berechnen, Umsatzerlös gegenüberstellen</li>
-<li>Gewinn/Verlust pro Kostenträger berechnen und beurteilen</li>
+<li>Gemeinkosten über Schlüssel auf Kostenstellen umlegen</li>
+<li>Herstellkosten pro Kostenträger, dann Verwaltung umlegen</li>
+<li>Selbstkosten pro Kostenträger, Umsatzerlös gegenüberstellen</li>
+<li>Gewinn/Verlust pro Kostenträger</li>
 </ol>
 
-<h3 style="color:#e8a838;margin-top:14px">Ergebnisse der Vollkostenrechnung pro Kostenträger</h3>
 <div style="overflow-x:auto;margin:10px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600;width:35%">Einzelkosten</td><td style="padding:8px 10px;border:1px solid var(--bd)">z.B. Warenkosten Küche</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Gemeinkosten</td><td style="padding:8px 10px;border:1px solid var(--bd)">z.B. Personalkosten</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Herstellkosten</td><td style="padding:8px 10px;border:1px solid var(--bd)">Total Kosten gesamter Produktions-/Fertigungsprozess</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Selbstkosten</td><td style="padding:8px 10px;border:1px solid var(--bd)">Total Kosten inkl. Administration/Vertriebskosten</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Nettoerlös</td><td style="padding:8px 10px;border:1px solid var(--bd)">Total Betriebsertrag</td></tr>
-<tr style="background:rgba(232,168,56,0.08)"><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Betriebsergebnis</td><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Gewinn / Verlust</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600;width:35%">Einzelkosten</td><td style="padding:6px 8px;border:1px solid var(--bd)">z.B. Warenkosten Küche</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Gemeinkosten</td><td style="padding:6px 8px;border:1px solid var(--bd)">z.B. Personalkosten</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Herstellkosten</td><td style="padding:6px 8px;border:1px solid var(--bd)">Total Kosten Produktion/Fertigung</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Selbstkosten</td><td style="padding:6px 8px;border:1px solid var(--bd)">Total Kosten inkl. Administration/Vertrieb</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Nettoerlös</td><td style="padding:6px 8px;border:1px solid var(--bd)">Total Betriebsertrag</td></tr>
+<tr style="background:rgba(232,168,56,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Betriebsergebnis</td><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Gewinn / Verlust</td></tr>
 </tbody></table></div>
+<div class="merksatz">Merke: Vollkostenrechnung verteilt ALLES. Achtung bei Entscheidungen — Fixkosten verändern sich kurzfristig nicht.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">2.5 Teilkostenrechnung</h2>
-<p>Im Gegensatz zur Vollkostenrechnung werden den Kostenträgern <strong style="color:#e8a838">nur die variablen Kosten</strong> zugerechnet. Die fixen Kosten werden nicht umgelegt, sondern bleiben bis zur Erfolgsermittlung als Kostenblock unberücksichtigt (Gesamtkostenbetrachtung).</p>
+<div class="tl-item"><div class="tl-num tl-num-p">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Teilkostenrechnung</div><div class="tl-merksatz">«Nur variable Kosten auf Produkte — Fixkosten bleiben Block.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Im Gegensatz zur Vollkostenrechnung werden den Kostenträgern <strong style="color:#e8a838">nur die variablen Kosten</strong> zugerechnet. Die fixen Kosten werden nicht umgelegt, sondern bleiben bis zur Erfolgsermittlung als Kostenblock unberücksichtigt.</div>
 
-<h3 style="color:#e8a838;margin-top:14px">Systematik der Teilkostenrechnung</h3>
-<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0;flex-wrap:wrap">
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Kostenspaltung</strong><br><em style="color:var(--tx2);font-size:11px">fix / variabel</em></div>
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Systematik der Teilkostenrechnung</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap">
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Kostenspaltung</strong><br><em style="color:var(--tx2);font-size:10px">fix / variabel</em></div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Ermittlung</strong><br><em style="color:var(--tx2);font-size:11px">Deckungsbeitrag</em></div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Ermittlung</strong><br><em style="color:var(--tx2);font-size:10px">Deckungsbeitrag</em></div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:10px 14px;border-radius:8px;text-align:center;font-size:13px"><strong>Umlage Fixkosten<br>als Block</strong></div>
+<div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:8px 12px;border-radius:6px;text-align:center;font-size:12px"><strong>Umlage Fixkosten<br>als Block</strong></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:14px">Ergebnisse der Teilkostenrechnung pro Kostenträger</h3>
-<ul style="margin-left:24px;line-height:1.9">
+<div style="margin-top:10px;font-weight:700;color:#e8a838">Ergebnisse pro Kostenträger</div>
+<ul style="margin-left:20px;line-height:1.8;font-size:13px">
 <li>Einzelkosten</li>
 <li>Variable Herstellkosten</li>
 <li>Variable Selbstkosten</li>
 <li>Nettoerlös</li>
 <li><strong style="color:#e8a838">Deckungsbeitrag</strong></li>
 </ul>
-<p><em>Fixkosten werden nicht pro Kostenträger betrachtet, da sie als Block anfallen.</em></p>
+<div class="tl-body" style="margin-top:8px"><em>Fixkosten werden nicht pro Kostenträger betrachtet, da sie als Block anfallen.</em></div>
+<div class="merksatz">Merke: Teilkosten ist besser für kurzfristige Entscheidungen — sie zeigt den «wahren» Beitrag jedes Produkts.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">2.6 Deckungsbeitragsrechnung</h2>
-<p>Der <strong style="color:#e8a838">Deckungsbeitrag</strong> ist die Differenz zwischen dem Erlös (Umsatz) und den variablen Kosten und steht für den Betrag, der zur <strong style="color:#00c6fb">Deckung der Fixkosten und zur Erzielung eines Gewinns</strong> zur Verfügung steht. Aus unternehmerischer Sicht ist es sinnvoll, nur Produkte anzubieten, die positive Deckungsbeiträge abwerfen.</p>
+<div class="tl-item"><div class="tl-num tl-num-g">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Deckungsbeitragsrechnung</div><div class="tl-merksatz">«Umsatz minus variable Kosten = Beitrag zur Fixkostendeckung.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Der <strong style="color:#e8a838">Deckungsbeitrag</strong> ist die Differenz zwischen dem Erlös (Umsatz) und den variablen Kosten und steht für den Betrag, der zur <strong style="color:#00c6fb">Deckung der Fixkosten und zur Erzielung eines Gewinns</strong> zur Verfügung steht. Aus unternehmerischer Sicht ist es sinnvoll, nur Produkte anzubieten, die positive Deckungsbeiträge abwerfen.</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Deckungsbeitrag in CHF</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 12px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838;font-size:13px">DB [CHF] = Nettoverkaufspreis p.St. − variable Kosten p.St.</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Deckungsbeitrag in CHF</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">DB [CHF] = Nettoverkaufspreis p.St. − variable Kosten p.St.</div>
 <div class="cd">Ab welchem Betrag wird ein Beitrag zur Fixkostendeckung geleistet?</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Deckungsbeitragsmarge in %</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 12px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838;font-size:13px">DB-Marge = DB [CHF] / Nettoverkaufspreis × 100 %</div>
+<div class="c cg"><div class="ct2">Deckungsbeitragsmarge in %</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">DB-Marge = DB [CHF] / Nettoverkaufspreis × 100 %</div>
 <div class="cd">Wie viel trägt jedes verkaufte Produkt relativ zur Fixkostendeckung bei?</div></div>
 </div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — RESTAURANT «VISTA»</strong><br>
-Tagesteller CHF 28.50 — Warenkosten & direkte variable Kosten CHF 9.20 → <strong>DB = CHF 19.30; DB-Marge = 19.30 / 28.50 × 100 = 67.7 %.</strong> Mittagsmenü Salatbuffet CHF 24.00 — variable Kosten CHF 7.80 → DB = CHF 16.20, DB-Marge = 67.5 %. Beide Produkte tragen substanziell zur Fixkostendeckung bei.
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Restaurant «Vista»</strong><br>
+Tagesteller CHF 28.50 — variable Kosten CHF 9.20 → <strong>DB = CHF 19.30; DB-Marge = 67.7 %</strong>. Salatbuffet CHF 24.00 — var. Kosten CHF 7.80 → DB = CHF 16.20, DB-Marge = 67.5 %. Beide Produkte tragen substanziell zur Fixkostendeckung bei.
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Doppelte Deckungsbeitragsrechnung (DDR)</h3>
-<p>Die DDR hilft, die Rentabilität eines Produkts aus zwei Blickwinkeln gleichzeitig zu bewerten: <strong>absoluter Beitrag (CHF)</strong> und <strong>relative Marge (%)</strong>. Sie identifiziert, welche Produkte man in der Karte forcieren sollte.</p>
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Doppelte Deckungsbeitragsrechnung (DDR)</div>
+<div class="tl-body">Die DDR hilft, die Rentabilität eines Produkts aus zwei Blickwinkeln gleichzeitig zu bewerten: <strong>absoluter Beitrag (CHF)</strong> und <strong>relative Marge (%)</strong>.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-DDR-Wert = DB [CHF] × 2 + DB-Marge [%] / 2<br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Ein hoher DDR-Wert steuert einen höheren Beitrag zur Deckung der Betriebskosten bei</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 14px;border-radius:8px;margin:10px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">DDR-Wert = DB [CHF] × 2 + DB-Marge [%] / 2</div>
 
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Produkt</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">DB [CHF]</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">DB [%]</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">DDR-Wert</td></tr></thead>
+<div style="overflow-x:auto;margin:10px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Produkt</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">DB [CHF]</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">DB [%]</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">DDR-Wert</td></tr></thead>
 <tbody>
-<tr style="background:rgba(52,199,89,0.08)"><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Burger</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">23</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">69,7 %</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right;color:#34c759;font-weight:700">80,85</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Spaghetti</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">18</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">76,2 %</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">74,10</td></tr>
+<tr style="background:rgba(52,199,89,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Burger</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">23</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">69,7 %</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;color:#34c759;font-weight:700">80,85</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Spaghetti</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">18</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">76,2 %</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">74,10</td></tr>
+</tbody></table></div>
+<div class="tl-body">Trotz höherer Marge bei den Spaghetti lohnt sich der Burger betriebswirtschaftlich mehr — er hat den höheren DDR-Wert.</div>
+
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Sales-Mix — DDR mit Verkaufszahlen</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px 12px;border-radius:6px;margin:10px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:13px">DB Total [CHF] = DB pro Stück × Absatzmenge</div>
+
+<div style="overflow-x:auto;margin:10px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Produkt</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">DB [CHF]</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">Verkäufe</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">DB Total</td></tr></thead>
+<tbody>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Burger</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">23</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">220</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">5'060</td></tr>
+<tr style="background:rgba(52,199,89,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Spaghetti</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">18</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">380</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;color:#34c759;font-weight:700">6'840</td></tr>
 </tbody></table></div>
 
-<p><strong style="color:#e8a838">Trotz höherer Marge bei den Spaghetti lohnt sich der Burger betriebswirtschaftlich mehr</strong> — er hat den höheren DDR-Wert. Die Mitarbeitenden sollten den Gästen den Burger aktiv schmackhaft machen.</p>
+<div class="hl"><strong>💡 ERKENNTNIS</strong><br>Obwohl ein einzelner Burger mehr DB liefert, bringen die Spaghetti <strong>insgesamt mehr DB (6'840 vs. 5'060)</strong> — wegen höherer Nachfrage. Die Spaghetti gehören auf die Karte! <strong>Nachfrage × DB ist wichtiger als DB allein.</strong></div>
+<div class="merksatz">Merke: Das Produkt mit dem höchsten DB × Absatzmenge gehört auf die Karte.</div>
+</div></div>
 
-<h3 style="color:#e8a838;margin-top:18px">Sales-Mix — DDR mit Verkaufszahlen kombinieren</h3>
-<p>Noch aussagekräftiger wird die Kalkulation, wenn der DB mit der Absatzmenge kombiniert wird:</p>
+<div class="tl-item"><div class="tl-num tl-num-r">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Break-Even-Analyse</div><div class="tl-merksatz">«Der Punkt, an dem Erlöse = Kosten. Weder Gewinn noch Verlust.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Break-Even-Analyse</strong> ermittelt den Punkt, bei dem die Erlöse (Verkaufspreis × Absatzmenge) und die Totalkosten (variable + fixe Kosten) identisch sind. An diesem Punkt ist der Gewinn gleich Null — er wird <strong style="color:#e8a838">Break-Even-Point</strong>, <strong>Gewinnschwelle</strong> oder <strong>Nutzschwelle</strong> genannt.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:12px 16px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">
-DB Total [CHF] = DB pro Stück [CHF] × Absatzmenge
-</div>
-
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Produkt</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">DB [CHF]</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">Verkaufszahl</td><td style="padding:10px;border:1px solid var(--bd);text-align:right">DB Total [CHF]</td></tr></thead>
-<tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Burger</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">23</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">220</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">5'060</td></tr>
-<tr style="background:rgba(52,199,89,0.08)"><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700">Spaghetti</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">18</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right">380</td><td style="padding:8px 10px;border:1px solid var(--bd);text-align:right;color:#34c759;font-weight:700">6'840</td></tr>
-</tbody></table></div>
-
-<div class="hl"><strong>💡 ERKENNTNIS</strong><br>
-Obwohl ein einzelner Burger mehr DB liefert als Spaghetti, bringen die Spaghetti <strong>insgesamt mehr DB (6'840 vs. 5'060)</strong> — wegen der höheren Nachfrage. Die Spaghetti gehören auf die Karte! <strong>Nachfrage × DB ist wichtiger als DB allein.</strong></div>
-
-<h2 style="color:#00c6fb;margin-top:28px">2.7 Break-Even-Analyse</h2>
-<p>Die <strong style="color:#e8a838">Break-Even-Analyse</strong> ermittelt den Punkt, bei dem die Erlöse (Verkaufspreis × Absatzmenge) und die Totalkosten (variable + fixe Kosten) identisch sind. An diesem Punkt ist der Gewinn gleich Null — er wird <strong style="color:#e8a838">Break-Even-Point</strong>, <strong>Gewinnschwelle</strong> oder <strong>Nutzschwelle</strong> genannt.</p>
-
-<div class="hl"><strong>DECKUNGSBEITRAG vs. BREAK-EVEN POINT</strong><br>
-<strong style="color:#e8a838">Deckungsbeitrag:</strong> Betrag, der zur Deckung der Fixkosten und zur Erzielung eines Gewinns nach Abzug der variablen Kosten von den Erlösen verbleibt (CHF oder %).<br>
-<strong style="color:#e8a838">Break-Even-Point:</strong> Punkt, an dem die Erlöse die gesamten Kosten genau decken — weder Gewinn noch Verlust (CHF oder Stück).<br>
+<div class="hl" style="margin-top:12px"><strong>DECKUNGSBEITRAG vs. BREAK-EVEN POINT</strong><br>
+<strong style="color:#e8a838">Deckungsbeitrag:</strong> Betrag zur Deckung der Fixkosten und Gewinn nach Abzug variabler Kosten (CHF oder %).<br>
+<strong style="color:#e8a838">Break-Even-Point:</strong> Punkt, an dem die Erlöse die gesamten Kosten genau decken (CHF oder Stück).<br>
 <strong>Zusammenspiel:</strong> Der DB wird zur Berechnung des Break-Even Points verwendet.</div>
 
-<h3 style="color:#e8a838;margin-top:14px">Grundformel</h3>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:16px">
-Verkaufspreis × x = K<sub>var</sub> × x + K<sub>fix</sub><br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Unterhalb: Verlustzone · Oberhalb: Gewinnzone</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px 14px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Grundformel: Verkaufspreis × x = K<sub>var</sub> × x + K<sub>fix</sub><br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Unterhalb: Verlustzone · Oberhalb: Gewinnzone</span></div>
 
-<h3 style="color:#e8a838;margin-top:14px">Die wichtigen Berechnungen</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Mengenmässige Nutzschwelle (Stück)</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838;font-size:13px">NS<sub>Stk</sub> = Fixe Kosten / DB pro Stück [CHF]</div>
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Die wichtigen Berechnungen</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Mengenmässige Nutzschwelle (Stück)</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:6px 8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">NS<sub>Stk</sub> = Fixe Kosten / DB pro Stück</div>
 <div class="cd">Ab welcher Menge sind alle Kosten gedeckt?</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Wertmässige Nutzschwelle V1</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838;font-size:13px">NS<sub>CHF</sub> = Fixe Kosten / DB-Marge [%]</div>
+<div class="c cg"><div class="ct2">Wertmässige NS V1</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:6px 8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">NS<sub>CHF</sub> = Fixe Kosten / DB-Marge [%]</div>
 <div class="cd">Welcher Umsatz wird mindestens benötigt?</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Wertmässige Nutzschwelle V2</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:10px;border-radius:8px;margin:10px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">NS<sub>CHF</sub> = Mengenmässige NS × Nettoerlös pro Stück</div>
-<div class="cd">Alternative Berechnung über die mengenmässige Nutzschwelle.</div></div>
+<div class="c cm"><div class="ct2">Wertmässige NS V2</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:6px 8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:11px">NS<sub>CHF</sub> = Mengenm. NS × Nettoerlös pro Stück</div>
+<div class="cd">Alternative über mengenmässige Nutzschwelle.</div></div>
 </div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — NUTZSCHWELLE BANKETT</strong><br>
-Bellavista plant ein neues Weihnachtsbankett-Package zu CHF 120 pro Gast. Variable Kosten pro Gast CHF 45 → DB = CHF 75. Fixkosten für Dekoration, Musik und Grundaufbau: CHF 9'000. <strong>Mengenmässige Nutzschwelle = 9'000 / 75 = 120 Gäste.</strong> Ab dem 121. verkauften Platz macht das Bankett Gewinn. <strong>Wertmässige Nutzschwelle = 120 × 120 = CHF 14'400 Umsatz.</strong>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Weihnachtsbankett</strong><br>
+Package CHF 120/Gast. Variable Kosten CHF 45 → DB = CHF 75. Fixkosten Deko+Musik+Aufbau CHF 9'000.<br>
+<strong>Mengenmässige NS = 9'000 / 75 = 120 Gäste.</strong> Ab dem 121. Platz macht das Bankett Gewinn.<br>
+<strong>Wertmässige NS = 120 × 120 = CHF 14'400 Umsatz.</strong>
 </div>
 
-<p><strong style="color:#e8a838">Nutzen der Break-Even-Analyse:</strong></p>
-<ul style="margin-left:24px;line-height:1.9">
-<li>Faktenbasierte Entscheidungen über Veränderungen im Produktsortiment</li>
+<div class="tl-body" style="margin-top:10px"><strong style="color:#e8a838">Nutzen:</strong></div>
+<ul style="margin-left:20px;line-height:1.7;font-size:13px">
+<li>Faktenbasierte Entscheidungen über Produktsortiment</li>
 <li>Auswahl des wirtschaftlichsten Szenarios aus mehreren Alternativen</li>
 <li>Festlegung des Mindestpreises für ein neues Produkt</li>
 </ul>
+<div class="merksatz">Merke: Break-Even = Überlebensgrenze. Darunter ist Verlust, darüber Gewinn.</div>
+</div></div>
 
+</div>
 </div>
 
 
-<!-- CTRL: Kalkulation (aus PDF-Zusammenfassung 1:1) -->
+<!-- CTRL: Kalkulation (PDF 1:1 als Timeline) -->
 <div class="sec" id="ctrl_kalk"><h1>03 · Kalkulation</h1><p class="sub">Preiskomponenten · Preisgestaltung · Aufschlagskalkulation · MWST</p>
 
 <div class="hlbl"><strong>LERNZIELE K03</strong><br>
@@ -563,121 +547,139 @@ Bellavista plant ein neues Weihnachtsbankett-Package zu CHF 120 pro Gast. Variab
 ✓ Mithilfe der Aufschlagskalkulation und einer Betriebsrechnung Zuschlagsätze berechnen und auf Produkte ableiten<br>
 ✓ Selbstständig und sinnvoll für beliebige Produkte einen Preis ermitteln, begründen und argumentieren</div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.1 Warum ist Kalkulation wichtig?</h2>
-<p>Die richtige Preiskalkulation entscheidet über den unternehmerischen Erfolg. Wie entsteht der passende Preis für ein Gericht? Was ist der korrekte Preis für ein Hotelzimmer? <strong style="color:#e8a838">Schätzpreise, Faustformeln oder einfaches Kopieren der Konkurrenz sind fahrlässig</strong> — die korrekte Preiskalkulation ist die Voraussetzung für den Erfolg.</p>
+<div style="display:flex;gap:8px;margin:16px 0 6px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 
-<div class="hlr"><strong>⚠ HÄUFIGER FEHLER IN DER GASTRONOMIE</strong><br>
-Die alte Faustformel <strong>«Wareneinsatz mal drei gleich Preis»</strong> ist nicht mehr zeitgemäss! Sie ignoriert Personalkosten, Fixkosten, Qualitätsunterschiede und die Zahlungsbereitschaft der Gäste. Moderne Kalkulation folgt einer ehrlichen Aufstellung aller Kostenkomponenten.</div>
+<div class="tl">
 
-<p><strong style="color:#e8a838">Markttransparente Artikel:</strong> Produkte wie Bier, Cola oder Kaffee, deren Preise auf den Karten vergleichbarer Betriebe zu finden sind. Der Preis ist kaum verhandelbar — ähnliche Zuliefererpreise führen zu ähnlichen Kalkulationsschemata. Gäste vergleichen heute live via Apps (z.B. Booking.com für Zimmer, Vivino für Wein).</p>
+<div class="tl-item"><div class="tl-num tl-num-r">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Warum ist Kalkulation wichtig?</div><div class="tl-merksatz">«Schätzpreise sind fahrlässig — richtige Kalkulation ist Voraussetzung für Erfolg.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die richtige Preiskalkulation entscheidet über den unternehmerischen Erfolg. Wie entsteht der passende Preis für ein Gericht? Was ist der korrekte Preis für ein Hotelzimmer? <strong style="color:#e8a838">Schätzpreise, Faustformeln oder einfaches Kopieren der Konkurrenz sind fahrlässig</strong> — die korrekte Preiskalkulation ist die Voraussetzung für den Erfolg.</div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.2 Die sechs Komponenten eines Preises</h2>
-<p>Ein Preis setzt sich meistens aus folgenden Einzelkomponenten zusammen:</p>
+<div class="hlr" style="margin-top:12px"><strong>⚠ HÄUFIGER FEHLER IN DER GASTRONOMIE</strong><br>Die alte Faustformel <strong>«Wareneinsatz mal drei gleich Preis»</strong> ist nicht mehr zeitgemäss! Sie ignoriert Personalkosten, Fixkosten, Qualitätsunterschiede und die Zahlungsbereitschaft der Gäste.</div>
 
-<div style="display:flex;flex-direction:column;gap:8px;margin:18px 0">
-<div style="display:flex;align-items:center;gap:10px"><div style="background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;min-width:280px"><strong>1. Materialeinzelkosten</strong> <em style="color:var(--tx2)">(Wareneinkauf)</em></div><div style="color:#e8a838;font-weight:700">+</div></div>
-<div style="display:flex;align-items:center;gap:10px"><div style="background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;min-width:280px"><strong>2. Fertigungseinzelkosten</strong> <em style="color:var(--tx2)">(Personalkosten)</em></div><div style="color:#e8a838;font-weight:700">= Einzelkosten</div></div>
-<div style="display:flex;align-items:center;gap:10px"><div style="background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;min-width:280px"><strong>3. Gemeinkostenzuschläge</strong></div><div style="color:#e8a838;font-weight:700">= Herstellkosten</div></div>
-<div style="display:flex;align-items:center;gap:10px"><div style="background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;min-width:280px"><strong>4. Verwaltungs- & Vertriebskosten</strong></div><div style="color:#e8a838;font-weight:700">= Selbstkosten</div></div>
-<div style="display:flex;align-items:center;gap:10px"><div style="background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;min-width:280px"><strong>5. Gewinn</strong></div><div style="color:#e8a838;font-weight:700">= Netto-Verkaufspreis</div></div>
-<div style="display:flex;align-items:center;gap:10px"><div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:10px 16px;border-radius:8px;min-width:280px"><strong>6. Mehrwertsteuer (MWST)</strong></div><div style="color:#e8a838;font-weight:700">= Brutto-Verkaufspreis = Umsatz</div></div>
+<div class="tl-body" style="margin-top:12px"><strong style="color:#e8a838">Markttransparente Artikel:</strong> Produkte wie Bier, Cola oder Kaffee, deren Preise auf den Karten vergleichbarer Betriebe zu finden sind. Der Preis ist kaum verhandelbar — ähnliche Zuliefererpreise führen zu ähnlichen Kalkulationsschemata. Gäste vergleichen heute live via Apps (z.B. Booking.com, Vivino für Wein).</div>
+<div class="merksatz">Merke: Alle Kostenkomponenten erfassen — vom Material bis zur MWST. Nicht «Wareneinsatz × 3».</div>
+</div></div>
+
+<div class="tl-item"><div class="tl-num tl-num-b">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Die sechs Komponenten eines Preises</div><div class="tl-merksatz">«Material + Fertigung + Gemein + Verwaltung + Gewinn + MWST = Brutto.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Ein Preis setzt sich meistens aus folgenden Einzelkomponenten zusammen:</div>
+
+<div style="display:flex;flex-direction:column;gap:6px;margin:14px 0">
+<div style="display:flex;align-items:center;gap:8px"><div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>1. Materialeinzelkosten</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">+</div></div>
+<div style="display:flex;align-items:center;gap:8px"><div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>2. Fertigungseinzelkosten</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">= Einzelkosten</div></div>
+<div style="display:flex;align-items:center;gap:8px"><div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>3. Gemeinkostenzuschläge</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">= Herstellkosten</div></div>
+<div style="display:flex;align-items:center;gap:8px"><div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>4. Verwaltungs- & Vertriebskosten</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">= Selbstkosten</div></div>
+<div style="display:flex;align-items:center;gap:8px"><div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>5. Gewinn</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">= Netto-Verkaufspreis</div></div>
+<div style="display:flex;align-items:center;gap:8px"><div style="background:rgba(232,168,56,0.15);border:2px solid #e8a838;padding:8px 14px;border-radius:6px;min-width:240px;font-size:13px"><strong>6. Mehrwertsteuer (MWST)</strong></div><div style="color:#e8a838;font-weight:700;font-size:12px">= Brutto-Verkaufspreis = Umsatz</div></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Details zu den Komponenten</h3>
-<ol style="margin-left:24px;line-height:1.9">
-<li><strong>Materialeinzelkosten:</strong> Einkaufspreis + Transport der Ausgangsprodukte. In der Preiskalkulation muss berücksichtigt werden, dass durch Reinigung und Schnittreste selten 100 % des Produkts verwendet werden. <strong style="color:#00c6fb">Verbindliche Rezepte und klare Portionsgrössen</strong> sind hier der Schlüssel.</li>
-<li><strong>Fertigungseinzelkosten:</strong> Löhne, Sozialversicherungsabgaben, Urlaubstage. <strong style="color:#ff3b30">Der grösste Kostenpunkt überhaupt — niemals unterschätzen!</strong></li>
-<li><strong>Gemeinkostenzuschläge:</strong> Kosten für Pflege (Haltbarkeit, Lagerung, Kühlung, Versicherung) und Nebenkosten der Herstellung (Strom, Abfall). Fallen nur bei effektiver Produktion an.</li>
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Details zu den Komponenten</div>
+<ol style="margin-left:20px;line-height:1.8;font-size:13px">
+<li><strong>Materialeinzelkosten:</strong> Einkaufspreis + Transport. Reinigung/Schnittreste → selten 100 % des Produkts verwendet. <strong style="color:#00c6fb">Verbindliche Rezepte</strong> sind der Schlüssel.</li>
+<li><strong>Fertigungseinzelkosten:</strong> Löhne, Sozialversicherungen, Urlaub. <strong style="color:#ff3b30">Der grösste Kostenpunkt überhaupt — niemals unterschätzen!</strong></li>
+<li><strong>Gemeinkostenzuschläge:</strong> Pflege (Lagerung, Kühlung, Versicherung) + Nebenkosten (Strom, Abfall).</li>
 <li><strong>Verwaltungs- & Vertriebskosten:</strong> «Unsichtbare» Aufwände wie Buchhaltung, Marketing, Zinsen.</li>
-<li><strong>Gewinn:</strong> Betriebliche Gewinn-Marge <strong style="color:#e8a838">Gastronomie ~10 %</strong>, <strong style="color:#e8a838">Hotellerie ~15 %</strong>.</li>
-<li><strong>MWST:</strong> 8,1 % (Normal), 3,8 % (Beherbergung), 2,6 % (Lebensmittel) — Stand 1.1.2024. Verkaufspreise in Hotellerie und Gastronomie werden immer inkl. MWST ausgewiesen.</li>
+<li><strong>Gewinn:</strong> Marge <strong style="color:#e8a838">Gastronomie ~10 %</strong>, <strong style="color:#e8a838">Hotellerie ~15 %</strong>.</li>
+<li><strong>MWST:</strong> 8,1 % (Normal), 3,8 % (Beherbergung), 2,6 % (Lebensmittel) — Stand 1.1.2024. Preise <strong>immer inkl. MWST</strong>.</li>
 </ol>
+<div class="merksatz">Merke: Sechs Stufen — jede zählt. Wer eine vergisst, verkauft unter Selbstkosten.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.3 Dreieck der Preisgestaltung</h2>
-<p>Die Preisfindung sollte sich an drei Gesichtspunkten orientieren — dem <strong style="color:#e8a838">Dreieck der Preisgestaltung</strong>:</p>
+<div class="tl-item"><div class="tl-num tl-num-a">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Dreieck der Preisgestaltung</div><div class="tl-merksatz">«Kosten · Kunde · Konkurrenz — aus allen drei Richtungen denken.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die Preisfindung sollte sich an drei Gesichtspunkten orientieren — dem <strong style="color:#e8a838">Dreieck der Preisgestaltung</strong>:</div>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:16px 18px"><div style="font-size:22px;margin-bottom:4px">🏢</div><div class="ct2">Kosten (Unternehmen)</div><div class="cd"><strong>Kostenorientierte Preisfestsetzung:</strong> Preis basiert auf tatsächlichen Selbstkosten + Gewinnzuschlag. Reine Kostendeckung ohne Berücksichtigung von Marktwerten.<br><br><em>Bsp: Nicht gewinnorientierte Unternehmen (öffentliche Schulen), Wein in Gastronomie (fixer Zuschlag auf Einkaufspreis).</em></div></div>
-<div class="c cg" style="padding:16px 18px"><div style="font-size:22px;margin-bottom:4px">👥</div><div class="ct2">Kunde (Nachfrage)</div><div class="cd"><strong>Nachfrageorientierte Preisfestsetzung:</strong> Preis richtet sich nach Angebot und Nachfrage — was sind Kund:innen bereit zu zahlen?<br><br><em>Bsp: Hotels/Fluggesellschaften — Dienstag-Mittwoch anderer Preis als Freitag-Samstag; Flug um 6:00 günstiger als um 11:00.</em></div></div>
-<div class="c cp" style="padding:16px 18px"><div style="font-size:22px;margin-bottom:4px">🏛</div><div class="ct2">Konkurrenz</div><div class="cd"><strong>Konkurrenzorientierte Preisfestsetzung:</strong> Preis orientiert sich stark an Mitbewerber:innen am Platz.<br><br><em>Bsp: Markenkleider in Sportgeschäften (alle ähnlicher Preis); in Gastro oft Kaffee oder Flasche Bier.</em></div></div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">🏢 Kosten (Unternehmen)</div><div class="cd"><strong>Kostenorientierte Preisfestsetzung:</strong> Preis basiert auf Selbstkosten + Gewinnzuschlag. Reine Kostendeckung.<br><em>Bsp: Öffentliche Schulen, Wein in Gastronomie (fixer Zuschlag).</em></div></div>
+<div class="c cg"><div class="ct2">👥 Kunde (Nachfrage)</div><div class="cd"><strong>Nachfrageorientierte Preisfestsetzung:</strong> Was sind Kund:innen bereit zu zahlen?<br><em>Bsp: Hotels/Flüge — Dienstag anderer Preis als Samstag.</em></div></div>
+<div class="c cp"><div class="ct2">🏛 Konkurrenz</div><div class="cd"><strong>Konkurrenzorientierte Preisfestsetzung:</strong> Orientierung an Mitbewerber:innen.<br><em>Bsp: Kaffee, Flasche Bier — überall ähnlicher Preis.</em></div></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Weitere Preisfindungsmethoden</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Dynamic Pricing</div><div class="cd">Die Nachfrage bestimmt den Preis — der Preis wird <strong>dynamisch der Nachfrage angepasst</strong>. Voraussetzungen: <strong>Kapazitäten müssen begrenzt und nicht lagerbar</strong> sein (Hotelzimmer, Flüge) — die variablen Kosten müssen bekannt sein (Untergrenze).<br><br>Bei grosser Nachfrage teuer verkaufen (hohe Marge), bei geringer Nachfrage bis zur Preisuntergrenze senken — jeder Franken über variablen Kosten deckt Fixkosten.</div></div>
-<div class="c cr" style="padding:14px 16px"><div class="ct2">Target Pricing & Target Costing</div><div class="cd"><strong style="color:#e8a838">Target Pricing:</strong> Was darf das Produkt maximal im Verkauf kosten, um marktkonkurrenzfähig zu sein? (Analyse der Kundenzahlungsbereitschaft)<br><br><strong style="color:#e8a838">Target Costing:</strong> Was darf das Produkt bei der Herstellung maximal kosten, um den Ziel-Gewinn zu erzielen? (rückwärts ermittelt: Zielverkaufspreis − Mindestgewinn = zulässige Kosten)</div></div>
+<div style="margin-top:14px;font-weight:700;color:#e8a838">Weitere Preisfindungsmethoden</div>
+<div class="tl-sub">
+<div class="c cm"><div class="ct2">Dynamic Pricing</div><div class="cd">Preis wird <strong>dynamisch der Nachfrage angepasst</strong>. Voraussetzungen: Kapazitäten begrenzt und nicht lagerbar (Zimmer, Flüge). Variable Kosten bekannt (Untergrenze).<br><br>Bei hoher Nachfrage teuer, bei tiefer bis zur Preisuntergrenze — jeder Franken über variablen Kosten deckt Fixkosten.</div></div>
+<div class="c cr"><div class="ct2">Target Pricing & Target Costing</div><div class="cd"><strong style="color:#e8a838">Target Pricing:</strong> Was darf das Produkt maximal kosten, um marktfähig zu sein?<br><br><strong style="color:#e8a838">Target Costing:</strong> Was darf das Produkt in der Herstellung maximal kosten, um den Ziel-Gewinn zu erzielen? (Zielverkaufspreis − Mindestgewinn = zulässige Kosten)</div></div>
 </div>
+<div class="merksatz">Merke: Nur Kosten-Basis ist zu teuer. Nur Konkurrenz-Basis ist zu naiv. Dreieck denken!</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.4 Kalkulationsmethoden im Überblick</h2>
-<p>Es gibt verschiedene Arten, den Preis eines Produkts bzw. einer Leistung zu berechnen:</p>
+<div class="tl-item"><div class="tl-num tl-num-g">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Kalkulationsmethoden im Überblick</div><div class="tl-merksatz">«Aufschlagskalkulation ist der Hotellerie-Standard.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Es gibt verschiedene Arten, den Preis eines Produkts bzw. einer Leistung zu berechnen:</div>
 
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Methode</td><td style="padding:10px;border:1px solid var(--bd)">Vorgehen</td></tr></thead>
+<div style="overflow-x:auto;margin:12px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Methode</td><td style="padding:8px;border:1px solid var(--bd)">Vorgehen</td></tr></thead>
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Einfacher Faktor</td><td style="padding:8px 10px;border:1px solid var(--bd)">Warenkosten × Faktor</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Einfacher Zuschlag</td><td style="padding:8px 10px;border:1px solid var(--bd)">Warenkosten + Wert</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Divisionskalkulation</td><td style="padding:8px 10px;border:1px solid var(--bd)">Alle Kosten / Anzahl Produkte</td></tr>
-<tr style="background:rgba(232,168,56,0.12)"><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:700;color:#e8a838">Aufschlagskalkulation ⭐</td><td style="padding:8px 10px;border:1px solid var(--bd)">Wird in der Hotellerie/Gastronomie am häufigsten angewendet — siehe 3.5</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Betriebsrechnung</td><td style="padding:8px 10px;border:1px solid var(--bd)">Aus der Teilkostenrechnung abgeleitet</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600;color:#ff3b30">Praktiker-Methode</td><td style="padding:8px 10px;border:1px solid var(--bd)">«Handgelenk mal Pi» — nicht empfehlenswert!</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Einfacher Faktor</td><td style="padding:6px 8px;border:1px solid var(--bd)">Warenkosten × Faktor</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Einfacher Zuschlag</td><td style="padding:6px 8px;border:1px solid var(--bd)">Warenkosten + Wert</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Divisionskalkulation</td><td style="padding:6px 8px;border:1px solid var(--bd)">Alle Kosten / Anzahl Produkte</td></tr>
+<tr style="background:rgba(232,168,56,0.12)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700;color:#e8a838">Aufschlagskalkulation ⭐</td><td style="padding:6px 8px;border:1px solid var(--bd)">Hotellerie-Standard — siehe nächste Nummer</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Betriebsrechnung</td><td style="padding:6px 8px;border:1px solid var(--bd)">Aus der Teilkostenrechnung abgeleitet</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600;color:#ff3b30">Praktiker-Methode</td><td style="padding:6px 8px;border:1px solid var(--bd)">«Handgelenk mal Pi» — nicht empfehlenswert!</td></tr>
 </tbody></table></div>
+<div class="merksatz">Merke: In der Hotellerie ist Aufschlagskalkulation + DDR + Sales-Mix der Goldstandard.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.5 Aufschlagskalkulation (ausführlich)</h2>
-<p>Die <strong style="color:#e8a838">Aufschlagskalkulation</strong> zeigt in erster Linie die gastronomische Rentabilität in Bezug auf die tatsächlich anfallenden Produktionskosten. Idealerweise wird sie mit der <strong style="color:#00c6fb">Doppelten-Deckungsbeitrags-Rechnung (DDR)</strong> und einem <strong style="color:#00c6fb">ausgewogenen Sales-Mix</strong> kombiniert.</p>
+<div class="tl-item"><div class="tl-num tl-num-g">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Aufschlagskalkulation (ausführlich)</div><div class="tl-merksatz">«Sieben Schritte vom Betriebskosten-Block zum Gericht-Preis.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Aufschlagskalkulation</strong> zeigt in erster Linie die gastronomische Rentabilität in Bezug auf die tatsächlich anfallenden Produktionskosten. Idealerweise kombiniert mit <strong style="color:#00c6fb">DDR</strong> und <strong style="color:#00c6fb">ausgewogenem Sales-Mix</strong>.</div>
 
-<h3 style="color:#e8a838;margin-top:14px">Die 7-Schritt-Checkliste</h3>
-<ol style="margin-left:24px;line-height:1.9">
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Die 7-Schritt-Checkliste</div>
+<ol style="margin-left:20px;line-height:1.8;font-size:13px">
 <li><strong>Gesamte Betriebskosten</strong> (Fixkosten: Personal, Miete, Versicherung, Marketing, Administration, Finanzen) summieren</li>
-<li><strong>Aufteilung in Sparten</strong> (z.B. Speisen-Anteil / Getränke-Anteil) → Produktionskosten pro Sparte</li>
-<li><strong>Weitere Unterteilung in Untersparten</strong> (Haupt-/Vorspeisen; Wein/Bier/Mineral) anhand der Absatzplanung</li>
-<li><strong>Produktionskosten der Sparte</strong> × prozentualer Wert der Untersparte = Produktionskosten der Untersparte</li>
-<li><strong>/ Anzahl Produkte</strong> der Untersparte = Ø Selbstkostenanteil pro Produkt</li>
-<li><strong>+ Warenkosten</strong> des konkreten Gerichts (gemäss Rezeptur) <strong>+ Gewinnanteil + Reserve</strong> für Unvorhergesehenes</li>
+<li><strong>Aufteilung in Sparten</strong> (Speisen / Getränke) → Produktionskosten pro Sparte</li>
+<li><strong>Unterteilung in Untersparten</strong> (Haupt-/Vorspeisen; Wein/Bier/Mineral) anhand Absatzplanung</li>
+<li><strong>Produktionskosten der Sparte</strong> × prozentualer Wert der Untersparte = Produktionskosten Untersparte</li>
+<li><strong>/ Anzahl Produkte</strong> = Ø Selbstkostenanteil pro Produkt</li>
+<li><strong>+ Warenkosten</strong> des konkreten Gerichts + <strong>Gewinnanteil + Reserve</strong></li>
 <li><strong>+ aktuelle MWST</strong> → Endpreis</li>
 </ol>
 
-<div class="hl"><strong>WICHTIGE DETAILS ZUR AUFSCHLAGSKALKULATION</strong><br>
-<strong style="color:#e8a838">Standard-Rezeptur:</strong> Ordentlich dokumentierte, stetig aktualisierte Auflistung aller Komponenten — in Gramm/Deziliter/Stück mit aktuellen Einkaufspreisen.<br>
-<strong style="color:#e8a838">Gewinn-Zuschlag:</strong> Mindestens der im Businessplan festgelegte Jahresgewinn in Prozent.<br>
-<strong style="color:#e8a838">Reserve:</strong> So bemessen, dass ein Produkt bei Fehlbestellung oder Bruch problemlos ersetzt werden kann.<br>
-<strong style="color:#e8a838">Preissensibilität beachten:</strong> Oft werden Beträge an Konkurrenzpreise und Zahlungsbereitschaft der Gäste angepasst.</div>
+<div class="hl" style="margin-top:10px"><strong>WICHTIGE DETAILS</strong><br>
+<strong style="color:#e8a838">Standard-Rezeptur:</strong> Ordentlich dokumentierte Auflistung aller Komponenten in g/dl/Stück mit Einkaufspreisen.<br>
+<strong style="color:#e8a838">Gewinn-Zuschlag:</strong> Mindestens der im Businessplan festgelegte Jahresgewinn in %.<br>
+<strong style="color:#e8a838">Reserve:</strong> Bei Fehlbestellung oder Bruch problemlos ersetzbar.<br>
+<strong style="color:#e8a838">Preissensibilität:</strong> Anpassung an Konkurrenzpreise und Zahlungsbereitschaft.</div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — KALKULATION «ZANDERFILET AUF RÖSTI»</strong><br>
-<strong>Warenkosten (Rezeptur):</strong> Zanderfilet 180g CHF 9.50, Kartoffeln CHF 1.20, Beilagengemüse CHF 2.10, Sauce CHF 1.80 = <strong style="color:#e8a838">CHF 14.60</strong><br>
-+ Ø Selbstkostenanteil Hauptspeisen (aus Aufschlag): <strong>CHF 11.20</strong><br>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — «Zanderfilet auf Rösti»</strong><br>
+<strong>Warenkosten (Rezeptur):</strong> Zanderfilet 180g CHF 9.50, Kartoffeln CHF 1.20, Gemüse CHF 2.10, Sauce CHF 1.80 = <strong style="color:#e8a838">CHF 14.60</strong><br>
++ Ø Selbstkostenanteil Hauptspeisen: <strong>CHF 11.20</strong><br>
 + Gewinnanteil 15 %: <strong>CHF 3.87</strong><br>
 + Reserve 3 %: <strong>CHF 0.89</strong><br>
 <strong>= Netto-Verkaufspreis: CHF 30.56</strong><br>
 + MWST 8,1 %: CHF 2.48<br>
 → <strong style="color:#e8a838">Brutto-Verkaufspreis (Speisekarte): CHF 33.00</strong> (aufgerundet)
 </div>
+<div class="merksatz">Merke: Standard-Rezeptur + aktuelle Einkaufspreise = jederzeit richtig kalkulieren.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.6 Einfluss der Kostenrechnung auf die Kalkulation</h2>
-<p>Auf gleicher Basis wie bei der Teilkostenrechnung findet auch in der Kalkulation eine <strong style="color:#e8a838">Kostenspaltung</strong> statt — Fixkosten und variable Kosten werden getrennt.</p>
+<div class="tl-item"><div class="tl-num tl-num-b">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Einfluss der Kostenrechnung auf die Kalkulation</div><div class="tl-merksatz">«Kostenspaltung fix/variabel — auch in der Kalkulation.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Auf gleicher Basis wie bei der Teilkostenrechnung findet auch in der Kalkulation eine <strong style="color:#e8a838">Kostenspaltung</strong> statt — Fixkosten und variable Kosten werden getrennt.</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c cr" style="padding:14px 16px"><div class="ct2">Fixkosten in der Hotellerie/Gastronomie</div><div class="cd">Nicht von der Auslastung abhängig: Personalkosten (Festanstellung), Miete, Versicherung, Marketing, Administration, Finanzkosten.</div></div>
-<div class="c cg" style="padding:14px 16px"><div class="ct2">Variable Kosten in der Hotellerie/Gastronomie</div><div class="cd">Direkt mit Auslastung verknüpft: Warenkosten für Essen & Getränke, Kosten eines Gästeaufenthalts (Reinigung, Wäsche, Amenities).</div></div>
+<div class="tl-sub">
+<div class="c cr"><div class="ct2">Fixkosten in Hotellerie/Gastronomie</div><div class="cd">Nicht von der Auslastung abhängig: Personalkosten (Festanstellung), Miete, Versicherung, Marketing, Administration, Finanzkosten.</div></div>
+<div class="c cg"><div class="ct2">Variable Kosten in Hotellerie/Gastronomie</div><div class="cd">Direkt mit Auslastung verknüpft: Warenkosten für Essen & Getränke, Kosten eines Gästeaufenthalts (Reinigung, Wäsche, Amenities).</div></div>
 </div>
 
-<p>Variable Kosten lassen sich durch <strong style="color:#e8a838">standardisierte Rezepturen und Abläufe</strong> sowie einen <strong style="color:#e8a838">gut organisierten, effizienten Einkauf</strong> optimieren. Die Einnahmen müssen sowohl fixe als auch variable Kosten decken.</p>
+<div class="tl-body" style="margin-top:10px">Variable Kosten lassen sich durch <strong style="color:#e8a838">standardisierte Rezepturen und Abläufe</strong> sowie einen <strong style="color:#e8a838">gut organisierten Einkauf</strong> optimieren. Die Einnahmen müssen sowohl fixe als auch variable Kosten decken.</div>
+<div class="merksatz">Merke: Variable Kosten kann man täglich optimieren. Fixkosten nur strategisch.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">3.7 Materielle und immaterielle Komponenten</h2>
-<p>Ein Angebot in der Hotellerie besteht nicht nur aus messbaren Produkten, sondern auch aus schwer fassbaren Werten:</p>
+<div class="tl-item"><div class="tl-num tl-num-p">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Materielle und immaterielle Komponenten</div><div class="tl-merksatz">«Gäste zahlen oft mehr für Atmosphäre als für das Produkt.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Ein Angebot in der Hotellerie besteht nicht nur aus messbaren Produkten, sondern auch aus schwer fassbaren Werten:</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div class="ct2">Materielle Komponenten</div><div class="cd">Das Essen, das Getränk, das Zimmer, die Einrichtung, die Lage, die Sauberkeit.</div></div>
-<div class="c cm" style="padding:14px 16px"><div class="ct2">Immaterielle Komponenten</div><div class="cd">Atmosphäre, Gastfreundschaft, Service, Story, Marke, Reputation, Erlebnis.</div></div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Materielle Komponenten</div><div class="cd">Das Essen, das Getränk, das Zimmer, die Einrichtung, die Lage, die Sauberkeit.</div></div>
+<div class="c cm"><div class="ct2">Immaterielle Komponenten</div><div class="cd">Atmosphäre, Gastfreundschaft, Service, Story, Marke, Reputation, Erlebnis.</div></div>
 </div>
 
-<p>Im Preis steckt immer <strong style="color:#e8a838">beides</strong> — und der Gast zahlt oft mehr für die <strong style="color:#00c6fb">immateriellen Werte</strong> als für das Produkt selbst.</p>
+<div class="tl-body" style="margin-top:10px">Im Preis steckt immer <strong style="color:#e8a838">beides</strong> — und der Gast zahlt oft mehr für die <strong style="color:#00c6fb">immateriellen Werte</strong> als für das Produkt selbst.</div>
+<div class="merksatz">Merke: Das Erlebnis ist der Hebel. Das Produkt allein bringt keinen Preis-Premium.</div>
+</div></div>
 
+</div>
 </div>
 
 
-<!-- CTRL: Investitionsrechnung (aus PDF-Zusammenfassung 1:1) -->
+<!-- CTRL: Investitionsrechnung (PDF 1:1 als Timeline) -->
 <div class="sec" id="ctrl_inv"><h1>04 · Investitionsrechnung</h1><p class="sub">Grundlagen · Rechengrössen · Statische Verfahren · Rückflusszahl · NPV</p>
 
 <div class="hlbl"><strong>LERNZIELE K04</strong><br>
@@ -688,245 +690,238 @@ Die alte Faustformel <strong>«Wareneinsatz mal drei gleich Preis»</strong> ist
 ✓ Die Rückflusszahl berechnen und interpretieren<br>
 ✓ Grundverständnis der dynamischen Verfahren (NPV-Methode) aufweisen</div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.1 Was ist eine Investition?</h2>
-<p><strong style="color:#e8a838">Investire</strong> (lateinisch) = <em>einkleiden</em>. Investitionen sind finanzielle Mittel, die für längere Zeit in <strong style="color:#e8a838">Anlagevermögen</strong> «eingekleidet» (angelegt) werden. Das Ziel einer Investition ist immer eine <strong style="color:#34c759">Wertsteigerung</strong> — Return on Investment.</p>
+<div style="display:flex;gap:8px;margin:16px 0 6px"><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.add('open'))">Alle aufklappen</button><button style="font-size:11px;padding:4px 10px" onclick="this.parentElement.nextElementSibling.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'))">Alle schliessen</button></div>
 
-<h3 style="color:#e8a838;margin-top:18px">Investitionsmerkmale</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">🎯</div><div class="ct2">Zielgerichtet</div><div class="cd">Finanzielle Ressourcen werden für einen zukunftsgerichteten Zweck eingesetzt — nicht für den laufenden Konsum.</div></div>
-<div class="c cm" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">⏳</div><div class="ct2">Mittel- bis langfristig</div><div class="cd">Der erwartete Nutzen erstreckt sich über einen längeren Zeitraum — nicht eine Periode, sondern oft Jahre oder Jahrzehnte.</div></div>
-<div class="c cp" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">📊</div><div class="ct2">Unregelmässige Ströme</div><div class="cd">Einnahmen- und Ausgabenströme fallen unregelmässig verteilt über die Nutzungsdauer an — hohe Anfangsausgabe, gestaffelte Rückflüsse.</div></div>
-<div class="c cg" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">📈</div><div class="ct2">Wertsteigerung als Ziel</div><div class="cd">Zugunsten der Erwartung künftiger höherer Einnahmen wird heute auf einen kleineren, weniger risikoreichen Nutzen verzichtet.</div></div>
+<div class="tl">
+
+<div class="tl-item"><div class="tl-num tl-num-b">1</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Was ist eine Investition?</div><div class="tl-merksatz">«Investire = einkleiden. Geld wird in Anlagevermögen eingekleidet.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body"><strong style="color:#e8a838">Investire</strong> (lateinisch) = <em>einkleiden</em>. Investitionen sind finanzielle Mittel, die für längere Zeit in <strong style="color:#e8a838">Anlagevermögen</strong> «eingekleidet» (angelegt) werden. Das Ziel einer Investition ist immer eine <strong style="color:#34c759">Wertsteigerung</strong> — Return on Investment.</div>
+
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Investitionsmerkmale</div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">🎯 Zielgerichtet</div><div class="cd">Finanzielle Ressourcen werden für einen zukunftsgerichteten Zweck eingesetzt — nicht für den laufenden Konsum.</div></div>
+<div class="c cm"><div class="ct2">⏳ Mittel- bis langfristig</div><div class="cd">Der erwartete Nutzen erstreckt sich über einen längeren Zeitraum — Jahre oder Jahrzehnte.</div></div>
+<div class="c cp"><div class="ct2">📊 Unregelmässige Ströme</div><div class="cd">Einnahmen- und Ausgabenströme fallen unregelmässig an — hohe Anfangsausgabe, gestaffelte Rückflüsse.</div></div>
+<div class="c cg"><div class="ct2">📈 Wertsteigerung als Ziel</div><div class="cd">Zugunsten künftiger höherer Einnahmen wird heute auf einen kleineren, weniger risikoreichen Nutzen verzichtet.</div></div>
 </div>
 
-<h3 style="color:#e8a838;margin-top:18px">Wie «beginnen» Investitionen?</h3>
-<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:14px 0;flex-wrap:wrap">
-<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:8px;text-align:center;font-size:13px;font-weight:700">Investitionsbedarf</div>
+<div style="margin-top:12px;font-weight:700;color:#e8a838">Wie «beginnen» Investitionen?</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:10px 0;flex-wrap:wrap">
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px;font-weight:700">Investitionsbedarf</div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:8px;text-align:center;font-size:13px;font-weight:700">Investitionsbudget</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px;font-weight:700">Investitionsbudget</div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:8px;text-align:center;font-size:13px;font-weight:700">Finanzierungsplan</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px;font-weight:700">Finanzierungsplan</div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:8px;text-align:center;font-size:13px;font-weight:700">Finanzierungen beschaffen</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px;font-weight:700">Finanzierungen beschaffen</div>
 <div style="color:#e8a838;font-weight:700">→</div>
-<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 14px;border-radius:8px;text-align:center;font-size:13px;font-weight:700">Baubewilligungen</div>
+<div style="background:var(--s2);border:1px solid var(--bd);padding:8px 12px;border-radius:6px;text-align:center;font-size:12px;font-weight:700">Baubewilligungen</div>
 </div>
+<div class="merksatz">Merke: Investition ≠ Konsum. Langfristig, zielgerichtet, mit Rückflüssen.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.2 Investitionsarten</h2>
-<p>Je nach Art der Mittelanlage unterscheidet man <strong>drei Investitionsarten</strong>:</p>
+<div class="tl-item"><div class="tl-num tl-num-a">2</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Investitionsarten</div><div class="tl-merksatz">«Sach, Finanz, Immateriell — drei Arten der Mittelanlage.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Je nach Art der Mittelanlage unterscheidet man <strong>drei Investitionsarten</strong>:</div>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">🏢</div><div class="ct2">Sachinvestition</div><div class="cd">• Fahrzeuge<br>• Maschinen<br>• Immobilien<br><br><em>Beispiele: Betriebsfahrzeug, Kücheneinrichtung, Restaurantmobiliar, Hotelgebäude</em></div></div>
-<div class="c cg" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">💳</div><div class="ct2">Finanzinvestition</div><div class="cd">• Aktivdarlehen<br>• Beteiligungen<br><br><em>Beispiele: Darlehen an Aktionär, Beteiligung an anderem Betrieb</em></div></div>
-<div class="c cp" style="padding:14px 16px"><div style="font-size:22px;margin-bottom:4px">💡</div><div class="ct2">Immaterielle Investition</div><div class="cd">• Forschung<br>• Sozialleistungen<br>• Patente<br>• Lizenzen<br><br><em>Beispiele: IT-Benutzerlizenzen, EDV-Software, Casino-Konzession</em></div></div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">🏢 Sachinvestition</div><div class="cd">• Fahrzeuge<br>• Maschinen<br>• Immobilien<br><br><em>Bsp: Betriebsfahrzeug, Kücheneinrichtung, Restaurantmobiliar, Hotelgebäude</em></div></div>
+<div class="c cg"><div class="ct2">💳 Finanzinvestition</div><div class="cd">• Aktivdarlehen<br>• Beteiligungen<br><br><em>Bsp: Darlehen an Aktionär, Beteiligung an anderem Betrieb</em></div></div>
+<div class="c cp"><div class="ct2">💡 Immaterielle Investition</div><div class="cd">• Forschung<br>• Sozialleistungen<br>• Patente<br>• Lizenzen<br><br><em>Bsp: IT-Benutzerlizenzen, EDV-Software, Casino-Konzession</em></div></div>
 </div>
+<div class="merksatz">Merke: Nicht jede Investition ist sichtbar — Patente und Software sind oft die wertvollsten.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.3 Motive einer Investition</h2>
-<p>Wird nach dem <strong style="color:#e8a838">Motiv</strong> gefragt, warum eine Investition getätigt wird, unterscheidet man folgende Typen:</p>
+<div class="tl-item"><div class="tl-num tl-num-g">3</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Motive einer Investition</div><div class="tl-merksatz">«Gründung, Erweiterung, Ersatz, Rationalisierung, Umstellung, Diversifikation, Sicherung.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Wird nach dem <strong style="color:#e8a838">Motiv</strong> gefragt, warum eine Investition getätigt wird, unterscheidet man folgende Typen:</div>
 
-<div style="overflow-x:auto;margin:14px 0">
-<table style="width:100%;font-size:13px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:10px;border:1px solid var(--bd)">Investitionsart</td><td style="padding:10px;border:1px solid var(--bd)">Motiv</td><td style="padding:10px;border:1px solid var(--bd)">Hotel-Beispiel</td></tr></thead>
+<div style="overflow-x:auto;margin:12px 0">
+<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Investitionsart</td><td style="padding:8px;border:1px solid var(--bd)">Motiv</td><td style="padding:8px;border:1px solid var(--bd)">Hotel-Beispiel</td></tr></thead>
 <tbody>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Gründungsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Gründung Unternehmung, Eröffnung neuer Filiale</td><td style="padding:8px 10px;border:1px solid var(--bd)">Neues Boutique-Hotel wird eröffnet</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Erweiterungsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Bestehende Kapazität wird erweitert</td><td style="padding:8px 10px;border:1px solid var(--bd)">Angrenzendes Grundstück für Parkplätze</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Ersatzinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Bestehende Anlage wird durch gleichartige ersetzt</td><td style="padding:8px 10px;border:1px solid var(--bd)">Austausch veralteter Möbel</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Rationalisierungsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Wirtschaftlichkeit und Produktivität erhöhen</td><td style="padding:8px 10px;border:1px solid var(--bd)">Energieeffiziente Beleuchtung zur Kostensenkung</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Umstellungsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Neue Technologien oder andere Produkte</td><td style="padding:8px 10px;border:1px solid var(--bd)">Solarenergie/alternative Energiesysteme</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Diversifikationsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Produktionsprogramm erweitern, Risiko verteilen</td><td style="padding:8px 10px;border:1px solid var(--bd)">Resort an neuem geografischem Standort</td></tr>
-<tr><td style="padding:8px 10px;border:1px solid var(--bd);font-weight:600">Sicherungsinvestition</td><td style="padding:8px 10px;border:1px solid var(--bd)">Sicherung des Unternehmungsfortbestandes (F&E, Schulung, Werbung)</td><td style="padding:8px 10px;border:1px solid var(--bd)">Beteiligung an Werbeagentur für Markenaufbau</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Gründungsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Gründung Unternehmung, neue Filiale</td><td style="padding:6px 8px;border:1px solid var(--bd)">Neues Boutique-Hotel wird eröffnet</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Erweiterungsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Bestehende Kapazität wird erweitert</td><td style="padding:6px 8px;border:1px solid var(--bd)">Angrenzendes Grundstück für Parkplätze</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Ersatzinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Anlage durch gleichartige ersetzt</td><td style="padding:6px 8px;border:1px solid var(--bd)">Austausch veralteter Möbel</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Rationalisierungsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Wirtschaftlichkeit erhöhen</td><td style="padding:6px 8px;border:1px solid var(--bd)">Energieeffiziente Beleuchtung</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Umstellungsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Neue Technologien</td><td style="padding:6px 8px;border:1px solid var(--bd)">Solarenergie</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Diversifikationsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Produktionsprogramm erweitern</td><td style="padding:6px 8px;border:1px solid var(--bd)">Resort an neuem Standort</td></tr>
+<tr><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:600">Sicherungsinvestition</td><td style="padding:6px 8px;border:1px solid var(--bd)">Fortbestand sichern (F&E, Schulung)</td><td style="padding:6px 8px;border:1px solid var(--bd)">Beteiligung Werbeagentur</td></tr>
 </tbody></table></div>
 
 <div class="hl"><strong>UNTERSCHEIDUNGSMERKMALE</strong><br>
-Nebst den Motiven gibt es weitere Unterscheidungen: <strong style="color:#e8a838">Rechenbare</strong> vs. nicht rechenbare Investition (z.B. Sozialinvestitionen lassen sich schwer bewerten). <strong style="color:#e8a838">Zwangsinvestition</strong> (unaufschiebbar, z.B. defekte Küche) vs. <strong style="color:#e8a838">Alternativinvestition</strong> (zeitlich verschiebbar).<br><br>
-In der Praxis vereint eine Investition oft mehrere Motive: Der Ersatz einer IT-Anlage ist <strong style="color:#e8a838">Ersatzinvestition</strong> + <strong style="color:#e8a838">Zwangsinvestition</strong> + hat <strong style="color:#e8a838">Rationalisierungs- und Erweiterungseffekt</strong>.</div>
+Nebst den Motiven: <strong style="color:#e8a838">Rechenbare</strong> vs. nicht rechenbare (z.B. Sozialinvestitionen). <strong style="color:#e8a838">Zwangsinvestition</strong> (unaufschiebbar, defekte Küche) vs. <strong style="color:#e8a838">Alternativinvestition</strong>.<br><br>
+In der Praxis vereint eine Investition oft mehrere Motive: Ersatz einer IT-Anlage = Ersatz + Zwang + Rationalisierung + Erweiterung.</div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — INVESTITIONSPORTFOLIO 2024</strong><br>
-Claudia Bellavista plant mehrere parallele Investitionen: <strong>Ersatz</strong> der 12 Jahre alten Wäschereianlage (Zwangsinvestition, CHF 180'000); <strong>Erweiterung</strong> Wellnessbereich um Indoor-Pool (Erweiterung, CHF 750'000); <strong>Rationalisierung</strong> durch Installation einer Photovoltaikanlage (Umstellung + Rationalisierung, CHF 320'000); <strong>Sicherung</strong> durch Investition in ein neues PMS-System (immateriell, CHF 85'000). <strong>Gesamtvolumen: CHF 1'335'000.</strong>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Investitionsportfolio 2024</strong><br>
+<strong>Ersatz</strong> Wäschereianlage (Zwang, CHF 180'000); <strong>Erweiterung</strong> Wellness um Indoor-Pool (CHF 750'000); <strong>Rationalisierung</strong> PV-Anlage (CHF 320'000); <strong>Sicherung</strong> neues PMS-System (immateriell, CHF 85'000). <strong>Gesamtvolumen: CHF 1'335'000.</strong>
 </div>
+<div class="merksatz">Merke: Zwang geht vor Alternativ. Rentabilität ist nicht das einzige Kriterium.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.4 Der Investitionsprozess</h2>
-<p>Der Investitionsvorgang darf nicht isoliert betrachtet werden — er ist Teil der Finanz- und Liquiditätsplanung und folgt einem klaren Ablauf:</p>
-<ol style="margin-left:24px;line-height:1.9">
-<li><strong>Investitionsanregungen sammeln:</strong> Einbezug möglichst vieler Mitarbeitender (Vorschlagswesen, prämierte Ideen)</li>
-<li><strong>Vorfilterung:</strong> Anregungen, die nicht mit Investitionszielen übereinstimmen oder technisch nicht machbar sind, werden aussortiert</li>
-<li><strong>Datensammlung:</strong> Betriebsinterne und -externe Daten für wirtschaftliche, technische und soziale Prüfung sammeln</li>
-<li><strong>Wirtschaftlichkeitsrechnung:</strong> Durchführung der Investitionsrechnung (statische/dynamische Verfahren)</li>
-<li><strong>Gesamtbeurteilung:</strong> Über die rein wirtschaftliche Prüfung hinausgehen — auch soziale und psychologische Aspekte einbeziehen</li>
-<li><strong>Priorisierung:</strong> Prioritätenliste erstellen — zuerst Zwangsinvestitionen, dann Alternativprojekte</li>
-<li><strong>Finanzierung:</strong> Abstimmung benötigte vs. verfügbare Mittel (Liquiditätsplan)</li>
-<li><strong>Durchführung:</strong> Zeitplan, finanzielle Mittel, Personalschulung, Marketingmassnahmen</li>
-<li><strong>Kontrolle:</strong> Abweichungen von den geplanten Daten sofort erkennen</li>
+<div class="tl-item"><div class="tl-num tl-num-x">4</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Der Investitionsprozess</div><div class="tl-merksatz">«Neun Schritte von der Idee bis zur Kontrolle.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Der Investitionsvorgang darf nicht isoliert betrachtet werden — er ist Teil der Finanz- und Liquiditätsplanung:</div>
+<ol style="margin-left:20px;line-height:1.8;font-size:13px">
+<li><strong>Investitionsanregungen sammeln:</strong> Vorschlagswesen, prämierte Ideen</li>
+<li><strong>Vorfilterung:</strong> Anregungen die nicht zu Zielen passen oder technisch unmöglich sind</li>
+<li><strong>Datensammlung:</strong> wirtschaftliche, technische und soziale Prüfung</li>
+<li><strong>Wirtschaftlichkeitsrechnung:</strong> statische/dynamische Verfahren</li>
+<li><strong>Gesamtbeurteilung:</strong> auch soziale und psychologische Aspekte</li>
+<li><strong>Priorisierung:</strong> zuerst Zwangsinvestitionen, dann Alternativprojekte</li>
+<li><strong>Finanzierung:</strong> benötigte vs. verfügbare Mittel</li>
+<li><strong>Durchführung:</strong> Zeitplan, Personalschulung, Marketing</li>
+<li><strong>Kontrolle:</strong> Abweichungen sofort erkennen</li>
 </ol>
 
-<div class="hlr"><strong>⚠ HÄUFIGER FEHLER: REINE RENTABILITÄTSBETRACHTUNG</strong><br>
-Am einfachsten wäre die Einordnung nach der Höhe der erwarteten Rentabilität — doch dann würden rein wirtschaftliche Überlegungen zu stark gewichtet. <strong>Sozial-, Schulungs- und Sicherheitsinvestitionen hätten zu wenig Chancen</strong>, realisiert zu werden. Die Priorisierung muss ganzheitlich erfolgen.</div>
+<div class="hlr" style="margin-top:12px"><strong>⚠ HÄUFIGER FEHLER: REINE RENTABILITÄTSBETRACHTUNG</strong><br>Am einfachsten wäre die Einordnung nach Rentabilität — doch dann würden rein wirtschaftliche Überlegungen dominieren. <strong>Sozial-, Schulungs- und Sicherheitsinvestitionen hätten zu wenig Chancen</strong>, realisiert zu werden.</div>
+<div class="merksatz">Merke: Nicht nur rentabel = investieren. Soziale und strategische Aspekte mit-bewerten.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.5 Rechengrössen der Investitionsrechnung</h2>
-<p>In Wirtschaftlichkeitsrechnungen werden Ausgaben und Einnahmen einander gegenübergestellt. Folgende Rechengrössen stehen im Vordergrund:</p>
+<div class="tl-item"><div class="tl-num tl-num-b">5</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechengrössen der Investitionsrechnung</div><div class="tl-merksatz">«Kapitaleinsatz, Cashflow, Nutzungsdauer, Zinsfuss, Liquidationserlös, Ø Kapital.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">In Wirtschaftlichkeitsrechnungen werden Ausgaben und Einnahmen einander gegenübergestellt:</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">💼</div><div class="ct2">Kapitaleinsatz (Anfangsausgaben)</div><div class="cd">Alle bis zum Zeitpunkt der Inbetriebnahme anfallenden Kosten. Berechnung:<br>
-• + Einstandspreis Investitionsobjekt<br>
-• + Forschungs- und Entwicklungskosten<br>
-• + Projektierungskosten<br>
-• + Einbau- und Installationskosten<br>
-• + Wartungskosten bis Inbetriebnahme<br>
-• + Kosten eines allfälligen Produktionsausfalls<br>
-• + Kosten für Sekundärinvestitionen<br>
-• + Erhöhung des Umlaufvermögens<br>
-• = <strong style="color:#e8a838">Investiertes Kapital</strong></div></div>
-<div class="c cg" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">💰</div><div class="ct2">Cashflow (laufende Ströme)</div><div class="cd">Liquiditätszufluss aus der Investitionstätigkeit — Überschuss der investitionsbedingten Einnahmen über Ausgaben bzw. Nutzen abzüglich Betriebskosten.<br><br><em>In älterer Literatur auch «Rohgewinn» genannt.</em></div></div>
-<div class="c cm" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">📅</div><div class="ct2">Nutzungsdauer</div><div class="cd">Betriebswirtschaftliche Zeitspanne, während der die Anlage genutzt wird — im Vordergrund die <strong>wirtschaftliche Nutzungsdauer</strong>, nicht die technische Lebensdauer.<br><br><em>Entwertung durch technischen Fortschritt unbedingt berücksichtigen!</em></div></div>
-<div class="c cp" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">💱</div><div class="ct2">Liquidationserlös</div><div class="cd">Mittelzufluss am Ende der Nutzungsdauer, sofern die Investition verkauft werden kann (Restwert).</div></div>
-<div class="c cr" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">📊</div><div class="ct2">Zinsfuss (kalkulatorisch)</div><div class="cd">Kosten der Finanzierung — Festsetzung anhand der Renditeerwartungen. Setzt sich zusammen aus risikofreiem Zins + Risikoaufschlag.</div></div>
-<div class="c ca" style="padding:14px 16px"><div style="font-size:20px;margin-bottom:4px">🏦</div><div class="ct2">Ø Investiertes Kapital</div>
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:8px;border-radius:6px;margin:8px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">Ø Kapital = Investiertes Kapital / 2</div>
-<div class="cd">Weil die Rückflüsse reinvestiert werden können, wird nur die Hälfte als durchschnittlich gebunden betrachtet.</div></div>
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">💼 Kapitaleinsatz (Anfangsausgaben)</div><div class="cd">Alle bis zur Inbetriebnahme anfallenden Kosten:<br>• Einstandspreis Investitionsobjekt<br>• Forschungs- und Entwicklungskosten<br>• Projektierungskosten<br>• Einbau- und Installationskosten<br>• Wartung bis Inbetriebnahme<br>• Produktionsausfall<br>• Sekundärinvestitionen<br>• Erhöhung Umlaufvermögen<br><strong style="color:#e8a838">= Investiertes Kapital</strong></div></div>
+<div class="c cg"><div class="ct2">💰 Cashflow (laufende Ströme)</div><div class="cd">Liquiditätszufluss aus der Investitionstätigkeit — Überschuss investitionsbedingter Einnahmen über Ausgaben.<br><br><em>In älterer Literatur auch «Rohgewinn».</em></div></div>
+<div class="c cm"><div class="ct2">📅 Nutzungsdauer</div><div class="cd">Zeitspanne, während der die Anlage genutzt wird — <strong>wirtschaftliche</strong> Nutzungsdauer, nicht technische Lebensdauer.<br><br><em>Entwertung durch technischen Fortschritt berücksichtigen!</em></div></div>
+<div class="c cp"><div class="ct2">💱 Liquidationserlös</div><div class="cd">Mittelzufluss am Ende der Nutzungsdauer, falls verkaufbar (Restwert).</div></div>
+<div class="c cr"><div class="ct2">📊 Zinsfuss (kalkulatorisch)</div><div class="cd">Kosten der Finanzierung. Setzt sich zusammen aus risikofreiem Zins + Risikoaufschlag.</div></div>
+<div class="c ca"><div class="ct2">🏦 Ø Investiertes Kapital</div><div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:6px;border-radius:6px;margin:6px 0;text-align:center;font-style:italic;color:#e8a838;font-size:12px">Ø Kapital = Investiertes Kapital / 2</div><div class="cd">Weil Rückflüsse reinvestiert werden können, wird nur die Hälfte als durchschnittlich gebunden betrachtet.</div></div>
 </div>
 
-<div class="hl"><strong>SEKUNDÄRINVESTITIONEN</strong><br>
-Unabdingbar mit der eigentlichen Investition verbundene Folgeinvestitionen. Beispiel: Beim Umbau auf eine grössere IT-Anlage braucht es auch eine neue Sicherheitsanlage für den Raum und eine stärkere Klimatisierung.</div>
+<div class="hl" style="margin-top:10px"><strong>SEKUNDÄRINVESTITIONEN</strong><br>Unabdingbar verbundene Folgeinvestitionen. Beispiel: Beim Umbau auf grössere IT-Anlage braucht es auch eine neue Sicherheitsanlage und stärkere Klimatisierung.</div>
+<div class="merksatz">Merke: Ø Kapital = Investiertes Kapital / 2. Die Hälfte ist durchschnittlich gebunden.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.6 Rechenverfahren — Überblick</h2>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
-<div class="c ca" style="padding:16px 18px"><div class="ct2">Statische (buchhalterische) Verfahren</div><div class="cd">Basieren auf <strong>periodisierter, durchschnittlicher Betrachtungsweise</strong>. Bsp: Investitionsentscheid auf Basis der jährlichen Kosten oder des Gewinns.<br>• Kostenvergleich<br>• Gewinnvergleich<br>• Renditerechnung<br>• Amortisationsrechnung (Payback-Methode)<br><br><strong>→ Fokus Semester 5</strong></div></div>
-<div class="c cp" style="padding:16px 18px"><div class="ct2">Dynamische (finanzmathematische) Verfahren</div><div class="cd">Berücksichtigen die <strong>gesamte Nutzungsdauer</strong> mit Zinseszins — «heute verfügbares Geld ist mehr wert als künftiges» (Barwert).<br>• Kapitalwertverfahren (NPV)<br>• Annuitätenmethode<br>• Interner Ertragssatz (IRR)<br>• Dynamisierte Payback-Methode<br><br><strong>→ Vertiefung Semester 6 (Corporate Finance)</strong></div></div>
+<div class="tl-item"><div class="tl-num tl-num-b">6</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rechenverfahren — Überblick</div><div class="tl-merksatz">«Statisch = Durchschnittsjahr. Dynamisch = ganze Nutzungsdauer mit Zinseszins.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-sub">
+<div class="c ca"><div class="ct2">Statische (buchhalterische) Verfahren</div><div class="cd">Basieren auf <strong>periodisierter, durchschnittlicher Betrachtung</strong>.<br>• Kostenvergleich<br>• Gewinnvergleich<br>• Renditerechnung<br>• Amortisationsrechnung (Payback)<br><br><strong>→ Fokus Semester 5</strong></div></div>
+<div class="c cp"><div class="ct2">Dynamische (finanzmathematische) Verfahren</div><div class="cd">Berücksichtigen die <strong>gesamte Nutzungsdauer</strong> mit Zinseszins.<br>• Kapitalwertverfahren (NPV)<br>• Annuitätenmethode<br>• Interner Ertragssatz (IRR)<br>• Dynamisierte Payback-Methode<br><br><strong>→ Vertiefung Semester 6</strong></div></div>
 </div>
+<div class="merksatz">Merke: Heute verfügbares Geld ist mehr wert als künftiges — das macht dynamische Verfahren genauer.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.7 Statische Verfahren — Kostenvergleich</h2>
-<p>Der <strong style="color:#e8a838">Kostenvergleich</strong> stellt die anfallenden Kosten einer Periode (i.d.R. ein Jahr) zweier oder mehrerer Investitionsobjekte gegenüber. Gewählt wird die Investition mit den tieferen Kosten.</p>
-<p><strong>Einsatzgebiet:</strong> Vergleich der Kosten einer geplanten Ersatzbeschaffung einer alten, ausgedienten Anlage durch ein/mehrere neue Objekte.</p>
-<ul style="margin-left:24px;line-height:1.8">
+<div class="tl-item"><div class="tl-num tl-num-g">7</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Statisches Verfahren — Kostenvergleich</div><div class="tl-merksatz">«Bei gleichen Erlösen: die billigere Variante wählen.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Der <strong style="color:#e8a838">Kostenvergleich</strong> stellt die anfallenden Kosten einer Periode (i.d.R. ein Jahr) zweier oder mehrerer Investitionsobjekte gegenüber. Gewählt wird die Investition mit den tieferen Kosten.</div>
+<div class="tl-body" style="margin-top:8px"><strong>Einsatzgebiet:</strong> Vergleich der Kosten einer geplanten Ersatzbeschaffung.</div>
+<ul style="margin-left:20px;line-height:1.7;font-size:13px">
 <li>Ersatz von Reinigungsmaschinen</li>
 <li>Kauf neuer Küchengeräte</li>
 <li>Anschaffung neuer Betriebsfahrzeuge</li>
 </ul>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — WÄSCHEREIANLAGE ERSETZEN</strong><br>
-<strong>Variante A «Effizient»:</strong> Anschaffung CHF 180'000, Nutzungsdauer 10 J., Ø Kapital CHF 90'000, Zins 5 % = CHF 4'500/J., Abschreibung 18'000, Energiekosten 8'000, Wartung 3'500 → <strong>Jahreskosten CHF 34'000</strong>.<br>
-<strong>Variante B «Premium»:</strong> Anschaffung CHF 220'000, Nutzungsdauer 12 J., Ø Kapital CHF 110'000, Zins 5 % = CHF 5'500/J., Abschreibung 18'333, Energie 5'000, Wartung 2'500 → <strong>Jahreskosten CHF 31'333</strong>.<br>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Wäschereianlage ersetzen</strong><br>
+<strong>Variante A «Effizient»:</strong> Anschaffung CHF 180'000, ND 10 J., Ø Kapital CHF 90'000, Zins 5 % = 4'500/J., Abschr. 18'000, Energie 8'000, Wartung 3'500 → <strong>Jahreskosten CHF 34'000</strong>.<br>
+<strong>Variante B «Premium»:</strong> Anschaffung CHF 220'000, ND 12 J., Ø Kapital CHF 110'000, Zins 5 % = 5'500/J., Abschr. 18'333, Energie 5'000, Wartung 2'500 → <strong>Jahreskosten CHF 31'333</strong>.<br>
 <strong style="color:#e8a838">→ Variante B gewinnt trotz höherer Anschaffung.</strong>
 </div>
+<div class="merksatz">Merke: Teurer anschaffen kann billiger betreiben sein — über die Gesamtkosten rechnen.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.8 Statische Verfahren — Gewinnvergleich</h2>
-<p>Der <strong style="color:#e8a838">Gewinnvergleich</strong> bezieht die Erlöse in die Rechnung ein und stellt die zu erwartenden <strong>Jahresgewinne</strong> der verschiedenen Investitionen gegenüber. Geeignet für Ersatz- oder Erweiterungsinvestitionen mit unterschiedlichen Erlöserwartungen.</p>
-<p><strong>Entscheidungsregel:</strong> Gewählt wird die Investition mit dem <strong style="color:#34c759">grössten Jahresgewinn</strong>.</p>
+<div class="tl-item"><div class="tl-num tl-num-g">8</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Statisches Verfahren — Gewinnvergleich</div><div class="tl-merksatz">«Vergleicht Jahresgewinne — aber nur bei ähnlichem Kapitaleinsatz.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Der <strong style="color:#e8a838">Gewinnvergleich</strong> bezieht die Erlöse in die Rechnung ein und stellt die zu erwartenden <strong>Jahresgewinne</strong> gegenüber. Geeignet für Ersatz- oder Erweiterungsinvestitionen mit unterschiedlichen Erlöserwartungen.</div>
+<div class="tl-body" style="margin-top:8px"><strong>Entscheidungsregel:</strong> Gewählt wird die Investition mit dem <strong style="color:#34c759">grössten Jahresgewinn</strong>.</div>
 
-<div class="hlr"><strong>⚠ SCHWÄCHE DES GEWINNVERGLEICHS</strong><br>
-Die Kapitaleinsätze der verschiedenen Varianten dürfen <strong>nicht stark voneinander abweichen</strong>, sonst kommt das Projekt mit dem grössten Kapitaleinsatz zu gut weg. Ein Projekt mit CHF 500'000 Kapitaleinsatz muss absolut gesehen natürlich mehr Gewinn abwerfen als eines mit CHF 100'000. Die Lösung dieses Problems: <strong>Renditerechnung</strong>.</div>
+<div class="hlr" style="margin-top:12px"><strong>⚠ SCHWÄCHE DES GEWINNVERGLEICHS</strong><br>Die Kapitaleinsätze dürfen <strong>nicht stark voneinander abweichen</strong>, sonst kommt das Projekt mit höherem Kapitaleinsatz zu gut weg. Ein Projekt mit CHF 500'000 muss absolut gesehen mehr Gewinn abwerfen als eines mit CHF 100'000. Die Lösung: <strong>Renditerechnung</strong>.</div>
 
-<p><strong>Einsatzgebiete:</strong></p>
-<ul style="margin-left:24px;line-height:1.8">
+<div class="tl-body" style="margin-top:8px"><strong>Einsatzgebiete:</strong></div>
+<ul style="margin-left:20px;line-height:1.7;font-size:13px">
 <li>Ausbau der Zimmerkapazitäten</li>
 <li>Erweiterung der Parkplätze</li>
 <li>Technologische Neuerungen in Sitzungszimmern</li>
 </ul>
+<div class="merksatz">Merke: Gewinnvergleich nur bei ähnlichen Kapitaleinsätzen — sonst Rendite rechnen.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.9 Statische Verfahren — Renditerechnung (Return on Investment)</h2>
-<p>Die <strong style="color:#e8a838">Renditerechnung (RoI)</strong> bezieht den durchschnittlich erzielten Jahresgewinn <strong>vor Abzug der kalkulatorischen Zinsen</strong> auf das durchschnittlich eingesetzte Kapital.</p>
+<div class="tl-item"><div class="tl-num tl-num-g">9</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Statisches Verfahren — Renditerechnung (RoI)</div><div class="tl-merksatz">«Fair selbst bei unterschiedlichem Kapitaleinsatz.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Renditerechnung (RoI)</strong> bezieht den durchschnittlich erzielten Jahresgewinn <strong>vor Abzug der kalkulatorischen Zinsen</strong> auf das durchschnittlich eingesetzte Kapital.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-Rentabilität = (Gewinn + kalkulatorischer Zins) / Ø investiertes Kapital × 100 %<br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Richtwert: &gt; 10 %</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:12px 16px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Rentabilität = (Gewinn + kalkulatorischer Zins) / Ø investiertes Kapital × 100 %<br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Richtwert: &gt; 10 %</span></div>
 
-<div class="hl"><strong>WARUM «+ KALKULATORISCHER ZINS»?</strong><br>
-Bei der gezeigten Rendite handelt es sich um die <strong style="color:#e8a838">Bruttorendite</strong>, welche die gesamte Verzinsung der Investition nachweist. Deshalb ist der bereits um die kalkulatorischen Zinsen geschmälerte Gewinn wieder zu korrigieren. Vom Ø Kapital wird ausgegangen, weil die zurückfliessenden Mittel reinvestiert werden können.</div>
+<div class="hl"><strong>WARUM «+ KALKULATORISCHER ZINS»?</strong><br>Bei der gezeigten Rendite handelt es sich um die <strong style="color:#e8a838">Bruttorendite</strong>, welche die gesamte Verzinsung der Investition nachweist. Deshalb ist der bereits um die kalkulatorischen Zinsen geschmälerte Gewinn wieder zu korrigieren.</div>
 
-<p><strong>Vorteil gegenüber Kosten-/Gewinnvergleich:</strong> Auch gänzlich unterschiedliche oder einzelne Investitionsvorhaben können beurteilt werden. Geeignet für Ersatz-, Rationalisierungs- und Erweiterungsinvestitionen.</p>
-<p><strong>Entscheidungsregel:</strong> Gewählt wird die Investition mit der <strong style="color:#34c759">höchsten Rendite</strong>.</p>
+<div class="tl-body" style="margin-top:10px"><strong>Vorteil gegenüber Kosten-/Gewinnvergleich:</strong> Auch gänzlich unterschiedliche Investitionen können beurteilt werden. Geeignet für Ersatz-, Rationalisierungs- und Erweiterungsinvestitionen.</div>
+<div class="tl-body" style="margin-top:6px"><strong>Entscheidungsregel:</strong> Gewählt wird die Investition mit der <strong style="color:#34c759">höchsten Rendite</strong>.</div>
 
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — WAHL ZWISCHEN 2 FAHRZEUGEN</strong><br>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Wahl zwischen 2 Fahrzeugen</strong><br>
 <div style="overflow-x:auto;margin-top:8px">
-<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">Fahrzeug «Elektro»</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">Fahrzeug «Benzin»</td></tr></thead>
+<table style="width:100%;font-size:12px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:6px 8px;border:1px solid var(--bd)">Kennzahl</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">Elektro</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">Benzin</td></tr></thead>
 <tbody>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">Jahresgewinn (Anteil Investition)</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 5'100</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 2'540</td></tr>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">Jahreszins auf Ø Kapital</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 840</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 560</td></tr>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">Investiertes Kapital</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 42'000</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 28'000</td></tr>
-<tr style="background:rgba(52,199,89,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Rentabilität</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;font-weight:700;color:#34c759">28,29 %</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;font-weight:700">22,14 %</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">Jahresgewinn (Anteil Invest.)</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">5'100</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">2'540</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">Jahreszins Ø Kapital</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">840</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">560</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">Investiertes Kapital</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">42'000</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">28'000</td></tr>
+<tr style="background:rgba(52,199,89,0.08)"><td style="padding:5px 7px;border:1px solid var(--bd);font-weight:700">Rentabilität</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right;font-weight:700;color:#34c759">28,29 %</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right;font-weight:700">22,14 %</td></tr>
 </tbody></table></div>
-<strong style="color:#34c759">→ Das Elektro-Fahrzeug gewinnt!</strong> Berechnung Elektro: (5'100 + 840) / 21'000 × 100 = 28,29 %.
+<strong style="color:#34c759">→ Elektro-Fahrzeug gewinnt!</strong>
 </div>
+<div class="merksatz">Merke: Rendite vergleicht Investitionen mit unterschiedlichem Kapitaleinsatz fair.</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.10 Statische Verfahren — Amortisationsrechnung (Payback)</h2>
-<p>Die <strong style="color:#e8a838">Amortisationsrechnung</strong> ist eine beliebte Praktikermethode. Sie berechnet den Zeitraum, der erforderlich ist, bis sich eine Investition mit den erzielten Cashflows vollständig <strong style="color:#00c6fb">zurückzahlt</strong>. Diesen Zeitraum nennt man <strong style="color:#e8a838">Wiedergewinnungszeit</strong>, <strong style="color:#e8a838">Amortisationsdauer</strong> oder <strong style="color:#e8a838">Payback-Period</strong>.</p>
+<div class="tl-item"><div class="tl-num tl-num-a">10</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Statisches Verfahren — Amortisationsrechnung (Payback)</div><div class="tl-merksatz">«Wie schnell zahlt sich die Investition selbst zurück?»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Amortisationsrechnung</strong> berechnet den Zeitraum, bis sich eine Investition mit den erzielten Cashflows vollständig zurückzahlt. Diesen Zeitraum nennt man <strong style="color:#e8a838">Wiedergewinnungszeit</strong>, <strong>Amortisationsdauer</strong> oder <strong>Payback-Period</strong>.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-Wiedergewinnungszeit = Kapitaleinsatz / Geldfluss aus Betriebstätigkeit<br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Ist die Wiedergewinnungszeit kürzer als die Nutzungsdauer → Investition rentabel</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:12px 16px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Wiedergewinnungszeit = Kapitaleinsatz / Geldfluss aus Betriebstätigkeit<br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Kürzer als Nutzungsdauer → rentabel</span></div>
 
-<p><strong>Entscheidungsregel:</strong> Bevorzugt wird die Investition mit der <strong style="color:#34c759">kürzesten Wiedergewinnungszeit</strong>.</p>
-
-<p>Die Wiedergewinnungszeit ist nicht nur ein Indikator für die Liquiditätswirksamkeit einer Investition, sondern auch ein beliebtes <strong style="color:#e8a838">Risikomass</strong>: Je kürzer die Payback-Period,</p>
-<ul style="margin-left:24px;line-height:1.8">
-<li>desto wahrscheinlicher sind die der Rechnung zugrunde gelegten Daten</li>
+<div class="tl-body"><strong>Entscheidungsregel:</strong> <strong style="color:#34c759">kürzeste Wiedergewinnungszeit</strong>.</div>
+<div class="tl-body" style="margin-top:6px">Payback ist auch ein <strong style="color:#e8a838">Risikomass</strong>: Je kürzer,</div>
+<ul style="margin-left:20px;line-height:1.7;font-size:13px">
+<li>desto wahrscheinlicher sind die zugrunde gelegten Daten</li>
 <li>desto rascher stehen die investierten Mittel wieder zur Verfügung</li>
 </ul>
 
-<h3 style="color:#e8a838;margin-top:14px">Einsatzgebiete</h3>
-<ul style="margin-left:24px;line-height:1.8">
-<li>Bau und Eröffnung eines neuen Hotels</li>
-<li>Installation einer Solaranlage</li>
-<li>Implementierung Self-Check-In-System</li>
-</ul>
-
-<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:16px 20px;margin:16px 0;border-radius:10px">
-<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — FAHRZEUGVERGLEICH PAYBACK</strong><br>
+<div class="hla" style="border-left:4px solid #34c759;background:rgba(52,199,89,0.08);padding:14px 18px;margin-top:12px;border-radius:10px;font-size:13px">
+<strong style="color:#34c759">🏨 FALLBEISPIEL BELLAVISTA — Fahrzeugvergleich Payback</strong><br>
 <div style="overflow-x:auto;margin-top:8px">
-<table style="width:100%;font-size:12.5px;border-collapse:collapse;color:var(--tx)">
-<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:8px;border:1px solid var(--bd)">Position</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">Fahrzeug «Elektro»</td><td style="padding:8px;border:1px solid var(--bd);text-align:right">Fahrzeug «Benzin»</td></tr></thead>
+<table style="width:100%;font-size:12px;border-collapse:collapse;color:var(--tx)">
+<thead><tr style="background:var(--s2);font-weight:700"><td style="padding:6px 8px;border:1px solid var(--bd)">Position</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">Elektro</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">Benzin</td></tr></thead>
 <tbody>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">Jährlicher Erlös</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 13'440</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 11'700</td></tr>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">− Betriebskosten (liquiditätswirksam)</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 1'500</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 3'000</td></tr>
-<tr style="font-weight:700"><td style="padding:6px 8px;border:1px solid var(--bd)">Cashflow (operativ)</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 11'940</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 8'700</td></tr>
-<tr><td style="padding:6px 8px;border:1px solid var(--bd)">Investiertes Kapital</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 42'000</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right">CHF 28'000</td></tr>
-<tr style="background:rgba(52,199,89,0.08)"><td style="padding:6px 8px;border:1px solid var(--bd);font-weight:700">Wiedergewinnungszeit</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;font-weight:700">3,5 Jahre</td><td style="padding:6px 8px;border:1px solid var(--bd);text-align:right;font-weight:700;color:#34c759">3,2 Jahre</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">Jährlicher Erlös</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">13'440</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">11'700</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">− Betriebskosten</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">1'500</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">3'000</td></tr>
+<tr style="font-weight:700"><td style="padding:5px 7px;border:1px solid var(--bd)">Cashflow</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">11'940</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">8'700</td></tr>
+<tr><td style="padding:5px 7px;border:1px solid var(--bd)">Invest. Kapital</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">42'000</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right">28'000</td></tr>
+<tr style="background:rgba(52,199,89,0.08)"><td style="padding:5px 7px;border:1px solid var(--bd);font-weight:700">Wiedergewinnungszeit</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right;font-weight:700">3,5 J.</td><td style="padding:5px 7px;border:1px solid var(--bd);text-align:right;font-weight:700;color:#34c759">3,2 J.</td></tr>
 </tbody></table></div>
-<strong>→ Beim Payback gewinnt das Benzin-Fahrzeug</strong> — es amortisiert sich schneller. <em>Widerspruch zur Renditerechnung!</em> Deshalb muss mit der Rückflusszahl nachgerechnet werden.
+<strong>→ Beim Payback gewinnt das Benzin-Fahrzeug</strong> — Widerspruch zur Renditerechnung! Deshalb muss mit der <strong>Rückflusszahl</strong> nachgerechnet werden.
 </div>
+<div class="merksatz">Merke: Payback allein führt bei unterschiedlicher Nutzungsdauer in die Irre → Rückflusszahl rechnen!</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.11 Rückflusszahl — bei unterschiedlicher Nutzungsdauer</h2>
-<p>Beim Vergleich von Investitionen mit <strong style="color:#e8a838">unterschiedlicher Nutzungsdauer</strong> darf nicht nur auf die Amortisationszeit abgestellt werden. Diese ist ins Verhältnis zur Nutzungsdauer zu setzen — das ergibt die <strong style="color:#e8a838">Rückflusszahl</strong>. Sie besagt, <strong>wie oft sich die Investition während ihrer Lebensdauer amortisiert</strong>.</p>
+<div class="tl-item"><div class="tl-num tl-num-r">11</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Rückflusszahl — bei unterschiedlicher Nutzungsdauer</div><div class="tl-merksatz">«Wie oft amortisiert sich die Investition während ihrer Lebensdauer?»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Beim Vergleich von Investitionen mit <strong style="color:#e8a838">unterschiedlicher Nutzungsdauer</strong> darf nicht nur auf die Amortisationszeit abgestellt werden. Diese ist ins Verhältnis zur Nutzungsdauer zu setzen — das ergibt die <strong style="color:#e8a838">Rückflusszahl</strong>.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-Rückflusszahl = Nutzungsdauer / Wiedergewinnungszeit<br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">Ist die Rückflusszahl grösser als 1 → Investition grundsätzlich rentabel</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:12px 16px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">Rückflusszahl = Nutzungsdauer / Wiedergewinnungszeit<br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">Grösser als 1 → Investition rentabel</span></div>
 
-<p><strong>Entscheidungsregel:</strong> Gewählt wird die Investition mit der <strong style="color:#34c759">grössten Rückflusszahl</strong>.</p>
+<div class="tl-body"><strong>Entscheidungsregel:</strong> <strong style="color:#34c759">grösste Rückflusszahl</strong>.</div>
 
-<div class="hl"><strong>BEISPIEL RÜCKFLUSSZAHL</strong><br>
-<strong>Anlage A:</strong> Nutzungsdauer 5 Jahre, Wiedergewinnungszeit 3,33 J. → Rückflusszahl = 5 / 3,33 = <strong style="color:#34c759">1,50</strong> (Rang 1).<br>
-<strong>Anlage B:</strong> Nutzungsdauer 6 Jahre, Wiedergewinnungszeit 4,5 J. → Rückflusszahl = 6 / 4,5 = <strong>1,33</strong> (Rang 2).<br>
-<strong>→ Anlage A gewinnt</strong> — sie amortisiert sich während ihrer Lebensdauer 1,5-mal.</div>
+<div class="hl" style="margin-top:12px"><strong>BEISPIEL RÜCKFLUSSZAHL</strong><br>
+<strong>Anlage A:</strong> ND 5 J., WGZ 3,33 J. → Rückflusszahl = 5 / 3,33 = <strong style="color:#34c759">1,50</strong> (Rang 1).<br>
+<strong>Anlage B:</strong> ND 6 J., WGZ 4,5 J. → Rückflusszahl = 6 / 4,5 = <strong>1,33</strong> (Rang 2).<br>
+<strong>→ Anlage A gewinnt</strong> — amortisiert sich 1,5-mal während ihrer Lebensdauer.</div>
 
-<div class="hlr"><strong>⚠ WICHTIGE HINWEISE</strong><br>
-<strong>1.</strong> Wenn der Cashflow über die Jahre <strong>unregelmässig</strong> anfällt, muss die Payback-Rechnung als <strong>Staffel</strong> gelöst werden (Jahr für Jahr kumulieren).<br>
-<strong>2.</strong> Die Wiedergewinnungszeit kann auch <strong>grafisch</strong> abgelesen werden: x-Achse Jahre, y-Achse kumulierter Cashflow, Schnittpunkt mit Investitionssumme = Payback-Punkt.</div>
+<div class="hlr" style="margin-top:12px"><strong>⚠ WICHTIGE HINWEISE</strong><br>
+<strong>1.</strong> Bei <strong>unregelmässigem</strong> Cashflow: Payback als <strong>Staffel</strong> lösen (Jahr für Jahr kumulieren).<br>
+<strong>2.</strong> Wiedergewinnungszeit auch <strong>grafisch</strong> ablesbar: x-Achse Jahre, y-Achse kumulierter Cashflow, Schnittpunkt mit Investitionssumme = Payback.</div>
+<div class="merksatz">Merke: Rückflusszahl &gt; 1 = Investition rentiert sich. Bei ungleicher Nutzungsdauer Pflicht!</div>
+</div></div>
 
-<h2 style="color:#00c6fb;margin-top:28px">4.12 Grundverständnis: Dynamische Verfahren — NPV-Methode</h2>
-<p>Die <strong style="color:#e8a838">Net-Present-Value-Methode (NPV)</strong> basiert auf dem Discounted-Cash-Flow-Ansatz (DCF). Zukünftige Cashflows werden mit einem kalkulatorischen Zinssatz (Kapitalkostensatz / WACC) <strong style="color:#00c6fb">diskontiert</strong> — auf den heutigen Wert (Barwert) zurückgerechnet. Grundsatz: <strong>«Heute verfügbares Geld ist mehr wert als künftiges.»</strong></p>
+<div class="tl-item"><div class="tl-num tl-num-p">12</div><div class="tl-head" onclick="this.parentElement.classList.toggle('open')"><div><div class="tl-title">Grundverständnis: Dynamische Verfahren — NPV-Methode</div><div class="tl-merksatz">«Heute verfügbares Geld ist mehr wert als künftiges.»</div></div><div class="tl-arrow">&#9654;</div></div><div class="tl-detail">
+<div class="tl-body">Die <strong style="color:#e8a838">Net-Present-Value-Methode (NPV)</strong> basiert auf dem Discounted-Cash-Flow-Ansatz (DCF). Zukünftige Cashflows werden mit einem kalkulatorischen Zinssatz (Kapitalkostensatz / WACC) <strong style="color:#00c6fb">diskontiert</strong> — auf den heutigen Wert (Barwert) zurückgerechnet.</div>
 
-<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:14px 18px;border-radius:10px;margin:14px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:15px">
-NPV = Σ Barwerte aller Cashflows − Investitionssumme<br>
-<span style="font-size:12px;color:var(--tx2);font-style:normal;font-family:-apple-system">NPV &gt; 0 → Investition schafft Mehrwert, sollte verfolgt werden</span>
-</div>
+<div style="background:rgba(232,168,56,0.12);border:1px dashed #e8a838;padding:12px 16px;border-radius:8px;margin:12px 0;text-align:center;font-family:Georgia,serif;font-style:italic;color:#e8a838;font-size:14px">NPV = Σ Barwerte aller Cashflows − Investitionssumme<br><span style="font-size:11px;color:var(--tx2);font-style:normal;font-family:-apple-system">NPV &gt; 0 → Investition schafft Mehrwert</span></div>
 
 <div class="hl"><strong>BEISPIEL NPV-BERECHNUNG</strong><br>
 <strong>Investitionssumme:</strong> CHF 3'000 heute<br>
-<strong>Geschätzte Cashflows:</strong> CHF 600/Jahr über 10 Jahre Nutzungsdauer<br>
+<strong>Geschätzte Cashflows:</strong> CHF 600/Jahr über 10 Jahre<br>
 <strong>Kapitalkostensatz (WACC):</strong> 11 %<br><br>
-Jeder zukünftige Cashflow wird auf den heutigen Wert abgezinst (Barwertfaktor bei 11 %). Summe der Barwerte: CHF 3'530. Minus Investitionssumme CHF 3'000 → <strong style="color:#34c759">NPV = + CHF 530</strong>. Der Mehrwert von 530 ist positiv → Investition lohnt sich.</div>
+Jeder zukünftige Cashflow wird auf den heutigen Wert abgezinst. Summe der Barwerte: CHF 3'530. Minus Investitionssumme CHF 3'000 → <strong style="color:#34c759">NPV = + CHF 530</strong>. Der Mehrwert ist positiv → Investition lohnt sich.</div>
 
-<p><strong style="color:#e8a838">Kernunterschied statisch vs. dynamisch:</strong> Statisch = Durchschnittsjahr. Dynamisch = Berücksichtigung der gesamten Nutzungsdauer inkl. Vorbereitungs- und Liquidationsphase mit Zinseszinsrechnung.</p>
+<div class="tl-body" style="margin-top:10px"><strong style="color:#e8a838">Kernunterschied statisch vs. dynamisch:</strong> Statisch = Durchschnittsjahr. Dynamisch = gesamte Nutzungsdauer inkl. Vorbereitungs- und Liquidationsphase mit Zinseszinsrechnung.</div>
+<div class="merksatz">Merke: NPV &gt; 0 = Mehrwert. Dynamische Methoden sind genauer, aber rechenintensiv.</div>
+</div></div>
 
+</div>
 </div>
 
 
