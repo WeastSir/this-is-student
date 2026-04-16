@@ -6,12 +6,12 @@
 const courseConfig = {
   id: 'ctrl',
   name: 'Controlling 2',
-  pages: ['ctrl','ctrl_kz','ctrl_klr','ctrl_kalk','ctrl_inv','ctrl_ueb','ctrl_mind','ctrl_kart','ctrl_quiz','ctrl_glossar'],
+  pages: ['ctrl','ctrl_kz','ctrl_klr','ctrl_kalk','ctrl_inv','ctrl_ueb','ctrl_mind','ctrl_zahlen','ctrl_kart','ctrl_quiz','ctrl_glossar'],
   subNav: [
   {s:'ctrl',l:'Übersicht'},
   {s:'ctrl_kz',l:'Kennzahlen'},{s:'ctrl_klr',l:'Kostenrechnung'},{s:'ctrl_kalk',l:'Kalkulation'},{s:'ctrl_inv',l:'Investition'},
   {s:'ctrl_ueb',l:'Übungen'},
-  {s:'ctrl_mind',l:'Zusammenfassung'},{s:'ctrl_kart',l:'Karten'},{s:'ctrl_quiz',l:'Quiz'},{s:'ctrl_glossar',l:'Glossar'}
+  {s:'ctrl_mind',l:'Zusammenfassung'},{s:'ctrl_zahlen',l:'Bilanz & ER lesen'},{s:'ctrl_kart',l:'Karten'},{s:'ctrl_quiz',l:'Quiz'},{s:'ctrl_glossar',l:'Glossar'}
 ],
   navButton: '<button class="nl nl-main" data-s="ctrl" onclick="go(\'ctrl\')" style="display:none">Controlling 2</button>'
 };
@@ -51,7 +51,7 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 </div>
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px">
 <div class="c ck" onclick="go('ctrl_ueb')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">✍</div>
 <div class="ct2">Übungen</div><div class="cd">Interaktive Aufgaben</div>
@@ -59,6 +59,10 @@ const courseHTML = `<!-- ============= CONTROLLING 2 ============ -->
 <div class="c ck" onclick="go('ctrl_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">4</div>
 <div class="ct2">Zusammenfassung</div><div class="cd">Visuelle Übersichten</div>
+</div>
+<div class="c ck" onclick="go('ctrl_zahlen')" style="text-align:center;padding:24px 16px">
+<div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">📊</div>
+<div class="ct2">Bilanz & ER lesen</div><div class="cd">Fallstudie Hotel San Nazzaro</div>
 </div>
 <div class="c ck" onclick="go('ctrl_kart')" style="text-align:center;padding:24px 16px">
 <div id="ltCtrlCards" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">85</div>
@@ -1370,6 +1374,549 @@ Rentabilität Anlage A: <input class="ueb-in" data-answer="20.0" data-alt="20|20
 <div class="mm-branch" style="background:var(--pl);border:1.5px solid var(--pr)"><h3 style="color:var(--pr)">Lernen & Entwicklung</h3><ul style="color:var(--pr)"><li>MA-Zufriedenheit, Fluktuation</li><li>Innovation, Weiterbildung</li><li>«Wie Wachstumspotenziale fördern?»</li></ul></div>
 </div></div>
 </div>
+
+<!-- === NEUE SEKTION: Bilanz & ER lesen (Hotel San Nazzaro) === -->
+<div class="sec" id="ctrl_zahlen"><h1>Bilanz & Erfolgsrechnung lesen</h1><p class="sub">Fallstudie Hotel San Nazzaro — jede Formel der Formelsammlung auf echte Bilanz + ER angewendet</p>
+
+<style>
+#ctrl_zahlen .zl-z1{color:#7ed8f7;font-weight:700}
+#ctrl_zahlen .zl-z2{color:#ffb350;font-weight:700}
+#ctrl_zahlen .zl-z3{color:#d4a0ff;font-weight:700}
+#ctrl_zahlen .zl-z4{color:#5cd377;font-weight:700;font-size:17px}
+#ctrl_zahlen .zl-bg1{background:rgba(0,198,251,.2);padding:1px 6px;border-radius:3px;color:#7ed8f7;font-weight:700}
+#ctrl_zahlen .zl-bg2{background:rgba(255,149,0,.2);padding:1px 6px;border-radius:3px;color:#ffb350;font-weight:700}
+#ctrl_zahlen .zl-bg3{background:rgba(175,82,222,.2);padding:1px 6px;border-radius:3px;color:#d4a0ff;font-weight:700}
+#ctrl_zahlen .zl-legend{display:flex;gap:16px;flex-wrap:wrap;padding:12px 16px;background:var(--s1);border:1px solid var(--bd);border-radius:12px;margin-bottom:18px;font-size:12px}
+#ctrl_zahlen .zl-legend .it{display:flex;align-items:center;gap:6px}
+#ctrl_zahlen .zl-legend .d{width:14px;height:14px;border-radius:3px}
+#ctrl_zahlen .kz{background:var(--s1);border:1px solid var(--bd);border-radius:12px;margin-bottom:14px;overflow:hidden}
+#ctrl_zahlen .kz-h{padding:14px 18px;background:var(--s2);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--bd)}
+#ctrl_zahlen .kz-h:hover{background:#1f2332}
+#ctrl_zahlen .kz-nr{font-size:10px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase}
+#ctrl_zahlen .kz-t{font-size:15px;font-weight:700;margin-top:2px}
+#ctrl_zahlen .kz-v{font-size:18px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+#ctrl_zahlen .kz-a{color:var(--tx3);transition:transform .2s}
+#ctrl_zahlen .kz.open .kz-a{transform:rotate(90deg)}
+#ctrl_zahlen .kz-b{display:none;padding:16px 18px}
+#ctrl_zahlen .kz.open .kz-b{display:block}
+#ctrl_zahlen .zl-fb{background:var(--s2);border:1px dashed var(--bd);border-radius:8px;padding:12px;margin-bottom:12px;font-family:Georgia,serif;font-size:16px;text-align:center;line-height:1.8}
+#ctrl_zahlen .zl-fb .lb{font-size:10px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;font-family:-apple-system,sans-serif;font-weight:700}
+#ctrl_zahlen .zl-tr{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:12.5px}
+#ctrl_zahlen .zl-tr th{padding:8px 10px;color:var(--tx3);font-size:10px;text-transform:uppercase;letter-spacing:1px;background:var(--s2);text-align:left}
+#ctrl_zahlen .zl-tr td{padding:8px 10px;border-bottom:1px solid var(--bd);vertical-align:top;color:var(--tx)}
+#ctrl_zahlen .zl-tr .te{font-weight:700;width:26%}
+#ctrl_zahlen .zl-tr .wh{color:var(--tx2);width:48%;font-size:12px}
+#ctrl_zahlen .zl-tr .wh em{color:var(--tx3);font-style:normal;font-size:11px;display:block;margin-top:2px}
+#ctrl_zahlen .zl-tr .va{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+#ctrl_zahlen .zl-dc{background:#fafaf8;color:#1a1a1a;border-radius:8px;padding:12px 14px;font-size:11.5px;font-variant-numeric:tabular-nums;margin-bottom:12px;border:1px solid #ddd}
+#ctrl_zahlen .zl-dc .dt{font-weight:700;font-size:10px;color:#444;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;border-bottom:1.5px solid #333;padding-bottom:4px}
+#ctrl_zahlen .zl-dc .dr{display:flex;justify-content:space-between;padding:2px 4px;border-bottom:1px dotted #ddd}
+#ctrl_zahlen .zl-dc .dr.sec{font-weight:700;color:#333;background:#f0f0ed;border-bottom:1px solid #ccc}
+#ctrl_zahlen .zl-dc .dr.h1{background:rgba(0,198,251,.25);color:#004a5f;font-weight:700;margin:2px -4px;padding:3px 8px;border:2px solid #00c6fb;border-radius:3px}
+#ctrl_zahlen .zl-dc .dr.h2{background:rgba(255,149,0,.25);color:#6b3d00;font-weight:700;margin:2px -4px;padding:3px 8px;border:2px solid #ff9500;border-radius:3px}
+#ctrl_zahlen .zl-dc .dr.h3{background:rgba(175,82,222,.25);color:#4a1f66;font-weight:700;margin:2px -4px;padding:3px 8px;border:2px solid #af52de;border-radius:3px}
+#ctrl_zahlen .zl-dc .dr .l{flex:1}
+#ctrl_zahlen .zl-dc .dr .v{margin-left:12px;font-weight:inherit}
+#ctrl_zahlen .zl-tag{display:inline-block;background:#fff;border:1.5px solid currentColor;padding:0 4px;border-radius:3px;font-size:9px;font-weight:700;margin-right:4px}
+#ctrl_zahlen .zl-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+@media(max-width:800px){#ctrl_zahlen .zl-split{grid-template-columns:1fr}}
+#ctrl_zahlen .zl-ca{background:var(--gl);border-left:3px solid var(--g);padding:10px 14px;border-radius:0 8px 8px 0;font-family:Georgia,serif;font-size:14px;line-height:2;color:var(--tx)}
+#ctrl_zahlen .zl-ca .lb{font-size:10px;color:var(--g);letter-spacing:1.5px;text-transform:uppercase;font-family:-apple-system,sans-serif;font-weight:700;margin-bottom:4px}
+#ctrl_zahlen .zl-ca .eq{display:block}
+#ctrl_zahlen .zl-nt{background:var(--aml);border-left:3px solid var(--am);padding:9px 12px;margin-top:10px;font-size:12px;color:#ffd38a;border-radius:0 8px 8px 0}
+#ctrl_zahlen .zl-nt strong{color:#ffb350}
+#ctrl_zahlen .bd-g{background:var(--gl);color:#5cd377;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
+#ctrl_zahlen .bd-r{background:var(--rl);color:#ff6b63;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
+#ctrl_zahlen .bd-o{background:var(--aml);color:#ffb350;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase}
+#ctrl_zahlen .zl-bt{background:var(--ac);color:#000;border:none;padding:6px 12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:11px;margin:0 4px 16px 0}
+#ctrl_zahlen .zl-bt2{background:var(--s2);color:var(--tx)}
+#ctrl_zahlen .zl-ref{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:16px 20px;margin-bottom:18px}
+#ctrl_zahlen .zl-ref h3{font-size:14px;margin-bottom:8px;color:var(--ac)}
+#ctrl_zahlen .zl-ref-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;font-size:12px}
+#ctrl_zahlen .zl-ref-g h4{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:5px}
+#ctrl_zahlen .zl-ref-g ul{list-style:none;line-height:1.7;padding-left:0}
+#ctrl_zahlen .zl-ref-g li{color:var(--tx2)}
+#ctrl_zahlen .zl-ref-g li strong{color:var(--tx)}
+#ctrl_zahlen .zl-ref-g li em{color:var(--tx3);font-style:normal;font-size:11px}
+</style>
+
+<div class="zl-legend"><span style="color:var(--tx3);font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700">Farben:</span>
+<div class="it"><div class="d" style="background:rgba(0,198,251,.4);border:2px solid #00c6fb"></div><strong style="color:#7ed8f7">Zahl 1</strong></div>
+<div class="it"><div class="d" style="background:rgba(255,149,0,.4);border:2px solid #ff9500"></div><strong style="color:#ffb350">Zahl 2</strong></div>
+<div class="it"><div class="d" style="background:rgba(175,82,222,.4);border:2px solid #af52de"></div><strong style="color:#d4a0ff">Zahl 3</strong></div>
+<div class="it"><div class="d" style="background:rgba(52,199,89,.4);border:2px solid #34c759"></div><strong style="color:#5cd377">Resultat</strong></div>
+</div>
+
+<div class="zl-ref"><h3>📚 Wo finde ich was? — Quick Reference</h3>
+<div class="zl-ref-g">
+<div><h4>📄 Erfolgsrechnung</h4><ul>
+<li><strong>Reingewinn</strong> <em>= «Jahresgewinn» letzte Zeile</em></li>
+<li><strong>Betriebsertrag</strong> <em>= «Total Betriebsertrag»</em></li>
+<li><strong>EBITDA/EBIT/EBT</strong> <em>direkt beschriftet</em></li>
+<li><strong>Warenaufwand</strong> <em>= Waren Rest + Beh addieren</em></li>
+<li><strong>Abschreibungen</strong> <em>direkt</em></li>
+</ul></div>
+<div><h4>📊 Bilanz</h4><ul>
+<li><strong>Gesamtkapital</strong> <em>= «Total Vermögen»</em></li>
+<li><strong>EK / FK</strong> <em>= «Total Eigen/Fremdkapital»</em></li>
+<li><strong>Anlagevermögen</strong> <em>= «Total Sachanlagevermögen»</em></li>
+<li><strong>Flüss. Mittel</strong> <em>direkt, 1. Zeile UV</em></li>
+<li><strong>Forderungen LuL</strong> <em>= «Forderungen aus Leistungen»</em></li>
+</ul></div>
+<div><h4>🧮 Selber berechnen</h4><ul>
+<li><strong>Ø-Werte</strong> <em>(Berichtsj. + Vorj.) ÷ 2</em></li>
+<li><strong>Warenaufwand</strong> <em>Rest. + Beh.</em></li>
+<li><strong>Cashflow indirekt</strong> <em>Reing. + Abschr. + Ford.verluste</em></li>
+<li><strong>Effektivversch.</strong> <em>FK − Flüss. Mittel</em></li>
+</ul></div>
+<div><h4>📌 Ausgangslage</h4><ul>
+<li><strong>Zimmer</strong> <em>42 · 365 Tage</em></li>
+<li><strong>Auslastung</strong> <em>74.2 %</em></li>
+<li><strong>Restaurant</strong> <em>60 Sitze · 360 Tg · 12h</em></li>
+<li><strong>Gäste</strong> <em>39'000 (Berichtsj.)</em></li>
+</ul></div>
+</div></div>
+
+<button class="zl-bt" onclick="this.parentElement.querySelectorAll('.kz').forEach(k=>k.classList.add('open'))">Alle aufklappen</button>
+<button class="zl-bt zl-bt2" onclick="this.parentElement.querySelectorAll('.kz').forEach(k=>k.classList.remove('open'))">Alle schliessen</button>
+
+<h2 style="margin-top:20px;padding-bottom:8px;border-bottom:2px solid var(--bd)">📊 Erfolgskennzahlen</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Erfolg · 1</div><div class="kz-t">Eigenkapitalrendite (RoE)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">3.0 %</div><span class="bd-r">herausfordernd</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Reingewinn</span> ÷ <span class="zl-z2">Ø Eigenkapital</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Reingewinn</span></td><td class="wh">«Jahresgewinn» (letzte Zeile ER)<em>nicht EBT — der Endwert nach Steuern!</em></td><td class="va zl-bg1">18'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Ø Eigenkapital</span></td><td class="wh">(Total EK Berichtsj. + Vorj.) ÷ 2<em>= (621'500 + 603'000) ÷ 2</em></td><td class="va zl-bg2">612'250</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — Eigenkapital (beide Jahre)</div>
+<div class="dr sec"><span class="l">EIGENKAPITAL</span><span class="v">Berichtsj. | Vorj.</span></div>
+<div class="dr"><span class="l">Aktienkapital</span><span class="v">500'000 | 500'000</span></div>
+<div class="dr"><span class="l">Gesetzliche Reserven</span><span class="v">32'000 | 30'000</span></div>
+<div class="dr"><span class="l">Bilanzgewinn</span><span class="v">89'500 | 73'000</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Eigenkapital</span><span class="v">621'500 | 603'000</span></div></div>
+<div class="zl-dc"><div class="dt">📄 ER — Ende</div>
+<div class="dr"><span class="l">EBT</span><span class="v">26'500</span></div>
+<div class="dr"><span class="l">Direkte Steuern</span><span class="v">8'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Jahresgewinn</span><span class="v">18'500</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">Ø EK = (<span class="zl-z2">621'500</span> + <span class="zl-z2">603'000</span>) ÷ 2 = <span class="zl-z2">612'250</span></span>
+<span class="eq">RoE = <span class="zl-z1">18'500</span> ÷ <span class="zl-z2">612'250</span> × 100 = <span class="zl-z4">3.0 %</span></span></div>
+<div class="zl-nt"><strong>Soll ≥ 5 % · Ist 3 % → zu tief.</strong> EK verzinst sich kaum.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Erfolg · 2</div><div class="kz-t">Gesamtkapitalrendite (RoA)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">0.4 %</div><span class="bd-r">schwach</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Reingewinn</span> ÷ <span class="zl-z2">Ø Gesamtkapital</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Reingewinn</span></td><td class="wh">«Jahresgewinn» (letzte Zeile ER)</td><td class="va zl-bg1">18'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Ø Gesamtkapital</span></td><td class="wh">(Total Vermögen Berichtsj. + Vorj.) ÷ 2<em>= (4'997'500 + 5'234'000) ÷ 2 · auch «Bilanzsumme»</em></td><td class="va zl-bg2">5'115'750</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — Bilanzsumme</div>
+<div class="dr"><span class="l">Total Umlaufvermögen</span><span class="v">263'650 | 196'000</span></div>
+<div class="dr"><span class="l">Total Sachanlagevermögen</span><span class="v">4'733'850 | 5'038'000</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Vermögen (Bilanzsumme)</span><span class="v">4'997'500 | 5'234'000</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">Ø GK = (<span class="zl-z2">4'997'500</span> + <span class="zl-z2">5'234'000</span>) ÷ 2 = <span class="zl-z2">5'115'750</span></span>
+<span class="eq">RoA = <span class="zl-z1">18'500</span> ÷ <span class="zl-z2">5'115'750</span> × 100 = <span class="zl-z4">0.4 %</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Erfolg · 3</div><div class="kz-t">Umsatzrendite (RoS)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">0.5 %</div><span class="bd-r">schlecht</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Reingewinn</span> ÷ <span class="zl-z2">Betriebsertrag</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Reingewinn</span></td><td class="wh">«Jahresgewinn» (letzte Zeile ER)</td><td class="va zl-bg1">18'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Betriebsertrag</span></td><td class="wh">«Total Betriebsertrag» (3. Zeile ER)<em>= Restaurations- + Beherbergungsertrag</em></td><td class="va zl-bg2">3'580'000</td></tr></table>
+<div class="zl-dc"><div class="dt">📄 ER — oben + unten</div>
+<div class="dr"><span class="l">Restaurationsertrag</span><span class="v">1'760'000</span></div>
+<div class="dr"><span class="l">Beherbergungsertrag</span><span class="v">1'820'000</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Betriebsertrag</span><span class="v">3'580'000</span></div>
+<div class="dr" style="color:#999;font-style:italic"><span class="l">...(Aufwände, EBITDA, EBIT, EBT, Steuern)...</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Jahresgewinn</span><span class="v">18'500</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">RoS = <span class="zl-z1">18'500</span> ÷ <span class="zl-z2">3'580'000</span> × 100 = <span class="zl-z4">0.5 %</span></span></div>
+<div class="zl-nt"><strong>Soll 2.5 % · Ist 0.5 % → weit unter Soll.</strong> Trotz guter EBITDA-Marge bleibt nach Abschr. und Zinsen fast nichts.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Erfolg · 4</div><div class="kz-t">EBITDA-Marge</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">16.1 %</div><span class="bd-g">profitabel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">EBITDA</span> ÷ <span class="zl-z2">Betriebsertrag</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">EBITDA</span></td><td class="wh">«EBITDA» (mitte ER)<em>direkt ablesbar — so beschriftet</em></td><td class="va zl-bg1">577'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Betriebsertrag</span></td><td class="wh">«Total Betriebsertrag»</td><td class="va zl-bg2">3'580'000</td></tr></table>
+<div class="zl-dc"><div class="dt">📄 ER — Weg zum EBITDA</div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Betriebsertrag</span><span class="v">3'580'000</span></div>
+<div class="dr"><span class="l">− Direkter Aufwand</span><span class="v">2'067'400</span></div>
+<div class="dr"><span class="l">= GOI</span><span class="v">1'512'600</span></div>
+<div class="dr"><span class="l">− Indirekter Aufwand</span><span class="v">802'600</span></div>
+<div class="dr"><span class="l">= GOP</span><span class="v">710'000</span></div>
+<div class="dr"><span class="l">− Sonstiger Aufwand</span><span class="v">132'500</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>EBITDA</span><span class="v">577'500</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">EBITDA-Marge = <span class="zl-z1">577'500</span> ÷ <span class="zl-z2">3'580'000</span> × 100 = <span class="zl-z4">16.1 %</span></span></div>
+<div class="zl-nt"><strong>Soll 10 % · Ist 16.1 % → profitabel!</strong> Operatives Tagesgeschäft läuft gut.</div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">💰 Finanzierungskennzahlen</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 1</div><div class="kz-t">Eigenkapitalquote</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">12.4 %</div><span class="bd-r">tief</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Eigenkapital</span> ÷ <span class="zl-z2">Gesamtkapital</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Eigenkapital</span></td><td class="wh">«Total Eigenkapital» (Bilanz)<em>Berichtsjahr direkt — kein Ø!</em></td><td class="va zl-bg1">621'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Gesamtkapital</span></td><td class="wh">«Total Vermögen» = «Total Schulden»</td><td class="va zl-bg2">4'997'500</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — Gesamtbild</div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Vermögen (Bilanzsumme)</span><span class="v">4'997'500</span></div>
+<div class="dr sec"><span class="l">PASSIVEN</span><span class="v"></span></div>
+<div class="dr"><span class="l">Total kurzfr. FK</span><span class="v">416'000</span></div>
+<div class="dr"><span class="l">Total langfr. FK</span><span class="v">3'960'000</span></div>
+<div class="dr"><span class="l">Total Fremdkapital</span><span class="v">4'376'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Total Eigenkapital</span><span class="v">621'500</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">EK-Quote = <span class="zl-z1">621'500</span> ÷ <span class="zl-z2">4'997'500</span> × 100 = <span class="zl-z4">12.4 %</span></span></div>
+<div class="zl-nt">Soll 20–30 %. Tiefe Eigenfinanzierung → wenig Puffer.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 2</div><div class="kz-t">Fremdkapitalquote</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">87.6 %</div><span class="bd-r">hoch</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Fremdkapital</span> ÷ <span class="zl-z2">Gesamtkapital</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Fremdkapital</span></td><td class="wh">«Total Fremdkapital»<em>= kurzfr. + langfr. FK</em></td><td class="va zl-bg1">4'376'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Gesamtkapital</span></td><td class="wh">«Total Schulden» = Bilanzsumme</td><td class="va zl-bg2">4'997'500</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">FK-Quote = <span class="zl-z1">4'376'000</span> ÷ <span class="zl-z2">4'997'500</span> × 100 = <span class="zl-z4">87.6 %</span></span>
+<span class="eq" style="color:var(--tx3);font-size:12px">Check: 12.4 + 87.6 = 100 % ✓</span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 3</div><div class="kz-t">Verschuldungsgrad (statisch)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">704.1 %</div><span class="bd-r">riskant</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Fremdkapital</span> ÷ <span class="zl-z2">Eigenkapital</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Fremdkapital</span></td><td class="wh">«Total Fremdkapital»</td><td class="va zl-bg1">4'376'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Eigenkapital</span></td><td class="wh">«Total Eigenkapital»</td><td class="va zl-bg2">621'500</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">Versch. = <span class="zl-z1">4'376'000</span> ÷ <span class="zl-z2">621'500</span> × 100 = <span class="zl-z4">704.1 %</span></span></div>
+<div class="zl-nt"><strong>Soll ≤ 200 % · Ist 704 %.</strong> Extrem fremdfinanziert — 7× mehr FK als EK.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 4</div><div class="kz-t">Verschuldungsgrad (dynamisch)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">~1085 %</div><span class="bd-r">hoch</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Effektivverschuldung</span> ÷ <span class="zl-z2">Cashflow</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Effektivverschuldung</span></td><td class="wh">Selber: FK − Flüssige Mittel<em>= 4'376'000 − 29'050</em></td><td class="va zl-bg1">4'346'950</td></tr>
+<tr><td class="te"><span class="zl-z2">Cashflow indirekt</span></td><td class="wh">Jahresgewinn + Abschreibungen + Forderungsverluste<em>= 18'500 + 380'000 + 7'000</em></td><td class="va zl-bg2">~ 400'500</td></tr></table>
+<div class="zl-split"><div class="zl-dc"><div class="dt">📊 Bilanz</div>
+<div class="dr"><span class="l">Flüssige Mittel</span><span class="v">29'050</span></div>
+<div class="dr"><span class="l">Total Fremdkapital</span><span class="v">4'376'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>FK − Cash</span><span class="v">4'346'950</span></div></div>
+<div class="zl-dc"><div class="dt">📄 ER — Cashflow</div>
+<div class="dr"><span class="l">Jahresgewinn</span><span class="v">18'500</span></div>
+<div class="dr"><span class="l">+ Abschreibungen</span><span class="v">380'000</span></div>
+<div class="dr"><span class="l">+ Forderungsverluste</span><span class="v">7'000</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Cashflow</span><span class="v">~ 400'500</span></div></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">Dyn. = <span class="zl-z1">4'346'950</span> ÷ <span class="zl-z2">400'500</span> × 100 = <span class="zl-z4">~1085 %</span></span></div>
+<div class="zl-nt">~10.8 Jahre Cashflow nötig zur Schuldentilgung. Soll 100–300 % (1–3 Jahre) — weit darüber.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 5</div><div class="kz-t">Anlagedeckungsgrad I</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">13.1 %</div><span class="bd-r">sehr tief</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Eigenkapital</span> ÷ <span class="zl-z2">Anlagevermögen</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Eigenkapital</span></td><td class="wh">«Total Eigenkapital»</td><td class="va zl-bg1">621'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Anlagevermögen</span></td><td class="wh">«Total Sachanlagevermögen»<em>Fahrzeuge + Mobilien + Küche + Immobilien</em></td><td class="va zl-bg2">4'733'850</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — Sachanlagen</div>
+<div class="dr"><span class="l">Fahrzeuge / Mobilien / Küche</span><span class="v">327'450</span></div>
+<div class="dr"><span class="l">Immobilien</span><span class="v">4'406'400</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Sachanlagevermögen</span><span class="v">4'733'850</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">ADG I = <span class="zl-z1">621'500</span> ÷ <span class="zl-z2">4'733'850</span> × 100 = <span class="zl-z4">13.1 %</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Finanzierung · 6</div><div class="kz-t">Anlagedeckungsgrad II (Goldene Bilanzregel)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">96.8 %</div><span class="bd-o">knapp</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div>(<span class="zl-z1">EK</span> + <span class="zl-z2">langfr. FK</span>) ÷ <span class="zl-z3">Anlagevermögen</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Eigenkapital</span></td><td class="wh">«Total Eigenkapital»</td><td class="va zl-bg1">621'500</td></tr>
+<tr><td class="te"><span class="zl-z2">langfr. FK</span></td><td class="wh">«Total langfristiges Fremdkapital»<em>= Darlehen + Grundpfand</em></td><td class="va zl-bg2">3'960'000</td></tr>
+<tr><td class="te"><span class="zl-z3">Anlagevermögen</span></td><td class="wh">«Total Sachanlagevermögen»</td><td class="va zl-bg3">4'733'850</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — langfristiges Kapital + AV</div>
+<div class="dr"><span class="l">Darlehen</span><span class="v">460'000</span></div>
+<div class="dr"><span class="l">Grundpfanddarlehen</span><span class="v">3'500'000</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total langfr. FK</span><span class="v">3'960'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Total Eigenkapital</span><span class="v">621'500</span></div>
+<div class="dr h3"><span class="l"><span class="zl-tag">Zahl 3</span>Total Sachanlagevermögen</span><span class="v">4'733'850</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">ADG II = (<span class="zl-z1">621'500</span> + <span class="zl-z2">3'960'000</span>) ÷ <span class="zl-z3">4'733'850</span> × 100</span>
+<span class="eq">= 4'581'500 ÷ <span class="zl-z3">4'733'850</span> × 100 = <span class="zl-z4">96.8 %</span></span></div>
+<div class="zl-nt"><strong>Goldene Bilanzregel: Soll 100 %.</strong> Mit 96.8 % knapp verletzt — ein Teil AV wird kurzfristig finanziert (riskant).</div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">💧 Liquiditätskennzahlen</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Liquidität · 1</div><div class="kz-t">Liquiditätsgrad I (Cash Ratio)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">7.0 %</div><span class="bd-r">zu tief</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Flüssige Mittel</span> ÷ <span class="zl-z2">kurzfr. FK</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Flüssige Mittel</span></td><td class="wh">«Flüssige Mittel» (1. Zeile UV)<em>Kasse, Post, Bank, kurze Festgelder</em></td><td class="va zl-bg1">29'050</td></tr>
+<tr><td class="te"><span class="zl-z2">kurzfr. FK</span></td><td class="wh">«Total kurzfristiges Fremdkapital»</td><td class="va zl-bg2">416'000</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">LG I = <span class="zl-z1">29'050</span> ÷ <span class="zl-z2">416'000</span> × 100 = <span class="zl-z4">7.0 %</span></span></div>
+<div class="zl-nt">Soll 10–35 %. Unter Minimum.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Liquidität · 2</div><div class="kz-t">Liquiditätsgrad II (Quick Ratio)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">18.6 %</div><span class="bd-r">Angespannte Liquidität</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div>(<span class="zl-z1">Flüssige Mittel</span> + <span class="zl-z2">Forderungen LuL</span>) ÷ <span class="zl-z3">kurzfr. FK</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Flüssige Mittel</span></td><td class="wh">«Flüssige Mittel» (1. Zeile UV)</td><td class="va zl-bg1">29'050</td></tr>
+<tr><td class="te"><span class="zl-z2">Forderungen LuL</span></td><td class="wh">«Forderungen aus Leistungen» (2. Zeile UV)<em>NICHT «Übrige Forderungen» dazunehmen!</em></td><td class="va zl-bg2">48'500</td></tr>
+<tr><td class="te"><span class="zl-z3">kurzfr. FK</span></td><td class="wh">«Total kurzfristiges Fremdkapital»</td><td class="va zl-bg3">416'000</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — UV + kurzfr. FK</div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Flüssige Mittel</span><span class="v">29'050</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Forderungen aus Leistungen</span><span class="v">48'500</span></div>
+<div class="dr" style="color:#999;font-style:italic"><span class="l">Übrige Ford. (NICHT!), Warenvorräte, RAG</span><span class="v">186'100</span></div>
+<div class="dr h3"><span class="l"><span class="zl-tag">Zahl 3</span>Total kurzfr. FK</span><span class="v">416'000</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">LG II = (<span class="zl-z1">29'050</span> + <span class="zl-z2">48'500</span>) ÷ <span class="zl-z3">416'000</span> × 100</span>
+<span class="eq">= 77'550 ÷ <span class="zl-z3">416'000</span> × 100 = <span class="zl-z4">18.6 %</span></span></div>
+<div class="zl-nt"><strong>Alarm! Soll mind. 100 %.</strong> Mit 18.6 % dramatisch zu tief — Forderungen + Cash decken kurzfr. Schulden bei weitem nicht.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Liquidität · 3</div><div class="kz-t">Liquiditätsgrad III (Current Ratio)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">63.4 %</div><span class="bd-r">unter Banker's Rule</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Umlaufvermögen</span> ÷ <span class="zl-z2">kurzfr. FK</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Umlaufvermögen</span></td><td class="wh">«Total Umlaufvermögen»<em>alles UV zusammen</em></td><td class="va zl-bg1">263'650</td></tr>
+<tr><td class="te"><span class="zl-z2">kurzfr. FK</span></td><td class="wh">«Total kurzfristiges Fremdkapital»</td><td class="va zl-bg2">416'000</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — UV komplett</div>
+<div class="dr"><span class="l">Flüssige Mittel + Forderungen + Übrige</span><span class="v">107'550</span></div>
+<div class="dr"><span class="l">Warenvorräte</span><span class="v">127'000</span></div>
+<div class="dr"><span class="l">Aktive Rechnungsabgrenzungen</span><span class="v">29'100</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Total Umlaufvermögen</span><span class="v">263'650</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total kurzfr. FK</span><span class="v">416'000</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">LG III = <span class="zl-z1">263'650</span> ÷ <span class="zl-z2">416'000</span> × 100 = <span class="zl-z4">63.4 %</span></span></div>
+<div class="zl-nt"><strong>Banker's Rule: 150–200 %.</strong> Unter 100 % bedeutet: negatives Working Capital!</div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">⏱️ Working-Capital-Kennzahlen</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">WC · 1</div><div class="kz-t">Working Capital (absolut)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v" style="color:var(--r)">−152'350</div><span class="bd-r">NEGATIV!</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Umlaufvermögen</span> − <span class="zl-z2">kurzfr. FK</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">UV</span></td><td class="wh">«Total Umlaufvermögen»</td><td class="va zl-bg1">263'650</td></tr>
+<tr><td class="te"><span class="zl-z2">kurzfr. FK</span></td><td class="wh">«Total kurzfristiges Fremdkapital»</td><td class="va zl-bg2">416'000</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">WC = <span class="zl-z1">263'650</span> − <span class="zl-z2">416'000</span> = <span class="zl-z4" style="color:var(--r)">−152'350 CHF</span></span></div>
+<div class="zl-nt"><strong>Alarm!</strong> Kurzfr. Schulden übersteigen UV → Teile AV kurzfristig finanziert → Goldene Bilanzregel verletzt.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">WC · 2</div><div class="kz-t">DSO — Debitorenfrist</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">5 Tage</div><span class="bd-g">Tiefes Ausfallrisiko</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Ø Forderungen LuL</span> ÷ <span class="zl-z2">Betriebsertrag</span> × <span class="zl-z3">360</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">Ø Forderungen LuL</span></td><td class="wh">Selber: (Forderungen aus Leist. Berichtsj. + Vorj.) ÷ 2<em>= (48'500 + 54'000) ÷ 2</em></td><td class="va zl-bg1">51'250</td></tr>
+<tr><td class="te"><span class="zl-z2">Betriebsertrag</span></td><td class="wh">«Total Betriebsertrag» (ER)</td><td class="va zl-bg2">3'580'000</td></tr>
+<tr><td class="te"><span class="zl-z3">360</span></td><td class="wh">Kalendertage (immer 360)</td><td class="va zl-bg3">360</td></tr></table>
+<div class="zl-split"><div class="zl-dc"><div class="dt">📊 Bilanz — beide Jahre</div>
+<div class="dr"><span class="l">Ford. Leist. Berichtsj.</span><span class="v">48'500</span></div>
+<div class="dr"><span class="l">Ford. Leist. Vorjahr</span><span class="v">54'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Ø (48'500+54'000)÷2</span><span class="v">51'250</span></div></div>
+<div class="zl-dc"><div class="dt">📄 ER — Umsatz</div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Betriebsertrag</span><span class="v">3'580'000</span></div></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">DSO = <span class="zl-z1">51'250</span> ÷ <span class="zl-z2">3'580'000</span> × <span class="zl-z3">360</span> = <span class="zl-z4">5 Tage</span></span></div>
+<div class="zl-nt"><strong>Soll max. 30 Tg · Ist 5 Tg → super!</strong> Gäste zahlen sofort (Bargeld/Karte).</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">WC · 3</div><div class="kz-t">DIO — Lagerdauer</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">53 Tage</div><span class="bd-r">Risiko veralteter Waren</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Ø Warenvorräte</span> ÷ <span class="zl-z2">Warenaufwand</span> × <span class="zl-z3">360</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">Ø Warenvorräte</span></td><td class="wh">Selber: (Warenvorräte Berichtsj. + Vorj.) ÷ 2<em>= (127'000 + 80'000) ÷ 2</em></td><td class="va zl-bg1">103'500</td></tr>
+<tr><td class="te"><span class="zl-z2">Warenaufwand</span></td><td class="wh">«Dir. Aufwand Waren Rest.» + «…Beh.»<em>= 687'000 + 15'400</em></td><td class="va zl-bg2">702'400</td></tr>
+<tr><td class="te"><span class="zl-z3">360</span></td><td class="wh">Kalendertage</td><td class="va zl-bg3">360</td></tr></table>
+<div class="zl-split"><div class="zl-dc"><div class="dt">📊 Bilanz — Warenvorräte</div>
+<div class="dr"><span class="l">Warenvorräte Berichtsj.</span><span class="v">127'000</span></div>
+<div class="dr"><span class="l">Warenvorräte Vorjahr</span><span class="v">80'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Ø (127'000+80'000)÷2</span><span class="v">103'500</span></div></div>
+<div class="zl-dc"><div class="dt">📄 ER — Warenaufwand</div>
+<div class="dr"><span class="l">Dir. Aufwand Waren Rest.</span><span class="v">687'000</span></div>
+<div class="dr"><span class="l">Dir. Aufwand Waren Beh.</span><span class="v">15'400</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>Total Warenaufwand</span><span class="v">702'400</span></div></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">DIO = <span class="zl-z1">103'500</span> ÷ <span class="zl-z2">702'400</span> × <span class="zl-z3">360</span> = <span class="zl-z4">53 Tage</span></span></div>
+<div class="zl-nt"><strong>Soll max. 30 Tg · Ist 53 Tg.</strong> Vor allem Weinkeller (92'000) bindet Kapital.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">WC · 4</div><div class="kz-t">DPO — Kreditorenfrist</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">72 Tage</div><span class="bd-o">hoch</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Ø Verb. LuL</span> ÷ <span class="zl-z2">Warenaufwand</span> × <span class="zl-z3">360</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">Ø Verb. LuL</span></td><td class="wh">Selber: (Verbindl. aus Lief./Leist. Berichtsj. + Vorj.) ÷ 2<em>= (107'000 + 175'000) ÷ 2</em></td><td class="va zl-bg1">141'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Warenaufwand</span></td><td class="wh">gleich wie bei DIO</td><td class="va zl-bg2">702'400</td></tr>
+<tr><td class="te"><span class="zl-z3">360</span></td><td class="wh">Kalendertage</td><td class="va zl-bg3">360</td></tr></table>
+<div class="zl-dc"><div class="dt">📊 Bilanz — Verbindlichkeiten</div>
+<div class="dr"><span class="l">Verb. Lief./Leist. Berichtsj.</span><span class="v">107'000</span></div>
+<div class="dr"><span class="l">Verb. Lief./Leist. Vorjahr</span><span class="v">175'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Ø (107'000+175'000)÷2</span><span class="v">141'000</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">DPO = <span class="zl-z1">141'000</span> ÷ <span class="zl-z2">702'400</span> × <span class="zl-z3">360</span> = <span class="zl-z4">72 Tage</span></span></div>
+<div class="zl-nt">Soll max. 60 Tg · Ist 72 → leicht darüber. Gut für Liquidität, kann aber Lieferantenbeziehung belasten.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">WC · 5</div><div class="kz-t">CCC — Cash Conversion Cycle</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">−14 Tage</div><span class="bd-o">Spezialfall</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">DIO</span> + <span class="zl-z2">DSO</span> − <span class="zl-z3">DPO</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Zuerst berechnen</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">DIO</span></td><td class="wh">Lagerdauer (Kennzahl oben)</td><td class="va zl-bg1">53 T</td></tr>
+<tr><td class="te"><span class="zl-z2">DSO</span></td><td class="wh">Debitorenfrist</td><td class="va zl-bg2">5 T</td></tr>
+<tr><td class="te"><span class="zl-z3">DPO</span></td><td class="wh">Kreditorenfrist</td><td class="va zl-bg3">72 T</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">CCC = <span class="zl-z1">53</span> + <span class="zl-z2">5</span> − <span class="zl-z3">72</span> = <span class="zl-z4">−14 Tage</span></span></div>
+<div class="zl-nt">Negativ sieht gut aus, kommt hier aber v.a. durch zu langen DPO. Sauberer wäre: DIO senken.</div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">🏨 Branchenspezifische Kennzahlen</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Branche · 1</div><div class="kz-t">ADR — Average Daily Rate</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">CHF 159.85</div><span class="bd-o">durchschnittlich</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Beherbergungsertrag</span> ÷ <span class="zl-z2">Anzahl verkaufte Zimmer</span></div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">Rooms Revenue</span></td><td class="wh">«Beherbergungsertrag» (2. Zeile ER)</td><td class="va zl-bg1">1'820'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Verkaufte Zimmer</span></td><td class="wh">Aus Ausgangslage: 42 × 365 × 74.2 %<em>= 11'385 Room Nights</em></td><td class="va zl-bg2">11'385</td></tr></table>
+<div class="zl-split"><div class="zl-dc"><div class="dt">📄 ER — Beherbergung</div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Beherbergungsertrag</span><span class="v">1'820'000</span></div></div>
+<div class="zl-dc"><div class="dt">📌 Ausgangslage</div>
+<div class="dr"><span class="l">Zimmer</span><span class="v">42</span></div>
+<div class="dr"><span class="l">Betriebstage</span><span class="v">365</span></div>
+<div class="dr"><span class="l">Auslastung</span><span class="v">74.2 %</span></div>
+<div class="dr h2"><span class="l"><span class="zl-tag">Zahl 2</span>42 × 365 × 0.742</span><span class="v">11'385</span></div></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">ADR = <span class="zl-z1">1'820'000</span> ÷ <span class="zl-z2">11'385</span> = <span class="zl-z4">CHF 159.85</span></span></div>
+<div class="zl-nt"><strong>Vorjahr:</strong> Laut Ausgangslage ADR Vorjahr 20 % höher → ca. CHF 191.80 → ADR ist gesunken!</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Branche · 2</div><div class="kz-t">RevPAR — Revenue Per Available Room</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">CHF 118.70</div><span class="bd-o">mittel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Beherbergungsertrag</span> ÷ (<span class="zl-z2">Zimmeranzahl</span> × <span class="zl-z3">Betriebstage</span>)</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">Rooms Revenue</span></td><td class="wh">«Beherbergungsertrag» (ER)</td><td class="va zl-bg1">1'820'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Zimmeranzahl</span></td><td class="wh">Aus Ausgangslage: 42 Zimmer</td><td class="va zl-bg2">42</td></tr>
+<tr><td class="te"><span class="zl-z3">Betriebstage</span></td><td class="wh">Aus Ausgangslage: ganzjährig = 365</td><td class="va zl-bg3">365</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">RevPAR = <span class="zl-z1">1'820'000</span> ÷ (<span class="zl-z2">42</span> × <span class="zl-z3">365</span>)</span>
+<span class="eq">= 1'820'000 ÷ 15'330 = <span class="zl-z4">CHF 118.70</span></span>
+<span class="eq" style="font-size:12px;color:var(--tx3)">Check: ADR × OCC = 159.85 × 0.742 = 118.61 ✓</span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Branche · 3</div><div class="kz-t">OCC % — Occupancy Rate</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">74.2 %</div><span class="bd-g">gut</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Verkaufte Einheiten</span> ÷ <span class="zl-z2">Total Einheiten</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te" colspan="3" style="text-align:center;color:var(--tx2);font-style:italic">Im Fall San Nazzaro ist die OCC direkt in der Ausgangslage gegeben: <strong style="color:var(--tx)">74.2 %</strong>.</td></tr>
+<tr><td class="te"><span class="zl-z1">Verkaufte Zimmer</span></td><td class="wh">Berechnet: 11'385 Room Nights</td><td class="va zl-bg1">11'385</td></tr>
+<tr><td class="te"><span class="zl-z2">Verfügbare Zimmer</span></td><td class="wh">42 × 365 = 15'330</td><td class="va zl-bg2">15'330</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">OCC = <span class="zl-z1">11'385</span> ÷ <span class="zl-z2">15'330</span> × 100 = <span class="zl-z4">74.2 %</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Branche · 4</div><div class="kz-t">RevPASH — Revenue Per Available Seat Hour (Gastro)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">CHF 6.79</div><span class="bd-o">mittel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">F&B Revenue</span> ÷ (<span class="zl-z2">Sitzplätze</span> × <span class="zl-z3">Öffnungsstunden</span>)</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert</th></tr>
+<tr><td class="te"><span class="zl-z1">F&B Revenue</span></td><td class="wh">«Restaurationsertrag» (ER)</td><td class="va zl-bg1">1'760'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Sitzplätze</span></td><td class="wh">Aus Ausgangslage: 60 Plätze</td><td class="va zl-bg2">60</td></tr>
+<tr><td class="te"><span class="zl-z3">Öffnungsstunden total</span></td><td class="wh">360 Tage × ~12h = 4'320 h (vereinfacht)</td><td class="va zl-bg3">4'320</td></tr></table>
+<div class="zl-ca"><div class="lb">Rechnen</div>
+<span class="eq">RevPASH = <span class="zl-z1">1'760'000</span> ÷ (<span class="zl-z2">60</span> × <span class="zl-z3">4'320</span>)</span>
+<span class="eq">= 1'760'000 ÷ 259'200 = <span class="zl-z4">CHF 6.79</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Branche · 5</div><div class="kz-t">Personalaufwandquote</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">46.0 %</div><span class="bd-r">über Richtwert</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Total Personalaufwand</span> ÷ <span class="zl-z2">Total Betriebsertrag</span> × 100 %</div>
+<table class="zl-tr"><tr><th>Formel sagt…</th><th>Heisst im Dokument</th><th>Wert CHF</th></tr>
+<tr><td class="te"><span class="zl-z1">Total Personalaufwand</span></td><td class="wh">«Direkter Personalaufwand» + «Indirekter Personalaufwand»<em>= 1'365'000 + 280'000</em></td><td class="va zl-bg1">1'645'000</td></tr>
+<tr><td class="te"><span class="zl-z2">Betriebsertrag</span></td><td class="wh">«Total Betriebsertrag»</td><td class="va zl-bg2">3'580'000</td></tr></table>
+<div class="zl-dc"><div class="dt">📄 ER — Personalaufwand</div>
+<div class="dr"><span class="l">Direkter Personalaufwand</span><span class="v">1'365'000</span></div>
+<div class="dr"><span class="l">Indirekter Personalaufwand</span><span class="v">280'000</span></div>
+<div class="dr h1"><span class="l"><span class="zl-tag">Zahl 1</span>Total Personalaufwand</span><span class="v">1'645'000</span></div></div>
+<div class="zl-ca"><div class="lb">Rechnen</div><span class="eq">P-Quote = <span class="zl-z1">1'645'000</span> ÷ <span class="zl-z2">3'580'000</span> × 100 = <span class="zl-z4">46.0 %</span></span></div>
+<div class="zl-nt"><strong>Soll ≤ 45 %.</strong> Mit 46 % knapp darüber.</div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">📈 Break-Even & Deckungsbeitrag</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">BE · 1</div><div class="kz-t">Deckungsbeitrag in CHF (Beispielrezept)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Beispiel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Nettoverkaufspreis</span> − <span class="zl-z2">variable Kosten</span></div>
+<div class="zl-nt"><strong>Hinweis:</strong> DB wird pro Produkt berechnet — aus Bilanz/ER direkt nicht ableitbar. Braucht Rezepturkosten einzelner Speisen. Beispiel Risotto: NVP CHF 28.50 − var. Kosten CHF 8.20 = <span class="zl-z4">DB CHF 20.30</span>.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">BE · 2</div><div class="kz-t">DB-Marge in % (Beispielrezept)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Beispiel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">DB in CHF</span> ÷ <span class="zl-z2">Nettoverkaufspreis</span> × 100 %</div>
+<div class="zl-ca"><div class="lb">Beispiel Risotto</div><span class="eq">= <span class="zl-z1">20.30</span> ÷ <span class="zl-z2">28.50</span> × 100 = <span class="zl-z4">71.2 %</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">BE · 3</div><div class="kz-t">Mengenmässige Nutzschwelle</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Beispiel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Fixkosten</span> ÷ <span class="zl-z2">DB pro Stück</span></div>
+<div class="zl-nt">Beispiel: Fixkosten Bankett CHF 9'000 ÷ DB 75 CHF = <span class="zl-z4">120 Gäste</span>.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">BE · 4</div><div class="kz-t">Wertmässige Nutzschwelle</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Beispiel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel (V1)</div><span class="zl-z1">Fixkosten</span> ÷ <span class="zl-z2">DB-Marge %</span></div>
+<div class="zl-fb"><div class="lb">Formel (V2)</div><span class="zl-z1">Mengenm. NS</span> × <span class="zl-z2">Nettopreis</span></div>
+<div class="zl-ca"><span class="eq">V1: <span class="zl-z1">9'000</span> ÷ <span class="zl-z2">0.625</span> = <span class="zl-z4">CHF 14'400</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">BE · 5</div><div class="kz-t">DDR-Wert</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Beispiel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">DB in CHF</span> × 2 + <span class="zl-z2">DB-Marge %</span> ÷ 2</div>
+<div class="zl-ca"><span class="eq">Risotto: <span class="zl-z1">20.30</span> × 2 + <span class="zl-z2">71.2</span> ÷ 2 = 40.60 + 35.60 = <span class="zl-z4">76.20</span></span></div>
+</div></div>
+
+<h2 style="margin-top:24px;padding-bottom:8px;border-bottom:2px solid var(--bd)">💼 Investitionsrechnung (Beispielwerte)</h2>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 1</div><div class="kz-t">Ø investiertes Kapital</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Investiertes Kapital</span> ÷ 2</div>
+<div class="zl-nt">Beispiel Küchenmaschine CHF 40'000 → <span class="zl-z4">Ø 20'000</span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 2</div><div class="kz-t">Kalkulatorischer Zins</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Ø inv. Kapital</span> × <span class="zl-z2">Zinsfuss %</span></div>
+<div class="zl-ca"><span class="eq">20'000 × 5 % = <span class="zl-z4">CHF 1'000</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 3</div><div class="kz-t">Abschreibungen</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div>(<span class="zl-z1">Kapitaleinsatz</span> − <span class="zl-z2">Liquidationserlös</span>) ÷ <span class="zl-z3">Nutzungsdauer</span></div>
+<div class="zl-ca"><span class="eq">(40'000 − 0) ÷ 8 = <span class="zl-z4">CHF 5'000/J.</span></span></div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 4</div><div class="kz-t">Rendite (RoI)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div>(<span class="zl-z1">Gewinn</span> + <span class="zl-z2">kalk. Zins</span>) ÷ <span class="zl-z3">Ø inv. Kapital</span> × 100 %</div>
+<div class="zl-ca"><span class="eq">(3'000 + 1'000) ÷ 20'000 × 100 = <span class="zl-z4">20 %</span></span></div>
+<div class="zl-nt">Soll &gt; 10 % → Investition rentabel.</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 5</div><div class="kz-t">Wiedergewinnungszeit (Payback)</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Kapitaleinsatz</span> ÷ <span class="zl-z2">Cashflow</span></div>
+<div class="zl-ca"><span class="eq">40'000 ÷ 8'000 = <span class="zl-z4">5 Jahre</span></span></div>
+<div class="zl-nt">Soll: kürzer als Nutzungsdauer → hier 5 Jahre &lt; 8 Jahre ✓</div>
+</div></div>
+
+<div class="kz"><div class="kz-h" onclick="this.parentElement.classList.toggle('open')"><div><div class="kz-nr">Inv · 6</div><div class="kz-t">Rückflusszahl</div></div><div style="display:flex;gap:8px;align-items:center"><div class="kz-v">—</div><span class="bd-o">Formel</span><span class="kz-a">▶</span></div></div>
+<div class="kz-b">
+<div class="zl-fb"><div class="lb">Formel</div><span class="zl-z1">Nutzungsdauer</span> ÷ <span class="zl-z2">Wiedergewinnungszeit</span></div>
+<div class="zl-ca"><span class="eq">8 ÷ 5 = <span class="zl-z4">1.6×</span></span></div>
+<div class="zl-nt">Soll &gt; 1 → Investition rentiert sich 1.6× während Lebensdauer.</div>
+</div></div>
+
+<div style="background:var(--pl);border:1px solid var(--pr);border-radius:12px;padding:18px 22px;margin-top:30px;color:#d4a0ff">
+<h3 style="color:#d4a0ff;margin-bottom:10px">🎯 Gesamtbefund Hotel San Nazzaro</h3>
+<p style="font-size:13px;color:var(--tx)">Von 26 berechneten Kennzahlen (Erfolg, Finanzierung, Liquidität, WC, Branche, BE, Invest.):</p>
+<p style="margin-top:10px;font-size:13px"><strong style="color:#5cd377">✓ Stärken:</strong> EBITDA-Marge 16.1 %, DSO nur 5 Tage, OCC 74.2 %, niedriges Ausfallrisiko.</p>
+<p style="font-size:13px"><strong style="color:#ff6b63">✗ Schwächen:</strong> EK-Quote nur 12.4 %, Verschuldungsgrad 704 %, LG II nur 18.6 %, negatives Working Capital −152'350, DIO 53 Tage, ADR gesunken.</p>
+<p style="margin-top:10px;font-size:13px"><strong>Top-3-Prioritäten:</strong> 1. Eigenkapital aufbauen 2. Warenlager straffen (v.a. Weinkeller) 3. ADR stabilisieren/steigern.</p>
+</div>
+</div>
+<!-- === ENDE ctrl_zahlen === -->
 
 <!-- CTRL: Karteikarten -->
 <div class="sec" id="ctrl_kart"><h1>Karteikarten Controlling 2</h1><p class="sub"><span id="cfcCount">85</span> Karten — klicke zum Umdrehen</p>
