@@ -163,6 +163,22 @@ const ABKZ={
 'Vinkulierung':['Vinkulierung','Übertragungsbeschränkung bei Namenaktien','VR kann Übertragung ablehnen. Börsenkotiert: nur mengenmässig. Nicht-börsenkotiert: persönliche Gründe möglich.'],
 'Opting-out':['Opting-out','Verzicht auf Revisionsstelle','Möglich bei ≤ 10 Vollzeitstellen. In der Praxis sehr häufig bei KMU. Gilt für AG, GmbH, Genossenschaft.'],
 'ZGB':['ZGB','Zivilgesetzbuch','Schweizerisches Zivilgesetzbuch. Enthält Personenrecht (jur. Person Art. 53ff.), Familienrecht, Erbrecht, Sachenrecht.'],
+// === FÜHRUNG & LEADERSHIP ===
+'TZI':['TZI','Themenzentrierte Interaktion','Führungsmodell von Ruth Cohn. Vier gleichberechtigte Pole: ES (Sache/Ziel), ICH (Person/MA), WIR (Team), KONTEXT (Umsystem). Führung navigiert in allen vier Polen gleichzeitig.'],
+'GRID-Modell':['GRID','Führungsstil-Modell nach Blake und Mouton','Zwei Dimensionen (Sache × Mensch) ergeben vier Führungsstile: (1) Lenken (autoritär), (2) Anleiten (partizipativ), (3) Unterstützen (karitativ), (4) Delegieren (laisser faire).'],
+'SMART':['SMART','Spezifisch, Messbar, Aktiv beeinflussbar, Realistisch, Terminiert','Zielvereinbarungskriterien nach Drucker/MbO. Nur SMART-Ziele motivieren und sind überprüfbar.'],
+'Peter-Prinzip':['Peter-Prinzip','Gesetz der Hierarchie-Inkompetenz','Laurence J. Peter: «Jedes Mitglied einer Hierarchie wird befördert, solange es erfolgreich ist — bis zur Stufe seiner maximalen Unfähigkeit.» Arbeit wird von jenen erledigt, die ihre Inkompetenz-Stufe noch nicht erreicht haben.'],
+'Theorie X':['Theorie X','Menschenbild des unwilligen Mitarbeiters','McGregor 1960. Mensch hat angeborene Abneigung gegen Arbeit, muss gezwungen/kontrolliert werden, scheut Verantwortung. Entspricht dem Taylorismus. Führt zu autoritärem Führungsstil.'],
+'Theorie Y':['Theorie Y','Menschenbild des engagierten Mitarbeiters','McGregor 1960. Arbeit ist Quelle der Zufriedenheit, Mensch ist leistungsbereit, identifiziert sich mit Zielen, übernimmt Verantwortung. Entspricht dem Human-Relations-Konzept. Führt zu kooperativem Führungsstil.'],
+'St. Galler Modell':['St. Galler Management-Modell','Drei-Ebenen-Modell der Führung','(1) Betriebliche Ebene (volle Kontrolle des Unternehmens), (2) Marktebene (Einflussnahme möglich), (3) Umsystemische Ebene (nur Anpassung möglich — Gesetze, Wetter, Technologie).'],
+'Insel-Modell':['Insel-Modell','Kommunikationsmodell nach Vera Birkenbihl','Jeder Mensch lebt auf seiner eigenen Insel mit eigenen Werten, Sprachen, Erfahrungen. Ziel: gemeinsame Arbeitsinsel gestalten. Grundsatz: Verstehen ≠ Akzeptieren.'],
+'Glasl-Modell':['Glasl','9-Stufen-Konflikteskalationsmodell','Friedrich Glasl. Neun Stufen vom Konflikt zur Totalvernichtung. Stufen 1-3 = Win-Win (Selbsthilfe). Stufen 4-6 = Win-Lose (Mediator nötig). Stufen 7-9 = Lose-Lose (nur Machteingriff).'],
+'Taylorismus':['Taylorismus','Wissenschaftliche Betriebsführung','Frederick Taylor, frühes 20. Jhd. Zerlegung der Arbeit in kleinste Schritte, strenge Kontrolle, Trennung von Planung und Ausführung. Entspricht Menschenbild X.'],
+'Human-Relations':['Human-Relations-Konzept','Mitarbeiterorientierter Führungsansatz','Menschenbild Y. Mensch ist leistungsbereit, engagiert, selbstverwirklichend. Beziehung, Kommunikation und Wertschätzung stehen im Vordergrund. Gegensatz zum Taylorismus.'],
+'Kaskade':['Luxus-Kaskade','5-stufiges Topend-Modell von Aeberhard','Fünf Luxus-Ebenen: (1) Tangible/Physiological, (2) Safety, (3) Intangible/Love&Belonging, (4) Sensual/Esteem, (5) Spiritual/Self-actualisation.'],
+'Feu sacré':['Feu sacré','Das heilige Feuer','Französischer Begriff für Leidenschaft, intrinsische Begeisterung für den Beruf. Entscheidendes Selektionskriterium in der Hotellerie: «Bringt die Person feu sacré mit?»'],
+'Aptitude':['Aptitude','Fähigkeits-Mix','Das fachliche Können einer Person — Ausbildung, Skills, Zertifikate. Grundvoraussetzung bei der Selektion. Aeberhard: Attitude > Aptitude — der Charakter zählt mehr als das Diplom.'],
+'Vademecum':['Vademecum','Handbuch zum Mitnehmen','Lat. «geh mit mir». Führungstipps, die man immer bei sich trägt. Aeberhards 16-Punkte-Liste für den Alltag einer Führungskraft.'],
 };
 window.TIS = window.TIS || {};
 window.TIS.abkz = ABKZ;
