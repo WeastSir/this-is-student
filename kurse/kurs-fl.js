@@ -5,7 +5,7 @@
 const courseConfig = {
   id: 'fl',
   name: 'Führung & Leadership',
-  pages: ['fl','fl_kap1','fl_kap2','fl_kap3','fl_kap4','fl_kap5','fl_kap6','fl_kap7','fl_kap8','fl_kap9','fl_kap10','fl_kap11','fl_mind','fl_kart','fl_quiz','fl_glossar'],
+  pages: ['fl','fl_kap1','fl_kap2','fl_kap3','fl_kap4','fl_kap5','fl_kap6','fl_kap7','fl_kap8','fl_kap9','fl_kap10','fl_kap11','fl_ueb','fl_mind','fl_kart','fl_quiz','fl_glossar'],
   subNav: [
     {s:'fl',l:'Übersicht'},
     {s:'fl_kap1',l:'Definition'},
@@ -19,6 +19,7 @@ const courseConfig = {
     {s:'fl_kap9',l:'Konflikte'},
     {s:'fl_kap10',l:'Krise'},
     {s:'fl_kap11',l:'Tipps & Killer'},
+    {s:'fl_ueb',l:'Übungen'},
     {s:'fl_mind',l:'Zusammenfassung'},
     {s:'fl_kart',l:'Karten'},
     {s:'fl_quiz',l:'Quiz'},
@@ -106,16 +107,20 @@ const courseHTML = `
 
 <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px">Lerntools</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px">
+<div class="c ck" onclick="go('fl_ueb')" style="text-align:center;padding:24px 16px">
+<div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">6</div>
+<div class="ct2">Übungen</div><div class="cd">107 Fälle · Lernziel-orientiert</div>
+</div>
 <div class="c ck" onclick="go('fl_mind')" style="text-align:center;padding:24px 16px">
 <div style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">4</div>
 <div class="ct2">Zusammenfassung</div><div class="cd">Visuelle Übersichten</div>
 </div>
 <div class="c ck" onclick="go('fl_kart')" style="text-align:center;padding:24px 16px">
-<div id="ltFlCards" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">60</div>
+<div id="ltFlCards" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">77</div>
 <div class="ct2">Karteikarten</div><div class="cd">Klicken &amp; repetieren</div>
 </div>
 <div class="c ck" onclick="go('fl_quiz')" style="text-align:center;padding:24px 16px">
-<div id="ltFlQuiz" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">60</div>
+<div id="ltFlQuiz" style="font-size:24px;font-weight:700;background:linear-gradient(135deg,#8b2c5a,#e89a38);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">77</div>
 <div class="ct2">Quiz</div><div class="cd">Mit Lernfortschritt</div>
 </div>
 <div class="c ck" onclick="go('fl_glossar')" style="text-align:center;padding:24px 16px">
@@ -1675,6 +1680,154 @@ von Vorgesetzten unterscheidet:<br><br>
 </div>
 </div>
 
+<!-- FL: ÜBUNGEN -->
+<div class="sec" id="fl_ueb"><h1>Interaktive Übungen</h1><p class="sub">6 Übungen · 107 Fälle · An allen 5 Lernzielen orientiert</p>
+
+<div id="fl_ueb_sel">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0">
+
+<div class="c ck" onclick="flShowUeb(1)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(139,44,90,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">👑</div>
+<div class="ct2">Führungsstil zuordnen</div>
+<div class="cd" style="margin-top:4px">20 Szenarien · GRID-Modell · Lernziel 3 & 4</div>
+</div></div>
+
+<div class="c ck" onclick="flShowUeb(2)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(232,168,56,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">⚡</div>
+<div class="ct2">Konflikt-Eskalationsstufe</div>
+<div class="cd" style="margin-top:4px">18 Fälle · Glasl 9 Stufen · Lernziel 4</div>
+</div></div>
+
+<div class="c ck" onclick="flShowUeb(3)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(56,199,89,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">🎯</div>
+<div class="ct2">SMART-Ziele prüfen</div>
+<div class="cd" style="margin-top:4px">15 Ziele · 5 Kriterien · Lernziel 3</div>
+</div></div>
+
+<div class="c ck" onclick="flShowUeb(4)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,107,107,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">🎭</div>
+<div class="ct2">Theorie X oder Y?</div>
+<div class="cd" style="margin-top:4px">18 Aussagen · Menschenbild · Lernziel 2</div>
+</div></div>
+
+<div class="c ck" onclick="flShowUeb(5)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(184,56,232,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">💡</div>
+<div class="ct2">Maslow-Stufe erkennen</div>
+<div class="cd" style="margin-top:4px">18 Fälle · Motivationspyramide · Lernziel 3</div>
+</div></div>
+
+<div class="c ck" onclick="flShowUeb(6)" style="padding:24px 16px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(232,79,56,.08)"></div>
+<div style="position:relative;z-index:1">
+<div style="font-size:28px;margin-bottom:10px">🚨</div>
+<div class="ct2">7 Führungskiller</div>
+<div class="cd" style="margin-top:4px">18 Szenarien · E-Wörter · Lernziel 4 & 5</div>
+</div></div>
+
+</div>
+</div>
+
+<!-- Ü1: FÜHRUNGSSTIL -->
+<div id="fl_ueb1" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Führungsstil zuordnen</h2>
+<p class="sub">Lies das Szenario und wähle den passenden GRID-Führungsstil · Pool: 20 Fälle</p>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(139,44,90,.06),rgba(232,168,56,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:14px;line-height:1.7" id="fl_u1_scen"></div>
+<div id="fl_u1_options"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU1()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU1()" style="padding:10px 28px;font-size:14px">Neue Aufgabe</button>
+</div>
+<div id="fl_u1_res"></div>
+</div>
+
+<!-- Ü2: KONFLIKT-ESKALATION -->
+<div id="fl_ueb2" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Konflikt-Eskalationsstufe erkennen</h2>
+<p class="sub">Nach dem Glasl-Modell — wo steht dieser Konflikt? · Pool: 18 Fälle</p>
+<div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+<div style="padding:5px 12px;border-radius:8px;background:rgba(56,199,89,.1);border:1px solid rgba(56,199,89,.3);font-size:11px;font-weight:600;color:var(--g)">Stufen 1-3: Win-Win</div>
+<div style="padding:5px 12px;border-radius:8px;background:rgba(232,168,56,.1);border:1px solid rgba(232,168,56,.3);font-size:11px;font-weight:600;color:var(--am)">Stufen 4-6: Win-Lose (Mediator)</div>
+<div style="padding:5px 12px;border-radius:8px;background:rgba(255,59,48,.1);border:1px solid rgba(255,59,48,.3);font-size:11px;font-weight:600;color:var(--r)">Stufen 7-9: Lose-Lose (Machteingriff)</div>
+</div>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(232,168,56,.06),rgba(255,107,107,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:14px;line-height:1.7" id="fl_u2_case"></div>
+<div id="fl_u2_options"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU2()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU2()" style="padding:10px 28px;font-size:14px">Neuer Fall</button>
+</div>
+<div id="fl_u2_res"></div>
+</div>
+
+<!-- Ü3: SMART-ZIEL -->
+<div id="fl_ueb3" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>SMART-Ziele prüfen</h2>
+<p class="sub">Prüfe jedes der 5 SMART-Kriterien · Pool: 15 Ziele</p>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(56,199,89,.06),rgba(139,44,90,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:15px;line-height:1.7;font-style:italic" id="fl_u3_ziel"></div>
+<div id="fl_u3_krit"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU3()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU3()" style="padding:10px 28px;font-size:14px">Neues Ziel</button>
+</div>
+<div id="fl_u3_res"></div>
+</div>
+
+<!-- Ü4: THEORIE X/Y -->
+<div id="fl_ueb4" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Theorie X oder Theorie Y?</h2>
+<p class="sub">Welches Menschenbild zeigt die Aussage? · Pool: 18 Aussagen</p>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(255,107,107,.06),rgba(56,199,89,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:15px;line-height:1.7;font-style:italic" id="fl_u4_text"></div>
+<div id="fl_u4_options"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU4()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU4()" style="padding:10px 28px;font-size:14px">Neue Aussage</button>
+</div>
+<div id="fl_u4_res"></div>
+</div>
+
+<!-- Ü5: MASLOW -->
+<div id="fl_ueb5" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>Maslow-Stufe erkennen</h2>
+<p class="sub">Welches Bedürfnis zeigt dieser MA? · Pool: 18 Fälle</p>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(184,56,232,.06),rgba(56,182,232,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:14px;line-height:1.7" id="fl_u5_case"></div>
+<div id="fl_u5_options"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU5()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU5()" style="padding:10px 28px;font-size:14px">Neuer Fall</button>
+</div>
+<div id="fl_u5_res"></div>
+</div>
+
+<!-- Ü6: 7 FÜHRUNGSKILLER -->
+<div id="fl_ueb6" style="display:none">
+<button onclick="flShowUeb(0)" style="margin-bottom:16px;font-size:12px">← Zurück zur Auswahl</button>
+<h2>7 Führungskiller erkennen</h2>
+<p class="sub">Welcher der 7 Killer zeigt sich hier? · Pool: 18 Szenarien</p>
+<div style="padding:16px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(232,79,56,.06),rgba(139,44,90,.04));border:1px solid var(--bd);margin-bottom:16px;font-size:14px;line-height:1.7" id="fl_u6_scen"></div>
+<div id="fl_u6_options"></div>
+<div style="margin:20px 0;display:flex;gap:8px;flex-wrap:wrap">
+<button class="bp1" onclick="flCheckU6()" style="padding:10px 28px;font-size:14px">Korrigieren</button>
+<button onclick="flGenU6()" style="padding:10px 28px;font-size:14px">Neues Szenario</button>
+</div>
+<div id="fl_u6_res"></div>
+</div>
+
+</div>
+
 <!-- ZUSAMMENFASSUNG / MIND -->
 <div class="sec" id="fl_mind"><h1>Zusammenfassung</h1><p class="sub">Visuelle Übersichten der wichtigsten Modelle</p>
 
@@ -1746,104 +1899,34 @@ von Vorgesetzten unterscheidet:<br><br>
 </div>
 
 <!-- KARTEIKARTEN -->
-<div class="sec" id="fl_kart">
-<div style="text-align:center;padding:10px 0 20px">
-<h1 style="font-size:32px;letter-spacing:-.5px">Karteikarten</h1>
-<p class="sub">Klicke auf die Karte zum Umdrehen · Wische oder nutze die Buttons</p>
-</div>
-
-<div class="cardWrap">
-<div class="flip" id="flfc" onclick="flip(this)">
-<div class="fi">
-<div class="face ff">
-<div class="fLbl">FRAGE</div>
-<div class="fQ" id="flfcq">Klicke auf "Start" um zu beginnen</div>
-</div>
-<div class="face fb">
-<div class="fLbl">ANTWORT</div>
-<div class="fQ" id="flfca">Klicke auf "Start" um zu beginnen</div>
-</div>
-</div>
-</div>
-</div>
-
-<div style="text-align:center;margin-top:18px">
-<span id="flfcc" style="display:inline-block;padding:6px 14px;border-radius:980px;background:var(--s2);font-size:13px;color:var(--tx2)"><span id="flfcCount">0 / 0</span> · <span id="flfcPool">— Karten im Stapel</span></span>
-</div>
-
-<div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
-<button class="bp1" onclick="kStart('fl')">▶ Start</button>
-<button onclick="kPrev('fl')">← Zurück</button>
-<button onclick="kNext('fl')">Weiter →</button>
-<button onclick="kReset('fl')">↻ Reset</button>
-</div>
-
-<div style="margin-top:30px" id="flfcList"></div>
+<div class="sec" id="fl_kart"><h1>Karteikarten</h1><p class="sub"><span id="flfcCount">0</span> Karten — klicke zum Umdrehen</p>
+<div class="fcc" id="flfcc"></div>
+<div class="fd"><div class="fc" id="flfc" onclick="this.classList.toggle('fl')"><div class="ff ffr"><div class="fq" id="flfcq"></div><div class="fh">Klicke zum Umdrehen</div></div><div class="ff ffb"><div class="fa" id="flfca"></div></div></div></div>
+<div class="fb"><button onclick="fcPrev()">Zurück</button><button onclick="fcShuffle()">Mischen</button><button class="bp1" onclick="fcNext()">Nächste</button></div>
+<div style="text-align:center;margin-top:10px;font-size:11px;color:var(--tx3)" id="flfcPool"></div>
+<div id="flfcList" style="display:none;margin-top:16px"></div>
 </div>
 
 <!-- QUIZ -->
-<div class="sec" id="fl_quiz">
-<div style="text-align:center;padding:10px 0 20px">
-<h1 style="font-size:32px;letter-spacing:-.5px">Quiz</h1>
-<p class="sub">Teste dein Wissen — Fragen werden automatisch aus den Karteikarten generiert</p>
+<div class="sec" id="fl_quiz"><h1>Quiz</h1><p class="sub">Alle Fragen werden wiederholt bis du sie kannst</p>
+<div id="flqStats" style="margin-bottom:20px">
+<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="flqTotR" style="color:var(--g)">0</div><div class="qsl">Total richtig</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="flqTotW" style="color:var(--r)">0</div><div class="qsl">Total falsch</div></div>
+<div class="qsc" style="flex:1;min-width:70px"><div class="qsn" id="flqTotP" style="color:var(--ac)">0%</div><div class="qsl">Erfolgsquote</div></div>
 </div>
-
-<div id="flqC">
-<div style="text-align:center;padding:40px 20px">
-<div style="font-size:48px;margin-bottom:16px">🎓</div>
-<h2 style="font-size:22px;margin-bottom:10px">Bereit für das Quiz?</h2>
-<p style="color:var(--tx3);margin-bottom:24px">Multiple Choice · 60 Fragen · Mit Lernfortschritt</p>
-<button class="bp1" onclick="flqSt()" style="font-size:16px;padding:14px 36px">Quiz starten →</button>
+<div style="font-size:12px;color:var(--tx3);margin-bottom:6px">Lernerfolg</div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--g);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Sicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarG" style="height:100%;background:var(--g);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="flqBarGn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--am);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Wackelig</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarO" style="height:100%;background:var(--am);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="flqBarOn">0</div></div>
+<div style="display:flex;gap:4px;margin-bottom:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--r);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Unsicher</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarR" style="height:100%;background:var(--r);border-radius:4px;transition:width .5s;width:0%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="flqBarRn">0</div></div>
+<div style="display:flex;gap:4px;align-items:center"><div style="width:10px;height:10px;border-radius:50%;background:var(--tx3);flex-shrink:0"></div><div style="font-size:12px;color:var(--tx2);width:70px">Noch offen</div><div style="flex:1;height:8px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarX" style="height:100%;background:var(--tx3);border-radius:4px;transition:width .5s;width:100%"></div></div><div style="font-size:12px;color:var(--tx2);width:30px;text-align:right" id="flqBarXn">0</div></div>
 </div>
-</div>
-
-<div style="margin-top:20px">
-<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);margin-bottom:8px">
-<span id="flqPT">Fortschritt</span>
-<span><span id="flqTotR">0</span> richtig · <span id="flqTotW">0</span> falsch · <span id="flqTotP">—</span></span>
-</div>
-<div style="background:var(--s2);border-radius:8px;height:8px;overflow:hidden">
-<div id="flqP" style="background:linear-gradient(90deg,#8b2c5a,#e89a38);height:100%;width:0%;transition:width .3s"></div>
-</div>
-</div>
-
-<div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px">
-<div style="padding:12px 14px;border-radius:10px;background:var(--gl)">
-<div style="font-size:11px;color:var(--g);font-weight:700;letter-spacing:.5px">✓ SICHER</div>
-<div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-<div style="flex:1;height:6px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarG" style="background:var(--g);height:100%;width:0%"></div></div>
-<span id="flqBarGn" style="font-size:12px;font-weight:700">0</span>
-</div>
-</div>
-<div style="padding:12px 14px;border-radius:10px;background:var(--aml)">
-<div style="font-size:11px;color:var(--am);font-weight:700;letter-spacing:.5px">~ WACKELIG</div>
-<div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-<div style="flex:1;height:6px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarO" style="background:var(--am);height:100%;width:0%"></div></div>
-<span id="flqBarOn" style="font-size:12px;font-weight:700">0</span>
-</div>
-</div>
-<div style="padding:12px 14px;border-radius:10px;background:var(--rl)">
-<div style="font-size:11px;color:var(--r);font-weight:700;letter-spacing:.5px">✗ UNSICHER</div>
-<div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-<div style="flex:1;height:6px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarR" style="background:var(--r);height:100%;width:0%"></div></div>
-<span id="flqBarRn" style="font-size:12px;font-weight:700">0</span>
-</div>
-</div>
-<div style="padding:12px 14px;border-radius:10px;background:var(--s2)">
-<div style="font-size:11px;color:var(--tx3);font-weight:700;letter-spacing:.5px">○ NOCH OFFEN</div>
-<div style="display:flex;align-items:center;gap:8px;margin-top:4px">
-<div style="flex:1;height:6px;background:var(--s2);border-radius:4px;overflow:hidden"><div id="flqBarX" style="background:var(--tx3);height:100%;width:0%"></div></div>
-<span id="flqBarXn" style="font-size:12px;font-weight:700">0</span>
-</div>
-</div>
-</div>
-
-<div id="flqE" style="margin-top:20px"></div>
-
-<div style="margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-<button class="bp1" id="flqN" onclick="flqNx()" style="display:none">Nächste Frage →</button>
-<button id="flqRS" onclick="flqSt()" style="display:none">Weiter üben</button>
-<button id="flqReset" onclick="flqReset()" style="display:none">↻ Fortschritt zurücksetzen</button>
+<div class="pb"><div class="pf" id="flqP"></div></div><div class="pt" id="flqPT">Frage 1</div>
+<div id="flqC"></div>
+<div style="text-align:center;margin-top:14px">
+<button class="bp1" id="flqN" onclick="flqNx()" style="display:none">Nächste Frage</button>
+<button class="bp1" id="flqRS" onclick="flqSt()" style="display:none">Weiter üben</button>
+<button id="flqReset" onclick="flqReset()" style="display:none;margin-left:8px">Fortschritt zurücksetzen</button>
 </div>
 </div>
 
@@ -2046,6 +2129,394 @@ window.TIS.courses.fl = {
   config: courseConfig,
   html: courseHTML,
   flashcards: FL_CARDS,
+};
+
+
+// ==========================================
+// ÜBUNGEN — JavaScript-Logik (6 Übungen, 107 Fälle)
+// ==========================================
+
+window.flShowUeb = function(n) {
+  ['fl_ueb_sel','fl_ueb1','fl_ueb2','fl_ueb3','fl_ueb4','fl_ueb5','fl_ueb6'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.style.display='none';
+  });
+  if(n===0) { document.getElementById('fl_ueb_sel').style.display='block'; }
+  else {
+    var target=document.getElementById('fl_ueb'+n);
+    if(target) target.style.display='block';
+    if(n===1) flGenU1();
+    if(n===2) flGenU2();
+    if(n===3) flGenU3();
+    if(n===4) flGenU4();
+    if(n===5) flGenU5();
+    if(n===6) flGenU6();
+  }
+};
+
+// Helper: kein sofortiger Wiederhol-Wurf
+function flPickNew(array, currentIndex) {
+  if (array.length < 2) return 0;
+  var idx;
+  do { idx = Math.floor(Math.random() * array.length); } while (idx === currentIndex);
+  return idx;
+}
+
+// ======================================================
+// Ü1: FÜHRUNGSSTIL ZUORDNEN (GRID — Blake & Mouton)
+// ======================================================
+var FL_STIL_SZEN = [
+  {scen:'<strong>Brandschutz-Übung.</strong> Sara muss morgens 6:00 mit allen MA einen Evakuationsdrill durchführen. Es geht um Sicherheit, die Reihenfolge ist vorgegeben, Zeit ist knapp. Niemand diskutiert — alle müssen genau wissen, was sie tun.',ans:'1',ansE:'LENKEN (Stil 1 — autoritär): Bei Sicherheitsthemen mit klaren SOPs keine Diskussion. Klare Anweisungen, strenge Ausführung.'},
+  {scen:'<strong>Neue Rezeptionistin Anna.</strong> Anna ist seit zwei Wochen im Hotel. Sara setzt sich täglich 30 Minuten mit ihr hin, erklärt die PMS-Abläufe, beobachtet sie beim Check-in, gibt Feedback und lässt Anna zunehmend eigenständig arbeiten.',ans:'2',ansE:'ANLEITEN (Stil 2 — partizipativ): Einarbeitung mit hoher Aufmerksamkeit für Sache UND Mensch. Training mit Feedback, schrittweise Übergabe der Verantwortung.'},
+  {scen:'<strong>Todesfall im Team.</strong> Marco (Souschef) hat plötzlich seine Mutter verloren. Das Team ist emotional getroffen. Sara plant mit den betroffenen Kolleg:innen eine einfache Küchenwoche, nimmt Rücksicht auf Stimmungen, hört zu.',ans:'3',ansE:'UNTERSTÜTZEN (Stil 3 — karitativ): Nach emotionalen Ereignissen stehen Beziehung, Empathie und Zeit im Vordergrund — nicht die Effizienz.'},
+  {scen:'<strong>Weihnachtsgala.</strong> F&B-Manager Thomas (erfahren, bewährt, kennt alle Abläufe) plant die Gala komplett selbst — Menü, Dekoration, Musik, Personal. Sara bekommt nur die fertige Planung zur Abnahme.',ans:'4',ansE:'DELEGIEREN (Stil 4 — laisser faire): Bei erfahrenen, motivierten MA mit klarer Kompetenz — ganze Aufgabe übertragen, nur Ergebnisse kontrollieren.'},
+  {scen:'<strong>Neuer Budget-Prozess.</strong> Sara entwickelt mit allen Abteilungsleitenden gemeinsam den neuen Quartalsforecast. Alle bringen Zahlen, Annahmen und Ideen ein. Sara moderiert, hinterfragt, entscheidet gemeinsam mit dem Team.',ans:'2',ansE:'ANLEITEN (Stil 2 — partizipativ): Hoher Sach-Fokus (Forecast muss stimmen) + hoher Mensch-Fokus (Team-Involvement). Klassisches partizipatives Führen.'},
+  {scen:'<strong>Hygiene-Verstoss in Küche.</strong> Sara entdeckt, dass grundlegende Hygienestandards nicht eingehalten werden. Die Schweizer Lebensmittelverordnung ist nicht verhandelbar. Sie ordnet sofortige Änderungen an und kontrolliert täglich.',ans:'1',ansE:'LENKEN (Stil 1 — autoritär): Bei gesetzlichen Pflichten ohne Verhandlungsspielraum — klare Ansage, strenge Kontrolle.'},
+  {scen:'<strong>Laura hat Burnout-Symptome.</strong> Saras langjährige Freundin Laura klagt über Erschöpfung. Sara setzt sich privat mit ihr zusammen, hört zu, schlägt eine Auszeit vor, prüft gemeinsam Entlastungsoptionen.',ans:'3',ansE:'UNTERSTÜTZEN (Stil 3 — karitativ): Persönliche Krise einer MA — Fokus liegt auf Mensch, Empathie, gemeinsame Lösungsfindung.'},
+  {scen:'<strong>HR-Managerin Jessica.</strong> Jessica hat 12 Jahre HR-Erfahrung und erledigt Rekrutierungen für das Frühjahr selbstständig. Sara sagt: "Mach das so, wie du es für richtig hältst. Am 31. März besprechen wir die Ergebnisse."',ans:'4',ansE:'DELEGIEREN (Stil 4 — laisser faire): Erfahrene Fachkraft mit eigener Expertise — volle Delegation mit klarem Endpunkt.'},
+  {scen:'<strong>Feueralarm mitten in der Nacht.</strong> 23:47 Uhr — Rauchmelder im Haustechnikraum. Sara gibt über die Zentrale sofortige Evakuations-Anweisungen: "Nachtpersonal an Position 1, Notausgänge öffnen, Zählung auf Sammelplatz."',ans:'1',ansE:'LENKEN (Stil 1 — autoritär): In der Krise muss eine Person entscheiden. Schnelle, klare, ungefragte Anordnungen. Partizipation wäre fatal.'},
+  {scen:'<strong>Lehrling Simon vor der Abschlussprüfung.</strong> Simon (2. Lehrjahr Koch) soll erstmals den Mittagsservice als Posten-Chef machen. Marco (Souschef) steht daneben, lässt ihn machen, aber greift sofort ein wenn etwas schiefläuft — erklärt was warum falsch war.',ans:'2',ansE:'ANLEITEN (Stil 2 — partizipativ): Entwicklungs-Situation — Simon muss selbst üben, aber mit Sicherheitsnetz. Hoher Fokus auf beide Dimensionen.'},
+  {scen:'<strong>Abschied einer langjährigen Mitarbeiterin.</strong> Frau Schneider verlässt nach 22 Jahren das Hotel wegen Pensionierung. Sara plant mit einer kleinen Gruppe von Kollegen eine persönliche Abschiedsfeier — es gibt keine harte Agenda, sondern Zeit für Geschichten, Emotionen, Dank.',ans:'3',ansE:'UNTERSTÜTZEN (Stil 3 — karitativ): Menschlicher Anlass, keine Sachziele. Zeit, Beziehung, Wertschätzung im Vordergrund.'},
+  {scen:'<strong>IT-Infrastruktur-Upgrade.</strong> Der externe IT-Partner (seit 10 Jahren zuverlässig) plant das Upgrade des PMS-Systems komplett selbst, inkl. Zeitplan und Migration. Sara gibt das Budget frei und erwartet den finalen Report.',ans:'4',ansE:'DELEGIEREN (Stil 4 — laisser faire): Externe Expertise mit jahrelanger Vertrauensbasis — volle Übertragung, nur Ergebniskontrolle.'},
+  {scen:'<strong>Akute Lebensmittelvergiftung.</strong> Ein Gast hat sich vergiftet. Sara ordnet sofort an: Küche sperren, Lebensmittelproben sichern, Ärztin rufen, Rechtsabteilung informieren. Keine Diskussion, keine "aber".',ans:'1',ansE:'LENKEN (Stil 1 — autoritär): Krisenfall mit Rechtsfolgen — sofortige, klare Anweisungen ohne Debatte.'},
+  {scen:'<strong>Service-Workshop zum Upselling.</strong> Sara hat einen Trainer engagiert. Gemeinsam mit dem Restaurant-Team werden Rollenspiele gemacht, die Ergebnisse diskutiert, Lösungen entwickelt. Jeder darf und soll beitragen.',ans:'2',ansE:'ANLEITEN (Stil 2 — partizipativ): Lernsituation für alle, gemeinsame Entwicklung. Hoher Fokus auf Sache UND Mensch.'},
+  {scen:'<strong>MA mit schwerer Familiensituation.</strong> Jonas (Rezeption) hat einen kranken Vater zuhause. Sara ändert flexibel seine Dienstpläne, bietet unbezahlten Urlaub an, fragt regelmässig wie es geht.',ans:'3',ansE:'UNTERSTÜTZEN (Stil 3 — karitativ): Private Ausnahmesituation — Flexibilität, Empathie, Person vor Arbeit.'},
+  {scen:'<strong>Housekeeping-Supervisor Daniela.</strong> Daniela leitet 12 MA, Sara hat volles Vertrauen. Sara sagt bei der Monatsreview: "Ihr kennt euren Bereich. Macht eure Planung, meldet die Zahlen, wir sehen uns nächsten Monat."',ans:'4',ansE:'DELEGIEREN (Stil 4 — laisser faire): Langjährige, kompetente Supervisorin — Vertrauen, klares Reporting, keine Mikro-Führung.'},
+  {scen:'<strong>Neue Rechnungslegungsrichtlinie Swiss GAAP.</strong> Sara gibt die neue Vorgabe vom Wirtschaftsprüfer im Meeting bekannt: "Ab 1. Januar setzen wir auf Swiss GAAP FER um. Das ist vom VR entschieden — Umsetzung bis 31. März."',ans:'1',ansE:'LENKEN (Stil 1 — autoritär): Vorgabe von oben, nicht verhandelbar — klare Ansage. Die WAS-Frage ist gesetzt, offen ist nur das WIE.'},
+  {scen:'<strong>Service-Akademie mit Azubis.</strong> Fünf Lehrlinge aus verschiedenen Abteilungen machen gemeinsam eine Ausbildung zum Thema "Gästeerlebnis". Sara ist dabei — sie übt mit ihnen, gibt Feedback, lässt sie selbst kreative Lösungen finden.',ans:'2',ansE:'ANLEITEN (Stil 2 — partizipativ): Ausbildungssituation mit Raum für Kreativität — hoher Lernfokus, hoher Menschenfokus.'},
+  {scen:'<strong>Valentinstag-Deko im Wellness.</strong> Sara fragt das Wellness-Team: "Ihr kennt eure Gäste am besten. Wie möchtet ihr Valentinstag gestalten? Zeigt mir eure Idee — Budget CHF 500, Deadline 10. Februar."',ans:'4',ansE:'DELEGIEREN (Stil 4 — laisser faire): Kreativ-Freiraum mit klaren Rahmenbedingungen. Team hat Expertise und Motivation — Sara vertraut.'},
+  {scen:'<strong>Trauerkarten-Stapel auf Saras Schreibtisch.</strong> Der langjährige Barchef ist überraschend verstorben. Sara sagt der Barbrigade: "Heute Abend bleibt die Bar zu. Wir gehen zusammen Essen, reden, erinnern uns."',ans:'3',ansE:'UNTERSTÜTZEN (Stil 3 — karitativ): Trauer und Gemeinschaft sind wichtiger als Umsatz. Menschliche Führung.'}
+];
+var flCurStilIdx = -1;
+
+window.flGenU1 = function() {
+  flCurStilIdx = flPickNew(FL_STIL_SZEN, flCurStilIdx);
+  var f = FL_STIL_SZEN[flCurStilIdx];
+  document.getElementById('fl_u1_scen').innerHTML = f.scen;
+  document.getElementById('fl_u1_options').innerHTML =
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">' +
+    '<label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--s)"><input type="radio" name="fl_u1" value="1" style="accent-color:#ff6b6b"> <div><strong style="color:#ff6b6b">Stil 1 — LENKEN</strong><br><span style="font-size:12px;color:var(--tx2)">autoritär · hoch Sache, tief Mensch</span></div></label>' +
+    '<label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--s)"><input type="radio" name="fl_u1" value="2" style="accent-color:#38c759"> <div><strong style="color:#38c759">Stil 2 — ANLEITEN</strong><br><span style="font-size:12px;color:var(--tx2)">partizipativ · hoch Sache, hoch Mensch</span></div></label>' +
+    '<label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--s)"><input type="radio" name="fl_u1" value="3" style="accent-color:#9b59b6"> <div><strong style="color:#9b59b6">Stil 3 — UNTERSTÜTZEN</strong><br><span style="font-size:12px;color:var(--tx2)">karitativ · tief Sache, hoch Mensch</span></div></label>' +
+    '<label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;border-radius:10px;border:1px solid var(--bd);background:var(--s)"><input type="radio" name="fl_u1" value="4" style="accent-color:#8e8e93"> <div><strong style="color:#8e8e93">Stil 4 — DELEGIEREN</strong><br><span style="font-size:12px;color:var(--tx2)">laisser faire · tief Sache, tief Mensch</span></div></label>' +
+    '</div>';
+  document.getElementById('fl_u1_res').innerHTML = '';
+};
+
+window.flCheckU1 = function() {
+  var sel = document.querySelector('input[name="fl_u1"]:checked');
+  var f = FL_STIL_SZEN[flCurStilIdx];
+  if (!sel) { document.getElementById('fl_u1_res').innerHTML = '<div style="padding:12px;border-radius:10px;background:rgba(232,168,56,.1);color:var(--am);font-size:13px">Bitte wähle zuerst einen Führungsstil aus.</div>'; return; }
+  var ok = sel.value === f.ans;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(255,107,107,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(255,107,107,.3)') + '">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--r)') + ';margin-bottom:8px;font-size:15px">' + (ok?'✓ Richtig!':'✗ Nicht ganz richtig.') + '</div>';
+  h += '<div style="font-size:14px;line-height:1.6;color:var(--tx)">' + f.ansE + '</div>';
+  h += '</div>';
+  document.getElementById('fl_u1_res').innerHTML = h;
+};
+
+// ======================================================
+// Ü2: KONFLIKT-ESKALATION (Glasl 9 Stufen)
+// ======================================================
+var FL_KONF_FAELLE = [
+  {case:'<strong>Nadia & David.</strong> Nadia (Managerin) sagt beim Schichtwechsel: "Du hast vergessen, das Handover-Protokoll auszufüllen." David knapp: "Mach ich nachher." Die Zusammenarbeit ist funktional, aber spürbar angespannt. Beide glauben, ein Gespräch könnte alles lösen.',ans:'1',ansE:'Stufe 1 — Verhärtung. Kaum beobachtbare Spannung, zähe Kommunikation. Noch die Überzeugung, ein gutes Gespräch löst alles.'},
+  {case:'<strong>Küchen-Streit vor Publikum.</strong> Marco und Alex (Kochlehrling) streiten sich während der Mittagsservice offen vor Gästen. Marco zieht Alex durch den Kakao. Alex droht mit E-Mail an GL. Team ist gespalten — manche halten zu Marco, andere zu Alex.',ans:'4',ansE:'Stufe 4 — Images und Koalitionen. Team spaltet sich, Koalitionen werden geschmiedet. Mediator nötig (Win-Lose).'},
+  {case:'<strong>Housekeeping-Konflikt öffentlich.</strong> Laura und Maria streiten seit Monaten. Maria hat behauptet, Laura würde Lieblinge bevorzugen. Lauras Ansehen ist beschädigt. Sie sagt: "Ich kann nicht mehr zurück."',ans:'5',ansE:'Stufe 5 — Gesichtsverlust. Identität und Ansehen sind bedroht. Klar Win-Lose, Mediation unumgänglich.'},
+  {case:'<strong>Ex-Angestellter vs. Hotel.</strong> Raphael wurde gekündigt. Er schreibt vernichtende Google-Rezensionen, droht mit Klage, zeigt sich vor Hotel, filmt heimlich. Will das Hotel ruinieren — auch wenn es ihn selbst belastet.',ans:'7',ansE:'Stufe 7 — Begrenzte Vernichtungsschläge. Schaden zufügen wichtiger als eigener Vorteil. Lose-Lose. Machteingriff (Anwalt, Polizei).'},
+  {case:'<strong>Rezeptionsteam — gereizte Stimmung.</strong> Seit zwei Wochen ist die Stimmung merklich kühler. Alle arbeiten zusammen, aber keiner spricht mehr privat. Das Lachen fehlt. Operativ läuft alles.',ans:'1',ansE:'Stufe 1 — Verhärtung. Klassische Frühwarnphase. Ideale Zeit zum Intervenieren durch Moderation.'},
+  {case:'<strong>Heftige Besprechung.</strong> Thomas wirft Nadia im Monatsmeeting vor, die Reservationen nicht an Küche zu kommunizieren. Lautes Wortgefecht, Anschuldigungen hin und her. Beide beharren demonstrativ auf ihrer Position.',ans:'2',ansE:'Stufe 2 — Debatten und Polemik. Angriffslustige Diskussionen, aber Sachebene noch da. Moderation kann noch greifen.'},
+  {case:'<strong>Chef-Konflikt in GL.</strong> Sara und Finanzchef Peter haben sich gedroht: Peter: "Wenn du die Investition durchziehst, ziehe ich meine Konsequenzen." Sara: "Und ich erwarte deinen Rücktritt." Ultimaten, Gegner nur noch als Rolle wahrgenommen.',ans:'6',ansE:'Stufe 6 — Drohstrategien. Ultimaten, Drohungen, Gegner ist "Organisation". VR/Aufsichtsrat muss eingreifen.'},
+  {case:'<strong>Bar-Team — kalter Krieg.</strong> Zwei Bartender reden seit drei Monaten nicht mehr miteinander ausser über die nötigsten Absprachen. Sie "vergessen" sich gegenseitig bei Bestellungen. Gespräche werden ignoriert, Bitten übersehen. Aktionen statt Worte.',ans:'3',ansE:'Stufe 3 — Taten statt Worte. "Der Worte sind genug gewechselt." Konkurrenzverhalten, nonverbale Kommunikation dominiert. Noch Win-Win möglich.'},
+  {case:'<strong>Servicebrigade gegen Rezeption.</strong> Der Restaurant-Service hat eine geheime WhatsApp-Gruppe "Rezeption-Bullshit". Sie leiten absichtlich falsche Info an die Rezeption weiter, damit diese dumm dasteht. Die Rezeption hat Gegen-Koalition mit Housekeeping geschlossen.',ans:'4',ansE:'Stufe 4 — Images und Koalitionen. Bündnispartner werben, provozieren. Rigorosität, Schwarz-Weiss-Denken. Mediator nötig.'},
+  {case:'<strong>Chef entlassen will die ganze Abteilung liquidieren.</strong> Der ehemalige HR-Chef (nach Kündigung) schickt Massen-E-Mails mit vertraulichen Personalinfos an externe Partner, offenbart Gehälter, spricht mit allen Ex-Kollegen. Hauptziel: HR-Abteilung zerstören, Familie Keller diskreditieren.',ans:'8',ansE:'Stufe 8 — Zersplitterung. Zentrales Nervensystem des Feindes angreifen. Vertrauliche Daten als Waffe. Polizei/Anwalt zwingend.'},
+  {case:'<strong>Souschef vs. Chefkoch.</strong> Marco (Souschef) hat Chefkoch Bernhard in einer Sitzung scharf widersprochen: "Bernhard, mit Verlaub — deine Kalkulation ergibt keinen Sinn, und ich sage dir auch warum." Bernhard sagt nichts, wirkt aber betroffen.',ans:'2',ansE:'Stufe 2 — Debatten und Polemik. Offener Widerspruch, Polarisierung. Sachebene noch klar erkennbar, aber Ton wird scharf.'},
+  {case:'<strong>F&B-Management: Totale Verweigerung.</strong> Der F&B-Manager hat Saras neue Menu-Strategie abgelehnt. Er beruft sich auf "historische Praxis" und setzt einfach die alten Menüs ein — ohne Diskussion, ohne Konfrontation. Er tut, als hätte das Meeting nie stattgefunden.',ans:'3',ansE:'Stufe 3 — Taten statt Worte. Verweigerung, Konkurrenzverhalten, aber keine offene Konfrontation. Letzte Chance für Selbsthilfe.'},
+  {case:'<strong>Housekeeping verlässt kollektiv das Hotel.</strong> Das gesamte Housekeeping-Team (12 Personen) hat sich organisiert und kündigt geschlossen zum selben Datum. Alle beziehen sich auf "die unmenschlichen Arbeitsbedingungen" und haben dies mit einem gemeinsamen Anwalt koordiniert.',ans:'6',ansE:'Stufe 6 — Drohstrategien. Kollektive Ultimaten, koordiniertes Handeln. Massive Eskalation — externe Mediation + Krisenmanagement nötig.'},
+  {case:'<strong>Sabotage in der Küche.</strong> Nach einer Auseinandersetzung mit dem Chefkoch wird "zufällig" schlechtes Fleisch bestellt, werden Preise falsch kalkuliert. Gast-Beschwerden häufen sich. Der Chefkoch will den Souschef loswerden — und ist bereit, Reputationsschaden zu akzeptieren.',ans:'7',ansE:'Stufe 7 — Begrenzte Vernichtungsschläge. Der Gegner soll entfernt werden, auch um den Preis eigener Schäden. Machteingriff unumgänglich.'},
+  {case:'<strong>Gastronomie-Konflikt total eskaliert.</strong> Zwei Familienmitglieder der Besitzerfamilie (Keller vs. Keller) haben sich so zerstritten, dass beide das Hotel lieber geschlossen sehen, als es dem anderen zu überlassen. Sie sabotieren Entscheidungen bewusst, bringen den Betrieb in Existenznöte.',ans:'9',ansE:'Stufe 9 — Gemeinsam in den Abgrund. Selbstopfer ist akzeptiert — Hauptsache Feind geht unter. Nur Gerichts-/Eigentumsentscheidung hilft.'},
+  {case:'<strong>Serviceteam nach Gruppen-Event.</strong> Nach einer chaotischen Hochzeit mit 180 Gästen haben einige im Service das Gefühl, dass andere zu wenig geholfen haben. Es gibt Getuschel, manche sind "nicht mehr so freundlich" miteinander. Aber alle reden noch normal, es gibt keine offenen Angriffe.',ans:'1',ansE:'Stufe 1 — Verhärtung. Schwelender Unmut, noch kommunikativ lösbar. Selbsthilfe/Moderation.'},
+  {case:'<strong>Marco will Bernhard demütigen.</strong> Marco (Souschef) hat öffentlich bei einem Branchentreff einen Bloginartikel geteilt: "Die grössten kulinarischen Fehltritte in Engelberg — Hotel Alpenblick führt die Liste an." Er will Bernhards Ruf gezielt zerstören, verlinkt seinen persönlichen Namen.',ans:'5',ansE:'Stufe 5 — Gesichtsverlust. Direkte Demaskierung in der Öffentlichkeit. Win-Lose Zone, Mediation + ggf. arbeitsrechtliche Schritte.'},
+  {case:'<strong>Rezeption und Sales.</strong> Der Sales Manager hat Nadia (Rezeption) in einem E-Mail-Verkehr cc Geschäftsleitung beschuldigt, sie würde "absichtlich Firmenkunden nicht richtig behandeln, um die Corporate-Rates zu boykottieren". Nadia bestreitet das vehement. Öffentliche Beschuldigung.',ans:'4',ansE:'Stufe 4 — Images und Koalitionen. Dritte (GL) werden involviert, Anschuldigungen in den Raum gestellt. Mediator einschalten.'}
+];
+var flCurKonfIdx = -1;
+
+window.flGenU2 = function() {
+  flCurKonfIdx = flPickNew(FL_KONF_FAELLE, flCurKonfIdx);
+  var f = FL_KONF_FAELLE[flCurKonfIdx];
+  document.getElementById('fl_u2_case').innerHTML = f.case;
+  var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px">';
+  var titles = ['Verhärtung','Debatten','Taten statt Worte','Images + Koalitionen','Gesichtsverlust','Drohstrategien','Begrenzte Vernichtung','Zersplitterung','Gemeinsam Abgrund'];
+  for (var i = 1; i <= 9; i++) {
+    var color = i <= 3 ? '#38c759' : i <= 6 ? '#e8a838' : '#ff3b30';
+    var bgcolor = i <= 3 ? 'rgba(56,199,89,.08)' : i <= 6 ? 'rgba(232,168,56,.08)' : 'rgba(255,59,48,.08)';
+    h += '<label style="cursor:pointer;padding:12px 10px;border-radius:8px;border:1.5px solid var(--bd);background:' + bgcolor + ';text-align:center;transition:all .2s">';
+    h += '<input type="radio" name="fl_u2" value="' + i + '" style="display:none">';
+    h += '<div style="font-weight:700;color:' + color + ';font-size:18px">' + i + '</div>';
+    h += '<div style="font-size:11px;color:var(--tx2);margin-top:2px">' + titles[i-1] + '</div>';
+    h += '</label>';
+  }
+  h += '</div>';
+  document.getElementById('fl_u2_options').innerHTML = h;
+  document.querySelectorAll('#fl_u2_options label').forEach(function(lbl){
+    lbl.addEventListener('click', function(){
+      document.querySelectorAll('#fl_u2_options label').forEach(function(l){ l.style.borderColor='var(--bd)'; l.style.boxShadow='none'; });
+      lbl.style.borderColor='var(--ac)';
+      lbl.style.boxShadow='0 0 0 2px rgba(232,86,122,.2)';
+      var inp = lbl.querySelector('input'); if(inp) inp.checked=true;
+    });
+  });
+  document.getElementById('fl_u2_res').innerHTML = '';
+};
+
+window.flCheckU2 = function() {
+  var sel = document.querySelector('input[name="fl_u2"]:checked');
+  var f = FL_KONF_FAELLE[flCurKonfIdx];
+  if (!sel) { document.getElementById('fl_u2_res').innerHTML = '<div style="padding:12px;border-radius:10px;background:rgba(232,168,56,.1);color:var(--am);font-size:13px">Bitte wähle zuerst eine Stufe aus.</div>'; return; }
+  var ok = sel.value === f.ans;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(255,107,107,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(255,107,107,.3)') + '">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--r)') + ';margin-bottom:8px;font-size:15px">' + (ok?'✓ Richtig!':'✗ Nicht ganz richtig. Korrekt wäre Stufe ' + f.ans + '.') + '</div>';
+  h += '<div style="font-size:14px;line-height:1.6;color:var(--tx)">' + f.ansE + '</div>';
+  h += '</div>';
+  document.getElementById('fl_u2_res').innerHTML = h;
+};
+
+// ======================================================
+// Ü3: SMART-ZIELE PRÜFEN
+// ======================================================
+var FL_SMART_ZIELE = [
+  {ziel:'"Wir werden den Umsatz irgendwann steigern."',krit:[{l:'S',n:'Spezifisch',a:'nein',e:'Kein spezifisches Gebiet, keine Abteilung — "Umsatz" ist zu allgemein.'},{l:'M',n:'Messbar',a:'nein',e:'Keine Zahl, kein Prozentwert.'},{l:'A',n:'Aktiv beeinflussbar',a:'teilweise',e:'Wer ist konkret verantwortlich? Ohne Klarheit bleibt es passiv.'},{l:'R',n:'Realistisch',a:'teilweise',e:'Ohne Zahlen nicht beurteilbar.'},{l:'T',n:'Terminiert',a:'nein',e:'"Irgendwann" ist Gegenteil von terminiert.'}]},
+  {ziel:'"Thomas steigert den Frühstücksumsatz von CHF 28 auf CHF 35 pro Gast durch neue À-la-carte-Optionen bis Ende Q2 (30. Juni), Budget CHF 8000."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Sehr spezifisch: Frühstücksumsatz, À-la-carte, pro Gast.'},{l:'M',n:'Messbar',a:'ja',e:'CHF 28 → CHF 35 — eindeutige Zahlen.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Thomas hat als F&B-Manager vollen Handlungsspielraum.'},{l:'R',n:'Realistisch',a:'ja',e:'CHF 8000 Budget, Q2 ausreichend Zeit.'},{l:'T',n:'Terminiert',a:'ja',e:'Klares Enddatum: 30. Juni.'}]},
+  {ziel:'"Das Team soll den Betrieb exzellent führen — wir wollen alle glücklich sein."',krit:[{l:'S',n:'Spezifisch',a:'nein',e:'"Exzellent" und "glücklich" sind undefiniert.'},{l:'M',n:'Messbar',a:'nein',e:'Keine Kennzahlen, subjektive Begriffe.'},{l:'A',n:'Aktiv beeinflussbar',a:'nein',e:'"Das Team" ist zu diffus.'},{l:'R',n:'Realistisch',a:'nein',e:'Ohne Messgrössen nicht prüfbar.'},{l:'T',n:'Terminiert',a:'nein',e:'Kein Zeitrahmen.'}]},
+  {ziel:'"Nadia reduziert Gästebeschwerden an Réception von 8 auf max. 3 pro Monat, indem sie die Check-in-Zeit durch neue Templates auf unter 4 Min. bringt — bis Ende September."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Réception, Beschwerden, Check-in-Zeit — alles klar.'},{l:'M',n:'Messbar',a:'ja',e:'8 → max. 3 Beschwerden/Monat, Check-in < 4 Min.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Nadia kann Templates direkt umsetzen.'},{l:'R',n:'Realistisch',a:'ja',e:'Halbierung durch Prozessoptimierung machbar.'},{l:'T',n:'Terminiert',a:'ja',e:'Ende September als klares Enddatum.'}]},
+  {ziel:'"Die Fluktuation muss unbedingt in den nächsten 10 Minuten halbiert werden."',krit:[{l:'S',n:'Spezifisch',a:'teilweise',e:'Fluktuation klar, aber ohne Abteilung zu pauschal.'},{l:'M',n:'Messbar',a:'ja',e:'"Halbiert" ist klare Messgrösse.'},{l:'A',n:'Aktiv beeinflussbar',a:'teilweise',e:'Fluktuation wird von vielen Faktoren beeinflusst.'},{l:'R',n:'Realistisch',a:'nein',e:'10 Minuten ist absurd — braucht Monate.'},{l:'T',n:'Terminiert',a:'ja',e:'Zeitlich definiert, aber unrealistisch.'}]},
+  {ziel:'"Das Housekeeping-Team erhöht die TripAdvisor-Zimmerwertung bis 31.12. von 4.1 auf mindestens 4.5 durch neue Reinigungsstandards und 2-stündiges Pre-Check der Hausdame bei Abreise-Zimmern — Budget 2h/Tag, Schulungen im Februar."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Housekeeping, TripAdvisor-Zimmer, neue Standards, Pre-Check — sehr klar.'},{l:'M',n:'Messbar',a:'ja',e:'4.1 → 4.5 TripAdvisor-Score — messbar.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Team kann Prozesse direkt ändern.'},{l:'R',n:'Realistisch',a:'ja',e:'0.4 Punkte Steigerung in 12 Monaten mit Massnahmen — ambitioniert aber möglich.'},{l:'T',n:'Terminiert',a:'ja',e:'31. Dezember ist konkret.'}]},
+  {ziel:'"Wir müssen dringend besser werden."',krit:[{l:'S',n:'Spezifisch',a:'nein',e:'Weder Thema noch Dimension definiert.'},{l:'M',n:'Messbar',a:'nein',e:'Kein Messwert für "besser".'},{l:'A',n:'Aktiv beeinflussbar',a:'nein',e:'"Wir" ist diffus.'},{l:'R',n:'Realistisch',a:'teilweise',e:'Theoretisch ja, aber kein Bezugsrahmen.'},{l:'T',n:'Terminiert',a:'nein',e:'"Dringend" ist keine Deadline.'}]},
+  {ziel:'"Marco verbessert die Küchen-Kostenquote von 32% auf 28% durch optimierte Bestellmengen und 20% Reduktion von Food-Waste bis Ende Q3, Budget CHF 1500 für neue Lagersoftware."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Küchen-Kostenquote, Bestellmengen, Food-Waste — alles klar.'},{l:'M',n:'Messbar',a:'ja',e:'32% → 28%, -20% Food-Waste.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Marco als Souschef kontrolliert Bestellung und Wastage.'},{l:'R',n:'Realistisch',a:'ja',e:'4%-Punkte Kostenreduktion in 9 Monaten plus Software.'},{l:'T',n:'Terminiert',a:'ja',e:'Ende Q3 ist klar.'}]},
+  {ziel:'"Es wäre schön, wenn wir mehr zahlende Gäste hätten."',krit:[{l:'S',n:'Spezifisch',a:'nein',e:'"Mehr" ist undefiniert, kein Segment, keine Dimension.'},{l:'M',n:'Messbar',a:'nein',e:'Kein Zahlenwert.'},{l:'A',n:'Aktiv beeinflussbar',a:'nein',e:'"Wir" und "hätten" ist passiv formuliert — Wunsch, kein Ziel.'},{l:'R',n:'Realistisch',a:'nein',e:'Konjunktiv im Wunsch, keine Grundlage.'},{l:'T',n:'Terminiert',a:'nein',e:'Kein Datum.'}]},
+  {ziel:'"Anna organisiert bis zum 14.9. ein Teamevent für 38 MA mit Budget CHF 3500. Jessica unterstützt bei Einladungen, Thomas bei F&B. Konzept bis 10.7., Zwischenstand 15.8."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Teamevent, 38 MA, Orchestrierung mit Jessica+Thomas.'},{l:'M',n:'Messbar',a:'ja',e:'CHF 3500 Budget, 38 Teilnehmer.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Anna führt mit klarem Team.'},{l:'R',n:'Realistisch',a:'ja',e:'2 Monate Vorlauf, genug Ressourcen.'},{l:'T',n:'Terminiert',a:'ja',e:'3 Deadlines definiert: 10.7., 15.8., 14.9.'}]},
+  {ziel:'"Die Rezeption soll freundlicher werden."',krit:[{l:'S',n:'Spezifisch',a:'teilweise',e:'Rezeption klar, aber "freundlicher" ist subjektiv.'},{l:'M',n:'Messbar',a:'nein',e:'Freundlichkeit ohne Kriterien nicht messbar.'},{l:'A',n:'Aktiv beeinflussbar',a:'teilweise',e:'Nadia könnte, aber keine klare Verantwortung.'},{l:'R',n:'Realistisch',a:'teilweise',e:'Ohne Massgrössen nicht prüfbar.'},{l:'T',n:'Terminiert',a:'nein',e:'Kein Datum.'}]},
+  {ziel:'"Sara reduziert ihre wöchentliche Arbeitsstundenzahl von 68 auf unter 55h bis Ende März, indem sie drei konkrete Aufgaben delegiert: (1) F&B-Zahlen an Thomas, (2) Rekrutierung an Jessica, (3) Housekeeping-Qualität an Laura."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'Arbeitsstunden, 3 konkrete Delegationen — maximal spezifisch.'},{l:'M',n:'Messbar',a:'ja',e:'68h → <55h, 3 delegierte Aufgaben.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Sara entscheidet selbst über Delegation.'},{l:'R',n:'Realistisch',a:'ja',e:'13h Reduktion über 3 Aufgaben — ambitioniert, machbar.'},{l:'T',n:'Terminiert',a:'ja',e:'Ende März als Zielpunkt.'}]},
+  {ziel:'"Mehr Gäste von Google Business."',krit:[{l:'S',n:'Spezifisch',a:'teilweise',e:'Google Business als Kanal klar, aber kein Ziel-Gastsegment.'},{l:'M',n:'Messbar',a:'nein',e:'"Mehr" ohne Zahl nicht messbar.'},{l:'A',n:'Aktiv beeinflussbar',a:'teilweise',e:'Google-SEO beeinflussbar, aber Ergebnis nicht garantiert.'},{l:'R',n:'Realistisch',a:'teilweise',e:'Generell ja, aber ohne Basis-Werte nicht prüfbar.'},{l:'T',n:'Terminiert',a:'nein',e:'Kein Datum.'}]},
+  {ziel:'"Jessica führt bis Ende Mai mit jedem der 38 MA ein strukturiertes Mitarbeitergespräch (Vorlage HRM2, Protokollpflicht). Zwischenstand am 30.4. — mindestens 20 MAG abgehalten."',krit:[{l:'S',n:'Spezifisch',a:'ja',e:'38 MAG, strukturierte Vorlage, Protokoll — präzise.'},{l:'M',n:'Messbar',a:'ja',e:'38 Gespräche total, Meilenstein 20 bis 30.4.'},{l:'A',n:'Aktiv beeinflussbar',a:'ja',e:'Jessica führt selbst durch.'},{l:'R',n:'Realistisch',a:'ja',e:'38 MAG in 4-5 Monaten — machbar.'},{l:'T',n:'Terminiert',a:'ja',e:'30.4. Meilenstein, Ende Mai Deadline.'}]},
+  {ziel:'"Das Hotel muss digitaler werden — wir investieren in Technologie."',krit:[{l:'S',n:'Spezifisch',a:'nein',e:'"Digitaler" und "Technologie" sind Buzzwords ohne Substanz.'},{l:'M',n:'Messbar',a:'nein',e:'Keine Zahlen, keine Bereiche.'},{l:'A',n:'Aktiv beeinflussbar',a:'teilweise',e:'Mit Zahlen wäre es, so zu vage.'},{l:'R',n:'Realistisch',a:'nein',e:'Ohne Bezugsrahmen nicht prüfbar.'},{l:'T',n:'Terminiert',a:'nein',e:'Kein Datum.'}]}
+];
+var flCurSmartIdx = -1;
+
+window.flGenU3 = function() {
+  flCurSmartIdx = flPickNew(FL_SMART_ZIELE, flCurSmartIdx);
+  var f = FL_SMART_ZIELE[flCurSmartIdx];
+  document.getElementById('fl_u3_ziel').innerHTML = f.ziel;
+  var h = '<div style="display:grid;gap:8px">';
+  f.krit.forEach(function(k,i){
+    h += '<div class="c" style="padding:14px 18px">';
+    h += '<div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">';
+    h += '<div style="width:32px;height:32px;border-radius:8px;background:rgba(139,44,90,.12);color:#8b2c5a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">' + k.l + '</div>';
+    h += '<div style="flex:1;font-weight:600">' + k.n + '</div>';
+    h += '</div>';
+    h += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+    h += '<label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--s);font-size:13px"><input type="radio" name="fl_u3_k' + i + '" value="ja" style="accent-color:var(--g)"> <strong style="color:var(--g)">Ja</strong></label>';
+    h += '<label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--s);font-size:13px"><input type="radio" name="fl_u3_k' + i + '" value="teilweise" style="accent-color:var(--am)"> <strong style="color:var(--am)">Teilweise</strong></label>';
+    h += '<label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--s);font-size:13px"><input type="radio" name="fl_u3_k' + i + '" value="nein" style="accent-color:var(--r)"> <strong style="color:var(--r)">Nein</strong></label>';
+    h += '</div>';
+    h += '<div id="fl_u3_ffb' + i + '" style="display:none;margin-top:8px;padding:10px 12px;border-radius:8px;font-size:13px;line-height:1.5"></div>';
+    h += '</div>';
+  });
+  h += '</div>';
+  document.getElementById('fl_u3_krit').innerHTML = h;
+  document.getElementById('fl_u3_res').innerHTML = '';
+};
+
+window.flCheckU3 = function() {
+  var f = FL_SMART_ZIELE[flCurSmartIdx];
+  var correct = 0, total = f.krit.length;
+  f.krit.forEach(function(k,i){
+    var sel = document.querySelector('input[name="fl_u3_k' + i + '"]:checked');
+    var fb = document.getElementById('fl_u3_ffb' + i);
+    if (!sel) { fb.style.display='block'; fb.style.background='rgba(232,168,56,.1)'; fb.style.color='var(--am)'; fb.innerHTML='⚠ Bitte auswählen'; return; }
+    var ok = sel.value === k.a;
+    if (ok) correct++;
+    fb.style.display = 'block';
+    fb.style.background = ok ? 'rgba(56,199,89,.1)' : 'rgba(255,107,107,.1)';
+    fb.style.color = ok ? 'var(--g)' : 'var(--r)';
+    fb.innerHTML = '<strong>' + (ok ? '✓ Richtig' : '✗ Falsch — richtig: ' + k.a) + '</strong> — ' + k.e;
+  });
+  var pct = Math.round(correct/total*100);
+  var ok = correct === total;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(232,168,56,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(232,168,56,.3)') + ';margin-top:14px">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--am)') + ';font-size:16px">' + correct + ' / ' + total + ' richtig (' + pct + '%)</div>';
+  h += '</div>';
+  document.getElementById('fl_u3_res').innerHTML = h;
+};
+
+// ======================================================
+// Ü4: THEORIE X ODER Y? (Menschenbild McGregor)
+// ======================================================
+var FL_XY_AUSSAGEN = [
+  {text:'Herr Bühler (Saras Vorgänger) sagt: "Wenn ich die nicht jeden Tag kontrolliere, machen die nur halb so viel Arbeit. Das liegt einfach in der menschlichen Natur."',ans:'X',ansE:'Theorie X: Annahme, Menschen seien von Natur arbeitsfaul und müssten durch Kontrolle zur Leistung gezwungen werden. Klassische X-Haltung.'},
+  {text:'Sara (zu Nadia): "Du kennst deine Gäste — entwickle das Gastgeschenk-Konzept so, wie du es für sinnvoll hältst. Budget 1500 CHF, Deadline Ende Februar."',ans:'Y',ansE:'Theorie Y: Sara vertraut Nadia Verantwortung und Eigeninitiative zu. Delegation mit Kompetenzrahmen — klassische Y-Führung.'},
+  {text:'Der Chefkoch (in der Küche zum Team): "Ich muss hier jeden Handgriff selber machen, sonst wird nichts gescheit. Lehrlinge taugen heute nichts mehr."',ans:'X',ansE:'Theorie X: Misstrauen gegenüber Kompetenz anderer, Einzelkämpfer-Haltung, Abwertung anderer. Reinste X-Wahrnehmung.'},
+  {text:'Jessica (HR) sagt im Meeting: "Unsere Lehrlinge haben beim Probe-Tag riesige Kreativität gezeigt. Ich schlage vor, wir richten eine Lehrlings-AG für neue Service-Standards ein — die machen das super."',ans:'Y',ansE:'Theorie Y: Glaube an Kreativität, Engagement und Selbstverwirklichung junger MA. Klassische Y-Perspektive.'},
+  {text:'"Wer nicht alle zwei Wochen eine schriftliche Verwarnung bekommt, der hat den Chef nicht hart genug. Das gehört in einer Führungsrolle dazu."',ans:'X',ansE:'Theorie X: Zwang, Strafe und Drohungen als zentrale Führungsinstrumente. Menschen reagieren nach X-Sicht nur auf Druck.'},
+  {text:'Laura (Housekeeping): "Mein Team hat selbst den Vorschlag gemacht, die Zimmerkontrolle zu verdoppeln. Sie sagen, sie fühlen sich verantwortlich für die Gästezufriedenheit."',ans:'Y',ansE:'Theorie Y: Mitarbeitende übernehmen Eigeninitiative, identifizieren sich mit Zielen. Klassische Selbststeuerung in Y-Kultur.'},
+  {text:'Der Finanzchef: "Man muss die Mitarbeitenden an der kurzen Leine halten. Gibst du ihnen einen Millimeter, nehmen sie einen Meter. Alles andere ist naiv."',ans:'X',ansE:'Theorie X: Generalisiertes Misstrauen, Kontrollzwang, "kurze Leine"-Mentalität. Klassische X-Grundhaltung.'},
+  {text:'Marco (Souschef): "Wir haben zusammen das neue Menü entwickelt. Jeder Koch durfte ein Gericht einbringen. Die Leute sind jetzt mit vollem Herzen dabei."',ans:'Y',ansE:'Theorie Y: Mitbestimmung, intrinsische Motivation durch Sinn und Identifikation. Klassische Y-Haltung.'},
+  {text:'"Die Jungen heute wollen doch nur noch Work-Life-Balance. Keiner will mehr richtig anpacken. Früher war das anders."',ans:'X',ansE:'Theorie X: Verallgemeinerte Abwertung der Arbeitsmoral junger Generation. Klassischer X-Reflex.'},
+  {text:'Anna (Rezeption): "Ich habe ohne dass jemand es verlangt hat, am Samstag früher angefangen — der Check-out-Stoß war voraussehbar. Ich wollte helfen."',ans:'Y',ansE:'Theorie Y: Freiwillige Eigeninitiative, Mitdenken ohne Aufforderung. Klassisches Y-Verhalten engagierter MA.'},
+  {text:'Herr Keller (Besitzer, alt): "Das Personal muss man durchschütteln, sonst werden sie faul. Ein guter Betrieb braucht Angst — nicht vor dem Chef, sondern vor dem Verlust des Jobs."',ans:'X',ansE:'Theorie X: Angst als Motivationsinstrument. "Fressangst" wird bewusst geschürt. Klassische X-Theorie in Reinform.'},
+  {text:'Saras neuer Führungsleitsatz: "Menschen wachsen an Verantwortung. Unsere Aufgabe ist, ihnen die Rahmenbedingungen zu bieten und sie zu entfalten."',ans:'Y',ansE:'Theorie Y: Selbstverwirklichung und Wachstum durch Verantwortung. Klassischer Y-Leitsatz.'},
+  {text:'Der Verwaltungsrat: "Wir müssen eine Stempeluhr einführen. Sonst betrügen uns die Leute bei der Arbeitszeit. Das wird Pflicht für alle — CEO auch, damit es gerecht ist."',ans:'X',ansE:'Theorie X: Misstrauen als Grundannahme, Kontrolle als Standard. X-Position.'},
+  {text:'Jonas (Rezeption): "Wenn ich weiss WARUM etwas wichtig ist, dann mache ich es gerne. Diese sinnlosen Vorschriften ohne Erklärung — das frustriert mich."',ans:'Y',ansE:'Theorie Y: Sinn statt Kontrolle, intrinsische Motivation durch Verständnis. Klassische Y-Einstellung.'},
+  {text:'"Die meisten MA hassen ihren Job. Wer ein bisschen ehrlich ist, gibt das zu. Sie arbeiten nur fürs Geld, und wir müssen dafür sorgen, dass sie trotzdem Leistung bringen."',ans:'X',ansE:'Theorie X: Grundannahme "Arbeit = Unlust". Geld als einziger Motivator. Taylorismus-Mentalität.'},
+  {text:'Thomas (F&B): "Ich habe bemerkt — wenn ich den Leuten zeige, welche Wirkung ihr Service auf Gäste hat (via TripAdvisor-Feedback-Runden), blühen sie auf. Keine Peitsche nötig."',ans:'Y',ansE:'Theorie Y: Wirkung sehen, Sinn erleben — das motiviert. Klassische Y-Beobachtung in der Praxis.'},
+  {text:'Der GM aus dem Nachbarhotel: "In meinem Haus gibt es klare Regeln. Verstoss = Verwarnung. Drei Verwarnungen = raus. So einfach ist das. Wer nicht spurt, ist weg."',ans:'X',ansE:'Theorie X: Regeln und Strafen als einziges Führungskonzept. Unflexibel, kontrollorientiert.'},
+  {text:'Sara (beim Jahresgespräch mit Marco): "Was möchtest du dieses Jahr erreichen? Wo willst du dich entwickeln? Wie kann ich dir dabei helfen?"',ans:'Y',ansE:'Theorie Y: Fragen statt Ansagen. Entwicklung und Potenzialentfaltung im Vordergrund. Klassische Y-Führung.'}
+];
+var flCurXYIdx = -1;
+
+window.flGenU4 = function() {
+  flCurXYIdx = flPickNew(FL_XY_AUSSAGEN, flCurXYIdx);
+  var f = FL_XY_AUSSAGEN[flCurXYIdx];
+  document.getElementById('fl_u4_text').innerHTML = f.text;
+  document.getElementById('fl_u4_options').innerHTML =
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">' +
+    '<label style="display:flex;align-items:center;gap:12px;cursor:pointer;padding:18px 22px;border-radius:12px;border:2px solid var(--bd);background:var(--s);transition:all .2s"><input type="radio" name="fl_u4" value="X" style="accent-color:#ff6b6b"><div><strong style="color:#ff6b6b;font-size:17px">Theorie X</strong><br><span style="font-size:12px;color:var(--tx2)">Mensch ist unwillig · Taylorismus</span></div></label>' +
+    '<label style="display:flex;align-items:center;gap:12px;cursor:pointer;padding:18px 22px;border-radius:12px;border:2px solid var(--bd);background:var(--s);transition:all .2s"><input type="radio" name="fl_u4" value="Y" style="accent-color:#38c759"><div><strong style="color:#38c759;font-size:17px">Theorie Y</strong><br><span style="font-size:12px;color:var(--tx2)">Mensch ist engagiert · Human-Relations</span></div></label>' +
+    '</div>';
+  document.getElementById('fl_u4_res').innerHTML = '';
+};
+
+window.flCheckU4 = function() {
+  var sel = document.querySelector('input[name="fl_u4"]:checked');
+  var f = FL_XY_AUSSAGEN[flCurXYIdx];
+  if (!sel) { document.getElementById('fl_u4_res').innerHTML = '<div style="padding:12px;border-radius:10px;background:rgba(232,168,56,.1);color:var(--am);font-size:13px">Bitte wähle X oder Y.</div>'; return; }
+  var ok = sel.value === f.ans;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(255,107,107,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(255,107,107,.3)') + '">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--r)') + ';margin-bottom:8px;font-size:15px">' + (ok?'✓ Richtig!':'✗ Korrekt wäre: Theorie ' + f.ans) + '</div>';
+  h += '<div style="font-size:14px;line-height:1.6;color:var(--tx)">' + f.ansE + '</div>';
+  h += '</div>';
+  document.getElementById('fl_u4_res').innerHTML = h;
+};
+
+// ======================================================
+// Ü5: MASLOW-STUFE (Motivation)
+// ======================================================
+var FL_MASLOW = [
+  {case:'<strong>Anna (Rezeption, 19, im ersten Job).</strong> Sie bittet Sara um einen unbefristeten Arbeitsvertrag, weil sie sich die Wohnung in Engelberg nur so leisten kann und Planungssicherheit braucht.',ans:'2',ansE:'Stufe 2 — Sicherheitsbedürfnisse: Arbeit, Wohnung, materielle Grundsicherung.'},
+  {case:'<strong>Marco (Souschef).</strong> Er klagt, dass das Team ihn nicht genug wertschätzt. Er hätte gerne mehr Anerkennung für seine Gerichte — im Meeting-Protokoll, beim Team, beim Gast.',ans:'4',ansE:'Stufe 4 — Anerkennung/Wertschätzung. Marco braucht Prestige, Achtung, Ansehen vom Team.'},
+  {case:'<strong>Laura (Housekeeping).</strong> Sie kommt in Saras Büro und sagt: "Ich habe das Gefühl, ich könnte mehr. Ich möchte eine Weiterbildung machen — vielleicht in Richtung Revenue Management. Ich will mich entfalten."',ans:'5',ansE:'Stufe 5 — Selbstverwirklichung. Laura möchte ihr Potenzial ausschöpfen, sich selbst entwickeln.'},
+  {case:'<strong>Jonas (Rezeption, neu).</strong> Er fragt Sara, ob er beim gemeinsamen Mittagessen dabei sein darf. Er sagt: "Ich kenne noch niemanden hier — ich würde mich freuen, dazuzugehören."',ans:'3',ansE:'Stufe 3 — Soziale Bedürfnisse/Anschluss. Dazugehören, Teil der Gruppe sein, Gemeinschaft.'},
+  {case:'<strong>Küchenhilfe Mahmoud.</strong> In der Spätschicht beschwert er sich, dass kein Essen für die MA da ist. "Ich arbeite 9 Stunden und habe Hunger — das geht einfach nicht."',ans:'1',ansE:'Stufe 1 — Physiologische Bedürfnisse. Nahrung, Grundversorgung. Muss vor allem anderen erfüllt sein.'},
+  {case:'<strong>Nadia (Front Office Managerin).</strong> Sie hat sich um die offene Stelle der stv. Geschäftsführung beworben. "Ich fühle, dass ich bereit bin für den nächsten Karriereschritt — ich will mich weiterentwickeln."',ans:'5',ansE:'Stufe 5 — Selbstverwirklichung. Wachstum, Potenzialentfaltung, neue Herausforderungen.'},
+  {case:'<strong>Thomas (F&B) nach einer schwierigen Entlassungs-Situation.</strong> "Ich mache mir Sorgen — sind unsere Arbeitsplätze sicher? Wenn der Laden schliesst, was dann?"',ans:'2',ansE:'Stufe 2 — Sicherheit. Arbeitsplatzsicherheit, existenzielle Grundsicherung.'},
+  {case:'<strong>Team-Event-Vorschlag von mehreren MA.</strong> "Wir würden gern regelmässiger zusammen etwas unternehmen — das Grillen letzten Sommer war super. Wir möchten uns als Team fühlen."',ans:'3',ansE:'Stufe 3 — Soziale Bedürfnisse. Zugehörigkeit, Teambindung, Gemeinschaft.'},
+  {case:'<strong>Frau Schneider vor der Pensionierung.</strong> "Ich möchte noch vor meinem Abschied den Goldenen Gast-Award gewinnen — das wäre die Krönung meiner Karriere."',ans:'4',ansE:'Stufe 4 — Anerkennung. Prestige, Ansehen, Auszeichnung als Höhepunkt des Berufslebens.'},
+  {case:'<strong>Saisonarbeiter in der Unterkunft.</strong> Die Personalzimmer haben Schimmelspuren, die Heizung funktioniert nicht richtig. Die MA beschweren sich: "So können wir nicht wohnen — wir brauchen einen anständigen Schlafplatz."',ans:'1',ansE:'Stufe 1 — Physiologisch. Witterungsschutz, Schlafplatz, Grundversorgung.'},
+  {case:'<strong>Marco nach Menü-Entwicklung.</strong> "Wenn die Gala ein Erfolg wird, steht mein Name als Chefkoch im Programm — ich will, dass alle wissen, dass ICH das entwickelt habe."',ans:'4',ansE:'Stufe 4 — Anerkennung. Individuelles Prestige, öffentliche Achtung, Namensnennung.'},
+  {case:'<strong>Junger Lehrling Simon.</strong> "Die anderen Lehrlinge treffen sich nach Feierabend und ich werde nie gefragt. Ich weiss nicht, ob ich dazu gehöre."',ans:'3',ansE:'Stufe 3 — Soziale Bedürfnisse. Zugehörigkeit, Integration in die Peer-Group.'},
+  {case:'<strong>Zimmermädchen Maria vom Jobverlust bedroht.</strong> Maria hat Familie, 2 Kinder. Die Gerüchte um Stellenabbau machen ihr Existenzangst: "Was soll aus uns werden? Wir brauchen das Gehalt."',ans:'2',ansE:'Stufe 2 — Sicherheit. Familien-Existenzsicherung, Angst vor Verlust der Grundlage.'},
+  {case:'<strong>Bernhard (Chefkoch, 52).</strong> "Ich habe 35 Jahre in dieser Branche gearbeitet. Ich möchte jetzt das MA-Wochenbuch schreiben — mein Vermächtnis für die nächste Generation Köche."',ans:'5',ansE:'Stufe 5 — Selbstverwirklichung. Das eigene Werk hinterlassen, Sinnstiftung, Selbstverwirklichung.'},
+  {case:'<strong>Azubi im Brandfall.</strong> Simon kommt panisch zur Rezeption: "Ich hab den Rauch gerochen! Ich muss raus, sofort — wo ist der Notausgang?"',ans:'1',ansE:'Stufe 1 — Physiologisch (Überleben). In akuter Gefahr zählt nur das Grundbedürfnis Leben.'},
+  {case:'<strong>Nach einem Konflikt.</strong> "Ich will einfach wieder Teil des Teams sein. Dieses Aussen-vor-Gefühl macht mich kaputt. Können wir das Kriegsbeil begraben?"',ans:'3',ansE:'Stufe 3 — Soziale Bedürfnisse. Nach Konflikt die Zugehörigkeit zurückgewinnen.'},
+  {case:'<strong>Saras Jahresgespräch mit sich selbst.</strong> "Ich bin jetzt GM. Ich habe das Maximum an Titel. Aber ich möchte noch einen Unterschied machen — ein eigenes Buch über Leadership schreiben, andere inspirieren."',ans:'5',ansE:'Stufe 5 — Selbstverwirklichung. Über Titel hinausgehen, Wirkung hinterlassen.'},
+  {case:'<strong>Thomas nach erfolgreicher Gala.</strong> Er kommt strahlend zu Sara: "Hast du gesehen — der CEO der Besitzerfamilie hat mich vor allen gelobt! Das war das beste Feedback seit Jahren."',ans:'4',ansE:'Stufe 4 — Anerkennung. Öffentliches Lob des obersten Chefs — klassische Anerkennung.'}
+];
+var flCurMasIdx = -1;
+
+window.flGenU5 = function() {
+  flCurMasIdx = flPickNew(FL_MASLOW, flCurMasIdx);
+  var f = FL_MASLOW[flCurMasIdx];
+  document.getElementById('fl_u5_case').innerHTML = f.case;
+  var h = '<div style="display:grid;gap:8px">';
+  var stufen = [
+    {n:1, t:'Physiologische Bedürfnisse', d:'Atmung, Wasser, Nahrung, Schlaf, Obdach', c:'#e84f38'},
+    {n:2, t:'Sicherheitsbedürfnisse', d:'Arbeit, Wohnung, materielle Grundsicherung', c:'#e8a838'},
+    {n:3, t:'Soziale Bedürfnisse', d:'Familie, Freundschaft, Zugehörigkeit', c:'#38b6e8'},
+    {n:4, t:'Anerkennung & Wertschätzung', d:'Prestige, Ansehen, Erfolg, Achtung', c:'#38e89c'},
+    {n:5, t:'Selbstverwirklichung', d:'Potenzial ausschöpfen, Sinn, Kreativität', c:'#b838e8'}
+  ];
+  stufen.forEach(function(s){
+    h += '<label style="display:flex;align-items:center;gap:12px;cursor:pointer;padding:14px 18px;border-radius:10px;border:1.5px solid var(--bd);background:var(--s);transition:all .2s">';
+    h += '<input type="radio" name="fl_u5" value="' + s.n + '" style="accent-color:' + s.c + '">';
+    h += '<div style="width:36px;height:36px;border-radius:50%;background:' + s.c + ';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">' + s.n + '</div>';
+    h += '<div style="flex:1"><strong>' + s.t + '</strong><br><span style="font-size:12px;color:var(--tx2)">' + s.d + '</span></div>';
+    h += '</label>';
+  });
+  h += '</div>';
+  document.getElementById('fl_u5_options').innerHTML = h;
+  document.getElementById('fl_u5_res').innerHTML = '';
+};
+
+window.flCheckU5 = function() {
+  var sel = document.querySelector('input[name="fl_u5"]:checked');
+  var f = FL_MASLOW[flCurMasIdx];
+  if (!sel) { document.getElementById('fl_u5_res').innerHTML = '<div style="padding:12px;border-radius:10px;background:rgba(232,168,56,.1);color:var(--am);font-size:13px">Bitte wähle zuerst eine Stufe aus.</div>'; return; }
+  var ok = sel.value === f.ans;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(255,107,107,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(255,107,107,.3)') + '">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--r)') + ';margin-bottom:8px;font-size:15px">' + (ok?'✓ Richtig!':'✗ Korrekt wäre: Stufe ' + f.ans) + '</div>';
+  h += '<div style="font-size:14px;line-height:1.6;color:var(--tx)">' + f.ansE + '</div>';
+  h += '</div>';
+  document.getElementById('fl_u5_res').innerHTML = h;
+};
+
+// ======================================================
+// Ü6: 7 FÜHRUNGSKILLER ERKENNEN
+// ======================================================
+var FL_KILLER = [
+  {scen:'<strong>Marco bringt einen kreativen Menüvorschlag.</strong> Der Küchenchef sagt im Meeting: "Lassen wir doch mal das jetzt ausrufen..." — und der Vorschlag ist durchgegangen. Marco hört nichts mehr davon. In der nächsten Sitzung wird der Vorschlag vom Chef als seine Idee präsentiert.',ans:'E1',ansE:'KILL ENTHUSIASM. Ideen werden ignoriert oder gestohlen, Wertschätzung bleibt aus. Das tötet jegliche Motivation, weitere Ideen einzubringen.'},
+  {scen:'<strong>Saras neuer GL-Kollege.</strong> Er lehnt es ab, mit MA auf Du zu sein. Kein gemeinsames Mittagessen, keine Teilnahme an Events. Sein Spruch: "Gefühle haben auf der Arbeit nichts verloren. Hier wird gearbeitet, nicht gefühlt."',ans:'E2',ansE:'KILL EMOTION. Herzlichkeit und menschliche Wärme werden verboten. Doch Menschen erreicht man im Herzen, nicht im Kopf.'},
+  {scen:'<strong>Monatszahlen.</strong> Die MA erfahren erst über Gerüchte, dass das Hotel einen Verlust macht. Die GL kommuniziert nichts transparent. Der Finanzchef hat eine Tabelle, die er niemandem zeigt — "Herrschaftswissen".',ans:'E3',ansE:'KILL EXPLANATION. Information als Machtfaktor zurückhalten. "Herrschaftswissen" tötet Vertrauen und macht MA handlungsunfähig.'},
+  {scen:'<strong>Meeting ohne Ende.</strong> Im Monatsmeeting sagt der Chef: "Ja, wir sollten uns mal darum kümmern, wer könnte das machen?" — Niemand antwortet, das Thema verschwindet ins Protokoll. Nächsten Monat: dasselbe Problem, gleiche Sätze.',ans:'E4',ansE:'KILL ENGAGEMENT. Unverbindlichkeit, keine klaren Entscheidungen, keine Verantwortungsübernahme. MA lernen: "Reden bringt nichts."'},
+  {scen:'<strong>Küchen-Lehrling Simon.</strong> Der Chefkoch schreit vor allen Köchen: "Das hätte ja sogar mein Dreijähriger gesehen! Die Nudeln sind zu weich! Bist du zu blöd zum Pasta kochen?"',ans:'E5',ansE:'KILL ENVIRONMENT. Angstkultur, öffentliche Demütigung, Fehler als Schande. Schafft Angst statt Lernen. Killer-Sprüche vermeiden.'},
+  {scen:'<strong>Frau Schneider — 22 Dienstjahre.</strong> Sie hat über die Jahre nie ein Wort des Dankes bekommen. Der GM meint: "Nichts gesagt ist Lob genug — wenn ich kritisiere, weiss sie eh dass sie gut ist."',ans:'E6',ansE:'KILL ENTICEMENT. Weder Lob noch Dank. "Nichts gesagt ist Lob genug" — ein verhängnisvoller Irrtum. Persönliche Anerkennung ist unersetzlich.'},
+  {scen:'<strong>Saras Vorgänger Bühler.</strong> Er lud seinen Lieblingsmitarbeiter (Chefkoch) regelmässig zum Abendessen ein, bei Weihnachtsgeld gab es zwei Level — "Marco bekommt 50% mehr, er ist schliesslich mein Rechter Arm." Die anderen wurden öffentlich hinter Marco gestellt.',ans:'E7',ansE:'KILL EQUITY. Lieblingsmitarbeitende werden bevorzugt, andere aufs Abstellgleis geschoben. Die Verbleibenden reihen sich in die "innerlich Gekündigten" ein.'},
+  {scen:'<strong>Nadias Jahresgespräch.</strong> "Nadia, du hast das Jahr geschafft. Hier ist deine Bonuszahlung. Gleich Anfang nächstes Jahr gibt es neue Ziele — morgen um 8 Uhr im Meetingraum."',ans:'E6',ansE:'KILL ENTICEMENT. Auch die Bonuszahlung wird transaktional reduziert — keine persönliche Anerkennung, kein Dank, kein Erkennen der Leistung als Mensch.'},
+  {scen:'<strong>Saras Entscheidungsverhalten.</strong> Bei schwierigen Themen sagt sie stets: "Das muss ich noch mit dem VR klären. Warten wir ab, was der VR entscheidet..." — Obwohl sie die Kompetenz hat, zu entscheiden.',ans:'E4',ansE:'KILL ENGAGEMENT. Entscheidungen werden nicht getroffen, Verantwortung wird nach oben delegiert. MA werden für Versäumnisse geopfert.'},
+  {scen:'<strong>Küchen-Brief.</strong> Die neuen Hygienerichtlinien werden nicht erklärt. Die MA finden einen Aushang: "Ab sofort gelten folgende Regeln. Verstösse werden sanktioniert." Kein Warum, kein Briefing, keine Schulung.',ans:'E3',ansE:'KILL EXPLANATION. Vorschriften ohne Erklärung — die MA wissen nicht, warum sie etwas tun sollen. Kommunikation fehlt.'},
+  {scen:'<strong>Der neue F&B-Manager.</strong> Er liefert geniale Ideen, bekommt aber nie Feedback, weder positiv noch negativ. Nach 6 Monaten fragt er Sara: "Bin ich auf dem richtigen Weg?" Sara: "Ja, alles okay." Nach einem Jahr kündigt er.',ans:'E1',ansE:'KILL ENTHUSIASM. Kein Feedback, keine Bestätigung, keine Entwicklung. Motivation stirbt langsam durch Ignoranz.'},
+  {scen:'<strong>Frau Keller von der Besitzerfamilie.</strong> "Ich habe den GM-Posten bewusst an meinen Neffen vergeben, obwohl Sara besser qualifiziert wäre. Familie geht vor Qualifikation — das ist schon immer so bei uns."',ans:'E7',ansE:'KILL EQUITY. Günstlingswirtschaft, nicht Leistung zählt. Andere werden demotiviert, weil Leistung nicht belohnt wird.'},
+  {scen:'<strong>Ein MA macht einen Fehler.</strong> Der Chef: "Wer nichts tut, kann nichts falsch machen. Aber du — du solltest lieber gar nichts mehr machen, dann spart man sich das." Der MA traut sich danach nie mehr eine eigene Entscheidung.',ans:'E5',ansE:'KILL ENVIRONMENT. Fehlerkultur wird zur Angstkultur. MA lernen: "Nichts tun ist sicherer." Blockiert jede Initiative.'},
+  {scen:'<strong>Anna — engagierte Rezeptionistin.</strong> Sie bringt zwei kreative Prozess-Verbesserungsvorschläge. Der Chef sagt: "Mach deinen Job, nicht den von anderen." Anna zieht sich zurück, macht nur noch Dienst nach Vorschrift.',ans:'E1',ansE:'KILL ENTHUSIASM. Engagement und Initiative werden bestraft statt belohnt. Die Message: "Halt die Klappe und mach deine Arbeit."'},
+  {scen:'<strong>Social-Media-Kommunikation.</strong> Der Chef verbietet dem Team, sich beim Mittagessen zu unterhalten: "Pausenzeit ist zum Essen da, nicht zum Plaudern. Wer reden will, macht das nach Feierabend in seiner Freizeit."',ans:'E2',ansE:'KILL EMOTION. Menschliche Nähe und Gespräche werden unterbunden. Aber ein Lächeln öffnet Herzen — Gemeinschaft am Arbeitsplatz ist Erfolgsfaktor.'},
+  {scen:'<strong>Monatsmeeting.</strong> Der Chef eröffnet mit: "Wir haben gerade wieder schlechte Zahlen — das ist deine Schuld, Thomas. Und, Nadia, wieviel Beschwerden hatten wir diesen Monat?" Vor allen, vor jedem Lob.',ans:'E5',ansE:'KILL ENVIRONMENT. Kritik vor Publikum — "face-lose" ist unverzeihlich. Vertrauen wird zerstört, Angstkultur aufgebaut.'},
+  {scen:'<strong>Personalversammlung.</strong> "Die Umsätze sind deutlich gesunken, aber ich kann euch nichts Genaues sagen — die GL prüft noch die Strategie. Bleibt ruhig, wartet ab. Keine Nachfragen."',ans:'E3',ansE:'KILL EXPLANATION. Information zurückhalten verursacht Unsicherheit, Gerüchte, Vertrauensverlust. Transparenz ist Pflicht.'},
+  {scen:'<strong>Der Chef delegiert eine Aufgabe.</strong> "Mach das — ich komme erst nächsten Monat zurück." Der MA fragt: "Aber wenn etwas schief geht?" Chef: "Dann bist du halt der Depp." — Der MA hat Angst, Fehler zu machen und macht deshalb gar nichts.',ans:'E4',ansE:'KILL ENGAGEMENT (+ E5 teilweise). Keine Rückendeckung, der Chef steht nicht hinter seinem MA. Unverbindlichkeit in der Verantwortung.'}
+];
+var flCurKillIdx = -1;
+
+window.flGenU6 = function() {
+  flCurKillIdx = flPickNew(FL_KILLER, flCurKillIdx);
+  var f = FL_KILLER[flCurKillIdx];
+  document.getElementById('fl_u6_scen').innerHTML = f.scen;
+  var killer = [
+    {id:'E1', t:'1 — Kill Enthusiasm', d:'Ideen ignorieren, kein Lob, keine Motivation'},
+    {id:'E2', t:'2 — Kill Emotion', d:'Herzlichkeit verboten, kein Miteinander'},
+    {id:'E3', t:'3 — Kill Explanation', d:'Herrschaftswissen, wenig Infos'},
+    {id:'E4', t:'4 — Kill Engagement', d:'Unverbindlichkeit, keine Entscheidungen'},
+    {id:'E5', t:'5 — Kill Environment', d:'Angstkultur, Fehler = Schande'},
+    {id:'E6', t:'6 — Kill Enticement', d:'Weder Lob noch Dank'},
+    {id:'E7', t:'7 — Kill Equity', d:'Lieblings-MA bevorzugen'}
+  ];
+  var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px">';
+  killer.forEach(function(k){
+    h += '<label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:12px 14px;border-radius:10px;border:1.5px solid var(--bd);background:var(--s);font-size:13px;transition:all .2s">';
+    h += '<input type="radio" name="fl_u6" value="' + k.id + '" style="accent-color:#e84f38;margin-top:2px">';
+    h += '<div><strong>' + k.t + '</strong><br><span style="font-size:12px;color:var(--tx2)">' + k.d + '</span></div>';
+    h += '</label>';
+  });
+  h += '</div>';
+  document.getElementById('fl_u6_options').innerHTML = h;
+  document.getElementById('fl_u6_res').innerHTML = '';
+};
+
+window.flCheckU6 = function() {
+  var sel = document.querySelector('input[name="fl_u6"]:checked');
+  var f = FL_KILLER[flCurKillIdx];
+  if (!sel) { document.getElementById('fl_u6_res').innerHTML = '<div style="padding:12px;border-radius:10px;background:rgba(232,168,56,.1);color:var(--am);font-size:13px">Bitte wähle zuerst einen Killer aus.</div>'; return; }
+  var ok = sel.value === f.ans;
+  var h = '<div style="padding:16px 20px;border-radius:12px;background:' + (ok?'rgba(56,199,89,.1)':'rgba(255,107,107,.1)') + ';border:1px solid ' + (ok?'rgba(56,199,89,.3)':'rgba(255,107,107,.3)') + '">';
+  h += '<div style="font-weight:700;color:' + (ok?'var(--g)':'var(--r)') + ';margin-bottom:8px;font-size:15px">' + (ok?'✓ Richtig!':'✗ Nicht ganz richtig.') + '</div>';
+  h += '<div style="font-size:14px;line-height:1.6;color:var(--tx)">' + f.ansE + '</div>';
+  h += '</div>';
+  document.getElementById('fl_u6_res').innerHTML = h;
 };
 
 })();
